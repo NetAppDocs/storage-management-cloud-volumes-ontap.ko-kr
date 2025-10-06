@@ -14,7 +14,7 @@ summary: 필요한 권한이 있는 IAM 역할은 각 Cloud Volumes ONTAP 노드
 
 
 [role="lead"]
-필요한 권한이 있는 AWS Identity and Access Management(IAM) 역할은 각 Cloud Volumes ONTAP 노드에 연결되어야 합니다. HA 중재자의 경우도 마찬가지입니다.  NetApp 콘솔에서 IAM 역할을 자동으로 생성하도록 하는 것이 가장 쉽지만, 사용자가 직접 역할을 지정할 수도 있습니다.
+필요한 권한이 있는 AWS Identity and Access Management(IAM) 역할은 각 Cloud Volumes ONTAP 노드에 연결되어야 합니다. HA 중재자의 경우도 마찬가지입니다.  NetApp Console IAM 역할을 자동으로 생성하도록 하는 것이 가장 쉽지만, 사용자가 직접 역할을 지정할 수도 있습니다.
 
 이 작업은 선택 사항입니다.  Cloud Volumes ONTAP 시스템을 생성할 때 기본 옵션은 콘솔에서 IAM 역할을 생성하도록 하는 것입니다.  회사의 보안 정책에 따라 IAM 역할을 직접 만들어야 하는 경우 아래 단계를 따르세요.
 
@@ -149,7 +149,7 @@ NOTE: AWS Secret Cloud에서는 고유한 IAM 역할을 제공해야 합니다. 
 ====
 ** Cloud Volumes ONTAP 노드에 대한 백업 정책
 +
-Cloud Volumes ONTAP 시스템과 함께 NetApp Backup and Recovery를 사용하려는 경우 노드의 IAM 역할에 아래에 표시된 두 번째 정책이 포함되어야 합니다.
+Cloud Volumes ONTAP 시스템과 함께 NetApp Backup and Recovery 사용하려는 경우 노드의 IAM 역할에 아래에 표시된 두 번째 정책이 포함되어야 합니다.
 
 +
 [role="tabbed-block"]

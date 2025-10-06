@@ -14,7 +14,7 @@ summary: BlueXP 에서 Cloud Volumes ONTAP 관리의 새로운 기능을 알아�
 
 
 [role="lead"]
-NetApp 콘솔에서 Cloud Volumes ONTAP 관리의 새로운 기능을 알아보세요.
+NetApp Console 에서 Cloud Volumes ONTAP 관리의 새로운 기능을 알아보세요.
 
 이 페이지에 설명된 개선 사항은 콘솔을 통해 Cloud Volumes ONTAP 관리하는 데 특화되어 있습니다.  Cloud Volumes ONTAP 소프트웨어 자체의 새로운 기능을 알아보려면 https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/index.html["Cloud Volumes ONTAP 릴리스 노트로 이동"^] .
 
@@ -24,11 +24,11 @@ NetApp 콘솔에서 Cloud Volumes ONTAP 관리의 새로운 기능을 알아보�
 
 
 
-=== BlueXP 는 이제 NetApp 콘솔입니다.
+=== BlueXP 는 이제 NetApp Console 입니다.
 
-강화되고 재구성된 BlueXP 기반을 기반으로 구축된 NetApp 콘솔은 엔터프라이즈급 온프레미스 및 클라우드 환경 전반에서 NetApp 스토리지와 NetApp 데이터 서비스를 중앙에서 관리하여 실시간 통찰력, 더 빠른 워크플로, 간소화된 관리를 제공하며, 높은 보안성과 규정 준수를 보장합니다.
+강화되고 재구성된 BlueXP 기반을 기반으로 구축된 NetApp Console 엔터프라이즈급 온프레미스 및 클라우드 환경에서 NetApp 스토리지와 NetApp Data Services 중앙에서 관리하여 실시간 통찰력, 더 빠른 워크플로, 간소화된 관리를 제공하며, 높은 보안성과 규정 준수를 보장합니다.
 
-변경된 사항에 대한 자세한 내용은 다음을 참조하세요. https://docs.netapp.com/us-en/bluexp-relnotes/index.html["NetApp 콘솔 릴리스 노트"^] .
+변경된 사항에 대한 자세한 내용은 다음을 참조하세요. https://docs.netapp.com/us-en/bluexp-relnotes/index.html["NetApp Console 릴리스 노트"^] .
 
 
 
@@ -273,7 +273,7 @@ link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-administer-ad
 
 이제 BlueXP digital wallet 내의 개선된 탐색 포인트를 사용하여 Cloud Volumes ONTAP 라이선스를 더욱 간편하게 관리할 수 있습니다.
 
-* *관리 > 라이선스 및 구독 > 개요/직접 라이선스* 탭을 통해 Cloud Volumes ONTAP 라이선스 정보에 쉽게 액세스할 수 있습니다.
+* *관리 > Licenses and subscriptions > 개요/직접 라이선스* 탭을 통해 Cloud Volumes ONTAP 라이선스 정보에 쉽게 액세스할 수 있습니다.
 * *개요* 탭의 Cloud Volume ONTAP 패널에서 *보기*를 클릭하면 용량 기반 라이선스에 대한 포괄적인 정보를 얻을 수 있습니다.  이 고급 보기는 라이선스와 구독에 대한 자세한 정보를 제공합니다.
 * 이전 인터페이스를 선호하는 경우 *레거시 보기로 전환* 버튼을 클릭하면 라이선스 유형별 세부 정보를 보고 라이선스에 대한 청구 방법을 수정할 수 있습니다.
 
@@ -414,7 +414,7 @@ WORM(Write Once Read Many) 및 ARP(Autonomous Ransomware Protection)의 내장�
 
 캐나다 서부 지역은 이제 AWS의 Cloud Volumes ONTAP 9.12.1 GA 이상에서 지원됩니다.
 
-모든 지역 목록을 보려면 다음을 참조하세요. https://bluexp.netapp.com/cloud-volumes-global-regions["AWS의 글로벌 리전 맵"^] .
+모든 지역 목록을 보려면 다음을 참조하세요. https://bluexp.netapp.com/cloud-volumes-global-regions["AWS의 글로벌 지역 맵"^] .
 
 
 
@@ -603,7 +603,7 @@ https://docs.netapp.com/us-en/cloud-volumes-ontap-9141-relnotes/["이번 Cloud V
 
 === 300 TiB FlexVol volume 최대 한도
 
-이제 Cloud Volumes ONTAP 9.12.1 P2 및 9.13.0 P2부터 System Manager와 ONTAP CLI를 사용하여 최대 300TiB 크기의 FlexVol volume 생성할 수 있으며, BlueXP 사용하여 Cloud Volumes ONTAP 9.13.1부터 생성할 수 있습니다.
+이제 Cloud Volumes ONTAP 9.12.1 P2 및 9.13.0 P2부터 System Manager와 ONTAP CLI를 사용하여 최대 300TiB 크기의 FlexVol volume 생성할 수 있으며, Cloud Volumes ONTAP 9.13.1부터 BlueXP 사용하여 생성할 수 있습니다.
 
 * https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-limits-aws.html#file-and-volume-limits["AWS의 저장 한도"]
 * https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-limits-azure.html#file-and-volume-limits["Azure의 저장소 한도"]
@@ -665,7 +665,7 @@ https://docs.netapp.com/us-en/cloud-volumes-ontap-9141-relnotes/["이번 Cloud V
 
 텔아비브 지역은 이제 AWS의 Cloud Volumes ONTAP 9.12.1 GA 이상에서 지원됩니다.
 
-모든 지역 목록은 다음을 참조하세요. https://bluexp.netapp.com/cloud-volumes-global-regions["AWS의 글로벌 리전 맵"^] .
+모든 지역 목록은 다음을 참조하세요. https://bluexp.netapp.com/cloud-volumes-global-regions["AWS의 글로벌 지역 맵"^] .
 
 
 
@@ -675,7 +675,7 @@ https://docs.netapp.com/us-en/cloud-volumes-ontap-9141-relnotes/["이번 Cloud V
 
 
 
-=== 사우디아라비아 지역이 이제 Google Cloud에서 지원됩니다.
+=== 사우디 아라비아 지역이 이제 Google Cloud에서 지원됩니다.
 
 사우디아라비아 지역은 이제 Google Cloud for Cloud Volumes ONTAP 및 Connector for Cloud Volumes ONTAP 9.12.1 GA 이상에서 지원됩니다.
 
@@ -729,7 +729,7 @@ https://docs.netapp.com/us-en/cloud-volumes-ontap-9140-relnotes/["이번 Cloud V
 
 === Azure에서 Lsv3 시리즈 VM 지원
 
-L48s_v3 및 L64s_v3 인스턴스 유형은 이제 Azure의 Cloud Volumes ONTAP 에서 지원되며, 단일 및 다중 가용성 영역에서 공유 관리 디스크를 사용하는 단일 노드 및 고가용성 쌍 배포가 가능합니다(9.13.1 릴리스부터). 이러한 인스턴스 유형은 Flash Cache를 지원합니다.
+L48s_v3 및 L64s_v3 인스턴스 유형은 이제 Azure의 Cloud Volumes ONTAP 에서 지원되며, 단일 및 다중 가용성 영역에서 공유 관리 디스크를 사용하는 단일 노드 및 고가용성 쌍 배포가 가능합니다(9.13.1 릴리스부터).  이러한 인스턴스 유형은 Flash Cache를 지원합니다.
 
 https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-azure.html["Azure에서 Cloud Volumes ONTAP 에 지원되는 구성 보기"^] https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-limits-azure.html["Azure에서 Cloud Volumes ONTAP 의 저장소 한도 보기"^]
 
@@ -743,7 +743,7 @@ Connector 3.9.32 릴리스에는 다음과 같은 변경 사항이 도입되었�
 
 === Google Cloud의 Flash Cache 및 고속 쓰기 지원
 
-Google Cloud의 Cloud Volumes ONTAP 9.13.1 이상에서는 Flash Cache와 고속 쓰기 속도를 별도로 활성화할 수 있습니다. 지원되는 모든 인스턴스 유형에서 높은 쓰기 속도를 사용할 수 있습니다. Flash Cache는 다음 인스턴스 유형에서 지원됩니다.
+Google Cloud의 Cloud Volumes ONTAP 9.13.1 이상에서는 Flash Cache와 고속 쓰기 속도를 별도로 활성화할 수 있습니다.  지원되는 모든 인스턴스 유형에서 높은 쓰기 속도를 사용할 수 있습니다.  Flash Cache는 다음 인스턴스 유형에서 지원됩니다.
 
 * n2-표준-16
 * n2-표준-32
@@ -759,7 +759,7 @@ https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-deploying-gcp.html
 
 === 사용 보고서 개선
 
-사용 보고서에 표시되는 정보에 다양한 개선 사항이 적용되었습니다. 사용 보고서의 개선 사항은 다음과 같습니다.
+사용 보고서에 표시되는 정보에 다양한 개선 사항이 적용되었습니다.  사용 보고서의 개선 사항은 다음과 같습니다.
 
 * 이제 TiB 단위가 열 이름에 포함됩니다.
 * 이제 일련 번호에 대한 새로운 "노드" 필드가 포함되었습니다.
@@ -863,7 +863,7 @@ Azure의 호주 동부 지역은 이제 Cloud Volumes ONTAP 9.12.1 GA 이상에 
 
 === 충전 사용량 내역
 
-이제 용량 기반 라이선스에 가입했을 때 요금이 얼마인지 알아볼 수 있습니다. 다음 유형의 사용 보고서는 BlueXP 의 디지털 지갑에서 다운로드할 수 있습니다. 사용 보고서는 구독의 용량 세부 정보를 제공하고 Cloud Volumes ONTAP 구독의 리소스에 대한 요금이 어떻게 청구되는지 알려줍니다. 다운로드 가능한 보고서는 다른 사람들과 쉽게 공유할 수 있습니다.
+이제 용량 기반 라이선스에 가입했을 때 요금이 얼마인지 알아볼 수 있습니다.  다음 유형의 사용 보고서는 BlueXP 의 디지털 지갑에서 다운로드할 수 있습니다.  사용 보고서는 구독의 용량 세부 정보를 제공하고 Cloud Volumes ONTAP 구독의 리소스에 대한 요금이 어떻게 청구되는지 알려줍니다.  다운로드 가능한 보고서는 다른 사람들과 쉽게 공유할 수 있습니다.
 
 * Cloud Volumes ONTAP 패키지 사용
 * 높은 수준의 사용법
@@ -993,7 +993,7 @@ https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-encrypting-volumes
 
 === 인터넷이 없는 환경 지원
 
-Cloud Volumes ONTAP 은 이제 인터넷으로부터 완전히 격리된 모든 클라우드 환경에서 지원됩니다.  이러한 환경에서는 노드 기반 라이선싱(BYOL)만 지원됩니다.  용량 기반 라이선싱은 지원되지 않습니다.  시작하려면 Connector 소프트웨어를 수동으로 설치하고, Connector에서 실행 중인 BlueXP 콘솔에 로그인하고, BYOL 라이선스를 BlueXP digital wallet 에 추가한 다음 Cloud Volumes ONTAP 배포합니다.
+Cloud Volumes ONTAP 은 이제 인터넷에서 완전히 격리된 모든 클라우드 환경에서 지원됩니다.  이러한 환경에서는 노드 기반 라이선싱(BYOL)만 지원됩니다.  용량 기반 라이선싱은 지원되지 않습니다.  시작하려면 Connector 소프트웨어를 수동으로 설치하고, Connector에서 실행 중인 BlueXP 콘솔에 로그인하고, BYOL 라이선스를 BlueXP digital wallet 에 추가한 다음 Cloud Volumes ONTAP 배포합니다.
 
 * https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-private-mode.html["인터넷 접속이 불가능한 위치에 커넥터를 설치하세요"^]
 * https://docs.netapp.com/us-en/bluexp-setup-admin/task-logging-in.html["커넥터에서 BlueXP 콘솔에 액세스하세요"^]
@@ -1215,7 +1215,7 @@ AutoSupport 시스템 상태를 사전에 모니터링하고 NetApp 기술 지�
 
 === 충전 방식 변경
 
-이제 용량 기반 라이선싱을 사용하는 Cloud Volumes ONTAP 시스템의 요금 청구 방법을 변경할 수 있습니다. 예를 들어, Essentials 패키지로 Cloud Volumes ONTAP 시스템을 배포한 경우 비즈니스 요구 사항이 변경되면 Professional 패키지로 변경할 수 있습니다. 이 기능은 디지털 지갑에서 사용할 수 있습니다.
+이제 용량 기반 라이선싱을 사용하는 Cloud Volumes ONTAP 시스템의 요금 청구 방법을 변경할 수 있습니다.  예를 들어, Essentials 패키지로 Cloud Volumes ONTAP 시스템을 배포한 경우 비즈니스 요구 사항이 변경되면 Professional 패키지로 변경할 수 있습니다.  이 기능은 디지털 지갑에서 사용할 수 있습니다.
 
 https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-manage-capacity-licenses.html["충전 방법을 변경하는 방법을 알아보세요"] .
 
@@ -1253,9 +1253,9 @@ Connector 3.9.20 릴리스에는 다음과 같은 변경 사항이 도입되었�
 
 === 디지털 지갑
 
-이제 디지털 지갑에서 계정의 총 소비 용량과 라이선스 패키지별 소비 용량을 확인할 수 있습니다. 이를 통해 요금이 어떻게 청구되는지, 추가 용량을 구매해야 하는지 파악하는 데 도움이 됩니다.
+이제 디지털 지갑에서 계정의 총 소비 용량과 라이선스 패키지별 소비 용량을 확인할 수 있습니다.  이를 통해 요금이 어떻게 청구되는지, 추가 용량을 구매해야 하는지 파악하는 데 도움이 됩니다.
 
-image:https://raw.githubusercontent.com/NetAppDocs/bluexp-cloud-volumes-ontap/main/media/screenshot-digital-wallet-summary.png["용량 기반 라이선스에 대한 디지털 지갑 페이지를 보여주는 스크린샷입니다. 이 페이지에서는 계정에서 사용된 용량에 대한 개요를 제공하고, 라이선스 패키지별로 사용된 용량을 세부적으로 보여줍니다."]
+image:https://raw.githubusercontent.com/NetAppDocs/bluexp-cloud-volumes-ontap/main/media/screenshot-digital-wallet-summary.png["용량 기반 라이선스에 대한 디지털 지갑 페이지를 보여주는 스크린샷입니다.  이 페이지에서는 계정에서 사용된 용량에 대한 개요를 제공하고, 라이선스 패키지별로 사용된 용량을 세부적으로 보여줍니다."]
 
 
 
@@ -1705,8 +1705,8 @@ Connector 3.9.8 릴리스에는 다음과 같은 변경 사항이 도입되었�
 
 Cloud Volumes ONTAP 에 대한 새로운 요금 청구 방법을 사용할 수 있습니다.
 
-* *용량 기반 BYOL*: 용량 기반 라이선스를 사용하면 TiB 용량당 Cloud Volumes ONTAP 비용을 지불할 수 있습니다.  라이선스는 NetApp 계정과 연결되며 라이선스를 통해 충분한 용량을 사용할 수 있는 한 여러 개의 Cloud Volumes ONTAP 시스템을 만들 수 있습니다.  용량 기반 라이선싱은 _Essentials_ 또는 _Professional_ 패키지 형태로 제공됩니다.
-* *프리미엄 제공*: 프리미엄을 이용하면 NetApp 에서 모든 Cloud Volumes ONTAP 기능을 무료로 사용할 수 있습니다(클라우드 공급자 요금은 여전히 ​​부과됩니다).  시스템당 프로비저닝 용량은 500GiB로 제한되며 지원 계약은 없습니다.  최대 10개의 프리미엄 시스템을 가질 수 있습니다.
+* *용량 기반 BYOL*: 용량 기반 라이선스를 사용하면 TiB 용량당 Cloud Volumes ONTAP 에 대한 비용을 지불할 수 있습니다.  라이선스는 NetApp 계정과 연결되며 라이선스를 통해 충분한 용량을 사용할 수 있는 한 여러 개의 Cloud Volumes ONTAP 시스템을 만들 수 있습니다.  용량 기반 라이선싱은 _Essentials_ 또는 _Professional_ 패키지 형태로 제공됩니다.
+* *프리미엄 제공*: 프리미엄을 이용하면 NetApp 에서 모든 Cloud Volumes ONTAP 기능을 무료로 사용할 수 있습니다(클라우드 공급자 요금은 여전히 ​​적용됩니다).  시스템당 프로비저닝 용량은 500GiB로 제한되며 지원 계약은 없습니다.  최대 10개의 프리미엄 시스템을 가질 수 있습니다.
 +
 https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-licensing.html["이러한 라이선싱 옵션에 대해 자세히 알아보세요"] .
 
@@ -1960,7 +1960,7 @@ AWS Outpost가 있는 경우 작업 환경 마법사에서 Outpost VPC를 선택
 
 === 지원되는 Azure 지역의 Ultra SSD VNVRAM
 
-이제 Cloud Volumes ONTAP 단일 노드 시스템에서 E32s_v3 VM 유형을 사용할 때 Ultra SSD를 VNVRAM으로 사용할 수 있습니다. https://docs.microsoft.com/en-us/azure/virtual-machines/disks-enable-ultra-ssd["지원되는 모든 Azure 지역에서"^] .
+이제 단일 노드 시스템에서 E32s_v3 VM 유형을 사용할 때 Cloud Volumes ONTAP Ultra SSD를 VNVRAM으로 사용할 수 있습니다. https://docs.microsoft.com/en-us/azure/virtual-machines/disks-enable-ultra-ssd["지원되는 모든 Azure 지역에서"^] .
 
 VNVRAM은 더 나은 쓰기 성능을 제공합니다.
 

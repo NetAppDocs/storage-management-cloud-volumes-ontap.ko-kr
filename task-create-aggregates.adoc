@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: task-create-aggregates.html 
 keywords: storage, provisioning, aggregates, provision, create, advanced allocation, creating aggregates, adding an aggregate, add an aggregate, create an aggregate 
-summary: 직접 집계를 만들 수도 있고 NetApp 콘솔에서 볼륨을 생성할 때 집계를 대신 만들어 줄 수도 있습니다.  집계를 직접 만드는 이점은 기본 디스크 크기를 선택할 수 있다는 점입니다. 즉, 필요한 용량이나 성능에 맞게 집계 크기를 조정할 수 있습니다. 
+summary: 직접 집계를 만들 수도 있고 NetApp Console 볼륨을 생성할 때 집계를 대신 만들어 줄 수도 있습니다.  집계를 직접 만드는 이점은 기본 디스크 크기를 선택할 수 있다는 점입니다. 즉, 필요한 용량이나 성능에 맞게 집계 크기를 조정할 수 있습니다. 
 ---
 = Cloud Volumes ONTAP 시스템에 대한 집계를 만듭니다.
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: 직접 집계를 만들 수도 있고 NetApp 콘솔에서 볼륨을 생
 
 
 [role="lead"]
-직접 집계를 만들 수도 있고 NetApp 콘솔에서 볼륨을 생성할 때 집계를 대신 만들어 줄 수도 있습니다.  집계를 직접 만드는 이점은 기본 디스크 크기를 선택할 수 있다는 점입니다. 즉, 필요한 용량이나 성능에 맞게 집계 크기를 조정할 수 있습니다.
+직접 집계를 만들 수도 있고 NetApp Console 볼륨을 생성할 때 집계를 대신 만들어 줄 수도 있습니다.  집계를 직접 만드는 이점은 기본 디스크 크기를 선택할 수 있다는 점입니다. 즉, 필요한 용량이나 성능에 맞게 집계 크기를 조정할 수 있습니다.
 
 
 CAUTION: 모든 디스크와 집계는 콘솔에서 직접 만들고 삭제해야 합니다. 다른 관리 도구에서는 이러한 작업을 수행해서는 안 됩니다. 그렇게 하면 시스템 안정성에 영향을 미치고, 나중에 디스크를 추가하는 기능을 방해할 수 있으며, 잠재적으로 중복된 클라우드 공급자 수수료가 발생할 수 있습니다.

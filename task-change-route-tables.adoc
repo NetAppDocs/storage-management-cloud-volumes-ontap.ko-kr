@@ -23,4 +23,4 @@ summary: 여러 AWS 가용성 영역에 배포된 HA 쌍에 대한 플로팅 IP 
 
 
 .결과
-NetApp 콘솔은 AWS 요청을 보내 경로 테이블을 수정합니다.
+NetApp Console AWS 요청을 보내 경로 테이블을 수정합니다.

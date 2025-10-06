@@ -24,7 +24,7 @@ Cloud Volumes ONTAP 에서 사용할 라이선싱 옵션을 결정한 후에는 
 
 .단계
 . 왼쪽 탐색 메뉴에서 *저장소 > 관리*를 선택합니다.
-. *시스템* 페이지에서 *시스템 추가*를 클릭하고 NetApp 콘솔의 단계를 따릅니다.
+. *시스템* 페이지에서 *시스템 추가*를 클릭하고 NetApp Console 의 단계를 따릅니다.
 +
 .. *세부 정보 및 자격 증명* 페이지에서 *자격 증명 편집 > 구독 추가*를 클릭한 다음, 메시지에 따라 Google Cloud Marketplace에서 사용량에 따라 지불하는 서비스를 구독하세요.
 +
@@ -68,7 +68,7 @@ NOTE: NetApp BYOL 라이선스 구매, 연장 및 갱신을 제한하고 있습�
 
 .단계
 . https://bluexp.netapp.com/contact-cds["라이센스를 얻으려면 NetApp Sales에 문의하세요."^]
-. https://docs.netapp.com/us-en/bluexp-setup-admin/task-adding-nss-accounts.html#add-an-nss-account["NetApp 콘솔에 NetApp 지원 사이트 계정 추가"^]
+. https://docs.netapp.com/us-en/bluexp-setup-admin/task-adding-nss-accounts.html#add-an-nss-account["NetApp Console 에 NetApp 지원 사이트 계정 추가"^]
 +
 콘솔은 NetApp 지원 사이트 계정과 연결된 라이선스에 대한 세부 정보를 얻기 위해 NetApp 라이선스 서비스에 자동으로 쿼리를 보냅니다.  오류가 없으면 콘솔이 라이선스를 추가합니다.
 
@@ -129,7 +129,7 @@ TIP: 설정 > 사용자 인증 정보 페이지에서 계정과 연결된 Google
 해당 계약은 Google Cloud Marketplace에서 _비공개_ 제안으로 제공됩니다.
 
 +
-NetApp 에서 비공개 제안을 공유한 후, 시스템을 생성하는 동안 Google Cloud Marketplace에서 구독할 때 연간 플랜을 선택할 수 있습니다.
+NetApp 에서 비공개 제안을 공유한 후, 시스템을 생성하는 동안 Google Cloud Marketplace에서 구독할 때 연간 요금제를 선택할 수 있습니다.
 
 . *시스템* 페이지에서 *시스템 추가*를 클릭하고 단계를 따르세요.
 +

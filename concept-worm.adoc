@@ -40,7 +40,7 @@ Cloud Volumes ONTAP 9.10.1부터 볼륨 수준에서 WORM을 활성화하거나 
 
 Cloud Volumes ONTAP 시스템을 추가하면 WORM 스토리지를 활성화하거나 비활성화하라는 메시지가 표시됩니다.
 
-* 시스템을 추가할 때 WORM 스토리지를 활성화하면 NetApp 콘솔에서 생성하는 모든 볼륨에 WORM이 활성화됩니다.  하지만 ONTAP 시스템 관리자나 ONTAP CLI를 사용하면 WORM이 비활성화된 볼륨을 생성할 수 있습니다.
+* 시스템을 추가할 때 WORM 스토리지를 활성화하면 NetApp Console 에서 생성하는 모든 볼륨에 WORM이 활성화됩니다.  하지만 ONTAP 시스템 관리자나 ONTAP CLI를 사용하면 WORM이 비활성화된 볼륨을 생성할 수 있습니다.
 * 시스템을 추가할 때 WORM 저장소를 비활성화하면 콘솔, ONTAP 시스템 관리자 또는 ONTAP CLI에서 생성하는 모든 볼륨에서 WORM이 비활성화됩니다.
 
 

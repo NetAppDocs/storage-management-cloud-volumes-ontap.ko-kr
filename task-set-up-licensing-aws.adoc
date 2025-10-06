@@ -23,10 +23,10 @@ Cloud Volumes ONTAP 에서 사용할 라이선싱 옵션을 결정한 후에는 
 최대 500GiB의 프로비저닝 용량을 제공하는 Cloud Volumes ONTAP 무료로 사용하려면 Freemium 옵션을 선택하세요. link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-licensing.html#free-trials["Freemium 제공에 대해 자세히 알아보세요"^] .
 
 .단계
-. NetApp 콘솔의 왼쪽 탐색 메뉴에서 *스토리지 > 관리*를 선택합니다.
+. NetApp Console 의 왼쪽 탐색 메뉴에서 *스토리지 > 관리*를 선택합니다.
 . *시스템* 페이지에서 *시스템 추가*를 클릭하고 단계를 따르세요.
 +
-.. *세부 정보 및 자격 증명* 페이지에서 *자격 증명 편집 > 구독 추가*를 클릭한 다음, 화면의 지시에 따라 AWS Marketplace에서 사용량에 따라 지불하는 서비스를 구독하세요.
+.. *세부 정보 및 자격 증명* 페이지에서 *자격 증명 편집 > 구독 추가*를 클릭한 다음, 메시지에 따라 AWS Marketplace에서 사용량에 따라 지불하는 서비스를 구독하세요.
 +
 프로비저닝된 용량이 500GiB를 초과하지 않는 한 마켓플레이스 구독을 통해 요금이 청구되지 않습니다. 초과 시 시스템은 자동으로 다음 용량으로 변환됩니다.link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-licensing.html#packages["필수 패키지"^] .
 
@@ -79,7 +79,7 @@ Cloud Volumes ONTAP 에서 라이선스를 사용하려면 먼저 콘솔에서 �
 
 . 콘솔의 *시스템* 페이지에서 *시스템 추가*를 클릭하고 단계를 따르세요.
 +
-.. *세부 정보 및 자격 증명* 페이지에서 *자격 증명 편집 > 구독 추가*를 클릭한 다음, 화면의 지시에 따라 AWS Marketplace에서 사용량에 따라 지불하는 서비스를 구독하세요.
+.. *세부 정보 및 자격 증명* 페이지에서 *자격 증명 편집 > 구독 추가*를 클릭한 다음, 메시지에 따라 AWS Marketplace에서 사용량에 따라 지불하는 서비스를 구독하세요.
 +
 NetApp 에서 구매한 라이선스는 항상 먼저 청구되지만, 라이선스 용량을 초과하거나 라이선스 기간이 만료되면 마켓플레이스의 시간당 요금으로 청구됩니다.
 

@@ -26,7 +26,7 @@ summary: 스토리지 VM은 ONTAP 내에서 실행되는 가상 머신으로, �
 
 == 여러 스토리지 VM으로 작업
 
-NetApp 콘솔은 ONTAP System Manager나 ONTAP CLI에서 생성하는 모든 추가 스토리지 VM을 지원합니다.
+NetApp Console ONTAP System Manager나 ONTAP CLI에서 생성하는 모든 추가 스토리지 VM을 지원합니다.
 
 예를 들어, 다음 이미지는 볼륨을 생성할 때 스토리지 VM을 선택하는 방법을 보여줍니다.
 

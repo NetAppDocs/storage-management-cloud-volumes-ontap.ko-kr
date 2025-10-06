@@ -30,7 +30,7 @@ image:diagram-aws-vpc-sharing.png["공유 VPC에 Cloud Volumes ONTAP HA를 배�
 
 아래 단계에 설명된 대로 참여자 계정과 서브넷을 공유한 다음 VPC 소유자 계정에서 IAM 역할과 보안 그룹을 만들어야 합니다.
 
-Cloud Volumes ONTAP 시스템을 생성하면 NetApp 콘솔에서 자동으로 IAM 역할을 생성하여 중재자에 연결합니다.  이 역할은 HA 쌍과 관련된 경로 테이블을 변경하기 위해 VPC 소유자 계정에서 생성한 IAM 역할을 수행합니다.
+Cloud Volumes ONTAP 시스템을 생성하면 NetApp Console 자동으로 IAM 역할을 생성하여 중재자에 연결합니다.  이 역할은 HA 쌍과 관련된 경로 테이블을 변경하기 위해 VPC 소유자 계정에서 생성한 IAM 역할을 수행합니다.
 
 .단계
 . VPC 소유자 계정의 서브넷을 참여자 계정과 공유합니다.

@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: task-deleting-system.html 
 keywords: terminate, delete, system, remove, terminate system, terminate instance, delete cloud volumes ontap, delete instance, delete system, delete backups, cloud backup, cloud data sense 
-summary: 클라우드 공급자의 콘솔이 아닌, 항상 Cloud Volumes ONTAP 시스템을 삭제해야 합니다.  예를 들어, 클라우드 공급자로부터 라이선스가 부여된 Cloud Volumes ONTAP 인스턴스를 종료하는 경우 다른 인스턴스에 해당 라이선스 키를 사용할 수 없습니다.  라이센스를 해제하려면 시스템을 삭제해야 합니다. 
+summary: 클라우드 공급자의 콘솔에서 삭제하는 것보다는 항상 Cloud Volumes ONTAP 시스템을 직접 삭제해야 합니다.  예를 들어, 클라우드 공급자로부터 라이선스가 부여된 Cloud Volumes ONTAP 인스턴스를 종료하는 경우 다른 인스턴스에 해당 라이선스 키를 사용할 수 없습니다.  라이센스를 해제하려면 시스템을 삭제해야 합니다. 
 ---
-= NetApp 콘솔에서 Cloud Volumes ONTAP 시스템 삭제
+= NetApp Console 에서 Cloud Volumes ONTAP 시스템 삭제
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,12 +14,12 @@ summary: 클라우드 공급자의 콘솔이 아닌, 항상 Cloud Volumes ONTAP 
 
 
 [role="lead"]
-클라우드 공급업체의 애플리케이션이 아닌 NetApp 콘솔에서 Cloud Volumes ONTAP 시스템을 항상 삭제해야 합니다.  예를 들어, 클라우드 공급자로부터 라이선스가 부여된 Cloud Volumes ONTAP 인스턴스를 종료하는 경우 다른 인스턴스에 해당 라이선스 키를 사용할 수 없습니다.  라이선스를 해제하려면 콘솔에서 Cloud Volumes ONTAP 시스템을 삭제해야 합니다.
+클라우드 공급업체의 애플리케이션이 아닌 NetApp Console 에서 Cloud Volumes ONTAP 시스템을 항상 삭제해야 합니다.  예를 들어, 클라우드 공급자로부터 라이선스가 부여된 Cloud Volumes ONTAP 인스턴스를 종료하는 경우 다른 인스턴스에 해당 라이선스 키를 사용할 수 없습니다.  라이선스를 해제하려면 콘솔에서 Cloud Volumes ONTAP 시스템을 삭제해야 합니다.
 
 시스템을 삭제하면 콘솔에서 Cloud Volumes ONTAP 인스턴스를 종료하고 디스크와 스냅샷을 삭제합니다.
 
 
-NOTE: NetApp Backup and Recovery에서 관리하는 백업이나 NetApp Data Classification의 인스턴스와 같은 기타 리소스는 시스템을 삭제해도 삭제되지 않습니다. 수동으로 삭제해야 합니다. 그렇지 않으면 이러한 리소스에 대한 요금이 계속 부과됩니다.
+NOTE: NetApp Backup and Recovery 에서 관리하는 백업과 NetApp Data Classification 의 인스턴스와 같은 기타 리소스는 시스템을 삭제해도 삭제되지 않습니다. 수동으로 삭제해야 합니다. 그렇지 않으면 이러한 리소스에 대한 요금이 계속 부과됩니다.
 
 콘솔이 클라우드 공급자에 Cloud Volumes ONTAP 배포하면 인스턴스에 대한 종료 보호가 활성화됩니다.  이 옵션은 실수로 종료되는 것을 방지하는 데 도움이 됩니다.
 

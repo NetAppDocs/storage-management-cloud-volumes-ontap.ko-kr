@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: concept-write-speed.html 
 keywords: write speed, high write speed, normal write speed, nvfail, writing speed, ldm, low durability mode 
-summary: NetApp 콘솔을 사용하면 Cloud Volumes ONTAP 에 대해 일반 또는 높은 쓰기 속도를 선택할 수 있습니다.  쓰기 속도를 선택하기 전에 일반 설정과 높은 설정의 차이점, 높은 쓰기 속도를 사용할 때의 위험과 권장 사항을 이해해야 합니다. 
+summary: NetApp Console 사용하면 Cloud Volumes ONTAP 에 대해 일반 또는 높은 쓰기 속도를 선택할 수 있습니다.  쓰기 속도를 선택하기 전에 일반 설정과 높은 설정의 차이점, 높은 쓰기 속도를 사용할 때의 위험과 권장 사항을 이해해야 합니다. 
 ---
 = 쓰기 속도
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: NetApp 콘솔을 사용하면 Cloud Volumes ONTAP 에 대해 일반 또
 
 
 [role="lead"]
-NetApp 콘솔을 사용하면 대부분의 Cloud Volumes ONTAP 구성에 대해 일반 또는 높은 쓰기 속도를 선택할 수 있습니다.  쓰기 속도를 선택하기 전에 일반 설정과 높은 설정의 차이점, 높은 쓰기 속도를 사용할 때의 위험과 권장 사항을 이해해야 합니다.
+NetApp Console 사용하면 대부분의 Cloud Volumes ONTAP 구성에 대해 일반 또는 높은 쓰기 속도를 선택할 수 있습니다.  쓰기 속도를 선택하기 전에 일반 설정과 높은 설정의 차이점, 높은 쓰기 속도를 사용할 때의 위험과 권장 사항을 이해해야 합니다.
 
 
 

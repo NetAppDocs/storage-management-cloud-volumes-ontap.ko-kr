@@ -14,7 +14,7 @@ summary: 랜섬웨어 공격은 기업의 시간, 리소스, 평판을 앗아갈
 
 
 [role="lead"]
-랜섬웨어 공격은 기업의 시간, 자원, 평판을 앗아갈 수 있습니다.  NetApp 콘솔을 사용하면 랜섬웨어에 대한 두 가지 NetApp 솔루션, 즉 일반적인 랜섬웨어 파일 확장자로부터의 보호 및 자율 랜섬웨어 보호(ARP)를 구현할 수 있습니다.  이러한 솔루션은 가시성, 탐지 및 복구를 위한 효과적인 도구를 제공합니다.
+랜섬웨어 공격은 기업의 시간, 자원, 평판을 앗아갈 수 있습니다.  NetApp Console 사용하면 랜섬웨어에 대한 두 가지 NetApp 솔루션, 즉 일반적인 랜섬웨어 파일 확장자로부터의 보호 및 자율 랜섬웨어 보호(ARP)를 구현할 수 있습니다.  이러한 솔루션은 가시성, 탐지 및 복구를 위한 효과적인 도구를 제공합니다.
 
 
 
@@ -42,7 +42,7 @@ NetApp Snapshot 기술은 랜섬웨어 치료를 위한 업계 최고의 솔루�
 기본 FPolicy 범위는 다음 확장자를 가진 파일을 차단합니다.
 
 +
-마이크로, 암호화된, 잠긴, 크립토, crypt, crinf, r5a, XRNT, XTBL, R16M01D05, pzdc, 좋은, LOL!, OMG!, RDM, RRK, encryptedRS, crjoker, EnCiPhErEd, LeChiffre
+마이크로, 암호화된, 잠긴, 크립토, 크립토, crinf, r5a, XRNT, XTBL, R16M01D05, pzdc, 좋은, LOL!, OMG!, RDM, RRK, encryptedRS, crjoker, EnCiPhErEd, LeChiffre
 
 +
 

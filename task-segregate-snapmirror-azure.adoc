@@ -20,7 +20,7 @@ Azure의 Cloud Volumes ONTAP 사용하면 SnapMirror 복제 트래픽을 데이�
 
 == Azure의 SnapMirror 트래픽 분리에 관하여
 
-기본적으로 NetApp 콘솔은 동일한 서브넷의 Cloud Volumes ONTAP 배포에 있는 모든 NIC와 LIF를 구성합니다.  이러한 구성에서는 SnapMirror 복제 트래픽과 데이터 및 관리 트래픽이 동일한 서브넷을 사용합니다.  SnapMirror 트래픽을 분리하면 데이터 및 관리 트래픽에 사용되는 기존 서브넷으로 라우팅할 수 없는 추가 서브넷을 활용할 수 있습니다.
+기본적으로 NetApp Console 동일한 서브넷의 Cloud Volumes ONTAP 배포에 있는 모든 NIC와 LIF를 구성합니다.  이러한 구성에서는 SnapMirror 복제 트래픽과 데이터 및 관리 트래픽이 동일한 서브넷을 사용합니다.  SnapMirror 트래픽을 분리하면 데이터 및 관리 트래픽에 사용되는 기존 서브넷으로 라우팅할 수 없는 추가 서브넷을 활용할 수 있습니다.
 
 .그림 1
 다음 다이어그램은 단일 노드 배포에서 추가 NIC, 연관된 클러스터 간 LIF 및 라우팅 불가능한 서브넷을 사용하여 SnapMirror 복제 트래픽을 분리하는 방식을 보여줍니다.  HA 쌍 배포는 약간 다릅니다.

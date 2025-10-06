@@ -4,7 +4,7 @@ permalink: task-removing.html
 keywords: systems, removing, remove, rediscover 
 summary: Cloud Volumes ONTAP 시스템을 제거하여 다른 시스템으로 이동하거나 검색 문제를 해결할 수 있습니다. 
 ---
-= NetApp 콘솔에서 Cloud Volumes ONTAP 시스템 제거
+= NetApp Console 에서 Cloud Volumes ONTAP 시스템 제거
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -17,7 +17,7 @@ summary: Cloud Volumes ONTAP 시스템을 제거하여 다른 시스템으로 �
 Cloud Volumes ONTAP 시스템을 제거하여 다른 시스템으로 이동하거나 검색 문제를 해결할 수 있습니다.
 
 .이 작업에 관하여
-Cloud Volumes ONTAP 시스템을 제거하면 NetApp 콘솔에서도 제거됩니다.  Cloud Volumes ONTAP 시스템은 삭제되지 않습니다.  나중에 필요할 경우 시스템을 다시 검색할 수 있습니다.
+Cloud Volumes ONTAP 시스템을 제거하면 NetApp Console 에서도 제거됩니다.  Cloud Volumes ONTAP 시스템은 삭제되지 않습니다.  나중에 필요할 경우 시스템을 다시 검색할 수 있습니다.
 
 .단계
 . *시스템* 페이지에서 제거하려는 시스템을 두 번 클릭합니다.

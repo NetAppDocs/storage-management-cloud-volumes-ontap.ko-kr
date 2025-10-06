@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: task-overriding-cifs-locks.html 
 keywords: CIFS locks, azure maintenance, maintenance events, cifs sessions, storage failover, storage giveback, giveback 
-summary: 조직 또는 계정 관리자는 NetApp 콘솔에서 Azure 유지 관리 이벤트 중에 Cloud Volumes ONTAP 저장소 반환 문제를 방지하는 설정을 활성화할 수 있습니다.  이 설정을 활성화하면 Cloud Volumes ONTAP CIFS 잠금을 거부하고 활성 CIFS 세션을 재설정합니다. 
+summary: 조직 또는 계정 관리자는 NetApp Console 에서 Azure 유지 관리 이벤트 중에 Cloud Volumes ONTAP 저장소 반환 문제를 방지하는 설정을 활성화할 수 있습니다.  이 설정을 활성화하면 Cloud Volumes ONTAP CIFS 잠금을 거부하고 활성 CIFS 세션을 재설정합니다. 
 ---
 = Azure에서 Cloud Volumes ONTAP HA 쌍에 대한 CIFS 잠금 재정의
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: 조직 또는 계정 관리자는 NetApp 콘솔에서 Azure 유지 관�
 
 
 [role="lead"]
-조직 또는 계정 관리자는 NetApp 콘솔에서 Azure 유지 관리 이벤트 중에 Cloud Volumes ONTAP 저장소 반환 문제를 방지하는 설정을 활성화할 수 있습니다.  이 설정을 활성화하면 Cloud Volumes ONTAP CIFS 잠금을 거부하고 활성 CIFS 세션을 재설정합니다.
+조직 또는 계정 관리자는 NetApp Console 에서 Azure 유지 관리 이벤트 중에 Cloud Volumes ONTAP 저장소 반환 문제를 방지하는 설정을 활성화할 수 있습니다.  이 설정을 활성화하면 Cloud Volumes ONTAP CIFS 잠금을 거부하고 활성 CIFS 세션을 재설정합니다.
 
 .이 작업에 관하여
 Microsoft Azure는 가상 머신에 대한 정기적인 유지 관리 이벤트를 예약합니다.  Cloud Volumes ONTAP HA 쌍에서 유지 관리 이벤트가 발생하면 HA 쌍이 스토리지 인수를 시작합니다.  이 유지 관리 이벤트 중에 활성 CIFS 세션이 있는 경우 CIFS 파일에 대한 잠금으로 인해 저장소 반환이 방해받을 수 있습니다.

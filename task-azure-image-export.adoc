@@ -41,7 +41,7 @@ VHD 이미지가 Azure 클라우드에 게시되면 더 이상 NetApp 에서 관
 az account list-locations -o table
 ----
 +
-이 표에서는 지역 이름이 나타납니다. `Name` 필드.
+이 표에서는 지역 이름이 다음과 같이 나타납니다. `Name` 필드.
 
 +
 [source, cli]
@@ -69,7 +69,7 @@ South Central US          southcentralus       (US) South Central US
 | 9.17.1 이상 | Azure 마켓플레이스 | ontap_cloud_direct_gen2 
 
 
-| 9.17.1 이상 | NetApp 콘솔 | ontap_cloud_gen2 
+| 9.17.1 이상 | NetApp Console | ontap_cloud_gen2 
 
 
 | 9.16.1 | Azure 마켓플레이스 | 온탭_클라우드_다이렉트 

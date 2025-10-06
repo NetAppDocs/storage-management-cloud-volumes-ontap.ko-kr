@@ -14,7 +14,7 @@ summary: Cloud Volumes ONTAP 의 고급 관리를 수행해야 하는 경우 ONT
 
 
 [role="lead"]
-Cloud Volumes ONTAP 의 고급 스토리지 관리 기능은 ONTAP 시스템과 함께 제공되는 관리 인터페이스인 ONTAP System Manager를 통해 제공됩니다. NetApp 콘솔에서 직접 System Manager에 액세스할 수 있습니다.
+Cloud Volumes ONTAP 의 고급 스토리지 관리 기능은 ONTAP 시스템과 함께 제공되는 관리 인터페이스인 ONTAP System Manager를 통해 제공됩니다. NetApp Console 에서 직접 System Manager에 액세스할 수 있습니다.
 
 
 
@@ -46,7 +46,7 @@ Cloud Volumes ONTAP 의 고급 스토리지 관리 기능은 ONTAP 시스템과 
 
 System Manager 인터페이스에 나타나는 몇 가지 기능은 Cloud Volumes ONTAP 에서 지원되지 않습니다.
 
-* NetApp 클라우드 계층화: Cloud Volumes ONTAP 클라우드 계층화를 지원하지 않습니다.  볼륨을 생성할 때 표준 보기에서 직접 개체 스토리지에 대한 데이터 계층화를 설정해야 합니다.
+* NetApp Cloud Tiering: Cloud Volumes ONTAP 클라우드 계층화를 지원하지 않습니다.  볼륨을 생성할 때 표준 보기에서 직접 개체 스토리지에 대한 데이터 계층화를 설정해야 합니다.
 * 계층: System Manager에서는 집계 관리(로컬 계층 및 클라우드 계층 포함)가 지원되지 않습니다. 표준 보기에서 직접 집계를 관리해야 합니다.
 * 펌웨어 업그레이드: Cloud Volumes ONTAP 시스템 관리자의 *클러스터 > 설정* 페이지에서 자동 펌웨어 업데이트를 지원하지 않습니다.
 * 역할 기반 액세스 제어: System Manager의 역할 기반 액세스 제어는 지원되지 않습니다.

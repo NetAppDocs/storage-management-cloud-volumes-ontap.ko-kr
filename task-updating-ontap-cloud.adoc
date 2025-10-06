@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: task-updating-ontap-cloud.html 
 keywords: update, updating, upgrading, upgrade, software, downgrade, downgrading, FTP, HTTP, mediator, local image, revert, reverting, downgrading, cloud backup 
-summary: NetApp 콘솔에서 Cloud Volumes ONTAP 업그레이드하여 최신 새 기능과 향상된 기능을 활용하세요.  소프트웨어를 업그레이드하기 전에 Cloud Volumes ONTAP 시스템을 준비해야 합니다. 
+summary: NetApp Console 에서 Cloud Volumes ONTAP 업그레이드하여 최신 새 기능과 향상된 기능을 활용하세요.  소프트웨어를 업그레이드하기 전에 Cloud Volumes ONTAP 시스템을 준비해야 합니다. 
 ---
 = Cloud Volumes ONTAP 소프트웨어 업그레이드
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: NetApp 콘솔에서 Cloud Volumes ONTAP 업그레이드하여 최신 �
 
 
 [role="lead"]
-NetApp 콘솔에서 Cloud Volumes ONTAP 업그레이드하여 최신 새 기능과 향상된 기능을 활용하세요.  소프트웨어를 업그레이드하기 전에 Cloud Volumes ONTAP 시스템을 준비해야 합니다.
+NetApp Console 에서 Cloud Volumes ONTAP 업그레이드하여 최신 새 기능과 향상된 기능을 활용하세요.  소프트웨어를 업그레이드하기 전에 Cloud Volumes ONTAP 시스템을 준비해야 합니다.
 
 
 
@@ -178,7 +178,7 @@ Cloud Volumes ONTAP 이전 릴리스로 되돌리거나 다운그레이드하는
 
 === 지원 등록
 
-이 페이지에 설명된 방법을 사용하여 소프트웨어를 업그레이드하려면 Cloud Volumes ONTAP NetApp 지원팀에 등록해야 합니다.  이는 사용량에 따른 요금 지불(PAYGO)과 자체 라이선스 사용(BYOL) 모두에 적용됩니다.  당신은 필요합니다link:task-registering.html["PAYGO 시스템 수동 등록"] BYOL 시스템은 기본적으로 등록됩니다.
+이 페이지에 설명된 방법을 사용하여 소프트웨어를 업그레이드하려면 Cloud Volumes ONTAP NetApp 지원팀에 등록해야 합니다.  이는 종량제(PAYGO)와 자체 라이선스 사용(BYOL) 모두에 적용됩니다.  당신은 필요합니다link:task-registering.html["PAYGO 시스템 수동 등록"] BYOL 시스템은 기본적으로 등록됩니다.
 
 
 TIP: 지원에 등록되지 않은 시스템도 새 버전이 출시되면 콘솔에 표시되는 소프트웨어 업데이트 알림을 받게 됩니다.  하지만 소프트웨어를 업그레이드하려면 먼저 시스템을 등록해야 합니다.
@@ -251,7 +251,7 @@ http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-hacg/GUID-3F50DE15-0D
 Cloud Volumes ONTAP 시스템에 활성 SnapMirror 관계가 있는 경우 Cloud Volumes ONTAP 소프트웨어를 업데이트하기 전에 전송을 일시 중단하는 것이 가장 좋습니다.  전송을 일시 중단하면 SnapMirror 오류가 방지됩니다.  대상 시스템에서 전송을 중단해야 합니다.
 
 
-NOTE: NetApp Backup and Recovery는 SnapMirror 구현을 사용하여 백업 파일( SnapMirror Cloud라고 함)을 생성하지만, 시스템을 업그레이드할 때 백업을 중단할 필요는 없습니다.
+NOTE: NetApp Backup and Recovery SnapMirror 구현( SnapMirror Cloud라고 함)을 사용하여 백업 파일을 생성하지만, 시스템을 업그레이드할 때 백업을 중단할 필요는 없습니다.
 
 .이 작업에 관하여
 이 단계에서는 ONTAP System Manager 9.3 이상을 사용하는 방법을 설명합니다.
@@ -306,13 +306,13 @@ image:screenshots_aggregate_details_state.png["스크린샷: 집계에 대한 �
 
 콘솔은 업그레이드할 수 있는 새로운 버전이 있을 때 알려줍니다.  이 알림에서 업그레이드 프로세스를 시작할 수 있습니다. 자세한 내용은 다음을 참조하세요. <<콘솔 알림에서 업그레이드>> .
 
-외부 URL의 이미지를 사용하여 소프트웨어 업그레이드를 수행하는 또 다른 방법입니다.  이 옵션은 콘솔이 소프트웨어를 업그레이드하기 위해 S3 버킷에 액세스할 수 없거나 패치가 제공된 경우에 유용합니다. 자세한 내용은 다음을 참조하세요. <<URL에서 사용 가능한 이미지에서 업그레이드>> .
+외부 URL의 이미지를 사용하여 소프트웨어 업그레이드를 수행하는 또 다른 방법입니다.  이 옵션은 콘솔이 S3 버킷에 액세스하여 소프트웨어를 업그레이드할 수 없거나 패치가 제공된 경우에 유용합니다. 자세한 내용은 다음을 참조하세요. <<URL에서 사용 가능한 이미지에서 업그레이드>> .
 
 
 
 === 콘솔 알림에서 업그레이드
 
-콘솔은 Cloud Volumes ONTAP Cloud Volumes ONTAP ONTAP 작업 환경에 알림을 표시합니다.
+Cloud Volumes ONTAP Cloud Volumes ONTAP ONTAP 작업 환경에 알림을 표시합니다.
 
 
 NOTE: 알림을 통해 Cloud Volumes ONTAP 업그레이드하려면 NetApp 지원 사이트 계정이 있어야 합니다.
@@ -376,7 +376,7 @@ https://kb.netapp.com/Advice_and_Troubleshooting/Cloud_Services/Cloud_Manager/Ho
 .단계
 . 선택 사항: Cloud Volumes ONTAP 소프트웨어 이미지를 호스팅할 수 있는 HTTP 서버를 설정합니다.
 +
-가상 네트워크에 VPN 연결이 있는 경우 Cloud Volumes ONTAP 소프트웨어 이미지를 자체 네트워크의 HTTP 서버에 배치할 수 있습니다.  그렇지 않은 경우, 클라우드의 HTTP 서버에 파일을 저장해야 합니다.
+가상 네트워크에 VPN 연결이 있는 경우 Cloud Volumes ONTAP 소프트웨어 이미지를 자체 네트워크의 HTTP 서버에 배치할 수 있습니다.  그렇지 않은 경우 클라우드의 HTTP 서버에 파일을 저장해야 합니다.
 
 . Cloud Volumes ONTAP 에 자체 보안 그룹을 사용하는 경우 아웃바운드 규칙에서 HTTP 연결을 허용하여 Cloud Volumes ONTAP 이 소프트웨어 이미지에 액세스할 수 있는지 확인하세요.
 +
@@ -423,7 +423,7 @@ ifdef::gcp[]
 콘솔 에이전트는 Cloud Volumes ONTAP 에 대한 소프트웨어 업데이트를 자동으로 다운로드합니다. 구성에서 Google Cloud NAT 게이트웨이를 사용하는 경우 다운로드가 실패할 수 있습니다. 이 문제는 소프트웨어 이미지가 나누어지는 부분의 수를 제한하면 해결할 수 있습니다.  이 단계를 완료하려면 API를 사용해야 합니다.
 
 .단계
-. 다음 JSON을 본문으로 `/occm/`config에 PUT 요청을 제출합니다.
+. 다음 JSON을 본문으로 하여 `/occm/`config에 PUT 요청을 제출합니다.
 
 
 [source]

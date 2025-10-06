@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: task-deploying-otc-azure.html 
 keywords: Cloud Volumes ONTAP, deploying, launching, creating, deploy, launch, create, azure, license key, serial number, tags, azure tags, location, license, preconfigured packages, programmatic deployments, disk size, write speed, access control, volume protection, usage profile, register, CIFS share, quota, qtree, HA, HA pair, associate subscription, azure marketplace, marketplace subscription, cloud data sense, cloud backup 
-summary: NetApp 콘솔에서 Cloud Cloud Volumes ONTAP 시스템을 만들어 Azure에서 단일 Cloud Cloud Volumes ONTAP 시스템을 시작할 수 있습니다. 
+summary: NetApp Console 에서 Cloud Cloud Volumes ONTAP 시스템을 만들어 Azure에서 단일 Cloud Cloud Volumes ONTAP 시스템을 시작할 수 있습니다. 
 ---
 = Azure에서 Cloud Volumes ONTAP 실행
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: NetApp 콘솔에서 Cloud Cloud Volumes ONTAP 시스템을 만들어 Az
 
 
 [role="lead"]
-NetApp 콘솔에서 Cloud Volumes ONTAP 시스템을 만들어 Azure에서 단일 노드 시스템이나 HA 쌍을 시작할 수 있습니다.
+NetApp Console 에서 Cloud Volumes ONTAP 시스템을 만들어 Azure에서 단일 노드 시스템이나 HA 쌍을 시작할 수 있습니다.
 
 .시작하기 전에
 시작하기 전에 다음 사항이 필요합니다.
@@ -56,7 +56,7 @@ Azure에서 단일 노드 Cloud Volumes ONTAP 시스템을 시작하려면 콘�
 .단계
 . 왼쪽 탐색 메뉴에서 *저장소 > 관리*를 선택합니다.
 . [[구독]]*시스템* 페이지에서 *시스템 추가*를 클릭하고 안내를 따르세요.
-. *위치 선택*: *Microsoft Azure*와 * Cloud Volumes ONTAP 단일 노드*를 선택합니다.
+. *위치 선택*: *Microsoft Azure*와 * Cloud Volumes ONTAP 단일 노드*를 선택하세요.
 . 메시지가 표시되면 https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-azure.html["콘솔 에이전트 생성"^] .
 . *세부 정보 및 자격 증명*: 필요에 따라 Azure 자격 증명과 구독을 변경하고, 클러스터 이름을 지정하고, 필요한 경우 태그를 추가한 다음 자격 증명을 지정합니다.
 +
@@ -77,12 +77,12 @@ Azure에서 단일 노드 Cloud Volumes ONTAP 시스템을 시작하려면 콘�
 | 사용자 이름과 비밀번호 | 이는 Cloud Volumes ONTAP 클러스터 관리자 계정의 자격 증명입니다.  이러한 자격 증명을 사용하면 ONTAP System Manager나 ONTAP CLI를 통해 Cloud Volumes ONTAP 에 연결할 수 있습니다.  기본 _admin_ 사용자 이름을 유지하거나 사용자 지정 사용자 이름으로 변경하세요. 
 
 
-| 자격 증명 편집 | 이 Cloud Volumes ONTAP 시스템에서는 다양한 Azure 자격 증명과 다양한 Azure 구독을 선택할 수 있습니다.  사용량에 따라 지불하는 Cloud Volumes ONTAP 시스템을 배포하려면 선택한 Azure 구독과 Azure Marketplace 구독을 연결해야 합니다. https://docs.netapp.com/us-en/bluexp-setup-admin/task-adding-azure-accounts.html["자격 증명을 추가하는 방법을 알아보세요"^] . 
+| 자격 증명 편집 | 이 Cloud Volumes ONTAP 시스템에서는 다양한 Azure 자격 증명과 Azure 구독을 선택하여 사용할 수 있습니다.  사용량에 따라 지불하는 Cloud Volumes ONTAP 시스템을 배포하려면 선택한 Azure 구독과 Azure Marketplace 구독을 연결해야 합니다. https://docs.netapp.com/us-en/bluexp-setup-admin/task-adding-azure-accounts.html["자격 증명을 추가하는 방법을 알아보세요"^] . 
 |===
 . *서비스*: Cloud Volumes ONTAP 과 함께 사용하거나 사용하지 않을 개별 서비스를 활성화하거나 비활성화합니다.
 +
-** https://docs.netapp.com/us-en/bluexp-classification/concept-cloud-compliance.html["NetApp 데이터 분류에 대해 자세히 알아보세요"^]
-** https://docs.netapp.com/us-en/bluexp-backup-recovery/concept-backup-to-cloud.html["NetApp 백업 및 복구에 대해 자세히 알아보세요"^]
+** https://docs.netapp.com/us-en/bluexp-classification/concept-cloud-compliance.html["NetApp Data Classification 에 대해 자세히 알아보세요"^]
+** https://docs.netapp.com/us-en/bluexp-backup-recovery/concept-backup-to-cloud.html["NetApp Backup and Recovery 에 대해 자세히 알아보세요"^]
 +
 
 TIP: WORM 및 데이터 계층화를 활용하려면 백업 및 복구를 비활성화하고 버전 9.8 이상의 Cloud Volumes ONTAP 시스템을 배포해야 합니다.
@@ -105,7 +105,7 @@ NOTE: 중국 지역의 경우 단일 노드 배포는 Cloud Volumes ONTAP 9.12.1
 
 
 | 리소스 그룹  a| 
-Cloud Volumes ONTAP 에 대한 새 리소스 그룹을 만들거나 기존 리소스 그룹을 사용하세요.  가장 좋은 방법은 Cloud Volumes ONTAP 에 대해 새로운 전용 리소스 그룹을 사용하는 것입니다.  기존의 공유 리소스 그룹에 Cloud Volumes ONTAP 배포하는 것은 가능하지만 데이터 손실 위험이 있으므로 권장하지는 않습니다.  자세한 내용은 위의 경고를 참조하세요.
+Cloud Volumes ONTAP 에 대한 새 리소스 그룹을 만들거나 기존 리소스 그룹을 사용하세요.  가장 좋은 방법은 Cloud Volumes ONTAP 에 대해 새로운 전용 리소스 그룹을 사용하는 것입니다.  기존의 공유 리소스 그룹에 Cloud Volumes ONTAP 배포하는 것은 가능하지만 데이터 손실 위험 때문에 권장하지는 않습니다.  자세한 내용은 위의 경고를 참조하세요.
 
 
 TIP: 사용 중인 Azure 계정에 다음이 있는 경우 https://docs.netapp.com/us-en/bluexp-setup-admin/reference-permissions-azure.html["필요한 권한"^] 배포 실패 또는 삭제 시 콘솔은 리소스 그룹에서 Cloud Volumes ONTAP 리소스를 제거합니다.
@@ -237,7 +237,7 @@ image:screenshot_cot_vol.gif["스크린샷: Cloud Volumes ONTAP 인스턴스에 
 | DNS 도메인 | Cloud Volumes ONTAP 스토리지 가상 머신(SVM)의 DNS 도메인입니다.  대부분의 경우 도메인은 AD 도메인과 동일합니다. 
 
 
-| NTP 서버 | Active Directory DNS를 사용하여 NTP 서버를 구성하려면 *Active Directory 도메인 사용*을 선택합니다.  다른 주소를 사용하여 NTP 서버를 구성해야 하는 경우 API를 사용해야 합니다. 를 참조하세요 https://docs.netapp.com/us-en/bluexp-automation/index.html["NetApp 콘솔 자동화 문서"^] 자세한 내용은.  CIFS 서버를 생성할 때만 NTP 서버를 구성할 수 있습니다.  CIFS 서버를 만든 후에는 구성할 수 없습니다. 
+| NTP 서버 | Active Directory DNS를 사용하여 NTP 서버를 구성하려면 *Active Directory 도메인 사용*을 선택합니다.  다른 주소를 사용하여 NTP 서버를 구성해야 하는 경우 API를 사용해야 합니다. 를 참조하세요 https://docs.netapp.com/us-en/bluexp-automation/index.html["NetApp Console 자동화 문서"^] 자세한 내용은.  CIFS 서버를 생성할 때만 NTP 서버를 구성할 수 있습니다.  CIFS 서버를 만든 후에는 구성할 수 없습니다. 
 |===
 . *사용 프로필, 디스크 유형 및 계층화 정책*: 필요한 경우 스토리지 효율성 기능을 활성화할지 여부를 선택하고 볼륨 계층화 정책을 변경합니다.
 +
@@ -297,12 +297,12 @@ Azure에서 Cloud Volumes ONTAP HA 쌍을 시작하려면 콘솔에서 HA 시스
 | 사용자 이름과 비밀번호 | 이는 Cloud Volumes ONTAP 클러스터 관리자 계정의 자격 증명입니다.  이러한 자격 증명을 사용하면 ONTAP System Manager나 ONTAP CLI를 통해 Cloud Volumes ONTAP 에 연결할 수 있습니다.  기본 _admin_ 사용자 이름을 유지하거나 사용자 지정 사용자 이름으로 변경하세요. 
 
 
-| 자격 증명 편집 | 이 Cloud Volumes ONTAP 시스템에서는 다양한 Azure 자격 증명과 다양한 Azure 구독을 선택할 수 있습니다.  사용량에 따라 지불하는 Cloud Volumes ONTAP 시스템을 배포하려면 선택한 Azure 구독과 Azure Marketplace 구독을 연결해야 합니다. https://docs.netapp.com/us-en/bluexp-setup-admin/task-adding-azure-accounts.html["자격 증명을 추가하는 방법을 알아보세요"^] . 
+| 자격 증명 편집 | 이 Cloud Volumes ONTAP 시스템에서는 다양한 Azure 자격 증명과 Azure 구독을 선택하여 사용할 수 있습니다.  사용량에 따라 지불하는 Cloud Volumes ONTAP 시스템을 배포하려면 선택한 Azure 구독과 Azure Marketplace 구독을 연결해야 합니다. https://docs.netapp.com/us-en/bluexp-setup-admin/task-adding-azure-accounts.html["자격 증명을 추가하는 방법을 알아보세요"^] . 
 |===
 . *서비스*: Cloud Volumes ONTAP 과 함께 사용할지 여부에 따라 개별 서비스를 활성화하거나 비활성화합니다.
 +
-** https://docs.netapp.com/us-en/bluexp-classification/concept-cloud-compliance.html["NetApp 데이터 분류에 대해 자세히 알아보세요"^]
-** https://docs.netapp.com/us-en/bluexp-backup-recovery/concept-backup-to-cloud.html["NetApp 백업 및 복구에 대해 자세히 알아보세요"^]
+** https://docs.netapp.com/us-en/bluexp-classification/concept-cloud-compliance.html["NetApp Data Classification 에 대해 자세히 알아보세요"^]
+** https://docs.netapp.com/us-en/bluexp-backup-recovery/concept-backup-to-cloud.html["NetApp Backup and Recovery 에 대해 자세히 알아보세요"^]
 +
 
 TIP: WORM 및 데이터 계층화를 활용하려면 백업 및 복구를 비활성화하고 버전 9.8 이상의 Cloud Volumes ONTAP 시스템을 배포해야 합니다.
@@ -334,9 +334,9 @@ Cloud Volumes ONTAP 9.15.1부터 Azure의 단일 가용성 영역(AZ)에 HA 모�
 
 
 | 리소스 그룹  a| 
-Cloud Volumes ONTAP 에 대한 새 리소스 그룹을 만들거나 기존 리소스 그룹을 사용하세요.  가장 좋은 방법은 Cloud Volumes ONTAP 에 대해 새로운 전용 리소스 그룹을 사용하는 것입니다.  기존의 공유 리소스 그룹에 Cloud Volumes ONTAP 배포하는 것은 가능하지만 데이터 손실 위험이 있으므로 권장하지는 않습니다.  자세한 내용은 위의 경고를 참조하세요.
+Cloud Volumes ONTAP 에 대한 새 리소스 그룹을 만들거나 기존 리소스 그룹을 사용하세요.  가장 좋은 방법은 Cloud Volumes ONTAP 에 대해 새로운 전용 리소스 그룹을 사용하는 것입니다.  기존의 공유 리소스 그룹에 Cloud Volumes ONTAP 배포하는 것은 가능하지만 데이터 손실 위험 때문에 권장하지는 않습니다.  자세한 내용은 위의 경고를 참조하세요.
 
-Azure에 배포하는 각 Cloud Volumes ONTAP HA 쌍에 대해 전용 리소스 그룹을 사용해야 합니다.  리소스 그룹에서는 HA 쌍을 하나만 지원합니다.  Azure 리소스 그룹에 두 번째 Cloud Volumes ONTAP HA 쌍을 배포하려고 하면 콘솔에서 연결 문제가 발생합니다.
+Azure에 배포하는 각 Cloud Volumes ONTAP HA 쌍에 대해 전용 리소스 그룹을 사용해야 합니다.  리소스 그룹에서는 HA 쌍을 하나만 지원합니다.  Azure 리소스 그룹에서 두 번째 Cloud Volumes ONTAP HA 쌍을 배포하려고 하면 콘솔에서 연결 문제가 발생합니다.
 
 
 TIP: 사용 중인 Azure 계정에 다음이 있는 경우 https://docs.netapp.com/us-en/bluexp-setup-admin/reference-permissions-azure.html["필요한 권한"^] 배포 실패 또는 삭제 시 콘솔은 리소스 그룹에서 Cloud Volumes ONTAP 리소스를 제거합니다.
@@ -484,7 +484,7 @@ image:screenshot_cot_vol.gif["스크린샷: Cloud Volumes ONTAP 인스턴스에 
 | DNS 도메인 | Cloud Volumes ONTAP 스토리지 가상 머신(SVM)의 DNS 도메인입니다.  대부분의 경우 도메인은 AD 도메인과 동일합니다. 
 
 
-| NTP 서버 | Active Directory DNS를 사용하여 NTP 서버를 구성하려면 *Active Directory 도메인 사용*을 선택합니다.  다른 주소를 사용하여 NTP 서버를 구성해야 하는 경우 API를 사용해야 합니다. 를 참조하세요 https://docs.netapp.com/us-en/bluexp-automation/index.html["NetApp 콘솔 자동화 문서"^] 자세한 내용은.  CIFS 서버를 생성할 때만 NTP 서버를 구성할 수 있습니다.  CIFS 서버를 만든 후에는 구성할 수 없습니다. 
+| NTP 서버 | Active Directory DNS를 사용하여 NTP 서버를 구성하려면 *Active Directory 도메인 사용*을 선택합니다.  다른 주소를 사용하여 NTP 서버를 구성해야 하는 경우 API를 사용해야 합니다. 를 참조하세요 https://docs.netapp.com/us-en/bluexp-automation/index.html["NetApp Console 자동화 문서"^] 자세한 내용은.  CIFS 서버를 생성할 때만 NTP 서버를 구성할 수 있습니다.  CIFS 서버를 만든 후에는 구성할 수 없습니다. 
 |===
 . *사용 프로필, 디스크 유형 및 계층화 정책*: 필요한 경우 스토리지 효율성 기능을 활성화할지 여부를 선택하고 볼륨 계층화 정책을 변경합니다.
 +

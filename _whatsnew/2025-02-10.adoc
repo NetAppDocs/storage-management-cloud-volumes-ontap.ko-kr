@@ -24,7 +24,7 @@ link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-administer-ad
 
 이제 BlueXP digital wallet 내의 개선된 탐색 포인트를 사용하여 Cloud Volumes ONTAP 라이선스를 더욱 간편하게 관리할 수 있습니다.
 
-* *관리 > 라이선스 및 구독 > 개요/직접 라이선스* 탭을 통해 Cloud Volumes ONTAP 라이선스 정보에 쉽게 액세스할 수 있습니다.
+* *관리 > Licenses and subscriptions > 개요/직접 라이선스* 탭을 통해 Cloud Volumes ONTAP 라이선스 정보에 쉽게 액세스할 수 있습니다.
 * *개요* 탭의 Cloud Volume ONTAP 패널에서 *보기*를 클릭하면 용량 기반 라이선스에 대한 포괄적인 정보를 얻을 수 있습니다.  이 고급 보기는 라이선스와 구독에 대한 자세한 정보를 제공합니다.
 * 이전 인터페이스를 선호하는 경우 *레거시 보기로 전환* 버튼을 클릭하면 라이선스 유형별 세부 정보를 보고 라이선스에 대한 청구 방법을 수정할 수 있습니다.
 

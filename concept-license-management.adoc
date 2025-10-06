@@ -14,7 +14,7 @@ summary: 노드 기반 BYOL이 있는 각 Cloud Volumes ONTAP 시스템에는 �
 
 
 [role="lead"]
-노드 기반 BYOL(Bring Your Own License)이 있는 각 Cloud Volumes ONTAP 시스템에는 활성 구독과 함께 설치된 시스템 라이선스가 있어야 합니다.  NetApp 콘솔은 라이선스를 관리하고 라이선스가 만료되기 전에 경고를 표시하여 프로세스를 간소화합니다.
+노드 기반 BYOL(Bring Your Own License)이 있는 각 Cloud Volumes ONTAP 시스템에는 활성 구독과 함께 설치된 시스템 라이선스가 있어야 합니다.  NetApp Console 라이선스를 관리하고 라이선스가 만료되기 전에 경고를 표시하여 프로세스를 간소화합니다.
 
 
 NOTE: 노드 기반 라이선스는 Cloud Volumes ONTAP 의 이전 세대 라이선스입니다. 노드 기반 라이선스는 NetApp (BYOL)에서 구매할 수 있으며, 특정 경우에만 라이선스를 갱신할 수 있습니다.

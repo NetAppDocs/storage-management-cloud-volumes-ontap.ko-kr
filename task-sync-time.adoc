@@ -16,4 +16,4 @@ summary: NTP 서버를 지정하면 네트워크의 시스템 간 시간을 동�
 [role="lead"]
 NTP 서버를 지정하면 네트워크의 시스템 간 시간을 동기화하여 시간 차이로 인한 문제를 방지하는 데 도움이 될 수 있습니다.
 
-다음을 사용하여 NTP 서버를 지정하세요. https://docs.netapp.com/us-en/bluexp-automation/cm/api_ref_resources.html["NetApp 콘솔 API"^] 또는 사용자 인터페이스에서link:task-create-volumes.html#create-a-volume["CIFS 서버 생성"] .
+다음을 사용하여 NTP 서버를 지정하세요. https://docs.netapp.com/us-en/bluexp-automation/cm/api_ref_resources.html["NetApp Console API"^] 또는 사용자 인터페이스에서link:task-create-volumes.html#create-a-volume["CIFS 서버 생성"] .

@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: task-manage-volumes.html 
 keywords: volumes, managing, cloning, editing, CIFS server, edit, flexclone, snapshot copy, restore, mount, delete, cifs setup, DNS, active directory, AD, domain, NetBIOS, identify, move, capacity, action required, clone, snapshot copies, restoring, vol move, volume move, move a volume, volume move slow, volume move performance 
-summary: NetApp 콘솔을 사용하면 볼륨과 CIFS 서버를 관리할 수 있습니다.  또한 용량 문제를 방지하기 위해 볼륨을 이동하라는 메시지가 표시됩니다. 
+summary: NetApp Console 사용하면 볼륨과 CIFS 서버를 관리할 수 있습니다.  또한 용량 문제를 방지하기 위해 볼륨을 이동하라는 메시지가 표시됩니다. 
 ---
 = Cloud Volumes ONTAP 시스템에서 볼륨 관리
 :hardbreaks:
@@ -14,9 +14,9 @@ summary: NetApp 콘솔을 사용하면 볼륨과 CIFS 서버를 관리할 수 �
 
 
 [role="lead"]
-NetApp 콘솔에서 볼륨과 CIFS 서버를 관리할 수 있습니다.  용량 문제를 피하기 위해 볼륨을 이동할 수도 있습니다.
+NetApp Console 에서 볼륨과 CIFS 서버를 관리할 수 있습니다.  용량 문제를 피하기 위해 볼륨을 이동할 수도 있습니다.
 
-NetApp 콘솔 표준 보기에서 볼륨을 관리하거나 고급 볼륨 관리를 위해 콘솔에 포함된 ONTAP 시스템 관리자를 통해 볼륨을 관리할 수 있습니다.  표준 보기는 볼륨을 수정하기 위한 제한된 옵션 세트를 제공합니다.  System Manager는 복제, 크기 조정, 랜섬웨어 방지 설정 변경, 분석, 보호 및 활동 추적, 계층 간 볼륨 이동 등 고급 수준의 관리 기능을 제공합니다.  자세한 내용은 다음을 참조하세요.link:task-administer-advanced-view.html["System Manager를 사용하여 Cloud Volumes ONTAP 관리"] .
+NetApp Console 표준 보기에서 볼륨을 관리하거나 고급 볼륨 관리를 위해 콘솔에 포함된 ONTAP 시스템 관리자를 통해 볼륨을 관리할 수 있습니다.  표준 보기는 볼륨을 수정하기 위한 제한된 옵션 세트를 제공합니다.  System Manager는 복제, 크기 조정, 랜섬웨어 방지 설정 변경, 분석, 보호 및 활동 추적, 계층 간 볼륨 이동 등 고급 수준의 관리 기능을 제공합니다.  자세한 내용은 다음을 참조하세요.link:task-administer-advanced-view.html["System Manager를 사용하여 Cloud Volumes ONTAP 관리"] .
 
 
 
@@ -124,7 +124,7 @@ NOTE: 콘솔은 계층화를 통해 선택한 디스크 유형을 사용하는 �
 
 == 볼륨 크기 조정
 
-기본적으로 볼륨은 공간이 부족하면 자동으로 최대 크기로 커집니다.  기본값은 1,000이며, 이는 볼륨이 최대 11배까지 커질 수 있음을 의미합니다.  이 값은 콘솔 에이전트 설정에서 구성할 수 있습니다.
+기본적으로 볼륨은 공간이 부족하면 자동으로 최대 크기로 커집니다.  기본값은 1,000이며, 이는 볼륨이 원래 크기의 11배까지 커질 수 있음을 의미합니다.  이 값은 콘솔 에이전트 설정에서 구성할 수 있습니다.
 
 볼륨 크기를 조정해야 하는 경우 콘솔의 ONTAP 시스템 관리자에서 조정할 수 있습니다.
 
@@ -251,9 +251,9 @@ TIP: 집계된 용량이 90% 사용률에 도달하면 콘솔에 다음과 같�
 콘솔에서 용량 문제를 방지하기 위한 볼륨 이동에 대한 권장 사항을 제공할 수 없는 경우 이동해야 할 볼륨을 식별하고 동일한 시스템의 다른 집계로 이동해야 할지 아니면 다른 시스템으로 이동해야 할지 결정해야 합니다.
 
 .단계
-. 작업 필요 메시지에서 고급 정보를 확인하여 용량 한도에 도달한 집계를 식별합니다.
+. 집계가 용량 한도에 도달한 것을 식별하려면 작업 필요 메시지의 고급 정보를 확인하세요.
 +
-예를 들어, 고급 정보는 다음과 비슷한 내용을 알려야 합니다. 집계 aggr1이 용량 한도에 도달했습니다.
+예를 들어, 고급 정보에는 다음과 비슷한 내용이 나와 있어야 합니다. 집계 aggr1이 용량 한도에 도달했습니다.
 
 . 집계에서 이동할 하나 이상의 볼륨을 식별합니다.
 +
@@ -302,7 +302,7 @@ image::screenshot_aggr_volume_overview.png[스크린샷 어그르 볼륨 개요]
 
 ====
 .단계
-. 사용 가능한 용량이 있는 Cloud Volumes ONTAP 시스템을 식별하거나 새로운 시스템을 배포합니다.
+. 사용 가능한 용량이 있는 Cloud Volumes ONTAP 시스템을 확인하거나 새로운 시스템을 배포합니다.
 . 볼륨의 일회성 데이터 복제를 수행하려면 소스 시스템을 대상 시스템으로 끌어서 놓습니다.
 +
 자세한 내용은 다음을 참조하세요.link:https://docs.netapp.com/us-en/bluexp-replication/task-replicating-data.html["시스템 간 데이터 복제"^] .
@@ -325,7 +325,7 @@ image::screenshot_aggr_volume_overview.png[스크린샷 어그르 볼륨 개요]
 
 === 용량 문제를 방지하기 위해 볼륨을 다른 집계로 이동합니다.
 
-용량 문제를 피하기 위해 하나 이상의 볼륨을 다른 집계로 이동할 수 있습니다.
+용량 문제를 방지하기 위해 하나 이상의 볼륨을 다른 집계로 이동할 수 있습니다.
 
 .이 작업에 관하여
 이 작업의 단계에 따라 다음과 같은 작업 필요 메시지를 수정할 수 있습니다.

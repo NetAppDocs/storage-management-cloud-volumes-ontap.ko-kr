@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: task-manage-capacity-licenses.html 
 keywords: license, licensing, capacity license, capacity based license, add license, install license, digital wallet 
-summary: NetApp 콘솔에서 용량 기반 라이선스를 관리하여 NetApp 계정에 Cloud Volumes ONTAP 시스템에 필요한 용량이 충분한지 확인하세요. 
+summary: NetApp Console 에서 용량 기반 라이선스를 관리하여 NetApp 계정에 Cloud Volumes ONTAP 시스템에 필요한 용량이 충분한지 확인하세요. 
 ---
 = Cloud Volumes ONTAP 에 대한 용량 기반 라이선싱 관리
 :hardbreaks:
@@ -14,11 +14,11 @@ summary: NetApp 콘솔에서 용량 기반 라이선스를 관리하여 NetApp �
 
 
 [role="lead"]
-NetApp 콘솔에서 용량 기반 라이선스를 관리하여 NetApp 계정에 Cloud Volumes ONTAP 시스템에 필요한 용량이 충분한지 확인하세요.
+NetApp Console 에서 용량 기반 라이선스를 관리하여 NetApp 계정에 Cloud Volumes ONTAP 시스템에 필요한 용량이 충분한지 확인하세요.
 
 _용량 기반 라이선스_를 사용하면 TiB 용량당 Cloud Volumes ONTAP 비용을 지불할 수 있습니다.
 
-NetApp 콘솔에서 용량 기반 Cloud Volumes ONTAP 라이선스를 관리할 수 있습니다.
+NetApp Console 에서 용량 기반 Cloud Volumes ONTAP 라이선스를 관리할 수 있습니다.
 
 
 NOTE: 콘솔에서 관리되는 제품과 서비스의 실제 사용량과 측정은 항상 GiB와 TiB로 계산되지만, GB/GiB와 TB/TiB라는 용어도 서로 바꿔 사용됩니다.  이는 Cloud Marketplace 목록, 가격 견적, 목록 설명 및 기타 지원 문서에 반영됩니다.
@@ -27,7 +27,7 @@ https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-licensing.html[
 
 
 
-== NetApp 콘솔에 라이센스가 추가되는 방식
+== NetApp Console 에 라이센스가 추가되는 방식
 
 NetApp 영업 담당자로부터 라이선스를 구매하면 NetApp 일련 번호와 추가 라이선스 세부 정보가 포함된 이메일을 보내드립니다.
 
@@ -39,10 +39,10 @@ NetApp 영업 담당자로부터 라이선스를 구매하면 NetApp 일련 번�
 
 == 계정에서 사용된 용량을 확인하세요
 
-콘솔은 계정에서 사용된 총 용량과 라이선스 패키지별로 사용된 용량을 보여줍니다. 이를 통해 요금이 어떻게 청구되는지, 추가 용량을 구매해야 하는지 파악하는 데 도움이 됩니다.
+콘솔은 계정에서 사용된 총 용량과 라이선스 패키지별로 사용된 용량을 보여줍니다.  이를 통해 요금이 어떻게 청구되는지, 추가 용량을 구매해야 하는지 파악하는 데 도움이 될 수 있습니다.
 
 .단계
-. 왼쪽 탐색 창에서 *관리 > 라이선스 및 구독*을 선택합니다.
+. 왼쪽 탐색 창에서 *관리 > Licenses and subscriptions*을 선택합니다.
 . *개요* 탭에서 Cloud Volumes ONTAP 타일은 계정에 대해 현재 프로비저닝된 용량을 표시합니다.
 +
 image:screenshot_cvo_licensing_card.png["width=300 Cloud Volumes ONTAP 라이선스 및 구독에 대한 용량 요약을 표시하는 스크린샷입니다."]
@@ -53,7 +53,7 @@ image:screenshot_cvo_licensing_card.png["width=300 Cloud Volumes ONTAP 라이선
 ** _PAYGO_는 클라우드 마켓플레이스 구독을 사용하여 프로비저닝된 총 용량입니다.  PAYGO를 통한 요금 청구는 사용된 용량이 라이선스 용량보다 높거나 콘솔에서 사용 가능한 BYOL 라이선스가 없는 경우에만 사용됩니다.
 
 
-. *보기*를 선택하면 각 라이선스 패키지의 소비 용량을 확인할 수 있습니다.
+. *보기*를 선택하면 각 라이선스 패키지의 사용된 용량을 확인할 수 있습니다.
 . 구매한 각 패키지 라이선스에 대한 세부 정보를 보려면 *라이선스* 탭을 선택하세요.
 +
 Essentials 패키지에 표시되는 용량을 더 잘 이해하려면 충전 방식을 알아야 합니다. https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-licensing.html#notes-about-charging["Essentials 패키지 요금 청구에 대해 알아보세요"] .
@@ -62,9 +62,9 @@ Essentials 패키지에 표시되는 용량을 더 잘 이해하려면 충전 �
 +
 현재 보고 있는 조직과 연관된 구독만 볼 수 있습니다.
 
-. 구독에 대한 정보를 볼 때 표에 있는 세부 정보와 상호 작용할 수 있습니다. 더 자세한 내용을 보려면 행을 확장하세요.
+. 구독에 대한 정보를 볼 때 표에 있는 세부 정보와 상호 작용할 수 있습니다.  더 자세한 내용을 보려면 행을 확장하세요.
 +
-** 선택하다image:icon-column-selector.png["표 헤더 끝에 있는 더하기 아이콘"] 표에 어떤 열을 표시할지 선택합니다. 기본적으로 기간 및 자동 갱신 열은 나타나지 않습니다. 자동 갱신 열에는 Azure 계약에 대한 갱신 정보만 표시됩니다.
+** 선택하다image:icon-column-selector.png["표 헤더 끝에 있는 더하기 아이콘"] 표에 어떤 열을 표시할지 선택합니다.  기본적으로 기간 및 자동 갱신 열은 나타나지 않습니다.  자동 갱신 열에는 Azure 계약에 대한 갱신 정보만 표시됩니다.
 
 
 
@@ -75,9 +75,9 @@ Essentials 패키지에 표시되는 용량을 더 잘 이해하려면 충전 �
 
 Cloud Volumes ONTAP 페이지에서 레거시 모드로 전환하면 패키지별로 사용된 용량에 대한 세부 정보를 볼 수 있습니다.
 
-. 왼쪽 탐색 창에서 *관리 > 라이선스 및 구독*을 선택합니다.
+. 왼쪽 탐색 창에서 *관리 > Licenses and subscriptions*을 선택합니다.
 . *개요* 탭에서 Cloud Volumes ONTAP 타일은 계정에 대해 현재 프로비저닝된 용량을 표시합니다.
-. *보기*를 선택하면 각 라이선스 패키지에 대해 제공된 용량을 확인할 수 있습니다.
+. *보기*를 선택하여 각 라이선스 패키지에 대해 제공된 용량을 확인하세요.
 . *고급 보기로 전환*을 선택하세요.
 +
 image:screenshot_licensing.png["고급 보기로 전환 버튼의 스크린샷"]
@@ -105,7 +105,7 @@ https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-licensing.html[
 
 
 .단계
-. 왼쪽 탐색 창에서 *관리 > 라이선스 및 구독*을 선택합니다.
+. 왼쪽 탐색 창에서 *관리 > Licenses and subscriptions*을 선택합니다.
 . *개요* 탭을 선택하세요.
 . Cloud Volumes ONTAP 타일에서 *보기*를 선택합니다.
 . *고급 보기로 전환*을 선택하세요.
@@ -161,7 +161,7 @@ image:screenshot-download-usage-report.png["스크린샷은 Cloud Volumes ONTAP 
 ** Cloud Volumes ONTAP 패키지 또는 기능
 ** SaaS Marketplace 구독 이름 청구
 ** SaaS 마켓플레이스 구독 ID 청구
-** 작업량 유형
+** 작업 유형
 
 
 * *볼륨 사용량*: 이 보고서는 Cloud Volumes ONTAP 시스템에서 볼륨별로 청구된 용량을 어떻게 세분화하는지 보여줍니다.  이 정보는 콘솔의 어떤 화면에서도 사용할 수 없습니다.  여기에는 다음 정보가 포함됩니다.
@@ -180,7 +180,7 @@ NOTE: FlexClone 볼륨은 이 보고서에 포함되지 않습니다. 이러한 
 
 
 .단계
-. 왼쪽 탐색 창에서 *관리 > 라이선스 및 구독*을 선택합니다.
+. 왼쪽 탐색 창에서 *관리 > Licenses and subscriptions*을 선택합니다.
 . *개요* 탭에서 Cloud Volumes ONTAP 타일의 *보기*를 선택합니다.
 . *사용 보고서*를 선택하세요.
 +

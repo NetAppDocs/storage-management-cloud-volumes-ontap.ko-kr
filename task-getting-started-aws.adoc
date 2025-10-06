@@ -21,7 +21,7 @@ summary: 몇 단계만 거치면 AWS용 Cloud Volumes ONTAP 시작할 수 있습
 만약 당신이 없다면 https://docs.netapp.com/us-en/bluexp-setup-admin/concept-connectors.html["콘솔 에이전트"^] 하지만, 하나는 만들어야 합니다. https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-aws.html["AWS에서 콘솔 에이전트를 만드는 방법을 알아보세요"^] .
 
 [role="quick-margin-para"]
-인터넷 접속이 불가능한 서브넷에 Cloud Volumes ONTAP 배포하려면 콘솔 에이전트를 수동으로 설치하고 해당 콘솔 에이전트에서 실행되는 NetApp 콘솔 사용자 인터페이스에 액세스해야 합니다. https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-private-mode.html["인터넷 접속이 불가능한 위치에 콘솔 에이전트를 수동으로 설치하는 방법을 알아보세요."^] .
+인터넷 접속이 불가능한 서브넷에 Cloud Volumes ONTAP 배포하려면 콘솔 에이전트를 수동으로 설치하고 해당 콘솔 에이전트에서 실행되는 NetApp Console 사용자 인터페이스에 액세스해야 합니다. https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-private-mode.html["인터넷 접속이 불가능한 위치에 콘솔 에이전트를 수동으로 설치하는 방법을 알아보세요."^] .
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["둘"]구성을 계획하세요
 [role="quick-margin-para"]

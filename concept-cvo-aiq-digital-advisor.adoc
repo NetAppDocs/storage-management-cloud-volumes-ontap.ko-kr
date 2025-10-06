@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: concept-cvo-aiq-digital-advisor.html 
 keywords: concepts, digital advisor, cloud volumes ontap, cloud manager, BlueXP, NetApp Console 
-summary: Digital Advisor 는 NetApp 콘솔에 통합되어 있어 단일 창에서 ONTAP 클러스터의 운영, 보안 및 성능을 최적화할 수 있습니다. 
+summary: Digital Advisor 는 NetApp Console 에 통합되어 있어 단일 창에서 ONTAP 클러스터의 운영, 보안 및 성능을 최적화할 수 있습니다. 
 ---
 = Digital Advisor 사용하여 Cloud Volumes ONTAP 시스템을 최적화하세요
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: Digital Advisor 는 NetApp 콘솔에 통합되어 있어 단일 창에�
 
 
 [role="lead"]
-https://www.netapp.com/services/support/active-iq/["Active IQ Digital Advisor"]( Digital Advisor 라고도 함)는 NetApp 콘솔에 통합되어 있어 단일 창에서 Cloud Volumes ONTAP 시스템의 운영, 보안 및 성능을 최적화할 수 있습니다.
+https://www.netapp.com/services/support/active-iq/["Active IQ Digital Advisor"]( Digital Advisor 라고도 함)는 NetApp Console 에 통합되어 있어 단일 창에서 Cloud Volumes ONTAP 시스템의 운영, 보안 및 성능을 최적화할 수 있습니다.
 
 
 
@@ -42,7 +42,7 @@ Digital Advisor NSS 계정 내의 모든 온프레미스 ONTAP 시스템과 Clou
 
 
 
-== Digital Advisor NetApp 콘솔과 함께 작동하는 방식
+== Digital Advisor NetApp Console 과 함께 작동하는 방식
 
 Digital Advisor 사용자 인터페이스는 콘솔에 완벽하게 통합되어 있습니다.
 

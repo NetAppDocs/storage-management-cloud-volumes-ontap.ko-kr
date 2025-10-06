@@ -41,7 +41,7 @@ Cloud Volumes ONTAP 대부분의 AWS 지역에서 지원됩니다. https://bluex
 로컬 존을 선택하는 것은 선택 사항입니다.  Cloud Volumes ONTAP 싱가포르를 포함한 일부 AWS 로컬 영역에서 지원됩니다.  AWS의 Cloud Volumes ONTAP 단일 가용성 영역에서만 고가용성(HA) 모드를 지원합니다.  단일 노드 배포는 지원되지 않습니다.
 
 
-NOTE: Cloud Volumes ONTAP AWS 로컬 영역에서 데이터 계층화 및 클라우드 계층화를 지원하지 않습니다.  또한, Cloud Volumes ONTAP 에 적합하지 않은 인스턴스가 있는 로컬 영역은 지원되지 않습니다.  이에 대한 예가 마이애미인데, 지원되지 않고 적격하지 않은 Gen6 인스턴스만 있기 때문에 로컬 영역으로 사용할 수 없습니다.
+NOTE: Cloud Volumes ONTAP AWS 로컬 영역에서 데이터 계층화 및 클라우드 계층화를 지원하지 않습니다.  또한, Cloud Volumes ONTAP 에 적합하지 않은 인스턴스가 있는 로컬 영역은 지원되지 않습니다.  이에 대한 예는 마이애미인데, 지원되지 않고 적격하지 않은 Gen6 인스턴스만 있기 때문에 로컬 영역으로 사용할 수 없습니다.
 
 link:https://aws.amazon.com/about-aws/global-infrastructure/localzones/locations/?nc=sn&loc=3["AWS 문서: 로컬 영역 전체 목록 보기"^] . 로컬 영역을 활성화해야만 해당 영역에서 리소스를 만들고 관리할 수 있습니다.
 
@@ -88,7 +88,7 @@ EBS 디스크 유형:: 높은 수준에서 EBS 디스크 유형 간의 차이점
 --
 * _일반 용도 SSD(gp3)_ 디스크는 광범위한 작업 부하에 대해 비용과 성능의 균형을 맞춘 가장 저렴한 SSD입니다.  성능은 IOPS와 처리량으로 정의됩니다. gp3 디스크는 Cloud Volumes ONTAP 9.7 이상에서 지원됩니다.
 +
-gp3 디스크를 선택하면 NetApp 콘솔은 선택한 디스크 크기를 기준으로 gp2 디스크와 동등한 성능을 제공하는 기본 IOPS 및 처리량 값을 입력합니다. 더 높은 비용으로 더 나은 성능을 얻으려면 값을 늘릴 수 있지만, 낮은 값은 성능이 저하될 수 있으므로 지원하지 않습니다. 간단히 말해, 기본값을 고수하거나 기본값을 늘리세요. 낮추지 마세요. https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volume-types.html#gp3-ebs-volume-type["AWS 문서: gp3 디스크와 성능에 대해 자세히 알아보세요"^] .
+gp3 디스크를 선택하면 NetApp Console 선택한 디스크 크기를 기준으로 gp2 디스크와 동등한 성능을 제공하는 기본 IOPS 및 처리량 값을 입력합니다. 더 높은 비용으로 더 나은 성능을 얻으려면 값을 늘릴 수 있지만, 낮은 값은 성능이 저하될 수 있으므로 지원하지 않습니다. 간단히 말해, 기본값을 고수하거나 기본값을 늘리세요. 낮추지 마세요. https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volume-types.html#gp3-ebs-volume-type["AWS 문서: gp3 디스크와 성능에 대해 자세히 알아보세요"^] .
 
 +
 Cloud Volumes ONTAP gp3 디스크를 사용하는 Amazon EBS Elastic Volumes 기능을 지원합니다. link:concept-aws-elastic-volumes.html["Elastic Volumes 지원에 대해 자세히 알아보세요"] .
@@ -106,7 +106,7 @@ NOTE: AWS 로컬 영역에서는 연결성이 부족하여 AWS S3에 대한 데�
 
 
 --
-EBS 디스크 크기:: 지원하지 않는 구성을 선택하는 경우link:concept-aws-elastic-volumes.html["Amazon EBS Elastic Volumes 기능"] 그러면 Cloud Volumes ONTAP 시스템을 시작할 때 초기 디스크 크기를 선택해야 합니다.  그 후에는 할 수 있습니다link:concept-storage-management.html["콘솔이 시스템 용량을 관리하도록 하세요"] , 하지만 당신이 원한다면link:task-create-aggregates.html["직접 집계를 생성하세요"] 다음 사항을 주의하세요.
+EBS 디스크 크기:: 지원하지 않는 구성을 선택하는 경우link:concept-aws-elastic-volumes.html["Amazon EBS Elastic Volumes 기능"] , Cloud Volumes ONTAP 시스템을 시작할 때 초기 디스크 크기를 선택해야 합니다.  그 후에는 할 수 있습니다link:concept-storage-management.html["콘솔이 시스템 용량을 관리하도록 하세요"] , 하지만 당신이 원한다면link:task-create-aggregates.html["직접 집계를 생성하세요"] 다음 사항을 주의하세요.
 +
 --
 * 집계된 모든 디스크의 크기는 동일해야 합니다.
@@ -139,7 +139,7 @@ TIP: 콘솔 에이전트에도 시스템 디스크가 필요합니다. https://d
 
 == AWS Outpost에 Cloud Volumes ONTAP 배포 준비
 
-AWS Outpost가 있는 경우 배포 프로세스 중에 Outpost VPC를 선택하여 해당 Outpost에 Cloud Volumes ONTAP 배포할 수 있습니다. 경험은 AWS에 있는 다른 VPC와 동일합니다. 먼저 AWS Outpost에 콘솔 에이전트를 배포해야 합니다.
+AWS Outpost가 있는 경우 배포 프로세스 중에 Outpost VPC를 선택하여 해당 Outpost에 Cloud Volumes ONTAP 배포할 수 있습니다. 경험은 AWS에 있는 다른 VPC와 동일합니다.  먼저 AWS Outpost에 콘솔 에이전트를 배포해야 합니다.
 
 지적해야 할 몇 가지 제한 사항이 있습니다.
 
@@ -216,7 +216,7 @@ AWS에서 Cloud Volumes ONTAP 시작할 때 VPC 네트워크에 대한 세부 �
 | 클러스터 관리 포트에 대한 유동 IP 주소 |  
 
 
-| 노드 1의 데이터에 대한 플로팅 IP 주소 |  
+| 노드 1의 데이터에 대한 유동 IP 주소 |  
 
 
 | 노드 2의 데이터에 대한 플로팅 IP 주소 |  

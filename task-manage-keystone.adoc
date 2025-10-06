@@ -4,7 +4,7 @@ permalink: task-manage-keystone.html
 keywords: license, licensing, install, keystone, request capacity, link subscription, add keystone subscription, keystone subscription, digital wallet, keystone flex 
 summary: Cloud Volumes ONTAP 과 함께 사용할 구독을 활성화하고 구독 서비스 수준에 대한 커밋 용량 변경을 요청하여 Keystone 구독을 관리하세요.  서비스 수준에 대한 추가 용량을 요청하면 온프레미스 ONTAP 클러스터나 Cloud Volumes ONTAP 시스템에 더 많은 스토리지가 제공됩니다. 
 ---
-= NetApp 콘솔을 통해 Cloud Volumes ONTAP 대한 Keystone 구독 관리
+= NetApp Console 통해 Cloud Volumes ONTAP 대한 Keystone 구독 관리
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -43,7 +43,7 @@ image:screenshot-keystone-overview.png["Keystone 구독 목록을 보여주는 �
 
 == 구독 연결
 
-NetApp 계정을 승인한 후 Keystone 구독을 연결하여 Cloud Volumes ONTAP 과 함께 사용할 수 있습니다. 이 작업을 통해 사용자는 새로운 Cloud Volumes ONTAP 시스템에 대한 요금 청구 방법으로 구독을 선택할 수 있습니다.
+NetApp 계정을 승인한 후 Keystone 구독을 연결하여 Cloud Volumes ONTAP 과 함께 사용할 수 있습니다.  이 작업을 통해 사용자는 새로운 Cloud Volumes ONTAP 시스템에 대한 요금 청구 방법으로 구독을 선택할 수 있습니다.
 
 .단계
 . BlueXP 탐색 메뉴에서 *거버넌스 > 디지털 지갑*을 선택하세요.
@@ -89,12 +89,12 @@ https://docs.netapp.com/us-en/keystone-staas/integrations/aiq-keystone-details.h
 
 == 구독 연결 해제
 
-더 이상 BlueXP 에서 Keystone 구독을 사용하지 않으려면 구독 연결을 해제할 수 있습니다. 기존 Cloud Volumes ONTAP 구독에 연결되지 않은 구독만 연결 해제할 수 있습니다.
+더 이상 BlueXP 에서 Keystone 구독을 사용하지 않으려면 구독 연결을 해제할 수 있습니다.  기존 Cloud Volumes ONTAP 구독에 연결되지 않은 구독만 연결 해제할 수 있습니다.
 
 .단계
 . BlueXP 탐색 메뉴에서 *거버넌스 > 디지털 지갑*을 선택하세요.
 . * Keystone*을 선택하세요.
-. 연결을 해제하려는 구독의 경우 다음을 클릭하세요.image:icon-action.png["세 개의 점이 나란히 있는 아이콘"] 그리고 *연결 해제*를 선택하세요.
+. 연결을 해제하려는 구독의 경우 다음을 클릭하세요.image:icon-action.png["세 개의 점이 나란히 있는 아이콘"] *연결 해제*를 선택하세요.
 
 
 .결과

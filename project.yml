@@ -76,7 +76,7 @@ sidebar:
       entries:
       - title: Azure에서 Cloud Volumes ONTAP 배포 옵션에 대해 알아보세요.
         url: "/concept-azure-mktplace-direct.html"
-      - title: NetApp 콘솔에서 시작하기
+      - title: NetApp Console 에서 시작하기
         entries:
         - title: 빠른 시작
           url: "/task-getting-started-azure.html"

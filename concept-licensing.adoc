@@ -22,7 +22,7 @@ Cloud Volumes ONTAP 에는 여러 가지 라이선싱 옵션이 제공됩니다.
 
 신규 고객에게는 다음과 같은 라이선스 옵션이 제공됩니다.
 
-용량 기반 라이선싱:: 프로비저닝된 용량을 기준으로 NetApp 계정에서 여러 Cloud Volumes ONTAP 시스템에 대한 비용을 지불합니다.  추가 클라우드 데이터 서비스를 구매할 수 있는 기능이 포함되어 있습니다.  용량 기반 라이선스의 소비 모델에 대한 자세한 내용은 다음을 참조하세요.link:concept-licensing-charging.html["용량 기반 라이선스에 대해 자세히 알아보세요"] .
+용량 기반 라이선싱:: NetApp 계정에서 여러 Cloud Volumes ONTAP 시스템에 대한 비용을 프로비저닝된 용량에 따라 지불합니다.  추가 클라우드 데이터 서비스를 구매할 수 있는 기능이 포함되어 있습니다.  용량 기반 라이선스의 소비 모델에 대한 자세한 내용은 다음을 참조하세요.link:concept-licensing-charging.html["용량 기반 라이선스에 대해 자세히 알아보세요"] .
 Keystone 구독:: 고가용성(HA) 쌍에 대한 원활한 하이브리드 클라우드 환경을 제공하는, 사용량에 따라 비용을 지불하는 구독 기반 서비스입니다.
 
 
@@ -42,7 +42,7 @@ NOTE: 라이선스가 없으면 라이선스 기능을 사용할 수 없습니�
 용량 기반 라이선싱은 _패키지_ 형태로 제공됩니다. Cloud Volumes ONTAP 시스템을 배포하면 비즈니스 요구 사항에 따라 여러 가지 라이선스 패키지 중에서 선택할 수 있습니다.
 
 
-NOTE: NetApp 콘솔에서 관리되는 제품과 서비스의 실제 사용량과 측정은 항상 GiB와 TiB로 계산되지만, GB/GiB와 TB/TiB라는 용어는 서로 바꿔 사용됩니다.  이는 클라우드 마켓플레이스 목록, 가격 견적, 목록 설명 및 기타 지원 문서에 반영되어 있습니다.
+NOTE: NetApp Console 에서 관리되는 제품과 서비스의 실제 사용량과 측정은 항상 GiB와 TiB로 계산되지만, GB/GiB와 TB/TiB라는 용어는 서로 바꿔 사용됩니다.  이는 클라우드 마켓플레이스 목록, 가격 견적, 목록 설명 및 기타 지원 문서에 반영되어 있습니다.
 
 
 
@@ -75,7 +75,7 @@ NetApp 에서 모든 Cloud Volumes ONTAP 기능을 무료로 제공합니다(클
 * 라이센스나 계약이 필요하지 않습니다.
 * NetApp 의 지원은 포함되지 않습니다.
 * Cloud Volumes ONTAP 시스템당 프로비저닝 용량은 500GiB로 제한됩니다.
-* NetApp 계정당 최대 10개의 Cloud Volumes ONTAP 시스템을 Freemium으로 사용할 수 있으며, 모든 클라우드 공급업체에서 사용할 수 있습니다.
+* NetApp 계정당 최대 10개의 Cloud Volumes ONTAP 시스템을 Freemium으로 모든 클라우드 공급자와 함께 사용할 수 있습니다.
 * Cloud Volumes ONTAP 시스템의 프로비저닝된 용량이 500GiB를 초과하면 콘솔은 시스템을 Essentials 패키지로 전환합니다.
 +
 시스템이 Essentials 패키지로 변환되면link:concept-licensing-charging.html#minimum-charge["최소 충전"] 이에 적용됩니다.
@@ -110,7 +110,7 @@ Essentials 패키지로 전환된 Cloud Volumes ONTAP 시스템은 프로비저�
 +
 1차 및 2차 볼륨에 대해 동일한 요금으로 용량 요금을 청구하는 단일 노드 또는 HA
 
-* NetApp Backup and Recovery를 사용한 무제한 볼륨 백업이 포함되지만 Professional 패키지를 사용하는 Cloud Volumes ONTAP 시스템에만 해당됩니다.
+* NetApp Backup and Recovery 사용한 무제한 볼륨 백업이 포함되지만 Professional 패키지를 사용하는 Cloud Volumes ONTAP 시스템에만 해당됩니다.
 +
 
 NOTE: 백업 및 복구에는 사용량에 따른 요금(PAYGO) 구독이 필요하지만, 이 서비스 사용에는 요금이 부과되지 않습니다.  백업 및 복구에 대한 라이센싱 설정에 대한 자세한 내용은 다음을 참조하세요. https://docs.netapp.com/us-en/bluexp-backup-recovery/task-licensing-cloud-backup.html["백업 및 복구에 대한 라이선싱 설정"^] .
@@ -232,7 +232,7 @@ NetApp 노드 기반 라이선싱의 가용성 종료(EOA) 및 지원 종료(EOS
 
 EOA 날짜를 넘어서도 유효한 노드 기반 계약이 있는 경우, 계약이 만료될 때까지 라이선스를 계속 사용할 수 있습니다.  계약이 만료되면 용량 기반 라이선스 모델로 전환해야 합니다.  Cloud Volumes ONTAP 노드에 대한 장기 계약이 없는 경우 EOS 날짜 전에 전환을 계획하는 것이 중요합니다.
 
-다음 표에서 각 라이선스 유형과 EOA가 라이선스 유형에 미치는 영향에 대해 자세히 알아보세요.
+다음 표를 통해 각 라이선스 유형과 EOA가 라이선스 유형에 미치는 영향에 대해 자세히 알아보세요.
 
 [cols="2*"]
 |===
@@ -283,4 +283,4 @@ NOTE: 이러한 시나리오에서도 새로운 노드 기반 라이선스와 �
 이 변환을 수행하는 방법을 알아보려면 다음을 참조하세요.link:task-convert-node-capacity.html["Cloud Volumes ONTAP 노드 기반 라이선스를 용량 기반 라이선스로 변환"] .
 
 
-NOTE: 용량 기반 라이선싱에서 노드 기반 라이선싱으로 시스템을 변환하는 것은 지원되지 않습니다.
+NOTE: 용량 기반 라이선싱에서 노드 기반 라이선싱으로 시스템을 전환하는 것은 지원되지 않습니다.

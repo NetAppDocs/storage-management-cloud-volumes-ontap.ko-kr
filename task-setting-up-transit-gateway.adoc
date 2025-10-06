@@ -16,7 +16,7 @@ summary: Cloud Volumes ONTAP 있는 VPC 외부에서 NAS 클라이언트가 플�
 [role="lead"]
 HA 쌍에 대한 액세스를 활성화하기 위해 AWS 전송 게이트웨이를 설정합니다.link:reference-networking-aws.html#requirements-for-ha-pairs-in-multiple-azs["유동 IP 주소"] HA 쌍이 있는 VPC 외부에서.
 
-Cloud Volumes ONTAP HA 구성이 여러 AWS 가용성 영역에 걸쳐 분산되어 있는 경우 VPC 내에서 NAS 데이터에 액세스하려면 플로팅 IP 주소가 필요합니다.  이러한 유동 IP 주소는 장애 발생 시 노드 간에 마이그레이션될 수 있지만 기본적으로 VPC 외부에서 액세스할 수는 없습니다.  별도의 개인 IP 주소는 VPC 외부에서 데이터에 액세스할 수 있도록 하지만 자동 장애 조치는 제공하지 않습니다.
+Cloud Volumes ONTAP HA 구성이 여러 AWS 가용성 영역에 걸쳐 분산된 경우 VPC 내에서 NAS 데이터에 액세스하려면 플로팅 IP 주소가 필요합니다.  이러한 유동 IP 주소는 장애 발생 시 노드 간에 마이그레이션될 수 있지만 기본적으로 VPC 외부에서 액세스할 수는 없습니다.  별도의 개인 IP 주소는 VPC 외부에서 데이터에 액세스할 수 있도록 하지만 자동 장애 조치는 제공하지 않습니다.
 
 클러스터 관리 인터페이스와 선택적 SVM 관리 LIF에도 부동 IP 주소가 필요합니다.
 
@@ -24,7 +24,7 @@ AWS 전송 게이트웨이를 설정하면 HA 쌍이 있는 VPC 외부에서 플
 
 다음은 두 개의 VPC가 트랜짓 게이트웨이로 연결된 것을 보여주는 예입니다.  HA 시스템은 한 VPC에 있고, 클라이언트는 다른 VPC에 있습니다.  그런 다음 부동 IP 주소를 사용하여 클라이언트에 NAS 볼륨을 마운트할 수 있습니다.
 
-image:diagram_transit_gateway.png["한 VPC의 HA 구성을 보여주는 다이어그램으로, 부동 IP가 ENI로 라우팅되고, 다른 VPC의 클라이언트가 부동 IP를 트랜짓 게이트웨이로 라우팅하고, 트랜짓 게이트웨이가 부동 IP를 VPC1 경로 테이블로 라우팅하는 것을 보여줍니다."]
+image:diagram_transit_gateway.png["한 VPC의 HA 구성을 보여주는 다이어그램으로, 부동 IP가 ENI로 라우팅되고, 다른 VPC의 클라이언트가 부동 IP를 트랜짓 게이트웨이로 라우팅하고, 트랜짓 게이트웨이가 부동 IP를 VPC1 경로 테이블로 라우팅하는 모습을 보여줍니다."]
 
 다음 단계에서는 비슷한 구성을 설정하는 방법을 보여줍니다.
 
@@ -40,7 +40,7 @@ image:diagram_transit_gateway.png["한 VPC의 HA 구성을 보여주는 다이�
 
 . HA 쌍의 플로팅 IP 주소를 지정하여 트랜짓 게이트웨이의 경로 테이블에 경로를 생성합니다.
 +
-NetApp 콘솔의 시스템 정보 페이지에서 부동 IP 주소를 찾을 수 있습니다. 예를 들면 다음과 같습니다.
+NetApp Console 의 시스템 정보 페이지에서 부동 IP 주소를 찾을 수 있습니다. 예를 들면 다음과 같습니다.
 
 +
 image:screenshot_floating_ips.gif["클러스터 관리 인터페이스, 두 개의 NFS 및 CIFS 데이터 인터페이스, SVM 관리 인터페이스에 대한 부동 IP 주소를 보여주는 스크린샷입니다."]

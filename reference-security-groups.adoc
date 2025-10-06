@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: reference-security-groups.html 
 keywords: security group, security groups, rules, ports, aws, inbound, outbound, rules 
-summary: NetApp 콘솔은 Cloud Volumes ONTAP 성공적으로 작동하는 데 필요한 인바운드 및 아웃바운드 규칙을 포함하는 AWS 보안 그룹을 생성합니다.  테스트 목적으로 포트를 참조하거나 자체 보안 그룹을 사용하려는 경우 포트를 참조할 수 있습니다. 
+summary: NetApp Console Cloud Volumes ONTAP 성공적으로 작동하는 데 필요한 인바운드 및 아웃바운드 규칙을 포함하는 AWS 보안 그룹을 생성합니다.  테스트 목적으로 포트를 참조하거나 자체 보안 그룹을 사용하려는 경우 포트를 참조할 수 있습니다. 
 ---
 = Cloud Volumes ONTAP 에 대한 AWS 보안 그룹 인바운드 및 아웃바운드 규칙
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: NetApp 콘솔은 Cloud Volumes ONTAP 성공적으로 작동하는 데 �
 
 
 [role="lead"]
-NetApp 콘솔은 Cloud Volumes ONTAP 성공적으로 작동하는 데 필요한 인바운드 및 아웃바운드 규칙을 포함하는 AWS 보안 그룹을 생성합니다.  테스트 목적으로 포트를 참조하거나 자체 보안 그룹을 사용하려는 경우 포트를 참조할 수 있습니다.
+NetApp Console Cloud Volumes ONTAP 성공적으로 작동하는 데 필요한 인바운드 및 아웃바운드 규칙을 포함하는 AWS 보안 그룹을 생성합니다.  테스트 목적으로 포트를 참조하거나 자체 보안 그룹을 사용하려는 경우 포트를 참조할 수 있습니다.
 
 
 

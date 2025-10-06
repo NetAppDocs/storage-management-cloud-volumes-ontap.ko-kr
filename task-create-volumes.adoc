@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: task-create-volumes.html 
 keywords: storage, provisioning, iscsi, nfs, cifs, volumes, create a volume, add a volume, create volumes, add volumes, creating a volume, adding a volume, provision volume, provision a volume, provisioning volumes, add volume to second node, add volume to node 2, cloud backup 
-summary: 초기 Cloud Volumes ONTAP 시스템을 시작한 후 더 많은 스토리지가 필요한 경우 NetApp 콘솔에서 NFS, CIFS 또는 iSCSI에 대한 새로운 FlexVol 볼륨을 생성할 수 있습니다. 
+summary: 초기 Cloud Volumes ONTAP 시스템을 시작한 후 더 많은 스토리지가 필요한 경우 NetApp Console 에서 NFS, CIFS 또는 iSCSI에 대한 새로운 FlexVol 볼륨을 생성할 수 있습니다. 
 ---
 = Cloud Volumes ONTAP 시스템에서 FlexVol volume 생성
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: 초기 Cloud Volumes ONTAP 시스템을 시작한 후 더 많은 스토
 
 
 [role="lead"]
-초기 Cloud Volumes ONTAP 시스템을 시작한 후 더 많은 스토리지가 필요한 경우 NetApp 콘솔에서 NFS, CIFS 또는 iSCSI에 대한 새로운 FlexVol 볼륨을 생성할 수 있습니다.
+초기 Cloud Volumes ONTAP 시스템을 시작한 후 더 많은 스토리지가 필요한 경우 NetApp Console 에서 NFS, CIFS 또는 iSCSI에 대한 새로운 FlexVol 볼륨을 생성할 수 있습니다.
 
 새 볼륨을 생성하는 방법은 여러 가지가 있습니다.
 
@@ -107,7 +107,7 @@ link:concept-client-protocols.html["지원되는 클라이언트 프로토콜 �
 ====
 .NFS
 --
-접근 제어:: 볼륨을 클라이언트에게 제공하기 위해 사용자 정의 내보내기 정책을 선택합니다.
+접근 제어:: 볼륨을 클라이언트가 사용할 수 있도록 사용자 지정 내보내기 정책을 선택합니다.
 수출 정책:: 볼륨에 액세스할 수 있는 서브넷의 클라이언트를 정의합니다. 기본적으로 콘솔은 서브넷의 모든 인스턴스에 대한 액세스를 제공하는 값을 입력합니다.
 
 
@@ -155,7 +155,7 @@ ifdef::gcp[]
 endif::gcp[]
 
 DNS 도메인:: Cloud Volumes ONTAP 스토리지 가상 머신(SVM)의 DNS 도메인입니다.  대부분의 경우 도메인은 AD 도메인과 동일합니다.
-NTP 서버:: Active Directory DNS를 사용하여 NTP 서버를 구성하려면 *Active Directory 도메인 사용*을 선택합니다.  다른 주소를 사용하여 NTP 서버를 구성해야 하는 경우 API를 사용해야 합니다.  자세한 내용은 다음을 참조하세요. https://docs.netapp.com/us-en/bluexp-automation/index.html["NetApp 콘솔 자동화 문서"^] .
+NTP 서버:: Active Directory DNS를 사용하여 NTP 서버를 구성하려면 *Active Directory 도메인 사용*을 선택합니다.  다른 주소를 사용하여 NTP 서버를 구성해야 하는 경우 API를 사용해야 합니다.  자세한 내용은 다음을 참조하세요. https://docs.netapp.com/us-en/bluexp-automation/index.html["NetApp Console 자동화 문서"^] .
 +
 --
 CIFS 서버를 생성할 때만 NTP 서버를 구성할 수 있습니다.  CIFS 서버를 만든 후에는 구성할 수 없습니다.

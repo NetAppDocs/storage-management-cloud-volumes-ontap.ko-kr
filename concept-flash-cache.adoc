@@ -36,7 +36,7 @@ ifdef::aws[]
 
 * AWS에서 Cloud Volumes ONTAP 9.12.0 이하 버전에 대해 Flash Cache를 구성하는 경우 Flash Cache 성능 향상을 활용하려면 모든 볼륨에서 압축을 비활성화해야 합니다.  Cloud Volumes ONTAP 9.12.1 이상을 배포하거나 업그레이드하는 경우 압축을 비활성화할 필요가 없습니다.
 +
-NetApp 콘솔에서 볼륨을 생성할 때 스토리지 효율성 설정 선택을 건너뛰거나 볼륨을 생성한 다음 http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-vsmg/GUID-8508A4CB-DB43-4D0D-97EB-859F58B29054.html["CLI를 사용하여 데이터 압축을 비활성화합니다."^] .
+NetApp Console 에서 볼륨을 생성할 때 스토리지 효율성 설정 선택을 건너뛰거나 볼륨을 생성한 다음 http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-vsmg/GUID-8508A4CB-DB43-4D0D-97EB-859F58B29054.html["CLI를 사용하여 데이터 압축을 비활성화합니다."^] .
 
 
 

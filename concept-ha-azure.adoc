@@ -26,9 +26,9 @@ Cloud Volumes ONTAP 고가용성(HA) 쌍은 클라우드 환경에서 장애가 
 
 Azure의 Cloud Volumes ONTAP HA 페이지 Blob 구성에는 다음 구성 요소가 포함됩니다.
 
-image:diagram_ha_azure.png["NetApp 콘솔과 클라이언트에서 들어오는 트래픽을 관리하는 로드 밸런서, VMSS Flex의 두 개의 Cloud Volumes ONTAP 노드, 부팅 데이터용 SSD 디스크, 고객 데이터용 Page Blob을 보여주는 개념적 이미지입니다."]
+image:diagram_ha_azure.png["NetApp Console 과 클라이언트에서 들어오는 트래픽을 관리하는 로드 밸런서, VMSS Flex의 두 개의 Cloud Volumes ONTAP 노드, 부팅 데이터용 SSD 디스크, 고객 데이터용 Page Blob을 보여주는 개념적 이미지입니다."]
 
-NetApp 콘솔이 배포하는 Azure 구성 요소에 대해 다음 사항을 참고하세요.
+NetApp Console 배포하는 Azure 구성 요소에 대해 다음 사항을 참고하세요.
 
 Azure 표준 부하 분산 장치:: 로드 밸런서는 Cloud Volumes ONTAP HA 쌍으로 들어오는 트래픽을 관리합니다.
 단일 가용성 영역의 VM:: Cloud Volumes ONTAP 9.15.1부터 단일 가용성 영역(AZ)에서 이기종 가상 머신(VM)을 만들고 관리할 수 있습니다.  동일한 AZ 내의 별도의 장애 도메인에 고가용성(HA) 노드를 배포하여 최적의 가용성을 보장할 수 있습니다.  이 기능을 활성화하는 유연한 오케스트레이션 모드에 대해 자세히 알아보려면 다음을 참조하세요. https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/["Microsoft Azure 설명서: 가상 머신 확장 집합"^] .

@@ -21,7 +21,7 @@ summary: 몇 단계만 거치면 Google Cloud용 Cloud Volumes ONTAP 시작할 �
 만약 당신이 없다면 https://docs.netapp.com/us-en/bluexp-setup-admin/concept-connectors.html["콘솔 에이전트"^] 하지만, 하나는 만들어야 합니다. https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-google.html["Google Cloud에서 콘솔 에이전트를 만드는 방법을 알아보세요."^]
 
 [role="quick-margin-para"]
-인터넷 접속이 불가능한 서브넷에 Cloud Volumes ONTAP 배포하려면 콘솔 에이전트를 수동으로 설치하고 해당 콘솔 에이전트에서 실행 중인 NetApp 콘솔에 액세스해야 합니다. https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-private-mode.html["인터넷 접속이 불가능한 위치에 콘솔 에이전트를 수동으로 설치하는 방법을 알아보세요."^]
+인터넷 접속이 불가능한 서브넷에 Cloud Volumes ONTAP 배포하려면 콘솔 에이전트를 수동으로 설치하고 해당 콘솔 에이전트에서 실행 중인 NetApp Console 에 액세스해야 합니다. https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-private-mode.html["인터넷 접속이 불가능한 위치에 콘솔 에이전트를 수동으로 설치하는 방법을 알아보세요."^]
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["둘"]구성을 계획하세요
 [role="quick-margin-para"]
@@ -47,7 +47,7 @@ link:reference-networking-gcp.html["네트워킹 요구 사항에 대해 자세�
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["네"]서비스 계정 설정
 [role="quick-margin-para"]
-Cloud Volumes ONTAP 두 가지 목적으로 Google Cloud 서비스 계정이 필요합니다.  첫 번째는 활성화할 때입니다.link:concept-data-tiering.html["데이터 계층화"] Google Cloud의 저렴한 객체 스토리지에 콜드 데이터를 계층화합니다.  두 번째는 다음을 활성화할 때입니다. https://docs.netapp.com/us-en/bluexp-backup-recovery/concept-backup-to-cloud.html["NetApp 백업 및 복구"^] 저렴한 개체 스토리지에 볼륨을 백업합니다.
+Cloud Volumes ONTAP 두 가지 목적으로 Google Cloud 서비스 계정이 필요합니다.  첫 번째는 활성화할 때입니다.link:concept-data-tiering.html["데이터 계층화"] Google Cloud의 저렴한 객체 스토리지에 콜드 데이터를 계층화합니다.  두 번째는 다음을 활성화할 때입니다. https://docs.netapp.com/us-en/bluexp-backup-recovery/concept-backup-to-cloud.html["NetApp Backup and Recovery"^] 저렴한 개체 스토리지에 볼륨을 백업합니다.
 
 [role="quick-margin-para"]
 하나의 서비스 계정을 설정하여 두 가지 목적으로 모두 사용할 수 있습니다.  서비스 계정에는 *저장소 관리자* 역할이 있어야 합니다.

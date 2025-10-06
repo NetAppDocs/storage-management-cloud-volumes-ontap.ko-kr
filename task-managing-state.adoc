@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: task-managing-state.html 
 keywords: schedule, schedules, scheduling, shutdowns, shut down, restart, stop, stopping, turn off, weekday, weekend 
-summary: NetApp 콘솔에서 Cloud Volumes ONTAP 중지하고 시작하여 클라우드 컴퓨팅 비용을 관리할 수 있습니다. 
+summary: NetApp Console 에서 Cloud Volumes ONTAP 중지하고 시작하여 클라우드 컴퓨팅 비용을 관리할 수 있습니다. 
 ---
 = Cloud Volumes ONTAP 시스템 시작 및 중지
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: NetApp 콘솔에서 Cloud Volumes ONTAP 중지하고 시작하여 클�
 
 
 [role="lead"]
-NetApp 콘솔에서 Cloud Volumes ONTAP 중지하고 시작하여 클라우드 컴퓨팅 비용을 관리할 수 있습니다.
+NetApp Console 에서 Cloud Volumes ONTAP 중지하고 시작하여 클라우드 컴퓨팅 비용을 관리할 수 있습니다.
 
 
 
@@ -23,7 +23,7 @@ NetApp 콘솔에서 Cloud Volumes ONTAP 중지하고 시작하여 클라우드 �
 컴퓨팅 비용을 낮추려면 특정 시간 간격으로 Cloud Volumes ONTAP 종료해야 할 수도 있습니다.  이 작업을 수동으로 수행하는 대신, 콘솔을 구성하여 특정 시간에 시스템을 자동으로 종료한 다음 다시 시작할 수 있습니다.
 
 .이 작업에 관하여
-* Cloud Volumes ONTAP 시스템의 자동 종료를 예약하는 경우, 활성 데이터 전송이 진행 중이면 콘솔이 종료를 연기합니다.
+* Cloud Volumes ONTAP 시스템의 자동 종료를 예약하는 경우, 활성 데이터 전송이 진행 중이면 콘솔에서 종료를 연기합니다.
 +
 전송이 완료되면 시스템이 종료됩니다.
 

@@ -14,7 +14,7 @@ summary: Cloud Volumes ONTAP 집계를 통한 Amazon EBS Elastic Volumes 기능�
 
 
 [role="lead"]
-Cloud Volumes ONTAP 집계를 통한 Amazon EBS Elastic Volumes 기능에 대한 지원은 더 나은 성능과 추가 용량을 제공하는 동시에 NetApp 콘솔이 필요에 따라 기본 디스크 용량을 자동으로 늘릴 수 있도록 합니다.
+Cloud Volumes ONTAP 집계를 통한 Amazon EBS Elastic Volumes 기능에 대한 지원은 더 나은 성능과 추가 용량을 제공하는 동시에 NetApp Console 필요에 따라 기본 디스크 용량을 자동으로 늘릴 수 있도록 합니다.
 
 
 

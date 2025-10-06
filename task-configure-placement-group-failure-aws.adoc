@@ -14,7 +14,7 @@ AWS 단일 가용성 영역(AZ)에 있는 Cloud Volumes ONTAP 고가용성(HA) �
 롤백 프로세스를 우회하면 Cloud Volumes ONTAP 배포 프로세스가 성공적으로 완료되고 배치 그룹 생성이 완료되지 않았음을 알립니다.
 
 .단계
-. SSH를 사용하여 NetApp 콘솔 에이전트 호스트에 연결하고 로그인합니다.
+. SSH를 사용하여 NetApp Console 에이전트 호스트에 연결하고 로그인합니다.
 . 로 이동 `/opt/application/netapp/cloudmanager/docker_occm/data` .
 . 편집하다 `app.conf` 값을 변경하여 `rollback-on-placement-group-failure` 매개변수 `false` .  이 매개변수의 기본값은 다음과 같습니다. `true` .
 +

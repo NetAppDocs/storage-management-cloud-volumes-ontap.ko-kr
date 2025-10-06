@@ -31,7 +31,7 @@ Cloud Volumes ONTAP 클라우드에서 ONTAP 데이터 관리 소프트웨어를
 Cloud Volumes ONTAP NetApp의 업계 최고 복제 기술인 SnapMirror 활용하여 온프레미스 데이터를 클라우드에 복제하므로 여러 사용 사례에 사용할 수 있는 보조 사본을 쉽게 확보할 수 있습니다.
 
 +
-Cloud Volumes ONTAP NetApp Backup and Recovery와 통합되어 클라우드 데이터의 보호 및 장기 보관을 위한 백업 및 복원 기능을 제공합니다.
+Cloud Volumes ONTAP NetApp Backup and Recovery 와 통합되어 클라우드 데이터의 보호 및 장기 보관을 위한 백업 및 복원 기능을 제공합니다.
 
 +
 link:https://docs.netapp.com/us-en/bluexp-backup-recovery/concept-backup-to-cloud.html["백업 및 복구에 대해 자세히 알아보세요"^]
@@ -53,7 +53,7 @@ Cloud Volumes ONTAP 데이터 암호화를 지원하고 바이러스 및 랜섬�
 
 * 개인정보 보호 규정 준수 제어
 +
-NetApp 데이터 분류와의 통합을 통해 데이터 컨텍스트를 이해하고 중요한 데이터를 식별하는 데 도움이 됩니다.
+NetApp Data Classification 와의 통합을 통해 데이터 컨텍스트를 이해하고 중요한 데이터를 식별하는 데 도움이 됩니다.
 
 +
 https://docs.netapp.com/us-en/bluexp-classification/concept-cloud-compliance.html["데이터 분류에 대해 자세히 알아보세요"^]
