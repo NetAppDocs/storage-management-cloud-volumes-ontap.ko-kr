@@ -1,0 +1,38 @@
+---
+sidebar: sidebar 
+permalink: task-registering.html 
+keywords: Cloud Volumes ONTAP, register, registering, paygo, pay-as-you-go, registration, instance id, serial number, account id, support 
+summary: NetApp 의 지원은 Cloud Volumes ONTAP PAYGO 시스템에 포함되어 있지만, 먼저 NetApp 에 ​​시스템을 등록하여 지원을 활성화해야 합니다. 
+---
+= Cloud Volumes ONTAP 종량제 시스템 등록
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+NetApp 의 지원은 Cloud Volumes ONTAP PAYGO(Pay-as-you-go) 시스템에 포함되어 있지만, 먼저 NetApp 에 ​​시스템을 등록하여 지원을 활성화해야 합니다.
+
+ONTAP 소프트웨어를 업그레이드하려면 NetApp 에 ​​PAYGO 시스템을 등록해야 합니다.link:task-updating-ontap-cloud.html["이 페이지에 설명되어 있습니다"] .
+
+
+TIP: 지원에 등록되지 않은 시스템에서도 새로운 버전이 출시되면 NetApp 콘솔에 표시되는 소프트웨어 업데이트 알림을 받게 됩니다.  하지만 소프트웨어를 업그레이드하려면 먼저 시스템을 등록해야 합니다.
+
+.단계
+. 아직 NetApp 지원 사이트 계정을 콘솔에 추가하지 않았다면 *계정 설정*으로 이동하여 지금 추가하세요.
++
+https://docs.netapp.com/us-en/bluexp-setup-admin/task-adding-nss-accounts.html["NetApp 지원 사이트 계정을 추가하는 방법을 알아보세요"^] .
+
+. *시스템* 페이지에서 등록하려는 시스템 이름을 두 번 클릭합니다.
+. 개요 탭에서 기능 패널을 클릭한 다음 *지원 등록* 옆에 있는 연필 아이콘을 클릭합니다.
++
+image::screenshot_features_support_registration_2.png[400]
+
+. NetApp 지원 사이트 계정을 선택하고 *등록*을 클릭하세요.
+
+
+.결과
+해당 시스템은 NetApp 에 ​​등록되어 있습니다.

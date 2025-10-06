@@ -1,0 +1,68 @@
+---
+sidebar: sidebar 
+permalink: concept-overview-cvo.html 
+keywords: what is cloud volumes ontap, cloud volumes ontap features, features, cloud volumes ontap overview, overview of cloud volumes ontap, cloud backup, cloud data sense 
+summary: Cloud Volumes ONTAP 사용하면 데이터 보호, 보안 및 규정 준수를 강화하는 동시에 클라우드 스토리지 비용과 성능을 최적화할 수 있습니다. 
+---
+= Cloud Volumes ONTAP 에 대해 알아보세요
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Cloud Volumes ONTAP 사용하면 데이터 보호, 보안 및 규정 준수를 강화하는 동시에 클라우드 스토리지 비용과 성능을 최적화할 수 있습니다.
+
+Cloud Volumes ONTAP 클라우드에서 ONTAP 데이터 관리 소프트웨어를 실행하는 소프트웨어 전용 스토리지 어플라이언스입니다.  다음과 같은 주요 기능을 갖춘 엔터프라이즈급 스토리지를 제공합니다.
+
+* 저장 효율성
++
+내장된 데이터 중복 제거, 데이터 압축, 씬 프로비저닝, 복제 기능을 활용하여 스토리지 비용을 최소화합니다.
+
+* 고가용성
++
+클라우드 환경에서 장애가 발생하더라도 기업의 안정성과 지속적인 운영을 보장하세요.
+
+* 데이터 보호
++
+Cloud Volumes ONTAP NetApp의 업계 최고 복제 기술인 SnapMirror 활용하여 온프레미스 데이터를 클라우드에 복제하므로 여러 사용 사례에 사용할 수 있는 보조 사본을 쉽게 확보할 수 있습니다.
+
++
+Cloud Volumes ONTAP NetApp Backup and Recovery와 통합되어 클라우드 데이터의 보호 및 장기 보관을 위한 백업 및 복원 기능을 제공합니다.
+
++
+link:https://docs.netapp.com/us-en/bluexp-backup-recovery/concept-backup-to-cloud.html["백업 및 복구에 대해 자세히 알아보세요"^]
+
+* 데이터 계층화
++
+애플리케이션을 오프라인으로 전환하지 않고도 필요에 따라 고성능 및 저성능 스토리지 풀을 전환할 수 있습니다.
+
+* 애플리케이션 일관성
++
+NetApp SnapCenter 사용하여 NetApp Snapshot 복사본의 일관성을 보장합니다.
+
++
+https://docs.netapp.com/us-en/snapcenter/get-started/concept_snapcenter_overview.html["SnapCenter 에 대해 자세히 알아보세요"^]
+
+* 데이터 보안
++
+Cloud Volumes ONTAP 데이터 암호화를 지원하고 바이러스 및 랜섬웨어로부터 보호합니다.
+
+* 개인정보 보호 규정 준수 제어
++
+NetApp 데이터 분류와의 통합을 통해 데이터 컨텍스트를 이해하고 중요한 데이터를 식별하는 데 도움이 됩니다.
+
++
+https://docs.netapp.com/us-en/bluexp-classification/concept-cloud-compliance.html["데이터 분류에 대해 자세히 알아보세요"^]
+
+
+
+
+NOTE: ONTAP 기능 라이선스는 Cloud Volumes ONTAP 에 포함되어 있습니다.
+
+https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/index.html["지원되는 Cloud Volumes ONTAP 구성 보기"^]
+
+https://bluexp.netapp.com/ontap-cloud["Cloud Volumes ONTAP 에 대해 자세히 알아보세요"^]

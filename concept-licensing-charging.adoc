@@ -1,0 +1,204 @@
+---
+sidebar: sidebar 
+permalink: concept-licensing-charging.html 
+keywords: capacity-based license charging, consumption for licenses, pricing for licenses, CVO licensing, CVO charging 
+summary: 용량 기반 라이선스의 요금 청구, 소비 모델, 가격 책정 및 구성에 대해 잘 알고 있어야 합니다. 
+---
+= Cloud Volumes ONTAP 의 용량 기반 라이선스에 대해 자세히 알아보세요.
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+용량 기반 라이선스에 대한 요금 청구 및 용량 사용에 대해 잘 알고 있어야 합니다.
+
+
+
+== 소비 모델
+
+용량 기반 라이선스 패키지는 다음과 같은 소비 모델로 제공됩니다.
+
+* *BYOL*: 자체 라이선스 지참(BYOL)  모든 클라우드 공급자에 Cloud Volumes ONTAP 배포하는 데 사용할 수 있는 NetApp 에서 구매한 라이선스입니다.
++
+
+NOTE: NetApp BYOL 라이선스 구매, 연장 및 갱신을 제한하고 있습니다. 자세한 내용은 다음을 참조하세요.  https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/whats-new.html#restricted-availability-of-byol-licensing-for-cloud-volumes-ontap["Cloud Volumes ONTAP 에 대한 BYOL 라이선싱의 제한된 가용성"^] .
+
+
+
+ifdef::azure[]
+
+endif::azure[]
+
+* *PAYGO*: 사용량에 따른 요금 지불(PAYGO) 구독은 클라우드 공급업체의 마켓플레이스에서 제공하는 시간당 구독입니다.
+* *연간*: 클라우드 공급업체의 마켓플레이스와 맺은 연간 계약입니다.
+
+
+다음 사항에 유의하세요.
+
+* NetApp (BYOL)에서 라이선스를 구매하는 경우, 클라우드 제공업체의 마켓플레이스에서 PAYGO 상품도 구독해야 합니다. NetApp BYOL 라이선스를 제한적으로 제공합니다. BYOL 라이선스가 만료되면 클라우드 마켓플레이스 구독으로 교체해야 합니다.
++
+귀하의 라이선스 요금이 항상 먼저 청구되지만, 다음의 경우에는 마켓플레이스의 시간당 요금으로 청구됩니다.
+
++
+** 허가된 용량을 초과하는 경우
+** 면허 기간이 만료되면
+
+
+* 마켓플레이스와 연간 계약을 맺은 경우 배포하는 모든 Cloud Volumes ONTAP 시스템에 대해 해당 계약 요금이 청구됩니다.  연간 마켓플레이스 계약과 BYOL을 섞어서 사용할 수는 없습니다.
+* 중국 리전에서는 BYOL을 지원하는 단일 노드 시스템만 지원됩니다. 중국 리전 배포는 BYOL 라이선스 제한에서 제외됩니다.
+
+
+
+
+== 패키지 변경
+
+배포 후에는 용량 기반 라이선싱을 사용하는 Cloud Volumes ONTAP 시스템의 패키지를 변경할 수 있습니다. 예를 들어, Essentials 패키지로 Cloud Volumes ONTAP 시스템을 배포한 경우 비즈니스 요구 사항이 변경되면 Professional 패키지로 변경할 수 있습니다.
+
+link:task-manage-capacity-licenses.html["충전 방법을 변경하는 방법을 알아보세요"] .
+
+노드 기반 라이센스를 용량 기반으로 변환하는 방법에 대한 자세한 내용은 다음을 참조하세요.
+
+
+
+== 가격 및 지원되는 구성
+
+가격에 대한 자세한 내용은 다음을 참조하세요. https://bluexp.netapp.com/pricing/["NetApp 콘솔 웹사이트"^] .
+
+용량 기반 라이선싱 패키지는 Cloud Volumes ONTAP 9.7 이상에서 사용할 수 있습니다.
+
+
+
+=== 스토리지 VM
+
+* 추가 데이터 제공 스토리지 VM(SVM)에는 추가 라이선스 비용이 없지만 데이터 제공 SVM당 최소 4TiB 용량 요금이 부과됩니다.
+* 재해 복구 SVM은 제공된 용량에 따라 요금이 부과됩니다.
+
+
+
+
+=== HA 쌍
+
+HA 쌍의 경우 노드에 프로비저닝된 용량에 대해서만 요금이 청구됩니다.  파트너 노드에 동기적으로 미러링된 데이터에는 요금이 부과되지 않습니다.
+
+
+
+=== FlexClone 및 FlexCache 볼륨
+
+* FlexClone 볼륨에서 사용된 용량에 대해서는 요금이 청구되지 않습니다.
+* 소스 및 대상 FlexCache 볼륨은 기본 데이터로 간주되며 프로비저닝된 공간에 따라 요금이 부과됩니다.
+
+
+
+
+== 용량 제한
+
+용량 기반 라이선싱 모델에서 각 Cloud Volumes ONTAP 시스템은 개체 스토리지에 대한 계층화를 지원하며, 전체 계층화 용량은 클라우드 공급자의 버킷 한도까지 확장될 수 있습니다. 라이센스에는 용량 제한이 부과되지 않지만 다음을 따르십시오. https://www.netapp.com/pdf.html?item=/media/17239-tr-4598.pdf["FabricPool 모범 사례"^] 계층화를 구성하고 관리할 때 최적의 성능, 안정성 및 비용 효율성을 보장합니다.
+
+각 클라우드 공급자의 용량 제한에 대한 자세한 내용은 해당 문서를 참조하세요.
+
+* https://docs.aws.amazon.com/AmazonS3/latest/userguide/BucketRestrictions.html["AWS 문서"^]
+* https://learn.microsoft.com/en-us/azure/storage/common/scalability-targets-standard-account["관리 디스크에 대한 Azure 설명서"^]그리고 https://learn.microsoft.com/en-us/azure/storage/blobs/scalability-targets["Blob 저장소에 대한 Azure 설명서"^]
+* https://cloud.google.com/storage/docs/buckets["Google Cloud 문서"^]
+
+
+
+
+== 최대 시스템 수
+
+용량 기반 라이선싱을 사용하는 경우, Cloud Volumes ONTAP 시스템의 최대 수는 NetApp 콘솔 계정당 24개로 제한됩니다.  _시스템_은 Cloud Volumes ONTAP HA 쌍, Cloud Volumes ONTAP 단일 노드 시스템 또는 사용자가 생성하는 추가 스토리지 VM입니다.  기본 스토리지 VM은 제한에 포함되지 않습니다.  이 제한은 모든 라이선스 모델에 적용됩니다.
+
+예를 들어, 세 가지 시스템이 있다고 가정해 보겠습니다.
+
+* 하나의 스토리지 VM이 있는 단일 노드 Cloud Volumes ONTAP 시스템(이것은 Cloud Volumes ONTAP 배포할 때 생성되는 기본 스토리지 VM입니다)
++
+이 시스템은 하나의 시스템으로 간주됩니다.
+
+* 두 개의 스토리지 VM(기본 스토리지 VM과 사용자가 생성한 추가 스토리지 VM 하나)이 있는 단일 노드 Cloud Volumes ONTAP 시스템
++
+이 시스템은 두 개의 시스템으로 계산됩니다. 하나는 단일 노드 시스템용이고 다른 하나는 추가 스토리지 VM용입니다.
+
+* 3개의 스토리지 VM(기본 스토리지 VM과 사용자가 생성한 추가 스토리지 VM 2개)이 있는 Cloud Volumes ONTAP HA 쌍
++
+이 시스템은 HA 쌍용 시스템 1개, 추가 스토리지 VM용 시스템 2개, 총 3개로 계산됩니다.
+
+
+
+총 6개의 시스템이 있습니다.  그러면 계정에 14개의 시스템을 추가로 설치할 수 있는 공간이 생깁니다.
+
+24개 이상의 시스템이 필요한 대규모 배포의 경우, 고객 담당자나 영업팀에 문의하세요.
+
+https://docs.netapp.com/us-en/bluexp-setup-admin/concept-netapp-accounts.html["콘솔 계정에 대해 자세히 알아보세요"^] .
+
+https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/index.html["AWS, Azure 및 Google Cloud의 저장 용량 한도에 대해 알아보세요."^] .
+
+
+
+== 충전에 대한 참고 사항
+
+다음 세부 정보는 용량 기반 라이선싱에서 요금이 청구되는 방식을 이해하는 데 도움이 될 수 있습니다.
+
+
+
+=== 최소 요금
+
+최소한 하나의 기본(읽기-쓰기) 볼륨이 있는 각 데이터 제공 스토리지 VM에 대해 최소 4TiB의 요금이 부과됩니다.  기본 볼륨의 합계가 4TiB 미만이면 콘솔은 해당 스토리지 VM에 최소 4TiB 요금을 적용합니다.
+
+아직 볼륨을 프로비저닝하지 않은 경우 최소 요금이 적용되지 않습니다.
+
+Essentials 패키지의 경우, 최소 4TiB 용량 요금은 보조(데이터 보호) 볼륨만 포함된 스토리지 VM에는 적용되지 않습니다. 예를 들어, 1TiB의 보조 데이터가 있는 스토리지 VM이 있는 경우 해당 1TiB의 데이터에 대해서만 요금이 청구됩니다. Professional 패키지 유형의 경우 볼륨 유형에 관계없이 최소 4TiB 용량 충전이 적용됩니다.
+
+
+
+=== 초과분
+
+BYOL 용량을 초과하는 경우, 마켓플레이스 구독에 따라 시간당 요금으로 초과 요금이 부과됩니다. 초과 요금은 마켓플레이스 요금으로 부과되며, 다른 라이선스의 가용 용량을 먼저 사용하는 것을 우선시합니다. BYOL 라이선스가 만료되면 클라우드 마켓플레이스를 통해 용량 기반 라이선스 모델로 전환해야 합니다.
+
+
+
+=== 필수 패키지
+
+Essentials 패키지를 사용하면 배포 유형(HA 또는 단일 노드)과 볼륨 유형(기본 또는 보조)에 따라 요금이 청구됩니다.  높은 가격부터 낮은 가격 순으로 가격은 다음과 같습니다: _Essentials Primary HA_, _Essentials Primary Single Node_, _Essentials Secondary HA_, _Essentials Secondary Single Node_.  또는 마켓플레이스 계약을 구매하거나 개인 제안을 수락하는 경우 모든 배포 또는 볼륨 유형에 대해 용량 요금이 동일합니다.
+
+라이선싱은 Cloud Volumes ONTAP 시스템 내에서 생성된 볼륨 유형에 따라 전적으로 결정됩니다.
+
+* 필수 단일 노드: 단 하나의 ONTAP 노드를 사용하여 Cloud Volumes ONTAP 시스템에서 생성된 읽기/쓰기 볼륨입니다.
+* 필수 HA: 중단 없는 데이터 액세스를 위해 서로 장애 조치를 취할 수 있는 두 개의 ONTAP 노드를 사용하여 볼륨을 읽고 씁니다.
+* 필수 보조 단일 노드: Cloud Volumes ONTAP 시스템에서 하나의 ONTAP 노드만 사용하여 생성된 데이터 보호(DP) 유형 볼륨(일반적으로 읽기 전용인 SnapMirror 또는 SnapVault 대상 볼륨)입니다.
++
+
+NOTE: 읽기 전용/DP 볼륨이 기본 볼륨이 되면 콘솔은 이를 기본 데이터로 간주하고 볼륨이 읽기/쓰기 모드였던 시간을 기준으로 요금을 계산합니다.  볼륨이 다시 읽기 전용/DP로 바뀌면 해당 볼륨을 다시 보조 데이터로 간주하고 콘솔에서 가장 잘 일치하는 라이선스를 사용하여 요금을 청구합니다.
+
+* 필수 보조 HA: 두 개의 ONTAP 노드를 사용하여 Cloud Volumes ONTAP 시스템에서 생성된 데이터 보호(DP) 유형 볼륨(일반적으로 읽기 전용인 SnapMirror 또는 SnapVault 대상 볼륨)으로, 중단 없는 데이터 액세스를 위해 서로 장애 조치할 수 있습니다.
+
+
+.바이올
+NetApp 에서 Essentials 라이선스를 구매했고(BYOL) 해당 배포 및 볼륨 유형에 대한 라이선스 용량을 초과한 경우 콘솔은 더 높은 가격의 Essentials 라이선스(라이선스가 있고 사용 가능한 용량이 있는 경우)에 대해 초과 요금을 청구합니다.  이는 마켓플레이스에서 요금을 청구하기 전에 귀하가 선불 용량으로 이미 구매한 사용 가능한 용량을 먼저 사용하기 때문에 발생합니다.  BYOL 라이선스로 사용 가능한 용량이 없는 경우, 초과된 용량은 마켓플레이스 주문형 시간당 요금(PAYGO)으로 청구되며 월별 청구서에 비용이 추가됩니다.
+
+예를 들어 보겠습니다. Essentials 패키지에 대해 다음과 같은 라이선스가 있다고 가정해 보겠습니다.
+
+* 500TiB의 커밋 용량을 갖는 500TiB _Essentials Secondary HA_ 라이선스
+* 100TiB의 커밋 용량만 있는 500TiB _Essentials Single Node_ 라이선스
+
+
+보조 볼륨이 있는 HA 쌍에 추가로 50TiB가 프로비저닝됩니다.  50TiB를 PAYGO에 청구하는 대신, 콘솔은 _Essentials Single Node_ 라이선스에 대해 50TiB 초과 요금을 청구합니다.  해당 라이선스의 가격은 _Essentials Secondary HA_보다 높지만, 이미 구매한 라이선스를 활용하고 있으므로 월별 청구서에 비용이 추가되지 않습니다.
+
+*관리 > 라이선스 및 구독*에서 _Essentials Single Node_ 라이선스에 대해 50TiB가 청구된 것을 확인할 수 있습니다.
+
+또 다른 예를 들어보겠습니다.  Essentials 패키지에 대해 다음과 같은 라이선스가 있다고 가정해 보겠습니다.
+
+* 500TiB의 커밋 용량을 갖는 500TiB _Essentials Secondary HA_ 라이선스
+* 100TiB의 커밋 용량만 있는 500TiB _Essentials Single Node_ 라이선스
+
+
+기본 볼륨이 있는 HA 쌍에 추가로 100TiB가 프로비저닝됩니다.  구매하신 라이선스에는 _Essentials Primary HA_ 용량이 할당되어 있지 않습니다.  _Essentials Primary HA_ 라이선스의 가격은 _Essentials Primary Single Node_와 _Essentials Secondary HA_ 라이선스보다 높습니다.
+
+이 예에서 콘솔은 추가 100TiB에 대해 시장 가격으로 초과 요금을 청구합니다.  초과 요금은 월별 청구서에 표시됩니다.
+
+.마켓플레이스 계약 또는 비공개 제안
+마켓플레이스 계약이나 비공개 제안의 일부로 Essentials 라이선스를 구매한 경우 BYOL 로직이 적용되지 않으며 사용에 맞는 정확한 라이선스 유형이 있어야 합니다.  라이선스 유형에는 볼륨 유형(기본 또는 보조)과 배포 유형(HA 또는 단일 노드)이 포함됩니다.
+
+예를 들어, Essentials 라이선스로 Cloud Volumes ONTAP 인스턴스를 배포한다고 가정해 보겠습니다.  그런 다음 읽기-쓰기 볼륨(기본 단일 노드)과 읽기 전용(보조 단일 노드) 볼륨을 프로비저닝합니다.  마켓플레이스 계약 또는 비공개 제안에는 프로비저닝된 용량을 충당하기 위한 _Essentials 단일 노드_ 및 _Essentials 보조 단일 노드_에 대한 용량이 포함되어야 합니다.  마켓플레이스 계약이나 개인 제안에 포함되지 않은 프로비저닝된 용량은 주문형 시간당 요금(PAYGO)으로 청구되며 월별 청구서에 비용이 추가됩니다.

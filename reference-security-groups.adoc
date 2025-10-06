@@ -1,0 +1,364 @@
+---
+sidebar: sidebar 
+permalink: reference-security-groups.html 
+keywords: security group, security groups, rules, ports, aws, inbound, outbound, rules 
+summary: NetApp 콘솔은 Cloud Volumes ONTAP 성공적으로 작동하는 데 필요한 인바운드 및 아웃바운드 규칙을 포함하는 AWS 보안 그룹을 생성합니다.  테스트 목적으로 포트를 참조하거나 자체 보안 그룹을 사용하려는 경우 포트를 참조할 수 있습니다. 
+---
+= Cloud Volumes ONTAP 에 대한 AWS 보안 그룹 인바운드 및 아웃바운드 규칙
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+NetApp 콘솔은 Cloud Volumes ONTAP 성공적으로 작동하는 데 필요한 인바운드 및 아웃바운드 규칙을 포함하는 AWS 보안 그룹을 생성합니다.  테스트 목적으로 포트를 참조하거나 자체 보안 그룹을 사용하려는 경우 포트를 참조할 수 있습니다.
+
+
+
+== Cloud Volumes ONTAP 규칙
+
+Cloud Volumes ONTAP 의 보안 그룹에는 인바운드 규칙과 아웃바운드 규칙이 모두 필요합니다.
+
+
+
+=== 인바운드 규칙
+
+Cloud Volumes ONTAP 시스템을 추가하고 미리 정의된 보안 그룹을 선택하면 다음 중 하나 내에서 트래픽을 허용하도록 선택할 수 있습니다.
+
+* *선택된 VPC만 해당*: 인바운드 트래픽의 소스는 Cloud Volumes ONTAP 시스템의 VPC 서브넷 범위와 콘솔 에이전트가 있는 VPC의 서브넷 범위입니다.  이것은 권장되는 옵션입니다.
+* *모든 VPC*: 인바운드 트래픽의 소스는 0.0.0.0/0 IP 범위입니다.
+
+
+[cols="10,10,80"]
+|===
+| 규약 | 포트 | 목적 
+
+
+| 모든 ICMP | 모두 | 인스턴스에 ping을 보냅니다. 
+
+
+| HTTP | 80 | 클러스터 관리 LIF의 IP 주소를 사용하여 ONTAP System Manager 웹 콘솔에 대한 HTTP 액세스 
+
+
+| HTTPS | 443 | 클러스터 관리 LIF의 IP 주소를 사용하여 콘솔 에이전트와 ONTAP System Manager 웹 콘솔에 대한 HTTPS 액세스 연결 
+
+
+| SSH | 22 | 클러스터 관리 LIF 또는 노드 관리 LIF의 IP 주소에 대한 SSH 액세스 
+
+
+| TCP | 111 | NFS에 대한 원격 프로시저 호출 
+
+
+| TCP | 139 | CIFS용 NetBIOS 서비스 세션 
+
+
+| TCP | 161-162 | 간단한 네트워크 관리 프로토콜 
+
+
+| TCP | 445 | NetBIOS 프레이밍을 통한 TCP를 통한 Microsoft SMB/CIFS 
+
+
+| TCP | 635 | NFS 마운트 
+
+
+| TCP | 749 | 케르베로스 
+
+
+| TCP | 2049 | NFS 서버 데몬 
+
+
+| TCP | 3260 | iSCSI 데이터 LIF를 통한 iSCSI 액세스 
+
+
+| TCP | 4045 | NFS 잠금 데몬 
+
+
+| TCP | 4046 | NFS용 네트워크 상태 모니터 
+
+
+| TCP | 10000 | NDMP를 사용한 백업 
+
+
+| TCP | 11104 | SnapMirror 위한 클러스터 간 통신 세션 관리 
+
+
+| TCP | 11105 | 클러스터 간 LIF를 사용한 SnapMirror 데이터 전송 
+
+
+| UDP | 111 | NFS에 대한 원격 프로시저 호출 
+
+
+| UDP | 161-162 | 간단한 네트워크 관리 프로토콜 
+
+
+| UDP | 635 | NFS 마운트 
+
+
+| UDP | 2049 | NFS 서버 데몬 
+
+
+| UDP | 4045 | NFS 잠금 데몬 
+
+
+| UDP | 4046 | NFS용 네트워크 상태 모니터 
+
+
+| UDP | 4049 | NFS rquotad 프로토콜 
+|===
+
+
+=== 아웃바운드 규칙
+
+Cloud Volumes ONTAP 의 미리 정의된 보안 그룹은 모든 아웃바운드 트래픽을 개방합니다. 이것이 허용된다면, 기본적인 아웃바운드 규칙을 따르세요. 더욱 엄격한 규칙이 필요한 경우 고급 아웃바운드 규칙을 사용하세요.
+
+
+
+==== 기본 아웃바운드 규칙
+
+Cloud Volumes ONTAP 의 미리 정의된 보안 그룹에는 다음과 같은 아웃바운드 규칙이 포함되어 있습니다.
+
+[cols="20,20,60"]
+|===
+| 규약 | 포트 | 목적 
+
+
+| 모든 ICMP | 모두 | 모든 아웃바운드 트래픽 
+
+
+| 모든 TCP | 모두 | 모든 아웃바운드 트래픽 
+
+
+| 모든 UDP | 모두 | 모든 아웃바운드 트래픽 
+|===
+
+
+==== 고급 아웃바운드 규칙
+
+아웃바운드 트래픽에 대한 엄격한 규칙이 필요한 경우 다음 정보를 사용하여 Cloud Volumes ONTAP 의 아웃바운드 통신에 필요한 포트만 열 수 있습니다.
+
+
+NOTE: 소스는 Cloud Volumes ONTAP 시스템의 인터페이스(IP 주소)입니다.
+
+[cols="10,10,6,20,20,34"]
+|===
+| 서비스 | 규약 | 포트 | 원천 | 목적지 | 목적 
+
+
+.18+| 액티브 디렉토리 | TCP | 88 | 노드 관리 LIF | Active Directory 포리스트 | Kerberos V 인증 
+
+
+| UDP | 137 | 노드 관리 LIF | Active Directory 포리스트 | NetBIOS 이름 서비스 
+
+
+| UDP | 138 | 노드 관리 LIF | Active Directory 포리스트 | NetBIOS 데이터그램 서비스 
+
+
+| TCP | 139 | 노드 관리 LIF | Active Directory 포리스트 | NetBIOS 서비스 세션 
+
+
+| TCP 및 UDP | 389 | 노드 관리 LIF | Active Directory 포리스트 | LDAP 
+
+
+| TCP | 445 | 노드 관리 LIF | Active Directory 포리스트 | NetBIOS 프레이밍을 통한 TCP를 통한 Microsoft SMB/CIFS 
+
+
+| TCP | 464 | 노드 관리 LIF | Active Directory 포리스트 | Kerberos V 비밀번호 변경 및 설정(SET_CHANGE) 
+
+
+| UDP | 464 | 노드 관리 LIF | Active Directory 포리스트 | Kerberos 키 관리 
+
+
+| TCP | 749 | 노드 관리 LIF | Active Directory 포리스트 | Kerberos V 비밀번호 변경 및 설정(RPCSEC_GSS) 
+
+
+| TCP | 88 | 데이터 LIF(NFS, CIFS, iSCSI) | Active Directory 포리스트 | Kerberos V 인증 
+
+
+| UDP | 137 | 데이터 LIF(NFS, CIFS) | Active Directory 포리스트 | NetBIOS 이름 서비스 
+
+
+| UDP | 138 | 데이터 LIF(NFS, CIFS) | Active Directory 포리스트 | NetBIOS 데이터그램 서비스 
+
+
+| TCP | 139 | 데이터 LIF(NFS, CIFS) | Active Directory 포리스트 | NetBIOS 서비스 세션 
+
+
+| TCP 및 UDP | 389 | 데이터 LIF(NFS, CIFS) | Active Directory 포리스트 | LDAP 
+
+
+| TCP | 445 | 데이터 LIF(NFS, CIFS) | Active Directory 포리스트 | NetBIOS 프레이밍을 통한 TCP를 통한 Microsoft SMB/CIFS 
+
+
+| TCP | 464 | 데이터 LIF(NFS, CIFS) | Active Directory 포리스트 | Kerberos V 비밀번호 변경 및 설정(SET_CHANGE) 
+
+
+| UDP | 464 | 데이터 LIF(NFS, CIFS) | Active Directory 포리스트 | Kerberos 키 관리 
+
+
+| TCP | 749 | 데이터 LIF(NFS, CIFS) | Active Directory 포리스트 | Kerberos V 비밀번호 변경 및 설정(RPCSEC_GSS) 
+
+
+.3+| AutoSupport | HTTPS | 443 | 노드 관리 LIF | mysupport.netapp.com | AutoSupport (HTTPS가 기본값) 
+
+
+| HTTP | 80 | 노드 관리 LIF | mysupport.netapp.com | AutoSupport (전송 프로토콜이 HTTPS에서 HTTP로 변경된 경우에만) 
+
+
+| TCP | 3128 | 노드 관리 LIF | 콘솔 에이전트 | 아웃바운드 인터넷 연결이 불가능한 경우 콘솔 에이전트의 프록시 서버를 통해 AutoSupport 메시지 보내기 
+
+
+| S3에 백업 | TCP | 5010 | 클러스터 간 LIF | 백업 엔드포인트 또는 복원 엔드포인트 | S3 백업 기능에 대한 백업 및 복원 작업 
+
+
+.3+| 무리 | 모든 트래픽 | 모든 트래픽 | 한 노드의 모든 LIF | 다른 노드의 모든 LIF | 클러스터 간 통신(Cloud Volumes ONTAP HA만 해당) 
+
+
+| TCP | 3000 | 노드 관리 LIF | HA 중재자 | ZAPI 호출(Cloud Volumes ONTAP HA만 해당) 
+
+
+| ICMP | 1 | 노드 관리 LIF | HA 중재자 | 유지(Cloud Volumes ONTAP HA만 해당) 
+
+
+| 구성 백업 | HTTP | 80 | 노드 관리 LIF | \http://<콘솔 에이전트 IP 주소>/occm/offboxconfig | 구성 백업을 콘솔 에이전트로 보냅니다.link:https://docs.netapp.com/us-en/ontap/system-admin/node-cluster-config-backed-up-automatically-concept.html["ONTAP 문서"^] 
+
+
+| DHCP | UDP | 68 | 노드 관리 LIF | DHCP | 최초 설정을 위한 DHCP 클라이언트 
+
+
+| DHCPS | UDP | 67 | 노드 관리 LIF | DHCP | DHCP 서버 
+
+
+| DNS | UDP | 53 | 노드 관리 LIF 및 데이터 LIF(NFS, CIFS) | DNS | DNS 
+
+
+| NDMP | TCP | 18600년–18699년 | 노드 관리 LIF | 대상 서버 | NDMP 사본 
+
+
+| SMTP | TCP | 25 | 노드 관리 LIF | 메일 서버 | SMTP 알림은 AutoSupport 에 사용할 수 있습니다. 
+
+
+.4+| SNMP | TCP | 161 | 노드 관리 LIF | 모니터 서버 | SNMP 트랩을 통한 모니터링 
+
+
+| UDP | 161 | 노드 관리 LIF | 모니터 서버 | SNMP 트랩을 통한 모니터링 
+
+
+| TCP | 162 | 노드 관리 LIF | 모니터 서버 | SNMP 트랩을 통한 모니터링 
+
+
+| UDP | 162 | 노드 관리 LIF | 모니터 서버 | SNMP 트랩을 통한 모니터링 
+
+
+.2+| SnapMirror | TCP | 11104 | 클러스터 간 LIF | ONTAP 클러스터 간 LIF | SnapMirror 위한 클러스터 간 통신 세션 관리 
+
+
+| TCP | 11105 | 클러스터 간 LIF | ONTAP 클러스터 간 LIF | SnapMirror 데이터 전송 
+
+
+| 시스템 로그 | UDP | 514 | 노드 관리 LIF | 시스템 로그 서버 | Syslog 전달 메시지 
+|===
+
+
+== HA 중재자 외부 보안 그룹에 대한 규칙
+
+Cloud Volumes ONTAP HA 중재자의 미리 정의된 외부 보안 그룹에는 다음과 같은 인바운드 및 아웃바운드 규칙이 포함됩니다.
+
+
+
+=== 인바운드 규칙
+
+HA 중재자에 대한 미리 정의된 보안 그룹에는 다음과 같은 인바운드 규칙이 포함됩니다.
+
+[cols="20,20,20,40"]
+|===
+| 규약 | 포트 | 원천 | 목적 
+
+
+| TCP | 3000 | 콘솔 에이전트의 CIDR | 콘솔 에이전트에서 RESTful API 액세스 
+|===
+
+
+=== 아웃바운드 규칙
+
+HA 중재자에 대한 미리 정의된 보안 그룹은 모든 아웃바운드 트래픽을 개방합니다. 이것이 허용된다면, 기본적인 아웃바운드 규칙을 따르세요. 더욱 엄격한 규칙이 필요한 경우 고급 아웃바운드 규칙을 사용하세요.
+
+
+
+==== 기본 아웃바운드 규칙
+
+HA 중재자에 대한 미리 정의된 보안 그룹에는 다음과 같은 아웃바운드 규칙이 포함됩니다.
+
+[cols="20,20,60"]
+|===
+| 규약 | 포트 | 목적 
+
+
+| 모든 TCP | 모두 | 모든 아웃바운드 트래픽 
+
+
+| 모든 UDP | 모두 | 모든 아웃바운드 트래픽 
+|===
+
+
+==== 고급 아웃바운드 규칙
+
+아웃바운드 트래픽에 대한 엄격한 규칙이 필요한 경우 다음 정보를 사용하여 HA 중재자의 아웃바운드 통신에 필요한 포트만 열 수 있습니다.
+
+[cols="10,10,30,40"]
+|===
+| 규약 | 포트 | 목적지 | 목적 
+
+
+| HTTP | 80 | AWS EC2 인스턴스의 콘솔 에이전트의 IP 주소 | 중재자용 업그레이드 다운로드 
+
+
+| HTTPS | 443 | ec2.amazonaws.com | 스토리지 장애 조치 지원 
+
+
+| UDP | 53 | ec2.amazonaws.com | 스토리지 장애 조치 지원 
+|===
+
+NOTE: 포트 443과 53을 여는 대신 대상 서브넷에서 AWS EC2 서비스로 인터페이스 VPC 엔드포인트를 만들 수 있습니다.
+
+
+
+== HA 구성 내부 보안 그룹에 대한 규칙
+
+Cloud Volumes ONTAP HA 구성을 위한 미리 정의된 내부 보안 그룹에는 다음 규칙이 포함됩니다.  이 보안 그룹은 HA 노드 간, 중재자와 노드 간 통신을 가능하게 합니다.
+
+콘솔은 항상 이 보안 그룹을 생성합니다.  귀하 자신의 것을 사용할 수 있는 옵션이 없습니다.
+
+
+
+=== 인바운드 규칙
+
+미리 정의된 보안 그룹에는 다음과 같은 인바운드 규칙이 포함됩니다.
+
+[cols="20,20,60"]
+|===
+| 규약 | 포트 | 목적 
+
+
+| 모든 트래픽 | 모두 | HA 중재자와 HA 노드 간 통신 
+|===
+
+
+=== 아웃바운드 규칙
+
+미리 정의된 보안 그룹에는 다음과 같은 아웃바운드 규칙이 포함됩니다.
+
+[cols="20,20,60"]
+|===
+| 규약 | 포트 | 목적 
+
+
+| 모든 트래픽 | 모두 | HA 중재자와 HA 노드 간 통신 
+|===
+
+
+== 콘솔 에이전트에 대한 규칙
+
+https://docs.netapp.com/us-en/bluexp-setup-admin/reference-ports-aws.html["콘솔 에이전트에 대한 보안 그룹 규칙 보기"^]

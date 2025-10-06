@@ -1,0 +1,53 @@
+= 노드 기반 라이선스의 가용성 종료
+:allow-uri-read: 
+
+
+
+
+=== 노드 기반 라이선스의 가용성 종료
+
+NetApp Cloud Volumes ONTAP 노드 기반 라이선싱의 가용성 종료(EOA) 및 지원 종료(EOS)를 계획했습니다.  2024년 11월 11일부터 노드 기반 라이선스의 제한된 제공이 종료되었습니다. 노드 기반 라이선싱에 대한 지원은 2024년 12월 31일에 종료됩니다.  노드 기반 라이선스의 EOA가 만료된 후에는 BlueXP 라이선스 변환 도구를 사용하여 용량 기반 라이선스로 전환해야 합니다.
+
+연간 또는 장기 약정의 경우 NetApp EOA 날짜 또는 라이선스 만료일 전에 NetApp 담당자에게 연락하여 전환에 필요한 전제 조건이 충족되었는지 확인할 것을 권장합니다.  Cloud Volumes ONTAP 노드에 대한 장기 계약이 없고 온디맨드 PAYGO(Pay-as-you-go) 구독으로 시스템을 실행하는 경우 EOS 날짜 전에 전환을 계획하는 것이 중요합니다.  장기 계약과 PAYGO 구독 모두 BlueXP 라이선스 변환 도구를 사용하여 원활하게 변환할 수 있습니다.
+
+https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-licensing.html#end-of-availability-of-node-based-licenses["노드 기반 라이선스 제공 종료"^] https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-convert-node-capacity.html["Cloud Volumes ONTAP 노드 기반 라이선스를 용량 기반 라이선스로 변환"^]
+
+
+
+=== BlueXP 에서 노드 기반 배포 제거
+
+BlueXP 에서는 노드 기반 라이선스를 사용하여 Cloud Volumes ONTAP 시스템을 배포하는 옵션이 더 이상 제공되지 않습니다.  몇 가지 특별한 경우를 제외하고, 어떤 클라우드 공급자의 Cloud Volumes ONTAP 배포에도 노드 기반 라이선스를 사용할 수 없습니다.
+
+NetApp 계약 의무와 운영상의 필요 사항을 준수하기 위해 다음과 같은 고유한 라이선스 요구 사항을 인식하고 있으며, 이러한 상황에서 노드 기반 라이선스를 계속 지원할 것입니다.
+
+* 미국 공공 부문 고객
+* 개인 모드 배포
+* AWS에서 Cloud Volumes ONTAP 의 중국 지역 배포
+* 유효하고 만료되지 않은 노드별 BYOL 라이선스가 있는 경우
+
+
+https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-licensing.html#end-of-availability-of-node-based-licenses["노드 기반 라이선스 제공 종료"^]
+
+
+
+=== Azure Blob 스토리지에 Cloud Volumes ONTAP 데이터를 위한 콜드 계층 추가
+
+이제 BlueXP 사용하면 Azure Blob 저장소에 비활성 용량 계층 데이터를 저장할 콜드 계층을 선택할 수 있습니다.  기존의 따뜻하고 차가운 계층에 차가운 계층을 추가하면 보관 옵션을 더 저렴하게 제공하고 비용 효율성을 개선할 수 있습니다.
+
+https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-data-tiering.html#data-tiering-in-azure["Azure의 데이터 계층화"^]
+
+
+
+=== Azure의 저장소 계정에 대한 공개 액세스를 제한하는 옵션
+
+이제 Azure에서 Cloud Volumes ONTAP 시스템의 스토리지 계정에 대한 공개 액세스를 제한하는 옵션이 제공됩니다.  액세스를 비활성화하면 조직의 보안 정책을 준수해야 할 필요가 있는 경우 동일한 VNet 내에서도 개인 IP 주소가 노출되지 않도록 보호할 수 있습니다.  이 옵션은 Cloud Volumes ONTAP 시스템의 데이터 계층화를 비활성화하며, 단일 노드와 고가용성 쌍 모두에 적용할 수 있습니다.
+
+https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/reference-networking-azure.html#security-group-rules["보안 그룹 규칙"^] .
+
+
+
+=== Cloud Volumes ONTAP 배포 후 WORM 활성화
+
+이제 BlueXP 사용하여 기존 Cloud Volumes ONTAP 시스템에서 WORM(Write Once, Read Many) 스토리지를 활성화할 수 있습니다.  이 기능을 사용하면 작업 환경을 생성할 때 WORM이 활성화되지 않았더라도 작업 환경에서 WORM을 활성화할 수 있는 유연성을 제공합니다.  WORM을 활성화하면 비활성화할 수 없습니다.
+
+https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-worm.html#enabling-worm-on-a-cloud-volumes-ontap-working-environment["Cloud Volumes ONTAP 작업 환경에서 WORM 활성화"^]

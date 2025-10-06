@@ -1,0 +1,71 @@
+---
+sidebar: sidebar 
+permalink: concept-azure-mktplace-direct.html 
+keywords: azure marketplace direct, cvo in azure marketplace 
+summary:  
+---
+= Azure에서 Cloud Volumes ONTAP 배포 옵션에 대해 알아보세요.
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+NetApp Azure에 Cloud Volumes ONTAP 배포하기 위한 두 가지 옵션을 제공합니다.  Cloud Volumes ONTAP 전통적으로 배포 및 오케스트레이션을 위해 NetApp 콘솔을 사용합니다.  Cloud Volumes ONTAP 9.16.1부터 Azure 마켓플레이스 직접 배포를 활용할 수 있습니다. 이는 제한적이지만 여전히 강력한 Cloud Volumes ONTAP 기능과 옵션에 대한 액세스를 제공하는 간소화된 프로세스입니다.
+
+Azure Marketplace에서 직접 Cloud Volumes ONTAP 배포하는 경우 콘솔 에이전트를 설정하거나 콘솔을 통해 Cloud Volumes ONTAP 배포하는 데 필요한 다른 보안 및 온보딩 기준을 충족할 필요가 없습니다.  Azure 마켓플레이스에서 몇 번의 클릭만으로 Cloud Volumes ONTAP 빠르게 배포하고 사용자 환경에서 핵심 기능과 성능을 살펴볼 수 있습니다.
+
+Azure Marketplace에서 배포를 완료하면 콘솔에서 이러한 시스템을 검색할 수 있습니다.  발견 후에는 이를 Cloud Volumes ONTAP 시스템으로 관리하고 모든 콘솔 기능을 활용할 수 있습니다. link:task-deploy-cvo-azure-mktplc.html["콘솔에서 배포된 시스템을 검색하세요"] .
+
+두 옵션의 기능을 비교한 내용은 다음과 같습니다.  Azure 마켓플레이스를 통해 배포된 독립 실행형 인스턴스의 기능은 콘솔에서 검색될 때 변경됩니다.
+
+[cols="3*"]
+|===
+|  | Azure 마켓플레이스 | NetApp 콘솔 
+
+
+| *온보딩* | 직접 배치에 필요한 준비가 최소화되어 더 짧고 쉽습니다. | 콘솔 에이전트 설치를 포함한 더 긴 온보딩 프로세스 
+
+
+| *지원되는 가상 머신(VM) 유형*  a| 
+Eds_v5 및 Ls_v3 인스턴스 유형
+| 다양한 VM 유형.https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-azure.html["Azure에서 지원되는 구성"^] 
+
+
+| *특허* | 무료 라이센스 | 모든 용량 기반 라이센스.link:concept-licensing.html["Cloud Volumes ONTAP 라이선싱"] 
+
+
+| * NetApp 지원* | 포함되지 않음 | 라이센스 유형에 따라 사용 가능 
+
+
+| *용량* | 최대 500GiB | 구성에 따라 확장 가능 
+
+
+| *배포 모델* | 단일 가용성 영역(AZ)에 고가용성(HA) 모드 배포 | 단일 노드 및 HA 모드, 단일 및 다중 AZ 배포를 포함한 모든 지원 구성 
+
+
+| *지원되는 디스크 유형* | 프리미엄 SSD v2 관리 디스크 | 더 폭넓은 지원.link:concept-storage.html#azure-storage["Cloud Volumes ONTAP 의 기본 구성"] 
+
+
+| *쓰기 속도(빠른 쓰기 모드)* | 지원되지 않음 | 구성에 따라 지원됩니다. link:concept-write-speed.html["Cloud Volumes ONTAP 의 쓰기 속도에 대해 알아보세요"] . 
+
+
+| *오케스트레이션 기능* | 사용할 수 없음 | 라이센스 유형에 따라 NetApp 콘솔을 통해 사용 가능 
+
+
+| *지원되는 스토리지 VM 수* | 배포당 하나 | 구성에 따라 여러 개의 스토리지 VM이 제공됩니다.link:task-managing-svms-azure.html#supported-number-of-storage-vms["지원되는 스토리지 VM 수"] 
+
+
+| *인스턴스 유형 변경* | 지원되지 않음 | 지원됨 
+
+
+| * FabricPool 계층화* | 지원되지 않음 | 지원됨 
+|===
+.관련 링크
+* Azure 마켓플레이스 직접 배포:link:task-deploy-cvo-azure-mktplc.html["Azure Marketplace에서 Cloud Volumes ONTAP 배포"]
+* 콘솔을 통한 배포:link:task-getting-started-azure.html["Azure에서 Cloud Volumes ONTAP 대한 빠른 시작"]
+* https://docs.netapp.com/us-en/bluexp-family/index.html["NetApp 콘솔 설명서"^]
+

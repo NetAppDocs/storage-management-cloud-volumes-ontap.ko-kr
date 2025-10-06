@@ -1,0 +1,11 @@
+= Azure에서 뉴질랜드 북부 지역 지원
+:allow-uri-read: 
+
+
+
+
+=== Azure에서 뉴질랜드 북부 지역 지원
+
+뉴질랜드 북부 지역은 이제 Azure에서 Cloud Volumes ONTAP 9.12.1 GA 이상의 단일 노드 및 고가용성(HA) 구성이 지원됩니다.  이 지역에서는 Lsv3 인스턴스 유형이 지원되지 않습니다.
+
+지원되는 모든 지역 목록은 다음을 참조하세요. https://bluexp.netapp.com/cloud-volumes-global-regions["Azure의 글로벌 지역 맵"^] .

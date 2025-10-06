@@ -1,0 +1,80 @@
+---
+indexpage:
+  lead: Cloud Volumes ONTAP 사용하면 데이터 보호, 보안 및 규정 준수를 강화하는 동시에 클라우드 스토리지 비용과 성능을 최적화할
+    수 있습니다.
+  tiles:
+  - title: 시작하기
+    links:
+    - title: Cloud Volumes ONTAP 에 대해 알아보세요
+      url: concept-overview-cvo.html
+    - title: AWS 빠른 시작
+      url: task-getting-started-aws.html
+    - title: AWS 최고 비밀/비밀 클라우드 지역에 대한 빠른 시작
+      url: task-getting-started-aws-c2s.html
+      flavor: aws
+    - title: Azure 빠른 시작
+      url: task-getting-started-azure.html
+      flavor: azure
+    - title: Google Cloud 빠른 시작
+      url: task-getting-started-gcp.html
+      flavor: gcp
+  - title: 라이센스
+    links:
+    - title: 라이센스 개요
+      url: concept-licensing.html
+    - title: 용량 기반 라이선스 관리
+      url: task-manage-capacity-licenses.html
+    - title: 할당되지 않은 노드 기반 라이선스 교환
+      url: task-manage-node-licenses.html#exchange-unassigned-node-based-licenses
+    - title: Keystone 구독 관리
+      url: task-manage-keystone.html
+  - title: 스토리지 관리
+    links:
+    - title: 볼륨 생성
+      url: task-create-volumes.html
+    - title: 비활성 데이터를 개체 스토리지로 계층화
+      url: task-tiering.html
+    - title: FlexCache 로 데이터 액세스 가속화
+      url: task-accelerate-data-access.html
+    - title: ONTAP SAN 호스트 구성
+      url: https://docs.netapp.com/us-en/ontap-sanhost
+  - title: 시스템 관리
+    links:
+    - title: Cloud Volumes ONTAP 업그레이드
+      url: task-updating-ontap-cloud.html
+    - title: Cloud Volumes ONTAP 중지 및 시작
+      url: task-managing-state.html
+  - title: 보안
+    links:
+    - title: NetApp 암호화로 볼륨 암호화
+      url: task-encrypting-volumes.html
+    - title: 랜섬웨어 보호 강화
+      url: task-protecting-ransomware.html
+  - title: API
+    links:
+    - title: Cloud Volumes ONTAP API 개요
+      url: https://docs.netapp.com/us-en/bluexp-automation/cm/overview.html
+    - title: API 사용을 준비하세요
+      url: https://docs.netapp.com/us-en/bluexp-automation/cm/prepare.html
+    - title: API 참조
+      url: https://docs.netapp.com/us-en/bluexp-automation/cm/api_ref_resources.html
+  - title: 문제 해결
+    links:
+    - title: NetApp 지식 기반
+      url: https://kb.netapp.com/Advice_and_Troubleshooting/Cloud_Services/Cloud_Volumes_ONTAP_(CVO)
+  - title: 참조
+    links:
+    - title: 지원되는 구성
+      url: https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/index.html
+    - title: 지원되는 클라우드 지역
+      url: https://www.netapp.com/console/cloud-volumes-global-regions
+    - title: 계산기
+      url: https://www.netapp.com/console/calculator-hub
+  - title: 블로그 및 커뮤니티
+    links:
+    - title: NetApp 콘솔
+      url: https://www.netapp.com/console
+    - title: NetApp 데이터 서비스
+      url: https://www.netapp.com/data-services/
+    - title: NetApp 커뮤니티
+      url: https://community.netapp.com/

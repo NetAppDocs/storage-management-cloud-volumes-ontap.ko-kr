@@ -1,0 +1,104 @@
+---
+sidebar: sidebar 
+permalink: task-setting-up-transit-gateway.html 
+keywords: transit gateway, aws, amazon web services, transit gateway, floating ip, client access, nas, outside, vpc, virtual private cloud, route table 
+summary: Cloud Volumes ONTAP 있는 VPC 외부에서 NAS 클라이언트가 플로팅 IP 주소에 액세스할 수 있도록 AWS 전송 게이트웨이를 설정합니다.  이 기능은 장애가 발생하면 노드 간에 플로팅 IP가 자동으로 마이그레이션되므로 유용합니다. 
+---
+= Cloud Volumes ONTAP HA 쌍에 대한 AWS 전송 게이트웨이 설정
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+HA 쌍에 대한 액세스를 활성화하기 위해 AWS 전송 게이트웨이를 설정합니다.link:reference-networking-aws.html#requirements-for-ha-pairs-in-multiple-azs["유동 IP 주소"] HA 쌍이 있는 VPC 외부에서.
+
+Cloud Volumes ONTAP HA 구성이 여러 AWS 가용성 영역에 걸쳐 분산되어 있는 경우 VPC 내에서 NAS 데이터에 액세스하려면 플로팅 IP 주소가 필요합니다.  이러한 유동 IP 주소는 장애 발생 시 노드 간에 마이그레이션될 수 있지만 기본적으로 VPC 외부에서 액세스할 수는 없습니다.  별도의 개인 IP 주소는 VPC 외부에서 데이터에 액세스할 수 있도록 하지만 자동 장애 조치는 제공하지 않습니다.
+
+클러스터 관리 인터페이스와 선택적 SVM 관리 LIF에도 부동 IP 주소가 필요합니다.
+
+AWS 전송 게이트웨이를 설정하면 HA 쌍이 있는 VPC 외부에서 플로팅 IP 주소에 액세스할 수 있습니다.  즉, VPC 외부의 NAS 클라이언트와 NetApp 관리 도구가 플로팅 IP에 액세스할 수 있습니다.
+
+다음은 두 개의 VPC가 트랜짓 게이트웨이로 연결된 것을 보여주는 예입니다.  HA 시스템은 한 VPC에 있고, 클라이언트는 다른 VPC에 있습니다.  그런 다음 부동 IP 주소를 사용하여 클라이언트에 NAS 볼륨을 마운트할 수 있습니다.
+
+image:diagram_transit_gateway.png["한 VPC의 HA 구성을 보여주는 다이어그램으로, 부동 IP가 ENI로 라우팅되고, 다른 VPC의 클라이언트가 부동 IP를 트랜짓 게이트웨이로 라우팅하고, 트랜짓 게이트웨이가 부동 IP를 VPC1 경로 테이블로 라우팅하는 것을 보여줍니다."]
+
+다음 단계에서는 비슷한 구성을 설정하는 방법을 보여줍니다.
+
+.단계
+. https://docs.aws.amazon.com/vpc/latest/tgw/tgw-getting-started.html["트랜짓 게이트웨이를 생성하고 VPC를 게이트웨이에 연결합니다."^] .
+. VPC를 전송 게이트웨이 경로 테이블과 연결합니다.
++
+.. *VPC* 서비스에서 *전송 게이트웨이 경로 테이블*을 클릭합니다.
+.. 경로 테이블을 선택하세요.
+.. *협회*를 클릭한 다음 *협회 만들기*를 선택합니다.
+.. 연결할 첨부 파일(VPC)을 선택한 다음 *연결 만들기*를 클릭합니다.
+
+
+. HA 쌍의 플로팅 IP 주소를 지정하여 트랜짓 게이트웨이의 경로 테이블에 경로를 생성합니다.
++
+NetApp 콘솔의 시스템 정보 페이지에서 부동 IP 주소를 찾을 수 있습니다. 예를 들면 다음과 같습니다.
+
++
+image:screenshot_floating_ips.gif["클러스터 관리 인터페이스, 두 개의 NFS 및 CIFS 데이터 인터페이스, SVM 관리 인터페이스에 대한 부동 IP 주소를 보여주는 스크린샷입니다."]
+
++
+다음 샘플 이미지는 트랜짓 게이트웨이의 경로 테이블을 보여줍니다.  여기에는 Cloud Volumes ONTAP 에서 사용하는 두 개의 VPC의 CIDR 블록에 대한 경로와 4개의 플로팅 IP 주소가 포함됩니다.
+
++
+image:screenshot_transit_gateway1.png["트랜짓 게이트웨이의 라우팅 테이블을 보여주는 AWS 콘솔의 스크린샷입니다.  여기에는 Cloud Volumes ONTAP 에서 사용하는 두 개의 VPC의 CIDR 블록에 대한 경로와 4개의 플로팅 IP 주소가 포함됩니다."]
+
+. 플로팅 IP 주소에 액세스해야 하는 VPC의 경로 테이블을 수정합니다.
++
+.. 플로팅 IP 주소에 경로 항목을 추가합니다.
+.. HA 쌍이 있는 VPC의 CIDR 블록에 경로 항목을 추가합니다.
++
+다음 샘플 이미지는 VPC 1에 대한 경로와 플로팅 IP 주소를 포함하는 VPC 2의 경로 테이블을 보여줍니다.
+
++
+image:screenshot_transit_gateway2.png["VPC 2에 대한 경로 테이블을 보여주는 AWS 콘솔의 스크린샷으로, 여기에는 VPC 1에 대한 경로와 플로팅 IP 주소가 포함되어 있습니다."]
+
+
+
+. 부동 IP 주소에 액세스해야 하는 VPC에 경로를 추가하여 HA 쌍의 VPC에 대한 경로 테이블을 수정합니다.
++
+이 단계는 VPC 간 라우팅을 완료하기 때문에 중요합니다.
+
++
+다음 샘플 이미지는 VPC 1의 경로 테이블을 보여줍니다.  여기에는 부동 IP 주소와 클라이언트가 있는 VPC 2에 대한 경로가 포함됩니다.  콘솔은 HA 쌍을 배포할 때 자동으로 플로팅 IP를 경로 테이블에 추가했습니다.
+
++
+image:screenshot_transit_gateway3.png["VPC 1의 라우팅 테이블을 보여주는 AWS 콘솔의 스크린샷입니다.  여기에는 부동 IP 주소와 클라이언트가 있는 VPC 2에 대한 경로가 포함됩니다."]
+
+. VPC에 대한 모든 트래픽에 대한 보안 그룹 설정을 업데이트합니다.
++
+.. 가상 사설 클라우드에서 *서브넷*을 클릭합니다.
+.. *경로 테이블* 탭을 클릭하고 HA 쌍의 부동 IP 주소 중 하나에 대한 원하는 환경을 선택합니다.
+.. *보안 그룹*을 클릭하세요.
+.. *인바운드 규칙 편집*을 선택합니다.
+.. *규칙 추가*를 클릭합니다.
+.. 유형에서 *모든 트래픽*을 선택한 다음 VPC IP 주소를 선택합니다.
+.. 변경 사항을 적용하려면 *규칙 저장*을 클릭하세요.
+
+
+. 플로팅 IP 주소를 사용하여 클라이언트에 볼륨을 마운트합니다.
++
+콘솔의 볼륨 관리 패널에서 *마운트 명령* 옵션을 통해 콘솔에서 올바른 IP 주소를 찾을 수 있습니다.
+
++
+image::screenshot_mount_option.png[400]
+
+. NFS 볼륨을 마운트하는 경우 클라이언트 VPC의 서브넷과 일치하도록 내보내기 정책을 구성합니다.
++
+link:task-manage-volumes.html["볼륨을 편집하는 방법을 알아보세요"] .
+
+
+
+*관련 링크*
+
+* link:concept-ha.html["AWS의 고가용성 쌍"]
+* link:reference-networking-aws.html["AWS의 Cloud Volumes ONTAP 에 대한 네트워킹 요구 사항"]
+

@@ -1,0 +1,69 @@
+---
+sidebar: sidebar 
+permalink: task-accelerate-data-access.html 
+keywords: flexcache, flexcache volumes, create a flexcache volume, provision flexcache, create flexcache volume 
+summary: FlexCache 볼륨은 원본 또는 소스 볼륨에서 NFS 읽기 데이터를 캐시하는 저장 볼륨입니다.  캐시된 데이터를 이어서 읽으면 해당 데이터에 더 빨리 액세스할 수 있습니다. 
+---
+= Cloud Volumes ONTAP 시스템에서 FlexCache 볼륨을 사용하여 데이터 액세스 가속화
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+FlexCache 볼륨은 원본(또는 소스) 볼륨에서 SMB 및 NFS 읽기 데이터를 캐시하는 스토리지 볼륨입니다.  캐시된 데이터를 이어서 읽으면 해당 데이터에 더 빨리 액세스할 수 있습니다.
+
+FlexCache 볼륨을 사용하면 데이터 액세스 속도를 높이거나 액세스 빈도가 높은 볼륨의 트래픽을 오프로드할 수 있습니다.  FlexCache 볼륨은 특히 클라이언트가 동일한 데이터에 반복적으로 액세스해야 할 때 성능을 개선하는 데 도움이 됩니다. 원본 볼륨에 액세스하지 않고도 데이터를 직접 제공할 수 있기 때문입니다.  FlexCache 볼륨은 읽기 작업이 많은 시스템 작업 부하에 적합합니다.
+
+NetApp 콘솔은 FlexCache 볼륨 관리를 제공합니다.link:https://docs.netapp.com/us-en/bluexp-volume-caching/index.html["NetApp 볼륨 캐싱"^] .
+
+ONTAP CLI 또는 ONTAP 시스템 관리자를 사용하여 FlexCache 볼륨을 생성하고 관리할 수도 있습니다.
+
+* http://docs.netapp.com/ontap-9/topic/com.netapp.doc.pow-fc-mgmt/home.html["더 빠른 데이터 액세스를 위한 FlexCache 볼륨 전원 가이드"^]
+* http://docs.netapp.com/ontap-9/topic/com.netapp.doc.onc-sm-help-960/GUID-07F4C213-076D-4FE8-A8E3-410F49498D49.html["System Manager에서 FlexCache 볼륨 생성"^]
+
+
+video::PBNPVRUeT1o[youtube,width=848,height=480]
+
+
+== 원본이 암호화된 경우 FlexCache 와 함께 작업합니다.
+
+원본 볼륨이 암호화된 Cloud Volumes ONTAP 시스템에서 FlexCache 구성하는 경우 FlexCache 볼륨이 암호화된 데이터에 적절하게 액세스하고 캐싱할 수 있도록 추가 단계가 필요합니다.
+
+.시작하기 전에
+. *암호화 설정*: 소스 볼륨이 완전히 암호화되어 작동 가능한지 확인합니다.  Cloud Volumes ONTAP 시스템의 경우 클라우드별 키 관리 서비스와의 통합이 필요합니다.
+
+
+ifdef::aws[]
+
+AWS의 경우 일반적으로 AWS Key Management Service(KMS)를 사용하는 것을 의미합니다.  자세한 내용은 다음을 참조하세요.link:task-aws-key-management.html["AWS Key Management Service로 키 관리"] .
+
+endif::aws[]
+
+ifdef::azure[]
+
+Azure의 경우 NetApp 볼륨 암호화(NVE)를 위해 Azure Key Vault를 설정해야 합니다.  자세한 내용은 다음을 참조하세요.link:task-azure-key-vault.html["Azure Key Vault를 사용하여 키 관리"] .
+
+endif::azure[]
+
+ifdef::gcp[]
+
+Google Cloud의 경우 Google Cloud Key Management Service입니다.  자세한 내용은 다음을 참조하세요.link:task-google-key-manager.html["Google의 Cloud Key Management Service로 키 관리"] .
+
+endif::gcp[]
+
+. *키 관리 서비스*: FlexCache 볼륨을 생성하기 전에 Cloud Volumes ONTAP 시스템에서 키 관리 서비스가 올바르게 구성되었는지 확인하세요.  이 구성은 FlexCache 볼륨이 원본 볼륨의 데이터를 암호 해독하는 데 필수적입니다.
+. *라이선스*: 유효한 FlexCache 라이선스가 Cloud Volumes ONTAP 시스템에서 사용 가능하고 활성화되었는지 확인합니다.
+. * ONTAP 버전*: Cloud Volumes ONTAP 시스템의 ONTAP 버전이 암호화된 볼륨이 있는 FlexCache 지원하는지 확인하세요.  최신 내용을 참조하세요 https://docs.netapp.com/us-en/ontap/release-notes/index.html["ONTAP 릴리스 노트"^] 자세한 내용은 호환성 매트릭스를 참조하세요.
+. *네트워크 구성*: 네트워크 구성이 원본 볼륨과 FlexCache 볼륨 간의 원활한 통신을 허용하는지 확인하세요.  여기에는 클라우드 환경에서의 적절한 라우팅과 DNS 확인이 포함됩니다.
+
+
+.단계
+암호화된 소스 볼륨을 사용하여 Cloud Volumes ONTAP 시스템에 FlexCache 볼륨을 만듭니다.  자세한 단계와 추가 고려 사항은 다음 섹션을 참조하세요.
+
+* http://docs.netapp.com/ontap-9/topic/com.netapp.doc.pow-fc-mgmt/home.html["더 빠른 데이터 액세스를 위한 FlexCache 볼륨 전원 가이드"^]
+* http://docs.netapp.com/ontap-9/topic/com.netapp.doc.onc-sm-help-960/GUID-07F4C213-076D-4FE8-A8E3-410F49498D49.html["System Manager에서 FlexCache 볼륨 생성"^]
+

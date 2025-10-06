@@ -1,0 +1,21 @@
+---
+sidebar: sidebar 
+permalink: task-encrypting-volumes.html 
+keywords: encrypt, encryption, data, volumes, netapp volume encryption, volume encryption, nve, key managers, kmip, key management servers, license, ssl certificates, nae, netapp aggregate encryption 
+summary: 'Cloud Volumes ONTAP 외부 키 관리자를 사용하여 NetApp 볼륨 암호화(NVE)와 NetApp 집계 암호화(NAE)를 모두 지원합니다.  외부 키 관리자를 설정하면 NVE와 NAE가 기본적으로 활성화됩니다.' 
+---
+= NetApp 암호화 솔루션을 사용하여 Cloud Volumes ONTAP 에서 볼륨 암호화
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Cloud Volumes ONTAP NetApp Volume Encryption(NVE)과 NetApp Aggregate Encryption(NAE)을 지원합니다.  NVE와 NAE는 볼륨의 FIPS 140-2 호환 저장 데이터 암호화를 지원하는 소프트웨어 기반 솔루션입니다. link:concept-security.html["이러한 암호화 솔루션에 대해 자세히 알아보세요"] .
+
+NVE와 NAE는 모두 외부 키 관리자를 통해 지원됩니다.
+
+ifdef::aws[] endif::aws[] ifdef::azure[] endif::azure[] ifdef::gcp[] endif::gcp[] ifdef::aws[] endif::aws[] ifdef::azure[] endif::azure[] ifdef::gcp[] endif::gcp[]

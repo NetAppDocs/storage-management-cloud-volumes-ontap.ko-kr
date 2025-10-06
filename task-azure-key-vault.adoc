@@ -1,0 +1,208 @@
+---
+sidebar: sidebar 
+permalink: task-azure-key-vault.html 
+keywords: azure, encryption, NVE, NetApp volume encryption, KMIP, azure key vault 
+summary: 타사 키 관리 서비스에 Azure Key Vault를 활용하세요. 
+---
+= Azure Key Vault를 사용하여 Cloud Volumes ONTAP 암호화 키 관리
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Azure Key Vault(AKV)를 사용하면 Azure에 배포된 애플리케이션에서 ONTAP 암호화 키를 보호할 수 있습니다. 를 참조하세요link:https://docs.microsoft.com/en-us/azure/key-vault/general/basic-concepts["Microsoft 설명서"^] .
+
+AKV는 데이터 SVM에 대한 NetApp 볼륨 암호화(NVE) 키만 보호하는 데 사용할 수 있습니다. 자세한 내용은 다음을 참조하세요. link:https://docs.netapp.com/us-en/ontap/encryption-at-rest/configure-netapp-volume-encryption-concept.html["ONTAP 문서"^] .
+
+AKV를 사용한 키 관리 기능은 CLI 또는 ONTAP REST API를 통해 활성화할 수 있습니다.
+
+AKV를 사용할 때 기본적으로 데이터 SVM LIF를 사용하여 클라우드 키 관리 엔드포인트와 통신한다는 점에 유의하세요.  노드 관리 네트워크는 클라우드 공급자의 인증 서비스(login.microsoftonline.com)와 통신하는 데 사용됩니다.  클러스터 네트워크가 올바르게 구성되지 않으면 클러스터가 키 관리 서비스를 제대로 활용하지 못합니다.
+
+.시작하기 전에
+* Cloud Volumes ONTAP 버전 9.10.1 이상을 실행해야 합니다.
+* 볼륨 암호화(VE) 라이선스가 설치됨(NetApp 볼륨 암호화 라이선스는 NetApp 지원에 등록된 각 Cloud Volumes ONTAP 시스템에 자동으로 설치됨)
+* 다중 테넌트 암호화 키 관리(MT_EK_MGMT) 라이선스가 있어야 합니다.
+* 클러스터 또는 SVM 관리자여야 합니다.
+* 활성 Azure 구독
+
+
+.제한 사항
+* AKV는 데이터 SVM에서만 구성될 수 있습니다.
+* NAE는 AKV와 함께 사용할 수 없습니다.  NAE에는 외부 지원 KMIP 서버가 필요합니다.
+* Cloud Volumes ONTAP 노드는 15분마다 AKV를 폴링하여 접근성과 키 가용성을 확인합니다.  이 폴링 기간은 구성할 수 없으며, 폴링 시도에서 4번 연속 실패하면(총 1시간) 볼륨이 오프라인으로 전환됩니다.
+
+
+
+
+== 구성 프로세스
+
+설명된 단계에서는 Cloud Volumes ONTAP 구성을 Azure에 등록하는 방법과 Azure Key Vault 및 키를 만드는 방법을 설명합니다.  이미 이러한 단계를 완료한 경우 특히 올바른 구성 설정이 있는지 확인하십시오.<<create-akv>> , 그리고 다음으로 진행합니다<<ontap>> .
+
+* <<azure-app>>
+* <<secret>>
+* <<create-akv>>
+* <<key>>
+* <<AAD>>
+* <<ontap>>
+
+
+[[azure-app]]
+.Azure 애플리케이션 등록
+. 먼저 Cloud Volumes ONTAP Azure Key Vault에 액세스하는 데 사용할 Azure 구독에 애플리케이션을 등록해야 합니다.  Azure Portal에서 **앱 등록**을 선택합니다.
+. **신규 등록**을 선택하세요.
+. 애플리케이션 이름을 입력하고 지원되는 애플리케이션 유형을 선택하세요.  Azure Key Vault를 사용하려면 기본 단일 테넌트로 충분합니다.  **등록**을 선택하세요.
+. Azure 개요 창에서 등록한 애플리케이션을 선택합니다.  **애플리케이션(클라이언트) ID**와 **디렉토리(테넌트) ID**를 안전한 위치에 복사합니다.  이는 나중에 등록 과정에서 필요합니다.
+
+
+[[secret]]
+.Azure 클라이언트 비밀 만들기
+. Azure Key Vault 앱 등록을 위한 Azure Portal에서 **인증서 및 비밀** 창을 선택합니다.
+. **새로운 클라이언트 비밀번호**를 선택하세요.  클라이언트 비밀번호에 의미 있는 이름을 입력하세요.  NetApp 24개월 만료 기간을 권장하지만, 특정 클라우드 거버넌스 정책에는 다른 설정이 필요할 수 있습니다.
+. **추가**를 클릭하여 클라이언트 비밀번호를 생성합니다.  **값** 열에 나열된 비밀 문자열을 복사하여 나중에 사용할 수 있도록 안전한 위치에 저장하세요.<<ontap>> .  해당 페이지에서 벗어나면 비밀번호 값은 다시 표시되지 않습니다.
+
+
+[[create-akv]]
+.Azure Key Vault 만들기
+. 기존 Azure Key Vault가 있는 경우 Cloud Volumes ONTAP 구성에 연결할 수 있습니다. 하지만 이 프로세스에서는 설정에 맞게 액세스 정책을 조정해야 합니다.
+. Azure Portal에서 **키 자격 증명 모음** 섹션으로 이동합니다.
+. **+만들기**를 클릭하고 리소스 그룹, 지역, 가격 책정 계층을 포함한 필수 정보를 입력합니다.  또한 삭제된 볼트를 보관할 일수를 입력하고 키 볼트에서 **퍼지 보호 사용**을 선택합니다.
+. **다음**을 선택하여 액세스 정책을 선택하세요.
+. 다음 옵션을 선택하세요:
++
+.. **액세스 구성**에서 **Vault 액세스 정책**을 선택합니다.
+.. **리소스 액세스**에서 **볼륨 암호화를 위해 Azure Disk Encryption**을 선택합니다.
+
+
+. **+만들기**를 선택하여 액세스 정책을 추가합니다.
+. **템플릿에서 구성**에서 드롭다운 메뉴를 클릭한 다음 **키, 비밀번호 및 인증서 관리** 템플릿을 선택합니다.
+. 각 드롭다운 권한 메뉴(키, 비밀, 인증서)를 선택한 다음 메뉴 목록 상단에서 **모두 선택**을 클릭하여 사용 가능한 모든 권한을 선택합니다.  다음이 있어야 합니다.
++
+** **주요 권한**: 20개 선택됨
+** **비밀 권한**: 8개 선택됨
+** **인증서 권한**: 16개 선택됨
++
+image:screenshot-azure-key-secret-cert-all-list.png["액세스 정책을 만드는 데 필요한 모든 권한 선택을 보여주는 액세스 정책 만들기 스크린샷"]
+
+
+
+. **다음**을 클릭하여 **주** Azure 등록 애플리케이션을 선택하십시오.<<azure-app>> . **다음**을 선택하세요.
++
+
+NOTE: 정책당 한 명의 주체만 할당할 수 있습니다.
+
++
+image:screenshot-azure-key-secret-cert-principal.png["액세스 정책 주체 탭 생성 스크린샷"]
+
+. **다음**을 두 번 클릭하여 **검토 및 생성**에 도달합니다.  그런 다음 **만들기**를 클릭합니다.
+. **다음**을 선택하여 **네트워킹** 옵션으로 넘어갑니다.
+. 적절한 네트워크 액세스 방법을 선택하거나 **모든 네트워크**와 **검토 + 생성**을 선택하여 키 보관소를 만듭니다.  (네트워크 액세스 방법은 거버넌스 정책이나 회사 클라우드 보안 팀에서 규정할 수 있습니다.)
+. 키 보관소 URI를 기록합니다. 생성한 키 보관소에서 개요 메뉴로 이동하여 오른쪽 열에서 **보관소 URI**를 복사합니다.  이것은 나중의 단계에서 필요합니다.
+
+
+[[key]]
+.암호화 키 생성
+. Cloud Volumes ONTAP 에 대해 생성한 Key Vault 메뉴에서 **키** 옵션으로 이동합니다.
+. **생성/가져오기**를 선택하여 새 키를 만듭니다.
+. 기본 옵션을 **생성**으로 설정된 상태로 둡니다.
+. 다음 정보를 제공하세요.
++
+** 암호화 키 이름
+** 키 유형: RSA
+** RSA 키 크기: 2048
+** 활성화됨: 예
+
+
+. 암호화 키를 생성하려면 **생성**을 선택하세요.
+. **키** 메뉴로 돌아가서 방금 만든 키를 선택하세요.
+. **현재 버전**에서 키 ID를 선택하여 키 속성을 확인하세요.
+. **키 식별자** 필드를 찾으세요.  16진수 문자열을 제외하고 URI를 해당 문자열까지 복사합니다.
+
+
+[[AAD]]
+.Azure Active Directory 엔드포인트 만들기(HA 전용)
+. 이 프로세스는 HA Cloud Volumes ONTAP 시스템에 대해 Azure Key Vault를 구성하는 경우에만 필요합니다.
+. Azure Portal에서 **가상 네트워크**로 이동합니다.
+. Cloud Volumes ONTAP 시스템을 배포한 가상 네트워크를 선택하고 페이지 왼쪽에 있는 **서브넷** 메뉴를 선택합니다.
+. 목록에서 Cloud Volumes ONTAP 배포에 대한 서브넷 이름을 선택합니다.
+. **서비스 엔드포인트** 제목으로 이동합니다.  드롭다운 메뉴에서 다음을 선택하세요.
++
+** **Microsoft.AzureActiveDirectory**
+** **마이크로소프트 키볼트**
+** **Microsoft.Storage** (선택 사항)
++
+image:screenshot-azure-service-endpoints-services.png["선택된 세 개의 서비스를 보여주는 서비스 엔드포인트의 스크린샷"]
+
+
+
+. **저장**을 선택하여 설정을 적용합니다.
+
+
+[[ontap]]
+.Cloud Volumes ONTAP 구성
+. 원하는 SSH 클라이언트를 사용하여 클러스터 관리 LIF에 연결합니다.
+. ONTAP 에서 고급 권한 모드로 들어가세요:
+`set advanced -con off`
+. 원하는 데이터 SVM을 식별하고 DNS 구성을 확인합니다.
+`vserver services name-service dns show`
++
+.. 원하는 데이터 SVM에 대한 DNS 항목이 있고 Azure DNS에 대한 항목이 포함되어 있는 경우 아무 작업도 필요하지 않습니다.  그렇지 않은 경우 Azure DNS, 개인 DNS 또는 온-프레미스 서버를 가리키는 데이터 SVM에 대한 DNS 서버 항목을 추가합니다.  이는 클러스터 관리 SVM 항목과 일치해야 합니다.
+`vserver services name-service dns create -vserver _SVM_name_ -domains _domain_ -name-servers _IP_address_`
+.. 데이터 SVM에 대한 DNS 서비스가 생성되었는지 확인하세요.
+`vserver services name-service dns show`
+
+
+. 애플리케이션 등록 후 저장된 클라이언트 ID와 테넌트 ID를 사용하여 Azure Key Vault를 활성화합니다.
+`security key-manager external azure enable -vserver _SVM_name_ -client-id _Azure_client_ID_ -tenant-id _Azure_tenant_ID_ -name _key_vault_URI_ -key-id _full_key_URI_`
++
+
+NOTE: 그만큼 `_full_key_URI` 가치는 활용되어야 합니다 `<https:// <key vault host name>/keys/<key label>` 체재.
+
+. Azure Key Vault를 성공적으로 활성화한 후 다음을 입력하십시오. `client secret value` 메시지가 표시되면.
+. 키 관리자의 상태를 확인하세요.
+`security key-manager external azure check` 출력은 다음과 같습니다.
++
+[source]
+----
+::*> security key-manager external azure check
+
+Vserver: data_svm_name
+Node: akvlab01-01
+
+Category: service_reachability
+    Status: OK
+
+Category: ekmip_server
+    Status: OK
+
+Category: kms_wrapped_key_status
+    Status: UNKNOWN
+    Details: No volumes created yet for the vserver. Wrapped KEK status will be available after creating encrypted volumes.
+
+3 entries were displayed.
+----
++
+만약 `service_reachability` 상태가 아닙니다 `OK` SVM은 필요한 모든 연결 및 권한을 통해 Azure Key Vault 서비스에 연결할 수 없습니다.  Azure 네트워크 정책과 라우팅이 개인 vNet이 Azure Key Vault 공용 엔드포인트에 도달하는 것을 차단하지 않는지 확인하세요.  그렇다면 vNet 내에서 Key Vault에 액세스하기 위해 Azure Private 엔드포인트를 사용하는 것을 고려하세요.  엔드포인트의 개인 IP 주소를 확인하려면 SVM에 정적 호스트 항목을 추가해야 할 수도 있습니다.
+
++
+그만큼 `kms_wrapped_key_status` 보고할 것이다 `UNKNOWN` 초기 구성에서.  상태가 다음으로 변경됩니다. `OK` 첫 번째 볼륨이 암호화된 후.
+
+. 선택 사항: NVE의 기능을 확인하기 위해 테스트 볼륨을 만듭니다.
++
+`vol create -vserver _SVM_name_ -volume _volume_name_ -aggregate _aggr_ -size _size_ -state online -policy default`
+
++
+올바르게 구성된 경우 Cloud Volumes ONTAP 자동으로 볼륨을 생성하고 볼륨 암호화를 활성화합니다.
+
+. 볼륨이 올바르게 생성되고 암호화되었는지 확인하세요.  그렇다면, `-is-encrypted` 매개변수는 다음과 같이 표시됩니다. `true` .
+`vol show -vserver _SVM_name_ -fields is-encrypted`
+. 선택 사항: Azure Key Vault 인증 인증서의 자격 증명을 업데이트하려면 다음 명령을 사용하세요.
+`security key-manager external azure update-credentials -vserver v1 -authentication-method certificate`
+
+
+.관련 링크
+* link:task-set-up-azure-encryption.html["Azure에서 고객 관리 키를 사용하도록 Cloud Volumes ONTAP 설정"]
+* https://learn.microsoft.com/en-us/azure/key-vault/general/overview["Microsoft Azure 설명서: Azure Key Vault 정보"^]
+* https://docs.netapp.com/us-en/ontap-cli/index.html["ONTAP 명령 참조 가이드"^]
+

@@ -1,0 +1,294 @@
+---
+sidebar: sidebar 
+permalink: reference-default-configs.html 
+keywords: svm, LIF, LIFs, configuration backups, attributes, autosize, security style, space guarantee, unix permissions, NTFS, UNIX, boot, root, disks, aggr0, aggr1, svm, svms, storage virtual machine, LIF failover, failover, attributes, volume attributes, boot disk, root disk, licenses, feature licenses, default licenses, ontap licenses, ontap features 
+summary: Cloud Volumes ONTAP 기본적으로 어떻게 구성되는지 이해하면 시스템을 설정하고 관리하는 데 도움이 될 수 있습니다. 특히 ONTAP 에 익숙하다면 더욱 그렇습니다 . Cloud Volumes ONTAP 의 기본 설정은 ONTAP 과 다르기 때문입니다. 
+---
+= Cloud Volumes ONTAP 에 지원되는 기본 구성
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Cloud Volumes ONTAP 기본적으로 어떻게 구성되는지 이해하면 시스템을 설정하고 관리하는 데 도움이 될 수 있습니다. 특히 ONTAP 에 익숙하다면 더욱 그렇습니다 . Cloud Volumes ONTAP 의 기본 설정은 ONTAP 과 다르기 때문입니다.
+
+
+
+== 기본 설정
+
+* NetApp 콘솔은 Cloud Volumes ONTAP 배포할 때 하나의 데이터 제공 스토리지 VM을 생성합니다.  일부 구성에서는 추가 스토리지 VM을 지원합니다. link:task-managing-svms.html["스토리지 VM 관리에 대해 자세히 알아보세요"] .
++
+3.9.5 릴리스부터 초기 스토리지 VM에서 논리적 공간 보고가 활성화됩니다.  공간이 논리적으로 보고되는 경우 ONTAP 저장 효율성 기능으로 절약된 모든 물리적 공간도 사용된 것으로 보고되도록 볼륨 공간을 보고합니다.  인라인 스토리지 효율성 기능에 대한 정보는 지식 기반 문서를 참조하세요. https://kb.netapp.com/Cloud/Cloud_Volumes_ONTAP/What_Inline_Storage_Efficiency_features_are_supported_with_CVO#["KB: CVO에서는 어떤 인라인 스토리지 효율성 기능이 지원되나요?"^]
+
+* 콘솔은 Cloud Volumes ONTAP 에 다음 ONTAP 기능 라이선스를 자동으로 설치합니다.
++
+** CIFS
+** FlexCache
+** FlexClone
+** iSCSI
+** Cloud Volumes ONTAP 9.12.1 GA부터 시작하는 다중 테넌트 암호화 키 관리(MTEKM)
+** NetApp 볼륨 암호화(BYOL(Bring Your Own License) 또는 PAYGO(Registered Pay-as-You-Go) 시스템에만 해당)
+** NFS ifdef::aws[] endif::aws[] ifdef::azure[] endif::azure[]
+** SnapMirror
+** SnapRestore
+** SnapVault
+
+
+* 기본적으로 여러 네트워크 인터페이스가 생성됩니다.
++
+** 클러스터 관리 LIF
+** 클러스터 간 LIF
+
+
+
+
+ifdef::azure[]
+
+* Azure의 HA 시스템에 대한 SVM 관리 LIF
+
+
+endif::azure[]
+
+ifdef::gcp[]
+
+* Google Cloud의 HA 시스템에 대한 SVM 관리 LIF
+
+
+endif::gcp[]
+
+ifdef::aws[]
+
+* AWS의 단일 노드 시스템에서 SVM 관리 LIF
+
+
+endif::aws[]
+
+* 노드 관리 LIF
+
+
+ifdef::gcp[]
+
++ Google Cloud에서 이 LIF는 클러스터 간 LIF와 결합됩니다.
+
+endif::gcp[]
+
+* iSCSI 데이터 LIF
+* CIFS 및 NFS 데이터 LIF
++
+
+NOTE: 클라우드 공급자 요구 사항으로 인해 Cloud Volumes ONTAP 의 경우 LIF 장애 조치는 기본적으로 비활성화되어 있습니다.  LIF를 다른 포트로 마이그레이션하면 인스턴스의 IP 주소와 네트워크 인터페이스 간의 외부 매핑이 끊어져 LIF에 액세스할 수 없게 됩니다.
+
++
+** Cloud Volumes ONTAP HTTP를 사용하여 구성 백업을 콘솔 에이전트로 보냅니다.
++
+백업은 \http://ipaddress/occm/offboxconfig/에서 접근할 수 있습니다. 여기서 _ipaddress_는 콘솔 에이전트 호스트의 IP 주소입니다.
+
++
+백업을 사용하여 Cloud Volumes ONTAP 시스템을 재구성할 수 있습니다.  구성 백업에 대한 자세한 내용은 다음을 참조하세요. https://docs.netapp.com/us-en/ontap/system-admin/config-backup-file-concept.html["ONTAP 문서"^] .
+
+** 콘솔은 다른 관리 도구(예: ONTAP System Manager 또는 ONTAP CLI)와 다르게 몇 가지 볼륨 속성을 설정합니다.
++
+다음 표는 기본값과 다르게 설정된 볼륨 속성을 나열합니다.
+
++
+[cols="15,85"]
+|===
+| 기인하다 | 콘솔이 구성하는 값 
+
+
+| 자동 크기 조정 모드 | 자라다 
+
+
+| 최대 자동 크기  a| 
+1,000퍼센트
+
+
+NOTE: 조직 또는 계정 관리자는 설정 페이지에서 이 값을 수정할 수 있습니다.
+
+
+
+| 보안 스타일 | CIFS 볼륨의 경우 NTFS, NFS 볼륨의 경우 UNIX 
+
+
+| 공간 보장 스타일 | 없음 
+
+
+| UNIX 권한(NFS 전용) | 777 
+|===
++
+이러한 속성에 대한 정보는 다음을 참조하세요.link:https://docs.netapp.com/us-en/ontap-cli-9121/volume-create.html["ONTAP _볼륨 생성_ 매뉴얼 페이지"] .
+
+
+
+
+
+
+
+== 시스템 데이터용 내부 디스크
+
+콘솔은 사용자 데이터를 저장하는 것 외에도 시스템 데이터를 위한 클라우드 스토리지도 구매합니다.
+
+ifdef::aws[]
+
+
+
+=== AWS
+
+* 부트, 루트, 코어 데이터를 위한 노드당 3개의 디스크:
++
+** 부팅 데이터용 47GiB io1 디스크
+** 루트 데이터용 140GiB gp3 디스크
+** 코어 데이터용 540GiB gp2 디스크
+
+
+* HA 쌍의 경우:
++
+** 중재자 인스턴스용 st1 EBS 볼륨 2개, 루트 디스크로 약 8GiB 중 하나, 데이터 디스크로 4GiB 중 하나
+** 각 노드에 140GiB gp3 디스크 1개, 다른 노드의 루트 데이터 사본 포함
++
+
+NOTE: 일부 영역에서는 사용 가능한 EBS 디스크 유형이 gp2만 가능합니다.
+
+
+
+* 각 부팅 디스크와 루트 디스크에 대한 하나의 EBS 스냅샷
++
+
+NOTE: 재부팅 시 스냅샷이 자동으로 생성됩니다.
+
+* AWS에서 키 관리 서비스(KMS)를 사용하여 데이터 암호화를 활성화하면 Cloud Volumes ONTAP 의 부팅 및 루트 디스크도 암호화됩니다.  여기에는 HA 쌍의 중재자 인스턴스에 대한 부팅 디스크가 포함됩니다.  디스크는 Cloud Volumes ONTAP 시스템을 추가할 때 선택하는 CMK를 사용하여 암호화됩니다.
+
+
+
+TIP: AWS에서는 NVRAM 이 부팅 디스크에 있습니다.
+
+endif::aws[]
+
+ifdef::azure[]
+
+
+
+=== Azure(단일 노드)
+
+* 프리미엄 SSD 디스크 3개:
++
+** 부팅 데이터용 10GiB 디스크 1개
+** 루트 데이터용 140GiB 디스크 1개
+** NVRAM 용 512GiB 디스크 1개
++
+Cloud Volumes ONTAP 에 대해 선택한 가상 머신이 Ultra SSD를 지원하는 경우 시스템은 Premium SSD가 아닌 NVRAM 에 32GiB Ultra SSD를 사용합니다.
+
+
+
+* 코어 저장을 위한 1024GiB 표준 HDD 디스크 1개
+* 각 부팅 디스크와 루트 디스크에 대한 하나의 Azure 스냅샷
+* Azure의 모든 디스크는 기본적으로 저장 시 암호화됩니다.
++
+Cloud Volumes ONTAP 에 대해 선택한 가상 머신이 데이터 디스크로 Premium SSD v2 관리 디스크를 지원하는 경우, 시스템은 NVRAM 에 32GiB Premium SSD v2 관리 디스크를 사용하고, 다른 디스크를 루트 디스크로 사용합니다.
+
+
+
+
+
+=== Azure(HA 쌍)
+
+.페이지 블롭이 있는 HA 쌍
+* 부팅 볼륨을 위한 2개의 10GiB 프리미엄 SSD 디스크(노드당 1개)
+* 루트 볼륨에 대한 2개의 140GiB 프리미엄 스토리지 페이지 Blob(노드당 하나)
+* 코어 저장을 위한 2개의 1024GiB 표준 HDD 디스크(노드당 1개)
+* NVRAM 용 512GiB 프리미엄 SSD 디스크 2개(노드당 1개)
+* 각 부팅 디스크와 루트 디스크에 대한 하나의 Azure 스냅샷
++
+
+NOTE: 재부팅 시 스냅샷이 자동으로 생성됩니다.
+
+* Azure의 모든 디스크는 기본적으로 저장 시 암호화됩니다.
+
+
+.여러 가용성 영역에 있는 공유 관리 디스크와 HA 쌍
+* 부팅 볼륨을 위한 2개의 10GiB 프리미엄 SSD 디스크(노드당 1개)
+* 루트 볼륨을 위한 512GiB 프리미엄 SSD 디스크 2개(노드당 1개)
+* 코어 저장을 위한 2개의 1024GiB 표준 HDD 디스크(노드당 1개)
+* NVRAM 용 512GiB 프리미엄 SSD 디스크 2개(노드당 1개)
+* 각 부팅 디스크와 루트 디스크에 대한 하나의 Azure 스냅샷
++
+
+NOTE: 재부팅 시 스냅샷이 자동으로 생성됩니다.
+
+* Azure의 모든 디스크는 기본적으로 저장 시 암호화됩니다.
+
+
+.단일 가용성 영역에서 공유 관리 디스크와 HA 쌍
+* 부팅 볼륨을 위한 2개의 10GiB 프리미엄 SSD 디스크(노드당 1개)
+* 루트 볼륨을 위한 2개의 512GiB 프리미엄 SSD 공유 관리 디스크(노드당 1개)
+* 코어 저장을 위한 2개의 1024GiB 표준 HDD 디스크(노드당 1개)
+* NVRAM 용 512GiB 프리미엄 SSD 관리 디스크 2개(노드당 1개)
+
+
+가상 머신이 데이터 디스크로 Premium SSD v2 관리형 디스크를 지원하는 경우 NVRAM 에는 32GiB Premium SSD v2 관리형 디스크를 사용하고 루트 볼륨에는 512GiB Premium SSD v2 공유 관리형 디스크를 사용합니다.
+
+다음 조건이 충족되면 단일 가용성 영역에 HA 쌍을 배포하고 프리미엄 SSD v2 관리형 디스크를 사용할 수 있습니다.
+
+* Cloud Volumes ONTAP 버전은 9.15.1 이상입니다.
+* 선택한 지역 및 영역은 Premium SSD v2 Managed Disks를 지원합니다.  지원되는 지역에 대한 정보는 다음을 참조하세요. https://azure.microsoft.com/en-us/explore/global-infrastructure/products-by-region/["Microsoft Azure 웹사이트: 지역별 사용 가능한 제품"^] .
+* 구독은 Microsoft에 등록되었습니다.link:task-saz-feature.html["Microsoft.Compute/VMOrchestratorZonalMultiFD 기능"] .
+
+
+endif::azure[]
+
+ifdef::gcp[]
+
+
+
+=== Google Cloud(단일 노드)
+
+* 부팅 데이터용 10GiB SSD 영구 디스크 1개
+* 루트 데이터용 64GiB SSD 영구 디스크 1개
+* NVRAM 용 500GiB SSD 영구 디스크 1개
+* 코어 저장을 위한 315GiB 표준 영구 디스크 1개
+* 부팅 및 루트 데이터에 대한 스냅샷
++
+
+NOTE: 재부팅 시 스냅샷이 자동으로 생성됩니다.
+
+* 부팅 디스크와 루트 디스크는 기본적으로 암호화됩니다.
+
+
+
+
+=== Google Cloud(HA 쌍)
+
+* 부팅 데이터용 10GiB SSD 영구 디스크 2개
+* 루트 데이터용 64GiB SSD 영구 디스크 4개
+* NVRAM 용 500GiB SSD 영구 디스크 2개
+* 코어 저장을 위한 2개의 315GiB 표준 영구 디스크
+* 중재자 데이터용 10GiB 표준 영구 디스크 1개
+* 중재자 부팅 데이터를 위한 10GiB 표준 영구 디스크 1개
+* 부팅 및 루트 데이터에 대한 스냅샷
++
+
+NOTE: 재부팅 시 스냅샷이 자동으로 생성됩니다.
+
+* 부팅 디스크와 루트 디스크는 기본적으로 암호화됩니다.
+
+
+endif::gcp[]
+
+
+
+=== 디스크가 있는 위치
+
+보관 레이아웃:
+
+* 부팅 데이터는 인스턴스 또는 가상 머신에 연결된 디스크에 저장됩니다.
++
+부팅 이미지가 포함된 이 디스크는 Cloud Volumes ONTAP 에서 사용할 수 없습니다.
+
+* 시스템 구성과 로그를 포함하는 루트 데이터는 aggr0에 있습니다.
+* 스토리지 가상 머신(SVM) 루트 볼륨은 aggr1에 있습니다.
+* 데이터 볼륨은 aggr1에도 있습니다.
+

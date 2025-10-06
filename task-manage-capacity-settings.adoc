@@ -1,0 +1,61 @@
+---
+sidebar: sidebar 
+permalink: task-manage-capacity-settings.html 
+keywords: aggregates, delete aggregates, add disks, view aggregates 
+summary: 디스크를 추가하고, 집계에 대한 정보를 보고, 삭제하여 집계를 직접 관리합니다. 
+---
+= 콘솔 에이전트에서 Cloud Volumes ONTAP 집계 용량 관리
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+각 콘솔 에이전트에는 Cloud Volumes ONTAP 의 집계 용량을 관리하는 방법을 결정하는 설정이 있습니다.
+
+이러한 설정은 콘솔 에이전트가 관리하는 모든 Cloud Volumes ONTAP 시스템에 영향을 미칩니다.  다른 콘솔 에이전트가 있는 경우 다르게 구성할 수 있습니다.
+
+.필요한 권한
+Cloud Volumes ONTAP 설정을 수정하려면 NetApp 콘솔의 조직 또는 계정 관리자 권한이 필요합니다.
+
+.단계
+. 왼쪽 탐색 창에서 *관리 > 에이전트*로 이동합니다.
+. 클릭image:icon-action.png[""] Cloud Volumes ONTAP 시스템을 관리하는 콘솔 에이전트의 아이콘입니다.
+. * Cloud Volumes ONTAP 설정*을 선택합니다.
++
+image::screenshot-settings-cloud-volumes-ontap.png[설정 아이콘 아래에 있는 Cloud Volumes ONTAP 설정 옵션의 스크린샷입니다.]
+
+. *용량*에서 다음 설정을 수정하세요.
++
+image:screenshot-cvo-settings-page.png["Cloud Volumes ONTAP 의 용량 설정 개요입니다."]
+
++
+용량 관리 모드:: 콘솔에서 저장 용량 결정 사항을 알려야 하는지, 아니면 자동으로 용량 요구 사항을 관리해야 하는지 선택하세요.
++
+--
+link:concept-storage-management.html#capacity-management["용량 관리 모드의 작동 방식 알아보기"] .
+
+--
+총 용량 임계값 - 여유 공간 비율:: 이 비율은 용량 관리 결정에 있어 핵심 매개변수이며, 용량 관리 모드가 자동이든 수동이든 관계없이 이 비율의 영향을 이해하는 것이 필수적입니다.  리소스 활용도와 비용 간의 균형을 유지하려면 특정 저장 요구 사항과 예상되는 성장 상황을 고려하여 이 임계값을 설정하는 것이 좋습니다.
++
+--
+수동 모드에서 집계의 여유 공간 비율이 지정된 임계값 아래로 떨어지면 알림이 트리거되어 여유 공간 비율이 낮은 문제를 해결하기 위한 조치를 취해야 함을 알려줍니다.  서비스 중단을 방지하고 최적의 성능을 보장하려면 이러한 알림을 모니터링하고 집계 용량을 수동으로 관리하는 것이 중요합니다.
+
+여유 공간 비율은 다음과 같이 계산됩니다. (집계 용량 - 집계에서 사용된 총 용량) / 집계 용량
+
+참조하다link:concept-storage-management.html#automatic-capacity-management["자동 용량 관리"] 이제 Cloud Volumes ONTAP 에서 용량이 자동으로 관리됩니다.
+
+--
+집계 용량 임계값 - 데이터 계층화를 위한 여유 공간 비율:: 데이터를 용량 계층(개체 스토리지)으로 계층화할 때 성능 계층(디스크)에 얼마나 많은 여유 공간이 필요한지 정의합니다.
++
+--
+이 비율은 재해 복구 시나리오에서 중요합니다.  데이터가 용량 계층에서 읽히면 Cloud Volumes ONTAP 더 나은 성능을 제공하기 위해 데이터를 성능 계층으로 이동합니다.  충분한 공간이 없으면 Cloud Volumes ONTAP 이 데이터를 이동할 수 없습니다.
+
+--
+
+
+. *저장*을 클릭하세요.
+

@@ -1,0 +1,11 @@
+= Google Cloud의 API를 통해 자동화된 스토리지 VM 생성
+:allow-uri-read: 
+
+
+
+
+=== Google Cloud의 API를 통해 자동화된 스토리지 VM 생성
+
+이제 BlueXP API를 사용하여 Google Cloud에서 스토리지 VM 생성을 자동화할 수 있습니다.  이 기능은 Cloud Volumes ONTAP 고가용성(HA) 구성에서 사용되었으며, 이제 단일 노드 배포에서도 사용할 수 있습니다.  BlueXP API를 사용하면 필요한 네트워크 인터페이스, LIF 및 관리 LIF를 수동으로 구성할 필요 없이 Google Cloud 환경에서 추가 데이터 제공 스토리지 VM을 쉽게 만들고, 이름을 바꾸고, 삭제할 수 있습니다.  이러한 자동화를 통해 스토리지 VM을 관리하는 프로세스가 간소화됩니다.
+
+https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-managing-svms-gcp.html["Google Cloud에서 Cloud Volumes ONTAP 위한 데이터 제공 스토리지 VM 관리"^]

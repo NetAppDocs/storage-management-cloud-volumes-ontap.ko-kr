@@ -1,0 +1,153 @@
+---
+sidebar: sidebar 
+permalink: concept-write-speed.html 
+keywords: write speed, high write speed, normal write speed, nvfail, writing speed, ldm, low durability mode 
+summary: NetApp 콘솔을 사용하면 Cloud Volumes ONTAP 에 대해 일반 또는 높은 쓰기 속도를 선택할 수 있습니다.  쓰기 속도를 선택하기 전에 일반 설정과 높은 설정의 차이점, 높은 쓰기 속도를 사용할 때의 위험과 권장 사항을 이해해야 합니다. 
+---
+= 쓰기 속도
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+NetApp 콘솔을 사용하면 대부분의 Cloud Volumes ONTAP 구성에 대해 일반 또는 높은 쓰기 속도를 선택할 수 있습니다.  쓰기 속도를 선택하기 전에 일반 설정과 높은 설정의 차이점, 높은 쓰기 속도를 사용할 때의 위험과 권장 사항을 이해해야 합니다.
+
+
+
+== 일반 쓰기 속도
+
+일반 쓰기 속도를 선택하면 데이터가 디스크에 직접 기록됩니다.  데이터가 디스크에 직접 기록되면 계획되지 않은 시스템 중단이나 계획되지 않은 시스템 중단을 수반하는 연쇄적 장애가 발생할 경우 데이터 손실 가능성이 줄어듭니다(HA 쌍에만 해당).
+
+기본 옵션은 일반 쓰기 속도입니다.
+
+
+
+== 높은 쓰기 속도
+
+높은 쓰기 속도를 선택하면 데이터는 디스크에 쓰기 전에 메모리에 버퍼링되므로 쓰기 성능이 더 빨라집니다.  이러한 캐싱으로 인해 계획되지 않은 시스템 중단이 발생하면 데이터가 손실될 가능성이 있습니다.
+
+계획되지 않은 시스템 중단이 발생할 경우 손실될 수 있는 데이터 양은 마지막 두 일관성 지점의 범위입니다.  일관성 지점은 버퍼링된 데이터를 디스크에 쓰는 행위입니다.  일관성 지점은 쓰기 로그가 가득 차거나 10초가 지난 후(먼저 발생하는 경우)에 발생합니다.  하지만 클라우드 공급업체가 제공하는 스토리지의 성능은 일관성 지점 처리 시간에 영향을 미칠 수 있습니다.
+
+
+
+=== 높은 쓰기 속도를 사용해야 하는 경우
+
+워크로드에 빠른 쓰기 성능이 필요하고 계획되지 않은 시스템 중단이나 계획되지 않은 시스템 중단을 수반하는 연쇄적 오류(HA 쌍에만 해당) 발생 시 데이터 손실 위험을 견딜 수 있는 경우 높은 쓰기 속도가 좋은 선택입니다.
+
+
+
+=== 고속 쓰기 속도 사용 시 권장 사항
+
+높은 쓰기 속도를 활성화하는 경우 애플리케이션 계층에서 쓰기 보호를 보장하거나 데이터 손실이 발생할 경우 애플리케이션이 이를 허용할 수 있도록 해야 합니다.
+
+ifdef::aws[]
+
+
+
+=== AWS에서 HA 쌍을 사용한 높은 쓰기 속도
+
+AWS에서 HA 쌍에 높은 쓰기 속도를 활성화하려는 경우 여러 가용 영역(AZ) 배포와 단일 AZ 배포 간의 보호 수준 차이를 이해해야 합니다.  여러 AZ에 HA 쌍을 배포하면 복원력이 높아지고 데이터 손실 가능성을 줄이는 데 도움이 될 수 있습니다.
+
+link:concept-ha.html["AWS의 HA 쌍에 대해 자세히 알아보세요"] .
+
+endif::aws[]
+
+
+
+=== 높은 쓰기 속도를 지원하는 구성
+
+모든 Cloud Volumes ONTAP 구성이 높은 쓰기 속도를 지원하는 것은 아닙니다.  이러한 구성에서는 기본적으로 일반 쓰기 속도가 사용됩니다.
+
+ifdef::aws[]
+
+
+
+==== AWS
+
+단일 노드 시스템을 사용하는 경우 Cloud Volumes ONTAP 모든 인스턴스 유형에서 높은 쓰기 속도를 지원합니다.
+
+9.8 릴리스부터 Cloud Volumes ONTAP m5.xlarge 및 r5.xlarge를 제외한 거의 모든 지원되는 EC2 인스턴스 유형을 사용할 때 HA 쌍으로 높은 쓰기 속도를 지원합니다.
+
+https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-aws.html["Cloud Volumes ONTAP 지원하는 Amazon EC2 인스턴스에 대해 자세히 알아보세요."^] .
+
+endif::aws[]
+
+ifdef::azure[]
+
+
+
+==== 하늘빛
+
+단일 노드 시스템을 사용하는 경우 Cloud Volumes ONTAP 모든 VM 유형에서 높은 쓰기 속도를 지원합니다.
+
+HA 쌍을 사용하는 경우 Cloud Volumes ONTAP 9.8 릴리스부터 여러 VM 유형에서 높은 쓰기 속도를 지원합니다.  로 가다 https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-azure.html["Cloud Volumes ONTAP 릴리스 노트"^] 높은 쓰기 속도를 지원하는 VM 유형을 확인하세요.
+
+endif::azure[]
+
+ifdef::gcp[]
+
+
+
+==== 구글 클라우드
+
+단일 노드 시스템을 사용하는 경우 Cloud Volumes ONTAP 모든 머신 유형에서 높은 쓰기 속도를 지원합니다.
+
+HA 쌍을 사용하는 경우 Cloud Volumes ONTAP 9.13.0 릴리스부터 여러 VM 유형에서 높은 쓰기 속도를 지원합니다.  로 가다 https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-gcp.html#supported-configurations-by-license["Cloud Volumes ONTAP 릴리스 노트"^] 높은 쓰기 속도를 지원하는 VM 유형을 확인하세요.
+
+https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-gcp.html["Cloud Volumes ONTAP 지원하는 Google Cloud 머신 유형에 대해 자세히 알아보세요."^] .
+
+endif::gcp[]
+
+
+
+== 쓰기 속도를 선택하는 방법
+
+새로운 Cloud Volumes ONTAP 시스템을 추가할 때 쓰기 속도를 선택할 수 있습니다.link:task-modify-write-speed.html["기존 시스템의 쓰기 속도 변경"] .
+
+
+
+== 데이터 손실이 발생할 경우 예상되는 상황
+
+빠른 쓰기 속도로 인해 데이터 손실이 발생하면 이벤트 관리 시스템(EMS)은 다음 두 가지 이벤트를 보고합니다.
+
+* Cloud Volumes ONTAP 9.12.1 이상
++
+ NOTICE nv.data.loss.possible: An unexpected shutdown occurred while in high write speed mode, which possibly caused a loss of data.
+* Cloud Volumes ONTAP 9.11.0~9.11.1
++
+ DEBUG nv.check.failed: NVRAM check failed with error "NVRAM disabled due to dirty shutdown with High Write Speed mode"
++
+ ERROR wafl.root.content.changed: Contents of the root volume '' might have changed. Verify that all recent configuration changes are still in effect..
+* Cloud Volumes ONTAP 9.8~9.10.1
++
+ DEBUG nv.check.failed: NVRAM check failed with error "NVRAM disabled due to dirty shutdown"
++
+ ERROR wafl.root.content.changed: Contents of the root volume '' might have changed. Verify that all recent configuration changes are still in effect.
+
+
+이런 일이 발생하면 Cloud Volumes ONTAP 부팅되어 사용자 개입 없이도 데이터를 계속 제공할 수 있어야 합니다.
+
+
+
+== 데이터 손실이 발생한 경우 데이터 액세스를 중지하는 방법
+
+데이터 손실이 우려되는 경우, 데이터 손실 시 애플리케이션 실행을 중지하고 데이터 손실 문제가 적절히 해결된 후 데이터 액세스를 재개하려는 경우, CLI에서 NVFAIL 옵션을 사용하여 해당 목표를 달성할 수 있습니다.
+
+NVFAIL 옵션을 활성화하려면:: `vol modify -volume <vol-name> -nvfail on`
+NVFAIL 설정을 확인하려면:: `vol show -volume <vol-name> -fields nvfail`
+NVFAIL 옵션을 비활성화하려면:: `vol modify -volume <vol-name> -nvfail off`
+
+
+데이터 손실이 발생하면 NVFAIL이 활성화된 NFS 또는 iSCSI 볼륨은 데이터 제공을 중단해야 합니다(상태 비저장 프로토콜인 CIFS에는 영향을 미치지 않습니다).  자세한 내용은 다음을 참조하세요. https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-mcc-mgmt-dr/GUID-40D04B8A-01F7-4E87-8161-E30BD80F5B7F.html["NVFAIL이 NFS 볼륨 또는 LUN에 대한 액세스에 미치는 영향"^] .
+
+NVFAIL 상태를 확인하려면:: `vol show -fields in-nvfailed-state`
+
+
+데이터 손실 문제가 적절히 해결되면 NVFAIL 상태를 지울 수 있으며 볼륨을 데이터 액세스에 사용할 수 있습니다.
+
+NVFAIL 상태를 지우려면:: `vol modify -volume <vol-name> -in-nvfailed-state false`
+

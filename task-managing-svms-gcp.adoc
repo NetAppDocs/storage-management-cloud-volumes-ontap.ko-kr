@@ -1,0 +1,152 @@
+---
+sidebar: sidebar 
+permalink: task-managing-svms-gcp.html 
+keywords: storage virtual machine, vserver, svm, storage vm, supported number, number supported, create svm, create storage vm, create vserver 
+summary: 스토리지 VM은 ONTAP 내에서 실행되는 가상 머신으로, 클라이언트에게 스토리지 및 데이터 서비스를 제공합니다.  이것을 SVM이나 vserver라고 알고 있을 수도 있습니다.  Cloud Volumes ONTAP 은 기본적으로 하나의 스토리지 VM으로 구성되지만 일부 구성에서는 추가 스토리지 VM을 지원합니다. 
+---
+= Google Cloud에서 Cloud Volumes ONTAP 위한 데이터 제공 스토리지 VM 관리
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+스토리지 VM은 ONTAP 내에서 실행되는 가상 머신으로, 클라이언트에게 스토리지 및 데이터 서비스를 제공합니다.  이것을 _SVM_ 또는 _vserver_라고 알고 있을 수도 있습니다.  Cloud Volumes ONTAP 은 기본적으로 하나의 스토리지 VM으로 구성되지만 일부 구성에서는 추가 스토리지 VM을 지원합니다.
+
+Google Cloud에서 추가 데이터 제공 스토리지 VM을 만들고 관리하려면 API를 사용해야 합니다.  API는 스토리지 VM을 생성하고 필요한 네트워크 인터페이스를 구성하는 프로세스를 자동화하기 때문입니다.  스토리지 VM을 생성할 때 NetApp 콘솔은 필수 LIF 서비스와 스토리지 VM에서 아웃바운드 SMB/CIFS 통신에 필요한 iSCSI LIF를 구성합니다.
+
+Cloud Volumes ONTAP API 호출 실행에 대한 정보는 다음을 참조하세요. https://docs.netapp.com/us-en/bluexp-automation/cm/your_api_call.html#step-1-select-the-identifie["첫 번째 API 호출"^] .
+
+
+
+== 지원되는 스토리지 VM 수
+
+Cloud Volumes ONTAP 9.11.1부터 라이선스에 따라 특정 구성으로 여러 스토리지 VM이 지원됩니다.  를 참조하세요 https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/index.html["Cloud Volumes ONTAP 릴리스 노트"^] Cloud Volumes ONTAP 버전에 지원되는 스토리지 VM 수를 확인하세요.
+
+9.11.1 이전의 모든 Cloud Volumes ONTAP 버전은 재해 복구에 사용되는 하나의 데이터 제공 스토리지 VM과 하나의 대상 스토리지 VM을 지원합니다.  소스 스토리지 VM에 장애가 발생하는 경우 데이터 액세스를 위해 대상 스토리지 VM을 활성화할 수 있습니다.
+
+
+
+== 스토리지 VM 생성
+
+구성 및 라이선스 유형에 따라 API를 사용하여 단일 노드 시스템이나 고가용성(HA) 구성에서 여러 스토리지 VM을 만들 수 있습니다.
+
+.이 작업에 관하여
+API를 사용하여 스토리지 VM을 생성하고 필요한 네트워크 인터페이스를 구성하는 경우 콘솔도 다음을 수정합니다. `default-data-files` 다음 서비스를 NAS 데이터 LIF에서 제거하고 아웃바운드 관리 연결에 사용되는 iSCSI 데이터 LIF에 추가하여 데이터 스토리지 VM에 대한 정책을 적용합니다.
+
+* `data-fpolicy-client`
+* `management-ad-client`
+* `management-dns-client`
+* `management-ldap-client`
+* `management-nis-client`
+
+
+.시작하기 전에
+콘솔 에이전트에는 Cloud Volumes ONTAP HA 쌍에 대한 스토리지 VM을 생성하기 위한 특정 권한이 필요합니다.  필요한 권한이 포함되어 있습니다. https://docs.netapp.com/us-en/bluexp-setup-admin/reference-permissions-gcp.html["NetApp 에서 제공하는 정책"^] .
+
+
+
+=== 단일 노드 시스템
+
+다음 API 호출을 사용하여 단일 노드 시스템에 스토리지 VM을 생성합니다.
+
+`POST /gcp/vsa/working-environments/{workingEnvironmentId}/svm`
+
+요청 본문에 다음 매개변수를 포함합니다.
+
+[source, json]
+----
+{ "svmName": "NewSvmName"
+   "svmPassword": "optional value, the API takes the cluster password if not provided"
+   "mgmtLif": "optional value, to create an additional management LIF, if you want to use the storage VM for management purposes"}
+----
+
+
+=== HA 쌍
+
+다음 API 호출을 사용하여 HA 쌍에 스토리지 VM을 만듭니다.
+
+`POST /gcp/ha/working-environments/{workingEnvironmentId}/svm/`
+
+요청 본문에 다음 매개변수를 포함합니다.
+
+[source, json]
+----
+{ "svmName": "NewSvmName"
+   "svmPassword": "optional value, the API takes the cluster password if not provided"
+}
+----
+
+
+== 스토리지 VM 관리
+
+API를 사용하면 단일 노드와 HA 구성 모두에서 스토리지 VM의 이름을 바꾸고 삭제할 수 있습니다.
+
+.시작하기 전에
+콘솔 에이전트에는 Cloud Volumes ONTAP HA 쌍의 스토리지 VM을 관리하기 위한 특정 권한이 필요합니다.  필요한 권한이 포함되어 있습니다. https://docs.netapp.com/us-en/bluexp-setup-admin/reference-permissions-gcp.html["NetApp 에서 제공하는 정책"^] .
+
+
+
+=== 스토리지 VM 이름 바꾸기
+
+스토리지 VM의 이름을 바꾸려면 기존 스토리지 VM과 새 스토리지 VM의 이름을 매개변수로 제공해야 합니다.
+
+.단계
+* 다음 API 호출을 사용하여 단일 노드 시스템에서 스토리지 VM의 이름을 바꾸세요.
++
+`PUT /gcp/vsa/working-environments/{workingEnvironmentId}/svm`
+
++
+요청 본문에 다음 매개변수를 포함합니다.
+
++
+[source, json]
+----
+{
+  "svmNewName": "NewSvmName",
+  "svmName": "OldSvmName"
+}
+----
+* 다음 API 호출을 사용하여 HA 쌍의 스토리지 VM 이름을 바꾸세요.
++
+`PUT /gcp/ha/working-environments/{workingEnvironmentId}/svm`
+
++
+요청 본문에 다음 매개변수를 포함합니다.
+
++
+[source, json]
+----
+{
+  "svmNewName": "NewSvmName",
+  "svmName": "OldSvmName"
+}
+----
+
+
+
+
+=== 스토리지 VM 삭제
+
+단일 노드 또는 HA 구성에서는 활성 볼륨이 없는 스토리지 VM을 제거할 수 있습니다.
+
+.단계
+* 다음 API 호출을 사용하여 단일 노드 시스템에서 스토리지 VM을 삭제합니다.
++
+`DELETE /gcp/vsa/working-environments/{workingEnvironmentId}/svm/{svmName}`
+
+* HA 쌍에서 스토리지 VM을 삭제하려면 다음 API 호출을 사용하세요.
++
+`DELETE /gcp/ha/working-environments/{workingEnvironmentId}/svm/{svmName}`
+
+
+
+.관련 정보
+* https://docs.netapp.com/us-en/bluexp-automation/cm/prepare.html["API 사용을 준비하세요"^]
+* https://docs.netapp.com/us-en/bluexp-automation/cm/workflow_processes.html#organization-of-cloud-volumes-ontap-workflows["Cloud Volumes ONTAP 워크플로"^]
+* https://docs.netapp.com/us-en/bluexp-automation/platform/get_identifiers.html#get-the-connector-identifier["필수 식별자 가져오기"^]
+* https://docs.netapp.com/us-en/bluexp-automation/platform/use_rest_apis.html["NetApp 콘솔에 REST API 사용"^]
+

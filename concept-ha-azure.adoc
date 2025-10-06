@@ -1,0 +1,126 @@
+---
+sidebar: sidebar 
+permalink: concept-ha-azure.html 
+keywords: high-availability, HA, concepts, understanding, overview, takeover, giveback, rpo, rto, nondisruptive, ha pairs, node, nodes, recovery point objective, recovery time objective, nas, nfs, cifs, iscsi, mpio, alua, failover, failure, azure, shared storage, active, passive, load balancer, storage accounts, page blobs 
+summary: 'Cloud Volumes ONTAP 고가용성(HA) 쌍은 클라우드 환경에서 장애가 발생하더라도 기업의 안정성과 지속적인 운영을 제공합니다. Azure에서는 두 노드 간에 저장소가 공유됩니다.' 
+---
+= Azure의 Cloud Volumes ONTAP HA 쌍에 대해 알아보세요
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Cloud Volumes ONTAP 고가용성(HA) 쌍은 클라우드 환경에서 장애가 발생하더라도 기업의 안정성과 지속적인 운영을 제공합니다. Azure에서는 두 노드 간에 저장소가 공유됩니다.
+
+
+
+== HA 구성 요소
+
+
+
+=== 페이지 블롭을 사용한 HA 단일 가용성 영역 구성
+
+Azure의 Cloud Volumes ONTAP HA 페이지 Blob 구성에는 다음 구성 요소가 포함됩니다.
+
+image:diagram_ha_azure.png["NetApp 콘솔과 클라이언트에서 들어오는 트래픽을 관리하는 로드 밸런서, VMSS Flex의 두 개의 Cloud Volumes ONTAP 노드, 부팅 데이터용 SSD 디스크, 고객 데이터용 Page Blob을 보여주는 개념적 이미지입니다."]
+
+NetApp 콘솔이 배포하는 Azure 구성 요소에 대해 다음 사항을 참고하세요.
+
+Azure 표준 부하 분산 장치:: 로드 밸런서는 Cloud Volumes ONTAP HA 쌍으로 들어오는 트래픽을 관리합니다.
+단일 가용성 영역의 VM:: Cloud Volumes ONTAP 9.15.1부터 단일 가용성 영역(AZ)에서 이기종 가상 머신(VM)을 만들고 관리할 수 있습니다.  동일한 AZ 내의 별도의 장애 도메인에 고가용성(HA) 노드를 배포하여 최적의 가용성을 보장할 수 있습니다.  이 기능을 활성화하는 유연한 오케스트레이션 모드에 대해 자세히 알아보려면 다음을 참조하세요. https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/["Microsoft Azure 설명서: 가상 머신 확장 집합"^] .
+디스크:: 고객 데이터는 프리미엄 스토리지 페이지 블롭에 저장됩니다.  각 노드는 다른 노드의 저장소에 접근할 수 있습니다.  추가 저장 공간도 필요합니다.link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/reference-default-configs.html#azure-ha-pair["부트, 루트 및 코어 데이터"^] .
+저장 계정::
++
+--
+* 관리 디스크에는 하나의 스토리지 계정이 필요합니다.
+* 스토리지 계정당 디스크 용량 한도에 도달했으므로 프리미엄 스토리지 페이지 Blob에 하나 이상의 스토리지 계정이 필요합니다.
++
+https://docs.microsoft.com/en-us/azure/storage/common/storage-scalability-targets["Microsoft Azure 설명서: 저장소 계정에 대한 Azure Storage 확장성 및 성능 목표"^] .
+
+* Azure Blob Storage에 데이터를 계층화하려면 하나의 스토리지 계정이 필요합니다.
+* Cloud Volumes ONTAP 9.7부터 콘솔이 HA 쌍에 대해 생성하는 스토리지 계정은 일반 용도의 v2 스토리지 계정입니다.
+* Cloud Volumes ONTAP 시스템을 추가할 때 Cloud Volumes ONTAP 9.7 HA 쌍에서 Azure 스토리지 계정으로 HTTPS 연결을 활성화할 수 있습니다.  이 옵션을 활성화하면 쓰기 성능에 영향을 줄 수 있습니다.  시스템을 만든 후에는 설정을 변경할 수 없습니다.
+
+
+--
+
+
+
+NOTE: Cloud Volumes ONTAP 9.15.0P1부터 새로운 고가용성 쌍 배포에 대해 Azure 페이지 Blob이 더 이상 지원되지 않습니다.  현재 기존 고가용성 쌍 배포에서 Azure 페이지 Blob을 사용하는 경우 Edsv4 시리즈 VM 및 Edsv5 시리즈 VM에서 최신 VM 인스턴스 유형으로 마이그레이션할 수 있습니다. link:https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-azure.html#ha-pairs["Azure에서 지원되는 구성에 대해 자세히 알아보세요."^] .
+
+
+
+=== 공유 관리 디스크를 사용한 HA 단일 가용성 영역 구성
+
+공유 관리 디스크 위에서 실행되는 Cloud Volumes ONTAP HA 단일 가용성 영역 구성에는 다음 구성 요소가 포함됩니다.
+
+image:diagram_ha_azure_saz_lrs.png["콘솔과 클라이언트에서 들어오는 트래픽을 관리하는 로드 밸런서, VMSS Flex의 두 개의 Cloud Volumes ONTAP 노드, 부팅 데이터용 SSD 디스크, 고객 데이터용 LRS 관리 디스크를 보여주는 개념적 이미지입니다."]
+
+콘솔에서 배포하는 Azure 구성 요소에 대해 다음 사항을 참고하세요.
+
+Azure 표준 부하 분산 장치:: 로드 밸런서는 Cloud Volumes ONTAP HA 쌍으로 들어오는 트래픽을 관리합니다.
+단일 가용성 영역의 VM:: Cloud Volumes ONTAP 9.15.1부터 단일 가용성 영역(AZ)에서 이기종 가상 머신(VM)을 만들고 관리할 수 있습니다.  동일한 AZ 내의 별도의 장애 도메인에 고가용성(HA) 노드를 배포하여 최적의 가용성을 보장할 수 있습니다.  이 기능을 활성화하는 유연한 오케스트레이션 모드에 대해 자세히 알아보려면 다음을 참조하세요. https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/["Microsoft Azure 설명서: 가상 머신 확장 집합"^] .
++
+--
+다음 조건이 충족되면 영역 배포에서는 프리미엄 SSD v2 관리 디스크를 사용합니다.
+
+* Cloud Volumes ONTAP 버전은 9.15.1 이상입니다.
+* 선택한 지역 및 영역은 Premium SSD v2 Managed Disks를 지원합니다.  지원되는 지역에 대한 정보는 다음을 참조하세요. https://azure.microsoft.com/en-us/explore/global-infrastructure/products-by-region/["Microsoft Azure 웹사이트: 지역별 사용 가능한 제품"^] .
+* 구독은 Microsoft에 등록되었습니다.link:task-saz-feature.html["Microsoft.Compute/VMOrchestratorZonalMultiFD 기능"] .
+
+
+--
+디스크:: 고객 데이터는 로컬 중복 스토리지(LRS) 관리 디스크에 저장됩니다.  각 노드는 다른 노드의 저장소에 접근할 수 있습니다.  추가 저장 공간도 필요합니다.link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/reference-default-configs.html#azure-ha-pair["부팅, 루트, 파트너 루트, 코어 및 NVRAM 데이터"^] .
+저장 계정:: 스토리지 계정은 진단 로그를 처리하고 Blob 스토리지로 계층화하기 위해 관리형 디스크 기반 배포에 사용됩니다.
+
+
+
+
+=== HA 다중 가용성 영역 구성
+
+Azure의 Cloud Volumes ONTAP HA 다중 가용성 영역 구성에는 다음 구성 요소가 포함됩니다.
+
+image:diagram_ha_azure_maz.png["콘솔과 클라이언트에서 들어오는 트래픽을 관리하는 로드 밸런서, 두 개의 가용성 영역에 있는 두 개의 Cloud Volumes ONTAP 노드, 부팅 데이터용 SSD 디스크, 고객 데이터용 관리 디스크를 보여주는 개념적 이미지입니다."]
+
+콘솔에서 배포하는 Azure 구성 요소에 대해 다음 사항을 참고하세요.
+
+Azure 표준 부하 분산 장치:: 로드 밸런서는 Cloud Volumes ONTAP HA 쌍으로 들어오는 트래픽을 관리합니다.
+가용성 영역:: HA 다중 가용성 영역 구성은 두 개의 Cloud Volumes ONTAP 노드를 서로 다른 가용성 영역에 배포하는 배포 모델을 활용하여 노드가 서로 다른 장애 도메인에 위치하도록 하여 중복성과 가용성을 제공합니다.  유연한 오케스트레이션 모드에서 Virtual Machine Scale Sets가 Azure의 가용성 영역을 사용하는 방법을 알아보려면 다음을 참조하세요. https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-use-availability-zones?tabs=cli-1%2Cportal-2["Microsoft Azure 설명서: 가용성 영역을 사용하는 가상 머신 확장 집합 만들기"^] .
+디스크:: 고객 데이터는 ZRS(Zone-Redundant Storage) 관리 디스크에 저장됩니다.  각 노드는 다른 노드의 저장소에 접근할 수 있습니다.  추가 저장 공간도 필요합니다.link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/reference-default-configs.html#azure-ha-pair["부트, 루트, 파트너 루트 및 코어 데이터"^] .
+저장 계정:: 스토리지 계정은 진단 로그를 처리하고 Blob 스토리지로 계층화하기 위해 관리형 디스크 기반 배포에 사용됩니다.
+
+
+
+
+== RPO와 RTO
+
+HA 구성은 다음과 같이 데이터의 높은 가용성을 유지합니다.
+
+* 복구 지점 목표(RPO)는 0초입니다.  귀하의 데이터는 데이터 손실 없이 거래적으로 일관성을 유지합니다.
+* 복구 시간 목표(RTO)는 120초입니다.  정전이 발생하더라도 120초 이내에 데이터를 사용할 수 있어야 합니다.
+
+
+
+
+== 저장소 인수 및 반환
+
+물리적 ONTAP 클러스터와 유사하게 Azure HA 쌍의 저장소는 노드 간에 공유됩니다.  파트너의 저장소에 연결하면 _인수_가 발생할 경우 각 노드가 다른 노드의 저장소에 액세스할 수 있습니다.  네트워크 경로 장애 조치 메커니즘은 클라이언트와 호스트가 생존 노드와 계속 통신할 수 있도록 보장합니다.  노드가 다시 온라인 상태가 되면 파트너는 저장소를 _반환_합니다.
+
+NAS 구성의 경우 장애가 발생하면 데이터 IP 주소가 HA 노드 간에 자동으로 마이그레이션됩니다.
+
+iSCSI의 경우 Cloud Volumes ONTAP 다중 경로 I/O(MPIO) 및 비대칭 논리 단위 액세스(ALUA)를 사용하여 활성 최적화 경로와 최적화되지 않은 경로 간의 경로 장애 조치를 관리합니다.
+
+
+NOTE: ALUA를 지원하는 특정 호스트 구성에 대한 정보는 다음을 참조하십시오. http://mysupport.netapp.com/matrix["NetApp 상호 운용성 매트릭스 도구"^] 그리고 https://docs.netapp.com/us-en/ontap-sanhost/["SAN 호스트 및 클라우드 클라이언트 가이드"] 호스트 운영 체제에 맞게.
+
+저장소 인수, 재동기화 및 반환은 모두 기본적으로 자동으로 수행됩니다. 사용자 작업이 필요하지 않습니다.
+
+
+
+== 스토리지 구성
+
+HA 쌍을 액티브-액티브 구성으로 사용할 수 있습니다. 이 경우 두 노드 모두 클라이언트에 데이터를 제공하고, 액티브-패시브 구성으로 사용할 경우 패시브 노드는 액티브 노드의 스토리지를 인수한 경우에만 데이터 요청에 응답합니다.

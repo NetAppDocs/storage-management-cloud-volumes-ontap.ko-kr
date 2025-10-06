@@ -1,0 +1,147 @@
+---
+sidebar: sidebar 
+permalink: task-enabling-private-link.html 
+keywords: azure private link, private link connection, private link to storage, service endpoints, enable service endpoint, disable private link 
+summary: Cloud Volumes ONTAP 연결된 스토리지 계정에 연결하기 위해 Azure Private Link를 사용합니다.  필요한 경우 Azure Private Links를 비활성화하고 대신 서비스 엔드포인트를 사용할 수 있습니다. 
+---
+= Cloud Volumes ONTAP 시스템에 Azure Private Link 또는 서비스 엔드포인트 사용
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Cloud Volumes ONTAP 연결된 스토리지 계정에 연결하기 위해 Azure Private Link를 사용합니다.  필요한 경우 Azure Private Links를 비활성화하고 대신 서비스 엔드포인트를 사용할 수 있습니다.
+
+
+
+== 개요
+
+기본적으로 NetApp 콘솔은 Cloud Volumes ONTAP 과 연결된 스토리지 계정 간의 연결을 위해 Azure Private Link를 활성화합니다.  Azure Private Link는 Azure의 엔드포인트 간 연결을 보호하고 성능 이점을 제공합니다.
+
+필요한 경우 Azure Private Link 대신 서비스 엔드포인트를 사용하도록 Cloud Volumes ONTAP 구성할 수 있습니다.
+
+두 구성 모두에서 콘솔은 항상 Cloud Volumes ONTAP 과 스토리지 계정 간 연결에 대한 네트워크 액세스를 제한합니다.  네트워크 액세스는 Cloud Volumes ONTAP 배포된 VNet과 Console 에이전트가 배포된 VNet으로 제한됩니다.
+
+
+
+== Azure Private Links를 비활성화하고 대신 서비스 엔드포인트를 사용하세요.
+
+비즈니스에 필요한 경우 콘솔에서 설정을 변경하여 Azure Private Link 대신 서비스 엔드포인트를 사용하도록 Cloud Volumes ONTAP 구성할 수 있습니다.  이 설정을 변경하면 새로 만든 Cloud Volumes ONTAP 시스템에 적용됩니다.  서비스 엔드포인트는 다음에서만 지원됩니다.link:https://docs.microsoft.com/en-us/azure/availability-zones/cross-region-replication-azure#azure-cross-region-replication-pairings-for-all-geographies["Azure 지역 쌍"^] 콘솔 에이전트와 Cloud Volumes ONTAP VNet 사이.
+
+콘솔 에이전트는 관리하는 Cloud Volumes ONTAP 시스템과 동일한 Azure 지역이나 https://docs.microsoft.com/en-us/azure/availability-zones/cross-region-replication-azure#azure-cross-region-replication-pairings-for-all-geographies["Azure 지역 쌍"^] Cloud Volumes ONTAP 시스템용.
+
+.단계
+. 왼쪽 탐색 창에서 *관리 > 에이전트*로 이동합니다.
+. 클릭image:icon-action.png[""] Cloud Volumes ONTAP 시스템을 관리하는 콘솔 에이전트의 아이콘입니다.
+. * Cloud Volumes ONTAP 설정*을 선택합니다.
++
+image::screenshot-settings-cloud-volumes-ontap.png[설정 아이콘 아래에 있는 Cloud Volumes ONTAP 설정 옵션의 스크린샷입니다.]
+
+. *Azure*에서 *Azure Private Link 사용*을 클릭합니다.
+. Cloud Volumes ONTAP 과 스토리지 계정 간의 개인 링크 연결을 선택 해제합니다.
+. *저장*을 클릭하세요.
+
+
+.당신이 완료한 후
+Azure Private Links를 비활성화하고 콘솔 에이전트가 프록시 서버를 사용하는 경우 직접 API 트래픽을 활성화해야 합니다.
+
+https://docs.netapp.com/us-en/bluexp-setup-admin/task-configuring-proxy.html#enable-a-proxy-on-a-connector["콘솔 에이전트에서 직접 API 트래픽을 활성화하는 방법을 알아보세요."^]
+
+
+
+== Azure Private Links로 작업
+
+대부분의 경우 Cloud Volumes ONTAP 사용하여 Azure Private Link를 설정하는 데 필요한 작업은 없습니다.  콘솔은 Azure Private Links를 관리합니다.  하지만 기존 Azure Private DNS 영역을 사용하는 경우 구성 파일을 편집해야 합니다.
+
+
+
+=== 사용자 정의 DNS에 대한 요구 사항
+
+선택적으로 사용자 지정 DNS를 사용하는 경우 사용자 지정 DNS 서버에서 Azure 개인 DNS 영역에 대한 조건부 전달자를 만들어야 합니다. 자세한 내용은 다음을 참조하세요.link:https://learn.microsoft.com/en-us/azure/private-link/private-endpoint-dns#on-premises-workloads-using-a-dns-forwarder["DNS 전달자 사용에 대한 Azure 설명서"^] .
+
+
+
+=== Private Link 연결 작동 방식
+
+콘솔이 Azure에 Cloud Volumes ONTAP 배포하면 리소스 그룹에 개인 엔드포인트가 생성됩니다.  개인 엔드포인트는 Cloud Volumes ONTAP 의 스토리지 계정과 연결됩니다.  결과적으로 Cloud Volumes ONTAP 스토리지에 대한 액세스는 Microsoft 백본 네트워크를 통해 이루어집니다.
+
+클라이언트가 Cloud Volumes ONTAP 과 동일한 VNet에 있거나, 피어링된 VNet에 있거나, VNet에 대한 개인 VPN이나 ​​ExpressRoute 연결을 사용할 때 온프레미스 네트워크에 있는 경우 클라이언트 액세스는 개인 링크를 통해 이루어집니다.
+
+다음은 동일한 VNet 내부와 개인 VPN 또는 ExpressRoute 연결이 있는 온프레미스 네트워크에서 개인 링크를 통해 클라이언트 액세스를 보여주는 예입니다.
+
+image:diagram_azure_private_link.png["Cloud Volumes ONTAP 으로 가는 데이터 액세스와 개인 엔드포인트 및 스토리지 계정으로 가는 개인 링크를 보여주는 개념적 이미지입니다."]
+
+
+NOTE: 콘솔 에이전트와 Cloud Volumes ONTAP 시스템이 서로 다른 VNet에 배포된 경우 콘솔 에이전트가 배포된 VNet과 Cloud Volumes ONTAP 시스템이 배포된 VNet 간에 VNet 피어링을 설정해야 합니다.
+
+
+
+=== Azure Private DNS에 대한 세부 정보를 제공하세요.
+
+당신이 사용하는 경우 https://docs.microsoft.com/en-us/azure/dns/private-dns-overview["Azure 프라이빗 DNS"^] 그러면 각 콘솔 에이전트에서 구성 파일을 수정해야 합니다.  그렇지 않으면 콘솔은 Cloud Volumes ONTAP 과 연결된 스토리지 계정 간에 Azure Private Link 연결을 설정할 수 없습니다.
+
+DNS 이름은 Azure DNS 명명 요구 사항과 일치해야 합니다. https://docs.microsoft.com/en-us/azure/storage/common/storage-private-endpoints#dns-changes-for-private-endpoints["Azure 설명서에 표시된 대로"^] .
+
+.단계
+. 콘솔 에이전트 호스트에 SSH를 실행하고 로그인합니다.
+. 로 이동합니다  `/opt/application/netapp/cloudmanager/docker_occm/data` 예배 규칙서.
+. 편집하다  `app.conf` 추가하여  `user-private-dns-zone-settings` 다음 키워드-값 쌍을 포함하는 매개변수:
++
+[source, cli]
+----
+ "user-private-dns-zone-settings" : {
+    "resource-group" : "<resource group name of the DNS zone>",
+    "subscription" : "<subscription ID>",
+    "use-existing" : true,
+    "create-private-dns-zone-link" : true
+ }
+----
++
+그만큼 `subscription` 키워드는 개인 DNS 영역이 콘솔 에이전트와 다른 구독에 있는 경우에만 필요합니다.
+
+. 파일을 저장하고 콘솔 에이전트에서 로그오프합니다.
++
+재부팅이 필요하지 않습니다.
+
+
+
+
+
+=== 실패 시 롤백 활성화
+
+콘솔이 특정 작업의 일부로 Azure Private Link를 만들지 못하면 Azure Private Link 연결 없이 작업을 완료합니다.  이는 새로운 시스템(단일 노드 또는 HA 쌍)을 생성할 때 또는 HA 쌍에서 다음 작업이 발생할 때 발생할 수 있습니다. 새로운 집계 생성, 기존 집계에 디스크 추가 또는 32TiB를 초과할 때 새로운 스토리지 계정 생성.
+
+콘솔에서 Azure Private Link를 만들지 못하는 경우 롤백을 활성화하여 이 기본 동작을 변경할 수 있습니다.  이를 통해 회사의 보안 규정을 완벽하게 준수하는 데 도움이 될 수 있습니다.
+
+롤백을 활성화하면 콘솔에서 작업이 중지되고 작업의 일부로 생성된 모든 리소스가 롤백됩니다.
+
+API를 통해 롤백을 활성화하거나 app.conf 파일을 업데이트할 수 있습니다.
+
+*API를 통한 롤백 활성화*
+
+.단계
+. 사용하다 `PUT /occm/config` 다음 요청 본문을 포함하는 API 호출:
++
+[source, json]
+----
+{ "rollbackOnAzurePrivateLinkFailure": true }
+----
+
+
+*app.conf를 업데이트하여 롤백을 활성화합니다*
+
+.단계
+. 콘솔 에이전트 호스트에 SSH를 실행하고 로그인합니다.
+. 다음 디렉토리로 이동합니다: /opt/application/netapp/cloudmanager/docker_occm/data
+. 다음 매개변수와 값을 추가하여 app.conf를 편집합니다.
++
+ "rollback-on-private-link-failure": true
+. 파일을 저장하고 콘솔 에이전트에서 로그오프합니다.
++
+재부팅이 필요하지 않습니다.
+
+

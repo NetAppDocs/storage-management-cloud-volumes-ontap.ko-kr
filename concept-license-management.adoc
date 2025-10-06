@@ -1,0 +1,79 @@
+---
+sidebar: sidebar 
+permalink: concept-license-management.html 
+keywords: byol, bring your own license, expiration, warning, node-based byol, node license, capacity 
+summary: 노드 기반 BYOL이 있는 각 Cloud Volumes ONTAP 시스템에는 활성 구독과 함께 설치된 시스템 라이선스가 있어야 합니다.  콘솔은 라이선스를 관리하고 라이선스가 만료되기 전에 경고를 표시하여 프로세스를 간소화합니다. 
+---
+= 노드 기반 BYOL에 대한 라이선스 관리
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+노드 기반 BYOL(Bring Your Own License)이 있는 각 Cloud Volumes ONTAP 시스템에는 활성 구독과 함께 설치된 시스템 라이선스가 있어야 합니다.  NetApp 콘솔은 라이선스를 관리하고 라이선스가 만료되기 전에 경고를 표시하여 프로세스를 간소화합니다.
+
+
+NOTE: 노드 기반 라이선스는 Cloud Volumes ONTAP 의 이전 세대 라이선스입니다. 노드 기반 라이선스는 NetApp (BYOL)에서 구매할 수 있으며, 특정 경우에만 라이선스를 갱신할 수 있습니다.
+
+link:concept-licensing.html["Cloud Volumes ONTAP 라이선싱 옵션에 대해 자세히 알아보세요"] .
+
+link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-manage-node-licenses.html["노드 기반 라이선스를 관리하는 방법에 대해 자세히 알아보세요."^] .
+
+
+
+== BYOL 시스템 라이선스
+
+노드 기반 라이선스는 NetApp 에서 구매할 수 있습니다. 단일 노드 시스템 또는 HA 쌍에 대해 구매할 수 있는 라이선스 수는 무제한입니다.
+
+
+NOTE: NetApp BYOL 라이선스 구매, 연장 및 갱신을 제한하고 있습니다. 자세한 내용은 다음을 참조하세요.  https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/whats-new.html#restricted-availability-of-byol-licensing-for-cloud-volumes-ontap["Cloud Volumes ONTAPP 에 대한 BYOL 라이선싱의 제한된 가용성"^] .
+
+노드 기반 라이선스는 단일 노드 또는 HA 쌍에 최대 368TiB의 용량을 제공합니다. Cloud Volumes ONTAP BYOL 시스템에 368TiB 이상의 용량을 할당하기 위해 여러 라이선스를 구매했을 수 있습니다. 예를 들어, Cloud Volumes ONTAP 에 최대 736TiB의 용량을 할당하기 위해 두 개의 라이선스를 구매할 수 있습니다. 또는 최대 1.4PiB의 용량을 확보하기 위해 네 개의 라이선스를 구매할 수도 있습니다.
+
+디스크 제한으로 인해 디스크만 사용하여 용량 제한에 도달하지 못할 수도 있습니다. 디스크 한도를 초과할 수 있습니다.link:concept-data-tiering.html["비활성 데이터를 개체 스토리지로 계층화"] .  디스크 제한에 대한 정보는 다음을 참조하세요. https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/["Cloud Volumes ONTAP 릴리스 노트의 저장 한도"^] .
+
+
+
+== 새 시스템에 대한 라이선스 관리
+
+노드 기반 BYOL 시스템을 만들면 콘솔에서 라이선스의 일련 번호와 NetApp 지원 사이트 계정을 입력하라는 메시지가 표시됩니다.  콘솔은 계정을 사용하여 NetApp 에서 라이선스 파일을 다운로드하고 이를 Cloud Volumes ONTAP 시스템에 설치합니다.
+
+https://docs.netapp.com/us-en/bluexp-setup-admin/task-adding-nss-accounts.html["콘솔에 NetApp 지원 사이트 계정을 추가하는 방법을 알아보세요."^] .
+
+콘솔이 보안 인터넷 연결을 통해 라이센스 파일에 액세스할 수 없는 경우 다음을 수행할 수 있습니다.link:task-manage-node-licenses.html["직접 파일을 얻은 다음 콘솔에 수동으로 파일을 업로드합니다."] .
+
+
+
+== 라이센스 만료
+
+콘솔은 노드 기반 라이선스가 만료되기 30일 전에 경고를 표시하고, 라이선스가 만료될 때 다시 경고를 표시합니다.  다음 이미지는 사용자 인터페이스에 나타나는 30일 만료 경고를 보여줍니다.
+
+image:screenshot_warning.gif["스크린샷: 경고 아이콘이 포함된 Cloud Volumes ONTAP 시스템을 보여줍니다.  아이콘은 작업이 필요함을 나타냅니다."]
+
+메시지를 검토할 시스템을 선택할 수 있습니다.
+
+조직 또는 계정 관리자가 해당 옵션을 활성화한 경우 콘솔에는 이메일로 전송되는 Cloud Volumes ONTAP 보고서에 라이선스 만료 경고가 포함되어 있습니다.  이메일 보고서에는 2주마다 라이선스 만료 경고가 포함되어 있습니다.
+
+정해진 기간 내에 라이센스를 갱신하지 않으면 Cloud Volumes ONTAP 시스템이 자동으로 종료됩니다.  다시 시작하면 다시 꺼집니다.
+
+
+
+== 면허 갱신
+
+NetApp 담당자에게 연락하여 노드 기반 BYOL 구독을 갱신하는 경우 콘솔은 자동으로 NetApp 에서 새 라이선스를 받아 Cloud Volumes ONTAP 시스템에 설치합니다.
+
+콘솔이 보안 인터넷 연결을 통해 라이센스 파일에 액세스할 수 없는 경우 다음을 수행할 수 있습니다.link:task-manage-node-licenses.html["직접 파일을 얻은 다음 콘솔에 수동으로 파일을 업로드합니다."] .
+
+
+
+== 새로운 시스템으로 라이센스 이전
+
+노드 기반 BYOL 라이선스는 기존 시스템을 삭제한 다음 동일한 라이선스를 사용하여 새 시스템을 만들 때 Cloud Volumes ONTAP 시스템 간에 전송할 수 있습니다.
+
+예를 들어, 기존 라이선스 시스템을 삭제한 다음 다른 VPC/VNet 또는 클라우드 공급자의 새로운 BYOL 시스템에서 라이선스를 사용할 수 있습니다.  모든 클라우드 공급자에서는 _클라우드 독립적_ 일련 번호만 작동합니다.  클라우드에 독립적인 일련 번호는 _908xxxx_ 접두사로 시작합니다.
+
+BYOL 라이선스는 회사와 특정 NetApp 지원 사이트 자격 증명에 연결되어 있다는 점을 알아두는 것이 중요합니다.

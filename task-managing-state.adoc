@@ -1,0 +1,90 @@
+---
+sidebar: sidebar 
+permalink: task-managing-state.html 
+keywords: schedule, schedules, scheduling, shutdowns, shut down, restart, stop, stopping, turn off, weekday, weekend 
+summary: NetApp 콘솔에서 Cloud Volumes ONTAP 중지하고 시작하여 클라우드 컴퓨팅 비용을 관리할 수 있습니다. 
+---
+= Cloud Volumes ONTAP 시스템 시작 및 중지
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+NetApp 콘솔에서 Cloud Volumes ONTAP 중지하고 시작하여 클라우드 컴퓨팅 비용을 관리할 수 있습니다.
+
+
+
+== Cloud Volumes ONTAP 자동 종료 예약
+
+컴퓨팅 비용을 낮추려면 특정 시간 간격으로 Cloud Volumes ONTAP 종료해야 할 수도 있습니다.  이 작업을 수동으로 수행하는 대신, 콘솔을 구성하여 특정 시간에 시스템을 자동으로 종료한 다음 다시 시작할 수 있습니다.
+
+.이 작업에 관하여
+* Cloud Volumes ONTAP 시스템의 자동 종료를 예약하는 경우, 활성 데이터 전송이 진행 중이면 콘솔이 종료를 연기합니다.
++
+전송이 완료되면 시스템이 종료됩니다.
+
+* 이 작업은 HA 쌍의 두 노드를 자동으로 종료하도록 예약합니다.
+* 예약된 종료를 통해 Cloud Volumes ONTAP 끄면 부팅 및 루트 디스크의 스냅샷이 생성되지 않습니다.
++
+다음 섹션에서 설명하는 대로, 스냅샷은 수동 종료를 수행할 때만 자동으로 생성됩니다.
+
+
+
+.단계
+. *시스템* 페이지에서 Cloud Volumes ONTAP 시스템을 두 번 클릭합니다.
+. 개요 탭에서 기능 패널을 클릭한 다음 *예약된 가동 중지 시간* 옆에 있는 연필 아이콘을 클릭합니다.
++
+image::screenshot_schedule_downtime.png[400]
+
+. 종료 일정을 지정하세요:
++
+.. 매일, 주중마다, 주말마다 시스템을 종료할지 또는 이 세 가지 옵션을 조합하여 종료할지 선택하세요.
+.. 시스템을 끄고 싶은 시점과 끄고 싶은 시간을 지정하세요.
++
+*예*
+
++
+다음 이미지는 콘솔에 매주 토요일 오후 8시(오후 8시)에 12시간 동안 시스템을 종료하도록 지시하는 일정을 보여줍니다.  콘솔은 매주 월요일 오전 12시에 시스템을 다시 시작합니다.
+
++
+image:screenshot_schedule_downtime_window.png["스크린샷: 일정 가동 중지 화면을 보여줍니다."]
+
+
+
+. *저장*을 클릭하세요.
+
+
+.결과
+일정이 저장되었습니다.  기능 패널 아래의 해당 예약된 가동 중지 시간 항목에 '켜짐'이 표시됩니다.
+
+
+
+== Cloud Volumes ONTAP 중지
+
+Cloud Volumes ONTAP 중지하면 컴퓨팅 비용이 발생하지 않고 루트 및 부팅 디스크의 스냅샷이 생성되므로 문제 해결에 도움이 될 수 있습니다.
+
+
+NOTE: 비용을 줄이기 위해 콘솔은 루트 및 부팅 디스크의 오래된 스냅샷을 주기적으로 삭제합니다.  루트 디스크와 부팅 디스크 모두에 가장 최근의 스냅샷 두 개만 보존됩니다.
+
+.이 작업에 관하여
+HA 쌍을 중지하면 콘솔은 두 노드를 모두 종료합니다.
+
+.단계
+. 시스템에서 *끄기* 아이콘을 클릭합니다.
++
+image:screenshot_turn_off_redesign.png["스크린샷: Cloud Volumes ONTAP 시스템을 끄는 아이콘을 보여줍니다."]
+
+. 스냅샷을 생성하면 시스템 복구가 가능하므로 스냅샷 생성 옵션을 활성화해 두세요.
+. *끄기*를 클릭하세요.
++
+시스템을 중지하는 데 최대 몇 분이 걸릴 수 있습니다.  나중에 *시스템* 페이지에서 시스템을 다시 시작할 수 있습니다.
+
++
+
+NOTE: 재부팅 시 스냅샷이 자동으로 생성됩니다.
+
+

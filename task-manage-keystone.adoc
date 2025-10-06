@@ -1,0 +1,101 @@
+---
+sidebar: sidebar 
+permalink: task-manage-keystone.html 
+keywords: license, licensing, install, keystone, request capacity, link subscription, add keystone subscription, keystone subscription, digital wallet, keystone flex 
+summary: Cloud Volumes ONTAP 과 함께 사용할 구독을 활성화하고 구독 서비스 수준에 대한 커밋 용량 변경을 요청하여 Keystone 구독을 관리하세요.  서비스 수준에 대한 추가 용량을 요청하면 온프레미스 ONTAP 클러스터나 Cloud Volumes ONTAP 시스템에 더 많은 스토리지가 제공됩니다. 
+---
+= NetApp 콘솔을 통해 Cloud Volumes ONTAP 대한 Keystone 구독 관리
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead lead"]
+BlueXP digital wallet 에서 Cloud Volumes ONTAP 과 함께 사용할 구독을 활성화하고 구독 서비스 수준에 대한 약정 용량 변경을 요청하여 Keystone 구독을 관리하세요.  서비스 수준에 대한 추가 용량을 요청하면 온프레미스 ONTAP 클러스터나 Cloud Volumes ONTAP 시스템에 더 많은 스토리지가 제공됩니다.
+
+NetApp Keystone CapEx나 리스보다 OpEx를 선호하는 고객에게 하이브리드 클라우드 환경을 제공하는 유연한 종량제 구독 기반 서비스입니다.
+
+https://www.netapp.com/services/keystone/["Keystone 에 대해 자세히 알아보세요"^]
+
+
+
+== 계정 승인
+
+BlueXP 에서 Keystone 구독을 사용하고 관리하려면 먼저 NetApp 에 ​​연락하여 BlueXP 사용자 계정에 Keystone 구독을 승인해야 합니다.
+
+.단계
+. BlueXP 탐색 메뉴에서 *거버넌스 > 디지털 지갑*을 선택하세요.
+. * Keystone 구독*을 선택하세요.
+. * NetApp Keystone 에 오신 것을 환영합니다* 페이지가 보이면 페이지에 나열된 주소로 이메일을 보내주세요.
++
+NetApp 담당자가 귀하의 사용자 계정에 구독에 대한 액세스를 승인하여 귀하의 요청을 처리합니다.
+
+. 구독 내역을 보려면 * Keystone 구독* 탭으로 돌아가세요.
++
+image:screenshot-keystone-overview.png["Keystone 구독 목록을 보여주는 스크린샷입니다."]
+
+
+
+
+
+== 구독 연결
+
+NetApp 계정을 승인한 후 Keystone 구독을 연결하여 Cloud Volumes ONTAP 과 함께 사용할 수 있습니다. 이 작업을 통해 사용자는 새로운 Cloud Volumes ONTAP 시스템에 대한 요금 청구 방법으로 구독을 선택할 수 있습니다.
+
+.단계
+. BlueXP 탐색 메뉴에서 *거버넌스 > 디지털 지갑*을 선택하세요.
+. * Keystone 구독*을 선택하세요.
+. 연결하려는 구독의 경우 클릭하세요.image:icon-action.png["세 개의 점이 나란히 있는 아이콘"] 그리고 *링크*를 선택하세요.
++
+image:screenshot-keystone-link.png["구독에 대한 링크 옵션을 보여주는 스크린샷입니다."]
+
+
+
+.결과
+이제 구독이 BlueXP 조직이나 계정에 연결되었으며 Cloud Volumes ONTAP 작업 환경을 만들 때 선택할 수 있습니다.
+
+
+
+== 더 많거나 적은 용량을 요청하세요
+
+구독 서비스 수준에 대한 커밋된 용량을 변경하려면 BlueXP 에서 직접 NetApp 에 ​​요청을 보낼 수 있습니다.  서비스 수준에 대한 추가 용량을 요청하면 온프레미스 클러스터나 Cloud Volumes ONTAP 시스템에 더 많은 스토리지가 제공됩니다.
+
+.단계
+. BlueXP 탐색 메뉴에서 *거버넌스 > 디지털 지갑*을 선택하세요.
+. * Keystone 구독*을 선택하세요.
+. 용량을 조정하려는 구독의 경우 다음을 클릭하세요.image:icon-action.png["세 개의 점이 나란히 있는 아이콘"] *자세히 보기 및 편집*을 선택하세요.
+. 하나 이상의 구독에 대해 요청된 약정 용량을 입력하세요.
++
+image:screenshot-keystone-request.png["구독에 대한 커밋된 용량을 변경하도록 요청하는 기능을 보여주는 스크린샷입니다."]
+
+. 아래로 스크롤하여 요청에 대한 추가 세부 정보를 입력한 다음 *제출*을 클릭합니다.
+
+
+.결과
+귀하의 요청은 NetApp 시스템에 처리를 위한 티켓을 생성합니다.
+
+
+
+== 모니터 사용
+
+BlueXP digital advisor 대시보드를 사용하면 Keystone 구독 사용량을 모니터링하고 보고서를 생성할 수 있습니다.
+
+https://docs.netapp.com/us-en/keystone-staas/integrations/aiq-keystone-details.html["구독 사용량 모니터링에 대해 자세히 알아보세요"^]
+
+
+
+== 구독 연결 해제
+
+더 이상 BlueXP 에서 Keystone 구독을 사용하지 않으려면 구독 연결을 해제할 수 있습니다. 기존 Cloud Volumes ONTAP 구독에 연결되지 않은 구독만 연결 해제할 수 있습니다.
+
+.단계
+. BlueXP 탐색 메뉴에서 *거버넌스 > 디지털 지갑*을 선택하세요.
+. * Keystone*을 선택하세요.
+. 연결을 해제하려는 구독의 경우 다음을 클릭하세요.image:icon-action.png["세 개의 점이 나란히 있는 아이콘"] 그리고 *연결 해제*를 선택하세요.
+
+
+.결과
+구독이 BlueXP 조직 또는 계정에서 연결 해제되어 Cloud Volumes ONTAP 작업 환경을 생성할 때 더 이상 선택할 수 없습니다.

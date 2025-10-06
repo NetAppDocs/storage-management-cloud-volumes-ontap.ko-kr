@@ -1,0 +1,367 @@
+---
+sidebar: sidebar 
+permalink: task-tiering.html 
+keywords: tier, tiering, cold data, hot data, storage tiering, data tiering, fabricpool, fabric pool, s3 endpoint, endpoint, connection, performance tier, capacity tier, object store, blob tiering, container, inactive, tiering requirements, remove S3 bucket, delete S3 CVO bucket, tenant, multi-tenant tiering 
+summary: 자주 사용되는 데이터의 경우 SSD 또는 HDD 성능 계층을 사용하고, 비활성 데이터의 경우 객체 스토리지 용량 계층을 사용하면 Cloud Volumes ONTAP 의 스토리지 비용을 줄일 수 있습니다.  데이터 계층화는 FabricPool 기술을 기반으로 합니다. 
+---
+= 비활성 Cloud Volumes ONTAP 데이터를 저렴한 개체 스토리지로 계층화합니다.
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+자주 사용되는 데이터의 경우 SSD 또는 HDD 성능 계층을 사용하고, 비활성 데이터의 경우 객체 스토리지 용량 계층을 사용하면 Cloud Volumes ONTAP 의 스토리지 비용을 줄일 수 있습니다.  데이터 계층화는 FabricPool 기술을 기반으로 합니다.  상위 수준 개요는 다음을 참조하세요.link:concept-data-tiering.html["데이터 계층화 개요"] .
+
+데이터 계층화를 설정하려면 다음을 수행해야 합니다.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["하나"]지원되는 구성을 선택하세요
+[role="quick-margin-para"]
+대부분의 구성이 지원됩니다.  최신 버전을 실행하는 Cloud Volumes ONTAP 시스템이 있다면 문제없이 사용할 수 있습니다. link:task-tiering.html#configurations-that-support-data-tiering["자세히 알아보기"] .
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["둘"]Cloud Volumes ONTAP 과 개체 스토리지 간 연결을 보장합니다.
+[role="quick-margin-list"]
+ifdef::aws[]
+
+* AWS의 경우 S3에 대한 VPC 엔드포인트가 필요합니다. <<AWS S3에 콜드 데이터를 계층화하기 위한 요구 사항,자세히 알아보기>> .
+
+
+endif::aws[]
+
+ifdef::azure[]
+
+* Azure의 경우 NetApp 콘솔에 필요한 권한이 있는 한 아무것도 할 필요가 없습니다. <<Azure Blob 스토리지에 콜드 데이터를 계층화하기 위한 요구 사항,자세히 알아보기>> .
+
+
+endif::azure[]
+
+ifdef::gcp[]
+
+* Google Cloud의 경우 Private Google Access에 대한 서브넷을 구성하고 서비스 계정을 설정해야 합니다. <<Google Cloud Storage 버킷에 콜드 데이터를 계층화하기 위한 요구 사항,자세히 알아보기>> .
+
+
+endif::gcp[]
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["삼"]계층화가 활성화된 집계가 있는지 확인하세요.
+[role="quick-margin-para"]
+볼륨에서 데이터 계층화를 활성화하려면 집계에서 데이터 계층화를 활성화해야 합니다.  새로운 볼륨과 기존 볼륨에 대한 요구 사항을 알고 있어야 합니다. <<집계에서 계층화가 활성화되었는지 확인하세요.,자세히 알아보기>> .
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["네"]볼륨을 생성, 수정 또는 복제할 때 계층화 정책을 선택하세요.
+[role="quick-margin-para"]
+NetApp 콘솔은 볼륨을 생성, 수정 또는 복제할 때 계층화 정책을 선택하라는 메시지를 표시합니다.
+
+[role="quick-margin-list"]
+* link:task-tiering.html#tier-data-from-read-write-volumes["읽기-쓰기 볼륨의 계층 데이터"]
+* link:task-tiering.html#tier-data-from-data-protection-volumes["데이터 보호 볼륨의 계층 데이터"]
+
+
+[NOTE]
+.데이터 계층화에 필요하지 않은 것은 무엇입니까?
+====
+* 데이터 계층화를 활성화하기 위해 기능 라이선스를 설치할 필요는 없습니다.
+* 용량 계층에 대한 객체 저장소를 만들 필요가 없습니다.  콘솔이 그 일을 대신해 줍니다.
+* 시스템 수준에서 데이터 계층화를 활성화할 필요는 없습니다.
++
+콘솔은 시스템을 생성할 때 콜드 데이터에 대한 객체 저장소를 생성합니다.<<요구 사항 구현 후 데이터 계층화 활성화,연결이나 권한 문제가 없는 한>> .  그 후에는 볼륨에서 데이터 계층화를 활성화하기만 하면 됩니다(어떤 경우에는<<집계에서 계층화가 활성화되었는지 확인하세요.,집계에 대하여>> ).
+
+
+
+====
+
+
+== 데이터 계층화를 지원하는 구성
+
+특정 구성 및 기능을 사용할 때 데이터 계층화를 활성화할 수 있습니다.
+
+ifdef::aws[]
+
+
+
+=== AWS 지원
+
+* AWS에서는 Cloud Volumes ONTAP 9.2부터 데이터 계층화가 지원됩니다.
+* 성능 계층은 일반 용도 SSD(gp3 또는 gp2) 또는 프로비저닝된 IOPS SSD(io1)가 될 수 있습니다.
++
+
+NOTE: 처리량 최적화 HDD(st1)를 사용할 때는 데이터를 개체 스토리지에 계층화하는 것을 권장하지 않습니다.
+
+* 비활성 데이터는 Amazon S3 버킷에 계층화됩니다.  다른 공급자로의 계층화는 지원되지 않습니다.
+
+
+endif::aws[]
+
+ifdef::azure[]
+
+
+
+=== Azure 지원
+
+* Azure에서는 데이터 계층화가 다음과 같이 지원됩니다.
++
+** 단일 노드 시스템을 갖춘 버전 9.4
+** HA 쌍이 포함된 버전 9.6
+
+
+* 성능 계층은 프리미엄 SSD 관리 디스크, 표준 SSD 관리 디스크 또는 표준 HDD 관리 디스크가 될 수 있습니다.
+* 비활성 데이터는 Microsoft Azure Blob에 계층화됩니다.  다른 공급자로의 계층화는 지원되지 않습니다.
+
+
+endif::azure[]
+
+ifdef::gcp[]
+
+
+
+=== Google Cloud 지원
+
+* Google Cloud에서는 Cloud Volumes ONTAP 9.6부터 데이터 계층화가 지원됩니다.
+* 성능 계층은 SSD 영구 디스크, 균형 영구 디스크 또는 표준 영구 디스크가 될 수 있습니다.
+* 비활성 데이터는 Google Cloud Storage에 저장됩니다.  다른 공급자로의 계층화는 지원되지 않습니다.
+
+
+endif::gcp[]
+
+
+
+=== 기능 상호 운용성
+
+* 데이터 계층화는 암호화 기술을 통해 지원됩니다.
+* 볼륨에서 씬 프로비저닝을 활성화해야 합니다.
+
+
+
+
+== 요구 사항
+
+클라우드 제공업체에 따라 Cloud Volumes ONTAP 콜드 데이터를 개체 스토리지로 계층화할 수 있도록 특정 연결 및 권한을 설정해야 합니다.
+
+ifdef::aws[]
+
+
+
+=== AWS S3에 콜드 데이터를 계층화하기 위한 요구 사항
+
+Cloud Volumes ONTAP S3에 연결되어 있는지 확인하세요.  해당 연결을 제공하는 가장 좋은 방법은 S3 서비스에 대한 VPC 엔드포인트를 만드는 것입니다.  지침은 다음을 참조하세요. https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpce-gateway.html#create-gateway-endpoint["AWS 설명서: 게이트웨이 엔드포인트 생성"^] .
+
+VPC 엔드포인트를 생성할 때 Cloud Volumes ONTAP 인스턴스에 해당하는 지역, VPC 및 경로 테이블을 선택해야 합니다.  또한 S3 엔드포인트로의 트래픽을 활성화하는 아웃바운드 HTTPS 규칙을 추가하려면 보안 그룹을 수정해야 합니다.  그렇지 않으면 Cloud Volumes ONTAP 이 S3 서비스에 연결할 수 없습니다.
+
+문제가 발생하면 다음을 참조하세요. https://aws.amazon.com/premiumsupport/knowledge-center/connect-s3-vpc-endpoint/["AWS 지원 지식 센터: 게이트웨이 VPC 엔드포인트를 사용하여 S3 버킷에 연결할 수 없는 이유는 무엇입니까?"^] .
+
+endif::aws[]
+
+ifdef::azure[]
+
+
+
+=== Azure Blob 스토리지에 콜드 데이터를 계층화하기 위한 요구 사항
+
+콘솔에 필요한 권한이 있는 한 성능 계층과 용량 계층 간에 연결을 설정할 필요가 없습니다.  콘솔 에이전트의 사용자 지정 역할에 다음 권한이 있는 경우 콘솔에서 VNet 서비스 엔드포인트를 사용할 수 있습니다.
+
+[source, json]
+----
+"Microsoft.Network/virtualNetworks/subnets/write",
+"Microsoft.Network/routeTables/join/action",
+----
+사용자 정의 역할에는 기본적으로 권한이 포함됩니다. https://docs.netapp.com/us-en/bluexp-setup-admin/reference-permissions-azure.html["콘솔 에이전트에 대한 Azure 권한 보기"^]
+
+endif::azure[]
+
+ifdef::gcp[]
+
+
+
+=== Google Cloud Storage 버킷에 콜드 데이터를 계층화하기 위한 요구 사항
+
+* Cloud Volumes ONTAP 이 있는 서브넷은 비공개 Google 액세스로 구성되어야 합니다.  지침은 다음을 참조하세요. https://cloud.google.com/vpc/docs/configure-private-google-access["Google Cloud 문서: 비공개 Google 액세스 구성"^] .
+* 서비스 계정은 Cloud Volumes ONTAP 에 연결되어야 합니다.
++
+link:task-creating-gcp-service-account.html["이 서비스 계정을 설정하는 방법을 알아보세요"] .
+
++
+Cloud Volumes ONTAP 시스템을 생성할 때 이 서비스 계정을 선택하라는 메시지가 표시됩니다.
+
++
+배포 중에 서비스 계정을 선택하지 않으면 Cloud Volumes ONTAP 종료하고 Google Cloud 콘솔로 이동한 다음 서비스 계정을 Cloud Volumes ONTAP 인스턴스에 연결해야 합니다.  그런 다음 다음 섹션에 설명된 대로 데이터 계층화를 활성화할 수 있습니다.
+
+* 고객 관리 암호화 키로 버킷을 암호화하려면 Google Cloud Storage 버킷에서 해당 키를 사용하도록 설정합니다.
++
+link:task-setting-up-gcp-encryption.html["Cloud Volumes ONTAP 에서 고객 관리 암호화 키를 사용하는 방법을 알아보세요."] .
+
+
+
+endif::gcp[]
+
+
+
+=== 요구 사항 구현 후 데이터 계층화 활성화
+
+콘솔은 연결이나 권한 문제가 없는 한 시스템이 생성될 때 콜드 데이터에 대한 개체 저장소를 생성합니다.  시스템을 생성한 후에 위에 나열된 요구 사항을 구현하지 않은 경우, 객체 저장소를 생성하는 API나 ONTAP 시스템 관리자를 통해 수동으로 계층화를 활성화해야 합니다.
+
+
+NOTE: 콘솔을 통해 계층화를 활성화하는 기능은 향후 Cloud Volumes ONTAP 릴리스에서 제공될 예정입니다.
+
+
+
+== 집계에서 계층화가 활성화되었는지 확인하세요.
+
+볼륨에서 데이터 계층화를 활성화하려면 집계에서 데이터 계층화를 활성화해야 합니다.  새로운 볼륨과 기존 볼륨에 대한 요구 사항을 알고 있어야 합니다.
+
+* *새로운 권*
++
+새 볼륨에서 데이터 계층화를 활성화하는 경우 집계에서 데이터 계층화를 활성화하는 것에 대해 걱정할 필요가 없습니다.  콘솔은 계층화가 활성화된 기존 집계에 볼륨을 생성하거나, 데이터 계층화가 활성화된 집계가 아직 없는 경우 볼륨에 대한 새 집계를 생성합니다.
+
+* *기존 볼륨*
++
+기존 볼륨에서 데이터 계층화를 활성화하려면 기본 집계에서도 활성화되어 있는지 확인하세요.  기존 집계에서 데이터 계층화가 활성화되어 있지 않으면 ONTAP System Manager를 사용하여 기존 집계를 개체 저장소에 연결해야 합니다.
+
+
+
+.집계에서 계층화가 활성화되었는지 확인하는 단계
+. 왼쪽 탐색 메뉴에서 *저장소 > 관리*를 선택합니다.
+. Cloud Volumes ONTAP 시스템을 엽니다.
+. *집계* 탭을 선택하고 집계에서 계층화가 활성화되어 있는지 비활성화되어 있는지 확인합니다.
++
+image:screenshot_aggregate_tiering_enabled.png["계층화 상태를 포함한 콘솔의 집계에 대한 정보를 보여주는 스크린샷입니다."]
+
+
+
+.집계에서 계층화를 활성화하는 단계
+. ONTAP 시스템 관리자에서 *스토리지 > 계층*을 클릭합니다.
+. 집계에 대한 작업 메뉴를 클릭하고 *클라우드 계층 연결*을 선택합니다.
+. 연결할 클라우드 계층을 선택하고 *저장*을 클릭합니다.
+
+
+.다음은 무엇인가요?
+다음 섹션에서 설명하는 대로 이제 새 볼륨과 기존 볼륨에서 데이터 계층화를 활성화할 수 있습니다.
+
+
+
+== 읽기-쓰기 볼륨의 계층 데이터
+
+Cloud Volumes ONTAP 읽기-쓰기 볼륨의 비활성 데이터를 비용 효율적인 개체 스토리지로 계층화하여 성능 계층을 핫 데이터에 사용할 수 있도록 확보합니다.
+
+.단계
+. 시스템 아래의 *볼륨* 탭에서 새 볼륨을 생성하거나 기존 볼륨의 계층을 변경합니다.
++
+[cols="30,70"]
+|===
+| 일 | 행동 
+
+
+| 새 볼륨을 만듭니다 | *새 볼륨 추가*를 클릭합니다. 
+
+
+| 기존 볼륨 수정 | 원하는 볼륨 타일을 선택하고 *볼륨 관리*를 클릭하여 오른쪽 패널의 볼륨 관리에 액세스한 다음 오른쪽 패널 아래에서 *고급 작업*과 *계층화 정책 변경*을 클릭합니다. 
+|===
+. 계층화 정책을 선택하세요.
++
+이러한 정책에 대한 설명은 다음을 참조하세요.link:concept-data-tiering.html["데이터 계층화 개요"] .
+
++
+*예*
+
++
+image:screenshot_volumes_change_tiering_policy.png["볼륨의 계층화 정책을 변경하는 데 사용할 수 있는 옵션을 보여주는 스크린샷입니다."]
+
++
+데이터 계층화가 가능한 집계가 아직 없는 경우 콘솔은 볼륨에 대한 새로운 집계를 생성합니다.
+
+
+
+
+
+== 데이터 보호 볼륨의 계층 데이터
+
+Cloud Volumes ONTAP 데이터 보호 볼륨에서 용량 계층으로 데이터를 계층화할 수 있습니다.  대상 볼륨을 활성화하면 데이터는 읽혀지면서 점차 성능 계층으로 이동합니다.
+
+.단계
+. 왼쪽 탐색 메뉴에서 *저장소 > 관리*를 선택합니다.
+. *시스템* 페이지에서 소스 볼륨이 포함된 Cloud Volumes ONTAP 시스템을 선택한 다음 볼륨을 복제하려는 시스템으로 끌어다 놓습니다.
+. 계층화 페이지에 도달할 때까지 안내를 따르고 개체 스토리지에 대한 데이터 계층화를 활성화합니다.
++
+*예*
+
++
+image:screenshot_replication_tiering.gif["볼륨을 복제할 때 S3 계층화 옵션을 보여주는 스크린샷입니다."]
+
++
+데이터 복제에 대한 도움말은 다음을 참조하세요. https://docs.netapp.com/us-en/bluexp-replication/task-replicating-data.html["클라우드에서 데이터 복제 및 클라우드로 데이터 복제"^] .
+
+
+
+
+
+== 계층화된 데이터의 스토리지 클래스 변경
+
+Cloud Volumes ONTAP 배포한 후 30일 동안 액세스되지 않은 비활성 데이터의 스토리지 클래스를 변경하여 스토리지 비용을 줄일 수 있습니다.  데이터에 액세스하는 경우 액세스 비용이 더 높아지므로 스토리지 클래스를 변경하기 전에 이 점을 고려해야 합니다.
+
+계층형 데이터의 저장 클래스는 볼륨별이 아닌 시스템 전체에 적용됩니다.
+
+지원되는 스토리지 클래스에 대한 정보는 다음을 참조하세요.link:concept-data-tiering.html["데이터 계층화 개요"] .
+
+.단계
+. Cloud Volumes ONTAP 시스템에서 메뉴 아이콘을 클릭한 다음 *스토리지 클래스* 또는 *Blob 스토리지 계층화*를 클릭합니다.
+. 저장 클래스를 선택한 다음 *저장*을 클릭합니다.
+
+
+
+
+== 데이터 계층화를 위한 여유 공간 비율 변경
+
+데이터 계층화를 위한 여유 공간 비율은 데이터를 개체 스토리지에 계층화할 때 Cloud Volumes ONTAP SSD/HDD에 필요한 여유 공간의 양을 정의합니다.  기본 설정은 10%의 여유 공간이지만, 요구 사항에 맞게 설정을 조정할 수 있습니다.
+
+예를 들어, 구매한 용량을 제대로 활용하려면 10% 미만의 여유 공간을 선택할 수 있습니다.  콘솔은 추가 용량이 필요할 때(전체 디스크 한도에 도달할 때까지) 추가 디스크를 구매할 수 있습니다.
+
+
+CAUTION: 충분한 공간이 없으면 Cloud Volumes ONTAP 이 데이터를 이동할 수 없으며 성능 저하가 발생할 수 있습니다.  모든 변경은 신중하게 이루어져야 합니다.  확실하지 않은 경우 NetApp 지원팀에 문의하여 안내를 받으세요.
+
+재해 복구 시나리오에서는 이 비율이 중요합니다. 왜냐하면 객체 저장소에서 데이터를 읽을 때 Cloud Volumes ONTAP 해당 데이터를 SSD/HDD로 옮겨 더 나은 성능을 제공하기 때문입니다.  충분한 공간이 없으면 Cloud Volumes ONTAP 이 데이터를 이동할 수 없습니다.  비즈니스 요구 사항을 충족할 수 있도록 비율을 변경할 때 이 점을 고려하세요.
+
+.단계
+. 왼쪽 탐색 창에서 *관리 > 에이전트*로 이동합니다.
+. 클릭image:icon-action.png[""] Cloud Volumes ONTAP 시스템을 관리하는 콘솔 에이전트의 아이콘입니다.
+. * Cloud Volumes ONTAP 설정*을 선택합니다.
++
+image::screenshot-settings-cloud-volumes-ontap.png[설정 아이콘 아래에 있는 Cloud Volumes ONTAP 설정 옵션의 스크린샷입니다.]
+
+. *용량*에서 *데이터 계층화를 위한 집계 용량 임계값 - 여유 공간 비율*을 클릭합니다.
++
+image:screenshot-cvo-settings-page.png["Cloud Volumes ONTAP 의 용량 설정 개요입니다."]
+
+. 요구 사항에 맞게 여유 공간 비율을 변경하고 *저장*을 클릭하세요.
+
+
+
+
+== 자동 티어링 정책의 냉각 기간 변경
+
+_자동_ 계층화 정책을 사용하여 Cloud Volumes ONTAP 볼륨에서 데이터 계층화를 활성화한 경우 비즈니스 요구 사항에 따라 기본 냉각 기간을 조정할 수 있습니다.  이 작업은 ONTAP CLI 및 API를 사용해서만 지원됩니다.
+
+쿨링 기간이란 볼륨의 사용자 데이터가 "콜드" 상태로 간주되어 개체 스토리지로 이동되기 전에 비활성 상태를 유지해야 하는 일 수입니다.
+
+자동 티어링 정책의 기본 냉각 기간은 31일입니다.  냉각 기간은 다음과 같이 변경할 수 있습니다.
+
+* 9.8 이상: 2일 ~ 183일
+* 9.7 이하: 2일 ~ 63일
+
+
+.단계
+. 볼륨을 생성하거나 기존 볼륨을 수정할 때 API 요청과 함께 _minimumCoolingDays_ 매개변수를 사용하세요.
+
+
+
+
+== 시스템 해체 시 S3 버킷 제거
+
+환경을 해제할 때 Cloud Volumes ONTAP 시스템에서 계층화된 데이터가 있는 S3 버킷을 삭제할 수 있습니다.
+
+다음과 같은 경우에만 S3 버킷을 삭제할 수 있습니다.
+
+* Cloud Volume ONTAP 시스템이 콘솔에서 삭제됩니다.
+* 버킷에서 모든 객체가 삭제되고 S3 버킷이 비어 있습니다.
+
+
+Cloud Volumes ONTAP 시스템을 해제해도 해당 환경을 위해 생성된 S3 버킷은 자동으로 삭제되지 않습니다.  대신 실수로 데이터가 손실되는 것을 방지하기 위해 고아 상태로 유지됩니다.  버킷에 있는 객체를 삭제한 다음 S3 버킷 자체를 제거하거나 나중에 사용하기 위해 보관할 수 있습니다. 참조하다 https://docs.netapp.com/us-en/ontap-cli/vserver-object-store-server-bucket-delete.html#description["ONTAP CLI: vserver 객체-저장소-서버 버킷 삭제"^] .

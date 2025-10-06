@@ -1,0 +1,268 @@
+---
+sidebar: sidebar 
+permalink: task-azure-image-export.html 
+keywords: Azure, image, VHD, image signature file, export, marketplace, 
+summary: Azure Marketplace에서 ONTAP 이미지를 내보내어 VHD 파일의 서명을 확인할 수 있습니다. 
+---
+= Azure Marketplace에서 Cloud Volumes ONTAP 용 VHD 이미지 내보내기
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+VHD 이미지가 Azure 클라우드에 게시되면 더 이상 NetApp 에서 관리되지 않습니다.  대신, 게시된 이미지는 Azure Marketplace에 배치됩니다.  이미지가 Azure 마켓플레이스에 스테이징되어 게시되면 Azure는 VHD의 시작 부분에서 1MB, 끝 부분에서 512바이트를 수정합니다.  VHD 파일의 서명을 확인하려면 Azure 마켓플레이스에서 Azure가 수정한 VHD 이미지를 내보내야 합니다.
+
+.시작하기 전에
+시스템에 Azure CLI가 설치되어 있는지, 아니면 Azure Portal을 통해 Azure Cloud Shell을 사용할 수 있는지 확인하세요.  Azure CLI를 설치하는 방법에 대한 자세한 내용은 다음을 참조하세요. https://learn.microsoft.com/en-us/cli/azure/install-azure-cli["Microsoft 설명서: Azure CLI 설치 방법"^] .
+
+.단계
+. _version_readme_ 파일의 내용을 사용하여 시스템의 Cloud Volumes ONTAP 버전을 Azure Marketplace 이미지 버전에 매핑합니다.  Cloud Volumes ONTAP 버전은 다음과 같이 표현됩니다. `buildname` Azure Marketplace 이미지 버전은 다음과 같이 표현됩니다. `version` 버전 매핑에서.
++
+다음 예에서는 Cloud Volumes ONTAP 버전 `9.15.0P1` Azure Marketplace 이미지 버전에 매핑됨 `9150.01000024.05090105` .  이 Azure 마켓플레이스 이미지 버전은 나중에 이미지 URN을 설정하는 데 사용됩니다.
+
++
+[source, cli]
+----
+[
+ "buildname": "9.15.0P1",
+    "publisher": "netapp",
+     "version": "9150.01000024.05090105"
+
+]
+----
+. VM을 만들려는 지역을 식별합니다.  지역 이름은 값으로 사용됩니다. `locName` 마켓플레이스 이미지의 URN을 설정할 때 변수입니다.  사용 가능한 지역을 나열하려면 다음 명령을 실행하세요.
++
+[source, cli]
+----
+az account list-locations -o table
+----
++
+이 표에서는 지역 이름이 나타납니다. `Name` 필드.
+
++
+[source, cli]
+----
+$ az account list-locations -o table
+DisplayName               Name                 RegionalDisplayName
+------------------------  -------------------  -------------------------------------
+East US                   eastus               (US) East US
+East US 2                 eastus2              (US) East US 2
+South Central US          southcentralus       (US) South Central US
+...
+----
+. 아래 표에서 해당 Cloud Volumes ONTAP 버전과 VM 배포 유형에 대한 SKU 이름을 검토하세요.  SKU 이름은 값으로 사용됩니다. `skuName` 마켓플레이스 이미지의 URN을 설정할 때 변수입니다.
++
+예를 들어, Cloud Volumes ONTAP 9.15.0을 사용한 모든 단일 노드 배포는 다음을 사용해야 합니다. `ontap_cloud_byol` SKU 이름으로.
+
++
+[cols="1,1,1"]
+|===
+
+
+| * Cloud Volumes ONTAP 버전* | *VM 배포를 통해* | *SKU 이름* 
+
+
+| 9.17.1 이상 | Azure 마켓플레이스 | ontap_cloud_direct_gen2 
+
+
+| 9.17.1 이상 | NetApp 콘솔 | ontap_cloud_gen2 
+
+
+| 9.16.1 | Azure 마켓플레이스 | 온탭_클라우드_다이렉트 
+
+
+| 9.16.1 | 콘솔 | 온탭_클라우드 
+
+
+| 9.15.1 | 콘솔 | 온탭_클라우드 
+
+
+| 9.15.0 | 콘솔, 단일 노드 배포 | 온탭_클라우드_바이올 
+
+
+| 9.15.0 | 콘솔, 고가용성(HA) 배포 | 온탑_클라우드_비올_하 
+|===
+. ONTAP 버전과 Azure 마켓플레이스 이미지를 매핑한 후 Azure Cloud Shell 또는 Azure CLI를 사용하여 Azure 마켓플레이스에서 VHD 파일을 내보냅니다.
+
+
+
+
+== Linux에서 Azure Cloud Shell을 사용하여 VHD 파일 내보내기
+
+Azure Cloud Shell에서 마켓플레이스 이미지를 VHD 파일(예: _9150.01000024.05090105.vhd_)로 내보내고 로컬 Linux 시스템에 다운로드합니다.  Azure Marketplace에서 VHD 이미지를 가져오려면 다음 단계를 수행하세요.
+
+.단계
+. 마켓플레이스 이미지의 URN 및 기타 매개변수를 설정합니다.  URN 형식은 다음과 같습니다. `<publisher>:<offer>:<sku>:<version>` .  선택적으로 NetApp 마켓플레이스 이미지를 나열하여 올바른 이미지 버전을 확인할 수 있습니다.
++
+[source, cli]
+----
+PS /home/user1> $urn="netapp:netapp-ontap-cloud:ontap_cloud_byol:9150.01000024.05090105"
+PS /home/user1> $locName="eastus2"
+PS /home/user1> $pubName="netapp"
+PS /home/user1> $offerName="netapp-ontap-cloud"
+PS /home/user1> $skuName="ontap_cloud_byol"
+PS /home/user1> Get-AzVMImage -Location $locName -PublisherName $pubName -Offer $offerName -Sku $skuName |select version
+...
+141.20231128
+9.141.20240131
+9.150.20240213
+9150.01000024.05090105
+...
+----
+. 일치하는 이미지 버전으로 마켓플레이스 이미지에서 새 관리 디스크를 만듭니다.
++
+[source, cli]
+----
+PS /home/user1> $diskName = “9150.01000024.05090105-managed-disk"
+PS /home/user1> $diskRG = “fnf1”
+PS /home/user1> az disk create -g $diskRG -n $diskName --image-reference $urn
+PS /home/user1> $sas = az disk grant-access --duration-in-seconds 3600 --access-level Read --name $diskName --resource-group $diskRG
+PS /home/user1> $diskAccessSAS = ($sas | ConvertFrom-Json)[0].accessSas
+----
+. 관리 디스크에서 Azure Storage로 VHD 파일을 내보냅니다.  적절한 액세스 수준으로 컨테이너를 만듭니다.  이 예에서 우리는 다음과 같은 이름의 컨테이너를 사용했습니다. `vm-images` ~와 함께 `Container` 접근 수준.  Azure Portal에서 저장소 계정 액세스 키를 가져옵니다. *저장소 계정 > _examplesaname_ > 액세스 키 > _key1_ > _key_ > 표시 > _<복사>_*
++
+[source, cli]
+----
+PS /home/user1> $storageAccountName = “examplesaname”
+PS /home/user1> $containerName = “vm-images”
+PS /home/user1> $storageAccountKey = "<replace with the above access key>"
+PS /home/user1> $destBlobName = “9150.01000024.05090105.vhd”
+PS /home/user1> $destContext = New-AzureStorageContext -StorageAccountName $storageAccountName -StorageAccountKey $storageAccountKey
+PS /home/user1> Start-AzureStorageBlobCopy -AbsoluteUri $diskAccessSAS -DestContainer $containerName -DestContext $destContext -DestBlob $destBlobName
+PS /home/user1> Get-AzureStorageBlobCopyState –Container $containerName –Context $destContext -Blob $destBlobName
+----
+. 생성된 이미지를 Linux 시스템에 다운로드합니다.  사용하다 `wget` VHD 파일을 다운로드하는 명령:
++
+[source, cli]
+----
+wget <URL of filename/Containers/vm-images/9150.01000024.05090105.vhd>
+----
++
+URL은 표준 형식을 따릅니다.  자동화를 위해 아래와 같이 URL 문자열을 파생시킬 수 있습니다.  또는 Azure CLI를 사용할 수 있습니다. `az` URL을 가져오는 명령입니다.  URL 예시:https://examplesaname.bluexpinfraprod.eastus2.data.azurecr.io/vm-images/9150.01000024.05090105.vhd[]
+
+. 관리되는 디스크 정리
++
+[source, cli]
+----
+PS /home/user1> Revoke-AzDiskAccess -ResourceGroupName $diskRG -DiskName $diskName
+PS /home/user1> Remove-AzDisk -ResourceGroupName $diskRG -DiskName $diskName
+----
+
+
+
+
+== Linux에서 Azure CLI를 사용하여 VHD 파일 내보내기
+
+로컬 Linux 시스템에서 Azure CLI를 사용하여 마켓플레이스 이미지를 VHD 파일로 내보냅니다.
+
+.단계
+. Azure CLI에 로그인하고 마켓플레이스 이미지를 나열합니다.
++
+[source, cli]
+----
+% az login --use-device-code
+----
+. 로그인하려면 웹 브라우저를 사용하여 페이지를 엽니다. https://microsoft.com/devicelogin[] 인증코드를 입력하세요.
++
+[source, cli]
+----
+% az vm image list --all --publisher netapp --offer netapp-ontap-cloud --sku ontap_cloud_byol
+...
+{
+"architecture": "x64",
+"offer": "netapp-ontap-cloud",
+"publisher": "netapp",
+"sku": "ontap_cloud_byol",
+"urn": "netapp:netapp-ontap-cloud:ontap_cloud_byol:9150.01000024.05090105",
+"version": "9150.01000024.05090105"
+},
+...
+----
+. 마켓플레이스 이미지에서 일치하는 이미지 버전으로 새로운 관리 디스크를 만듭니다.
++
+[source, cli]
+----
+% export urn="netapp:netapp-ontap-cloud:ontap_cloud_byol:9150.01000024.05090105"
+% export diskName="9150.01000024.05090105-managed-disk"
+% export diskRG="new_rg_your_rg"
+% az disk create -g $diskRG -n $diskName --image-reference $urn
+% az disk grant-access --duration-in-seconds 3600 --access-level Read --name $diskName --resource-group $diskRG
+{
+  "accessSas": "https://md-xxxxxx.bluexpinfraprod.eastus2.data.azurecr.io/xxxxxxx/abcd?sv=2018-03-28&sr=b&si=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxx&sigxxxxxxxxxxxxxxxxxxxxxxxx"
+}
+% export diskAccessSAS="https://md-xxxxxx.bluexpinfraprod.eastus2.data.azurecr.io/xxxxxxx/abcd?sv=2018-03-28&sr=b&si=xxxxxxxx-xxxx-xx-xx-xx&sigxxxxxxxxxxxxxxxxxxxxxxxx"
+----
++
+프로세스를 자동화하려면 표준 출력에서 SAS를 추출해야 합니다.  자세한 내용은 해당 문서를 참조하세요.
+
+. 관리 디스크에서 VHD 파일을 내보냅니다.
++
+.. 적절한 액세스 수준으로 컨테이너를 만듭니다.  이 예에서는 컨테이너라는 이름이 있습니다. `vm-images` ~와 함께 `Container` 접근 수준이 사용됩니다.
+.. Azure Portal에서 저장소 계정 액세스 키를 가져옵니다. *저장소 계정 > _examplesaname_ > 액세스 키 > _key1_ > _key_ > 표시 > _<복사>_*
++
+또한 다음을 사용할 수도 있습니다. `az` 이 단계에 대한 명령입니다.
+
++
+[source, cli]
+----
+% export storageAccountName="examplesaname"
+% export containerName="vm-images"
+% export storageAccountKey="xxxxxxxxxx"
+% export destBlobName="9150.01000024.05090105.vhd"
+
+% az storage blob copy start --source-uri $diskAccessSAS --destination-container $containerName --account-name $storageAccountName --account-key $storageAccountKey --destination-blob $destBlobName
+
+{
+  "client_request_id": "xxxx-xxxx-xxxx-xxxx-xxxx",
+  "copy_id": "xxxx-xxxx-xxxx-xxxx-xxxx",
+  "copy_status": "pending",
+  "date": "2022-11-02T22:02:38+00:00",
+  "etag": "\"0xXXXXXXXXXXXXXXXXX\"",
+  "last_modified": "2022-11-02T22:02:39+00:00",
+  "request_id": "xxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx",
+  "version": "2020-06-12",
+  "version_id": null
+}
+----
+
+
+. Blob 복사본의 상태를 확인하세요.
++
+[source, cli]
+----
+% az storage blob show --name $destBlobName --container-name $containerName --account-name $storageAccountName
+
+....
+    "copy": {
+      "completionTime": null,
+      "destinationSnapshot": null,
+      "id": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxx",
+      "incrementalCopy": null,
+      "progress": "10737418752/10737418752",
+      "source": "https://md-xxxxxx.bluexpinfraprod.eastus2.data.azurecr.io/xxxxx/abcd?sv=2018-03-28&sr=b&si=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+      "status": "success",
+      "statusDescription": null
+    },
+....
+----
+. 생성된 이미지를 Linux 서버로 다운로드합니다.
++
+[source, cli]
+----
+wget <URL of file examplesaname/Containers/vm-images/9150.01000024.05090105.vhd>
+----
++
+URL은 표준 형식을 따릅니다.  자동화를 위해 아래와 같이 URL 문자열을 파생시킬 수 있습니다.  또는 Azure CLI를 사용할 수 있습니다. `az` URL을 가져오는 명령입니다.  URL 예시:https://examplesaname.bluexpinfraprod.eastus2.data.azurecr.io/vm-images/9150.01000024.05090105.vhd[]
+
+. 관리되는 디스크 정리
++
+[source, cli]
+----
+az disk revoke-access --name $diskName --resource-group $diskRG
+az disk delete --name $diskName --resource-group $diskRG --yes
+----
+

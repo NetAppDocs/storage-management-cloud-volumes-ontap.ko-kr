@@ -1,0 +1,22 @@
+= WORM 및 ARP 기능은 더 이상 유료화되지 않습니다.
+:allow-uri-read: 
+
+
+
+
+=== WORM 및 ARP 기능은 더 이상 유료화되지 않습니다.
+
+WORM(Write Once Read Many) 및 ARP(Autonomous Ransomware Protection)의 내장된 데이터 보호 및 보안 기능은 추가 비용 없이 Cloud Volumes ONTAP 라이선스와 함께 제공됩니다.  새로운 가격 모델은 AWS, Azure, Google Cloud의 새 BYOL 및 PAYGO/마켓플레이스 구독과 기존 구독 모두에 적용됩니다.  용량 기반 라이선스와 노드 기반 라이선스 모두 단일 노드와 고가용성(HA) 쌍을 포함한 모든 구성에 대한 ARP와 WORM을 추가 비용 없이 포함합니다.
+
+간소화된 가격 책정으로 다음과 같은 혜택을 누리실 수 있습니다.
+
+* 현재 WORM 및 ARP가 포함된 계정에는 이러한 기능에 대한 요금이 더 이상 부과되지 않습니다.  앞으로는 이 변경 전과 마찬가지로 용량 사용에 대해서만 요금이 청구됩니다.  WORM과 ARP는 더 이상 향후 청구서에 포함되지 않습니다.
+* 현재 계정에 이러한 기능이 포함되어 있지 않은 경우 이제 추가 비용 없이 WORM 및 ARP를 선택할 수 있습니다.
+* 모든 신규 계정에 대한 Cloud Volumes ONTAP 서비스에는 WORM 및 ARP 비용이 포함되지 않습니다.
+
+
+이러한 기능에 대해 자세히 알아보세요.
+
+* https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-protecting-ransomware.html["Cloud Volumes ONTAP 에 NetApp 랜섬웨어 보호 솔루션 활성화"]
+* https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-worm.html["WORM 스토리지"]
+

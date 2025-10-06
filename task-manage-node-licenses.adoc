@@ -1,0 +1,230 @@
+---
+sidebar: sidebar 
+permalink: task-manage-node-licenses.html 
+keywords: license, licensing, install, updating license, system license, add system license, adding a system license,  update byol license, nlf, license generator, extra, by-node, NetApp Console, cloud backup, cloud data sense, cloud tiering 
+summary: NetApp 콘솔에서 노드 기반 라이선스를 관리하여 각 Cloud Volumes ONTAP 시스템에 필요한 용량을 갖춘 유효한 라이선스가 있는지 확인하세요. 
+---
+= Cloud Volumes ONTAP 에 대한 노드 기반 라이선싱 관리
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:target: _blank
+
+
+[role="lead"]
+NetApp 콘솔에서 노드 기반 라이선스를 관리하여 각 Cloud Volumes ONTAP 시스템에 필요한 용량을 갖춘 유효한 라이선스가 있는지 확인합니다.
+
+_노드 기반 라이선스_는 이전 세대 라이선스 모델입니다(신규 고객은 사용할 수 없습니다).
+
+* NetApp 에서 구매한 BYOL(Bring Your Own License) 라이선스
+* 클라우드 제공업체의 마켓플레이스에서 시간당 결제(PAYGO) 구독
+
+
+NetApp 콘솔에서 노드 기반 Cloud Volumes ONTAP 라이선스를 관리할 수 있습니다.
+
+https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-licensing.html["Cloud Volumes ONTAP 라이선스에 대해 자세히 알아보세요"] .
+
+
+
+== PAYGO 라이선스 관리
+
+라이선스 및 구독 메뉴를 사용하면 일련 번호와 PAYGO 라이선스 유형을 포함하여 각 PAYGO Cloud Volumes ONTAP 시스템에 대한 세부 정보를 볼 수 있습니다.
+
+.단계
+. 왼쪽 탐색 창에서 *관리 > 라이선스 및 구독*을 선택합니다.
+. *개요* 탭을 선택하세요.
+. Cloud Volumes ONTAP 타일에서 *보기*를 선택합니다.
+. 드롭다운에서 *노드 기반 라이선스*를 선택합니다.
+. *결제*를 클릭하세요.
+. 각 PAYGO 라이선스에 대한 세부 정보를 표에서 확인하세요.
++
+image:screenshot_paygo_licenses.png["라이선스 및 구독 페이지에서 3개의 유료 라이선스가 포함된 표를 보여주는 스크린샷입니다.  각 행에는 이름, 시스템 유형, 일련 번호, 패키지 및 라이선스를 관리하는 링크가 표시됩니다."]
+
+. 필요한 경우 *PAYGO 라이선스 관리*를 클릭하여 PAYGO 라이선스를 변경하거나 인스턴스 유형을 변경합니다.
+
+
+
+
+== BYOL 라이선스 관리
+
+NetApp 에서 직접 구매한 라이선스를 관리하려면 시스템 라이선스와 추가 용량 라이선스를 추가하거나 제거하세요.
+
+
+NOTE: NetApp BYOL 라이선스 구매, 연장 및 갱신을 제한하고 있습니다. 자세한 내용은 다음을 참조하세요.  https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/whats-new.html#restricted-availability-of-byol-licensing-for-cloud-volumes-ontap["Cloud Volumes ONTAP 에 대한 BYOL 라이선싱의 제한된 가용성"^] .
+
+
+
+=== 할당되지 않은 라이선스 추가
+
+새로운 Cloud Volumes ONTAP 시스템을 생성할 때 라이선스를 선택할 수 있도록 콘솔에 노드 기반 라이선스를 추가합니다.  콘솔에서는 이러한 라이선스를 _할당되지 않음_으로 식별합니다.
+
+.단계
+. 왼쪽 탐색 창에서 *관리 > 라이선스 및 구독*을 선택합니다.
+. *개요* 탭을 선택하세요.
+. Cloud Volumes ONTAP 타일에서 *보기*를 선택합니다.
+. 드롭다운에서 *노드 기반 라이선스*를 선택합니다.
+. *할당되지 않음*을 클릭합니다.
+. *할당되지 않은 라이선스 추가*를 클릭합니다.
+. 라이선스의 일련번호를 입력하거나 라이선스 파일을 업로드하세요.
++
+아직 라이센스 파일이 없다면 아래 섹션을 참조하세요.
+
+. *라이선스 추가*를 클릭하세요.
+
+
+.결과
+콘솔은 라이센스를 추가합니다.  라이선스는 새로운 Cloud Volumes ONTAP 시스템과 연결할 때까지 할당되지 않은 것으로 식별됩니다.  그런 다음 라이선스는 *라이선스 및 구독*의 *BYOL* 탭으로 이동합니다.
+
+
+
+=== 할당되지 않은 노드 기반 라이선스 교환
+
+사용하지 않은 Cloud Volumes ONTAP 용 노드 기반 라이선스가 할당되지 않은 경우, 해당 라이선스를 NetApp Backup and Recovery 라이선스, NetApp Data Classification 라이선스 또는 NetApp Cloud Tiering 라이선스로 변환하여 라이선스를 교환할 수 있습니다.
+
+라이선스를 교환하면 Cloud Volumes ONTAP 라이선스가 취소되고 서비스에 대한 달러 상당의 라이선스가 생성됩니다.
+
+* Cloud Volumes ONTAP HA 쌍에 대한 라이선싱은 51TiB 직접 라이선스로 변환됩니다.
+* Cloud Volumes ONTAP 단일 노드에 대한 라이선싱은 32TiB 직접 라이선스로 변환됩니다.
+
+
+변환된 라이선스의 만료일은 Cloud Volumes ONTAP 라이선스와 동일합니다.
+
+link:https://mydemo.netapp.com/player/?demoId=c96ef113-c338-4e44-9bda-81a8d252de63&showGuide=true&showGuidesToolbar=true&showHotspots=true&source=app["노드 기반 라이선스를 교환하는 방법에 대한 연습을 확인하세요."^]
+
+.단계
+. 왼쪽 탐색 창에서 *관리 > 라이선스 및 구독*을 선택합니다.
+. *개요* 탭을 선택하세요.
+. Cloud Volumes ONTAP 타일에서 *보기*를 선택합니다.
+. 드롭다운에서 *노드 기반 라이선스*를 선택합니다.
+. *할당되지 않음*을 클릭합니다.
+. *라이선스 교환*을 클릭하세요.
++
+image:screenshot-exchange-license.png["할당되지 않은 라이선스 페이지에 나타나는 Exchange 라이선스 옵션의 스크린샷입니다."]
+
+. 라이센스를 교환할 서비스를 선택하세요.
+. 메시지가 표시되면 HA 쌍에 대한 추가 라이선스를 선택하세요.
+. 법적 동의서를 읽고 *동의*를 클릭하세요.
+
+
+.결과
+콘솔은 할당되지 않은 라이선스를 선택한 서비스로 변환합니다.  *데이터 서비스 라이선스* 탭에서 새 라이선스를 볼 수 있습니다.
+
+
+
+=== 시스템 라이센스 파일을 얻으세요
+
+대부분의 경우 콘솔은 NetApp 지원 사이트 계정을 사용하여 자동으로 라이선스 파일을 가져올 수 있습니다.  하지만 그렇지 않은 경우에는 라이선스 파일을 수동으로 업로드해야 합니다.  라이센스 파일이 없으면 netapp.com에서 받을 수 있습니다.
+
+.단계
+. 로 가다 https://register.netapp.com/register/getlicensefile["NetApp 라이선스 파일 생성기"^] NetApp 지원 사이트 자격 증명을 사용하여 로그인하세요.
+. 비밀번호를 입력하고, 제품을 선택하고, 일련번호를 입력하고, 개인정보 보호정책을 읽고 동의함을 확인한 후 *제출*을 클릭하세요.
++
+*예*
+
++
+image:screenshot-license-generator.png["스크린샷: 사용 가능한 제품군을 보여주는 NetApp 라이선스 생성기 웹 페이지의 예를 보여줍니다."]
+
+. serialnumber.NLF JSON 파일을 이메일로 받을지, 아니면 직접 다운로드할지 선택하세요.
+
+
+
+
+=== 시스템 라이선스 업데이트
+
+NetApp 담당자에게 연락하여 BYOL 구독을 갱신하면 콘솔이 자동으로 NetApp 에서 새 라이선스를 받아 Cloud Volumes ONTAP 시스템에 설치합니다.  콘솔이 보안 인터넷 연결을 통해 라이선스 파일에 액세스할 수 없는 경우 직접 파일을 얻은 다음 수동으로 파일을 업로드할 수 있습니다.
+
+.단계
+. 왼쪽 탐색 창에서 *관리 > 라이선스 및 구독*을 선택합니다.
+. *개요* 탭을 선택하세요.
+. Cloud Volumes ONTAP 타일에서 *보기*를 선택합니다.
+. 드롭다운에서 *노드 기반 라이선스*를 선택합니다.
+. *BYOL* 탭에서 Cloud Volumes ONTAP 시스템에 대한 세부 정보를 확장합니다.
+. 시스템 라이선스 옆에 있는 작업 메뉴를 클릭하고 *라이선스 업데이트*를 선택하세요.
+. 라이선스 파일(HA 쌍이 있는 경우 여러 개)을 업로드합니다.
+. *라이선스 업데이트*를 클릭하세요.
+
+
+.결과
+콘솔은 Cloud Volumes ONTAP 시스템의 라이선스를 업데이트합니다.
+
+
+
+=== 추가 용량 라이선스 관리
+
+BYOL 시스템 라이선스로 제공되는 368TiB의 용량보다 더 많은 용량을 할당하려면 Cloud Volumes ONTAP BYOL 시스템에 대한 추가 용량 라이선스를 구매할 수 있습니다.  예를 들어, Cloud Volumes ONTAP 에 최대 736TiB의 용량을 할당하기 위해 추가 라이선스 용량 하나를 구매할 수 있습니다.  또는 최대 1.4 PiB까지 확보하기 위해 추가 용량 라이선스 3개를 구매할 수도 있습니다.
+
+단일 노드 시스템 또는 HA 쌍에 대해 구매할 수 있는 라이선스 수는 무제한입니다.
+
+
+
+==== 용량 라이선스 추가
+
+콘솔 오른쪽 하단에 있는 채팅 아이콘을 통해 문의하여 추가 용량 라이선스를 구매하세요.  라이선스를 구매한 후에는 Cloud Volumes ONTAP 시스템에 적용할 수 있습니다.
+
+.단계
+. 왼쪽 탐색 창에서 *관리 > 라이선스 및 구독*을 선택합니다.
+. *개요* 탭을 선택하세요.
+. Cloud Volumes ONTAP 타일에서 *보기*를 선택합니다.
+. 드롭다운에서 *노드 기반 라이선스*를 선택합니다.
+. *BYOL* 탭에서 Cloud Volumes ONTAP 시스템에 대한 세부 정보를 확장합니다.
+. *용량 라이선스 추가*를 클릭하세요.
+. 일련 번호를 입력하거나 라이선스 파일(HA 쌍이 있는 경우 여러 파일)을 업로드합니다.
+. *용량 라이선스 추가*를 클릭하세요.
+
+
+
+
+==== 용량 라이선스 업데이트
+
+추가 용량 라이선스 기간을 연장한 경우 콘솔에서 라이선스를 업데이트해야 합니다.
+
+.단계
+. 왼쪽 탐색 창에서 *관리 > 라이선스 및 구독*을 선택합니다.
+. *개요* 탭을 선택하세요.
+. Cloud Volumes ONTAP 타일에서 *보기*를 선택합니다.
+. 드롭다운에서 *노드 기반 라이선스*를 선택합니다.
+. *BYOL* 탭에서 Cloud Volumes ONTAP 시스템에 대한 세부 정보를 확장합니다.
+. 용량 라이선스 옆에 있는 작업 메뉴를 클릭하고 *라이선스 업데이트*를 선택합니다.
+. 라이선스 파일(HA 쌍이 있는 경우 여러 개)을 업로드합니다.
+. *라이선스 업데이트*를 클릭하세요.
+
+
+
+
+==== 용량 라이센스 제거
+
+추가 용량 라이선스가 만료되어 더 이상 사용하지 않는 경우 언제든지 제거할 수 있습니다.
+
+.단계
+. 왼쪽 탐색 창에서 *관리 > 라이선스 및 구독*을 선택합니다.
+. *개요* 탭을 선택하세요.
+. Cloud Volumes ONTAP 타일에서 *보기*를 선택합니다.
+. 드롭다운에서 *노드 기반 라이선스*를 선택합니다.
+. *BYOL* 탭에서 Cloud Volumes ONTAP 시스템에 대한 세부 정보를 확장합니다.
+. 용량 라이선스 옆에 있는 작업 메뉴를 클릭하고 *라이선스 제거*를 선택합니다.
+. *제거*를 클릭하세요.
+
+
+
+
+== PAYGO와 BYOL 간 변경
+
+PAYGO 노드별 라이선싱에서 BYOL 노드별 라이선싱으로 시스템을 변환하는 것(또는 그 반대)은 지원되지 않습니다.  사용량 기반 구독과 BYOL 구독 간에 전환하려면 새 시스템을 배포하고 기존 시스템의 데이터를 새 시스템으로 복제해야 합니다.
+
+.단계
+. 새로운 Cloud Volumes ONTAP 시스템을 만듭니다.
+. 복제해야 하는 각 볼륨에 대해 시스템 간에 일회성 데이터 복제를 설정합니다.
++
+https://docs.netapp.com/us-en/bluexp-replication/task-replicating-data.html["시스템 간에 데이터를 복제하는 방법을 알아보세요"^]
+
+. 더 이상 필요하지 않은 Cloud Volumes ONTAP 시스템을 종료하려면 원래 시스템을 삭제합니다.
++
+https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-deleting-system.html["Cloud Volumes ONTAP 시스템을 삭제하는 방법을 알아보세요"] .
+
+
+
+.관련 링크
+링크:link:concept-licensing.html#end-of-availability-of-node-based-licenses["노드 기반 라이선스 제공 종료"] link:task-convert-node-capacity.html["노드 기반 라이센스를 용량 기반으로 변환"]

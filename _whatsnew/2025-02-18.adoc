@@ -1,0 +1,13 @@
+= Azure Marketplace 직접 배포 소개
+:allow-uri-read: 
+
+
+
+
+=== Azure Marketplace 직접 배포 소개
+
+이제 Azure 마켓플레이스 직접 배포를 활용하여 Azure 마켓플레이스에서 직접 Cloud Volumes ONTAP 쉽고 빠르게 배포할 수 있습니다.  이 간소화된 방법을 사용하면 BlueXP 커넥터를 설정하거나 BlueXP 통해 Cloud Volumes ONTAP 배포하는 데 필요한 다른 온보딩 기준을 충족하지 않고도 사용자 환경에서 Cloud Volumes ONTAP 의 핵심 기능과 성능을 살펴볼 수 있습니다.
+
+* https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-azure-mktplace-direct.html["Azure에서 Cloud Volumes ONTAP 배포 옵션에 대해 알아보세요."^]
+* https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-deploy-cvo-azure-mktplc.html["Azure Marketplace에서 Cloud Volumes ONTAP 배포"^]
+

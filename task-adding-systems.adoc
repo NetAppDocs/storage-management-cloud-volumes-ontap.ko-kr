@@ -1,0 +1,45 @@
+---
+sidebar: sidebar 
+permalink: task-adding-systems.html 
+keywords: discover, discovering, add, adding, existing 
+summary: 기존 Cloud Volumes ONTAP 시스템을 검색하여 콘솔에 추가할 수 있습니다.  새로운 시스템을 배포한 경우 이 작업을 수행할 수 있습니다. 
+---
+= NetApp 콘솔에 기존 Cloud Volumes ONTAP 시스템 추가
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+기존 Cloud Volumes ONTAP 시스템을 검색하여 NetApp 콘솔에 추가할 수 있습니다.  새로운 시스템을 배포한 경우 이 작업을 수행할 수 있습니다.
+
+.시작하기 전에
+Cloud Volumes ONTAP 관리자 사용자 계정의 비밀번호를 알아야 합니다.
+
+.단계
+. 왼쪽 탐색 메뉴에서 *저장소 > 관리*를 선택합니다.
+. *시스템* 페이지에서 *시스템 추가*를 클릭합니다.
+. 시스템이 있는 클라우드 공급자를 선택하세요.
+. 추가할 Cloud Volumes ONTAP 시스템 유형을 선택하세요.
+. 링크를 클릭하여 기존 시스템을 알아보세요.
+
+
+ifdef::aws[]
+
++image:screenshot_discover_redesign.png["기존 Cloud Volumes ONTAP 시스템을 검색하는 링크를 보여주는 스크린샷입니다."]
+
+endif::aws[]
+
+. 지역 페이지에서 지역을 선택하세요.  선택한 지역에서 실행 중인 시스템을 볼 수 있습니다.
++
+
+NOTE: 이 페이지에서는 Cloud Volumes ONTAP 시스템이 인스턴스로 표시됩니다.  목록에서 현재 계정에 등록된 인스턴스만 선택할 수 있습니다.
+
+. 자격 증명 페이지에서 Cloud Volumes ONTAP 관리자의 비밀번호를 입력한 다음 *시작*을 선택합니다.
+
+
+.결과
+콘솔은 Cloud Volumes ONTAP 시스템을 *시스템* 페이지에 추가합니다.

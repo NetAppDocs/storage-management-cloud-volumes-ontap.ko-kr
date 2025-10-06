@@ -1,0 +1,41 @@
+---
+sidebar: sidebar 
+permalink: task-saz-feature.html 
+keywords: Microsoft Azure feature, HA in SAZ, single availability zone, Azure feature, Virtual Machine Scale Sets in Flexible mode, VMOrchestratorZonalMultiFD, VM Orchestrator, Zonal, MultiFD, Microsoft.Compute/VMOrchestratorZonalMultiFD feature 
+summary: SAZ에 HA를 배포하려면 이 Microsoft Azure 기능을 활성화하세요. 
+---
+= Azure에서 Cloud Volumes ONTAP 에 VMOrchestratorZonalMultiFD 사용
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+로컬 중복 스토리지(LRS) 단일 가용성 영역(AZ)에 VM 인스턴스를 배포하려면 Microsoft를 활성화해야 합니다. `Microsoft.Compute/VMOrchestratorZonalMultiFD` 귀하의 구독에 대한 기능입니다.  고가용성(HA) 모드에서 이 기능은 동일한 가용성 영역 내의 별도의 장애 도메인에 노드를 배포하는 것을 용이하게 합니다.
+
+이 기능을 활성화하지 않으면 영역별 배포가 발생하지 않으며, 이전 LRS 비영역별 배포가 적용됩니다.
+
+단일 가용성 영역에 VM을 배포하는 방법에 대한 자세한 내용은 다음을 참조하세요.link:concept-ha-azure.html["Azure의 고가용성 쌍"] .
+
+"소유자" 권한이 있는 사용자로 다음 단계를 수행하세요.
+
+.단계
+. Azure Portal에서 Azure Cloud Shell에 액세스합니다.  자세한 내용은 다음을 참조하세요. https://learn.microsoft.com/en-us/azure/cloud-shell/get-started/["Microsoft Azure 설명서: Azure Cloud Shell 시작하기"^] .
+. 등록하세요 `Microsoft.Compute/VMOrchestratorZonalMultiFD` 다음 명령을 실행하여 기능을 추가하세요.
++
+[]
+====
+az 계정 설정 -s _<Azure_subscription_name_or_ID>_ az 기능 등록 --name VMOrchestratorZonalMultiFD --namespace Microsoft.Compute
+
+====
+. 등록 상태와 출력 샘플을 확인하세요.
++
+[]
+====
+az 기능 표시 -n VMOrchestratorZonalMultiFD --네임스페이스 Microsoft.Compute { "id": "/subscriptions/_<ID>_/providers/Microsoft.Features/providers/Microsoft.Compute/features/VMOrchestratorZonalMultiFD", "name": "Microsoft.Compute/VMOrchestratorZonalMultiFD", "properties": { "state": "등록됨" }, "type": "Microsoft.Features/providers/features" }
+
+====
+

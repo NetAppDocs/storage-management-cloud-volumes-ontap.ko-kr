@@ -1,0 +1,51 @@
+---
+sidebar: sidebar 
+permalink: task-getting-started-azure.html 
+keywords: microsoft, azure, netapp, data fabric, hybrid cloud, cloud, public cloud, networking, marketplace, virtual machine, vnet, quick, getting started, install, installing, deploy, deploying, setup, setting up, launching, requirements, prerequisites, cloud central, permissions, custom role, role, json, permissions, virtual machine, connectivity, internet, outbound, endpoint, connection, networks, vpn, replicating, policy, iam, setupasservice, sign up, cloud manager, BlueXP, cloud volumes ontap, cloud ontap, subscription, create 
+summary: 몇 단계만 거치면 Azure용 Cloud Volumes ONTAP 시작할 수 있습니다. 
+---
+= Azure에서 Cloud Volumes ONTAP 대한 빠른 시작
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+몇 단계만 거치면 Azure용 Cloud Volumes ONTAP 시작할 수 있습니다.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["하나"]콘솔 에이전트 만들기
+[role="quick-margin-para"]
+만약 당신이 없다면 https://docs.netapp.com/us-en/bluexp-setup-admin/concept-connectors.html["콘솔 에이전트"^] 하지만, 하나는 만들어야 합니다. https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-azure.html["Azure에서 콘솔 에이전트를 만드는 방법을 알아보세요."^]
+
+[role="quick-margin-para"]
+인터넷 접속이 불가능한 서브넷에 Cloud Volumes ONTAP 배포하려면 콘솔 에이전트를 수동으로 설치하고 해당 콘솔 에이전트에서 실행 중인 NetApp 콘솔에 액세스해야 합니다. https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-private-mode.html["인터넷 접속이 불가능한 위치에 콘솔 에이전트를 수동으로 설치하는 방법을 알아보세요."^]
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["둘"]구성을 계획하세요
+[role="quick-margin-para"]
+콘솔은 사용자의 작업 부하 요구 사항에 맞는 미리 구성된 패키지를 제공하거나 사용자가 직접 구성을 만들 수도 있습니다.  원하는 구성을 선택하는 경우, 사용 가능한 옵션을 이해해야 합니다.  자세한 내용은 다음을 참조하세요.link:task-planning-your-config-azure.html["Azure에서 Cloud Volumes ONTAP 구성 계획"] .
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["삼"]네트워킹을 설정하세요
+[role="quick-margin-list"]
+. VNet과 서브넷이 콘솔 에이전트와 Cloud Volumes ONTAP 간의 연결을 지원하는지 확인하세요.
+. NetApp AutoSupport 에 대해 대상 VPC에서 아웃바운드 인터넷 액세스를 활성화합니다.
++
+인터넷 접속이 불가능한 위치에 Cloud Volumes ONTAP 배포하는 경우 이 단계는 필요하지 않습니다.
+
+
+
+[role="quick-margin-para"]
+link:reference-networking-azure.html["네트워킹 요구 사항에 대해 자세히 알아보세요"] .
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["네"]Cloud Volumes ONTAP 출시
+[role="quick-margin-para"]
+*시스템 추가*를 클릭하고 배포하려는 시스템 유형을 선택한 다음 마법사의 단계를 완료합니다. link:task-deploying-otc-azure.html["단계별 지침을 읽어보세요"] .
+
+.관련 링크
+* https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-azure.html["콘솔에서 콘솔 에이전트 만들기"^]
+* https://docs.netapp.com/us-en/bluexp-setup-admin/task-install-connector-azure-marketplace.html["Azure Marketplace에서 콘솔 에이전트 만들기"^]
+* https://docs.netapp.com/us-en/bluexp-setup-admin/task-install-connector-on-prem.html["Linux 호스트에 콘솔 에이전트 소프트웨어 설치"^]
+* https://docs.netapp.com/us-en/bluexp-setup-admin/reference-permissions-azure.html["콘솔이 권한으로 수행하는 작업"^]
+

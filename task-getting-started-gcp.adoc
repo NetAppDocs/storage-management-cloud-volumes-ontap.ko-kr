@@ -1,0 +1,78 @@
+---
+sidebar: sidebar 
+permalink: task-getting-started-gcp.html 
+keywords: google cloud platform, gcp, cloud manager, deploy the Console, launch the Console, create the Console, getting started, networking, gcp networking, service account, tiering, data tiering, bucket, fabricpool, cloud backup, storage access key, gcp role, role, iam role, permissions, gcp permissions, cloud backup, the Console 
+summary: 몇 단계만 거치면 Google Cloud용 Cloud Volumes ONTAP 시작할 수 있습니다. 
+---
+= Google Cloud에서 Cloud Volumes ONTAP 빠르게 시작하세요
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+몇 단계만 거치면 Google Cloud에서 Cloud Volumes ONTAP 시작할 수 있습니다.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["하나"]콘솔 에이전트 만들기
+[role="quick-margin-para"]
+만약 당신이 없다면 https://docs.netapp.com/us-en/bluexp-setup-admin/concept-connectors.html["콘솔 에이전트"^] 하지만, 하나는 만들어야 합니다. https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-google.html["Google Cloud에서 콘솔 에이전트를 만드는 방법을 알아보세요."^]
+
+[role="quick-margin-para"]
+인터넷 접속이 불가능한 서브넷에 Cloud Volumes ONTAP 배포하려면 콘솔 에이전트를 수동으로 설치하고 해당 콘솔 에이전트에서 실행 중인 NetApp 콘솔에 액세스해야 합니다. https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-private-mode.html["인터넷 접속이 불가능한 위치에 콘솔 에이전트를 수동으로 설치하는 방법을 알아보세요."^]
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["둘"]구성을 계획하세요
+[role="quick-margin-para"]
+콘솔은 사용자의 작업 부하 요구 사항에 맞는 미리 구성된 패키지를 제공하거나 사용자가 직접 구성을 만들 수도 있습니다.  원하는 구성을 선택하는 경우, 사용 가능한 옵션을 이해해야 합니다.
+
+[role="quick-margin-para"]
+link:task-planning-your-config-gcp.html["구성 계획에 대해 자세히 알아보세요"] .
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["삼"]네트워킹을 설정하세요
+[role="quick-margin-list"]
+. VPC와 서브넷이 콘솔 에이전트와 Cloud Volumes ONTAP 간의 연결을 지원하는지 확인하세요.
+. 데이터 계층화를 활성화하려는 경우 https://cloud.google.com/vpc/docs/configure-private-google-access["Private Google Access를 위해 Cloud Volumes ONTAP 서브넷을 구성합니다."^] .
+. HA 쌍을 배포하는 경우 각각 자체 서브넷이 있는 4개의 VPC가 있는지 확인하세요.
+. 공유 VPC를 사용하는 경우 콘솔 에이전트 서비스 계정에 _Compute Network User_ 역할을 제공합니다.
+. NetApp AutoSupport 에 대해 대상 VPC에서 아웃바운드 인터넷 액세스를 활성화합니다.
++
+인터넷 접속이 불가능한 위치에 Cloud Volumes ONTAP 배포하는 경우 이 단계는 필요하지 않습니다.
+
+
+
+[role="quick-margin-para"]
+link:reference-networking-gcp.html["네트워킹 요구 사항에 대해 자세히 알아보세요"] .
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["네"]서비스 계정 설정
+[role="quick-margin-para"]
+Cloud Volumes ONTAP 두 가지 목적으로 Google Cloud 서비스 계정이 필요합니다.  첫 번째는 활성화할 때입니다.link:concept-data-tiering.html["데이터 계층화"] Google Cloud의 저렴한 객체 스토리지에 콜드 데이터를 계층화합니다.  두 번째는 다음을 활성화할 때입니다. https://docs.netapp.com/us-en/bluexp-backup-recovery/concept-backup-to-cloud.html["NetApp 백업 및 복구"^] 저렴한 개체 스토리지에 볼륨을 백업합니다.
+
+[role="quick-margin-para"]
+하나의 서비스 계정을 설정하여 두 가지 목적으로 모두 사용할 수 있습니다.  서비스 계정에는 *저장소 관리자* 역할이 있어야 합니다.
+
+[role="quick-margin-para"]
+link:task-creating-gcp-service-account.html["단계별 지침을 읽어보세요"] .
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["다섯"]Google Cloud API 활성화
+[role="quick-margin-para"]
+https://cloud.google.com/apis/docs/getting-started#enabling_apis["프로젝트에서 다음 Google Cloud API를 활성화하세요."^] . 이러한 API는 Console 에이전트와 Cloud Volumes ONTAP 배포하는 데 필요합니다.
+
+[role="quick-margin-list"]
+* 클라우드 배포 관리자 V2 API
+* 클라우드 로깅 API
+* 클라우드 리소스 관리자 API
+* 컴퓨트 엔진 API
+* ID 및 액세스 관리(IAM) API
+
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png["육"]콘솔을 사용하여 Cloud Volumes ONTAP 실행
+[role="quick-margin-para"]
+*시스템 추가*를 클릭하고 배포하려는 시스템 유형을 선택한 다음 마법사의 단계를 완료합니다. link:task-deploying-gcp.html["단계별 지침을 읽어보세요"] .
+
+.관련 링크
+* https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-google.html["콘솔 에이전트 생성"^]
+* https://docs.netapp.com/us-en/bluexp-setup-admin/task-install-connector-on-prem.html["Linux 호스트에 콘솔 에이전트 소프트웨어 설치"^]
+* https://docs.netapp.com/us-en/bluexp-setup-admin/reference-permissions-gcp.html["콘솔이 Google Cloud 권한으로 수행하는 작업"^]
+
