@@ -110,6 +110,9 @@ TIP: WORM 및 데이터 계층화를 활용하려면 백업 및 복구를 비활
 .요약
 입력한 세부 정보를 확인하거나 편집한 다음 *만들기*를 클릭하세요.
 
+
+CAUTION: 배포 프로세스가 완료된 후에는 AWS 클라우드 포털에서 시스템 생성 Cloud Volumes ONTAP 구성, 특히 시스템 태그를 수정하지 마세요. 이러한 구성을 변경하면 예기치 않은 동작이나 데이터 손실이 발생할 수 있습니다.
+
 .관련 링크
 * link:task-planning-your-config.html["Cloud Volumes ONTAP 구성 계획"]
 * link:task-deploying-otc-aws.html["고급 배포를 사용하여 AWS에 Cloud Volumes ONTAP 배포"]
