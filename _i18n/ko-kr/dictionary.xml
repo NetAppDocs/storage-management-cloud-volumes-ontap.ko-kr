@@ -1005,7 +1005,6 @@
   <block id="8d85a6720847d90489976db4cc2c4e48" category="paragraph">Cloud Volumes ONTAP 지원<block ref="09aecd5417a289ba24f2f00949971fbc" category="inline-link-rx"></block> .  NVE와 NAE는 볼륨의 (FIPS) 140-2 규격에 따른 저장 데이터 암호화를 지원하는 소프트웨어 기반 솔루션입니다.  NVE와 NAE는 모두 AES 256비트 암호화를 사용합니다.</block>
   <block id="0bf3330853877ab4b76b4f1e00d3ace2" category="list-text">NVE는 저장 중인 데이터를 한 번에 한 볼륨씩 암호화합니다.  각 데이터 볼륨에는 고유한 암호화 키가 있습니다.</block>
   <block id="988d5e992ea371904581e6f8ad13bac7" category="list-text">NAE는 NVE의 확장 버전으로, 각 볼륨의 데이터를 암호화하고 볼륨은 전체 집계에서 키를 공유합니다.  NAE를 사용하면 집계된 모든 볼륨의 공통 블록을 중복 제거할 수도 있습니다.</block>
-  <block id="3d9f78a1ff8b79063296498224874e6c" category="paragraph">Cloud Volumes ONTAP Fortanix와 같은 타사 솔루션을 포함하여 AWS, Azure, Google Cloud에서 제공하는 외부 키 관리 서비스(EKM)를 통해 NVE와 NAE를 모두 지원합니다.  ONTAP 과 달리 Cloud Volumes ONTAP 의 경우 암호화 키는 ONTAP 아닌 클라우드 공급자 측에서 생성됩니다.</block>
   <block id="918d32b75f0ab883abba3a8dc0c3ae8d" category="inline-link">상호 운용성 매트릭스 도구</block>
   <block id="fc018227cf021b5cfd4d7696a41f346a" category="paragraph">Cloud Volumes ONTAP ONTAP 사용하는 표준 KMIP(Key Management Interoperability Protocol) 서비스를 사용합니다.  지원되는 서비스에 대한 자세한 내용은 다음을 참조하세요.<block ref="728e4ee339d5763542973002d2a82dc7" category="inline-link-rx"></block> .</block>
   <block id="37368004332f325820087f73466f8e6c" category="paragraph">NVE를 사용하는 경우 클라우드 공급자의 키 보관소를 사용하여 ONTAP 암호화 키를 보호하는 옵션이 있습니다.</block>
@@ -6013,4 +6012,6 @@
   <block id="b519bdccd361fdbdef0db125787188be" category="paragraph">패치 릴리스에 대한 일반적인 규칙에 따라 동일하거나 다음 Cloud Volumes ONTAP 릴리스에서 낮은 패치 버전에서 더 높은 패치 버전으로 업그레이드할 수 있습니다.</block>
   <block id="c4b21c5ec90f72f3862370831523b7c6" category="list-text">9.13.0 -&gt; 9.13.1 P15</block>
   <block id="143e9e868bde298af3781d33560b0714" category="list-text">9.12.1 -&gt; 9.13.1 P2</block>
+  <block id="a32dd2ca79d8d8a0056821cb37fed7f4" category="inline-link">온보드 키 관리자</block>
+  <block id="e9de5ac62057662306f1f8a15d6e95b6" category="paragraph">Cloud Volumes ONTAP Fortanix와 같은 타사 솔루션을 포함하여 AWS, Azure, Google Cloud에서 제공하는 외부 키 관리 서비스(EKM)를 통해 NVE와 NAE를 모두 지원합니다. ONTAP 과 달리 Cloud Volumes ONTAP 의 경우 암호화 키는 ONTAP 아닌 클라우드 공급자 측에서 생성됩니다. Cloud Volumes ONTAP 지원하지 않습니다.<block ref="1c285d24d1bbc96912aa67bf9ee64f22" category="inline-link-rx"></block>.</block>
 </blocks>
