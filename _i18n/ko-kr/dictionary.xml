@@ -5989,10 +5989,7 @@
   <block id="47c670fdbd357ec4b6b3895f473eae3c" category="section-title">2021년 1월 4일</block>
   <block id="6337732b75aa62e45d9707965f327458" category="section-title">2020년 11월 3일</block>
   <block id="7b6830c2d647bfeae537b084a1bc4c97" category="doc">Azure의 Cloud Volumes ONTAP 이제 최신 지원 버전으로 제한됩니다.</block>
-  <block id="3dd7b623eed29152e13ab227af7f1473" category="paragraph">NetApp Console 통한 Azure의 Cloud Volumes ONTAP 배포 및 업그레이드는 이제 최신 지원 버전으로 제한됩니다.  이 변경을 통해 귀하의 시스템은 최신 기능과 보안 강화 기능을 갖춘 완벽히 지원되는 버전을 실행할 수 있습니다.  콘솔에서는 지원되는 버전으로만 업그레이드하라는 메시지가 표시됩니다.</block>
   <block id="9ca9f40464321b098a9b31a750f1e5ce" category="paragraph">자세한 내용은 다음을 참조하세요.</block>
-  <block id="c17919ed5cc121684523f6b5d0e3c307" category="list-text">전개:<block ref="b80b2163c394b4ea1470a648426a0279" category="inline-link-rx"></block></block>
-  <block id="f5463bd04e048650140d7f8d20c78c07" category="list-text">치받이:<block ref="005f568bce2936777e72fec03fb4642d" category="inline-link-rx"></block></block>
   <block id="cde3a9d223695dc89e87d7de8e6788ea" category="list-text">9.16.1 P3</block>
   <block id="0ef0eaca71746d202f974fc1a455472d" category="list-text">9.15.1 P10</block>
   <block id="5d8dbd1afe3d89f326c0884aff9fb268" category="list-text">9.14.1 P13</block>
@@ -6014,4 +6011,9 @@
   <block id="143e9e868bde298af3781d33560b0714" category="list-text">9.12.1 -&gt; 9.13.1 P2</block>
   <block id="a32dd2ca79d8d8a0056821cb37fed7f4" category="inline-link">온보드 키 관리자</block>
   <block id="e9de5ac62057662306f1f8a15d6e95b6" category="paragraph">Cloud Volumes ONTAP Fortanix와 같은 타사 솔루션을 포함하여 AWS, Azure, Google Cloud에서 제공하는 외부 키 관리 서비스(EKM)를 통해 NVE와 NAE를 모두 지원합니다. ONTAP 과 달리 Cloud Volumes ONTAP 의 경우 암호화 키는 ONTAP 아닌 클라우드 공급자 측에서 생성됩니다. Cloud Volumes ONTAP 지원하지 않습니다.<block ref="1c285d24d1bbc96912aa67bf9ee64f22" category="inline-link-rx"></block>.</block>
+  <block id="0e627d1b98c5809f132bf109fa4041d3" category="paragraph">NetApp Console 통한 Azure의 Cloud Volumes ONTAP 배포 및 업그레이드는 이제 최신 지원 버전으로 제한됩니다. 이를 통해 Microsoft에서 지원하는 최신 세대 하드웨어와의 호환성이 보장되고 최신 기능과 보안 강화 기능이 제공됩니다. 콘솔에서 지원되는 버전으로 업그레이드하라는 메시지가 표시됩니다.</block>
+  <block id="8a79801dc6892f83b39904d935baeea6" category="list-text">전개:<block ref="defc681ae2012fb7f8f998224eac55e5" category="inline-link-rx"></block></block>
+  <block id="b2f564ccc8dab8d25ce5727e3ac0f553" category="inline-link">Azure에 지원되는 업그레이드 경로</block>
+  <block id="cd28d8af5b4308747357925ae313e125" category="list-text">치받이:<block ref="9fd9abde9fac7cd4edc5e352cd251056" category="inline-link-rx"></block></block>
+  <block id="810ddecf604478d8ee317e1ac69d7971" category="section-title">2025년 10월 17일</block>
 </blocks>
