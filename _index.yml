@@ -67,7 +67,7 @@ indexpage:
     - title: 지원되는 구성
       url: https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/index.html
     - title: 지원되는 클라우드 지역
-      url: https://www.netapp.com/console/cloud-volumes-global-regions
+      url: https://bluexp.netapp.com/cloud-volumes-global-regions
     - title: 계산기
       url: https://www.netapp.com/console/calculator-hub
   - title: 블로그 및 커뮤니티
