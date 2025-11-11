@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: concept-licensing-charging.html 
-keywords: capacity-based license charging, consumption for licenses, pricing for licenses, CVO licensing, CVO charging 
+keywords: capacity-based license charging, consumption for licenses, pricing for licenses, CVO licensing, CVO charging, SnapLock charging, CIFS charging, audit volumes, primary volumes, volume-based charging 
 summary: 용량 기반 라이선스의 요금 청구, 소비 모델, 가격 책정 및 구성에 대해 잘 알고 있어야 합니다. 
 ---
 = Cloud Volumes ONTAP 의 용량 기반 라이선스에 대해 자세히 알아보세요.
@@ -64,11 +64,11 @@ link:task-manage-capacity-licenses.html["충전 방법을 변경하는 방법을
 
 
 
-== 가격 및 지원되는 구성
+== 용량 기반 라이선스의 충전 및 지원 구성
+
+Cloud Volumes ONTAP 의 요금은 패키지 및 볼륨 유형 등 여러 요인에 따라 결정됩니다. 용량 기반 라이선싱 패키지는 Cloud Volumes ONTAP 9.7 이상에서 사용할 수 있습니다.
 
 가격에 대한 자세한 내용은 다음을 참조하세요. https://bluexp.netapp.com/pricing/["NetApp Console 웹사이트"^] .
-
-용량 기반 라이선싱 패키지는 Cloud Volumes ONTAP 9.7 이상에서 사용할 수 있습니다.
 
 
 
@@ -109,7 +109,7 @@ HA 쌍의 경우 노드에 프로비저닝된 용량에 대해서만 요금이 �
 
 == 최대 시스템 수
 
-용량 기반 라이선싱을 사용하는 경우, Cloud Volumes ONTAP 시스템의 최대 수는 NetApp Console 계정당 24개로 제한됩니다.  _시스템_은 Cloud Volumes ONTAP HA 쌍, Cloud Volumes ONTAP 단일 노드 시스템 또는 사용자가 생성하는 추가 스토리지 VM입니다.  기본 스토리지 VM은 제한에 포함되지 않습니다.  이 제한은 모든 라이선스 모델에 적용됩니다.
+용량 기반 라이선싱을 사용하는 경우, NetApp Console 조직당 Cloud Volumes ONTAP 시스템의 최대 수는 24개로 제한됩니다. _시스템_은 Cloud Volumes ONTAP HA 쌍, Cloud Volumes ONTAP 단일 노드 시스템 또는 사용자가 생성하는 추가 스토리지 VM입니다. 기본 스토리지 VM은 제한에 포함되지 않습니다. 이 제한은 모든 라이선스 모델에 적용됩니다.
 
 예를 들어, 세 가지 시스템이 있다고 가정해 보겠습니다.
 
@@ -127,13 +127,17 @@ HA 쌍의 경우 노드에 프로비저닝된 용량에 대해서만 요금이 �
 
 
 
-총 6개의 시스템이 있습니다.  그러면 계정에 14개의 시스템을 추가로 설치할 수 있는 공간이 생깁니다.
+총 6개의 시스템이 있습니다. 그러면 조직 내에 14개의 시스템을 추가로 수용할 수 있는 여유가 생깁니다.
 
 24개 이상의 시스템이 필요한 대규모 배포의 경우, 고객 담당자나 영업팀에 문의하세요.
 
-https://docs.netapp.com/us-en/bluexp-setup-admin/concept-netapp-accounts.html["콘솔 계정에 대해 자세히 알아보세요"^] .
-
 https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/index.html["AWS, Azure 및 Google Cloud의 저장 용량 한도에 대해 알아보세요."^] .
+
+
+
+== 읽기/쓰기 볼륨에 대한 요금 청구
+
+쓰기 가능한(읽기/쓰기) 볼륨을 생성하거나 사용하는 경우 해당 볼륨은 기본 볼륨으로 간주되며 스토리지 VM(SVM)당 최소 요금을 기준으로 프로비저닝된 용량에 대한 요금이 청구됩니다.  예로는 FlexVol 읽기/쓰기 볼륨, SnapLock 감사 볼륨, CIFS/NFS 감사 볼륨이 있습니다.  사용자가 생성한 모든 데이터 볼륨은 구독 및 패키지 유형에 따라 요금이 청구됩니다.  SVM 루트 볼륨과 같이 자동으로 생성되어 데이터를 저장할 수 없는 ONTAP 내부 볼륨에는 요금이 부과되지 않습니다.
 
 
 

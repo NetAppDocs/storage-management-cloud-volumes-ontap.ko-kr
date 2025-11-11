@@ -1,0 +1,13 @@
+= 향상된 NVMe-TCP 지원
+:allow-uri-read: 
+
+
+
+
+=== 향상된 NVMe-TCP 지원
+
+이전에는 NVMe-TCP를 통해 Cloud Volumes ONTAP 인스턴스를 배포할 때 배포 전에 NVMe 라이선스를 수동으로 획득하고 적용해야 했습니다.  이 업데이트를 통해 Cloud Volumes ONTAP 이제 배포 중에 필요한 NVMe 라이선스를 자동으로 설치하여 설정 프로세스를 간소화합니다.
+
+라이선스가 없는 기존 NVMe-TCP 배포의 경우 Cloud Volumes ONTAP 라이선스를 자동으로 적용합니다.  라이센스를 적용하려면 시스템을 다시 시작해야 합니다.
+
+자세한 내용은 다음을 참조하세요. https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-client-protocols.html#nvme-tcp["Cloud Volumes ONTAP 에 지원되는 클라이언트 프로토콜: NVMe-TCP"^] .

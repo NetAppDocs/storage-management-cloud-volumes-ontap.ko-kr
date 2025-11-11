@@ -116,4 +116,5 @@ Cloud Volumes ONTAP 시스템에서 WORM 스토리지를 활성화한 후에는 
 
 .관련 링크
 * link:reference-worm-snaplock.html["WORM 스토리지를 위한 변조 방지 스냅샷 복사본 생성"]
+* link:concept-licensing-charging.html["Cloud Volumes ONTAP 의 라이선싱 및 요금 청구"]
 

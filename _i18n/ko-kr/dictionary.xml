@@ -373,7 +373,6 @@
   <block id="6cd0c6e49e7da9df4ec8ac28e99ac268" category="inline-link-macro">ONTAP 설명서: ONTAP 에서 S3 개체 스토리지 서비스를 구성하고 관리하는 방법을 알아보세요.</block>
   <block id="0beeb4ae08209eddf791d03de9fcf654" category="paragraph"><block ref="47bbca2f135630a58718ba92e2c739ed" category="inline-link-macro-rx"></block> . <block ref="3c369a9b68ac3984a3598ff92fe5ee61" category="inline-link-macro-rx"></block> .</block>
   <block id="ad18d9aa7c4c9bdbf86e39bd6dd5b727" category="section-title">NVMe-TCP</block>
-  <block id="0d214dea9d89c7c64a7c82de615920d2" category="paragraph">ONTAP 버전 9.12.1부터 클라우드 공급자를 위해 NVMe-TCP가 지원됩니다.  NetApp Console NVMe-TCP에 대한 관리 기능을 제공하지 않습니다.</block>
   <block id="0c4ab7dbbb0c4e5098fca90084a314bb" category="inline-link">ONTAP 설명서: NVMe를 위한 스토리지 VM 구성</block>
   <block id="86658a348e09419591c8b4b3fa13e84e" category="paragraph">ONTAP 통한 NVMe 구성에 대한 자세한 내용은 다음을 참조하세요.<block ref="0585d9dca18b467d388c2056c53b835d" category="inline-link-rx"></block> .</block>
   <block id="d5a5fd8fd787bf62e6dfdbce64a40648" category="summary">Digital Advisor 는 NetApp Console 에 통합되어 있어 단일 창에서 ONTAP 클러스터의 운영, 보안 및 성능을 최적화할 수 있습니다.</block>
@@ -490,7 +489,6 @@
   <block id="cd092c954573d47ecd37b6e5d96c0c03" category="paragraph">무작위 읽기로 읽는 경우 용량 계층의 콜드 데이터 블록이 핫해지고 성능 계층으로 이동합니다.  인덱스 및 바이러스 백신 검사와 관련된 순차적 읽기로 읽는 경우, 콜드 데이터 블록은 콜드 상태로 유지되고 성능 계층으로 이동하지 않습니다.</block>
   <block id="6adf97f83acf6453d4a6a4b1070f3754" category="list-text">None</block>
   <block id="1fabb891be898874fa999bd6c6178645" category="list-text">볼륨의 데이터를 성능 계층에 보관하여 용량 계층으로 이동되는 것을 방지합니다.</block>
-  <block id="769159c4f9b24256ff288a267877baab" category="paragraph">볼륨을 복제할 때 데이터를 개체 스토리지에 계층화할지 여부를 선택할 수 있습니다.  그러면 콘솔은 데이터 보호 볼륨에 *백업* 정책을 적용합니다.  Cloud Volumes ONTAP 9.6부터 *모든* 계층화 정책이 백업 정책을 대체합니다.</block>
   <block id="4768992c9064e7930243f41cf12e51be" category="section-title">Cloud Volumes ONTAP 끄면 냉각 기간에 영향을 미칩니다.</block>
   <block id="98c767d4b7fc2be4f0613184e8e83485" category="paragraph">데이터 블록은 냉각 스캔을 통해 냉각됩니다.  이 과정에서 사용되지 않은 블록의 블록 온도는 다음으로 낮은 값으로 이동(냉각)됩니다.  기본 냉각 시간은 볼륨 계층화 정책에 따라 달라집니다.</block>
   <block id="44e3ba7e22b4e4f9e276efbf6443273d" category="list-text">자동: 31일</block>
@@ -793,10 +791,8 @@
   <block id="63b54c0d3b4fb8e35270bfdf7b2bdcbb" category="inline-link-macro">충전 방법을 변경하는 방법을 알아보세요</block>
   <block id="ec3e25d80cfc0e5561493729eadecef7" category="paragraph"><block ref="ea19fa0e06a6047bcaabb9af62b066c3" category="inline-link-macro-rx"></block> .</block>
   <block id="2b0470da2a26cbbea5d95f4e261d82ee" category="paragraph">노드 기반 라이센스를 용량 기반으로 변환하는 방법에 대한 자세한 내용은 다음을 참조하세요.</block>
-  <block id="7af9b0ab22150a40b2c1c451de82db3c" category="section-title">가격 및 지원되는 구성</block>
   <block id="35582eb3752ea3397836cc80ba8c8d00" category="inline-link">NetApp Console 웹사이트</block>
   <block id="2a739686df6dee81bda20f0beee8ad43" category="paragraph">가격에 대한 자세한 내용은 다음을 참조하세요.<block ref="6dd6e0ebeffdbf7b0b2bee2f498a2c82" category="inline-link-rx"></block> .</block>
-  <block id="4e4c431843fe55f93c074808800bf7d0" category="paragraph">용량 기반 라이선싱 패키지는 Cloud Volumes ONTAP 9.7 이상에서 사용할 수 있습니다.</block>
   <block id="2204b0f79985b7b0565114e8305937a5" category="section-title">스토리지 VM</block>
   <block id="ee095a2fd0990ba785c303c6524d8145" category="list-text">추가 데이터 제공 스토리지 VM(SVM)에는 추가 라이선스 비용이 없지만 데이터 제공 SVM당 최소 4TiB 용량 요금이 부과됩니다.</block>
   <block id="cc331a0f761602982769cdbb99e71272" category="list-text">재해 복구 SVM은 제공된 용량에 따라 요금이 부과됩니다.</block>
@@ -817,7 +813,6 @@
   <block id="b0cd7667098b2a3439c52ba1f9334faa" category="inline-link">Google Cloud 문서</block>
   <block id="9ccfe59c1252cf7f615b4c7dab763516" category="list-text"><block ref="9ccfe59c1252cf7f615b4c7dab763516" category="inline-link-rx"></block></block>
   <block id="170d227d215fb560bb4c8ad4e345183a" category="section-title">최대 시스템 수</block>
-  <block id="f27b74a698b22465262eeaf1de67760f" category="paragraph">용량 기반 라이선싱을 사용하는 경우, Cloud Volumes ONTAP 시스템의 최대 수는 NetApp Console 계정당 24개로 제한됩니다.  _시스템_은 Cloud Volumes ONTAP HA 쌍, Cloud Volumes ONTAP 단일 노드 시스템 또는 사용자가 생성하는 추가 스토리지 VM입니다.  기본 스토리지 VM은 제한에 포함되지 않습니다.  이 제한은 모든 라이선스 모델에 적용됩니다.</block>
   <block id="21e39e83d5fa1c8ef2eacd7021384a1a" category="paragraph">예를 들어, 세 가지 시스템이 있다고 가정해 보겠습니다.</block>
   <block id="35851ad4214e2cb5358ee8d010fd31e9" category="list-text">하나의 스토리지 VM이 있는 단일 노드 Cloud Volumes ONTAP 시스템(이것은 Cloud Volumes ONTAP 배포할 때 생성되는 기본 스토리지 VM입니다)</block>
   <block id="8cff626e0f3fb63bbf88dedb4fd98712" category="paragraph">이 시스템은 하나의 시스템으로 간주됩니다.</block>
@@ -825,10 +820,6 @@
   <block id="f37d86fef13241720dc9ebcc64539e54" category="paragraph">이 시스템은 두 개의 시스템으로 계산됩니다. 하나는 단일 노드 시스템용이고 다른 하나는 추가 스토리지 VM용입니다.</block>
   <block id="4c41d499b08fed91769d6d2c3b51157a" category="list-text">3개의 스토리지 VM(기본 스토리지 VM과 사용자가 생성한 추가 스토리지 VM 2개)이 있는 Cloud Volumes ONTAP HA 쌍</block>
   <block id="67850a8a97f903485494427b0d760819" category="paragraph">이 시스템은 HA 쌍용 시스템 1개, 추가 스토리지 VM용 시스템 2개, 총 3개로 계산됩니다.</block>
-  <block id="e1d61ff8b15b12854145940279164504" category="paragraph">총 6개의 시스템이 있습니다.  그러면 계정에 14개의 시스템을 추가로 설치할 수 있는 공간이 생깁니다.</block>
-  <block id="2357265e1fb763337b05d3b30d1a7528" category="paragraph">24개 이상의 시스템이 필요한 대규모 배포의 경우, 고객 담당자나 영업팀에 문의하세요.</block>
-  <block id="591d2349852174089342827b8714fe4f" category="inline-link">콘솔 계정에 대해 자세히 알아보세요</block>
-  <block id="59906c19ffde10145ac7617d3934aef8" category="paragraph"><block ref="f004206da9034ec17bce4edb7ce72c1d" category="inline-link-rx"></block> .</block>
   <block id="a0aa07133f0223d64ee6522e4e293e43" category="inline-link">AWS, Azure 및 Google Cloud의 저장 용량 한도에 대해 알아보세요.</block>
   <block id="9f909224987b48cbe22536ad43c7ca22" category="paragraph"><block ref="1d60a77806a2b83c9b2383a4fa2b7908" category="inline-link-rx"></block> .</block>
   <block id="25827e83a178b9b140976a356e0ea48a" category="section-title">충전에 대한 참고 사항</block>
@@ -2083,7 +2074,6 @@
   <block id="51aa8ce93131e7a6746f62c49df04fe2" category="paragraph">암호화된 소스 볼륨을 사용하여 Cloud Volumes ONTAP 시스템에 FlexCache 볼륨을 만듭니다.  자세한 단계와 추가 고려 사항은 다음 섹션을 참조하세요.</block>
   <block id="d2fab9f48db0caec032fdea6ff523a5e" category="summary">기존 Cloud Volumes ONTAP 시스템을 검색하여 콘솔에 추가할 수 있습니다.  새로운 시스템을 배포한 경우 이 작업을 수행할 수 있습니다.</block>
   <block id="243a4a66eb491b4d9b47fe9b5bb0f644" category="doc">NetApp Console 에 기존 Cloud Volumes ONTAP 시스템 추가</block>
-  <block id="87864c021fc7861daab126724867211c" category="paragraph">기존 Cloud Volumes ONTAP 시스템을 검색하여 NetApp Console 에 추가할 수 있습니다.  새로운 시스템을 배포한 경우 이 작업을 수행할 수 있습니다.</block>
   <block id="ddf67437a4757d7231aaedf4fdf85f02" category="paragraph">Cloud Volumes ONTAP 관리자 사용자 계정의 비밀번호를 알아야 합니다.</block>
   <block id="f18b3bd3fb25ef360dc2c49e02897678" category="list-text">왼쪽 탐색 메뉴에서 *저장소 &gt; 관리*를 선택합니다.</block>
   <block id="074cf21e03ff50b13273298d7f278b00" category="list-text">*시스템* 페이지에서 *시스템 추가*를 클릭합니다.</block>
@@ -6016,4 +6006,27 @@
   <block id="b2f564ccc8dab8d25ce5727e3ac0f553" category="inline-link">Azure에 지원되는 업그레이드 경로</block>
   <block id="cd28d8af5b4308747357925ae313e125" category="list-text">치받이:<block ref="9fd9abde9fac7cd4edc5e352cd251056" category="inline-link-rx"></block></block>
   <block id="810ddecf604478d8ee317e1ac69d7971" category="section-title">2025년 10월 17일</block>
+  <block id="6e4298fbeec2cc865308057fb6986a86" category="doc">향상된 NVMe-TCP 지원</block>
+  <block id="84b4c7fa59d88db266b9be7eb3cff08e" category="paragraph">이전에는 NVMe-TCP를 통해 Cloud Volumes ONTAP 인스턴스를 배포할 때 배포 전에 NVMe 라이선스를 수동으로 획득하고 적용해야 했습니다.  이 업데이트를 통해 Cloud Volumes ONTAP 이제 배포 중에 필요한 NVMe 라이선스를 자동으로 설치하여 설정 프로세스를 간소화합니다.</block>
+  <block id="14579d19ae9f1a43eae607d4450c7546" category="paragraph">라이선스가 없는 기존 NVMe-TCP 배포의 경우 Cloud Volumes ONTAP 라이선스를 자동으로 적용합니다.  라이센스를 적용하려면 시스템을 다시 시작해야 합니다.</block>
+  <block id="b3a4d40f62316bd15534c438b8057c89" category="inline-link">Cloud Volumes ONTAP 에 지원되는 클라이언트 프로토콜: NVMe-TCP</block>
+  <block id="748f500c59212ec947a9dc03913e95cb" category="paragraph">자세한 내용은 다음을 참조하세요.<block ref="b12aae47ee00e2542df4c8a098a5e7ff" category="inline-link-rx"></block> .</block>
+  <block id="fa21e183126dded03797496a925ceb6f" category="paragraph">ONTAP 버전 9.12.1부터 모든 클라우드 공급자에서 NVMe-TCP가 지원됩니다.  Cloud Volumes ONTAP 배포 중에 스토리지 VM(SVM)에 대한 블록 프로토콜로 NVMe-TCP를 지원하고 필요한 NVMe 라이선스를 자동으로 설치합니다.</block>
+  <block id="bb688477c24b42186c3751ddefb728f4" category="paragraph">NetApp Console NVMe-TCP에 대한 관리 기능을 제공하지 않습니다.</block>
+  <block id="8c340dc334134096f68b880b42a8692c" category="paragraph-title">복제</block>
+  <block id="6c6851f26dd089ac8e2cd4699f9f3ceb" category="paragraph">볼륨을 복제할 때 데이터를 개체 스토리지에 계층화할지 여부를 선택할 수 있습니다. 그러면 콘솔은 데이터 보호 볼륨에 *백업* 정책을 적용합니다. Cloud Volumes ONTAP 9.6부터 *모든* 계층화 정책이 백업 정책을 대체합니다. 복제 관계가 삭제되면 대상 볼륨은 복제 중에 적용되었던 계층화 정책을 유지합니다.</block>
+  <block id="09438e246bb1f06dffcb0bf379d85c2d" category="section-title">용량 기반 라이선스의 충전 및 지원 구성</block>
+  <block id="42c1e1bd55f7468cc1c1f67bd3b2e55e" category="paragraph">Cloud Volumes ONTAP 의 요금은 패키지 및 볼륨 유형 등 여러 요인에 따라 결정됩니다. 용량 기반 라이선싱 패키지는 Cloud Volumes ONTAP 9.7 이상에서 사용할 수 있습니다.</block>
+  <block id="d52f05c9c9a1d28edf0a8c353fa4005c" category="paragraph">용량 기반 라이선싱을 사용하는 경우, NetApp Console 조직당 Cloud Volumes ONTAP 시스템의 최대 수는 24개로 제한됩니다. _시스템_은 Cloud Volumes ONTAP HA 쌍, Cloud Volumes ONTAP 단일 노드 시스템 또는 사용자가 생성하는 추가 스토리지 VM입니다. 기본 스토리지 VM은 제한에 포함되지 않습니다. 이 제한은 모든 라이선스 모델에 적용됩니다.</block>
+  <block id="f06bb25c94e6b1aa8710c80dd3586a02" category="paragraph">총 6개의 시스템이 있습니다. 그러면 조직 내에 14개의 시스템을 추가로 수용할 수 있는 여유가 생깁니다.</block>
+  <block id="39f86900550d222b0169a7f96cfef9a1" category="paragraph">24개 이상의 시스템이 필요한 대규모 배포의 경우, 고객 담당자나 영업팀에 문의하세요.</block>
+  <block id="a8fb53b4243112b2693e2c613f675091" category="section-title">읽기/쓰기 볼륨에 대한 요금 청구</block>
+  <block id="84bd415e73410ff40bbdb14fc761f16b" category="paragraph">쓰기 가능한(읽기/쓰기) 볼륨을 생성하거나 사용하는 경우 해당 볼륨은 기본 볼륨으로 간주되며 스토리지 VM(SVM)당 최소 요금을 기준으로 프로비저닝된 용량에 대한 요금이 청구됩니다.  예로는 FlexVol 읽기/쓰기 볼륨, SnapLock 감사 볼륨, CIFS/NFS 감사 볼륨이 있습니다.  사용자가 생성한 모든 데이터 볼륨은 구독 및 패키지 유형에 따라 요금이 청구됩니다.  SVM 루트 볼륨과 같이 자동으로 생성되어 데이터를 저장할 수 없는 ONTAP 내부 볼륨에는 요금이 부과되지 않습니다.</block>
+  <block id="1c7cc97d04b2c06b7aed1dbd999a1224" category="inline-link-macro">Cloud Volumes ONTAP 의 라이선싱 및 요금 청구</block>
+  <block id="fbba812442fbd9038d179b574eadad39" category="list-text"><block ref="fbba812442fbd9038d179b574eadad39" category="inline-link-macro-rx"></block></block>
+  <block id="d6719354559c5d34c9043df89f6f5853" category="list-text">WORM에 대한 자세한 내용은 다음을 참조하세요.<block ref="ff3d1f58a19f3b8e0bab491b41acecc3" category="inline-link-macro-rx"></block> .</block>
+  <block id="faacd8dd11a17b7255f09589dcbcd3eb" category="list-text">SnapLock 볼륨 충전에 대한 정보는 다음을 참조하세요.<block ref="fbba812442fbd9038d179b574eadad39" category="inline-link-macro-rx"></block> .</block>
+  <block id="d3a90b06c127d63ce537a10a93397d85" category="paragraph">기존 Cloud Volumes ONTAP 시스템을 검색하여 NetApp Console 에 추가할 수 있습니다. 새로운 시스템을 배포한 경우 이 작업을 수행할 수 있습니다.</block>
+  <block id="b478e45f14d8c22f3f75f65edd503adc" category="admonition">콘솔에 로그인하는 데 사용한 계정으로 등록된 시스템만 추가할 수 있습니다.  여러 계정이나 조직이 있는 경우 시스템을 추가하기 전에 올바른 계정에 로그인했는지 확인하세요.  다른 계정이나 조직에 등록된 시스템은 검색, 보기 또는 관리할 수 없습니다.</block>
+  <block id="77750efa6f5ff153acdc42067058017f" category="section-title">2025년 11월 10일</block>
 </blocks>
