@@ -5910,7 +5910,6 @@
   <block id="049b7b9fab1242f5e715952973c9474d" category="list-text">기존 사례를 관리하려면 다음을 선택하세요.<block ref="7381d9baeaf62eb099ce84f1a21ed5ca" category="inline-image-macro-rx" type="image"></block> 그리고 사용 가능한 옵션 중 하나를 선택하세요:</block>
   <block id="a58a19877ed0bf7f9b6d06fdd8387763" category="paragraph">NetApp Console 에서 Cloud Volumes ONTAP 과 함께 사용할 구독을 활성화하고 구독 서비스 수준에 대한 커밋된 용량 변경을 요청하여 Keystone 구독을 관리합니다. 서비스 수준에 대한 추가 용량을 요청하면 Cloud Volumes ONTAP 시스템에 더 많은 스토리지가 제공됩니다.</block>
   <block id="df5e66b5e7999995b53a0f100212d79f" category="paragraph">콘솔에서 Keystone 구독을 사용하고 관리하려면 먼저 NetApp 에 ​​문의하여 Keystone 구독으로 콘솔 계정을 인증해야 합니다.</block>
-  <block id="0aa8bceb217782b5e4390aefe60d271f" category="list-text">NetApp Console 메뉴에서 *거버넌스 &gt; Licenses and subscriptions*을 선택합니다.</block>
   <block id="a53c428d90f592127da49a8d5a558130" category="paragraph">NetApp 담당자가 귀하의 계정에 구독에 대한 액세스를 승인하여 귀하의 요청을 처리합니다.</block>
   <block id="9c2f6d6e4376237ad065b1baa0ad822d" category="paragraph">이제 구독이 콘솔 조직이나 계정에 연결되었으며 Cloud Volumes ONTAP 작업 환경을 만들 때 선택할 수 있습니다.</block>
   <block id="10d2905ee5dfcb309d64e3633fb774c1" category="paragraph">구독 서비스 수준에 대한 약정 용량을 변경하려면 콘솔에서 직접 NetApp 에 ​​요청을 보낼 수 있습니다. 서비스 수준에 대한 추가 용량을 요청하면 Cloud Volumes ONTAP 시스템에 더 많은 스토리지가 제공됩니다.</block>
@@ -6029,4 +6028,6 @@
   <block id="d3a90b06c127d63ce537a10a93397d85" category="paragraph">기존 Cloud Volumes ONTAP 시스템을 검색하여 NetApp Console 에 추가할 수 있습니다. 새로운 시스템을 배포한 경우 이 작업을 수행할 수 있습니다.</block>
   <block id="b478e45f14d8c22f3f75f65edd503adc" category="admonition">콘솔에 로그인하는 데 사용한 계정으로 등록된 시스템만 추가할 수 있습니다.  여러 계정이나 조직이 있는 경우 시스템을 추가하기 전에 올바른 계정에 로그인했는지 확인하세요.  다른 계정이나 조직에 등록된 시스템은 검색, 보기 또는 관리할 수 없습니다.</block>
   <block id="77750efa6f5ff153acdc42067058017f" category="section-title">2025년 11월 10일</block>
+  <block id="02fd9216d7e373ffe2ab6061c04d9957" category="list-text">9.17.1 P1</block>
+  <block id="9ef810f213faea9695f8494f68387049" category="list-text">NetApp Console 메뉴에서 *관리 &gt; Licenses and subscriptions*을 선택합니다.</block>
 </blocks>
