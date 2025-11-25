@@ -70,7 +70,7 @@ NetApp 에서 라이선스(BYOL)를 구매하여 선불로 지불하면 모든 �
 NOTE: NetApp BYOL 라이선스 구매, 연장 및 갱신을 제한하고 있습니다. 자세한 내용은 다음을 참조하세요.  https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/whats-new.html#restricted-availability-of-byol-licensing-for-cloud-volumes-ontap["Cloud Volumes ONTAP 에 대한 BYOL 라이선싱의 제한된 가용성"^] .
 
 .단계
-. https://bluexp.netapp.com/contact-cds["라이센스를 얻으려면 NetApp Sales에 문의하세요."^]
+. https://www.netapp.com/forms/sales-contact/["라이센스를 얻으려면 NetApp Sales에 문의하세요."^]
 . https://docs.netapp.com/us-en/bluexp-setup-admin/task-adding-nss-accounts.html#add-an-nss-account["콘솔에 NetApp 지원 사이트 계정 추가"^]
 +
 콘솔은 NetApp 지원 사이트 계정과 연결된 라이선스에 대한 세부 정보를 얻기 위해 NetApp 라이선스 서비스에 자동으로 쿼리를 보냅니다.  오류가 없으면 콘솔이 자동으로 라이선스를 콘솔에 추가합니다.

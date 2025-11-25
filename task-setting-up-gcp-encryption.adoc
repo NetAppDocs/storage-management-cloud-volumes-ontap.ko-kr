@@ -19,7 +19,7 @@ Google Cloud Storage는 디스크에 쓰기 전에 항상 데이터를 암호화
 .단계
 . 키가 저장된 프로젝트에서 콘솔 에이전트 서비스 계정에 프로젝트 수준에서 올바른 권한이 있는지 확인하세요.
 +
-권한은 다음에서 제공됩니다. https://docs.netapp.com/us-en/bluexp-setup-admin/reference-permissions-gcp.html["기본적으로 서비스 계정 권한"^] 하지만 Cloud Key Management Service에 대한 대체 프로젝트를 사용하는 경우 적용되지 않을 수 있습니다.
+권한은 다음에서 제공됩니다. https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-gcp.html["기본적으로 서비스 계정 권한"^] 하지만 Cloud Key Management Service에 대한 대체 프로젝트를 사용하는 경우에는 적용되지 않을 수 있습니다.
 
 +
 권한은 다음과 같습니다.

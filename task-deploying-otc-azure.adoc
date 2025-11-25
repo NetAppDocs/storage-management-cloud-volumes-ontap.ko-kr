@@ -71,7 +71,7 @@ Azure에서 단일 노드 Cloud Volumes ONTAP 시스템을 시작하려면 콘�
 | 시스템 이름 | 콘솔은 시스템 이름을 사용하여 Cloud Volumes ONTAP 시스템과 Azure 가상 머신의 이름을 지정합니다.  해당 옵션을 선택하면 사전 정의된 보안 그룹의 접두사로도 이름이 사용됩니다. 
 
 
-| 리소스 그룹 태그 | 태그는 Azure 리소스에 대한 메타데이터입니다.  이 필드에 태그를 입력하면 콘솔이 Cloud Volumes ONTAP 시스템과 연결된 리소스 그룹에 태그를 추가합니다.  시스템을 생성할 때 사용자 인터페이스에서 최대 4개의 태그를 추가할 수 있으며, 시스템을 생성한 후에 태그를 더 추가할 수 있습니다.  API는 시스템을 생성할 때 태그를 4개로 제한하지 않습니다.  태그에 대한 정보는 다음을 참조하세요. https://azure.microsoft.com/documentation/articles/resource-group-using-tags/["Microsoft Azure 설명서: 태그를 사용하여 Azure 리소스 구성"^] . 
+| 리소스 그룹 태그 | 태그는 Azure 리소스에 대한 메타데이터입니다. 이 필드에 태그를 입력하면 콘솔이 Cloud Volumes ONTAP 시스템과 연결된 리소스 그룹에 태그를 추가합니다. 시스템을 생성할 때 사용자 인터페이스에서 최대 4개의 태그를 추가할 수 있으며, 시스템을 생성한 후에 태그를 더 추가할 수 있습니다. API는 시스템을 생성할 때 태그를 4개로 제한하지 않습니다. 태그에 대한 정보는 다음을 참조하세요. https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/tag-resources["Microsoft Azure 설명서: 태그를 사용하여 Azure 리소스 구성"^] . 
 
 
 | 사용자 이름과 비밀번호 | 이는 Cloud Volumes ONTAP 클러스터 관리자 계정의 자격 증명입니다.  이러한 자격 증명을 사용하면 ONTAP System Manager나 ONTAP CLI를 통해 Cloud Volumes ONTAP 에 연결할 수 있습니다.  기본 _admin_ 사용자 이름을 유지하거나 사용자 지정 사용자 이름으로 변경하세요. 
@@ -294,7 +294,7 @@ Azure에서 Cloud Volumes ONTAP HA 쌍을 시작하려면 콘솔에서 HA 시스
 | 시스템 이름 | 콘솔은 시스템 이름을 사용하여 Cloud Volumes ONTAP 시스템과 Azure 가상 머신의 이름을 지정합니다.  해당 옵션을 선택하면 사전 정의된 보안 그룹의 접두사로도 이름이 사용됩니다. 
 
 
-| 리소스 그룹 태그 | 태그는 Azure 리소스에 대한 메타데이터입니다.  이 필드에 태그를 입력하면 콘솔이 Cloud Volumes ONTAP 시스템과 연결된 리소스 그룹에 태그를 추가합니다.  시스템을 생성할 때 사용자 인터페이스에서 최대 4개의 태그를 추가할 수 있으며, 시스템을 생성한 후에 태그를 더 추가할 수 있습니다.  API는 시스템을 생성할 때 태그를 4개로 제한하지 않습니다.  태그에 대한 정보는 다음을 참조하세요. https://azure.microsoft.com/documentation/articles/resource-group-using-tags/["Microsoft Azure 설명서: 태그를 사용하여 Azure 리소스 구성"^] . 
+| 리소스 그룹 태그 | 태그는 Azure 리소스에 대한 메타데이터입니다. 이 필드에 태그를 입력하면 콘솔이 Cloud Volumes ONTAP 시스템과 연결된 리소스 그룹에 태그를 추가합니다. 시스템을 생성할 때 사용자 인터페이스에서 최대 4개의 태그를 추가할 수 있으며, 시스템을 생성한 후에 태그를 더 추가할 수 있습니다. API는 시스템을 생성할 때 태그를 4개로 제한하지 않습니다. 태그에 대한 정보는 다음을 참조하세요. https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/tag-resources["Microsoft Azure 설명서: 태그를 사용하여 Azure 리소스 구성"^] . 
 
 
 | 사용자 이름과 비밀번호 | 이는 Cloud Volumes ONTAP 클러스터 관리자 계정의 자격 증명입니다.  이러한 자격 증명을 사용하면 ONTAP System Manager나 ONTAP CLI를 통해 Cloud Volumes ONTAP 에 연결할 수 있습니다.  기본 _admin_ 사용자 이름을 유지하거나 사용자 지정 사용자 이름으로 변경하세요. 

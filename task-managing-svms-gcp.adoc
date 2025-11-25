@@ -45,7 +45,7 @@ API를 사용하여 스토리지 VM을 생성하고 필요한 네트워크 인�
 
 
 .시작하기 전에
-콘솔 에이전트에는 Cloud Volumes ONTAP HA 쌍에 대한 스토리지 VM을 생성하기 위한 특정 권한이 필요합니다.  필요한 권한이 포함되어 있습니다. https://docs.netapp.com/us-en/bluexp-setup-admin/reference-permissions-gcp.html["NetApp 에서 제공하는 정책"^] .
+콘솔 에이전트에는 Cloud Volumes ONTAP HA 쌍에 대한 스토리지 VM을 생성하기 위한 특정 권한이 필요합니다. 필요한 권한이 포함되어 있습니다. https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-gcp.html["NetApp 에서 제공하는 정책"^] .
 
 
 
@@ -86,7 +86,7 @@ API를 사용하여 스토리지 VM을 생성하고 필요한 네트워크 인�
 API를 사용하면 단일 노드와 HA 구성 모두에서 스토리지 VM의 이름을 바꾸고 삭제할 수 있습니다.
 
 .시작하기 전에
-콘솔 에이전트에는 Cloud Volumes ONTAP HA 쌍의 스토리지 VM을 관리하기 위한 특정 권한이 필요합니다.  필요한 권한이 포함되어 있습니다. https://docs.netapp.com/us-en/bluexp-setup-admin/reference-permissions-gcp.html["NetApp 에서 제공하는 정책"^] .
+콘솔 에이전트에는 Cloud Volumes ONTAP HA 쌍의 스토리지 VM을 관리하기 위한 특정 권한이 필요합니다. 필요한 권한이 포함되어 있습니다. https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-gcp.html["NetApp 에서 제공하는 정책"^] .
 
 
 

@@ -24,7 +24,7 @@ NOTE: NetApp Backup and Recovery 에서 관리하는 백업과 NetApp Data Class
 콘솔이 클라우드 공급자에 Cloud Volumes ONTAP 배포하면 인스턴스에 대한 종료 보호가 활성화됩니다.  이 옵션은 실수로 종료되는 것을 방지하는 데 도움이 됩니다.
 
 .단계
-. 시스템에서 백업 및 복구를 활성화한 경우 백업된 데이터가 여전히 필요한지 확인한 다음 https://docs.netapp.com/us-en/bluexp-backup-recovery/task-manage-backups-ontap.html#deleting-backups["필요한 경우 백업을 삭제하세요"^] .
+. 시스템에서 백업 및 복구를 활성화한 경우 백업된 데이터가 여전히 필요한지 확인한 다음 https://docs.netapp.com/us-en/data-services-backup-recovery/prev-ontap-backup-manage.html#delete-backups["필요한 경우 백업을 삭제하세요"^] .
 +
 백업 및 복구는 설계상 Cloud Volumes ONTAP 과 독립적입니다.  백업 및 복구 기능은 Cloud Volumes ONTAP 시스템을 삭제할 때 자동으로 백업을 삭제하지 않으며, 시스템이 삭제된 후 백업을 삭제하는 UI 지원도 현재 제공되지 않습니다.
 
