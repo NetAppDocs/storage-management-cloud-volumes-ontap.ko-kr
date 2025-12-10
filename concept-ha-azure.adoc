@@ -74,6 +74,11 @@ Azure 표준 부하 분산 장치:: 로드 밸런서는 Cloud Volumes ONTAP HA �
 
 
 --
+
+
+
+NOTE: 위의 기준을 충족하는 환경에 대해 프리미엄 SSD 관리형 디스크를 선택하면 콘솔에서 프리미엄 SSD v2 관리형 디스크를 자동으로 배포합니다. Premium SSD v1 Managed Disks로 전환할 수 없습니다.
+
 디스크:: 고객 데이터는 로컬 중복 스토리지(LRS) 관리 디스크에 저장됩니다.  각 노드는 다른 노드의 저장소에 접근할 수 있습니다.  추가 저장 공간도 필요합니다.link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/reference-default-configs.html#azure-ha-pair["부팅, 루트, 파트너 루트, 코어 및 NVRAM 데이터"^] .
 저장 계정:: 스토리지 계정은 진단 로그를 처리하고 Blob 스토리지로 계층화하기 위해 관리형 디스크 기반 배포에 사용됩니다.
 

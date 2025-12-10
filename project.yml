@@ -175,6 +175,9 @@ sidebar:
         url: "/task-manage-aggregates.html"
       - title: 용량 설정 관리
         url: "/task-manage-capacity-settings.html"
+      - title: Azure에서 Premium SSD v2 디스크 성능을 관리하세요.
+        flavor: azure
+        url: "/task-manage-perf-params-azure.html"
     - title: 스토리지 VM 관리
       entries:
       - title: 스토리지 VM 작업

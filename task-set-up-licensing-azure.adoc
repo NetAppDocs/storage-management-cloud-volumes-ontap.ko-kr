@@ -49,7 +49,7 @@ link:task-deploying-otc-azure.html["Azure에서 Cloud Volumes ONTAP 시작하기
 
 용량 기반 라이선싱을 사용하면 TiB 용량당 Cloud Volumes ONTAP 비용을 지불할 수 있습니다. 용량 기반 라이선싱은 패키지 형태로 제공됩니다. 패키지에는 Essentials 패키지와 Professional 패키지가 있습니다.
 
-Essentials 및 Professional 패키지는 다음과 같은 소비 모델로 제공됩니다.
+Essentials 및 Professional 패키지는 다음과 같은 소비 모델 또는 구매 옵션으로 이용 가능합니다.
 
 * NetApp 에서 구매한 라이선스(BYOL(Bring Your Own License))
 * Azure Marketplace의 시간당, 사용량에 따라 지불(PAYGO) 구독
@@ -175,3 +175,14 @@ image:screenshot-keystone.png["Cloud Volumes ONTAP 시스템을 생성할 때 Ke
 
 
 link:task-deploying-otc-azure.html["Azure에서 Cloud Volumes ONTAP 시작하기 위한 단계별 지침을 확인하세요."] .
+
+
+
+== 노드 기반 라이센스
+
+노드 기반 라이선스는 Cloud Volumes ONTAP 의 이전 세대 라이선스입니다. 노드 기반 라이선스는 NetApp (BYOL)에서 구매할 수 있으며, 특정 경우에만 라이선스를 갱신할 수 있습니다. 자세한 내용은 다음을 참조하세요.
+
+* https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/whats-new.html#end-of-availability-for-node-based-licenses["노드 기반 라이선스의 가용성 종료"^]
+* https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-licensing.html#end-of-availability-of-node-based-licenses["노드 기반 라이선스 제공 종료"^]
+* https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-convert-node-capacity.html["노드 기반 라이선스를 용량 기반 라이선스로 변환"^]
+
