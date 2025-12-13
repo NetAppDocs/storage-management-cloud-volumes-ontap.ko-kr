@@ -6083,4 +6083,38 @@
   <block id="174dd97dd1f160583ac76fa482fa6a5e" category="section-title">2025년 12월 10일</block>
   <block id="1760c97f466ea374318a8c0bedcb2aff" category="section-title">2025년 11월 11일</block>
   <block id="291909ca7f153a0249c5e8ab37e16843" category="sidebar">Azure에서 Premium SSD v2 디스크 성능을 관리하세요.</block>
+  <block id="0494190504419ddec15209e57cb422e1" category="doc">Azure Cloud Volumes ONTAP 에서 프리미엄 SSD 디스크의 성능 계층을 변경합니다.</block>
+  <block id="953d65863cd6da0e48671f2a30151ae4" category="paragraph">Azure 포털을 사용하여 Azure의 Cloud Volumes ONTAP 에서 프리미엄 SSD 관리 디스크의 성능 등급을 업그레이드할 수 있습니다. 이는 각 프리미엄 SSD 디스크의 디스크 티어를 더 높은 성능 티어로 변경하는 수동 프로세스입니다. NVRAM 디스크의 성능 등급을 변경하면 더 높은 IOPS 및 처리량 기능을 제공하여 성능 병목 현상을 완화하고 Cloud Volumes ONTAP 시스템의 효율성을 향상시킬 수 있습니다.</block>
+  <block id="39264f9aea8b7bf4280c732e8f7fcce0" category="list-text">Azure의 Cloud Volumes ONTAP 기본적으로 P20 계층에 NVRAM 용으로 프리미엄 SSD 디스크를 배포합니다. P20 등급은 대부분의 작업 부하에 적합한 균형 잡힌 성능을 제공합니다. 하지만 작업 부하에 더 높은 성능이 요구되는 경우 NVRAM 디스크를 P30과 같은 상위 등급으로 업그레이드할 수 있습니다.</block>
+  <block id="5984acab069d2008cdff0ddd10ef35a8" category="admonition">현재로서는 Azure 포털을 통해서만 NVRAM 디스크를 P20 티어에서 P30 티어로 업그레이드할 수 있습니다.</block>
+  <block id="686adea694e622fed8c665723cc0407f" category="list-text">디스크 크기는 변경하지 않습니다. 용량은 여전히 512GB입니다. 이 절차는 디스크의 성능 등급만 변경합니다.</block>
+  <block id="60148540e7bc47a2a5cb3aa5c6669625" category="list-text">Cloud Volumes ONTAP 버전은 9.11.1 이상이어야 합니다. 하위 버전의 경우 9.11.1 이상 버전으로 업그레이드하거나 NetApp 지원팀에 기능 정책 변경 요청(FPVR)을 제출할 수 있습니다.</block>
+  <block id="a779e934fd58bae998629bc70c905a6e" category="list-text">NetApp 지원팀과 협력하여 환경에서 발생하는 병목 현상이 NVRAM 디스크 때문인지 확인하고, 티어 업그레이드를 통해 문제가 해결되는지 확인하십시오.</block>
+  <block id="d7cdcc7698a8a9000d22166d03400c69" category="admonition">NVRAM 디스크를 더 높은 성능 등급으로 업그레이드하면 추가 비용이 발생하므로 이러한 변경의 필요성을 신중하게 평가하는 것이 중요합니다.</block>
+  <block id="9d0625da71c4c34eb7b785d5b10361f5" category="paragraph">이 시나리오는 노드가 두 개 있다고 가정합니다.<block ref="705cc8c4aab2c0dfb3a3f280da16760d" prefix=" " category="inline-code"></block> 그리고<block ref="f43c51286fe1559c6253e0b37ec045c6" prefix=" " category="inline-code"></block> Cloud Volumes ONTAP 고가용성(HA) 배포에서. Azure 포털을 사용하여 티어를 업그레이드하세요.</block>
+  <block id="1e723d832b26dbdada01d30484af1ea6" category="list-text">만들기 위해 이 명령어를 실행하세요<block ref="164546f60261c7e4be0c5f5f9aaeec86" prefix=" " category="inline-code"></block> 활성 노드. 수동 페일오버<block ref="f43c51286fe1559c6253e0b37ec045c6" prefix=" " category="inline-code"></block>.</block>
+  <block id="e4a4efef44785c5db0774c22b88b3301" category="paragraph"><block ref="be0eb3f3fba241dc79337017002bd31a" prefix="" category="inline-code"></block></block>
+  <block id="58c59ab4d5d488609913efa7b1daaa31" category="list-text">Azure Portal에 Sign in .</block>
+  <block id="5f941e16410c688a40f0976c92426378" category="list-text">인수 작업이 완료되면 VM 인스턴스로 이동하세요.<block ref="f43c51286fe1559c6253e0b37ec045c6" prefix=" " category="inline-code"></block>그리고 *정지* 버튼을 클릭하여 전원을 끄세요.</block>
+  <block id="08ef635e7ab7c2978a8da0246a2bef1e" category="list-text">해당 리소스 그룹으로 이동하세요.<block ref="f43c51286fe1559c6253e0b37ec045c6" prefix=" " category="inline-code"></block> 디스크 목록에서 티어를 변경할 NVRAM 디스크를 선택합니다.</block>
+  <block id="19780f0029ed99e7c8b502886df9f61f" category="list-text">크기와 성능을 모두 고려하여 선택하세요.</block>
+  <block id="114a05fccf6c6aacd4de79acbf15dce2" category="list-text">*성능 등급* 드롭다운 메뉴에서 선택하세요.<block ref="28c0b52834e0a18e7e32e03630f485b8" prefix=" " category="inline-code"></block>.</block>
+  <block id="90767910461b8d70bc912f880d198275" category="list-text">스위치를 켜세요<block ref="f43c51286fe1559c6253e0b37ec045c6" prefix=" " category="inline-code"></block> 사례.</block>
+  <block id="cab445d1f093cc47b00fe708d24a08b6" category="list-text">Azure 시리얼 콘솔에서 메시지가 표시될 때까지 확인하세요.<block ref="cbd30655d53ec6ae9cc96680b3199b33" prefix=" " category="inline-code"></block>.</block>
+  <block id="37080afbc9c16d84a8b0dcf8d15e364a" category="list-text">이 명령어를 실행하여 돌려주세요<block ref="f43c51286fe1559c6253e0b37ec045c6" prefix=" " category="inline-code"></block>:</block>
+  <block id="d7291565eea042b359c1236f8e4b7fa0" category="paragraph"><block ref="bed89ee1fbafd66cbd4bcbc687800764" prefix="" category="inline-code"></block></block>
+  <block id="5a3ba098de21fbfe363af698dbd7dc32" category="list-text">다음 단계를 반복하세요.<block ref="705cc8c4aab2c0dfb3a3f280da16760d" prefix=" " category="inline-code"></block> 만들다<block ref="f43c51286fe1559c6253e0b37ec045c6" prefix=" " category="inline-code"></block> 인수하다<block ref="705cc8c4aab2c0dfb3a3f280da16760d" prefix=" " category="inline-code"></block>이를 통해 NVRAM 디스크 계층을 업그레이드할 수 있습니다.<block ref="705cc8c4aab2c0dfb3a3f280da16760d" prefix=" " category="inline-code"></block>.</block>
+  <block id="5e26e33ae428b86d29f0358799b6806e" category="paragraph">두 노드를 모두 켠 후에는 Azure 포털에서 Cloud Volumes ONTAP 시스템의 디스크 세부 정보를 확인하여 수정된 매개변수를 검증하십시오.</block>
+  <block id="8861a5a41e4ab66de05c91c8f19bf580" category="inline-link">다운타임 없이 성능 등급을 변경하세요</block>
+  <block id="232bf8b7532401540b643eaaae491221" category="list-text">Azure 설명서:<block ref="4f2764b3c371428c87b46ab0450bdc24" category="inline-link-rx"></block></block>
+  <block id="8fa53b2742d3629d12d18aa0dbdee700" category="inline-link">Azure CVO에서 NVRAM 디스크의 성능 계층을 업그레이드하는 방법</block>
+  <block id="e82a97ebfb4ba5f5409423bac3464112" category="list-text">지원팀을 위한 지식 기반:<block ref="aaedf48f4606cb96bd6bd11286951eb0" category="inline-link-rx"></block></block>
+  <block id="a34f75833ce4fc9abef409835960230b" category="inline-link-macro">Cloud Volumes ONTAP 소프트웨어 버전 업그레이드</block>
+  <block id="0a92e86070d4977bdb2b95640510156c" category="list-text"><block ref="0a92e86070d4977bdb2b95640510156c" category="inline-link-macro-rx"></block></block>
+  <block id="038989a859c1ace454721be15bd0d6dd" category="section-title">HA 미디에이터에 대한 AWS IAM 정책에 새로운 권한이 추가되었습니다.</block>
+  <block id="d107a81761877e65b1d111ef64cd3c2a" category="paragraph">이러한 새로운 AWS 권한이 Cloud Volumes ONTAP 고가용성(HA) 환경의 HA 미들웨어용 IAM 정책에 추가되었습니다.</block>
+  <block id="60cfe31830d467874bb430da1683504e" category="list-text">sts:역할 가정</block>
+  <block id="fa70443be85a3feec8a5eb9d46413a96" category="list-text">ec2:서브넷 설명</block>
+  <block id="48f3ff89d323f3866cd390a624301cc2" category="sidebar">Azure에서 디스크 성능 관리</block>
+  <block id="3cf9ca795dbee25a8b72a8475b07c0fc" category="sidebar">Azure에서 디스크 성능 계층을 업그레이드하세요</block>
 </blocks>

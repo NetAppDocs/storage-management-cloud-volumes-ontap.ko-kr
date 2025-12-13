@@ -951,6 +951,16 @@ Azure의 호주 동부 지역은 이제 Cloud Volumes ONTAP 9.12.1 GA 이상에 
 
 
 
+=== HA 미디에이터에 대한 AWS IAM 정책에 새로운 권한이 추가되었습니다.
+
+이러한 새로운 AWS 권한이 Cloud Volumes ONTAP 고가용성(HA) 환경의 HA 미들웨어용 IAM 정책에 추가되었습니다.
+
+* sts:역할 가정
+* ec2:서브넷 설명
+
+
+
+
 == 2023년 4월 4일
 
 
