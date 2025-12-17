@@ -43,23 +43,19 @@ TIP: HA 쌍을 사용하는 경우 HA 중재자는 아웃바운드 인터넷 액
 
 == AutoSupport 구성 문제 해결
 
-아웃바운드 연결을 사용할 수 없고 콘솔에서 Cloud Volumes ONTAP 시스템이 콘솔 에이전트를 프록시 서버로 사용하도록 구성할 수 없는 경우, 콘솔에서 "<시스템 이름>이 AutoSupport 메시지를 보낼 수 없습니다."라는 제목의 알림을 받게 됩니다.
-
-귀하가 이 메시지를 받은 것은 아마도 네트워크 문제로 인해일 것입니다.
-
-이 문제를 해결하려면 다음 단계를 따르세요.
+외부 연결이 불가능하고 콘솔에서 Cloud Volumes ONTAP 시스템을 콘솔 에이전트를 프록시 서버로 사용하도록 구성할 수 없는 경우, 시스템에서 AutoSupport 메시지를 보낼 수 없다는 알림이 콘솔에서 표시됩니다. 이 문제를 해결하려면 다음 단계를 따르십시오.
 
 .단계
-. ONTAP CLI에서 시스템을 관리할 수 있도록 Cloud Volumes ONTAP 시스템에 SSH를 사용합니다.
+. ONTAP CLI를 사용하려면 SSH를 사용하여 Cloud Volumes ONTAP 시스템에 안전하게 연결하십시오.
 +
 link:task-connecting-to-otc.html["Cloud Volumes ONTAP 에 SSH하는 방법 알아보기"] .
 
-. AutoSupport 하위 시스템의 자세한 상태를 표시합니다.
+. AutoSupport 하위 시스템의 자세한 상태를 확인하십시오.
 +
 `autosupport check show-details`
 
 +
-응답은 다음과 유사해야 합니다.
+응답은 다음과 같습니다.
 
 +
 [listing]
@@ -95,9 +91,9 @@ link:task-connecting-to-otc.html["Cloud Volumes ONTAP 에 SSH하는 방법 알�
     5 entries were displayed.
 ----
 +
-http-https 카테고리의 상태가 "정상"이면 AutoSupport 가 올바르게 구성되었고 메시지를 보낼 수 있다는 의미입니다.
+http-https 카테고리의 상태가 다음과 같으면 `OK` 이는 AutoSupport 제대로 구성되어 메시지를 보낼 수 있음을 의미합니다.
 
-. 상태가 정상이 아닌 경우 각 Cloud Volumes ONTAP 노드의 프록시 URL을 확인하세요.
+. 그렇지 않다면 각 Cloud Volumes ONTAP 노드의 프록시 URL을 확인하십시오.
 +
 `autosupport show -fields proxy-url`
 
@@ -105,41 +101,31 @@ http-https 카테고리의 상태가 "정상"이면 AutoSupport 가 올바르게
 +
 `autosupport modify -proxy-url \http://<console agent private ip>:3128`
 
-. AutoSupport 상태를 다시 확인하세요.
+. AutoSupport 상태를 다시 확인하십시오.
 +
 `autosupport check show-details`
 
-. 상태가 여전히 실패인 경우 Cloud Volumes ONTAP 과 콘솔 에이전트가 포트 3128을 통해 연결되어 있는지 확인하세요.
-. 연결이 있는지 확인한 후에도 상태 ID가 여전히 실패하면 콘솔 에이전트에 SSH를 실행합니다.
+. 상태가 여전히 실패로 표시되는 경우, Cloud Volumes ONTAP 과 콘솔 에이전트 간에 포트를 통해 연결이 제대로 되어 있는지 확인하십시오. `3128`.
+. 확인 후에도 상태가 여전히 실패로 표시되면 콘솔 에이전트에 SSH로 접속하십시오.
 +
 https://docs.netapp.com/us-en/bluexp-setup-admin/task-maintain-connectors.html#connect-to-the-linux-vm["콘솔 에이전트를 위한 Linux VM 연결에 대해 자세히 알아보세요."^]
 
-. 로 가다 `/opt/application/netapp/cloudmanager/docker_occm/data/`
-. 프록시 구성 파일을 엽니다 `squid.conf`
-+
-파일의 기본 구조는 다음과 같습니다.
-
+. 가다 `/opt/application/netapp/cloudmanager/docker_occm/data/`.
+. 프록시 구성 파일을 엽니다. `squid.conf`. 파일의 구조는 다음과 같습니다.
 +
 [listing]
 ----
         http_port 3128
-        acl localnet src 172.31.0.0/16
-        acl azure_aws_metadata dst 169.254.169.254
-
-        http_access allow localnet
-        http_access deny azure_aws_metadata
-        http_access allow localhost
+        acl netapp_support dst support.netapp.com
+        http_access allow netapp_support
+        request_header_max_size 21 KB
+        reply_header_max_size 21 KB
         http_access deny all
+        httpd_suppress_version_string on
 ----
-+
-localnet src 값은 Cloud Volumes ONTAP 시스템의 CIDR입니다.
-
-. Cloud Volumes ONTAP 시스템의 CIDR 블록이 파일에 지정된 범위에 없으면 다음과 같이 값을 업데이트하거나 새 항목을 추가합니다.
+. 파일에 Cloud Volumes ONTAP 시스템의 CIDR 블록에 대한 항목이 없는 경우 새 항목을 추가하고 액세스를 허용하십시오.
 +
 `acl cvonet src <cidr>`
-
-+
-이 새로운 항목을 추가하는 경우 허용 항목도 추가하는 것을 잊지 마세요.
 
 +
 `http_access allow cvonet`
@@ -151,21 +137,24 @@ localnet src 값은 Cloud Volumes ONTAP 시스템의 CIDR입니다.
 [listing]
 ----
         http_port 3128
-        acl localnet src 172.31.0.0/16
-        acl cvonet src 172.33.0.0/16
-        acl azure_aws_metadata dst 169.254.169.254
-
-        http_access allow localnet
+        acl netapp_support dst support.netapp.com
+        acl cvonet src <cidr>
+        http_access allow netapp_support
         http_access allow cvonet
-        http_access deny azure_aws_metadata
-        http_access allow localhost
+        request_header_max_size 21 KB
+        reply_header_max_size 21 KB
         http_access deny all
-----
-. 구성 파일을 편집한 후 sudo로 프록시 컨테이너를 다시 시작합니다.
-+
-`docker restart squid`
+        httpd_suppress_version_string on
 
-. Cloud Volumes ONTAP CLI로 돌아가서 Cloud Volumes ONTAP AutoSupport 메시지를 보낼 수 있는지 확인하세요.
+----
+. 설정 파일을 편집한 후 프록시 컨테이너를 다시 시작하십시오. `sudo`. 그런 다음 Docker 또는 Podman을 사용하는지에 따라 다음 명령을 실행하세요.
++
+Docker의 경우, 다음 명령을 실행하세요. `docker restart squid`.
+
++
+Podman을 사용 중이라면 다음 명령을 실행하세요. `podman restart squid`.
+
+. ONTAP CLI로 돌아가서 Cloud Volumes ONTAP AutoSupport 메시지를 보낼 수 있는지 확인하십시오.
 +
 `autosupport check show-details`
 
