@@ -4742,9 +4742,6 @@
   <block id="b14d512a3c64fb5df16f6721b0603c63" category="paragraph">이 옵션을 사용하면 다시 로그인하라는 메시지가 표시됩니다. 이 계정의 토큰은 90일 후에 만료됩니다. 이에 대한 알림이 게시됩니다.</block>
   <block id="29e5950813e59366056c85a091ad2206" category="summary">NTP 서버를 지정하면 네트워크의 시스템 간 시간을 동기화하여 시간 차이로 인한 문제를 방지하는 데 도움이 될 수 있습니다.</block>
   <block id="b50f1f0d50a2ec5cb27990e7dcd7bc5a" category="doc">NTP 서버를 사용하여 Cloud Volumes ONTAP 시스템 시간 동기화</block>
-  <block id="ebf12fa39becba02eecf5cb8886fab60" category="inline-link-macro">CIFS 서버 생성</block>
-  <block id="360104bf3231cd79990fa62b469a3981" category="inline-link">NetApp Console API</block>
-  <block id="7ff31e38d13b7813d7a074235b820e43" category="paragraph">다음을 사용하여 NTP 서버를 지정하세요.<block ref="fa6731927386c9d49581436398e9c4cc" category="inline-link-rx"></block> 또는 사용자 인터페이스에서<block ref="f63e013edf4f3da2f43cd797b99d909b" category="inline-link-macro-rx"></block> .</block>
   <block id="b6f2459d07813a329f10d1f5ef7babc2" category="summary">자주 사용되는 데이터의 경우 SSD 또는 HDD 성능 계층을 사용하고, 비활성 데이터의 경우 객체 스토리지 용량 계층을 사용하면 Cloud Volumes ONTAP 의 스토리지 비용을 줄일 수 있습니다.  데이터 계층화는 FabricPool 기술을 기반으로 합니다.</block>
   <block id="dc856ecc0acf613e6f450c313f378cfd" category="doc">비활성 Cloud Volumes ONTAP 데이터를 저렴한 개체 스토리지로 계층화합니다.</block>
   <block id="caf4154dd66e202bf9f092a3b5b9f070" category="paragraph">자주 사용되는 데이터의 경우 SSD 또는 HDD 성능 계층을 사용하고, 비활성 데이터의 경우 객체 스토리지 용량 계층을 사용하면 Cloud Volumes ONTAP 의 스토리지 비용을 줄일 수 있습니다.  데이터 계층화는 FabricPool 기술을 기반으로 합니다.  상위 수준 개요는 다음을 참조하세요.<block ref="69d3706831f999336fb27703356dae22" category="inline-link-macro-rx"></block> .</block>
@@ -6112,4 +6109,13 @@
   <block id="980dfdd6fab780885793f0ec42399ae0" category="paragraph">Docker의 경우, 다음 명령을 실행하세요.<block ref="b1831e4c01f17e88347609d404d308c0" prefix=" " category="inline-code"></block>.</block>
   <block id="007b7067c04893459ac324df1874eb1e" category="paragraph">Podman을 사용 중이라면 다음 명령을 실행하세요.<block ref="db80c2b4c5690b79ed051a59a7bb3556" prefix=" " category="inline-code"></block>.</block>
   <block id="1432f9e7501db8840fbc871624751a97" category="list-text">ONTAP CLI로 돌아가서 Cloud Volumes ONTAP AutoSupport 메시지를 보낼 수 있는지 확인하십시오.</block>
+  <block id="64a4db9697928f2dbd10d78715e195e9" category="paragraph">정확한 시간 동기화를 위해서는 Cloud Volumes ONTAP 시스템에 네트워크 시간 프로토콜(NTP) 서버를 설정해야 합니다. Cloud Volumes ONTAP 시스템의 네트워크 내 시간 동기화를 일관되게 유지하려면 모든 클라우드 공급자에 NTP 서버를 구성해야 합니다.</block>
+  <block id="f1b0d7a969d501d016a0fd481082d0c1" category="admonition">NTP 서버를 구성하지 않으면 서비스 중단 및 시간 동기화 오류가 발생할 수 있습니다.</block>
+  <block id="3d2f72d3a57dc2978e458a4280c76291" category="paragraph">다음과 같이 NTP 서버를 지정할 수 있습니다.</block>
+  <block id="29cb192badbe18daa5e6987be7d6ee48" category="inline-link">NetApp Console API</block>
+  <block id="c469bf183e0ed4757464e13ff9d88b30" category="list-text"><block ref="44a005bb7629cee544dcbf8810a935c4" category="inline-link-rx"></block>.</block>
+  <block id="2e5b00a7734f4716b08d44d8793d1795" category="inline-link">클러스터 시간 서비스 NTP 서버 생성</block>
+  <block id="3710ce76a11b1e405952396fc26f3b70" category="list-text">ONTAP CLI 명령<block ref="c7c9a5780d764460cfc24460dd9925c7" category="inline-link-rx"></block>.</block>
+  <block id="3978bd36e4baf3e39f68ed4d2e55c90c" category="inline-link">CVO 클러스터는 NTP를 어떻게 사용합니까?</block>
+  <block id="f1ee234257665a0acbef24f24801a1c2" category="list-text">기술 자료(KB) 문서:<block ref="8599f7093d610d16c082becd99a24134" category="inline-link-rx"></block></block>
 </blocks>
