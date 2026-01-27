@@ -46,6 +46,10 @@ ONTAP System Manager나 ONTAP CLI를 사용해서는 안 되며, 오직 콘솔�
 
 ifdef::aws[]
 
+
+
+==== AWS에서 지원되는 업그레이드 경로
+
 [cols="2*"]
 |===
 | 현재 버전 | 직접 업그레이드할 수 있는 버전 
@@ -147,6 +151,10 @@ endif::aws[]
 
 ifdef::azure[]
 
+
+
+==== Azure에 지원되는 업그레이드 경로
+
 [cols="2*"]
 |===
 | 현재 버전 | 직접 업그레이드할 수 있는 버전 
@@ -180,6 +188,10 @@ Azure에 이전 버전의 Cloud Volumes ONTAP 있는 경우 먼저 다음 버전
 endif::azure[]
 
 ifdef::gcp[]
+
+
+
+==== Google Cloud에 대해 지원되는 업그레이드 경로
 
 [cols="2*"]
 |===
