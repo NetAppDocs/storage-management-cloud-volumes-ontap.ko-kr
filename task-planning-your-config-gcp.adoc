@@ -38,7 +38,7 @@ Cloud Volumes ONTAP 대부분의 Google Cloud 지역에서 지원됩니다. http
 
 Cloud Volumes ONTAP 선택한 라이선스 유형에 따라 여러 가지 머신 유형을 지원합니다.
 
-https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-gcp.html["GCP의 Cloud Volumes ONTAP 에 지원되는 구성"^]
+https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-gcp.html["Google Cloud에서 Cloud Volumes ONTAP에 대해 지원되는 구성"^]
 
 
 
@@ -46,11 +46,11 @@ https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-gcp
 
 Cloud Volumes ONTAP 시스템의 원시 용량 제한은 라이선스에 따라 결정됩니다.  추가적인 제한은 골재와 부피의 크기에 영향을 미칩니다.  구성을 계획할 때 이러한 제한 사항을 알고 있어야 합니다.
 
-https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-limits-gcp.html["GCP의 Cloud Volumes ONTAP 대한 스토리지 한도"^]
+https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-limits-gcp.html["Google Cloud의 Cloud Volumes ONTAP 스토리지 제한 사항"^]
 
 
 
-== GCP에서 시스템 크기 조정
+== Google Cloud에서 시스템 크기 조정
 
 Cloud Volumes ONTAP 시스템의 크기를 조정하면 성능 및 용량 요구 사항을 충족하는 데 도움이 될 수 있습니다.  머신 유형, 디스크 유형 및 디스크 크기를 선택할 때 몇 가지 핵심 사항을 알아야 합니다.
 
@@ -64,7 +64,7 @@ Cloud Volumes ONTAP 시스템의 크기를 조정하면 성능 및 용량 요구
 
 
 --
-GCP 디스크 유형:: Cloud Volumes ONTAP 에 대한 볼륨을 생성할 때 Cloud Volumes ONTAP 디스크에 사용하는 기본 클라우드 스토리지를 선택해야 합니다.  디스크 유형은 다음 중 하나일 수 있습니다.
+디스크 유형:: Cloud Volumes ONTAP 에 대한 볼륨을 생성할 때 Cloud Volumes ONTAP 디스크에 사용하는 기본 클라우드 스토리지를 선택해야 합니다.  디스크 유형은 다음 중 하나일 수 있습니다.
 +
 --
 * _영역별 SSD 영구 디스크_: SSD 영구 디스크는 높은 속도의 무작위 IOPS가 필요한 워크로드에 가장 적합합니다.
@@ -76,7 +76,7 @@ GCP 디스크 유형:: Cloud Volumes ONTAP 에 대한 볼륨을 생성할 때 Cl
 
 
 --
-GCP 디스크 크기:: Cloud Volumes ONTAP 시스템을 배포할 때 초기 디스크 크기를 선택해야 합니다.  그 후에는 NetApp Console 사용하여 시스템 용량을 관리할 수 있지만 직접 집계를 구축하려는 경우 다음 사항에 유의하세요.
+디스크 크기:: Cloud Volumes ONTAP 시스템을 배포할 때 초기 디스크 크기를 선택해야 합니다.  그 후에는 NetApp Console 사용하여 시스템 용량을 관리할 수 있지만 직접 집계를 구축하려는 경우 다음 사항에 유의하세요.
 +
 --
 * 집계된 모든 디스크의 크기는 동일해야 합니다.
@@ -115,13 +115,13 @@ TIP: 콘솔 에이전트에도 시스템 디스크가 필요합니다. https://d
 
 == 네트워킹 정보 수집
 
-GCP에 Cloud Volumes ONTAP 배포하는 경우 가상 네트워크에 대한 세부 정보를 지정해야 합니다.  워크시트를 사용하여 관리자로부터 정보를 수집할 수 있습니다.
+Google Cloud에 Cloud Volumes ONTAP을 배포할 때 가상 네트워크에 대한 세부 정보를 지정해야 합니다. 워크시트를 사용하여 관리자로부터 정보를 수집할 수 있습니다.
 
 *단일 노드 시스템에 대한 네트워크 정보*
 
 [cols="30,70"]
 |===
-| GCP 정보 | 당신의 가치 
+| Google Cloud 정보 | 당신의 가치 
 
 
 | 지역 |  
@@ -142,7 +142,7 @@ GCP에 Cloud Volumes ONTAP 배포하는 경우 가상 네트워크에 대한 세
 
 [cols="30,70"]
 |===
-| GCP 정보 | 당신의 가치 
+| Google Cloud 정보 | 당신의 가치 
 
 
 | 지역 |  
@@ -175,7 +175,7 @@ GCP에 Cloud Volumes ONTAP 배포하는 경우 가상 네트워크에 대한 세
 
 [cols="30,70"]
 |===
-| GCP 정보 | 당신의 가치 
+| Google Cloud 정보 | 당신의 가치 
 
 
 | 지역 |  

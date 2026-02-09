@@ -1,0 +1,241 @@
+---
+sidebar: sidebar 
+permalink: task-gcp-dm-im-conv.html 
+keywords: manual conversion tool, gcp dm im conversion, gcp deployment manager to infrastructure manager, gcp dm to im conversion 
+summary: 기존 Google Cloud 배포 환경의 경우 시스템을 Cloud Volumes ONTAP 9.16.1 이상으로 업그레이드한 다음 Google Cloud Deployment Manager에서 Cloud Infrastructure Manager로 전환하는 전환 도구를 수동으로 실행해야 합니다. 
+---
+= 기존 Cloud Volumes ONTAP 배포를 Infrastructure Manager로 전환합니다.
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+2026년 1월 12일부터 Google Cloud에서 새로 배포하는 Cloud Volumes ONTAP은 Google Cloud Infrastructure Manager를 사용할 수 있습니다. Google은 Google Cloud Deployment Manager를 Infrastructure Manager로 대체할 예정입니다. 따라서 기존 Cloud Volumes ONTAP 배포를 Deployment Manager에서 Infrastructure Manager로 전환하려면 전환 도구를 수동으로 실행해야 합니다. 이 과정은 한 번만 수행하면 되며, 전환 후에는 시스템이 자동으로 Infrastructure Manager를 사용하게 됩니다.
+
+.이 작업에 관하여
+전환 도구는 https://mysupport.netapp.com/site/products/all/details/cloud-volumes-ontap/downloads-tab["NetApp 지원 사이트"^]에서 사용할 수 있으며 다음과 같은 산출물을 생성합니다.
+
+*  `conversion_output/deployment_name`에 저장된 Terraform 아티팩트.
+* 변환 요약이 `conversion_output/batch_summary_<deployment_name>_<timestamp>.json`에 저장되었습니다.
+* 디버그 로그는  `<gcp project number>-<region>-blueprint-config/<cvo name>` 디렉터리에 저장됩니다. 문제 해결을 위해 이 로그가 필요합니다.  `<gcp project number>-<region>-blueprint-config` 버킷에는 Terraform 로그가 저장됩니다.
+
+
+[CAUTION]
+====
+Infrastructure Manager를 사용하는 Cloud Volumes ONTAP 시스템은 데이터와 레코드를 Google Cloud Storage 버킷에 저장합니다. 이러한 버킷에 대해 추가 비용이 발생할 수 있지만 버킷이나 해당 콘텐츠를 편집하거나 삭제하지 마십시오.
+
+* `gs://netapp-cvo-infrastructure-manager-<project id>/dm-to-im-convert`: Cloud Volumes ONTAP Terraform 파일 저장용
+* `<gcp project number>-<region>-blueprint-config`: Google Cloud Terraform 아티팩트 저장용
+
+
+====
+.시작하기 전에
+* Cloud Volumes ONTAP 시스템이 9.16.1 이상인지 확인하십시오.
+* Google Cloud Console에서 Cloud Volumes ONTAP 리소스 또는 해당 속성이 수동으로 편집되지 않았는지 확인하십시오.
+* Google Cloud API가 사용 설정되어 있는지 확인하세요.  https://docs.netapp.com/us-en/console-setup-admin/task-install-agent-google-gcloud.html#step-5-enable-google-cloud-apis["Google Cloud API 활성화"^]를 참조하십시오. 다른 API와 함께 Google Cloud Quotas API도 사용 설정해야 합니다.
+* NetApp Console 에이전트의 서비스 계정에 필요한 모든 권한이 있는지 확인하십시오. 을 참조하십시오 https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-gcp.html#service-account-permissions["콘솔 에이전트에 대한 Google Cloud 권한"^].
+* 변환 도구는 다음 도메인을 사용합니다. 네트워크에서 포트 443에서 활성화하십시오.
++
+[cols="1,1,1,1,2"]
+|===
+| 도메인 | 포트 | 규약 | 방향 | 목적 
+
+
+| cloudresourcemanager.googleapis.com | 443 | TCP | EGRESS | 프로젝트 검증 
+
+
+| deploymentmanager.googleapis.com | 443 | TCP | EGRESS | 배포 검색 
+
+
+| config.googleapis.com | 443 | TCP | EGRESS | Infrastructure Manager API 
+
+
+| storage.googleapis.com | 443 | TCP | EGRESS | GCS 버킷 작업 
+
+
+| iam.googleapis.com | 443 | TCP | EGRESS | 서비스 계정 검증 
+
+
+| compute.googleapis.com | 443 | TCP | EGRESS | Google Cloud 및 Terraform Import 및 Plan에서 사용되는 Compute API 호출 
+
+
+| openidconnect.googleapis.com | 443 | TCP | EGRESS | 입증 
+
+
+| oauth2.googleapis.com | 443 | TCP | EGRESS | OAuth2 토큰 교환 
+
+
+| registry.terraform.io | 443 | TCP | EGRESS | Terraform 공급자 레지스트리 
+
+
+| releases.hashicorp.com | 443 | TCP | EGRESS | Terraform 바이너리 다운로드 
+
+
+| apt.releases.hashicorp.com | 443 | TCP | EGRESS | HashiCorp APT 저장소 
+
+
+| us-central1-docker.pkg.dev | 443 | TCP | EGRESS | GCP Artifact Registry 
+
+
+| metadata.google.internal | 80 | HTTP | 내부 | VM metadata 및 인증 토큰 
+|===
+
+
+.단계
+Deployment Manager에서 Infrastructure Manager로 전환하고 기존 Cloud Volumes ONTAP 배포에 대해 도구를 실행하려면 다음 단계를 따르십시오.
+
+. 역할을 생성하고 서비스 계정에 연결합니다.
++
+.. 다음 권한을 가진 YAML 파일을 생성하십시오.
++
+[source, cli]
+----
+title: NetApp Dm TO IM Convert Solution
+description: Permissions for the service account associated with the VM where the tool will run.
+stage: GA
+includedPermissions:
+- compute.addresses.get
+- compute.disks.get
+- compute.forwardingRules.get
+- compute.healthChecks.get
+- compute.instanceGroups.get
+- compute.instances.get
+- compute.regionBackendServices.get
+- config.deployments.create
+- config.deployments.get
+- config.deployments.getLock
+- config.deployments.lock
+- config.deployments.unlock
+- config.deployments.update
+- config.deployments.delete
+- config.deployments.updateState
+- config.operations.get
+- deploymentmanager.deployments.get
+- deploymentmanager.deployments.list
+- deploymentmanager.manifests.get
+- iam.serviceAccounts.get
+- storage.buckets.create
+- storage.objects.create
+- storage.objects.delete
+- storage.objects.get
+- storage.objects.list
+----
+.. YAML 파일에 정의된 권한으로 Google Cloud에서 사용자 지정 역할을 생성합니다.
+`gcloud iam roles create dmtoim_convert_tool_role --project=PROJECT_ID \
+    --file=YAML_FILE_PATH` 자세한 내용은 https://cloud.google.com/iam/docs/creating-custom-roles["사용자 지정 역할 생성 및 관리"^]를 참조하십시오.
+.. VM을 생성하는 데 사용할 서비스 계정에 사용자 지정 역할을 연결합니다.
+.. 이 서비스 계정에 `roles/iam.serviceAccountUser` 역할을 추가하세요.  https://docs.cloud.google.com/iam/docs/service-account-overview["서비스 계정 개요"^]을(를) 참조하십시오.
+
+
+. [[create-vm]]다음 구성으로 VM을 생성합니다. 이 VM에서 도구를 실행합니다.
++
+** 머신 유형: Google Compute Engine 머신 유형 e2-medium
+** OS: Ubuntu 25.10 AMD64 Minimal(이미지: ubuntu-minimal-2510-amd64)
+** 네트워킹: HTTP 및 HTTPS를 허용하는 방화벽
+** 디스크 크기: 20GB
+** 보안: 서비스 계정: 생성한 서비스 계정
+** 보안: 액세스 범위 - 각 API에 대해 설정된 액세스:
++
+*** 클라우드 플랫폼: 활성화됨
+*** Compute Engine: 읽기 전용
+*** 스토리지: 읽기 전용(기본값)
+*** Google Cloud Logging(이전 Stackdriver Logging) API: 쓰기 전용(기본값)
+*** Stackdriver Monitoring(현재 Google Cloud Operations의 일부) API: 쓰기 전용(기본값)
+*** 서비스 관리: 읽기 전용(기본값)
+*** 서비스 제어: 활성화됨(기본값)
+*** Google Cloud Trace(이전 Stackdriver Trace): 쓰기 전용(기본값)
+
+
+
+
+. SSH를 사용하여 새로 생성된 VM에 연결합니다: `gcloud compute ssh dmtoim-convert-executor-vm --zone _<region where VM is deployed>_`
+. NSS 자격 증명을 사용하여 https://mysupport.netapp.com/site/products/all/details/cloud-volumes-ontap/downloads-tab["NetApp 지원 사이트"^]에서 변환 도구를 다운로드하십시오. `wget <download link from NetApp Support site>`
+. 다운로드한 TAR 파일의 압축을 풉니다. `tar -xvf <downloaded file name>`
+. 다음 필수 패키지를 다운로드하고 설치하십시오:
++
+** Docker: 28.2.2 build 28.2.2-0ubuntu1 이상
+** Terraform: 1.14.1 이상
+** Python: 3.13.7, python3-pip, python3 venv
++
+[source, cli]
+----
+sudo apt-get update
+sudo apt-get install python3-pip python3-venv -y
+wget -O - https://apt.releases.hashicorp.com/gpg | sudo gpg --dearmor -o /usr/share/keyrings/hashicorp-archive-keyring.gpg
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com noble main" | sudo tee /etc/apt/sources.list.d/hashicorp.list
+sudo apt update && sudo apt install terraform
+sudo apt-get install -y docker.io
+sudo systemctl start docker
+----
++
+Google Cloud CLI `gcloud`가 VM에 사전 설치되어 있습니다.
+
+
+
+. 현재 사용자를 Docker 그룹에 추가하여 해당 도구가 `sudo` 권한 없이 Docker를 사용할 수 있도록 합니다.
++
+[source, cli]
+----
+sudo usermod -aG docker $USER
+newgrp docker
+----
+. 변환 도구를 설치합니다.
++
+[source, cli]
+----
+cd <folder where you extracted the tool>
+ ./install.sh
+----
++
+이렇게 하면 도구가 격리된 환경에 설치되고 `dmconvert-venv` 필요한 모든 소프트웨어 패키지가 설치되었는지 확인합니다.
+
+. 도구가 설치된 환경을 입력합니다. `source dmconvert-venv/bin/activate`
+. 변환 도구를 `non-sudo` 사용자로 실행합니다. Console 에이전트의 서비스 계정과 동일한 서비스 계정을 사용하고 서비스 계정에 모든 https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-gcp.html#service-account-permissions["Google Cloud Infrastructure Manager에 필요한 권한"^]이 있는지 확인합니다.
++
+[source, cli]
+----
+dmconvert \
+--project-id=<the Google Cloud project ID for the Cloud Volumes ONTAP deployment> \
+--cvo-name=<Cloud Volumes ONTAP system name> \
+--service-account=<the service account attached to the Console agent>
+----
++
+.당신이 완료한 후
+이 도구는 모든 Cloud Volumes ONTAP 시스템 및 SVM 세부 정보 목록을 표시합니다. 실행이 완료되면 변환된 모든 시스템의 상태를 확인할 수 있습니다. 변환된 각 시스템은 Google Console의 Infrastructure Manager에서 _<converted system name-imdeploy>_ 형식으로 표시되며, 이는 Console에서 이제 해당 Cloud Volumes ONTAP 시스템을 관리하기 위해 Infrastructure Manager API를 사용한다는 것을 나타냅니다.
+
++
+
+CAUTION: 변환 후 Google Cloud Console에서 Deployment Manager의 배포 객체를 삭제하지 마십시오. 이 배포 객체에는 Infrastructure Manager가 Cloud Volumes ONTAP 시스템을 관리하는 데 사용하는 메타데이터가 포함되어 있습니다.
+
+
+
+변환을 되돌려야 하는 경우 동일한 VM을 사용해야 합니다. 모든 시스템을 변환했고 Deployment Manager로 되돌릴 필요가 없는 경우 VM을 삭제할 수 있습니다.
+
+
+
+== 변환 롤백
+
+변환을 계속 진행하지 않으려면 다음 단계를 따라 Deployment Manager로 되돌릴 수 있습니다.
+
+.단계
+. 동일한 <<create-vm,도구를 실행하기 위해 생성한 VM>>에서 다음 명령을 실행합니다.
++
+[source, cli]
+----
+dmconvert \
+--project-id=<the Google Cloud project ID for the Cloud Volumes ONTAP deployment> \
+--cvo-name=<Cloud Volumes ONTAP system name> \
+--service-account=<the service account attached to the Console agent> \
+--rollback
+----
+. 롤백이 완료될 때까지 기다리세요.
+
+
+.관련 링크
+* https://docs.netapp.com/us-en/console-setup-admin/whats-new.html#console-agent-4-2-0["NetApp Console Agent 4.2.0 릴리스 노트"^]
+* https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-gcp.html#gcp-permissions-change-log["Google Cloud Infrastructure Manager에 필요한 권한"^]
+

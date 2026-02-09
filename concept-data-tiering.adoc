@@ -26,7 +26,7 @@ ifdef::aws[]
 
 == AWS의 데이터 계층화
 
-AWS에서 데이터 계층화를 활성화하면 Cloud Volumes ONTAP 핫 데이터의 성능 계층으로 EBS를 사용하고 비활성 데이터의 용량 계층으로 AWS S3를 사용합니다.
+AWS에서 데이터 계층화를 활성화하면 Cloud Volumes ONTAP는 자주 사용되는 데이터에 대해 EBS를 성능 계층으로 사용하고, 사용되지 않는 데이터에 대해 Amazon Simple Storage Service(Amazon S3)를 용량 계층으로 사용합니다.
 
 성능 계층:: 성능 계층은 일반 용도 SSD(gp3 또는 gp2) 또는 프로비저닝된 IOPS SSD(io1)가 될 수 있습니다.
 +

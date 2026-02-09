@@ -57,7 +57,7 @@ NOTE: Cloud Volumes ONTAP 9.10.0 및 이전 버전의 경우, Debian 10이 메�
 
 --
 업그레이드:: Cloud Volumes ONTAP 업그레이드하면 NetApp Console 도 필요에 따라 중재자 인스턴스를 업데이트합니다.
-인스턴스에 대한 액세스:: Debian의 경우 기본 클라우드 사용자는 다음과 같습니다. `admin` .  Google Cloud는 인증서를 생성하고 추가합니다. `admin` Google Cloud 콘솔이나 gcloud 명령줄을 통해 SSH 액세스가 요청되는 경우 사용자입니다.  지정할 수 있습니다 `sudo` 루트 권한을 얻으려면.
+인스턴스에 대한 액세스:: Debian의 경우 기본 클라우드 사용자는 `admin`입니다. Google Cloud는 Google Cloud Console 또는 gcloud 명령줄을 통해 SSH 액세스가 요청되면 `admin` 사용자에 대한 인증서를 생성하고 추가합니다.  `sudo`을 지정하여 루트 권한을 얻을 수 있습니다.
 제3자 에이전트:: 중재자 인스턴스에서는 타사 에이전트나 VM 확장이 지원되지 않습니다.
 
 

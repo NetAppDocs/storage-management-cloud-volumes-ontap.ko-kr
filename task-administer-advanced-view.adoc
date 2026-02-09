@@ -29,7 +29,7 @@ Cloud Volumes ONTAP 의 고급 스토리지 관리 기능은 ONTAP 시스템과 
 * 이벤트 및 작업: 이벤트 로그, 시스템 알림, 작업 및 감사 로그를 확인합니다.
 * 고급 데이터 보호: 스토리지 VM, LUN 및 일관성 그룹을 보호합니다.
 * 호스트 관리: SAN 이니시에이터 그룹과 NFS 클라이언트를 설정합니다.
-* S3 개체 스토리지 관리: Cloud Volumes ONTAP 의 S3 스토리지 관리 기능은 System Manager에서만 사용할 수 있으며 Console에서는 사용할 수 없습니다.
+* ONTAP S3 객체 스토리지 관리: Cloud Volumes ONTAP의 ONTAP S3 스토리지 관리 기능은 System Manager에서만 사용할 수 있으며 Console에서는 사용할 수 없습니다.
 
 
 

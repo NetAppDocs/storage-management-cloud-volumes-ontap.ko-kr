@@ -409,7 +409,6 @@
   <block id="3d3b4afad1ee8976c0e2861a36e95c05" category="paragraph"><block ref="3d3b4afad1ee8976c0e2861a36e95c05" category="inline-image-macro-rx" type="image"></block></block>
   <block id="ed6589af51fe478933944c16eab4377f" category="paragraph">데이터 계층화는 FabricPool 기술을 기반으로 합니다.  Cloud Volumes ONTAP 추가 라이선스 없이 모든 Cloud Volumes ONTAP 클러스터에 대한 데이터 계층화를 제공합니다.  데이터 계층화를 활성화하면 개체 스토리지에 계층화된 데이터에 요금이 부과됩니다.  개체 스토리지 비용에 대한 자세한 내용은 클라우드 제공업체의 설명서를 참조하세요.</block>
   <block id="e452e8c25e7bc8d94f88ce5a25cbbf4a" category="section-title">AWS의 데이터 계층화</block>
-  <block id="d6a11de1ddf26c52daac1219f9ab237d" category="paragraph">AWS에서 데이터 계층화를 활성화하면 Cloud Volumes ONTAP 핫 데이터의 성능 계층으로 EBS를 사용하고 비활성 데이터의 용량 계층으로 AWS S3를 사용합니다.</block>
   <block id="9a817efc11f456e69cd659f0afd9447b" category="list-text">성능 계층</block>
   <block id="aaf6f41e4241a55e6a363b9c414d4feb" category="list-text">성능 계층은 일반 용도 SSD(gp3 또는 gp2) 또는 프로비저닝된 IOPS SSD(io1)가 될 수 있습니다.</block>
   <block id="907c78338365697be8fd8d4a130503c8" category="paragraph">처리량 최적화 HDD(st1)를 사용하는 경우 개체 스토리지에 데이터를 계층화하는 것은 권장되지 않습니다.</block>
@@ -633,7 +632,6 @@
   <block id="240f9686efc9548a1d556d924c143924" category="list-text">업그레이드</block>
   <block id="f0020d65188c251e7939f1c1847fad4e" category="list-text">Cloud Volumes ONTAP 업그레이드하면 NetApp Console 도 필요에 따라 중재자 인스턴스를 업데이트합니다.</block>
   <block id="8bcaded06cfd7f8ab3638578b913fb51" category="list-text">인스턴스에 대한 액세스</block>
-  <block id="48c4b347a69acc97f71ef6775bf6260d" category="list-text">Debian의 경우 기본 클라우드 사용자는 다음과 같습니다.<block ref="21232f297a57a5a743894a0e4a801fc3" prefix=" " category="inline-code"></block> .  Google Cloud는 인증서를 생성하고 추가합니다.<block ref="21232f297a57a5a743894a0e4a801fc3" prefix=" " category="inline-code"></block> Google Cloud 콘솔이나 gcloud 명령줄을 통해 SSH 액세스가 요청되는 경우 사용자입니다.  지정할 수 있습니다<block ref="d338b3f0f405eb5e51c8cc1e5ca66f02" prefix=" " category="inline-code"></block> 루트 권한을 얻으려면.</block>
   <block id="474d4b99cb8aebe220e70e0abb5f037d" category="list-text">제3자 에이전트</block>
   <block id="03ebadec827b1e9772bca75c78438be2" category="list-text">중재자 인스턴스에서는 타사 에이전트나 VM 확장이 지원되지 않습니다.</block>
   <block id="3817a9574884aed9f0b3c675344f4cc5" category="paragraph">노드 하나가 다운되더라도 다른 노드는 파트너에게 데이터를 제공하여 지속적인 데이터 서비스를 제공할 수 있습니다.  데이터가 파트너에 동기적으로 미러링되었기 때문에 클라이언트는 파트너 노드에서 동일한 데이터에 액세스할 수 있습니다.</block>
@@ -726,7 +724,6 @@
   <block id="82bce2d16d12d889961dbfbfac9b0015" category="list-text">C5d</block>
   <block id="e1b8054c9cdd622c9eeecfe71f26054a" category="list-text">R5</block>
   <block id="513e8fcb60809102e57ea96961daab7c" category="list-text">R5d</block>
-  <block id="02648096bf738946ffc4d338cb4e9d59" category="admonition">Cloud Volumes ONTAP 이러한 구성만 지원합니다.  AWS 로컬 영역 구성에서 지원되지 않는 디스크 유형이나 적격하지 않은 인스턴스를 선택하면 배포가 실패할 수 있습니다.  AWS 로컬 영역에서는 연결성이 부족하여 AWS S3에 대한 데이터 계층화를 사용할 수 없습니다.</block>
   <block id="86a51cf4972711c5446e99e4b2c11833" category="inline-link-macro">AWS 설명서: 로컬 영역의 EC2 인스턴스 유형</block>
   <block id="671c12c958592255257ba4e4d8298cec" category="paragraph"><block ref="a26b1323c095461019edf21935f6a169" category="inline-link-macro-rx"></block> .</block>
   <block id="5981b27e3ef7455de64560652783a737" category="paragraph">ONTAP 클러스터와 달리 Cloud Volumes ONTAP HA 쌍의 스토리지는 노드 간에 공유되지 않습니다.  대신, 데이터는 노드 간에 동기적으로 미러링되므로 장애가 발생하더라도 데이터를 사용할 수 있습니다.</block>
@@ -1086,7 +1083,6 @@
   <block id="1cbde96d4494f1d0a0cc701b14f4979e" category="list-text">AWS에서는 집계에 크기가 모두 같은 디스크를 최대 6개까지 포함할 수 있습니다. 하지만 Amazon EBS Elastic Volumes 기능을 지원하는 구성이 있는 경우 집계에는 최대 8개의 디스크가 포함될 수 있습니다. <block ref="e64e49a1cded5f4109adae46b4faa045" category="inline-link-macro-rx"></block> .</block>
   <block id="b8dd8c06193176beb2ad15367f7a1a0d" category="paragraph">최대 디스크 크기는 16TiB입니다.</block>
   <block id="137a4f9c2770404d0739c4ea093147a2" category="inline-link-macro">저렴한 객체 스토리지</block>
-  <block id="197b31f211e5bcf8a6c50c64a00209b0" category="paragraph">기본 EBS 디스크 유형은 일반 용도 SSD(gp3 또는 gp2), 프로비저닝된 IOPS SSD(io1) 또는 처리량 최적화된 HDD(st1)가 될 수 있습니다.  EBS 디스크를 Amazon S3와 페어링할 수 있습니다.<block ref="8ea89944316dc5317d2fdef703995c09" category="inline-link-macro-rx"></block> .</block>
   <block id="97329aff812b28715c211efe44a78032" category="list-text">로컬 NVMe 스토리지</block>
   <block id="d972474de88f813a7a04eb9b78f672ee" category="list-text">일부 EC2 인스턴스 유형에는 로컬 NVMe 스토리지가 포함되어 있으며 이를 Cloud Volumes ONTAP 에서 사용합니다.<block ref="453179a92f33277aeed8bea1597d5257" category="inline-link-macro-rx"></block> .</block>
   <block id="338e0e62b3ed08d62699895c11d29a14" category="paragraph">*관련 링크*</block>
@@ -1377,10 +1373,6 @@
   <block id="36e65cc6fe6b3547cf9b7396631f7367" category="paragraph">Cloud Volumes ONTAP FlexGroup 볼륨을 지원하지만 콘솔은 현재 FlexGroup 볼륨 생성을 지원하지 않습니다.  ONTAP System Manager 또는 ONTAP CLI에서 FlexGroup 볼륨을 생성하는 경우 콘솔에서 용량 관리 모드를 설정해야 합니다.<block ref="e1ba155a9f2e8c3be94020eef32a0301" prefix=" " category="inline-code"></block> .<block ref="086247a9b57fde6eefee2a0c4752242d" prefix=" " category="inline-code"></block> FlexGroup 볼륨에서는 모드가 제대로 작동하지 않을 수 있습니다.</block>
   <block id="4eb542d6930b1a0eae1e891a8bd8ec57" category="admonition">콘솔에서 FlexGroup 볼륨을 생성하는 기능은 향후 릴리스에서 제공될 예정입니다.</block>
   <block id="a8f834bfd69e7c4c03f881ba01ff3db8" category="section-title">콘솔은 Cloud Volumes ONTAP 사용하는 S3를 지원하지 않습니다.</block>
-  <block id="53a519b7a61b6af057f2717112606b16" category="inline-link">S3 구성 전원 가이드</block>
-  <block id="59c16c2c86e3eea8a22e808cf160f264" category="paragraph">Cloud Volumes ONTAP 확장형 스토리지에 대한 옵션으로 S3를 지원하지만, 콘솔은 이 기능에 대한 관리 기능을 제공하지 않습니다.  Cloud Volumes ONTAP 에서 S3 클라이언트 액세스를 구성하려면 CLI를 사용하는 것이 가장 좋은 방법입니다.  자세한 내용은 다음을 참조하세요.<block ref="49e8fee748cd4c8d6f01bdb03113fc2a" category="inline-link-rx"></block> .</block>
-  <block id="aa73f4eb582c3e0e9bca433f741e8a12" category="inline-link-macro">S3 및 기타 클라이언트 프로토콜에 대한 Cloud Volumes ONTAP 지원에 대해 자세히 알아보세요.</block>
-  <block id="b19dcb5d79169da5722547be25d81a05" category="paragraph"><block ref="2b5ab7e81cd6465f0e4fd342fda67520" category="inline-link-macro-rx"></block> .</block>
   <block id="810f9fccb96a80e297e51b87448790cb" category="section-title">콘솔은 스토리지 VM에 대한 재해 복구를 지원하지 않습니다.</block>
   <block id="83ff2bfb2ceab96a6e6f6d1ef39137dd" category="paragraph">콘솔은 스토리지 VM(SVM) 재해 복구에 대한 설정이나 오케스트레이션 지원을 제공하지 않습니다.  ONTAP 시스템 관리자나 ONTAP CLI를 사용해야 합니다.</block>
   <block id="9c6c0a63729c2c1bc8388b9ccd4e4155" category="inline-link-macro">SVM 재해 복구에 대해 자세히 알아보세요</block>
@@ -1486,7 +1478,6 @@
   <block id="f36fc02b3ad98ba0f8264e2cbf734e4a" category="admonition">콘솔 에이전트에 대한 정보를 찾고 계신가요?<block ref="b7d7c3653bdcc7d34cae76f41a345d50" category="inline-link-rx"></block></block>
   <block id="a83fb1ff36ceed286841d6eef8f99b92" category="section-title">데이터 계층화를 위한 연결</block>
   <block id="8b783a3453cf42b2c5afd74fef3b7e07" category="inline-link">AWS 설명서: 게이트웨이 엔드포인트 생성</block>
-  <block id="3682b5297c42545380ea5b654c6bdf51" category="paragraph">EBS를 성능 계층으로 사용하고 AWS S3를 용량 계층으로 사용하려면 Cloud Volumes ONTAP S3에 연결되어 있는지 확인해야 합니다.  해당 연결을 제공하는 가장 좋은 방법은 S3 서비스에 대한 VPC 엔드포인트를 만드는 것입니다.  지침은 다음을 참조하세요.<block ref="739944581ddd86bd6d09f3841372a69b" category="inline-link-rx"></block> .</block>
   <block id="e3f443ff9bde7acbc118b80782ddcca4" category="paragraph">VPC 엔드포인트를 생성할 때 Cloud Volumes ONTAP 인스턴스에 해당하는 지역, VPC 및 경로 테이블을 선택해야 합니다.  또한 S3 엔드포인트로의 트래픽을 활성화하는 아웃바운드 HTTPS 규칙을 추가하려면 보안 그룹을 수정해야 합니다.  그렇지 않으면 Cloud Volumes ONTAP 이 S3 서비스에 연결할 수 없습니다.</block>
   <block id="3e8a22c9458be9392b33d4c1a68e03cc" category="inline-link">AWS 지원 지식 센터: 게이트웨이 VPC 엔드포인트를 사용하여 S3 버킷에 연결할 수 없는 이유는 무엇입니까?</block>
   <block id="95cf784150417dd3ea0813f10381aa4f" category="paragraph">문제가 발생하면 다음을 참조하세요.<block ref="133eaae00ad88e811386070963e01d00" category="inline-link-rx"></block></block>
@@ -1866,7 +1857,6 @@
   <block id="941288a863ad97154034dd3c71f32245" category="paragraph"><block ref="581f54bac504640f66f842676676be03" category="inline-link-rx"></block>Cloud Volumes ONTAP 배포하는 Google Cloud 서브넷에서 비활성화해야 합니다.</block>
   <block id="0bf4ff4271913670a6b654840746e03d" category="paragraph">콘솔 에이전트는 일상 업무를 위해 여러 엔드포인트에 연결합니다.  엔드포인트에 대한 정보는 다음을 참조하세요.<block ref="e553aa98dbd6de43170bbf57fd2de45c" category="inline-link-rx"></block> 그리고<block ref="3b443e9dd660f6a0a57c859f2ddcc1c3" category="inline-link-rx"></block> .</block>
   <block id="6949300ff5b5cf6bb192114a06c923bb" category="cell">배포 모드</block>
-  <block id="f235e1a740b92e59100dda0cf4e3d76b" category="cell">\ https://www.googleapis.com/compute/v1/projects/ \ https://cloudresourcemanager.googleapis.com/v1/projects \ https://www.googleapis.com/compute/beta \ https://storage.googleapis.com/storage/v1 \ https://www.googleapis.com/storage/v1 \ https://iam.googleapis.com/v1 \ https://cloudkms.googleapis.com/v1 \ https://www.googleapis.com/deploymentmanager/v2/projects \ https://compute.googleapis.com/compute/v1</block>
   <block id="342804fdcc569427f0c6f21b0757653d" category="cell">Google Cloud(상업적 사용).</block>
   <block id="bec523fb694fd6fe80736494c1a45a30" category="cell">Google Cloud 서비스와의 통신.</block>
   <block id="204ed3efd9825aae7544540ef4ed212f" category="cell">Cloud Volumes ONTAP Google Cloud 서비스와 통신하여 Google Cloud의 콘솔에 대한 특정 작업을 수행할 수 없습니다.</block>
@@ -1927,7 +1917,6 @@
   <block id="e3ff68f36a97170df931248879489aa6" category="paragraph">콘솔 에이전트에 대한 프록시 서버 구성에 대한 정보는 다음을 참조하십시오.<block ref="ed1d254983f768b27a40e1ebeff4b8df" category="inline-link-rx"></block> .</block>
   <block id="07bb5df713985e089cc7b42eb0e0f7fa" category="paragraph-title">Google Cloud에서 Cloud Volumes ONTAP 에 대한 네트워크 태그 구성</block>
   <block id="8b65b019f0e99a6779da31cc1d003f24" category="paragraph">콘솔 에이전트의 투명 프록시 구성 중에 관리자는 Google Cloud에 대한 네트워크 태그를 추가합니다.  Cloud Volumes ONTAP 구성에 대해 동일한 네트워크 태그를 얻어 수동으로 추가해야 합니다.  이 태그는 프록시 서버가 올바르게 작동하는 데 필요합니다.</block>
-  <block id="ecbf9a9117dd5b59c8cb3678f128175a" category="list-text">Google Cloud 콘솔에서 Cloud Volumes ONTAP 시스템을 찾습니다.</block>
   <block id="c54cc2a3649745490397c1485da258bc" category="list-text">*세부정보 &gt; 네트워킹 &gt; 네트워크 태그*로 이동합니다.</block>
   <block id="a551198f057ae01a6873c5e1853e4d02" category="list-text">콘솔 에이전트에 사용된 태그를 추가하고 구성을 저장합니다.</block>
   <block id="9c7871cefdac5cad3bd5c3e177b2ef16" category="summary">NetApp Console Cloud Volumes ONTAP 성공적으로 작동하는 데 필요한 인바운드 및 아웃바운드 규칙을 포함하는 AWS 보안 그룹을 생성합니다.  테스트 목적으로 포트를 참조하거나 자체 보안 그룹을 사용하려는 경우 포트를 참조할 수 있습니다.</block>
@@ -2004,7 +1993,6 @@
   <block id="297a67d78120f97f7f0070c499c6b662" category="paragraph">콘솔은 Google Cloud API와 직접 통신합니다.  이는 Google Cloud 외부의 외부 IP 주소(예: api.services.cloud.netapp.com)에서 트리거되거나, Google Cloud 내에서 Console 에이전트에 할당된 내부 주소에서 트리거됩니다.</block>
   <block id="25f6cf82964ea704bf9b22194fa8eeaa" category="paragraph">콘솔 에이전트의 배포 스타일에 따라 서비스 경계에 대한 특정 예외를 만들어야 할 수도 있습니다.</block>
   <block id="fff0d600f8a0b5e19e88bfb821dd1157" category="section-title">이미지</block>
-  <block id="a83aefd3e7dcfde79a9ba2f30b02f7e8" category="paragraph">Cloud Volumes ONTAP 과 콘솔은 모두 NetApp 에서 관리하는 GCP 내 프로젝트의 이미지를 사용합니다.  조직 내에서 호스팅되지 않은 이미지 사용을 차단하는 정책이 있는 경우, 이는 콘솔 에이전트와 Cloud Volumes ONTAP 의 배포에 영향을 미칠 수 있습니다.</block>
   <block id="8b5c62ae07ed7799d663bf6cc6e021cf" category="paragraph">수동 설치 방법을 사용하여 콘솔 에이전트를 수동으로 배포할 수 있지만 Cloud Volumes ONTAP 도 NetApp 프로젝트에서 이미지를 가져와야 합니다.  콘솔 에이전트와 Cloud Volumes ONTAP 배포하려면 허용 목록을 제공해야 합니다.</block>
   <block id="8ab8210e90b1f409f7b295ebde55a36c" category="section-title">콘솔 에이전트 배포</block>
   <block id="eb7161bcb78c0c52d7b38a01dc0833e7" category="paragraph">콘솔 에이전트를 배포하는 사용자는 프로젝트 ID _netapp-cloudmanager_와 프로젝트 번호 _14190056516_에 호스팅된 이미지를 참조할 수 있어야 합니다.</block>
@@ -2013,8 +2001,6 @@
   <block id="5f482d21551e8d5fe96e6b825292efa2" category="list-text">기본 Google API 서비스 에이전트의 서비스 계정은 서비스 프로젝트의 프로젝트 ID _netapp-cloudmanager_와 프로젝트 번호 _14190056516_에 호스팅된 이미지를 참조해야 합니다.</block>
   <block id="386016e1fc595e09fea4ffd7e1b9c37a" category="paragraph">VPC 서비스 제어를 사용하여 이러한 이미지를 가져오는 데 필요한 규칙의 예는 아래와 같습니다.</block>
   <block id="b31886bca9e200409879551b81d64df4" category="section-title">VPC 서비스 제어 경계 정책</block>
-  <block id="43733a0f98cc509e48d8a196e1e7d156" category="inline-link">GCP VPC 서비스 제어 정책 문서</block>
-  <block id="7412e0d29035198eda9890cbe427309f" category="paragraph">정책은 VPC 서비스 제어 규칙 세트에 대한 예외를 허용합니다.  정책에 대한 자세한 내용은 다음을 방문하세요.<block ref="fb7f74377472d4fa7be5b47cdd4baaf0" category="inline-link-rx"></block> .</block>
   <block id="75dd8d6c70b36b7f20686d8e455e498f" category="paragraph">콘솔에 필요한 정책을 설정하려면 조직 내의 VPC 서비스 제어 경계로 이동하여 다음 정책을 추가하세요.  필드는 VPC 서비스 제어 정책 페이지에 제공된 옵션과 일치해야 합니다.  또한 *모든* 규칙이 필수이며 규칙 세트에서는 *OR* 매개변수를 사용해야 합니다.</block>
   <block id="035711c70259cf945ceff083825d7678" category="section-title">Ingress 규칙</block>
   <block id="1d00e7dce692e8dc3f6877f035e3a616" category="paragraph">또는</block>
@@ -2084,7 +2070,6 @@
   <block id="d14fd727d6676081518cbc2777f71510" category="list-text">이벤트 및 작업: 이벤트 로그, 시스템 알림, 작업 및 감사 로그를 확인합니다.</block>
   <block id="8eb43cfa74c50eb1e03cd9fca36f1feb" category="list-text">고급 데이터 보호: 스토리지 VM, LUN 및 일관성 그룹을 보호합니다.</block>
   <block id="18fb111bc25b1d08182b3aaab28b1107" category="list-text">호스트 관리: SAN 이니시에이터 그룹과 NFS 클라이언트를 설정합니다.</block>
-  <block id="130cd9bfe8beae8de2446572850b4ac8" category="list-text">S3 개체 스토리지 관리: Cloud Volumes ONTAP 의 S3 스토리지 관리 기능은 System Manager에서만 사용할 수 있으며 Console에서는 사용할 수 없습니다.</block>
   <block id="d3353d9a07f8e3de719e409e616a3382" category="list-text">ONTAP System Manager를 통한 고급 스토리지 관리 기능은 표준 클라우드 지역에서 Cloud Volumes ONTAP 9.10.0 이상에서 사용할 수 있습니다.</block>
   <block id="0f1ca4e2133610fdc8b23e4db3f7cb0c" category="list-text">GovCloud 지역이나 아웃바운드 인터넷 액세스가 없는 지역에서는 System Manager 통합이 지원되지 않습니다.</block>
   <block id="b03c3f1292327857639de1cd1434567b" category="paragraph">System Manager 인터페이스에 나타나는 몇 가지 기능은 Cloud Volumes ONTAP 에서 지원되지 않습니다.</block>
@@ -2599,7 +2584,6 @@
   <block id="5632566b6a310163e5233af96d1f233d" category="paragraph">Cloud Volumes ONTAP 서비스 계정을 사용하여 계층화된 데이터용 버킷 하나와 백업용 버킷 하나에 액세스하고 관리합니다.</block>
   <block id="f360198b818590ebb72ceaca972eb5b6" category="paragraph">하나의 서비스 계정을 설정하여 두 가지 목적으로 모두 사용할 수 있습니다.  서비스 계정에는 *저장소 관리자* 역할이 있어야 합니다.</block>
   <block id="ab6fcc124e86604f6bab5da13aaea51a" category="inline-link">서비스 계정 페이지로 이동</block>
-  <block id="7dc4b63dc4834aecd751b91ed3de3d39" category="list-text">Google Cloud 콘솔에서<block ref="72863ecd427c906452e0c3d21111bdac" category="inline-link-rx"></block> .</block>
   <block id="48ce4b015469f877847f852907eafd00" category="list-text">프로젝트를 선택하세요.</block>
   <block id="4e13dc0d32baece976c716e87801b711" category="list-text">*서비스 계정 만들기*를 클릭하고 필요한 정보를 입력하세요.</block>
   <block id="7804f90af05e35898d30a79bf21e0c6f" category="list-text">*서비스 계정 세부 정보*: 이름과 설명을 입력하세요.</block>
@@ -2608,8 +2592,6 @@
   <block id="3d9c95c023158831b0c56e1e3a55d884" category="paragraph"><block ref="3d9c95c023158831b0c56e1e3a55d884" category="inline-image-macro-rx" type="image"></block></block>
   <block id="97ea2925eb07006a388a6db4e1edbdd3" category="list-text">*사용자에게 이 서비스 계정에 대한 액세스 권한 부여*: 이 새로운 서비스 계정에 콘솔 에이전트 서비스 계정을 _서비스 계정 사용자_로 추가합니다.</block>
   <block id="5e09a635c5058aa03ef7f238aa333dd7" category="paragraph">이 단계는 데이터 계층화에만 필요합니다.  백업 및 복구에는 필요하지 않습니다.</block>
-  <block id="461b938b03fed2966c999067c7037177" category="inline-image-macro">서비스 계정을 생성하는 동안 사용자에게 서비스 계정에 대한 액세스 권한을 부여하는 Google Cloud 콘솔의 스크린샷입니다.</block>
-  <block id="a96ac63cbe288934ca570c3b1beec47f" category="paragraph"><block ref="a96ac63cbe288934ca570c3b1beec47f" category="inline-image-macro-rx" type="image"></block></block>
   <block id="58eaebf972358f1cf03d386a4ade1a0f" category="paragraph-title">다음은 무엇인가요?</block>
   <block id="f63ce07313e293d0b9b9cad6b8b8d528" category="paragraph">나중에 Cloud Volumes ONTAP 시스템을 생성할 때 서비스 계정을 선택해야 합니다.</block>
   <block id="280ee264bbde91d0e35a15c5c017570d" category="inline-image-macro">Cloud Volumes ONTAP 에 대한 서비스 계정을 활성화할 수 있는 세부 정보 및 자격 증명 페이지의 스크린샷입니다.</block>
@@ -2792,7 +2774,6 @@
   <block id="3e8ebc7d3f455586c6e59178eb618762" category="cell">이는 Cloud Volumes ONTAP 클러스터 관리자 계정의 자격 증명입니다.  이러한 자격 증명을 사용하면 ONTAP System Manager나 ONTAP CLI를 통해 Cloud Volumes ONTAP 에 연결할 수 있습니다.  기본 _admin_ 사용자 이름을 유지하거나 사용자 지정 사용자 이름으로 변경하세요.</block>
   <block id="c9dac17a844d646dfb54058f973d40a5" category="cell">프로젝트 편집</block>
   <block id="c5f9e4a0319da77fb1e8628a15d62378" category="paragraph">Cloud Volumes ONTAP 저장할 프로젝트를 선택하세요.  기본 프로젝트는 콘솔의 프로젝트입니다.</block>
-  <block id="b40f267ac1ab384c8c1af15de8a2c85d" category="paragraph">드롭다운 목록에 추가 프로젝트가 보이지 않으면 아직 서비스 계정을 다른 프로젝트와 연결하지 않은 것입니다. Google Cloud 콘솔로 이동하여 IAM 서비스를 열고 프로젝트를 선택합니다.  콘솔에 사용하는 역할이 있는 서비스 계정을 해당 프로젝트에 추가합니다. 각 프로젝트마다 이 단계를 반복해야 합니다.</block>
   <block id="380bfdc134190af310ad2f9812d7569f" category="inline-link-macro">이 페이지에 설명된 대로</block>
   <block id="ebb24ec6b758fc463dacdf7c1c7a9845" category="admonition">이는 콘솔에 대해 설정한 서비스 계정입니다.<block ref="d8e8dd577fee44652d34a1d1f4c2ce4b" category="inline-link-macro-rx"></block> .</block>
   <block id="27d9b3c82bd8da92f73b89a66c20ba04" category="paragraph">*구독 추가*를 클릭하여 선택한 자격 증명을 구독과 연결합니다.</block>
@@ -2800,7 +2781,6 @@
   <block id="d18e83d73544a6c270cacf5047fa7b17" category="paragraph">사용량에 따라 요금을 지불하는 Cloud Volumes ONTAP 시스템을 만들려면 Google Cloud 마켓플레이스에서 Cloud Volumes ONTAP 구독과 연결된 Google Cloud 프로젝트를 선택해야 합니다. 참조하다<block ref="26858d2411615dac691c2981d5338917" category="inline-link-rx"></block> .</block>
   <block id="96079e83b3a5665d74ee359353e1ad0b" category="list-text">*서비스*: 이 시스템에서 사용할 서비스를 선택하세요.  백업 및 복구를 선택하거나 NetApp Cloud Tiering 사용하려면 3단계에서 서비스 계정을 지정해야 합니다.</block>
   <block id="ca43ab61d02d95bbbf25d3c1643eebd1" category="admonition">WORM 및 데이터 계층화를 활용하려면 백업 및 복구를 비활성화하고 버전 9.8 이상의 Cloud Volumes ONTAP 시스템을 배포해야 합니다.</block>
-  <block id="1adb02ac235ed181f81480b00aa116f6" category="list-text">*위치 및 연결*: 위치를 선택하고, 방화벽 정책을 선택하고, 데이터 계층화를 위해 Google Cloud Storage에 대한 네트워크 연결을 확인하세요.</block>
   <block id="3450bc9327f985ff43682b683cb1eee9" category="cell">연결성 검증</block>
   <block id="2e5f3aa65f18453c5c51b5ffcf2214d5" category="inline-link">Google Cloud 문서: 비공개 Google 액세스 구성</block>
   <block id="13b0618617ce48b8c5ef64094a5be02f" category="cell">콜드 데이터를 Google Cloud Storage 버킷에 계층화하려면 Cloud Volumes ONTAP 이 있는 서브넷을 비공개 Google 액세스로 구성해야 합니다.  지침은 다음을 참조하세요.<block ref="46bdb5a1fb51df5eb32e2147ea91e6d8" category="inline-link-rx"></block> .</block>
@@ -2841,7 +2821,6 @@
   <block id="bb74d89743a44b4a44d7b815ee74a08e" category="inline-link">9.6을 사용하여 데이터 계층화를 위한 Google Cloud 계정 설정 및 추가</block>
   <block id="029f8920d36eb65c171c6c21ac843b04" category="list-text">Google Cloud 계정 추가에 대한 도움말은 다음을 참조하세요.<block ref="434f9c6247e5841006dab0119a511de9" category="inline-link-rx"></block> .</block>
   <block id="10f24cbf4f99f2a58468f5eddcb58a10" category="list-text">볼륨을 생성하거나 편집할 때 특정 볼륨 계층화 정책을 선택할 수 있습니다.</block>
-  <block id="cd6afa4ed61f071f47165012e4286043" category="list-text">데이터 계층화를 비활성화하면 이후 집계에서 활성화할 수 있지만, 시스템을 끄고 Google Cloud 콘솔에서 서비스 계정을 추가해야 합니다.</block>
   <block id="40be323df7265fed128da31c2235f802" category="inline-link-macro">데이터 계층화에 대해 자세히 알아보세요</block>
   <block id="42e33ca80e00148658496cf0df242c83" category="paragraph"><block ref="c991217783edcd004ecaae62c8f53317" category="inline-link-macro-rx"></block> .</block>
   <block id="7fd530af1ffbe88c56d08b069efeba9e" category="list-text">*볼륨 만들기*: 새 볼륨에 대한 세부 정보를 입력하거나 *건너뛰기*를 클릭합니다.</block>
@@ -2881,7 +2860,6 @@
   <block id="7abaa657d7581473fa6d07195eefca45" category="paragraph">Cloud Volumes ONTAP 저장할 프로젝트를 선택하세요.  기본 프로젝트는 콘솔 프로젝트입니다.</block>
   <block id="0f1a2ace875803b14883046cfdd65e11" category="paragraph">사용량에 따라 요금을 지불하는 Cloud Volumes ONTAP 시스템을 만들려면 Google Cloud Marketplace에서 Cloud Volumes ONTAP 구독과 연결된 Google Cloud 프로젝트를 선택해야 합니다. 참조하다<block ref="26858d2411615dac691c2981d5338917" category="inline-link-rx"></block> .</block>
   <block id="6d233fc45c5eb7c0016f5de64af78ac2" category="list-text">*서비스*: 이 시스템에서 사용할 서비스를 선택하세요.  백업 및 복구를 선택하거나 NetApp Cloud Tiering 사용하려면 3단계에서 서비스 계정을 지정해야 합니다.</block>
-  <block id="166a4b640ff9a34dd7447ebf0e16518b" category="list-text">*HA 배포 모델*: HA 구성을 위해 여러 개의 영역(권장) 또는 단일 영역을 선택합니다.  그런 다음 지역과 구역을 선택하세요.</block>
   <block id="96c883d1fa1e7ebdc724bb5cec521bbd" category="inline-link-macro">HA 배포 모델에 대해 자세히 알아보세요</block>
   <block id="65a1b420f9d8cf92d6a805f641764e75" category="paragraph"><block ref="810b7c24efd4e50a858cf2ac93f8cde8" category="inline-link-macro-rx"></block> .</block>
   <block id="74c223c0ac10d19fc933bf44bdfae707" category="list-text">*연결성*: HA 구성을 위해 4개의 다른 VPC를 선택하고, 각 VPC에 서브넷을 선택한 다음 방화벽 정책을 선택합니다.</block>
@@ -2986,8 +2964,6 @@
   <block id="4d10b292fbd4e7b4daad483b36f81fe3" category="cell">이 Cloud Volumes ONTAP 시스템에 사용할 AWS 자격 증명과 마켓플레이스 구독을 선택하세요. 선택한 자격 증명을 새 AWS 마켓플레이스 구독과 연결하려면 *구독 추가*를 클릭하세요. 구독은 연간 계약 또는 시간당 요금으로 Cloud Volumes ONTAP 결제할 수 있습니다. NetApp 에서 직접 라이선스를 구매한 경우(BYOL(Bring Your Own License)), AWS 구독은 필요하지 않습니다. NetApp BYOL 라이선스 구매, 연장 및 갱신을 제한하고 있습니다. 자세한 내용은 다음을 참조하세요. <block ref="73dc1b5468c2405a47da63a28335f079" category="inline-link-rx"></block> . <block ref="4d61765c5a57d3e748562e7808144a43" category="inline-link-rx"></block> .</block>
   <block id="c38a20e959e669ec93ecff42fbba0220" category="admonition">여러 IAM 사용자가 동일한 AWS 계정에서 작업하는 경우 각 사용자는 구독해야 합니다.  첫 번째 사용자가 구독한 후, AWS 마켓플레이스는 아래 이미지에서 볼 수 있듯이 후속 사용자에게 이미 구독되었음을 알립니다.  AWS 계정에 대한 구독이 있는 동안 각 IAM 사용자는 해당 구독에 자신을 연결해야 합니다.  아래에 표시된 메시지가 나타나면 *여기를 클릭* 링크를 클릭하여 콘솔 웹사이트로 이동하여 프로세스를 완료하세요.<block ref="9f3ecfd4d8b093799ed148b984f9b546" category="inline-image-macro-rx" type="image"></block></block>
   <block id="f99d3ff891644fe10f4d30e423d81b2e" category="list-text">*서비스*: 해당 Cloud Volumes ONTAP 시스템에서 사용하지 않으려는 서비스를 활성화 상태로 유지하거나 개별 서비스를 비활성화합니다.</block>
-  <block id="2778487e9ef3c14d988e2ef29ef1a280" category="inline-link">백업 및 복구에 대해 자세히 알아보세요</block>
-  <block id="ebb56598b78dff32d520c49862c1a403" category="list-text"><block ref="ebb56598b78dff32d520c49862c1a403" category="inline-link-rx"></block></block>
   <block id="3dc0546ee23c197fd25bc3ef988c8a30" category="list-text">*HA 배포 모델*: HA 구성을 선택하세요.</block>
   <block id="9e31e4f9e8f37fa86acefdb611c2e044" category="inline-link-macro">AWS용 Cloud Volumes ONTAP HA</block>
   <block id="66962b0e026c08cab80e01e87da346a8" category="paragraph">배포 모델 개요는 다음을 참조하세요.<block ref="ac890ff87988e1f4fe9ed78d7a128a29" category="inline-link-macro-rx"></block> .</block>
@@ -3233,7 +3209,6 @@
   <block id="7c5d8bf27092bf15632098a9cc75b95e" category="paragraph">Cloud Volumes ONTAP 제대로 작동할 수 있도록 AWS 네트워킹을 설정하세요.</block>
   <block id="3edf566806db93c358dc35a79cdb050e" category="list-text">콘솔 에이전트와 Cloud Volumes ONTAP 인스턴스의 인스턴스를 시작할 VPC와 서브넷을 선택합니다.</block>
   <block id="f2b0ab307794a8dc0961eb05056e86ea" category="list-text">VPC와 서브넷이 콘솔 에이전트와 Cloud Volumes ONTAP 간의 연결을 지원하는지 확인하세요.</block>
-  <block id="c1540e16429791c7515c0322aad07fcf" category="list-text">S3 서비스에 대한 VPC 엔드포인트를 설정합니다.</block>
   <block id="4274b83eccea8c2453ce00d6c7cde54e" category="paragraph">Cloud Volumes ONTAP 에서 저비용 개체 스토리지로 콜드 데이터를 계층화하려면 VPC 엔드포인트가 필요합니다.</block>
   <block id="e7f011d8b0cdfad4e5a7cfc96be6f8a8" category="section-title">2단계: 권한 설정</block>
   <block id="a0f59a54b06324c6099e8ebf3139657e" category="paragraph">AWS Secret Cloud 또는 Top Secret Cloud에서 작업을 수행하는 데 필요한 권한을 Console 에이전트와 Cloud Volumes ONTAP 에 제공하는 IAM 정책과 역할을 설정합니다.</block>
@@ -4093,11 +4068,6 @@
   <block id="c24e9fc1263121db1bb6501931efe09c" category="paragraph">Cloud Volumes ONTAP 대부분의 Google Cloud 지역에서 지원됩니다.<block ref="0de6b81e82e22001f2c59ffd34a8aeac" category="inline-link-rx"></block> .</block>
   <block id="18ff4ec9e6259918d45028a5d6040d91" category="section-title">지원되는 머신 유형을 선택하세요</block>
   <block id="64efea6517490623e51052b533085d96" category="paragraph">Cloud Volumes ONTAP 선택한 라이선스 유형에 따라 여러 가지 머신 유형을 지원합니다.</block>
-  <block id="9ee8a2504ba9f03aae4b30973ea35ad4" category="inline-link">GCP의 Cloud Volumes ONTAP 에 지원되는 구성</block>
-  <block id="9402e8f13b9c1b7b1bbcad4d4c4eb4a9" category="paragraph"><block ref="9402e8f13b9c1b7b1bbcad4d4c4eb4a9" category="inline-link-rx"></block></block>
-  <block id="9265447fe548064ca54a98dd4a111bc0" category="inline-link">GCP의 Cloud Volumes ONTAP 대한 스토리지 한도</block>
-  <block id="2dcb300e9b01e5d98962a7e0c6eee87e" category="paragraph"><block ref="2dcb300e9b01e5d98962a7e0c6eee87e" category="inline-link-rx"></block></block>
-  <block id="0d705fad98d8ea6c4ffe75e2508e2f92" category="section-title">GCP에서 시스템 크기 조정</block>
   <block id="d1d964d1db8731b3b8174fa845b85de0" category="paragraph">Cloud Volumes ONTAP 시스템의 크기를 조정하면 성능 및 용량 요구 사항을 충족하는 데 도움이 될 수 있습니다.  머신 유형, 디스크 유형 및 디스크 크기를 선택할 때 몇 가지 핵심 사항을 알아야 합니다.</block>
   <block id="3ea4bf9da7622edeeae1bf80e9c5cded" category="list-text">기계 유형</block>
   <block id="33163c406a5fa4e618c360f9d6a2cf33" category="paragraph">자세한 내용은 다음을 참조하세요.</block>
@@ -4105,14 +4075,12 @@
   <block id="4a8c0d1957b124297f183a32fe967b94" category="list-text"><block ref="4a8c0d1957b124297f183a32fe967b94" category="inline-link-rx"></block></block>
   <block id="e95081e0ce4cd8b52aae7f4c51df0e38" category="inline-link">Google Cloud 문서: 성능</block>
   <block id="7f1833e3cac2f73326c69cb528100505" category="list-text"><block ref="7f1833e3cac2f73326c69cb528100505" category="inline-link-rx"></block></block>
-  <block id="1e1128744744b7137df3c14d7297a0d9" category="list-text">GCP 디스크 유형</block>
   <block id="81aeb0f42709dc6b02c7b6a3dc77c5fc" category="list-text">Cloud Volumes ONTAP 에 대한 볼륨을 생성할 때 Cloud Volumes ONTAP 디스크에 사용하는 기본 클라우드 스토리지를 선택해야 합니다.  디스크 유형은 다음 중 하나일 수 있습니다.</block>
   <block id="c9f5fb49e1accd9e04bbc9f8698a138d" category="list-text">_영역별 SSD 영구 디스크_: SSD 영구 디스크는 높은 속도의 무작위 IOPS가 필요한 워크로드에 가장 적합합니다.</block>
   <block id="04cc1a164487ea3f644d6e322c5bb9ad" category="list-text">_영역별 균형 지속 디스크_: 이러한 SSD는 GB당 더 낮은 IOPS를 제공하여 성능과 비용의 균형을 맞춥니다.</block>
   <block id="8547d86d311be29912c3a5776b5c6d37" category="list-text">_영역별 표준 영구 디스크_ : 표준 영구 디스크는 경제적이며 순차적 읽기/쓰기 작업을 처리할 수 있습니다.</block>
   <block id="95613450e4eb651fdb31145ab9ad324d" category="inline-link">Google Cloud 문서: 영역별 영구 디스크(표준 및 SSD)</block>
   <block id="c091d52d01449012f33f4f993b41417d" category="paragraph">자세한 내용은 다음을 참조하세요.<block ref="61c2f059d82ddc0e246df7b9944d49f4" category="inline-link-rx"></block> .</block>
-  <block id="23427a152f8d98d474812d41d01526d9" category="list-text">GCP 디스크 크기</block>
   <block id="11d38a7256d0d4fd2244af8df450a246" category="list-text">Cloud Volumes ONTAP 시스템을 배포할 때 초기 디스크 크기를 선택해야 합니다.  그 후에는 NetApp Console 사용하여 시스템 용량을 관리할 수 있지만 직접 집계를 구축하려는 경우 다음 사항에 유의하세요.</block>
   <block id="e09827c232da4088f2ed4f8d307efa73" category="list-text">성능을 고려하면서 필요한 공간을 결정하세요.</block>
   <block id="3971baa53a59408437ace32571214622" category="list-text">영구 디스크의 성능은 디스크 크기와 시스템에서 사용 가능한 vCPU 수에 따라 자동으로 확장됩니다.</block>
@@ -4122,9 +4090,7 @@
   <block id="355d42a7e00bcba864628f034b15cddb" category="inline-link-macro">Google Cloud에서 Cloud Volumes ONTAP 시스템 데이터의 기본 디스크 보기</block>
   <block id="b40468f6a6f2e8fcdc8714311aa1ef49" category="list-text"><block ref="009f20ff08fc44a35d564f14d4f86898" category="inline-link-macro-rx"></block> .</block>
   <block id="a4f07a5384bf6c0ff50811b7cfdaf1a5" category="paragraph">Google Cloud Compute Engine은 리소스 사용에 할당량을 적용하므로 Cloud Volumes ONTAP 배포하기 전에 한도에 도달하지 않았는지 확인해야 합니다.</block>
-  <block id="24cf7e4ba799cb013c8978351f09a675" category="paragraph">GCP에 Cloud Volumes ONTAP 배포하는 경우 가상 네트워크에 대한 세부 정보를 지정해야 합니다.  워크시트를 사용하여 관리자로부터 정보를 수집할 수 있습니다.</block>
   <block id="0708e6ef30240c1f7018e5cefe7026d8" category="paragraph">*단일 노드 시스템에 대한 네트워크 정보*</block>
-  <block id="4ad8eab08ba97cad000a26933a94c309" category="cell">GCP 정보</block>
   <block id="b3ff996fe5c77610359114835baf9b38" category="cell">존</block>
   <block id="db2c433819a1360bb1c3610a9817cabc" category="cell">VPC 네트워크</block>
   <block id="15053fe82c0cfa99c0dd5722f3c5a2fd" category="cell">방화벽 정책(자체 방화벽 정책을 사용하는 경우)</block>
@@ -4177,7 +4143,6 @@
   <block id="95d8da7b19238cf835ee8f03b98b04ab" category="list-text">_프로비저닝된 IOPS SSD(io1)_ 디스크는 더 높은 비용으로 최고의 성능을 필요로 하는 중요한 애플리케이션을 위한 것입니다.</block>
   <block id="3b45d0097165753cbe807b39e8e38550" category="paragraph">Cloud Volumes ONTAP io1 디스크를 사용하여 Amazon EBS Elastic Volumes 기능을 지원합니다. <block ref="2f34fac6c8e3e7a84b963b75a5591f20" category="inline-link-macro-rx"></block> .</block>
   <block id="42774f56e2ae4256cc8d123f6d4fe958" category="list-text">_처리량 최적화 HDD(st1)_ 디스크는 저렴한 가격으로 빠르고 일관된 처리량이 필요한 자주 액세스되는 워크로드에 적합합니다.</block>
-  <block id="d7a299bbe372f280000198df797460f2" category="admonition">AWS 로컬 영역에서는 연결성이 부족하여 AWS S3에 대한 데이터 계층화를 사용할 수 없습니다.</block>
   <block id="321914d0fbcf9c45a3ea6a27f4c01ca0" category="list-text">EBS 디스크 크기</block>
   <block id="44bacb29285bcdcf27b752d7b6c9e182" category="inline-link-macro">Amazon EBS Elastic Volumes 기능</block>
   <block id="133354f4da6d01dbafb64d522788b589" category="inline-link-macro">콘솔이 시스템 용량을 관리하도록 하세요</block>
@@ -4608,7 +4573,6 @@
   <block id="202d3fe18abdfd3bccd5bcb7712beaa9" category="list-text">암호화 키로 이동하여 Google Cloud Storage 서비스 에이전트에 Cloud KMS 암호화/복호화 권한을 할당합니다.</block>
   <block id="92d6097e791c2b01c7cc0104f3a00d02" category="inline-link">Google Cloud 문서: 고객 관리 암호화 키 사용</block>
   <block id="8d6456bdd46775a0bde58d79fa727b86" category="paragraph">자세한 내용은 다음을 참조하세요.<block ref="0d1fec14af342ac3f0970d5f69f9ea12" category="inline-link-rx"></block></block>
-  <block id="8bfa194adf007027d43cc1a7563e03fa" category="list-text">시스템을 생성할 때 API 요청과 함께 "GcpEncryption" 매개변수를 사용하세요.</block>
   <block id="b8bed80dbd79102cbf54b5efe00489c3" category="paragraph">를 참조하세요<block ref="ad561d482c49648a0d36f6a86e379ff3" category="inline-link-rx"></block> "GcpEncryption" 매개변수 사용에 대한 자세한 내용은 다음을 참조하세요.</block>
   <block id="b10aaff78dfb34e8e7e4c718d4519219" category="summary">Cloud Volumes ONTAP 과 함께 Amazon 암호화를 사용하려면 AWS Key Management Service를 설정해야 합니다.</block>
   <block id="24558fa2d9e2dec026acbaef1270de6f" category="doc">AWS에서 고객 관리 키를 사용하도록 Cloud Volumes ONTAP 설정</block>
@@ -4639,7 +4603,6 @@
   <block id="c2a34cad77f0451e7d0f58a7e0e6e450" category="inline-link">AWS 문서: 다른 계정의 사용자가 KMS 키를 사용하도록 허용</block>
   <block id="802482a11bca72c205b3a1d95ff61b0a" category="paragraph">이 프로세스에 대한 추가 세부 사항은 다음을 참조하세요.<block ref="9601f431d0df2b9877da4b65b53342b6" category="inline-link-rx"></block> .</block>
   <block id="c81afb1b84ded76b91ff7f71834201df" category="list-text">고객 관리 CMK를 사용하는 경우 Cloud Volumes ONTAP IAM 역할을 _키 사용자_로 추가하여 CMK에 대한 키 정책을 수정합니다.</block>
-  <block id="0384244b4a5a8a089d8df0c3da87ddc5" category="paragraph">Cloud Volumes ONTAP 에서 데이터 계층화를 활성화하고 S3 버킷에 저장된 데이터를 암호화하려는 경우 이 단계가 필요합니다.</block>
   <block id="c13f89355236652e9c75af1eec63418d" category="paragraph">Cloud Volumes ONTAP 시스템을 생성할 때 IAM 역할이 생성되므로 Cloud Volumes ONTAP 배포한 _후에_ 이 단계를 수행해야 합니다.  (물론, 기존 Cloud Volumes ONTAP IAM 역할을 사용할 수도 있으므로 이 단계를 미리 수행할 수 있습니다.)</block>
   <block id="f71bca1a74e3009d7cff4912558ab628" category="summary">Cloud Volumes ONTAP 있는 VPC 외부에서 NAS 클라이언트가 플로팅 IP 주소에 액세스할 수 있도록 AWS 전송 게이트웨이를 설정합니다.  이 기능은 장애가 발생하면 노드 간에 플로팅 IP가 자동으로 마이그레이션되므로 유용합니다.</block>
   <block id="88f49ea08cc48c12826d7601b30c9af6" category="doc">Cloud Volumes ONTAP HA 쌍에 대한 AWS 전송 게이트웨이 설정</block>
@@ -4745,7 +4708,6 @@
   <block id="d39421b26d8f96d6b63ba8583d57f734" category="paragraph-title"><block ref="58f667aaf05f87159670e12bd9bc076b" category="inline-image-macro-rx" type="image"></block>지원되는 구성을 선택하세요</block>
   <block id="d2a95dd3692cce58be8541add2bc6897" category="paragraph">대부분의 구성이 지원됩니다.  최신 버전을 실행하는 Cloud Volumes ONTAP 시스템이 있다면 문제없이 사용할 수 있습니다. <block ref="f2e6a88e181ee9519c72412b23fc6e17" category="inline-link-macro-rx"></block> .</block>
   <block id="793656833776421d4fb1944ba40b1677" category="paragraph-title"><block ref="54f425ce8d89f4ed6b8a546561af5d60" category="inline-image-macro-rx" type="image"></block>Cloud Volumes ONTAP 과 개체 스토리지 간 연결을 보장합니다.</block>
-  <block id="dfa5ec33cd56c8ec3ba7043cbe7164b5" category="list-text">AWS의 경우 S3에 대한 VPC 엔드포인트가 필요합니다. <block ref="8bf18368a4d50e7d264c6ce0821cc35b" category="inline-xref-macro-rx"></block> .</block>
   <block id="ee00eb1699dc1b8b1326aaf18fd4c862" category="list-text">Azure의 경우 NetApp Console 필요한 권한이 있는 한 아무것도 할 필요가 없습니다. <block ref="b95ed179d0a0b66246f2db10d9eda033" category="inline-xref-macro-rx"></block> .</block>
   <block id="c64a8243194a73e3972f291aa54a6a53" category="list-text">Google Cloud의 경우 Private Google Access에 대한 서브넷을 구성하고 서비스 계정을 설정해야 합니다. <block ref="ae7c1d949803baa5d291fbd909b9d2e1" category="inline-xref-macro-rx"></block> .</block>
   <block id="a4c1999be8e0538c77be98752e1c50d8" category="paragraph-title"><block ref="05b2444faffd66d76e88602ea7dd353f" category="inline-image-macro-rx" type="image"></block>계층화가 활성화된 집계가 있는지 확인하세요.</block>
@@ -4783,8 +4745,6 @@
   <block id="957637726d55a9a54b3163fb3c7e8f1b" category="list-text">볼륨에서 씬 프로비저닝을 활성화해야 합니다.</block>
   <block id="5a2ebfb8baa378cfcfcba58bbb1380c2" category="section-title">요구 사항</block>
   <block id="c52cfa8d2e8ba7443d63ecc4fb1b831d" category="paragraph">클라우드 제공업체에 따라 Cloud Volumes ONTAP 콜드 데이터를 개체 스토리지로 계층화할 수 있도록 특정 연결 및 권한을 설정해야 합니다.</block>
-  <block id="8392903bca29cf2376b54aee919836fa" category="section-title">AWS S3에 콜드 데이터를 계층화하기 위한 요구 사항</block>
-  <block id="b60a4a79179ba02b8f00b6834e8d980f" category="paragraph">Cloud Volumes ONTAP S3에 연결되어 있는지 확인하세요.  해당 연결을 제공하는 가장 좋은 방법은 S3 서비스에 대한 VPC 엔드포인트를 만드는 것입니다.  지침은 다음을 참조하세요.<block ref="739944581ddd86bd6d09f3841372a69b" category="inline-link-rx"></block> .</block>
   <block id="a4c517861a247b6f98966b7fdc44aec2" category="paragraph">문제가 발생하면 다음을 참조하세요.<block ref="133eaae00ad88e811386070963e01d00" category="inline-link-rx"></block> .</block>
   <block id="9937c497b7ba5b93c4e025e7034a6ab2" category="section-title">Azure Blob 스토리지에 콜드 데이터를 계층화하기 위한 요구 사항</block>
   <block id="0d7b4676ee4aa84d26a16b123a63ecea" category="paragraph">콘솔에 필요한 권한이 있는 한 성능 계층과 용량 계층 간에 연결을 설정할 필요가 없습니다.  콘솔 에이전트의 사용자 지정 역할에 다음 권한이 있는 경우 콘솔에서 VNet 서비스 엔드포인트를 사용할 수 있습니다.</block>
@@ -4796,7 +4756,6 @@
   <block id="3416d6997f78d0ffe7261725d24751ca" category="inline-link-macro">이 서비스 계정을 설정하는 방법을 알아보세요</block>
   <block id="1599759c277422fbe5e683ed93eafe5f" category="paragraph"><block ref="5a9b347c50656bd207fa757a3eb4fa66" category="inline-link-macro-rx"></block> .</block>
   <block id="2842a888f7806072223340b92c6b46b7" category="paragraph">Cloud Volumes ONTAP 시스템을 생성할 때 이 서비스 계정을 선택하라는 메시지가 표시됩니다.</block>
-  <block id="4094070de63eb60a22dafb42ecab40fb" category="paragraph">배포 중에 서비스 계정을 선택하지 않으면 Cloud Volumes ONTAP 종료하고 Google Cloud 콘솔로 이동한 다음 서비스 계정을 Cloud Volumes ONTAP 인스턴스에 연결해야 합니다.  그런 다음 다음 섹션에 설명된 대로 데이터 계층화를 활성화할 수 있습니다.</block>
   <block id="afe7022770dc53fd2a2de81727d4343a" category="list-text">고객 관리 암호화 키로 버킷을 암호화하려면 Google Cloud Storage 버킷에서 해당 키를 사용하도록 설정합니다.</block>
   <block id="030b67ae86ab61438eb6b00a3ade8e7a" category="inline-link-macro">Cloud Volumes ONTAP 에서 고객 관리 암호화 키를 사용하는 방법을 알아보세요.</block>
   <block id="d9c32a88801cedef2b665ed828d3ec26" category="paragraph"><block ref="c6d38e0757454a32ebb960ce7a42b88f" category="inline-link-macro-rx"></block> .</block>
@@ -5449,7 +5408,6 @@
   <block id="ba089edca33f314482ad946ae680f1eb" category="inline-link">라이선싱에 대해 자세히 알아보세요</block>
   <block id="73f030bd359abb41dc1089c470531542" category="paragraph"><block ref="37698926d26a2683d3b5c90c9b2406a6" category="inline-link-rx"></block> .</block>
   <block id="57ae56f77d278076fb394799067eb3ef" category="section-title">S3 Glacier 즉시 검색</block>
-  <block id="465771d8890531f2527e09ef3f1b4f68" category="paragraph">이제 Amazon S3 Glacier Instant Retrieval 스토리지 클래스에 계층화된 데이터를 저장할 수 있습니다.</block>
   <block id="6d4822148bad6fb79e6d92864dde8771" category="inline-link">계층화된 데이터의 스토리지 클래스를 변경하는 방법을 알아보세요.</block>
   <block id="2e56aeba3c1fc24d42b0f15df12a08f9" category="paragraph"><block ref="5d4901194aa2380bf45bcc72c63f2763" category="inline-link-rx"></block> .</block>
   <block id="ef8e1d8f242a7ee4d109deb44db1b252" category="section-title">커넥터에 필요한 새로운 AWS 권한</block>
@@ -5598,8 +5556,6 @@
   <block id="ce99c539d64a13ad8b53af078887ad2a" category="section-title">custom-4-16384는 더 이상 Google Cloud에서 지원되지 않습니다.</block>
   <block id="46e869bc0f7a5fcdc09df010e1f48b25" category="paragraph">custom-4-16384 머신 유형은 더 이상 새로운 Cloud Volumes ONTAP 시스템에서 지원되지 않습니다.</block>
   <block id="0e3cb01898d99d0091e2a6f5a7572390" category="paragraph">이 머신 유형에서 기존 시스템을 실행 중인 경우 계속 사용할 수 있지만 n2-standard-4 머신 유형으로 전환하는 것이 좋습니다.</block>
-  <block id="346b156b62b438feb8aca3c528a7173c" category="inline-link">GCP에서 Cloud Volumes ONTAP 에 지원되는 구성 보기</block>
-  <block id="cd46020b2ca09f66f5c79bd35fe2da2e" category="paragraph"><block ref="4107f790de2a45bc9a00a9b75db49bc5" category="inline-link-rx"></block> .</block>
   <block id="84e52d98abcbe81e8699e5833406f2e8" category="section-title">2021년 5월 30일</block>
   <block id="356b234ec5c21cc28a1a5ae1dd7d3d5f" category="paragraph">Connector 3.9.7 릴리스에는 다음과 같은 변경 사항이 도입되었습니다.</block>
   <block id="29edc853696ed1638805579b54eb4028" category="section-title">AWS의 새로운 프로페셔널 패키지</block>
@@ -5671,8 +5627,6 @@
   <block id="cefe13e88d67962401889e239b718814" category="inline-image-macro">지역을 선택한 후 사용할 수 있는 가용성 영역 드롭다운 목록의 스크린샷입니다.</block>
   <block id="57831ce128ea817f6507e4e9d32b2371" category="paragraph"><block ref="57831ce128ea817f6507e4e9d32b2371" category="inline-image-macro-rx" type="image"></block></block>
   <block id="089dd3c79ae56f1da7a6b2c50edab075" category="section-title">Google Cloud의 더 큰 디스크</block>
-  <block id="5d674fa98625cfb73188d278b59fdf31" category="paragraph">Cloud Volumes ONTAP 이제 GCP에서 64TB 디스크를 지원합니다.</block>
-  <block id="38c7433640fdc249a223728de5e9c481" category="admonition">GCP 제한으로 인해 디스크만을 포함한 최대 시스템 용량은 256TB로 유지됩니다.</block>
   <block id="cbddd29e855faaf713258fb82116edf0" category="section-title">Google Cloud의 새로운 머신 유형</block>
   <block id="cc43ac2c3e66d6d0b58d982ca8a50a38" category="paragraph">Cloud Volumes ONTAP 이제 다음과 같은 머신 유형을 지원합니다.</block>
   <block id="1ac4c5bf1cc05cf3d4aa859843ec87b4" category="list-text">Explore 라이선스와 BYOL을 사용하는 n2-standard-4</block>
@@ -5819,7 +5773,6 @@
   <block id="6e1e9c83b80f4d22d34cbdf60a71383b" category="paragraph">ifdef::gcp[]</block>
   <block id="310c228207a0f8446bbe4c5d16978cb7" category="paragraph">endif::gcp[]</block>
   <block id="f99b3d89987ba6dd6d51c370eaeea8f2" category="admonition">검색하는 동안 실패 메시지가 표시될 수 있지만 검색 프로세스가 완료될 때까지 무시할 수 있습니다. 검색 중에는 Azure Marketplace 포털에서 시스템 생성 Cloud Volumes ONTAP 구성, 특히 시스템 태그를 수정하지 마세요. 이러한 구성을 변경하면 예상치 못한 시스템 동작이 발생할 수 있습니다.</block>
-  <block id="bd8fc35f01f5d1ff5b0cec1a099bfb1d" category="admonition">배포 프로세스가 완료된 후에는 Google Cloud 포털에서 시스템 생성 Cloud Volumes ONTAP 구성, 특히 시스템 태그를 수정하지 마세요. 이러한 구성을 변경하면 예기치 않은 동작이나 데이터 손실이 발생할 수 있습니다.</block>
   <block id="950e7e695356602272f63f5a229978c6" category="inline-link-macro">Google Cloud에서 Cloud Volumes ONTAP 구성 계획</block>
   <block id="b64ce252b77116ca032fd6f285079df7" category="list-text"><block ref="b64ce252b77116ca032fd6f285079df7" category="inline-link-macro-rx"></block></block>
   <block id="306ce3f6735e643338e201f2701d07a8" category="admonition">배포 프로세스가 완료된 후에는 AWS 클라우드 포털에서 시스템 생성 Cloud Volumes ONTAP 구성, 특히 시스템 태그를 수정하지 마세요. 이러한 구성을 변경하면 예기치 않은 동작이나 데이터 손실이 발생할 수 있습니다.</block>
@@ -6123,4 +6076,155 @@
   <block id="667dffcf5676fe0bd645082d2a512fef" category="section-title">2026년 1월 12일</block>
   <block id="96401f578ab9670c6924f2e5ad91441b" category="section-title">AWS에서 지원되는 업그레이드 경로</block>
   <block id="070381386d1bf4bdb6bab9bb39eef15d" category="section-title">Google Cloud에 대해 지원되는 업그레이드 경로</block>
+  <block id="dfcd07d4790b963532ec4f8f70f184cd" category="doc">Google Cloud Infrastructure Manager 지원</block>
+  <block id="ed5b5006125f27aac08e98fe5c365d46" category="inline-link">Google Cloud Infrastructure Manager</block>
+  <block id="221dc7db98837c8091cba0d42f55b28d" category="inline-link">Cloud Deployment Manager</block>
+  <block id="055d81bf5e86c650f524ba8578595b0e" category="paragraph">Cloud Volumes ONTAP 9.16.1 이상에서는 Google Cloud의 새 배포에 대해 <block ref="15f2e159f639573aa2393f20aa6d5e11" category="inline-link-rx"></block> (DM) 대신 <block ref="d6072c82cbcda01fbac85ce6d2b2ba66" category="inline-link-rx"></block> (IM)을 지원합니다. Google은 더 고급 Infrastructure Manager를 위해 가까운 미래에 인프라 서비스로서 Deployment Manager를 더 이상 사용하지 않을 예정입니다.</block>
+  <block id="66243a4b72870642e35fa6b52e50a63b" category="inline-link">기존 Cloud Volumes ONTAP 배포를 Google Cloud Infrastructure Manager에 맞게 구성합니다.</block>
+  <block id="aa51ff66cac4f14d899d7f563f8f476a" category="paragraph">이제 Infrastructure Manager를 사용하도록 Cloud Volumes ONTAP을 자동으로 배포하거나 변환 도구를 실행하여 Deployment Manager의 기존 배포를 Infrastructure Manager로 전환할 수 있습니다. 변환은 일회성 프로세스이며, 변환 후 시스템이 자동으로 Infrastructure Manager를 사용하기 시작합니다. 전환 도구 실행에 대한 지침은<block ref="5621b7ac255bff00b9e8610ec0606935" category="inline-link-rx"></block>을 참조하십시오.</block>
+  <block id="492eb9196f4c5211832a66df9ce6230b" category="paragraph">Infrastructure Manager를 사용하는 Cloud Volumes ONTAP 시스템은 Google Cloud Storage 버킷을 사용하여 데이터를 저장하고 첫 번째 배포 영역에 배포 레코드를 저장하며, 이는 후속 배포에 재사용됩니다. 이러한 버킷에 대해 추가 비용이 발생할 수 있지만 버킷이나 해당 콘텐츠를 편집하거나 삭제하지 마십시오.</block>
+  <block id="c63b3118890326f42e936277c83db3b6" category="list-text"><block ref="9d4c46381bcc7ebe4bf02a7fd0ac5b6f" prefix="" category="inline-code"></block>: Cloud Volumes ONTAP Terraform 파일 저장용</block>
+  <block id="aaa460fe2e0e39c5d509b26ad876baf8" category="list-text"><block ref="6ec9e5b046607d57923aee80f990225d" prefix="" category="inline-code"></block>: Google Cloud Terraform 아티팩트 저장용</block>
+  <block id="73c696c58c9e62731e855a0bf47853e1" category="inline-link">Google Cloud에서 Cloud Volumes ONTAP 시작하기</block>
+  <block id="f80ae1b8de03cd56e51dbe8e44bf284f" category="list-text"><block ref="f80ae1b8de03cd56e51dbe8e44bf284f" category="inline-link-rx"></block></block>
+  <block id="ccc8cedaac96382fa4e8c01b8e53646d" category="inline-link">NetApp Console Agent 4.2.0 릴리스 노트</block>
+  <block id="9039c72d9261ecd88329c5e8d1a4172d" category="list-text"><block ref="9039c72d9261ecd88329c5e8d1a4172d" category="inline-link-rx"></block></block>
+  <block id="6e6cddfac74a82983c3905af5c6e5b98" category="inline-link">Google Cloud Infrastructure Manager에 필요한 권한</block>
+  <block id="98244417f1eb666b345ad436d51edece" category="list-text"><block ref="98244417f1eb666b345ad436d51edece" category="inline-link-rx"></block></block>
+  <block id="4d914b9be892a8c739cd84bed897acab" category="paragraph">AWS에서 데이터 계층화를 활성화하면 Cloud Volumes ONTAP는 자주 사용되는 데이터에 대해 EBS를 성능 계층으로 사용하고, 사용되지 않는 데이터에 대해 Amazon Simple Storage Service(Amazon S3)를 용량 계층으로 사용합니다.</block>
+  <block id="45a36a92a557cc28ab6c1c8e325b13bf" category="list-text">Debian의 경우 기본 클라우드 사용자는<block ref="21232f297a57a5a743894a0e4a801fc3" prefix=" " category="inline-code"></block>입니다. Google Cloud는 Google Cloud Console 또는 gcloud 명령줄을 통해 SSH 액세스가 요청되면<block ref="21232f297a57a5a743894a0e4a801fc3" prefix=" " category="inline-code"></block> 사용자에 대한 인증서를 생성하고 추가합니다. <block ref="d338b3f0f405eb5e51c8cc1e5ca66f02" prefix=" " category="inline-code"></block>을 지정하여 루트 권한을 얻을 수 있습니다.</block>
+  <block id="73f9765d804facf9c2c8b9cfb9d0cf04" category="admonition">Cloud Volumes ONTAP는 이러한 구성만 지원합니다. AWS Local Zone 구성에서 지원되지 않는 디스크 유형 또는 부적격 인스턴스를 선택하면 배포가 실패할 수 있습니다. Cloud Volumes ONTAP 시스템이 AWS Local Zone에 있는 경우 Amazon Simple Storage Service(Amazon S3)로의 데이터 계층화는 지원되지 않습니다. Local Zone 외부의 Amazon S3 버킷에 액세스하면 지연 시간이 증가하고 Cloud Volumes ONTAP 활동에 영향을 미치기 때문입니다.</block>
+  <block id="eb8a4f49c1c7aee51387d22d6c0f97a0" category="paragraph">기본 EBS 디스크 유형은 범용 SSD(gp3 또는 gp2), 프로비저닝된 IOPS SSD(io1) 또는 처리량 최적화 HDD(st1)일 수 있습니다. EBS 디스크를 Amazon Simple Storage Service(Amazon S3)와 연결하여 <block ref="8ea89944316dc5317d2fdef703995c09" category="inline-link-macro-rx"></block>할 수 있습니다.</block>
+  <block id="5432e88d98c0a8fd7b4211ea2e034c3f" category="inline-link">ONTAP S3 구성 파워 가이드</block>
+  <block id="b2495993f98fecdf11c080a96b80c753" category="paragraph">Cloud Volumes ONTAP는 스케일아웃 스토리지 옵션으로 S3를 지원하지만 Console에서는 이 기능에 대한 관리 기능을 제공하지 않습니다. 명령줄을 사용하는 것이 Cloud Volumes ONTAP에서 S3 클라이언트 액세스를 구성하는 모범 사례입니다. 자세한 내용은<block ref="df74e648e4436609bf57368501b15603" category="inline-link-rx"></block>을 참조하십시오.</block>
+  <block id="4225842c9a17b34dd7979347a7f8bd2d" category="inline-link-macro">Cloud Volumes ONTAP의 ONTAP S3 및 기타 클라이언트 프로토콜 지원에 대해 자세히 알아보십시오</block>
+  <block id="fe7d439276bff1dbe63b78681d9feeda" category="paragraph"><block ref="5cc0a16305f001c036ac1b79ba2f1f1a" category="inline-link-macro-rx"></block>.</block>
+  <block id="df346128c45efa43efc29607224fc716" category="list-text">Amazon Simple Storage Service(S3)</block>
+  <block id="983921313d1412e0f488af3c94398f7e" category="paragraph">EBS를 성능 계층으로, Amazon S3를 용량 계층으로 사용하려면 Cloud Volumes ONTAP이 S3에 연결되어 있어야 합니다. 이 연결을 제공하는 가장 좋은 방법은 S3 서비스에 대한 VPC 엔드포인트를 생성하는 것입니다. 지침은<block ref="739944581ddd86bd6d09f3841372a69b" category="inline-link-rx"></block>을 참조하십시오.</block>
+  <block id="228a93ddd45e166bd8a6bf813f304a3d" category="cell">\https://cloudbuild.googleapis.com/v1 (개인 모드 배포 전용) \https://cloudkms.googleapis.com/v1 \https://cloudresourcemanager.googleapis.com/v1/projects \https://compute.googleapis.com/compute/v1 \https://www.googleapis.com/compute/beta \https://www.googleapis.com/compute/v1/projects/ \https://www.googleapis.com/deploymentmanager/v2/projects \https://www.googleapis.com/storage/v1 \https://www.googleapis.com/upload/storage/v1 \https://config.googleapis.com/v1 \https://iam.googleapis.com/v1 \https://storage.googleapis.com/storage/v1</block>
+  <block id="6ef02565d31510cc34e7660eb2aca0c9" category="list-text">Google Cloud Console에서 Cloud Volumes ONTAP 시스템을 찾습니다.</block>
+  <block id="8f20c63d5ca054e7039d682c76172710" category="paragraph">Cloud Volumes ONTAP과 Console은 모두 NetApp에서 관리하는 Google Cloud 내 프로젝트의 이미지를 사용합니다. 조직에서 조직 내에 호스팅되지 않은 이미지 사용을 차단하는 정책이 있는 경우 Console 에이전트 및 Cloud Volumes ONTAP 배포에 영향을 미칠 수 있습니다.</block>
+  <block id="fc2c17f2e03b7fb56fb6a7336e3420d6" category="inline-link">Google Cloud VPC Service Controls 정책 설명서</block>
+  <block id="70c1857154ecb80d0e26bb2adb500400" category="paragraph">정책을 사용하면 VPC Service Controls 규칙 집합에 대한 예외를 허용할 수 있습니다. 정책에 대한 자세한 내용은 해당 페이지를 참조하십시오<block ref="1102e6c189182e9689e4f9e8a511c69b" category="inline-link-rx"></block>.</block>
+  <block id="67c74c57451bc3ff6825155f479c900f" category="list-text">ONTAP S3 객체 스토리지 관리: Cloud Volumes ONTAP의 ONTAP S3 스토리지 관리 기능은 System Manager에서만 사용할 수 있으며 Console에서는 사용할 수 없습니다.</block>
+  <block id="d095caae3f5689cf9c9b65295bd92c58" category="list-text">Google Cloud 콘솔에서<block ref="72863ecd427c906452e0c3d21111bdac" category="inline-link-rx"></block>.</block>
+  <block id="9f1560122eda1096bf170e34cefbc785" category="inline-image-macro">생성 중에 사용자에게 서비스 계정에 대한 액세스 권한을 부여하는 Google Cloud Console의 스크린샷입니다.</block>
+  <block id="68444ac221996e39a765b790e31bf7cb" category="paragraph"><block ref="68444ac221996e39a765b790e31bf7cb" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="a5c59a421862c80cce1a3031f4a025fa" category="list-text">정상적으로 실행 중인 NetApp Console 에이전트입니다.</block>
+  <block id="2a8e7e8a1a546118aafd3b4726f68cd2" category="paragraph">드롭다운 목록에 추가 프로젝트가 표시되지 않으면 아직 서비스 계정을 다른 프로젝트와 연결하지 않은 것입니다. Google Cloud Console로 이동하여 IAM 서비스를 열고 해당 프로젝트를 선택하세요. Console에서 사용하는 역할로 서비스 계정을 해당 프로젝트에 추가합니다. 각 프로젝트에 대해 이 단계를 반복해야 합니다.</block>
+  <block id="ee315b90b56cac454504030332e26f7d" category="list-text">*위치 및 연결*: 시스템에 사용할 Google Cloud 지역 및 영역을 선택하고, 방화벽 정책을 선택한 다음, 데이터 계층화를 위해 Google Cloud 스토리지에 대한 네트워크 연결을 확인하십시오.</block>
+  <block id="432f238e2167c79f023d25fc94cf7068" category="list-text">데이터 계층화를 비활성화한 경우 후속 애그리게이트에서 다시 활성화할 수 있지만, 시스템을 종료하고 Google Cloud Console에서 서비스 계정을 추가해야 합니다.</block>
+  <block id="ae02630a597278f3ffd84e28ca4d3fbd" category="admonition">배포 프로세스가 완료된 후에는 Google Cloud 포털에서 시스템에서 생성된 Cloud Volumes ONTAP 구성(예: 시스템 태그 및 Google Cloud 리소스에 설정된 레이블)을 수정하지 마십시오. 이러한 구성을 변경하면 예기치 않은 동작이나 데이터 손실이 발생할 수 있습니다.</block>
+  <block id="39d5d0f207458db1d58a115ab0447cc8" category="list-text">*HA 배포 모델*: HA 구성에 대해 여러 영역(권장) 또는 단일 영역을 선택합니다. 그런 다음 지역과 영역을 선택합니다.</block>
+  <block id="31bd3ca8f6cd8f37f69e226cb1afe75b" category="list-text"><block ref="31bd3ca8f6cd8f37f69e226cb1afe75b" category="inline-link-rx"></block></block>
+  <block id="233af50e7ac5078d6cabb58ab95095b9" category="summary">기존 Google Cloud 배포 환경의 경우 시스템을 Cloud Volumes ONTAP 9.16.1 이상으로 업그레이드한 다음 Google Cloud Deployment Manager에서 Cloud Infrastructure Manager로 전환하는 전환 도구를 수동으로 실행해야 합니다.</block>
+  <block id="b9e5aa43ec2007eccaf097117438e531" category="doc">기존 Cloud Volumes ONTAP 배포를 Infrastructure Manager로 전환합니다.</block>
+  <block id="4f199c7ad20d0a908dda3d1603ff73d7" category="paragraph">2026년 1월 12일부터 Google Cloud에서 새로 배포하는 Cloud Volumes ONTAP은 Google Cloud Infrastructure Manager를 사용할 수 있습니다. Google은 Google Cloud Deployment Manager를 Infrastructure Manager로 대체할 예정입니다. 따라서 기존 Cloud Volumes ONTAP 배포를 Deployment Manager에서 Infrastructure Manager로 전환하려면 전환 도구를 수동으로 실행해야 합니다. 이 과정은 한 번만 수행하면 되며, 전환 후에는 시스템이 자동으로 Infrastructure Manager를 사용하게 됩니다.</block>
+  <block id="8c41baf1ca98e1184f48c4721d44d431" category="inline-link">NetApp 지원 사이트</block>
+  <block id="416146100ffb7fc54fb8a24ca7b63ae8" category="paragraph">전환 도구는<block ref="33e3c3ba324846178fad333329821dd2" category="inline-link-rx"></block>에서 사용할 수 있으며 다음과 같은 산출물을 생성합니다.</block>
+  <block id="fe91a45b95e89e219ea69631edff8521" category="list-text"><block ref="b1042b7d7203a022c297b13679f7d1f8" prefix=" " category="inline-code"></block>에 저장된 Terraform 아티팩트.</block>
+  <block id="47a96ec9ac683fac8aa8ebbddbfb79ff" category="list-text">변환 요약이<block ref="8f66602548a59e22c821de29517d7dff" prefix=" " category="inline-code"></block>에 저장되었습니다.</block>
+  <block id="787ab3bb526ace3e3d9f5b857facafbf" category="list-text">디버그 로그는 <block ref="abecaca0429ea0c44adcba537eb94f89" prefix=" " category="inline-code"></block> 디렉터리에 저장됩니다. 문제 해결을 위해 이 로그가 필요합니다. <block ref="6ec9e5b046607d57923aee80f990225d" prefix=" " category="inline-code"></block> 버킷에는 Terraform 로그가 저장됩니다.</block>
+  <block id="07f770dff2ab3ed070b0fafe70eae22a" category="paragraph">Infrastructure Manager를 사용하는 Cloud Volumes ONTAP 시스템은 데이터와 레코드를 Google Cloud Storage 버킷에 저장합니다. 이러한 버킷에 대해 추가 비용이 발생할 수 있지만 버킷이나 해당 콘텐츠를 편집하거나 삭제하지 마십시오.</block>
+  <block id="adf9ac4ef674ca575662deb880fc460c" category="list-text">Cloud Volumes ONTAP 시스템이 9.16.1 이상인지 확인하십시오.</block>
+  <block id="0cd228edd9649cf2f97b2b3bdd4bc95e" category="list-text">Google Cloud Console에서 Cloud Volumes ONTAP 리소스 또는 해당 속성이 수동으로 편집되지 않았는지 확인하십시오.</block>
+  <block id="3824876226172edfe0f17e8022b60fda" category="inline-link">Google Cloud API 활성화</block>
+  <block id="1054acecf75a1c2af16bf467b87f005c" category="list-text">Google Cloud API가 사용 설정되어 있는지 확인하세요. <block ref="284597b9b55c9d9b3851ec2830376fdc" category="inline-link-rx"></block>를 참조하십시오. 다른 API와 함께 Google Cloud Quotas API도 사용 설정해야 합니다.</block>
+  <block id="5c84f3cedadf0b84881afc44baff3b4f" category="list-text">NetApp Console 에이전트의 서비스 계정에 필요한 모든 권한이 있는지 확인하십시오. 을 참조하십시오<block ref="818358be64a80b49936bc9250a957044" category="inline-link-rx"></block>.</block>
+  <block id="67b8178ba8bc905f8855216664e74b2d" category="list-text">변환 도구는 다음 도메인을 사용합니다. 네트워크에서 포트 443에서 활성화하십시오.</block>
+  <block id="eae639a70006feff484a39363c977e24" category="cell">도메인</block>
+  <block id="02674a4ef33e11c879283629996c8ff8" category="cell">방향</block>
+  <block id="b63dfe8b3bd29e14bcbb174cdab39de5" category="cell">cloudresourcemanager.googleapis.com</block>
+  <block id="5ba463f336572a8840e1e782bb0be238" category="cell">EGRESS</block>
+  <block id="c75bfc2410c8aa457bb22b5670270cca" category="cell">프로젝트 검증</block>
+  <block id="0f9dff7b72e495dccfd8b1e2c6626c7a" category="cell">deploymentmanager.googleapis.com</block>
+  <block id="67d02a8b90f76f0c7bf3ba7d345bbebb" category="cell">배포 검색</block>
+  <block id="010adc11b6d7bf2baa318c419f7d2e56" category="cell">config.googleapis.com</block>
+  <block id="3eb1e4fc40e276fb86e6b6d734f32b86" category="cell">Infrastructure Manager API</block>
+  <block id="3f4ca1d8ed90e1a3c0451eb42e58e5ef" category="cell">storage.googleapis.com</block>
+  <block id="b36029eb9647c29c445a9b17dae870a7" category="cell">GCS 버킷 작업</block>
+  <block id="13e0f6e33777e2aaca86d60a3dc08fa6" category="cell">iam.googleapis.com</block>
+  <block id="cfde1d97dda8f0e9952ffb9be9d2c14f" category="cell">서비스 계정 검증</block>
+  <block id="afa779048d66bb66331343a3b654afc4" category="cell">compute.googleapis.com</block>
+  <block id="cfa7b3a5c52457471d6c14ee165e7e28" category="cell">Google Cloud 및 Terraform Import 및 Plan에서 사용되는 Compute API 호출</block>
+  <block id="a821fc37e9a8c6b3142dde56c69b1bb6" category="cell">openidconnect.googleapis.com</block>
+  <block id="b35468dc3fd697b16778381ff55f499f" category="cell">oauth2.googleapis.com</block>
+  <block id="964fe5de0b28ec675cdb16182d18018c" category="cell">OAuth2 토큰 교환</block>
+  <block id="2180f96de4691cad74a98108c71af69b" category="cell">registry.terraform.io</block>
+  <block id="3aaa63af09260a456f3bfd836d8bcf14" category="cell">Terraform 공급자 레지스트리</block>
+  <block id="3065a4c1643d2ac18136113cfff57f2f" category="cell">releases.hashicorp.com</block>
+  <block id="0051616037cea686c4e215525655f3f0" category="cell">Terraform 바이너리 다운로드</block>
+  <block id="f17590a8b9fe66b7c6a6c8c312352fbd" category="cell">apt.releases.hashicorp.com</block>
+  <block id="a6a87b61f00bb146c7629d95ebff6934" category="cell">HashiCorp APT 저장소</block>
+  <block id="fbb8107abcb4bc163bdcaf21f48798ab" category="cell">us-central1-docker.pkg.dev</block>
+  <block id="2bd8637c8a8b8e2d07319cc6e191fa43" category="cell">GCP Artifact Registry</block>
+  <block id="fb4479839b891ed9122fdadf7bbfe16a" category="cell">metadata.google.internal</block>
+  <block id="afbf0897a5a83fdd873dfb032ec695d3" category="cell">내부</block>
+  <block id="964a9f95d3fda0f78f13dd7cd49fe137" category="cell">VM metadata 및 인증 토큰</block>
+  <block id="2ebcfc415db0f53ee976c65188ec85ef" category="paragraph">Deployment Manager에서 Infrastructure Manager로 전환하고 기존 Cloud Volumes ONTAP 배포에 대해 도구를 실행하려면 다음 단계를 따르십시오.</block>
+  <block id="cc8a2ca4c8f7a6693635c0db1616e216" category="list-text">역할을 생성하고 서비스 계정에 연결합니다.</block>
+  <block id="960ea426544a50e48bbb44091a8b5e5a" category="list-text">다음 권한을 가진 YAML 파일을 생성하십시오.</block>
+  <block id="1d18879deca373fd3c960377615e653b" category="inline-link">사용자 지정 역할 생성 및 관리</block>
+  <block id="869c76d4b80ed5f9cf0e8d2f4eb512e0" category="list-text">YAML 파일에 정의된 권한으로 Google Cloud에서 사용자 지정 역할을 생성합니다.<block ref="6da58a565048c2e2729af1e6e86faa69" prefix=" " category="inline-code"></block> 자세한 내용은<block ref="501c40914d64ab1d645ef6b122f85e83" category="inline-link-rx"></block>를 참조하십시오.</block>
+  <block id="b32773154a8c5568c16bd0ac076b2038" category="list-text">VM을 생성하는 데 사용할 서비스 계정에 사용자 지정 역할을 연결합니다.</block>
+  <block id="a3b3d7065fff3323321a80503eca1bba" category="inline-link">서비스 계정 개요</block>
+  <block id="4249c331d2620d2cd9780ca6679f30af" category="list-text">이 서비스 계정에<block ref="27a953ce0cbb51d4876b439aee2cbec1" prefix=" " category="inline-code"></block> 역할을 추가하세요. <block ref="88a1fe1ad7367a70a7d6fa5c7d98a110" category="inline-link-rx"></block>을(를) 참조하십시오.</block>
+  <block id="809402001bcefea16f2b81f207ddb62e" category="list-text">[[create-vm]]다음 구성으로 VM을 생성합니다. 이 VM에서 도구를 실행합니다.</block>
+  <block id="bfe0b77c61bbcf5b827b09fb810318bd" category="list-text">머신 유형: Google Compute Engine 머신 유형 e2-medium</block>
+  <block id="80dc4d9bb42c64d10e1e74253c1379ed" category="list-text">OS: Ubuntu 25.10 AMD64 Minimal(이미지: ubuntu-minimal-2510-amd64)</block>
+  <block id="96a6ec9a15c7eb577293b9d570bbae05" category="list-text">네트워킹: HTTP 및 HTTPS를 허용하는 방화벽</block>
+  <block id="7dbcc5c811addb725c58af9582fb0b39" category="list-text">디스크 크기: 20GB</block>
+  <block id="c9edc2d9baf5e2843ff19a9486021651" category="list-text">보안: 서비스 계정: 생성한 서비스 계정</block>
+  <block id="e18331415f4ef655c4d8b5bcbcd3f187" category="list-text">보안: 액세스 범위 - 각 API에 대해 설정된 액세스:</block>
+  <block id="f440e287fd0b6b0e887d02b9c4fc9f27" category="list-text">클라우드 플랫폼: 활성화됨</block>
+  <block id="81e3821b87f6a8b6f96f42982925444c" category="list-text">Compute Engine: 읽기 전용</block>
+  <block id="e5ae5f75e4fff8c1f082716bc19f12ce" category="list-text">스토리지: 읽기 전용(기본값)</block>
+  <block id="8f16960397b8607d6bd01d84490886bd" category="list-text">Google Cloud Logging(이전 Stackdriver Logging) API: 쓰기 전용(기본값)</block>
+  <block id="85a7af562cba94208f68b56756fed0ae" category="list-text">Stackdriver Monitoring(현재 Google Cloud Operations의 일부) API: 쓰기 전용(기본값)</block>
+  <block id="66461fff66e5daa418aa6aa529501655" category="list-text">서비스 관리: 읽기 전용(기본값)</block>
+  <block id="d0f860b4876ce7d6519dd4fd5cdc1aca" category="list-text">서비스 제어: 활성화됨(기본값)</block>
+  <block id="72371168b81dc49ed84ccc2826b33285" category="list-text">Google Cloud Trace(이전 Stackdriver Trace): 쓰기 전용(기본값)</block>
+  <block id="771d5634625da9bdf9383284e6876fe8" category="list-text">SSH를 사용하여 새로 생성된 VM에 연결합니다:<block ref="d66edda9356fa84b13bc561b5cdc06d2" prefix=" " category="inline-code"></block></block>
+  <block id="ca3b8cdca327664a13e57f221634b9cd" category="list-text">NSS 자격 증명을 사용하여<block ref="33e3c3ba324846178fad333329821dd2" category="inline-link-rx"></block>에서 변환 도구를 다운로드하십시오.<block ref="351cb02cba717c786694e4b04b17a03c" prefix=" " category="inline-code"></block></block>
+  <block id="f3f4a9f0374e3aaf79b22eaa6f11e24b" category="list-text">다운로드한 TAR 파일의 압축을 풉니다.<block ref="80c87050897af12083ff007ec59b29ae" prefix=" " category="inline-code"></block></block>
+  <block id="893f19f5842942626647ba8f53e27731" category="list-text">다음 필수 패키지를 다운로드하고 설치하십시오:</block>
+  <block id="3195b86062bb29c6228b3987373aba5c" category="list-text">Docker: 28.2.2 build 28.2.2-0ubuntu1 이상</block>
+  <block id="83bedc7f0caf9a0b296313249895e235" category="list-text">Terraform: 1.14.1 이상</block>
+  <block id="81c4b6c47011f9ce59f129143159d1fe" category="list-text">Python: 3.13.7, python3-pip, python3 venv</block>
+  <block id="72bf4709239892caed1dccb8f15e92ac" category="paragraph">Google Cloud CLI<block ref="7f22bf39aaf5ce5980111c3587bef5b5" prefix=" " category="inline-code"></block>가 VM에 사전 설치되어 있습니다.</block>
+  <block id="1487c093a7318b6ffd9ca29b782a4241" category="list-text">현재 사용자를 Docker 그룹에 추가하여 해당 도구가<block ref="d338b3f0f405eb5e51c8cc1e5ca66f02" prefix=" " category="inline-code"></block> 권한 없이 Docker를 사용할 수 있도록 합니다.</block>
+  <block id="112bd884072fb29f1500b74cd73b3297" category="list-text">변환 도구를 설치합니다.</block>
+  <block id="d69c37ca8e01cb5f4902c8685cb0bea5" category="paragraph">이렇게 하면 도구가 격리된 환경에 설치되고<block ref="082f8ac35787f61aa4ec011c462e68a4" prefix=" " category="inline-code"></block> 필요한 모든 소프트웨어 패키지가 설치되었는지 확인합니다.</block>
+  <block id="4253cd62d3506adae113f0c0ed35a026" category="list-text">도구가 설치된 환경을 입력합니다.<block ref="c7fe96d8e92d9922385f327806aa5ef6" prefix=" " category="inline-code"></block></block>
+  <block id="b6645c19cd405763183f19c38c1f7cad" category="inline-link">Google Cloud Infrastructure Manager에 필요한 권한</block>
+  <block id="82fc86d16c204fd1047896be7797f7b4" category="list-text">변환 도구를<block ref="3a2e7e59491b74e35b36d9d724fd0584" prefix=" " category="inline-code"></block> 사용자로 실행합니다. Console 에이전트의 서비스 계정과 동일한 서비스 계정을 사용하고 서비스 계정에 모든<block ref="5d3ef0c339df1f2a110bf7d6a45b4e45" category="inline-link-rx"></block>이 있는지 확인합니다.</block>
+  <block id="cacad0cdf4b0fdce4156938c4ed3c9e5" category="paragraph">이 도구는 모든 Cloud Volumes ONTAP 시스템 및 SVM 세부 정보 목록을 표시합니다. 실행이 완료되면 변환된 모든 시스템의 상태를 확인할 수 있습니다. 변환된 각 시스템은 Google Console의 Infrastructure Manager에서 _&lt;converted system name-imdeploy&gt;_ 형식으로 표시되며, 이는 Console에서 이제 해당 Cloud Volumes ONTAP 시스템을 관리하기 위해 Infrastructure Manager API를 사용한다는 것을 나타냅니다.</block>
+  <block id="9da6711274c63c22ce751c1ffdb9517c" category="admonition">변환 후 Google Cloud Console에서 Deployment Manager의 배포 객체를 삭제하지 마십시오. 이 배포 객체에는 Infrastructure Manager가 Cloud Volumes ONTAP 시스템을 관리하는 데 사용하는 메타데이터가 포함되어 있습니다.</block>
+  <block id="d6c5cad15e9fe911e15bbd9f138172e5" category="paragraph">변환을 되돌려야 하는 경우 동일한 VM을 사용해야 합니다. 모든 시스템을 변환했고 Deployment Manager로 되돌릴 필요가 없는 경우 VM을 삭제할 수 있습니다.</block>
+  <block id="c77014ed2ed0c6a090666526f334c0b4" category="section-title">변환 롤백</block>
+  <block id="9e24a1a0370c9ae26c8cda42c2031983" category="paragraph">변환을 계속 진행하지 않으려면 다음 단계를 따라 Deployment Manager로 되돌릴 수 있습니다.</block>
+  <block id="34bbb182a618f51208d8b10061968580" category="inline-xref">도구를 실행하기 위해 생성한 VM</block>
+  <block id="923a695e65c6787f1a2a582d0ec4a99a" category="list-text">동일한 <block ref="b4c21f77b0da7fc73749691dcfb5fea3" category="inline-xref-macro-rx"></block>에서 다음 명령을 실행합니다.</block>
+  <block id="d0e509b9cc7fc0448b8015e0d29c001f" category="list-text">롤백이 완료될 때까지 기다리세요.</block>
+  <block id="79529c7464359255c6840b443beae055" category="list-text">Amazon Simple Storage Service(Amazon S3) 서비스에 대한 VPC 엔드포인트를 설정합니다.</block>
+  <block id="8f4e28604a8893d6adb6f9b81569d19b" category="inline-link">Google Cloud에서 Cloud Volumes ONTAP에 대해 지원되는 구성</block>
+  <block id="db3426db4f167ca50d1c89272aefdbe9" category="paragraph"><block ref="db3426db4f167ca50d1c89272aefdbe9" category="inline-link-rx"></block></block>
+  <block id="f2642484d82ac71ab617437045e56b35" category="inline-link">Google Cloud의 Cloud Volumes ONTAP 스토리지 제한 사항</block>
+  <block id="618db9ac890d7eb5b4e35d0356489a92" category="paragraph"><block ref="618db9ac890d7eb5b4e35d0356489a92" category="inline-link-rx"></block></block>
+  <block id="e6183cd9db63bded8d0884a52c0f7fbf" category="list-text">디스크 유형</block>
+  <block id="aa2c306f61d5fb7c3d74909dd892a134" category="paragraph">Google Cloud에 Cloud Volumes ONTAP을 배포할 때 가상 네트워크에 대한 세부 정보를 지정해야 합니다. 워크시트를 사용하여 관리자로부터 정보를 수집할 수 있습니다.</block>
+  <block id="9bdf94b25b3f8ba7bb03a42f48691647" category="cell">Google Cloud 정보</block>
+  <block id="b2fe6e8e5b070e72b892f6e209852031" category="admonition">Cloud Volumes ONTAP 시스템이 AWS Local Zone에 있는 경우 Amazon Simple Storage Service(Amazon S3)로의 데이터 계층화는 지원되지 않습니다. Local Zone 외부의 Amazon S3 버킷에 액세스하면 지연 시간이 길어지고 Cloud Volumes ONTAP 활동에 영향을 미치기 때문입니다.</block>
+  <block id="d9a38c751a133d3cc1d6d336083fca10" category="list-text">시스템을 생성할 때 API 요청에 "gcpEncryption" 매개변수를 사용하십시오.</block>
+  <block id="02d14173028105a436e6e5dab6a4b14f" category="paragraph">이 단계는 Cloud Volumes ONTAP에서 데이터 계층화를 활성화했으며 Amazon Simple Storage Service(Amazon S3) 버킷에 저장된 데이터를 암호화하려는 경우에 필요합니다.</block>
+  <block id="4fe6c7577974d296eafe073a58b28cd0" category="list-text">AWS의 경우, Amazon Simple Storage Service(Amazon S3)에 대한 VPC 엔드포인트가 필요합니다. <block ref="8bf18368a4d50e7d264c6ce0821cc35b" category="inline-xref-macro-rx"></block>.</block>
+  <block id="5a608055757169c6aba0a0f0941983c0" category="section-title">콜드 데이터를 Amazon S3로 계층화하기 위한 요구 사항</block>
+  <block id="c7a88ab28024271a86ee9c37f4e572db" category="paragraph">Cloud Volumes ONTAP이 Amazon S3에 연결되어 있는지 확인하십시오. 가장 좋은 연결 방법은 S3 서비스에 대한 VPC 엔드포인트를 생성하는 것입니다. 자세한 지침은<block ref="739944581ddd86bd6d09f3841372a69b" category="inline-link-rx"></block>을 참조하십시오.</block>
+  <block id="6d5ed654459191a895ae4c39011f55c5" category="paragraph">배포 중에 서비스 계정을 선택하지 않은 경우 Cloud Volumes ONTAP를 종료하고 Google Cloud 콘솔로 이동하여 Cloud Volumes ONTAP 인스턴스에 서비스 계정을 연결해야 합니다. 그런 다음 다음 섹션에 설명된 대로 데이터 계층화를 활성화할 수 있습니다.</block>
+  <block id="fe02c2ec1dc2e0c55e4125b9b9d5db79" category="section-title">2026년 2월 9일</block>
+  <block id="23beab4ecc83af94de1118d8322ea13b" category="paragraph">이제 계층형 데이터를 Amazon Simple Storage Service(Amazon S3) Glacier Instant Retrieval 스토리지 클래스에 저장할 수 있습니다.</block>
+  <block id="dcb830d6aa0047437007b06daac1d119" category="paragraph"><block ref="528aaaafbacf255285f844e94403a43f" category="inline-link-rx"></block>.</block>
+  <block id="584dfcd628606b8f1bed519dd4baabce" category="paragraph">Cloud Volumes ONTAP는 이제 Google Cloud에서 64TB 디스크를 지원합니다.</block>
+  <block id="f0e98a8e50d3b58af9ff1c04e5b74e1c" category="admonition">Google Cloud 제한으로 인해 디스크만으로 구성된 최대 시스템 용량은 256TB입니다.</block>
+  <block id="76cbac4940f2698f4ebff7e15e3f58d3" category="sidebar">기존 배포를 Infrastructure Manager로 전환</block>
 </blocks>

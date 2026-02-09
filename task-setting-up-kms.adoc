@@ -102,7 +102,7 @@ image:screenshot_cmk_add_accounts_dialog.gif["이 스크린샷은 AWS KMS 콘솔
 
 . 고객 관리 CMK를 사용하는 경우 Cloud Volumes ONTAP IAM 역할을 _키 사용자_로 추가하여 CMK에 대한 키 정책을 수정합니다.
 +
-Cloud Volumes ONTAP 에서 데이터 계층화를 활성화하고 S3 버킷에 저장된 데이터를 암호화하려는 경우 이 단계가 필요합니다.
+이 단계는 Cloud Volumes ONTAP에서 데이터 계층화를 활성화했으며 Amazon Simple Storage Service(Amazon S3) 버킷에 저장된 데이터를 암호화하려는 경우에 필요합니다.
 
 
 

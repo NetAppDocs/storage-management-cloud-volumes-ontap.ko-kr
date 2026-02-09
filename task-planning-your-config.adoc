@@ -101,7 +101,7 @@ Cloud Volumes ONTAP io1 디스크를 사용하여 Amazon EBS Elastic Volumes 기
 * _처리량 최적화 HDD(st1)_ 디스크는 저렴한 가격으로 빠르고 일관된 처리량이 필요한 자주 액세스되는 워크로드에 적합합니다.
 +
 
-NOTE: AWS 로컬 영역에서는 연결성이 부족하여 AWS S3에 대한 데이터 계층화를 사용할 수 없습니다.
+NOTE: Cloud Volumes ONTAP 시스템이 AWS Local Zone에 있는 경우 Amazon Simple Storage Service(Amazon S3)로의 데이터 계층화는 지원되지 않습니다. Local Zone 외부의 Amazon S3 버킷에 액세스하면 지연 시간이 길어지고 Cloud Volumes ONTAP 활동에 영향을 미치기 때문입니다.
 
 
 

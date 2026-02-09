@@ -46,7 +46,7 @@ Cloud Volumes ONTAP 제대로 작동할 수 있도록 AWS 네트워킹을 설정
 .단계
 . 콘솔 에이전트와 Cloud Volumes ONTAP 인스턴스의 인스턴스를 시작할 VPC와 서브넷을 선택합니다.
 . VPC와 서브넷이 콘솔 에이전트와 Cloud Volumes ONTAP 간의 연결을 지원하는지 확인하세요.
-. S3 서비스에 대한 VPC 엔드포인트를 설정합니다.
+. Amazon Simple Storage Service(Amazon S3) 서비스에 대한 VPC 엔드포인트를 설정합니다.
 +
 Cloud Volumes ONTAP 에서 저비용 개체 스토리지로 콜드 데이터를 계층화하려면 VPC 엔드포인트가 필요합니다.
 

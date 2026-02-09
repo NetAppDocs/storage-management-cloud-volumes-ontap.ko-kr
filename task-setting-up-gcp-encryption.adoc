@@ -49,7 +49,7 @@ https://cloud.google.com/kms/docs/iam#granting_roles_on_a_resource["Google Cloud
 +
 자세한 내용은 다음을 참조하세요. https://cloud.google.com/storage/docs/encryption/using-customer-managed-keys["Google Cloud 문서: 고객 관리 암호화 키 사용"^]
 
-. 시스템을 생성할 때 API 요청과 함께 "GcpEncryption" 매개변수를 사용하세요.
+. 시스템을 생성할 때 API 요청에 "gcpEncryption" 매개변수를 사용하십시오.
 +
 *예*
 

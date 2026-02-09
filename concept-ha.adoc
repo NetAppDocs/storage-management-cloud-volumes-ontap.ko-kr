@@ -197,7 +197,7 @@ Cloud Volumes ONTAP AWS 로컬 영역에서 데이터 계층화, 클라우드 �
 
 
 
-NOTE: Cloud Volumes ONTAP 이러한 구성만 지원합니다.  AWS 로컬 영역 구성에서 지원되지 않는 디스크 유형이나 적격하지 않은 인스턴스를 선택하면 배포가 실패할 수 있습니다.  AWS 로컬 영역에서는 연결성이 부족하여 AWS S3에 대한 데이터 계층화를 사용할 수 없습니다.
+NOTE: Cloud Volumes ONTAP는 이러한 구성만 지원합니다. AWS Local Zone 구성에서 지원되지 않는 디스크 유형 또는 부적격 인스턴스를 선택하면 배포가 실패할 수 있습니다. Cloud Volumes ONTAP 시스템이 AWS Local Zone에 있는 경우 Amazon Simple Storage Service(Amazon S3)로의 데이터 계층화는 지원되지 않습니다. Local Zone 외부의 Amazon S3 버킷에 액세스하면 지연 시간이 증가하고 Cloud Volumes ONTAP 활동에 영향을 미치기 때문입니다.
 
 link:https://aws.amazon.com/about-aws/global-infrastructure/localzones/features/?nc=sn&loc=2["AWS 설명서: 로컬 영역의 EC2 인스턴스 유형"^] .
 
