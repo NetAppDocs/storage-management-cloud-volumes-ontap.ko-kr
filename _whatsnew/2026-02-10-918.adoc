@@ -1,0 +1,11 @@
+= Cloud Volumes ONTAP 9.18.1 GA
+:allow-uri-read: 
+
+
+
+
+=== Cloud Volumes ONTAP 9.18.1 GA
+
+이제 NetApp Console을 사용하여 AWS 및 Azure에서 Cloud Volumes ONTAP 9.18.1 정식 버전을 배포하고 관리할 수 있습니다. 이 버전은 Google Cloud에서는 배포 및 업그레이드가 불가능합니다.
+
+link:https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/["Cloud Volumes ONTAP 의 이 릴리스에 대해 자세히 알아보세요."^] .
