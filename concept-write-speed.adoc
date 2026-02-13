@@ -68,7 +68,7 @@ ifdef::aws[]
 
 ==== AWS
 
-단일 노드 시스템을 사용하는 경우 Cloud Volumes ONTAP 모든 인스턴스 유형에서 높은 쓰기 속도를 지원합니다.
+단일 노드 시스템을 사용하는 경우 Cloud Volumes ONTAP는 모든 인스턴스 유형에서 높은 쓰기 속도를 지원합니다.
 
 9.8 릴리스부터 Cloud Volumes ONTAP m5.xlarge 및 r5.xlarge를 제외한 거의 모든 지원되는 EC2 인스턴스 유형을 사용할 때 HA 쌍으로 높은 쓰기 속도를 지원합니다.
 
@@ -82,7 +82,7 @@ ifdef::azure[]
 
 ==== 하늘빛
 
-단일 노드 시스템을 사용하는 경우 Cloud Volumes ONTAP 모든 VM 유형에서 높은 쓰기 속도를 지원합니다.
+단일 노드 시스템을 사용하는 경우 Cloud Volumes ONTAP는 모든 VM 유형에서 높은 쓰기 속도를 지원합니다.
 
 HA 쌍을 사용하는 경우 Cloud Volumes ONTAP 9.8 릴리스부터 여러 VM 유형에서 높은 쓰기 속도를 지원합니다.  로 가다 https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-azure.html["Cloud Volumes ONTAP 릴리스 노트"^] 높은 쓰기 속도를 지원하는 VM 유형을 확인하세요.
 
@@ -94,7 +94,7 @@ ifdef::gcp[]
 
 ==== 구글 클라우드
 
-단일 노드 시스템을 사용하는 경우 Cloud Volumes ONTAP 모든 머신 유형에서 높은 쓰기 속도를 지원합니다.
+단일 노드 시스템을 사용하는 경우 Cloud Volumes ONTAP는 모든 머신 유형에서 높은 쓰기 속도를 지원합니다.
 
 HA 쌍을 사용하는 경우 Cloud Volumes ONTAP 9.13.0 릴리스부터 여러 VM 유형에서 높은 쓰기 속도를 지원합니다.  로 가다 https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-gcp.html#supported-configurations-by-license["Cloud Volumes ONTAP 릴리스 노트"^] 높은 쓰기 속도를 지원하는 VM 유형을 확인하세요.
 

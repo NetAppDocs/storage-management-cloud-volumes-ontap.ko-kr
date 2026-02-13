@@ -106,13 +106,13 @@ NetApp Console 에이전트의 프록시 서버 구성을 사용하여 Cloud Vol
 
 콘솔은 필요한 수의 개인 IP 주소를 Cloud Volumes ONTAP 에 자동으로 할당합니다.  네트워크에 사용 가능한 개인 IP 주소가 충분한지 확인해야 합니다.
 
-콘솔이 Cloud Volumes ONTAP 에 할당하는 LIF 수는 단일 노드 시스템을 배포하는지 아니면 HA 쌍을 배포하는지에 따라 달라집니다.  LIF는 물리적 포트와 연결된 IP 주소입니다.
+Console에서 Cloud Volumes ONTAP에 할당하는 LIF 수는 단일 노드 시스템을 배포하는지 또는 HA 쌍을 배포하는지에 따라 달라집니다. LIF는 물리적 포트와 연결된 IP 주소입니다.
 
 
 
 ==== 단일 노드 시스템의 IP 주소
 
-콘솔은 단일 노드 시스템에 6개의 IP 주소를 할당합니다.
+NetApp Console은 단일 노드 시스템에 6개의 IP 주소를 할당합니다.
 
 다음 표는 각 개인 IP 주소와 연결된 LIF에 대한 세부 정보를 제공합니다.
 
@@ -142,7 +142,7 @@ NetApp Console 에이전트의 프록시 서버 구성을 사용하여 Cloud Vol
 
 ==== HA 쌍의 IP 주소
 
-HA 쌍에는 단일 노드 시스템보다 더 많은 IP 주소가 필요합니다.  이러한 IP 주소는 다음 이미지에서 볼 수 있듯이 다양한 이더넷 인터페이스에 분산되어 있습니다.
+HA 쌍은 단일 노드 시스템보다 더 많은 IP 주소가 필요합니다. 이러한 IP 주소는 다음 이미지에 표시된 것처럼 여러 이더넷 인터페이스에 분산됩니다.
 
 image:diagram_cvo_aws_networking_ha.png["AWS의 Cloud Volumes ONTAP HA 구성에서 eth0, eth1, eth2를 보여주는 다이어그램입니다."]
 

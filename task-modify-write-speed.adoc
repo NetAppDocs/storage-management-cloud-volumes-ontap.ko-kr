@@ -16,7 +16,7 @@ summary: 스토리지 요구 사항이 변경되면 Cloud Volumes ONTAP 시스�
 [role="lead"]
 NetApp Console 에서 Cloud Volumes ONTAP 에 대한 일반 쓰기 속도 또는 높은 쓰기 속도를 선택할 수 있습니다.  기본 쓰기 속도는 보통입니다.  작업 부하에 빠른 쓰기 성능이 필요한 경우 높은 쓰기 속도로 변경할 수 있습니다.
 
-모든 유형의 단일 노드 시스템과 일부 HA 쌍 구성에서는 높은 쓰기 속도가 지원됩니다.  지원되는 구성을 보려면 https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/["Cloud Volumes ONTAP 릴리스 노트"^]
+고속 쓰기 기능은 모든 유형의 단일 노드 시스템과 일부 HA 쌍 구성에서 지원됩니다. 지원되는 구성은 다음에서 확인하세요 https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/["Cloud Volumes ONTAP 릴리스 노트"^]
 
 쓰기 속도를 변경하기 전에 다음을 수행해야 합니다.link:concept-write-speed.html["일반 설정과 높은 설정의 차이점을 이해하세요"] .
 

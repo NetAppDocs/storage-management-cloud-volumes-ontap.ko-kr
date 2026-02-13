@@ -20,6 +20,24 @@ NetApp Console 에서 Cloud Volumes ONTAP 관리의 새로운 기능을 알아�
 
 
 
+== 2026년 2월 12일
+
+
+
+== Azure에서 Ebdsv5 및 E104ids_v5 VM 지원
+
+Cloud Volumes ONTAP 9.18.1부터 단일 노드 및 고가용성(HA) 배포 및 업그레이드를 위해 Ebdsv5 및 E104ids_v5 VM을 배포할 수 있습니다.
+
+Azure 가상 머신 Eb 제품군의 Ebdsv5 VM은 더 높은 원격 스토리지 성능에 최적화되어 있습니다. 이러한 VM은 관계형 데이터베이스, 인메모리 분석 및 기타 까다로운 비즈니스 크리티컬 애플리케이션과 같이 메모리 집약적이고 I/O 작업이 많은 엔터프라이즈 워크로드에 사용할 수 있습니다.
+
+E104ids_v5는 예약된 유지 관리 기간을 효율적으로 관리할 수 있도록 설계된 격리된 VM 인스턴스입니다. E80ids_v4와 비교했을 때 디스크 처리량과 IOPS가 훨씬 높으며, 전반적인 네트워크 성능 또한 향상되었습니다.
+
+https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-azure.html["Azure의 Cloud Volumes ONTAP 에 지원되는 구성"^]
+
+https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/memory-optimized/edsv5-series?tabs=sizebasic["Azure 설명서: Edsv5 크기 시리즈"^]
+
+
+
 == 2026년 2월 10일
 
 
@@ -1477,7 +1495,7 @@ Google Cloud의 Cloud Volumes ONTAP 9.11.1 릴리스부터 여러 스토리지 V
 - compute.instanceGroups.get
 - compute.addresses.get
 ----
-단일 노드 시스템에서 스토리지 VM을 생성하려면 ONTAP CLI 또는 시스템 관리자를 사용해야 합니다.
+단일 노드 시스템에서 스토리지 VM을 생성하려면 ONTAP CLI 또는 System Manager를 사용해야 합니다.
 
 * https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-limits-gcp.html#storage-vm-limits["Google Cloud의 스토리지 VM 제한에 대해 자세히 알아보세요."^]
 * https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-managing-svms-gcp.html["Google Cloud에서 Cloud Volumes ONTAP 위한 데이터 제공 스토리지 VM을 만드는 방법을 알아보세요."]
@@ -1572,7 +1590,7 @@ https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-gcp
 +
 이전에는 BlueXP 대상 태그가 없는 VPC-1, VPC-2 또는 VPC-3의 정책을 표시하지 않았습니다.
 
-* Google Cloud에서 Cloud Volumes ONTAP 단일 노드 시스템을 만들 때 이제 사전 정의된 방화벽 정책에서 선택한 VPC 내의 트래픽만 허용할지(권장) 아니면 모든 VPC에 허용할지 선택할 수 있습니다.
+* Google Cloud에서 Cloud Volumes ONTAP 단일 노드 시스템을 생성할 때 사전 정의된 방화벽 정책이 선택한 VPC 내의 트래픽만 허용하도록 할지(권장) 아니면 모든 VPC를 허용하도록 할지 선택할 수 있습니다.
 
 
 
@@ -1767,7 +1785,7 @@ Cloud Volumes ONTAP 이제 AWS 아시아 태평양(오사카) 지역(ap-northeas
 
 === 포트 감소
 
-Azure의 Cloud Volumes ONTAP 시스템에서는 단일 노드 시스템과 HA 쌍 모두에 대해 포트 8023 및 49000이 더 이상 열리지 않습니다.
+Azure의 Cloud Volumes ONTAP 시스템에서 단일 노드 시스템과 HA 쌍 모두에 대해 포트 8023 및 49000이 더 이상 열려 있지 않습니다.
 
 이 변경 사항은 Connector 3.9.13 릴리스부터 시작되는 _새로운_ Cloud Volumes ONTAP 시스템에 적용됩니다.
 
@@ -2076,7 +2094,7 @@ AWS Outpost가 있는 경우 작업 환경 마법사에서 Outpost VPC를 선택
 
 === 지원되는 Azure 지역의 Ultra SSD VNVRAM
 
-이제 단일 노드 시스템에서 E32s_v3 VM 유형을 사용할 때 Cloud Volumes ONTAP Ultra SSD를 VNVRAM으로 사용할 수 있습니다. https://docs.microsoft.com/en-us/azure/virtual-machines/disks-enable-ultra-ssd["지원되는 모든 Azure 지역에서"^] .
+Cloud Volumes ONTAP는 이제 단일 노드 시스템과 함께 E32s_v3 VM 유형을 사용할 때 Ultra SSD를 VNVRAM으로 사용할 수 있습니다 https://docs.microsoft.com/en-us/azure/virtual-machines/disks-enable-ultra-ssd["지원되는 모든 Azure 지역에서"^].
 
 VNVRAM은 더 나은 쓰기 성능을 제공합니다.
 

@@ -16,7 +16,7 @@ summary: NetApp Console 스토리지 VM 재해 복구에 대한 설정이나 오
 [role="lead"]
 NetApp Console 스토리지 VM(SVM) 재해 복구에 대한 설정이나 오케스트레이션 지원을 제공하지 않습니다.  이러한 작업을 수행하려면 ONTAP 시스템 관리자나 ONTAP CLI를 사용하세요.
 
-두 개의 Cloud Volumes ONTAP 시스템 간에 SnapMirror SVM 복제를 설정하는 경우 복제는 두 개의 HA 쌍 시스템 또는 두 개의 단일 노드 시스템 간에 이루어져야 합니다.  HA 쌍과 단일 노드 시스템 간에는 SnapMirror SVM 복제를 설정할 수 없습니다.
+두 Cloud Volumes ONTAP 시스템 간에 SnapMirror SVM 복제를 설정하는 경우, 복제는 두 개의 HA 쌍 시스템 또는 두 개의 단일 노드 시스템 간에만 가능합니다. HA 쌍 시스템과 단일 노드 시스템 간에는 SnapMirror SVM 복제를 설정할 수 없습니다.
 
 ONTAP CLI 지침은 다음 문서를 참조하세요.
 

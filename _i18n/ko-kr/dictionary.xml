@@ -741,7 +741,6 @@
   <block id="c6a56bb8eca094c529c75a2c22c92bcc" category="inline-link-macro">노드 기반 라이선스를 관리하는 방법에 대해 자세히 알아보세요.</block>
   <block id="af13749595f5960a363d1c58fc759656" category="paragraph"><block ref="4610c02b1fca3398eed82ad29d834f6a" category="inline-link-macro-rx"></block> .</block>
   <block id="fef06ca11f3dec6f0be51962fd93388c" category="section-title">BYOL 시스템 라이선스</block>
-  <block id="13bc5b36f2853d26966d43f29d5709ae" category="paragraph">노드 기반 라이선스는 NetApp 에서 구매할 수 있습니다. 단일 노드 시스템 또는 HA 쌍에 대해 구매할 수 있는 라이선스 수는 무제한입니다.</block>
   <block id="4c8074825211e5f0b13a055b38d5253c" category="inline-link">Cloud Volumes ONTAPP 에 대한 BYOL 라이선싱의 제한된 가용성</block>
   <block id="1a601f71075caa78fa676a54aaa4509e" category="admonition">NetApp BYOL 라이선스 구매, 연장 및 갱신을 제한하고 있습니다. 자세한 내용은 다음을 참조하세요. <block ref="9772ad4d3eb9076586a06f6039d490f0" category="inline-link-rx"></block> .</block>
   <block id="0e0d96905201a406bbeb8592f92f311c" category="paragraph">노드 기반 라이선스는 단일 노드 또는 HA 쌍에 최대 368TiB의 용량을 제공합니다. Cloud Volumes ONTAP BYOL 시스템에 368TiB 이상의 용량을 할당하기 위해 여러 라이선스를 구매했을 수 있습니다. 예를 들어, Cloud Volumes ONTAP 에 최대 736TiB의 용량을 할당하기 위해 두 개의 라이선스를 구매할 수 있습니다. 또는 최대 1.4PiB의 용량을 확보하기 위해 네 개의 라이선스를 구매할 수도 있습니다.</block>
@@ -779,7 +778,6 @@
   <block id="6246af80c9ea9c857c70d2c643fcb249" category="list-text">허가된 용량을 초과하는 경우</block>
   <block id="fdde7a7f3783aa0ce1e585f8be9c2def" category="list-text">면허 기간이 만료되면</block>
   <block id="36e4d5ff70cec517180ae18f1c34d2fd" category="list-text">마켓플레이스와 연간 계약을 맺은 경우 배포하는 모든 Cloud Volumes ONTAP 시스템에 대해 해당 계약 요금이 청구됩니다.  연간 마켓플레이스 계약과 BYOL을 섞어서 사용할 수는 없습니다.</block>
-  <block id="3492eb16df3715b7fba9675a44852d3e" category="list-text">중국 리전에서는 BYOL을 지원하는 단일 노드 시스템만 지원됩니다. 중국 리전 배포는 BYOL 라이선스 제한에서 제외됩니다.</block>
   <block id="5bdd4028830bea76f4939d67baa460ff" category="paragraph">배포 후에는 용량 기반 라이선싱을 사용하는 Cloud Volumes ONTAP 시스템의 패키지를 변경할 수 있습니다.  예를 들어, Essentials 패키지로 Cloud Volumes ONTAP 시스템을 배포한 경우 비즈니스 요구 사항이 변경되면 Professional 패키지로 변경할 수 있습니다.</block>
   <block id="63b54c0d3b4fb8e35270bfdf7b2bdcbb" category="inline-link-macro">충전 방법을 변경하는 방법을 알아보세요</block>
   <block id="ec3e25d80cfc0e5561493729eadecef7" category="paragraph"><block ref="ea19fa0e06a6047bcaabb9af62b066c3" category="inline-link-macro-rx"></block> .</block>
@@ -810,7 +808,6 @@
   <block id="35851ad4214e2cb5358ee8d010fd31e9" category="list-text">하나의 스토리지 VM이 있는 단일 노드 Cloud Volumes ONTAP 시스템(이것은 Cloud Volumes ONTAP 배포할 때 생성되는 기본 스토리지 VM입니다)</block>
   <block id="8cff626e0f3fb63bbf88dedb4fd98712" category="paragraph">이 시스템은 하나의 시스템으로 간주됩니다.</block>
   <block id="9dcf3eb2c417aa53d6bc0d88eef77b49" category="list-text">두 개의 스토리지 VM(기본 스토리지 VM과 사용자가 생성한 추가 스토리지 VM 하나)이 있는 단일 노드 Cloud Volumes ONTAP 시스템</block>
-  <block id="f37d86fef13241720dc9ebcc64539e54" category="paragraph">이 시스템은 두 개의 시스템으로 계산됩니다. 하나는 단일 노드 시스템용이고 다른 하나는 추가 스토리지 VM용입니다.</block>
   <block id="4c41d499b08fed91769d6d2c3b51157a" category="list-text">3개의 스토리지 VM(기본 스토리지 VM과 사용자가 생성한 추가 스토리지 VM 2개)이 있는 Cloud Volumes ONTAP HA 쌍</block>
   <block id="67850a8a97f903485494427b0d760819" category="paragraph">이 시스템은 HA 쌍용 시스템 1개, 추가 스토리지 VM용 시스템 2개, 총 3개로 계산됩니다.</block>
   <block id="a0aa07133f0223d64ee6522e4e293e43" category="inline-link">AWS, Azure 및 Google Cloud의 저장 용량 한도에 대해 알아보세요.</block>
@@ -895,7 +892,6 @@
   <block id="46b39bb522bc6ece1b6bf75e81db3cbf" category="paragraph">각 볼륨에 대해 제공된 용량은 집계되어 Keystone 구독에 약정된 용량과 주기적으로 비교되며, 초과분은 Keystone 구독에 버스트로 청구됩니다.</block>
   <block id="d9b8cca0e5a3840c29a71a4c6f13a917" category="inline-link-macro">NetApp Keystone 에 대해 자세히 알아보세요</block>
   <block id="9eecbfaf12c4b441b4b80b15e69b1763" category="paragraph"><block ref="861512b606f6337e516b8d3562c115c3" category="inline-link-macro-rx"></block> .</block>
-  <block id="73511701791994e2ed3cc40c68089746" category="paragraph">Keystone 구독은 HA 쌍으로 지원됩니다.  이 라이선싱 옵션은 현재 단일 노드 시스템에서는 지원되지 않습니다.</block>
   <block id="9a762a1c55d92068610f4f2bc3e42d91" category="paragraph">Keystone 구독을 시작하는 방법을 알아보세요.</block>
   <block id="a2f6a3e98ea1849ed1ab07d821bf6a18" category="section-title">노드 기반 라이선싱</block>
   <block id="ea4ba4158f6b2b895b0418072f2ba06d" category="paragraph">노드 기반 라이선싱은 노드별로 Cloud Volumes ONTAP 대한 라이선스를 부여할 수 있는 이전 세대 라이선스 모델입니다.  이 라이선스 모델은 신규 고객에게는 제공되지 않습니다.  노드별 요금 청구는 위에 설명된 용량별 요금 청구 방식으로 대체되었습니다.</block>
@@ -1095,9 +1091,6 @@
   <block id="4cb081c6302f68531ee29c8a8f6984e5" category="inline-link">AWS에서 Cloud Volumes ONTAP 에 지원되는 구성을 검토하세요.</block>
   <block id="ff9c48728746d281c6db8cc1fcc3bbc0" category="list-text"><block ref="ff9c48728746d281c6db8cc1fcc3bbc0" category="inline-link-rx"></block></block>
   <block id="f590584761ef1824250681bcc6312099" category="section-title">Azure 스토리지</block>
-  <block id="0ff787698f3679f43f5b00772fb3fe70" category="paragraph">Azure에서는 집계에 크기가 모두 같은 디스크를 최대 12개까지 포함할 수 있습니다.  디스크 유형과 최대 디스크 크기는 단일 노드 시스템을 사용하는지 HA 쌍을 사용하는지에 따라 달라집니다.</block>
-  <block id="078325cc35a9c8c9290e445f32bd1855" category="list-text">단일 노드 시스템</block>
-  <block id="f9a29c4f12d918677aac4f08102edf1b" category="list-text">단일 노드 시스템은 다음 유형의 Azure Managed Disks를 사용할 수 있습니다.</block>
   <block id="81051201caf41e5e0650e52621884bfc" category="list-text">_프리미엄 SSD 관리 디스크_는 비용이 더 많이 들더라도 I/O 집약적 워크로드에 대해 높은 성능을 제공합니다.</block>
   <block id="747d4ec445455d90b072fa27bca4895a" category="list-text">_프리미엄 SSD v2 관리형 디스크_는 단일 노드와 HA 쌍 모두에 대해 프리미엄 SSD 관리형 디스크에 비해 더 낮은 비용으로 더 높은 성능과 더 낮은 지연 시간을 제공합니다.</block>
   <block id="cc9198979434b483c842956cafd0f2b9" category="list-text">_표준 SSD 관리 디스크_는 낮은 IOPS가 필요한 작업 부하에 대해 일관된 성능을 제공합니다.</block>
@@ -1198,15 +1191,12 @@
   <block id="ffa0b3f1336c5af7f182a50049dd44e1" category="section-title">높은 쓰기 속도를 지원하는 구성</block>
   <block id="45802e8e05d9f48b4caa135041dde30a" category="paragraph">모든 Cloud Volumes ONTAP 구성이 높은 쓰기 속도를 지원하는 것은 아닙니다.  이러한 구성에서는 기본적으로 일반 쓰기 속도가 사용됩니다.</block>
   <block id="4847e034bb0a55fcbc8a3380d6a3ab80" category="section-title">AWS</block>
-  <block id="a8acc7de0893c2c2f8404c6e10839d65" category="paragraph">단일 노드 시스템을 사용하는 경우 Cloud Volumes ONTAP 모든 인스턴스 유형에서 높은 쓰기 속도를 지원합니다.</block>
   <block id="4d000cb814de0483d25aa949e7104787" category="paragraph">9.8 릴리스부터 Cloud Volumes ONTAP m5.xlarge 및 r5.xlarge를 제외한 거의 모든 지원되는 EC2 인스턴스 유형을 사용할 때 HA 쌍으로 높은 쓰기 속도를 지원합니다.</block>
   <block id="d483e21ce7d44495d45b5b10d0a92f33" category="inline-link">Cloud Volumes ONTAP 지원하는 Amazon EC2 인스턴스에 대해 자세히 알아보세요.</block>
   <block id="21793edfa155319a271d33a5dc984cb2" category="paragraph"><block ref="a158a044b7464112e4aeefe5eeacf9f9" category="inline-link-rx"></block> .</block>
   <block id="3a580f142203677f1f0bc30898f63f53" category="section-title">하늘빛</block>
-  <block id="89347e425902e735637e8fa0c5aaea49" category="paragraph">단일 노드 시스템을 사용하는 경우 Cloud Volumes ONTAP 모든 VM 유형에서 높은 쓰기 속도를 지원합니다.</block>
   <block id="19efe5a9cd2387e8587c05321062a095" category="paragraph">HA 쌍을 사용하는 경우 Cloud Volumes ONTAP 9.8 릴리스부터 여러 VM 유형에서 높은 쓰기 속도를 지원합니다.  로 가다<block ref="2c91cb4d7bbd40d1a3efe8602ebb4273" category="inline-link-rx"></block> 높은 쓰기 속도를 지원하는 VM 유형을 확인하세요.</block>
   <block id="56ef2682280ac110060b881925a87b80" category="section-title">구글 클라우드</block>
-  <block id="543bcb76d6487a8515a8a34178160fca" category="paragraph">단일 노드 시스템을 사용하는 경우 Cloud Volumes ONTAP 모든 머신 유형에서 높은 쓰기 속도를 지원합니다.</block>
   <block id="c616f204302ed58d4618e3ded77f1858" category="paragraph">HA 쌍을 사용하는 경우 Cloud Volumes ONTAP 9.13.0 릴리스부터 여러 VM 유형에서 높은 쓰기 속도를 지원합니다.  로 가다<block ref="44033d1307c0997839bd6a3cb420c3fd" category="inline-link-rx"></block> 높은 쓰기 속도를 지원하는 VM 유형을 확인하세요.</block>
   <block id="e4e959caff2c6b1635b2a3bea64b35f7" category="inline-link">Cloud Volumes ONTAP 지원하는 Google Cloud 머신 유형에 대해 자세히 알아보세요.</block>
   <block id="f3e658b45576241d792ccaccc236fc48" category="paragraph"><block ref="a8ee7ccc97f8f155aa3297d287b2257a" category="inline-link-rx"></block> .</block>
@@ -1281,7 +1271,6 @@
   <block id="24b9f71baa2900d2012ac1aae73c5b0a" category="list-text">클러스터 간 LIF</block>
   <block id="aa98b7df0a0a0f2af69cbff3dcbe620e" category="list-text">Azure의 HA 시스템에 대한 SVM 관리 LIF</block>
   <block id="97c3d7abfc75b002edd7cf58c0502788" category="list-text">Google Cloud의 HA 시스템에 대한 SVM 관리 LIF</block>
-  <block id="11ec0bb07b34b28693ac7788a1724c9a" category="list-text">AWS의 단일 노드 시스템에서 SVM 관리 LIF</block>
   <block id="381853e687018dffdeac4977fce24c2f" category="list-text">노드 관리 LIF</block>
   <block id="2095bd4fb8c9a4c7b89de9f25bf6d2eb" category="paragraph">+ Google Cloud에서 이 LIF는 클러스터 간 LIF와 결합됩니다.</block>
   <block id="a7bc162978ef4e3f1dc9043f2f3e0ae5" category="list-text">iSCSI 데이터 LIF</block>
@@ -1430,9 +1419,6 @@
   <block id="d7920d37aa6ff40b322ef50a40844b21" category="paragraph">수동 옵션은 대상 서브넷에서 AWS EC2 서비스로 연결되는 NAT 게이트웨이 또는 인터페이스 VPC 엔드포인트가 될 수 있습니다.  VPC 엔드포인트에 대한 자세한 내용은 다음을 참조하세요.<block ref="ba25197f61698aac8f5883c92983c6fe" category="inline-link-rx"></block> .</block>
   <block id="af5123aa908861af9755bea4400d279c" category="section-title">개인 IP 주소</block>
   <block id="da4158c89ba6931cb8b401a7789d7e4e" category="paragraph">콘솔은 필요한 수의 개인 IP 주소를 Cloud Volumes ONTAP 에 자동으로 할당합니다.  네트워크에 사용 가능한 개인 IP 주소가 충분한지 확인해야 합니다.</block>
-  <block id="2fe7abe9b3034da37aaab57195253d35" category="paragraph">콘솔이 Cloud Volumes ONTAP 에 할당하는 LIF 수는 단일 노드 시스템을 배포하는지 아니면 HA 쌍을 배포하는지에 따라 달라집니다.  LIF는 물리적 포트와 연결된 IP 주소입니다.</block>
-  <block id="80c103dec1da91d2850236e737249870" category="section-title">단일 노드 시스템의 IP 주소</block>
-  <block id="b810b6cdd9a4a59e14a5dcf3b202b1c0" category="paragraph">콘솔은 단일 노드 시스템에 6개의 IP 주소를 할당합니다.</block>
   <block id="b4f6a6268e9ed79637c765266075ab8c" category="paragraph">다음 표는 각 개인 IP 주소와 연결된 LIF에 대한 세부 정보를 제공합니다.</block>
   <block id="95416f2c916dabe21f738406546ebc53" category="cell">라이프</block>
   <block id="1eb5ae63609e68a11106494d272615bf" category="cell">클러스터 관리</block>
@@ -1448,7 +1434,6 @@
   <block id="c3c3a9cabe89fd2f00daf39d11c934e0" category="cell">스토리지 VM 관리</block>
   <block id="f7fb4679628db57f6d5d8a1ad673e5d9" category="cell">스토리지 VM 관리 LIF는 SnapCenter 와 같은 관리 도구와 함께 사용됩니다.</block>
   <block id="754851680a34e87fae0aca5083f7dbfe" category="section-title">HA 쌍의 IP 주소</block>
-  <block id="e438a6efe5f9ab56c9230159070485aa" category="paragraph">HA 쌍에는 단일 노드 시스템보다 더 많은 IP 주소가 필요합니다.  이러한 IP 주소는 다음 이미지에서 볼 수 있듯이 다양한 이더넷 인터페이스에 분산되어 있습니다.</block>
   <block id="b1ffdf627a3899d601bec66c834754cf" category="inline-image-macro">AWS의 Cloud Volumes ONTAP HA 구성에서 eth0, eth1, eth2를 보여주는 다이어그램입니다.</block>
   <block id="df47a11ce6c17c82716b888fb22a8fdc" category="paragraph"><block ref="df47a11ce6c17c82716b888fb22a8fdc" category="inline-image-macro-rx" type="image"></block></block>
   <block id="311bb2a509cb1b719973430da8bab55f" category="paragraph">HA 쌍에 필요한 개인 IP 주소 수는 선택한 배포 모델에 따라 달라집니다.  단일 AWS 가용성 영역(AZ)에 배포된 HA 쌍에는 15개의 개인 IP 주소가 필요하고, 여러 AZ에 배포된 HA 쌍에는 13개의 개인 IP 주소가 필요합니다.</block>
@@ -1563,9 +1548,7 @@
   <block id="08c0a2896fee0160c8083277678851f6" category="cell">정부 DoD 지역</block>
   <block id="1d9e509ddb93a176b7d369a91ad7deaf" category="section-title">IP 주소</block>
   <block id="981c07ec261beb1bf77f2be566734475" category="paragraph">콘솔은 Azure의 Cloud Volumes ONTAP 에 필요한 수의 개인 IP 주소를 자동으로 할당합니다.  네트워크에 사용 가능한 개인 IP 주소가 충분한지 확인해야 합니다.</block>
-  <block id="866336d6018a34316f8c805183535aeb" category="paragraph">Cloud Volumes ONTAP 에 할당된 LIF 수는 단일 노드 시스템을 배포하는지 아니면 HA 쌍을 배포하는지에 따라 달라집니다.  LIF는 물리적 포트와 연결된 IP 주소입니다.  SnapCenter 와 같은 관리 도구에는 SVM 관리 LIF가 필요합니다.</block>
   <block id="99b06d2510cf563a2d5a3bb1e854c0be" category="admonition">iSCSI LIF는 iSCSI 프로토콜을 통해 클라이언트 액세스를 제공하며 시스템에서 다른 중요한 네트워킹 워크플로에 사용됩니다.  이러한 LIF는 필수이므로 삭제하면 안 됩니다.</block>
-  <block id="bb5a17a234c886af3a27b429eef480fb" category="paragraph">콘솔은 단일 노드 시스템에 5개 또는 6개의 IP 주소를 할당합니다.</block>
   <block id="40800f2ceb1fadf0fb67562c1b95ca89" category="list-text">클러스터 관리 IP</block>
   <block id="a3dd4b9ad2ee69945d1ea9864c0769d4" category="list-text">노드 관리 IP</block>
   <block id="863bdf16cb9d771a0a419b57d8c86dee" category="list-text">SnapMirror 용 클러스터 간 IP</block>
@@ -1574,7 +1557,6 @@
   <block id="95c154df02c50293c8e187a13129c52e" category="admonition">iSCSI IP는 iSCSI 프로토콜을 통해 클라이언트 액세스를 제공합니다.  또한 시스템에서 다른 중요한 네트워킹 워크플로에도 사용됩니다.  이 LIF는 필수이므로 삭제하면 안 됩니다.</block>
   <block id="d8d7417bbebf0251ff6676bd41195a47" category="list-text">SVM 관리(선택 사항 - 기본적으로 구성되지 않음)</block>
   <block id="b21010bf815253d4c8f09044c40bdb63" category="paragraph">콘솔은 배포 중에 노드당 4개의 NIC에 IP 주소를 할당합니다.</block>
-  <block id="77092de052018a7f39cfca1d29511eb6" category="paragraph">콘솔은 HA 쌍에 SVM 관리 LIF를 생성하지만 Azure의 단일 노드 시스템에는 생성하지 않습니다.</block>
   <block id="7967db50e031806cc903e7667990fa6e" category="paragraph">*NIC0*</block>
   <block id="f78bf4ed8c0f2dd904a8bd30215d4b0d" category="list-text">클러스터 간 IP</block>
   <block id="f667468015bc083421f7d4ce95ec9f32" category="paragraph">*NIC1*</block>
@@ -1608,7 +1590,6 @@
   <block id="cf7b729735d2cc35e0f6084427e869b5" category="paragraph">콘솔은 Cloud Volumes ONTAP 성공적으로 작동할 수 있도록 인바운드 및 아웃바운드 규칙을 포함하는 Azure 보안 그룹을 만듭니다.<block ref="ed3f4fc272c739bb0d2caf8df211a918" category="inline-link-rx"></block> .</block>
   <block id="72cb359256f1b923869ffe5643075163" category="paragraph">Cloud Volumes ONTAP 용 Azure 보안 그룹에는 노드 간 내부 통신을 위해 적절한 포트가 열려 있어야 합니다.<block ref="9235b6a724dccf5c41be51f4736123ae" category="inline-link-rx"></block> .</block>
   <block id="e3f7f3a3bb47d39a7fd58de8d5070b2b" category="paragraph">미리 정의된 보안 그룹을 수정하거나 사용자 지정 보안 그룹을 사용하는 것은 권장하지 않습니다.  하지만 반드시 그렇게 해야 하는 경우 배포 프로세스에서 Cloud Volumes ONTAP 시스템이 자체 서브넷 내에서 전체 액세스 권한을 가져야 한다는 점에 유의하세요.  배포가 완료된 후 네트워크 보안 그룹을 수정하기로 결정한 경우 클러스터 포트와 HA 네트워크 포트를 열어 두세요.  이를 통해 Cloud Volumes ONTAP 클러스터 내에서 원활한 통신(노드 간 모든 통신)이 보장됩니다.</block>
-  <block id="4d6ace52affbdd48b9198aac825d4a2c" category="section-title">단일 노드 시스템에 대한 인바운드 규칙</block>
   <block id="302d2301b273d2d6c222fdca1f337988" category="paragraph">Cloud Volumes ONTAP 시스템을 추가하고 미리 정의된 보안 그룹을 선택하면 다음 중 하나 내에서 트래픽을 허용하도록 선택할 수 있습니다.</block>
   <block id="3ed4080616d1d3c88deef90096108130" category="list-text">*선택된 VNet만 해당*: 인바운드 트래픽의 소스는 Cloud Volumes ONTAP 시스템의 VNet 서브넷 범위와 콘솔 에이전트가 있는 VNet의 서브넷 범위입니다.  이것은 권장되는 옵션입니다.</block>
   <block id="cd8b82367babbe39683e8fb9f0c22ed5" category="list-text">*모든 VNet*: 인바운드 트래픽의 소스는 0.0.0.0/0 IP 범위입니다.</block>
@@ -1685,7 +1666,6 @@
   <block id="f13dc81ff6686c567bc9cd81f1705a01" category="cell">65500 DenyAllInBound</block>
   <block id="23d79435900ea920cd046b66b4a82ad6" category="cell">다른 모든 인바운드 트래픽 차단</block>
   <block id="65c62bad4ba63ac91ba2e85d37c31509" category="section-title">HA 시스템에 대한 인바운드 규칙</block>
-  <block id="26bcfda25a06a4967c61d9fe062eb2f4" category="admonition">HA 시스템은 인바운드 데이터 트래픽이 Azure Standard Load Balancer를 통과하기 때문에 단일 노드 시스템보다 인바운드 규칙이 적습니다.  이로 인해 "AllowAzureLoadBalancerInBound" 규칙에 표시된 대로 로드 밸런서의 트래픽이 열려 있어야 합니다.</block>
   <block id="005253b174acff63249a92d1bafe61b6" category="cell">100 inbound_443</block>
   <block id="ef6d98134446f807883c2235ef5a8ae6" category="cell">443 모든 프로토콜</block>
   <block id="853bf4038002c3f535649db948ff5e60" category="cell">101 inbound_111_tcp</block>
@@ -1790,11 +1770,7 @@
   <block id="589257f6242e3a6232a5f72f7867c4b6" category="inline-link-macro">Google Cloud에서 HA 쌍이 작동하는 방식 알아보기</block>
   <block id="c8e39b92d04aae2c3a6d3e6f428d480e" category="paragraph">HA 쌍을 배포하려면 다음을 수행해야 합니다.<block ref="135d51832239d75e9eff2c1e7574765f" category="inline-link-macro-rx"></block> .</block>
   <block id="26cc43b1e094bf317e2d9013491cb9af" category="paragraph">Google Cloud에서는 다음 요구 사항을 충족해야 합니다.</block>
-  <block id="cd28e0a76ff845ef2e9e5eeced367a01" category="section-title">단일 노드 시스템에 대한 특정 요구 사항</block>
-  <block id="d9358a4b713f2c5cc37fadb9fef3c574" category="paragraph">단일 노드 시스템을 배포하려면 네트워킹이 다음 요구 사항을 충족하는지 확인하세요.</block>
   <block id="1ec1df3337524963212c8e27b42ab3cc" category="section-title">하나의 VPC</block>
-  <block id="5bd17b13142e93319e9f09e96063763a" category="paragraph">단일 노드 시스템에는 하나의 가상 사설 클라우드(VPC)가 필요합니다.</block>
-  <block id="aa03aa54374eb89768ecb4c4f7b40df6" category="paragraph">Google Cloud의 단일 노드 시스템의 경우 콘솔은 다음에 개인 IP 주소를 할당합니다.</block>
   <block id="249694a485fc5d3289c38986b4f8e887" category="list-text">무리</block>
   <block id="541b6c1ab6b503c34fc7cd5ed7105896" category="list-text">스토리지 VM</block>
   <block id="d73a4e3f4b2f5ab8664e4921cf616d56" category="list-text">데이터 NAS LIF</block>
@@ -1818,7 +1794,6 @@
   <block id="158bfb217f00205e8445c28dcf0fc857" category="paragraph">VPC-0에 콘솔 에이전트를 배치하는 경우 API에 액세스하고 데이터 계층화를 활성화하려면 서브넷에서 Private Google Access를 활성화해야 합니다.</block>
   <block id="879d9e5531b71e6c91d2bb1771c06d40" category="paragraph">이러한 VPC의 서브넷에는 서로 다른 CIDR 범위가 있어야 합니다.  CIDR 범위가 겹칠 수 없습니다.</block>
   <block id="fe3eb5178f8af6d17269d6d49ad32edb" category="paragraph">콘솔은 Google Cloud의 Cloud Volumes ONTAP 에 필요한 수의 개인 IP 주소를 자동으로 할당합니다.  네트워크에 사용 가능한 개인 주소가 충분한지 확인해야 합니다.</block>
-  <block id="e57aed3ea4b400bd581ab695d196aff8" category="list-text">*단일 노드* 콘솔은 단일 노드 시스템에 4개의 IP 주소를 할당합니다.</block>
   <block id="15a4d902a9e2eeb56724bdb94f9d1977" category="list-text">클러스터 관리 LIF</block>
   <block id="e837515a89200e7cd1bddfc96747979e" category="list-text">iSCSI 데이터 LIF</block>
   <block id="a28292fa77dc234022cd48bc08becd01" category="list-text">나스 라이프</block>
@@ -1845,7 +1820,6 @@
   <block id="83d4ff33554cb62b1f10057bae8d85ce" category="paragraph">기본적으로 글로벌 액세스는 비활성화되어 있지만 배포 후에 활성화하는 것이 지원됩니다.  지역 간 트래픽의 지연 시간이 상당히 길어지기 때문에 이 기능을 비활성화했습니다.  우리는 여러분이 우연히 다른 지역의 탈것을 타고 부정적인 경험을 하지 않도록 하려고 했습니다.  이 옵션을 활성화하는 것은 귀하의 비즈니스 요구 사항에 맞게 결정됩니다.</block>
   <block id="b9ea9f76a11191d80f8fe1abc9437eb6" category="section-title">공유 VPC</block>
   <block id="c241e752f74b4f0a49d3bef9094a54c4" category="paragraph">Cloud Volumes ONTAP 과 콘솔 에이전트는 Google Cloud 공유 VPC와 독립형 VPC에서 지원됩니다.</block>
-  <block id="d3a2a7fdaa8373f4a0dca1f16e49c9c1" category="paragraph">단일 노드 시스템의 경우 VPC는 공유 VPC이거나 독립형 VPC일 수 있습니다.</block>
   <block id="dedaa6a395c33cf8c6b506c83163ed74" category="paragraph">HA 쌍의 경우 4개의 VPC가 필요합니다.  각 VPC는 공유형이거나 독립형일 수 있습니다.  예를 들어, VPC-0은 공유 VPC가 될 수 있고, VPC-1, VPC-2, VPC-3은 독립형 VPC가 될 수 있습니다.</block>
   <block id="300d87b8001da3a5be5d54eb19fb6ea4" category="paragraph">공유 VPC를 사용하면 여러 프로젝트에서 가상 네트워크를 구성하고 중앙에서 관리할 수 있습니다.  _호스트 프로젝트_에서 공유 VPC 네트워크를 설정하고 _서비스 프로젝트_에서 콘솔 에이전트와 Cloud Volumes ONTAP 가상 머신 인스턴스를 배포할 수 있습니다.</block>
   <block id="e7654a639cfe016ac3f5047f52f87c75" category="inline-link">Google Cloud 문서: 공유 VPC 개요</block>
@@ -2316,7 +2290,6 @@
   <block id="55c1a5d402853088f42720624bfb58bb" category="paragraph"><block ref="55c1a5d402853088f42720624bfb58bb" category="inline-link-rx"></block></block>
   <block id="9f257b11a56fb0990bae90687da210c7" category="list-text">VM 유형을 변경하면 Microsoft Azure 서비스 요금에 영향을 미칠 수 있습니다.</block>
   <block id="c8d8c076494c2c4a46c774a2f999d907" category="list-text">이 작업은 Cloud Volumes ONTAP 다시 시작합니다.</block>
-  <block id="e8fafc5515dbe922c9cd7f7101d3a661" category="paragraph">단일 노드 시스템의 경우 I/O가 중단됩니다.</block>
   <block id="0da5cbb23a0a7d13b0f40ce06d29d3b4" category="paragraph">HA 쌍의 경우 변경은 중단되지 않습니다.  HA 쌍은 계속해서 데이터를 제공합니다.</block>
   <block id="3fd4713360582ecef88ecfa8f1c8a05b" category="admonition">NetApp Console 인수를 시작하고 반환을 기다리는 방식으로 한 번에 한 노드씩 변경합니다.  NetApp의 품질 보증 팀은 이 프로세스 동안 파일 쓰기와 읽기를 모두 테스트했으며 클라이언트 측에서 아무런 문제도 발견하지 못했습니다.  연결이 변경됨에 따라 I/O 수준에서 일부 재시도가 관찰되었지만 애플리케이션 계층은 NFS/CIFS 연결의 재배선을 극복했습니다.</block>
   <block id="fe73ef8c13b3b61938fc7d9aa96fec5f" category="list-text">*시스템* 페이지에서 시스템을 선택하세요.</block>
@@ -2975,7 +2948,6 @@
   <block id="6390591b27e881b05ba32426d12f2b17" category="list-text"><block ref="6390591b27e881b05ba32426d12f2b17" category="inline-link-macro-rx"></block></block>
   <block id="0f703b696e22955e2930127e854c1e29" category="summary">NetApp Console 에서 Cloud Cloud Volumes ONTAP 시스템을 만들어 Azure에서 단일 Cloud Cloud Volumes ONTAP 시스템을 시작할 수 있습니다.</block>
   <block id="70c84621a7336f391b4b7df86b5f1396" category="doc">Azure에서 Cloud Volumes ONTAP 실행</block>
-  <block id="52f40df3897ad7ddce812ff274006d4d" category="paragraph">NetApp Console 에서 Cloud Volumes ONTAP 시스템을 만들어 Azure에서 단일 노드 시스템이나 HA 쌍을 시작할 수 있습니다.</block>
   <block id="0473d750e2a3daca568511b768f19dad" category="list-text">당신은 ~을 가져야합니다<block ref="21b9e54d07d93b52dd801e203dadcd2a" category="inline-link-rx"></block> .</block>
   <block id="1942ca6a74b110784dab141845e32ec9" category="paragraph">구성을 계획해야 하며, 관리자로부터 필요한 Azure 네트워킹 세부 정보를 받아야 합니다. 자세한 내용은 다음을 참조하세요. <block ref="342e106d00de7bc2efc5fca274754fe1" category="inline-link-macro-rx"></block> .</block>
   <block id="4a990655560c303b19831e9bf63722cf" category="paragraph"><block ref="a19594f8ac35f50a09725bf53aa8cda6" category="inline-link-macro-rx"></block> .</block>
@@ -2984,7 +2956,6 @@
   <block id="72cd91c0deb59fc4b814e6cafc8ff514" category="paragraph">가장 좋은 방법은 각 Cloud Volumes ONTAP 시스템에 대해 새로운 전용 리소스 그룹을 사용하는 것입니다.</block>
   <block id="334025c832b730a2d652f0f65a7d50ef" category="paragraph">데이터 손실 위험 때문에 기존의 공유 리소스 그룹에 Cloud Volumes ONTAP 배포하는 것은 권장되지 않습니다.  배포 실패 또는 삭제 시 콘솔에서 공유 리소스 그룹에서 Cloud Volumes ONTAP 리소스를 제거할 수 있지만, Azure 사용자가 실수로 공유 리소스 그룹에서 Cloud Volumes ONTAP 리소스를 삭제할 수도 있습니다.</block>
   <block id="253f14f70b008cf9e9d1e6143593db65" category="section-title">Azure에서 단일 노드 Cloud Volumes ONTAP 시스템 실행</block>
-  <block id="43078bef4570bbcb7b76e9c51a5c935b" category="paragraph">Azure에서 단일 노드 Cloud Volumes ONTAP 시스템을 시작하려면 콘솔에서 단일 노드 시스템을 만들어야 합니다.</block>
   <block id="5e65ccaa7b0cffc728e485801bdd8092" category="list-text">*위치 선택*: *Microsoft Azure*와 * Cloud Volumes ONTAP 단일 노드*를 선택하세요.</block>
   <block id="3d5c594aecd40a1f5184970be0e65330" category="list-text">메시지가 표시되면<block ref="3467f3015b64964d3499f1d2348876b6" category="inline-link-rx"></block> .</block>
   <block id="ceca015ffa0918205a91a8cc0268611c" category="list-text">*세부 정보 및 자격 증명*: 필요에 따라 Azure 자격 증명과 구독을 변경하고, 클러스터 이름을 지정하고, 필요한 경우 태그를 추가한 다음 자격 증명을 지정합니다.</block>
@@ -3619,7 +3590,6 @@
   <block id="825a0cb9a8312e85f3aa745487c0dbe9" category="paragraph">콘솔은 Cloud Volumes ONTAP 시스템의 라이선스를 업데이트합니다.</block>
   <block id="2c2e7695734e076306fc8ba50ca70c1b" category="section-title">추가 용량 라이선스 관리</block>
   <block id="d452bdec5cf94a61fe23690b513f4a71" category="paragraph">BYOL 시스템 라이선스로 제공되는 368TiB의 용량보다 더 많은 용량을 할당하려면 Cloud Volumes ONTAP BYOL 시스템에 대한 추가 용량 라이선스를 구매할 수 있습니다.  예를 들어, Cloud Volumes ONTAP 에 최대 736TiB의 용량을 할당하기 위해 추가 라이선스 용량 하나를 구매할 수 있습니다.  또는 추가 용량 라이선스 3개를 구매하여 최대 1.4 PiB까지 확보할 수 있습니다.</block>
-  <block id="5e26587c8f074cc4f0455ff005cb744c" category="paragraph">단일 노드 시스템 또는 HA 쌍에 대해 구매할 수 있는 라이선스 수는 무제한입니다.</block>
   <block id="6e869ff6c9fd5eb76baa394c52e2ef18" category="section-title">용량 라이선스 추가</block>
   <block id="41a0a4fe38c3f00a9fae3056955c9f80" category="paragraph">콘솔 오른쪽 하단에 있는 채팅 아이콘을 통해 문의하여 추가 용량 라이선스를 구매하세요.  라이선스를 구매한 후에는 Cloud Volumes ONTAP 시스템에 적용할 수 있습니다.</block>
   <block id="423cdc57679399d47229e2f74dfc102b" category="list-text">*용량 라이선스 추가*를 클릭하세요.</block>
@@ -3645,7 +3615,6 @@
   <block id="bd0ed9183db9306d8ce58c50abb4a96b" category="summary">NetApp Console 스토리지 VM 재해 복구에 대한 설정이나 오케스트레이션 지원을 제공하지 않습니다.  시스템 관리자나 CLI를 사용해야 합니다.</block>
   <block id="76872305ddb703eedd7fbe3e66263d83" category="doc">Cloud Volumes ONTAP 에 대한 스토리지 VM 재해 복구 설정</block>
   <block id="d25bf5fb042a0cc652d82492e5410fb6" category="paragraph">NetApp Console 스토리지 VM(SVM) 재해 복구에 대한 설정이나 오케스트레이션 지원을 제공하지 않습니다.  이러한 작업을 수행하려면 ONTAP 시스템 관리자나 ONTAP CLI를 사용하세요.</block>
-  <block id="f01867033c75f2410ea82d8cbf4634d7" category="paragraph">두 개의 Cloud Volumes ONTAP 시스템 간에 SnapMirror SVM 복제를 설정하는 경우 복제는 두 개의 HA 쌍 시스템 또는 두 개의 단일 노드 시스템 간에 이루어져야 합니다.  HA 쌍과 단일 노드 시스템 간에는 SnapMirror SVM 복제를 설정할 수 없습니다.</block>
   <block id="5b5068830882d3d6b54d331cdd743e62" category="paragraph">ONTAP CLI 지침은 다음 문서를 참조하세요.</block>
   <block id="412af2a2404a4e920b18be59197204b0" category="inline-link">SVM 재해 복구 준비 익스프레스 가이드</block>
   <block id="c15bb50c43eaf0ceb1bc0ce3d7503ebd" category="list-text"><block ref="c15bb50c43eaf0ceb1bc0ce3d7503ebd" category="inline-link-rx"></block></block>
@@ -3838,7 +3807,6 @@
   <block id="8dd4560f4596618815de91dd18e711e1" category="list-text">다음 섹션에서 AWS에서 IP 주소를 할당할 때 필요하므로 이 번호를 기록해 두세요.</block>
   <block id="935712c749bf1c78e33ff9015ecebf46" category="section-title">AWS에서 IP 주소 할당</block>
   <block id="87be313262150c685084e6e44ac07990" category="paragraph">새 스토리지 VM에 대한 LIF를 생성하기 전에 AWS의 포트 e0a에 개인 IPv4 주소를 할당해야 합니다.</block>
-  <block id="9929ecc2c86c1ad1e4c78d1244d3554d" category="paragraph">스토리지 VM에 대한 선택적 관리 LIF에는 단일 노드 시스템과 단일 AZ의 HA 쌍에 개인 IP 주소가 필요합니다.  이 관리 LIF는 SnapCenter 와 같은 관리 도구에 대한 연결을 제공합니다.</block>
   <block id="6ae090a4433735cf598985f60d5a68ff" category="list-text">AWS에 로그인하고 EC2 서비스를 엽니다.</block>
   <block id="da3a869e3a7837d5ff3412e6315aca73" category="list-text">Cloud Volumes ONTAP 인스턴스를 선택하고 *네트워킹*을 클릭합니다.</block>
   <block id="6d5c5ef8a89ed4f5a6c4ad9cae9e8460" category="paragraph">HA 쌍에 스토리지 VM을 생성하는 경우 노드 1을 선택합니다.</block>
@@ -3853,14 +3821,11 @@
   <block id="704ce057086edc7f390e72f33febfb03" category="list-text">선택 사항: Cloud Volumes ONTAP 의 ONTAP CLI로 이동하여 *network interface show*를 실행하여 각 IP 주소가 사용 중인지 확인합니다.</block>
   <block id="8a57c7cace7bf01166e984c4aeffc68f" category="paragraph">IP 주소가 사용되지 않으면 새 스토리지 VM에서 해당 IP 주소를 사용할 수 있습니다.</block>
   <block id="ed97acbe270bb0841ef8a242f58309f6" category="list-text">AWS 콘솔로 돌아와서 *새 IP 주소 할당*을 클릭하여 새 스토리지 VM에 필요한 양에 따라 추가 IP 주소를 할당합니다.</block>
-  <block id="c853bdf1bd2777df35bc3b5d4af6b9ea" category="list-text">단일 노드 시스템: 사용되지 않는 보조 개인 IP가 하나 필요합니다.</block>
   <block id="5e50d00d975ec8703bc22324c7265b66" category="paragraph">스토리지 VM에 관리 LIF를 생성하려면 선택적 보조 개인 IP가 필요합니다.</block>
   <block id="82c4266b10c1848bb195ebfd317a081b" category="list-text">단일 AZ의 HA 쌍: 노드 1에 사용되지 않는 보조 개인 IP가 하나 필요합니다.</block>
   <block id="34cd8238b52f27b1bb4e98ded05d02b2" category="list-text">여러 AZ의 HA 쌍: 각 노드에 사용되지 않는 보조 개인 IP가 하나씩 필요합니다.</block>
   <block id="cc16cfddda9904c2894330364425d501" category="list-text">단일 AZ의 HA 쌍에 IP 주소를 할당하는 경우 *보조 개인 IPv4 주소 재할당 허용*을 활성화합니다.</block>
   <block id="f9b48f58c3e703111f23614cc791b0e9" category="list-text">여러 AZ에 HA 쌍이 있는 경우 노드 2에 대해 이 단계를 반복해야 합니다.</block>
-  <block id="6ea52a1fa173ce5420e093b9e27ec284" category="section-title">단일 노드 시스템에 스토리지 VM 생성</block>
-  <block id="cc0a30537e715f13eb8e645bc570985a" category="paragraph">이 단계에서는 단일 노드 시스템에 새로운 스토리지 VM을 만듭니다.  NAS LIF를 생성하려면 개인 IP 주소 하나가 필요하고, 관리 LIF를 생성하려면 선택적으로 개인 IP 주소가 하나 더 필요합니다.</block>
   <block id="9b08db40ecf3304d34c7dadb34a6d2c2" category="list-text">스토리지 VM과 스토리지 VM으로의 경로를 만듭니다.</block>
   <block id="efc1b32fd1eda24b66896348ad6fd78d" category="list-text">NAS LIF를 생성합니다.</block>
   <block id="933829c2bc0d5e884fc83d159a503169" category="paragraph">여기서 _private_ip_x_는 e0a의 사용되지 않는 보조 개인 IP입니다.</block>
@@ -3896,7 +3861,6 @@
   <block id="7147a143d2af533e058f535a19e1223d" category="paragraph">Cloud Volumes ONTAP 9.9.0부터 라이선스에 따라 특정 구성으로 여러 스토리지 VM이 지원됩니다.  를 참조하세요<block ref="17601f6b0c4702ab7b2568d76b48bf40" category="inline-link-rx"></block> Cloud Volumes ONTAP 버전에 지원되는 스토리지 VM 수를 확인하세요.</block>
   <block id="c0bc1a321126780ce6dd98fe7445b54b" category="paragraph">9.9.0 이전의 모든 Cloud Volumes ONTAP 버전은 재해 복구에 사용되는 하나의 데이터 제공 스토리지 VM과 하나의 대상 스토리지 VM을 지원합니다.  소스 스토리지 VM에 장애가 발생하는 경우 데이터 액세스를 위해 대상 스토리지 VM을 활성화할 수 있습니다.</block>
   <block id="8272f5b23e79d0ee33bd5151dcddc454" category="section-title">스토리지 VM 생성</block>
-  <block id="aba0a98a938b046da2d941095cf90aca" category="paragraph">구성 및 라이선스 유형에 따라 NetApp Console 용 API를 사용하여 단일 노드 시스템이나 고가용성(HA) 구성에서 여러 스토리지 VM을 만들 수 있습니다.</block>
   <block id="ac403fbb0bdfb5870f7ea56d934efde6" category="paragraph">API를 사용하여 스토리지 VM을 생성하고 필요한 네트워크 인터페이스를 구성하는 경우 콘솔도 다음을 수정합니다.<block ref="891e111023ee3cccd4407be6ddd24c21" prefix=" " category="inline-code"></block> 다음 서비스를 NAS 데이터 LIF에서 제거하고 아웃바운드 관리 연결에 사용되는 iSCSI 데이터 LIF에 추가하여 데이터 스토리지 VM에 대한 정책을 적용합니다.</block>
   <block id="e522a238c22a673b40cfb6b6b240f37b" category="list-text"><block ref="2548ff9e63092532a81a79e1ceebe91e" prefix="" category="inline-code"></block></block>
   <block id="9c3ffe3e739ef0b406e2216de2c403b7" category="list-text"><block ref="c33d2f2401cef76503005b2317a0870d" prefix="" category="inline-code"></block></block>
@@ -3904,24 +3868,19 @@
   <block id="58a7b8379178f95002ceeceb82feb029" category="list-text"><block ref="0d409a8ed03d0fa3e161460f3f21e0b4" prefix="" category="inline-code"></block></block>
   <block id="3c1cec80e048088b9c829a18b7d5111b" category="list-text"><block ref="8e6e205a8b8f4f22cf306f9b85bd6c2c" prefix="" category="inline-code"></block></block>
   <block id="5609a622328efe9876da2be3ff181ffa" category="paragraph">콘솔 에이전트에는 Cloud Volumes ONTAP 에 대한 스토리지 VM을 생성하기 위한 특정 권한이 필요합니다.  필요한 권한이 포함되어 있습니다.<block ref="7dc648b1297c419be8c55b589146f4e1" category="inline-link-rx"></block> .</block>
-  <block id="0ecbfe2cb5b1df888639e1751cec905a" category="section-title">단일 노드 시스템</block>
-  <block id="8706f6ead181f6948eb97f37a1eb2445" category="paragraph">다음 API 호출을 사용하여 단일 노드 시스템에 스토리지 VM을 생성합니다.</block>
   <block id="3fdacbfd71cad923423d9367166e8e10" category="paragraph"><block ref="c9cca6b9ba2558d529f121eb1e013395" prefix="" category="inline-code"></block></block>
   <block id="e3c9171d657ac0e66f63823d74cfbcf2" category="paragraph">요청 본문에 다음 매개변수를 포함합니다.</block>
   <block id="063ae5e353016345999dc0a39f9aa45a" category="paragraph">다음 API 호출을 사용하여 HA 쌍에 스토리지 VM을 만듭니다.</block>
   <block id="ffed8e594be63a1704331cda026451ec" category="paragraph"><block ref="332a159c5eb24709f786ad048b2b2fc8" prefix="" category="inline-code"></block></block>
-  <block id="546e719c658c5e1549c21e8288af2461" category="section-title">단일 노드 시스템 및 HA 쌍에서 스토리지 VM 관리</block>
   <block id="41459d7c36118b05a54bceb8e26ba523" category="paragraph">API를 사용하면 단일 노드와 HA 구성 모두에서 스토리지 VM의 이름을 바꾸고 삭제할 수 있습니다.</block>
   <block id="8d45e131d35caf69fb22ef97f4efcd27" category="paragraph">콘솔 에이전트에는 Cloud Volumes ONTAP 의 스토리지 VM을 관리하기 위한 특정 권한이 필요합니다.  필요한 권한이 포함되어 있습니다.<block ref="7dc648b1297c419be8c55b589146f4e1" category="inline-link-rx"></block> .</block>
   <block id="c97c5ffc330239a3245482bb4881877a" category="section-title">스토리지 VM 이름 바꾸기</block>
   <block id="d8e62504370dd392011aab69bc975d8d" category="paragraph">스토리지 VM의 이름을 바꾸려면 기존 스토리지 VM과 새 스토리지 VM의 이름을 매개변수로 제공해야 합니다.</block>
-  <block id="e313c8cca3b79dbc79cbcfe63c3d6efb" category="list-text">다음 API 호출을 사용하여 단일 노드 시스템에서 스토리지 VM의 이름을 바꾸세요.</block>
   <block id="163713240b16088767c6e8dd70caefde" category="paragraph"><block ref="d3fe545ac501d33a61917e447e4f0069" prefix="" category="inline-code"></block></block>
   <block id="ee677feb3cbaca080cdf86bc9ba32d6c" category="list-text">다음 API 호출을 사용하여 HA 쌍의 스토리지 VM 이름을 바꾸세요.</block>
   <block id="f80f88eb929c0d4cd5386633be23cf21" category="paragraph"><block ref="d138335618e0186622605f96b9b3b0d1" prefix="" category="inline-code"></block></block>
   <block id="ce9c0fa786ae9e9debeb029c1c0a4c92" category="section-title">스토리지 VM 삭제</block>
   <block id="c92f0160e249d6660e4b4262409aea6c" category="paragraph">단일 노드 또는 HA 구성에서는 활성 볼륨이 없는 스토리지 VM을 제거할 수 있습니다.</block>
-  <block id="a3590d03d962ac5b789854576b314e57" category="list-text">다음 API 호출을 사용하여 단일 노드 시스템에서 스토리지 VM을 삭제합니다.</block>
   <block id="eba2f559f6f185c3ecb4fd32a7acf4c8" category="paragraph"><block ref="f72e53a28ab0632263c72933e322d2a6" prefix="" category="inline-code"></block></block>
   <block id="e3105c7c013656277a67973d1d384642" category="list-text">HA 쌍에서 스토리지 VM을 삭제하려면 다음 API 호출을 사용하세요.</block>
   <block id="ab5ee533b7c08abc987c74ffd54477b9" category="paragraph"><block ref="4bd28f76ace2927734ae3d3abcca1009" prefix="" category="inline-code"></block></block>
@@ -3937,7 +3896,6 @@
   <block id="015cca4b60c0784eec4fd7f9e6e5f8d1" category="paragraph">Google Cloud에서 추가 데이터 제공 스토리지 VM을 만들고 관리하려면 API를 사용해야 합니다.  API는 스토리지 VM을 생성하고 필요한 네트워크 인터페이스를 구성하는 프로세스를 자동화하기 때문입니다.  스토리지 VM을 생성할 때 NetApp Console 필수 LIF 서비스와 스토리지 VM에서 아웃바운드 SMB/CIFS 통신에 필요한 iSCSI LIF를 구성합니다.</block>
   <block id="a0d106b3df91a5c40e846d04e0e0b072" category="paragraph">Cloud Volumes ONTAP 9.11.1부터 라이선스에 따라 특정 구성으로 여러 스토리지 VM이 지원됩니다.  를 참조하세요<block ref="7a96f232274f5a7cebcb1f6a52cc095f" category="inline-link-rx"></block> Cloud Volumes ONTAP 버전에 지원되는 스토리지 VM 수를 확인하세요.</block>
   <block id="ff1d242daadf495829811b6d2313264b" category="paragraph">9.11.1 이전의 모든 Cloud Volumes ONTAP 버전은 재해 복구에 사용되는 하나의 데이터 제공 스토리지 VM과 하나의 대상 스토리지 VM을 지원합니다.  소스 스토리지 VM에 장애가 발생하는 경우 데이터 액세스를 위해 대상 스토리지 VM을 활성화할 수 있습니다.</block>
-  <block id="9fb17f61d770951d327021f3fa633d3a" category="paragraph">구성 및 라이선스 유형에 따라 API를 사용하여 단일 노드 시스템이나 고가용성(HA) 구성에서 여러 스토리지 VM을 만들 수 있습니다.</block>
   <block id="e977b05b15a8ef8166d6f1b02e35c6b2" category="paragraph"><block ref="6e37cda7be8f481fee7b895bd6ef924b" prefix="" category="inline-code"></block></block>
   <block id="3fab6f26ccc1354a7fda62c947fe176d" category="paragraph"><block ref="4ae3965c67ec8b00b8c07c6aa50d0d55" prefix="" category="inline-code"></block></block>
   <block id="2ee20619a771993544eaaa7e388816d1" category="section-title">스토리지 VM 관리</block>
@@ -3962,7 +3920,6 @@
   <block id="8ec18a80b08142a9ee538b8ce4350b54" category="summary">스토리지 요구 사항이 변경되면 Cloud Volumes ONTAP 시스템의 구성을 변경해야 할 수도 있습니다.  예를 들어, 사용량에 따른 요금 지불 구성을 변경하고, 인스턴스나 VM 유형을 변경하는 등의 작업이 가능합니다.</block>
   <block id="c2c088d1045cc3d76d132b248c4445c1" category="doc">시스템 쓰기 속도 수정</block>
   <block id="1d73ea704b43bd681b98458f046b25a9" category="paragraph">NetApp Console 에서 Cloud Volumes ONTAP 에 대한 일반 쓰기 속도 또는 높은 쓰기 속도를 선택할 수 있습니다.  기본 쓰기 속도는 보통입니다.  작업 부하에 빠른 쓰기 성능이 필요한 경우 높은 쓰기 속도로 변경할 수 있습니다.</block>
-  <block id="2bae3f4058e112cc703c4dc74dc72501" category="paragraph">모든 유형의 단일 노드 시스템과 일부 HA 쌍 구성에서는 높은 쓰기 속도가 지원됩니다.  지원되는 구성을 보려면<block ref="d080347ff89205e9b3e508b1fee0c025" category="inline-link-rx"></block></block>
   <block id="8334ca2b5f457a41a987d1633cb5c214" category="inline-link-macro">일반 설정과 높은 설정의 차이점을 이해하세요</block>
   <block id="69e28a1ba6bc5233cc60dd248c362636" category="paragraph">쓰기 속도를 변경하기 전에 다음을 수행해야 합니다.<block ref="eb987e41d6a04bba64a9af2bb235fccb" category="inline-link-macro-rx"></block> .</block>
   <block id="d9072539538ac46d98e04043ff27fe64" category="list-text">볼륨이나 집계 생성과 같은 작업이 진행 중이 아닌지 확인하세요.</block>
@@ -4015,7 +3972,6 @@
   <block id="03cd53d9a632404d9be539683276c7a2" category="list-text"><block ref="03cd53d9a632404d9be539683276c7a2" category="inline-link-rx"></block></block>
   <block id="6fd456d71c345eb38fe1c0337056dc63" category="inline-link">Azure 설명서: 메모리 최적화된 가상 머신 크기</block>
   <block id="05bb9e686e11b905d394fe43829e10b1" category="list-text"><block ref="05bb9e686e11b905d394fe43829e10b1" category="inline-link-rx"></block></block>
-  <block id="26107ad7eb2db3c2d4b832701061add4" category="list-text">단일 노드 시스템을 갖춘 Azure 디스크 유형</block>
   <block id="4a9c0738bb69f1a7ecfd0fa8da86cc4a" category="list-text">Cloud Volumes ONTAP 에 대한 볼륨을 생성할 때 Cloud Volumes ONTAP 디스크로 사용하는 기본 클라우드 스토리지를 선택해야 합니다.</block>
   <block id="876b7b2bfe7f51f31d3ade24031d8d87" category="list-text">_프리미엄 SSD v2 관리형 디스크_는 프리미엄 SSD 관리형 디스크에 비해 더 낮은 비용으로 더 높은 성능과 더 낮은 지연 시간을 제공합니다.</block>
   <block id="f75e49a7eddde4f8a0eff68169f61019" category="inline-link">Microsoft Azure 설명서: Azure에서 사용할 수 있는 디스크 유형은 무엇인가요?</block>
@@ -4304,7 +4260,6 @@
   <block id="bf5db4b0d890ae0f47f0666b4786c11e" category="paragraph">다음 단계에서는 ONTAP CLI를 사용하세요.</block>
   <block id="5caa556e7511fbc031e556f35273b4b5" category="list-text">새로운 IPspace(new_ipspace)를 생성합니다.</block>
   <block id="c3e846d4c68310f0bbaebfe81b1b016c" category="list-text">새로운 IPspace(new_ipspace)에 브로드캐스트 도메인을 만들고 nic-new 포트를 추가합니다.</block>
-  <block id="ec7cd635bbff7496ce854419fbac424d" category="list-text">단일 노드 시스템의 경우 새로 추가된 포트는 _e0b_입니다.  관리형 디스크를 사용한 HA 쌍 배포의 경우 새로 추가된 포트는 _e0d_입니다.  페이지 블롭이 있는 HA 쌍 배포의 경우 새로 추가된 포트는 _e0e_입니다.  VM 이름이 아닌 노드 이름을 사용하세요.  다음을 실행하여 노드 이름을 찾으세요.<block ref="9cd5e832790132a87592f2958fc2b1a6" prefix=" " category="inline-code"></block> .</block>
   <block id="9defaa4e7d0a35e22135ad0e2f58e852" category="list-text">새로운 브로드캐스트 도메인(new_bd)과 새로운 NIC(nic-new)에 클러스터 간 LIF를 만듭니다.</block>
   <block id="be0a702fb4057bb2e91bdd1cc96da2e4" category="list-text">새로운 클러스터 간 LIF 생성을 확인합니다.</block>
   <block id="2aea6959bcbac1fa4b42120415127f49" category="section-title">3단계: 소스 시스템과 대상 시스템 간 클러스터 피어링 확인</block>
@@ -4383,7 +4338,6 @@
   <block id="1be48617ce5825c4bd54ef885eef8a65" category="list-text">다음 옵션을 활성화해야 합니다.</block>
   <block id="ba6db2df53167b0fe62e3b5c762cbbf1" category="list-text">*소프트 삭제* (이 옵션은 기본적으로 활성화되어 있지만 비활성화해서는 안 됩니다)</block>
   <block id="fd08f80d1ec5aa4440248321eace716f" category="list-text">*퍼지 보호*</block>
-  <block id="312fcba055a7ab6b8314cb541c1f1b4f" category="list-text">*볼륨 암호화를 위한 Azure Disk Encryption*(단일 노드 시스템, 여러 영역의 HA 쌍 및 HA 단일 AZ 배포용)</block>
   <block id="4b63d3239df3134d1faedabb0e8eb859" category="admonition">Azure 고객 관리 암호화 키를 사용하려면 키 자격 증명 모음에 Azure Disk 암호화가 활성화되어 있어야 합니다.</block>
   <block id="4fe37dc4f545dffb56459397b5344d4c" category="list-text">사용자가 할당한 관리 ID를 생성한 경우 다음 옵션을 활성화해야 합니다.</block>
   <block id="7761893631ec0e57ca5b1847392a89d1" category="list-text">*금고 접근 정책*</block>
@@ -4425,7 +4379,6 @@
   <block id="0b026614551113ad09fa76895c5dd5ce" category="paragraph">요청 본문에는 다음 필드가 포함되어야 합니다.</block>
   <block id="1f8370f663ec71e8fac7dc386794543c" category="admonition">포함하다<block ref="d740baa07e4af19d0de1f45650cf4bc0" prefix=" " category="inline-code"></block> 저장소 계정 암호화에 사용할 리소스를 만든 경우 필드입니다.</block>
   <block id="2ffa17dd74caa90edaf33636b3e374b1" category="paragraph"><block ref="792ba555e1629fb9b0b5e00711256a74" category="inline-link-rx"></block> .</block>
-  <block id="777cd3d610cae6ea63c19c799e3b0b51" category="list-text">단일 노드 시스템의 경우:</block>
   <block id="6507ffa8d8b9388092f62e253e32e85d" category="paragraph"><block ref="d1a53319a230158b10e72e4bd96c5bbc" prefix="" category="inline-code"></block></block>
   <block id="7881621c3d4c91216ebe58ee1cdc87e0" category="paragraph"><block ref="52c47b6a301b0fb242044f1b14c5f663" category="inline-link-rx"></block> .</block>
   <block id="c9a9b22c97e2474e63fdb09a6f5f4a75" category="paragraph">데이터 암호화를 위해 고객 관리 키를 사용하도록 구성된 새로운 Cloud Volumes ONTAP 시스템이 있습니다.</block>
@@ -4723,7 +4676,6 @@
   <block id="0baa9fabb663d0426d677bdef48cab76" category="list-text">비활성 데이터는 Amazon S3 버킷에 계층화됩니다.  다른 공급자로의 계층화는 지원되지 않습니다.</block>
   <block id="049a56718afb4bc754cebf8a5567c3c8" category="section-title">Azure 지원</block>
   <block id="f16872b2bf28c8dcda252e8197cc1a5e" category="list-text">Azure에서는 데이터 계층화가 다음과 같이 지원됩니다.</block>
-  <block id="c7f6ec5d95cafd0132e2322cbdca7f47" category="list-text">단일 노드 시스템을 갖춘 버전 9.4</block>
   <block id="146aae59b5e422bc518402fc01301883" category="list-text">HA 쌍이 포함된 버전 9.6</block>
   <block id="c22e6c8e140bb405c574c67bff9bd946" category="list-text">성능 계층은 프리미엄 SSD 관리 디스크, 표준 SSD 관리 디스크 또는 표준 HDD 관리 디스크가 될 수 있습니다.</block>
   <block id="9d04d4aae5bc77b320eddf498e3e1a4c" category="list-text">비활성 데이터는 Microsoft Azure Blob에 계층화됩니다.  다른 공급자로의 계층화는 지원되지 않습니다.</block>
@@ -5192,7 +5144,6 @@
   <block id="5cc1493ad28334fdb28f7ed57f0e1d41" category="paragraph">이제 마켓플레이스 구독 없이 BlueXP 에서 Cloud Volumes ONTAP 액세스할 때마다 알림이 표시됩니다.  알림에는 "이 작업 환경에 대한 마켓플레이스 구독은 Cloud Volumes ONTAP 이용 약관을 준수해야 합니다."라고 명시되어 있습니다.</block>
   <block id="7e05b6b897bc796c472e8ff108657518" category="section-title">AWS 중국 지역 지원</block>
   <block id="ebef32c1ba0aec7a39eb2ce8370a97d5" category="paragraph">Cloud Volumes ONTAP 9.12.1 GA부터 AWS에서 중국 지역이 다음과 같이 지원됩니다.</block>
-  <block id="fcf30aaa0348521d4d4752992c9db378" category="list-text">단일 노드 시스템이 지원됩니다.</block>
   <block id="80a79e3e92d4834ae8746d205e83c105" category="list-text">NetApp 에서 직접 구매한 라이선스가 지원됩니다.</block>
   <block id="13615a82d1149a992b363c411914d3b8" category="inline-link">Cloud Volumes ONTAP 위한 글로벌 지역 맵</block>
   <block id="cec47fe41efdc9b07523c56da6796d2e" category="paragraph">지역별 가용성은 다음을 참조하세요.<block ref="7511e65336251f569b4c4f44ab1468f7" category="inline-link-rx"></block> .</block>
@@ -5376,7 +5327,6 @@
   <block id="aace3e8a265fffb87e8d7fbd81d6adb9" category="section-title">Google Cloud에서 스토리지 VM 생성 지원</block>
   <block id="f161f6edfaf6d911de2566d694781369" category="paragraph">Google Cloud의 Cloud Volumes ONTAP 9.11.1 릴리스부터 여러 스토리지 VM을 지원합니다.  이 커넥터 릴리스부터 BlueXP 사용하면 API를 사용하여 Google Cloud의 Cloud Volumes ONTAP HA 쌍에서 스토리지 VM을 생성할 수 있습니다.</block>
   <block id="33fdc8eb46b228d804c2bf216d7ab788" category="paragraph">스토리지 VM 생성을 지원하려면 커넥터에 대한 새로운 Google Cloud 권한이 필요합니다.</block>
-  <block id="1639fb8b97b722c837cf68d599ffe1c4" category="paragraph">단일 노드 시스템에서 스토리지 VM을 생성하려면 ONTAP CLI 또는 시스템 관리자를 사용해야 합니다.</block>
   <block id="ab9d588372f30d162e50dbbed45980eb" category="inline-link">Google Cloud의 스토리지 VM 제한에 대해 자세히 알아보세요.</block>
   <block id="7859fc06f13ff8714740aa72213f86e7" category="list-text"><block ref="7859fc06f13ff8714740aa72213f86e7" category="inline-link-rx"></block></block>
   <block id="3a7eebf972f838daafe4ea7948002b3d" category="inline-link">Google Cloud에서 Cloud Volumes ONTAP 위한 데이터 제공 스토리지 VM을 만드는 방법을 알아보세요.</block>
@@ -5413,7 +5363,6 @@
   <block id="291a5c22c8cb78fe8ec363d61830f63e" category="section-title">Google Cloud 방화벽 정책 개선</block>
   <block id="1fcd17a990e75722697d64df5dd2ffde" category="list-text">Google Cloud에서 Cloud Volumes ONTAP HA 쌍을 생성하면 이제 BlueXP 가 VPC에 있는 모든 기존 방화벽 정책을 표시합니다.</block>
   <block id="46fc311e1b8dc6670926551c44511f90" category="paragraph">이전에는 BlueXP 대상 태그가 없는 VPC-1, VPC-2 또는 VPC-3의 정책을 표시하지 않았습니다.</block>
-  <block id="880f67f103405f29628ff848182ca330" category="list-text">Google Cloud에서 Cloud Volumes ONTAP 단일 노드 시스템을 만들 때 이제 사전 정의된 방화벽 정책에서 선택한 VPC 내의 트래픽만 허용할지(권장) 아니면 모든 VPC에 허용할지 선택할 수 있습니다.</block>
   <block id="5c4a95a56d4b5bfef734aeab388618c0" category="section-title">Google Cloud 서비스 계정 개선</block>
   <block id="31c37a13f49d295537e1ac22f321633d" category="paragraph">Cloud Volumes ONTAP 과 함께 사용할 Google Cloud 서비스 계정을 선택하면 이제 BlueXP 각 서비스 계정과 연결된 이메일 주소가 표시됩니다.  이메일 주소를 보면 같은 이름을 공유하는 서비스 계정을 더 쉽게 구별할 수 있습니다.</block>
   <block id="898d465c80c6b6783418f6fa71db0946" category="inline-image-macro">서비스 계정 필드의 스크린샷</block>
@@ -5493,7 +5442,6 @@
   <block id="a83e9f7623076b623810b57914d36eed" category="section-title">새로운 AWS 지역 지원</block>
   <block id="3e5209edda1f6ec8458a9fe55feb2ee1" category="paragraph">Cloud Volumes ONTAP 이제 AWS 아시아 태평양(오사카) 지역(ap-northeast-3)에서 지원됩니다.</block>
   <block id="81e5e1bf62f444795eff3721d2872fb5" category="section-title">포트 감소</block>
-  <block id="0cc520b9133a409c63dec80a3107fdda" category="paragraph">Azure의 Cloud Volumes ONTAP 시스템에서는 단일 노드 시스템과 HA 쌍 모두에 대해 포트 8023 및 49000이 더 이상 열리지 않습니다.</block>
   <block id="524d299ea985e3a42c95b0980478eba1" category="paragraph">이 변경 사항은 Connector 3.9.13 릴리스부터 시작되는 _새로운_ Cloud Volumes ONTAP 시스템에 적용됩니다.</block>
   <block id="190323ddb2d35098aa0adb62b3b4fb4c" category="paragraph">Connector 3.9.11 릴리스에는 다음과 같은 변경 사항이 도입되었습니다.</block>
   <block id="1217a2d42a5d039798ff2ec7be351708" category="section-title">Cloud Volumes ONTAP 9.10.0</block>
@@ -5607,7 +5555,6 @@
   <block id="996af92ade7f6e5af3be3c265f31fd2c" category="paragraph">AWS Outpost가 있는 경우 작업 환경 마법사에서 Outpost VPC를 선택하여 해당 Outpost에 Cloud Volumes ONTAP 배포할 수 있습니다. 경험은 AWS에 있는 다른 VPC와 동일합니다. 먼저 AWS Outpost에 커넥터를 배포해야 합니다.</block>
   <block id="e2d2ccc5b8f9228c27b5cfc63167746e" category="section-title">지원되는 Azure 지역의 Ultra SSD VNVRAM</block>
   <block id="f8a42568c2b4bf9c5b298939c3d3871b" category="inline-link">지원되는 모든 Azure 지역에서</block>
-  <block id="8bbfb89818fc2c99ca40fa43dabf7e4e" category="paragraph">이제 단일 노드 시스템에서 E32s_v3 VM 유형을 사용할 때 Cloud Volumes ONTAP Ultra SSD를 VNVRAM으로 사용할 수 있습니다.<block ref="6f5d8baab146de724d052d505bbe4745" category="inline-link-rx"></block> .</block>
   <block id="2753e515b9dcd4f5f0c9d76d668e69c8" category="paragraph">VNVRAM은 더 나은 쓰기 성능을 제공합니다.</block>
   <block id="e2961711376db6240fe174274a4c49ac" category="section-title">Azure에서 가용성 영역 선택</block>
   <block id="bada065bfea7e34e9203e33edc44d46a" category="paragraph">이제 단일 노드 Cloud Volumes ONTAP 시스템을 배포할 가용성 영역을 선택할 수 있습니다.  AZ를 선택하지 않으면 BlueXP 대신 AZ를 선택해 드립니다.</block>
@@ -5898,7 +5845,6 @@
   <block id="8c340dc334134096f68b880b42a8692c" category="paragraph-title">복제</block>
   <block id="6c6851f26dd089ac8e2cd4699f9f3ceb" category="paragraph">볼륨을 복제할 때 데이터를 개체 스토리지에 계층화할지 여부를 선택할 수 있습니다. 그러면 콘솔은 데이터 보호 볼륨에 *백업* 정책을 적용합니다. Cloud Volumes ONTAP 9.6부터 *모든* 계층화 정책이 백업 정책을 대체합니다. 복제 관계가 삭제되면 대상 볼륨은 복제 중에 적용되었던 계층화 정책을 유지합니다.</block>
   <block id="42c1e1bd55f7468cc1c1f67bd3b2e55e" category="paragraph">Cloud Volumes ONTAP 의 요금은 패키지 및 볼륨 유형 등 여러 요인에 따라 결정됩니다. 용량 기반 라이선싱 패키지는 Cloud Volumes ONTAP 9.7 이상에서 사용할 수 있습니다.</block>
-  <block id="d52f05c9c9a1d28edf0a8c353fa4005c" category="paragraph">용량 기반 라이선싱을 사용하는 경우, NetApp Console 조직당 Cloud Volumes ONTAP 시스템의 최대 수는 24개로 제한됩니다. _시스템_은 Cloud Volumes ONTAP HA 쌍, Cloud Volumes ONTAP 단일 노드 시스템 또는 사용자가 생성하는 추가 스토리지 VM입니다. 기본 스토리지 VM은 제한에 포함되지 않습니다. 이 제한은 모든 라이선스 모델에 적용됩니다.</block>
   <block id="f06bb25c94e6b1aa8710c80dd3586a02" category="paragraph">총 6개의 시스템이 있습니다. 그러면 조직 내에 14개의 시스템을 추가로 수용할 수 있는 여유가 생깁니다.</block>
   <block id="39f86900550d222b0169a7f96cfef9a1" category="paragraph">24개 이상의 시스템이 필요한 대규모 배포의 경우, 고객 담당자나 영업팀에 문의하세요.</block>
   <block id="84bd415e73410ff40bbdb14fc761f16b" category="paragraph">쓰기 가능한(읽기/쓰기) 볼륨을 생성하거나 사용하는 경우 해당 볼륨은 기본 볼륨으로 간주되며 스토리지 VM(SVM)당 최소 요금을 기준으로 프로비저닝된 용량에 대한 요금이 청구됩니다.  예로는 FlexVol 읽기/쓰기 볼륨, SnapLock 감사 볼륨, CIFS/NFS 감사 볼륨이 있습니다.  사용자가 생성한 모든 데이터 볼륨은 구독 및 패키지 유형에 따라 요금이 청구됩니다.  SVM 루트 볼륨과 같이 자동으로 생성되어 데이터를 저장할 수 없는 ONTAP 내부 볼륨에는 요금이 부과되지 않습니다.</block>
@@ -6223,4 +6169,65 @@
   <block id="58495bede215f014e8621e607e5c54a8" category="list-text">시스템에 표시되는 업그레이드 알림을 따르십시오</block>
   <block id="228fd8db6dfd431af5b0174c34940d4a" category="paragraph">업그레이드할 수 있는 Cloud Volumes ONTAP 버전은 현재 실행 중인 버전에 따라 다릅니다. 다음 표의 각 릴리스에 있는 일반 버전 또는 패치 버전은 업그레이드 가능한 기본 버전을 나타냅니다. 사용 가능한 패치에 대한 자세한 내용은 각 릴리스의<block ref="673899d074c44dd34154296773a3ae8d" category="inline-link-rx"></block>를 참조하십시오.</block>
   <block id="a08e77bc6002bfa158787d93c342bf4b" category="section-title">2026년 2월 10일</block>
+  <block id="dbf7cd788b00dca3348b80d3d3473bf6" category="doc">Azure에서 Ebdsv5 및 E104ids_v5 VM 지원</block>
+  <block id="4324be09b704ac1f5d63ff496d7ef1f4" category="paragraph">Cloud Volumes ONTAP 9.18.1부터 단일 노드 및 고가용성(HA) 배포 및 업그레이드를 위해 Ebdsv5 및 E104ids_v5 VM을 배포할 수 있습니다.</block>
+  <block id="9aa187942e09002cf25de4088980c393" category="paragraph">Azure 가상 머신 Eb 제품군의 Ebdsv5 VM은 더 높은 원격 스토리지 성능에 최적화되어 있습니다. 이러한 VM은 관계형 데이터베이스, 인메모리 분석 및 기타 까다로운 비즈니스 크리티컬 애플리케이션과 같이 메모리 집약적이고 I/O 작업이 많은 엔터프라이즈 워크로드에 사용할 수 있습니다.</block>
+  <block id="3be6e88b099667951f102a7e72ef6b7e" category="paragraph">E104ids_v5는 예약된 유지 관리 기간을 효율적으로 관리할 수 있도록 설계된 격리된 VM 인스턴스입니다. E80ids_v4와 비교했을 때 디스크 처리량과 IOPS가 훨씬 높으며, 전반적인 네트워크 성능 또한 향상되었습니다.</block>
+  <block id="12c608fc3ddf39360237ef081ed21d2f" category="inline-link">Azure 설명서: Edsv5 크기 시리즈</block>
+  <block id="2751c20dbb46ac4854ad2a690d71db85" category="paragraph"><block ref="2751c20dbb46ac4854ad2a690d71db85" category="inline-link-rx"></block></block>
+  <block id="067b1794b9314bbe65909dcac0733c38" category="paragraph">노드 기반 라이선스는 NetApp에서 구매할 수 있습니다. 단일 노드 시스템 또는 HA 쌍에 대해 구매할 수 있는 라이선스 수는 무제한입니다.</block>
+  <block id="5874c47f3a74b4281eee8d6ac23a91e6" category="list-text">중국 지역에서는 BYOL을 지원하는 단일 노드 시스템만 지원됩니다. 중국 지역 배포는 BYOL 라이선스 제한에서 제외됩니다.</block>
+  <block id="7c0bb4ee3cc998a0131e28f7fcd50e94" category="paragraph">용량 기반 라이선스를 사용하는 경우, Cloud Volumes ONTAP 시스템의 최대 개수는 NetApp Console 조직당 24개로 제한됩니다. _시스템_은 Cloud Volumes ONTAP HA 쌍, Cloud Volumes ONTAP 단일 노드 시스템 또는 사용자가 생성하는 추가 스토리지 VM을 의미합니다. 기본 스토리지 VM은 이 제한에 포함되지 않습니다. 이 제한은 모든 라이선스 모델에 적용됩니다.</block>
+  <block id="5e25fc232292638c853b01bb2cc446ba" category="paragraph">이 시스템은 단일 노드 시스템용 하나와 추가 스토리지 VM용 하나, 이렇게 두 개의 시스템으로 간주됩니다.</block>
+  <block id="bb26250bc478ebfa47a8a3fcf9c9bb06" category="paragraph">Keystone 구독은 HA 쌍에서 지원됩니다. 현재 이 라이센스 옵션은 단일 노드 시스템에서는 지원되지 않습니다.</block>
+  <block id="37fdf37599add201cacc01f65bd7205e" category="paragraph">Azure에서 애그리게이트는 최대 12개의 동일한 크기의 디스크를 포함할 수 있습니다. 디스크 유형과 최대 디스크 크기는 단일 노드 시스템을 사용하는지 또는 HA 쌍을 사용하는지에 따라 달라집니다.</block>
+  <block id="1df33292a2fca2da6ee337f54fc40930" category="list-text">단일 노드 시스템</block>
+  <block id="81474a3dec093d198c9c6ba07e1a3a61" category="list-text">단일 노드 시스템에서는 다음과 같은 유형의 Azure 관리 디스크를 사용할 수 있습니다.</block>
+  <block id="07780be0f84fd8b1ddc76cbd33c02957" category="paragraph">단일 노드 시스템을 사용하는 경우 Cloud Volumes ONTAP는 모든 인스턴스 유형에서 높은 쓰기 속도를 지원합니다.</block>
+  <block id="fd2ef223e01ef83558ae5990e639290b" category="paragraph">단일 노드 시스템을 사용하는 경우 Cloud Volumes ONTAP는 모든 VM 유형에서 높은 쓰기 속도를 지원합니다.</block>
+  <block id="4ecfc70d8abe31fa7f4a0dcfd7a81ade" category="paragraph">단일 노드 시스템을 사용하는 경우 Cloud Volumes ONTAP는 모든 머신 유형에서 높은 쓰기 속도를 지원합니다.</block>
+  <block id="ae800a6585d99ea0c81403d0e0051f48" category="list-text">AWS의 단일 노드 시스템에서 SVM 관리 LIF</block>
+  <block id="0b494b4ded41116b8121a50e073e5a03" category="paragraph">Console에서 Cloud Volumes ONTAP에 할당하는 LIF 수는 단일 노드 시스템을 배포하는지 또는 HA 쌍을 배포하는지에 따라 달라집니다. LIF는 물리적 포트와 연결된 IP 주소입니다.</block>
+  <block id="e14638a5078e85478a656075abcd5d1a" category="section-title">단일 노드 시스템의 IP 주소</block>
+  <block id="36e301bb2b13887fb360986278f4fd09" category="paragraph">NetApp Console은 단일 노드 시스템에 6개의 IP 주소를 할당합니다.</block>
+  <block id="c32f65e0370b4206c865cea23bda1d6f" category="paragraph">HA 쌍은 단일 노드 시스템보다 더 많은 IP 주소가 필요합니다. 이러한 IP 주소는 다음 이미지에 표시된 것처럼 여러 이더넷 인터페이스에 분산됩니다.</block>
+  <block id="b5a7a2502a538994268f262add340d21" category="paragraph">Cloud Volumes ONTAP에 할당된 LIF 수는 단일 노드 시스템을 배포하는지 또는 HA 쌍을 배포하는지에 따라 달라집니다. LIF는 물리적 포트와 연결된 IP 주소입니다. SVM 관리 LIF는 SnapCenter와 같은 관리 툴에 필요합니다.</block>
+  <block id="8190ede349be7eeb41ccc962c3a97ec8" category="paragraph">NetApp Console은 단일 노드 시스템에 5개 또는 6개의 IP 주소를 할당합니다.</block>
+  <block id="c3b48f7a8c917989634bdf6884dad884" category="paragraph">참고로 Console은 HA 쌍에 대해서는 SVM 관리 LIF를 생성하지만, Azure의 단일 노드 시스템에 대해서는 생성하지 않습니다.</block>
+  <block id="ce43fec7e95155bf53e826e9f351d6a1" category="section-title">단일 노드 시스템에 대한 인바운드 규칙</block>
+  <block id="f57bcdbcce023af53bd4b2400c32f7db" category="admonition">HA 시스템은 인바운드 데이터 트래픽이 Azure Standard Load Balancer를 통과하기 때문에 단일 노드 시스템보다 인바운드 규칙이 적습니다. 따라서 "AllowAzureLoadBalancerInBound" 규칙에 표시된 것처럼 Load Balancer에서 들어오는 트래픽은 허용되어야 합니다.</block>
+  <block id="aad5753ed1e0a3b14b5f172f430603c9" category="section-title">단일 노드 시스템에 대한 요구 사항</block>
+  <block id="9fc5e0be02a739b4e76e634a05f94c52" category="paragraph">단일 노드 시스템을 구축하려면 네트워킹이 다음 요구 사항을 충족하는지 확인하십시오.</block>
+  <block id="90d1495ccf5fa8d76fc3b868d16d1113" category="paragraph">단일 노드 시스템에는 하나의 Virtual Private Cloud(VPC)가 필요합니다.</block>
+  <block id="2cd1cc54f14638df4da02dde0f9b82c0" category="paragraph">Google Cloud의 단일 노드 시스템의 경우 Console은 다음에 프라이빗 IP 주소를 할당합니다.</block>
+  <block id="c133063cd75dd6ca5183749735982997" category="list-text">*단일 노드* NetApp Console은 단일 노드 시스템에 4개의 IP 주소를 할당합니다.</block>
+  <block id="755afbf924e866a67b306682c4deb200" category="paragraph">단일 노드 시스템의 경우 VPC는 공유 VPC 또는 독립형 VPC일 수 있습니다.</block>
+  <block id="4bd0b8ab4e553e751aa93406b40d5560" category="paragraph">단일 노드 시스템의 경우 I/O가 중단됩니다.</block>
+  <block id="62fac2021144c76cdcd096ecd3c82eb4" category="paragraph">NetApp Console에서 Cloud Volumes ONTAP 시스템을 생성하여 Azure에서 단일 노드 시스템 또는 HA 쌍을 시작할 수 있습니다.</block>
+  <block id="3b8ca986ea730316924e61b984071d11" category="paragraph">Azure에서 단일 노드 Cloud Volumes ONTAP 시스템을 시작하려면 Console에서 단일 노드 시스템을 생성해야 합니다.</block>
+  <block id="691e9010d46bcb06693d90df5c955334" category="paragraph">단일 노드 시스템 또는 HA 쌍에 대해 구매할 수 있는 라이센스 수는 무제한입니다.</block>
+  <block id="cdd566a2953665ed7135ca03058a8014" category="paragraph">두 Cloud Volumes ONTAP 시스템 간에 SnapMirror SVM 복제를 설정하는 경우, 복제는 두 개의 HA 쌍 시스템 또는 두 개의 단일 노드 시스템 간에만 가능합니다. HA 쌍 시스템과 단일 노드 시스템 간에는 SnapMirror SVM 복제를 설정할 수 없습니다.</block>
+  <block id="0af39724f1af28211a653a39e57d0598" category="paragraph">스토리지 VM용 선택적 관리 LIF에는 단일 노드 시스템과 단일 AZ의 HA 쌍에서 프라이빗 IP 주소가 필요합니다. 이 관리 LIF는 SnapCenter와 같은 관리 툴에 대한 연결을 제공합니다.</block>
+  <block id="2ec479bb11cd13a599380572acb1c0ce" category="list-text">단일 노드 시스템: 사용하지 않는 보조 프라이빗 IP 1개가 필요합니다.</block>
+  <block id="1eee4678eb4e1cadd4e212ce0bba084d" category="section-title">단일 노드 시스템에서 스토리지 VM 생성</block>
+  <block id="a547059e96288e55a3cd3b932e2c4157" category="paragraph">이 단계는 단일 노드 시스템에 새 스토리지 VM을 생성합니다. NAS LIF를 생성하려면 프라이빗 IP 주소 하나가 필요하며, 관리 LIF를 생성하려면 선택적으로 프라이빗 IP 주소 하나가 더 필요합니다.</block>
+  <block id="cc7c35c7684e4d7f8bffed328fc1b629" category="paragraph">구성 및 라이센스 유형에 따라 NetApp Console용 API를 사용하여 단일 노드 시스템 또는 고가용성(HA) 구성에서 여러 스토리지 VM을 생성할 수 있습니다.</block>
+  <block id="9f0e6a06ff24050ef4f1a71b2eb1d838" category="section-title">단일 노드 시스템</block>
+  <block id="070c7339120bbab9748136420da7e629" category="paragraph">단일 노드 시스템에 스토리지 VM을 생성하려면 다음 API 호출을 사용하십시오.</block>
+  <block id="dda2b753a17e4e4abcca100288667de4" category="section-title">단일 노드 시스템 및 HA 쌍에서 스토리지 VM 관리</block>
+  <block id="d05761c1dc243186f9c42f463199d5a9" category="list-text">단일 노드 시스템에서 스토리지 VM의 이름을 변경하려면 다음 API 호출을 사용하십시오.</block>
+  <block id="9a765f7d9f40e906e523b804f34c34e6" category="list-text">단일 노드 시스템에서 스토리지 VM을 삭제하려면 다음 API 호출을 사용하십시오.</block>
+  <block id="4c0ca543d73dce2195a43dfc56c6ee3a" category="paragraph">구성 및 라이센스 유형에 따라 API를 사용하여 단일 노드 시스템 또는 고가용성(HA) 구성에서 여러 스토리지 VM을 생성할 수 있습니다.</block>
+  <block id="feb863b6f836fe3885d50e26e80e6469" category="paragraph">고속 쓰기 기능은 모든 유형의 단일 노드 시스템과 일부 HA 쌍 구성에서 지원됩니다. 지원되는 구성은 다음에서 확인하세요<block ref="d080347ff89205e9b3e508b1fee0c025" category="inline-link-rx"></block></block>
+  <block id="f3d300c94dc8da268fd71f595a4b1c36" category="list-text">단일 노드 시스템의 Azure 디스크 유형</block>
+  <block id="3c283478e1082153da1a28f6cae2070a" category="list-text">단일 노드 시스템의 경우 새로 추가된 포트는 _e0b_입니다. 관리형 디스크를 사용하는 HA 페어 배포의 경우 새로 추가된 포트는 _e0d_입니다. 페이지 블롭을 사용하는 HA 페어 배포의 경우 새로 추가된 포트는 _e0e_입니다. VM 이름이 아닌 노드 이름을 사용하십시오. <block ref="9cd5e832790132a87592f2958fc2b1a6" prefix=" " category="inline-code"></block>을 실행하여 노드 이름을 확인할 수 있습니다.</block>
+  <block id="e22a8b8a02dd778a344b734bd97fdc83" category="list-text">*볼륨 암호화를 위한 Azure Disk Encryption* (단일 노드 시스템, 여러 영역의 HA 쌍 및 HA 단일 AZ 배포용)</block>
+  <block id="41fc554ff7fbcb7b9ef31dbfe008e047" category="list-text">단일 노드 시스템의 경우:</block>
+  <block id="929a94de085a28985069e5a8fe181ffa" category="list-text">단일 노드 시스템의 버전 9.4</block>
+  <block id="70d92c1e2419b7500249e84f56bfda5d" category="section-title">2026년 2월 12일</block>
+  <block id="4da572800ccc44d02dab68a24d7ba671" category="list-text">단일 노드 시스템이 지원됩니다.</block>
+  <block id="147c1afd96a4841032c424a232a89df1" category="paragraph">단일 노드 시스템에서 스토리지 VM을 생성하려면 ONTAP CLI 또는 System Manager를 사용해야 합니다.</block>
+  <block id="11fea9e356efb178182b5bba66bbe697" category="list-text">Google Cloud에서 Cloud Volumes ONTAP 단일 노드 시스템을 생성할 때 사전 정의된 방화벽 정책이 선택한 VPC 내의 트래픽만 허용하도록 할지(권장) 아니면 모든 VPC를 허용하도록 할지 선택할 수 있습니다.</block>
+  <block id="44b22df2c7850da4e8deb57e1d017983" category="paragraph">Azure의 Cloud Volumes ONTAP 시스템에서 단일 노드 시스템과 HA 쌍 모두에 대해 포트 8023 및 49000이 더 이상 열려 있지 않습니다.</block>
+  <block id="d245f28751732b176b91cfbee0179905" category="paragraph">Cloud Volumes ONTAP는 이제 단일 노드 시스템과 함께 E32s_v3 VM 유형을 사용할 때 Ultra SSD를 VNVRAM으로 사용할 수 있습니다<block ref="6f5d8baab146de724d052d505bbe4745" category="inline-link-rx"></block>.</block>
 </blocks>
