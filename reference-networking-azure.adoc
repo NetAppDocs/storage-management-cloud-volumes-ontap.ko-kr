@@ -178,6 +178,16 @@ link:task-enabling-private-link.html["Cloud Volumes ONTAP 에서 Azure Private L
 
 
 
+=== Azure VNet 암호화를 위한 네트워킹
+
+Cloud Volumes ONTAP는 VNet 내부 또는 피어링된 VNet 간의 VM 간 트래픽 https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-encryption-overview["Azure Virtual Network(VNet) 암호화"^]을 지원합니다. 이 기능은 Azure VNet 계층에서 구성되며 Cloud Volumes ONTAP 토폴로지(단일 노드 또는 HA)와는 무관합니다.
+
+VM의 NIC에서 가속 네트워킹이 활성화되어 있는지 확인하고 Azure VNet 암호화 요구 사항 및 제한 사항을 검토한 후 해당 기능을 활성화하면 됩니다. NetApp 관리형 로드 밸런서 개체는 수정해서는 안 됩니다.
+
+https://learn.microsoft.com/en-us/azure/virtual-network/accelerated-networking-overview?tabs=NetworkManager["Azure 설명서: VNet 암호화 및 가속 네트워킹"^].
+
+
+
 === 다른 ONTAP 시스템에 대한 연결
 
 Azure의 Cloud Volumes ONTAP 시스템과 다른 네트워크의 ONTAP 시스템 간에 데이터를 복제하려면 Azure VNet과 다른 네트워크(예: 회사 네트워크) 간에 VPN 연결이 필요합니다.

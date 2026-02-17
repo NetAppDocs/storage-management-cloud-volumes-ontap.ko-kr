@@ -1,0 +1,28 @@
+= 차세대 Google Cloud VM을 위한 Cloud Volumes ONTAP 지원
+:allow-uri-read: 
+
+
+
+
+=== 차세대 Google Cloud VM을 위한 Cloud Volumes ONTAP 지원
+
+9.18.1에서 NetApp은 새로운 Cloud Volumes ONTAP 배포를 N2 VM에서 차세대 Google Cloud C3 시리즈 VM으로 전환하여 더욱 빠르고 확장 가능한 환경을 제공합니다. 이제 Google Cloud에서 Cloud Volumes ONTAP 9.18.1 이상 버전을 배포할 때 C3 시리즈 VM의 이점을 활용할 수 있습니다. C3 시리즈 머신은 Google Virtual NIC(gVNIC)와 Hyperdisk Balanced 디스크를 사용하여 향상된 성능과 더 높은 용량 제한을 제공하며, 집약적인 워크로드에 필요한 동적 성능을 보장합니다.
+
+
+NOTE: 현재 Cloud Volumes ONTAP는 단일 노드 배포 환경에서만 C3 시리즈를 지원합니다.
+
+Cloud Volumes ONTAP 시스템이 9.18.1 이상을 실행하는 경우 간편한 단일 노드 배포에 사용하는 사전 구성된 패키지는 자동으로 C3 VM을 사용하며 워크로드 요구 사항에 따라 IOPS 및 처리량 매개 변수를 사용자 지정할 수 있습니다. 마찬가지로 애그리게이트를 생성하는 동안 Hyperdisk Balanced 디스크를 추가하여 Google Cloud에서 더 나은 성능과 확장성을 달성할 수 있습니다. 또한 기본 Flash Cache 지원을 위해 C3 시리즈 머신의 LSSD 변형을 선택할 수 있습니다.
+
+C3 VM은 Hyperdisk Balanced 디스크만 지원하기 때문에 애그리게이트에 볼륨을 추가할 때 디스크 유형을 변경할 수 없습니다. 마찬가지로 N2 VM 유형의 시스템을 C3 VM으로 복제할 때 디스크 유형은 기본적으로 Hyperdisk Balanced로 설정됩니다.
+
+https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-gcp.html["Google Cloud에서 Cloud Volumes ONTAP에 대해 지원되는 구성"^]
+
+https://docs.cloud.google.com/compute/docs/general-purpose-machines#c3_series["Google 문서: C3 머신 시리즈"^]
+
+
+
+=== Azure의 Cloud Volumes ONTAP용 VNet 보안
+
+Azure 단일 및 다중 가용성 영역에 배포된 Cloud Volumes ONTAP 9.18.1 이상 버전은 전송 중인 데이터를 보호하기 위한 계층형 보안 전략의 일환으로 Azure 가상 네트워크(VNet) 암호화를 지원합니다. Cloud Volumes ONTAP는 Azure의 기본 데이터그램 전송 계층 보안(DTLS) 프로토콜을 활용하여 ONTAP 노드, 관리 인터페이스 및 기타 Azure 서비스 간의 통신을 보호하고, 데이터 가로채기 및 무단 액세스를 방지합니다. 이러한 네트워크 수준 암호화는 ONTAP에 내장된 스토리지 및 저장 데이터 보호 기능을 보완하여 데이터에 대한 엔드 투 엔드 보안을 제공합니다.
+
+https://review.docs.netapp.com/us-en/storage-management-cloud-volumes-ontap_gcp-sn-c3-support/reference-networking-azure.html#networking-for-azure-vnet-encryption["Azure VNet 암호화를 위한 네트워킹"^]

@@ -44,3 +44,9 @@ endif::aws[]
 
 * Cloud Volumes ONTAP 에서는 재부팅 후 캐시 재가동이 지원되지 않습니다.
 
+
+.관련 주제
+* https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-aws.html["AWS의 Cloud Volumes ONTAP 에 지원되는 구성"^]
+* https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-azure.html["Azure의 Cloud Volumes ONTAP 에 지원되는 구성"^]
+* https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-gcp.html["Google Cloud에서 Cloud Volumes ONTAP에 대해 지원되는 구성"^]
+
