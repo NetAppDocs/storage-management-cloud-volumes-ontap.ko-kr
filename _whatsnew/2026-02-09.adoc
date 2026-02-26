@@ -8,12 +8,55 @@
 
 Cloud Volumes ONTAP 9.16.1 이상에서는 Google Cloud의 새 배포에 대해  https://docs.cloud.google.com/deployment-manager/docs/deprecations["Cloud Deployment Manager"^] (DM) 대신  https://docs.cloud.google.com/infrastructure-manager/docs/overview["Google Cloud Infrastructure Manager"^] (IM)을 지원합니다. Google은 더 고급 Infrastructure Manager를 위해 가까운 미래에 인프라 서비스로서 Deployment Manager를 더 이상 사용하지 않을 예정입니다.
 
-이제 Infrastructure Manager를 사용하도록 Cloud Volumes ONTAP을 자동으로 배포하거나 변환 도구를 실행하여 Deployment Manager의 기존 배포를 Infrastructure Manager로 전환할 수 있습니다. 변환은 일회성 프로세스이며, 변환 후 시스템이 자동으로 Infrastructure Manager를 사용하기 시작합니다. 전환 도구 실행에 대한 지침은 https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-gcp-dm-im-conv.html["기존 Cloud Volumes ONTAP 배포를 Google Cloud Infrastructure Manager에 맞게 구성합니다."^]을 참조하십시오.
+2026년 2월 9일부터 Cloud Volumes ONTAP는 신규 및 기존 배포에 Infrastructure Manager를 사용합니다. 다음 표에서 몇 가지 워크플로를 설명합니다.
+
+[cols="1,4,1,1,1,1"]
+|===
+| 시나리오 | 행동 | 에이전트용 새 API | 에이전트에 대한 새로운 권한 | Cloud Volumes ONTAP용 새로운 Google Cloud API | 문서 리소스 
+
+
+| 기존 에이전트 및 기존 Cloud Volumes ONTAP 배포 | 기존 에이전트에 새로운 API와 권한을 추가하고 기존 Cloud Volumes ONTAP 시스템을 변환합니다.  a| 
+* Cloud Infrastructure Manager API
+* 클라우드 할당량 API
+
+ a| 
+콘솔 릴리스에 대해 나열된 모든 권한:
+
+* https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-gcp.html#08-december-2025["2025년 12월 8일"^]
+* https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-gcp.html#09-february-2026["2026년 2월 9일"^]
+
+| \https://www.googleapis.com/upload/storage/v1 \https://config.googleapis.com/v1  a| 
+https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-gcp-dm-im-conv.html["기존 Cloud Volumes ONTAP 배포를 Google Cloud Infrastructure Manager에 맞게 구성합니다."^]
+
+
+
+| 기존 에이전트 및 새 Cloud Volumes ONTAP 배포 | 기존 에이전트에 새로운 API와 권한을 추가하고 새로운 Cloud Volumes ONTAP 시스템을 배포합니다.  a| 
+* Cloud Infrastructure Manager API
+* 클라우드 할당량 API
+
+ a| 
+콘솔 릴리스에 대해 나열된 모든 권한:
+
+* https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-gcp.html#08-december-2025["2025년 12월 8일"^]
+* https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-gcp.html#09-february-2026["2026년 2월 9일"^]
+
+| 새로운 배포를 위한 모든 단계  a| 
+https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-getting-started-gcp.html["Google Cloud에서 Cloud Volumes ONTAP 시작하기"^]
+
+
+
+| 새 에이전트 및 새 배포 | 새 에이전트를 생성하고 새 Cloud Volumes ONTAP 시스템을 구축합니다. |  |  |   a| 
+* https://docs.netapp.com/us-en/console-setup-admin/task-install-agent-google-gcloud.html["Google Cloud에서 Console 에이전트를 생성합니다."^]
+* https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-getting-started-gcp.html["Google Cloud에서 Cloud Volumes ONTAP 시작하기"^]
+
+
+|===
+이제 Cloud Volumes ONTAP을 배포하여 Infrastructure Manager를 자동으로 사용하거나 변환 도구를 실행하여 Deployment Manager의 기존 배포를 Infrastructure Manager로 전환하십시오. 변환은 일회성 프로세스이며, 변환 후 시스템에서 Infrastructure Manager를 사용하기 시작합니다. 변환 도구 실행에 대한 지침은 https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-gcp-dm-im-conv.html["기존 Cloud Volumes ONTAP 배포를 Google Cloud Infrastructure Manager에 맞게 구성합니다."^]을 참조하십시오.
 
 Infrastructure Manager를 사용하는 Cloud Volumes ONTAP 시스템은 Google Cloud Storage 버킷을 사용하여 데이터를 저장하고 첫 번째 배포 영역에 배포 레코드를 저장하며, 이는 후속 배포에 재사용됩니다. 이러한 버킷에 대해 추가 비용이 발생할 수 있지만 버킷이나 해당 콘텐츠를 편집하거나 삭제하지 마십시오.
 
-* `gs://netapp-cvo-infrastructure-manager-<project id>/dm-to-im-convert`: Cloud Volumes ONTAP Terraform 파일 저장용
-* `<gcp project number>-<region>-blueprint-config`: Google Cloud Terraform 아티팩트 저장용
+* `gs://netapp-cvo-infrastructure-manager-<project id>`: 새로운 Cloud Volumes ONTAP 배포에 사용되는 ONTAP 버전 및 SVM Terraform 템플릿용입니다. 이 안에  `dm-to-im-convert` 버킷에는 Cloud Volumes ONTAP Terraform 파일이 들어 있습니다.
+* `<gcp project number>-<region>-blueprint-config`: Google Cloud Terraform 아티팩트를 저장하는 데 사용됩니다.
 
 
 .관련 링크

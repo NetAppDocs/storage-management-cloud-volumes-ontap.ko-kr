@@ -57,15 +57,7 @@ link:task-creating-gcp-service-account.html["단계별 지침을 읽어보세요
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["다섯"]Google Cloud API 활성화
 [role="quick-margin-para"]
-https://cloud.google.com/apis/docs/getting-started#enabling_apis["프로젝트에서 다음 Google Cloud API를 활성화하세요."^] . 이러한 API는 Console 에이전트와 Cloud Volumes ONTAP 배포하는 데 필요합니다.
-
-[role="quick-margin-list"]
-* 클라우드 배포 관리자 V2 API
-* 클라우드 로깅 API
-* 클라우드 리소스 관리자 API
-* 컴퓨트 엔진 API
-* ID 및 액세스 관리(IAM) API
-
+https://cloud.google.com/apis/docs/getting-started#enabling_apis["프로젝트에서 Google Cloud API 활성화"^]. https://docs.netapp.com/us-en/console-setup-admin/task-install-agent-google-gcloud.html#step-5-enable-google-cloud-apis["이러한 API"^]콘솔 에이전트를 생성하는 과정에서 이미 활성화했을 수도 있는 이러한 기능은 Google Cloud에 Cloud Volumes ONTAP을 배포하는 데 필요합니다.
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png["육"]콘솔을 사용하여 Cloud Volumes ONTAP 실행
 [role="quick-margin-para"]

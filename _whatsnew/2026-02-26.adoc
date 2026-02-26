@@ -1,0 +1,50 @@
+= 비공개 모드 배포를 위한 Google Infrastructure Manager 지원
+:allow-uri-read: 
+
+
+
+
+=== 비공개 모드 배포를 위한 Google Infrastructure Manager 지원
+
+Cloud Volumes ONTAP 9.16.1 이상에서는 이제 Google Cloud에서 새로운 프라이빗 모드 배포 시  https://docs.cloud.google.com/infrastructure-manager/docs/overview["Google Cloud Infrastructure Manager"^] (IM)을  https://docs.cloud.google.com/deployment-manager/docs/deprecations["Cloud Deployment Manager"^] (DM) 대신 지원합니다. Google은 더 발전된 Infrastructure Manager를 위해 가까운 시일 내에 Deployment Manager를 인프라 서비스에서 지원 중단할 예정입니다.
+
+2026년 2월 25일부터 Cloud Volumes ONTAP는 신규 및 기존 프라이빗 모드 배포에 Infrastructure Manager를 사용합니다. 다음 표에서는 기본 워크플로를 설명합니다.
+
+[cols="1,4,1,1,1,1"]
+|===
+| 시나리오 | 행동 | 에이전트용 새 API | 에이전트에 대한 새로운 권한 | Cloud Volumes ONTAP용 새로운 Google Cloud API | 문서 리소스 
+
+
+| 비공개 모드의 기존 에이전트 및 기존 배포 | NetApp Support Site에서 설치 프로그램을 다운로드하여 호스트에 수동으로 에이전트를 설치함으로써 NetApp Console 에이전트를 최신 버전으로 업그레이드하십시오. 이렇게 하면 Infrastructure Manager API를 사용할 수 있습니다. 그 후 기존 Cloud Volumes ONTAP 시스템을 Infrastructure Manager를 사용하도록 변환하십시오.  a| 
+* Cloud Infrastructure Manager API
+* 클라우드 할당량 API
+* Cloud Build API
+
+ a| 
+콘솔 릴리스에 대해 나열된 모든 권한:
+
+* https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-gcp.html#08-december-2025["2025년 12월 8일"^]
+* https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-gcp.html#09-february-2026["2026년 2월 9일"^]
+* cloudbuild.workerpools.get
+* cloudbuild.workerpools.get
+
+ a| 
+* \https://cloudbuild.googleapis.com/v1
+* \https://www.googleapis.com/upload/storage/v1
+* \https://config.googleapis.com/v1
+
+| https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-gcp-dm-im-conv.html["기존 Cloud Volumes ONTAP 배포를 Google Cloud Infrastructure Manager에 맞게 구성합니다."^] 
+
+
+| 새 에이전트 및 새 배포 | 새 에이전트를 생성하고 프라이빗 모드로 새 Cloud Volumes ONTAP 시스템을 배포합니다. |  |  |   a| 
+* https://docs.netapp.com/us-en/console-setup-admin/task-install-agent-google-gcloud.html["Google Cloud에서 Console 에이전트를 생성합니다."^]
+* https://docs.netapp.com/us-en/console-setup-admin/task-quick-start-private-mode.html["프라이빗 모드 배포를 위한 빠른 시작"^]
+
+
+|===
+프라이빗 모드 배포에서는 Cloud Volumes ONTAP가 Infrastructure Manager를 사용하기 시작하려면 몇 가지 구성 변경이 필요합니다.  https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/reference-networking-gcp.html#infrastructure-manager-configuration-for-private-mode-deployments["프라이빗 모드 배포를 위한 Infrastructure Manager 구성"^]을 참조하십시오.
+
+.관련 링크
+* https://docs.netapp.com/us-en/console-setup-admin/whats-new.html#console-agent-4-2-0["NetApp Console Agent 4.2.0 릴리스 노트"^]
+* https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-gcp.html#gcp-permissions-change-log["Google Cloud Infrastructure Manager에 필요한 권한"^]
+
