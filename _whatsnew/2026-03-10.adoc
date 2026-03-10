@@ -1,0 +1,23 @@
+= Cloud Volumes ONTAP에 대한 Console 에이전트 프록시 설정을 관리하는 기능
+:allow-uri-read: 
+
+
+
+
+=== Cloud Volumes ONTAP에 대한 Console 에이전트 프록시 설정을 관리하는 기능
+
+이제 연결이 끊어지거나 프록시 설정이 잘못된 경우에도 NetApp Console 에이전트를 사용하여 Cloud Volumes ONTAP의 프록시 설정을 관리할 수 있습니다. 이전에는 Console 에이전트가 20분 동안 Cloud Volumes ONTAP에 연결할 수 없는 경우 수동 프록시 설정을 기본 설정으로 덮어썼습니다. 이로 인해 AutoSupport 메시지 관련 문제를 포함한 통신 오류가 발생했습니다. 기존 시스템의 프록시 설정을 유지하려면 다음 API 호출을 실행하십시오.
+
+`PUT /occm/config`
+
+요청 본문에 다음 매개변수를 포함하십시오.
+
+[source, json]
+----
+{
+  "proxyMode": "No_Overwrites"
+}
+----
+기본 모드는 표준 모드입니다. 즉, Console 에이전트가 20분 동안 Cloud Volumes ONTAP에 연결할 수 없는 경우 프록시 설정을 기본값으로 덮어씁니다.
+
+https://docs.netapp.com/us-en/console-automation/cvo/put-occm-config.html["수정 가능한 NetApp Console 매개변수를 구성합니다"^]
