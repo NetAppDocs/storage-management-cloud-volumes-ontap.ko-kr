@@ -1138,7 +1138,6 @@
   <block id="432afd81656ecff91097001b2dbff0ad" category="section-title">버전 9.10.0 및 이전 버전</block>
   <block id="7510539e42be5fefa89b6362a37647a2" category="paragraph">새로운 시스템을 추가할 때 Cloud Volumes ONTAP 시스템에서 WORM 스토리지를 활성화할 수 있습니다.  콘솔에서 생성하는 모든 볼륨에는 WORM이 활성화되어 있습니다.  개별 볼륨에서 WORM 저장소를 비활성화할 수 없습니다.</block>
   <block id="785248b65164fa7ba3b7948c05afc1cc" category="section-title">WORM에 파일 커밋</block>
-  <block id="3fd6e3cd7f26f44db79e5d9fabdbeda0" category="paragraph">NFS 또는 CIFS를 통해 WORM에 파일을 커밋하려면 애플리케이션을 사용하거나 ONTAP CLI를 사용하여 자동으로 파일을 WORM에 커밋할 수 있습니다.  또한 WORM 추가 가능 파일을 사용하여 로그 정보와 같이 증분적으로 기록되는 데이터를 보관할 수 있습니다.</block>
   <block id="49e35df1608bc4ec8dda47be9031b77e" category="inline-link">SnapLock 에 대한 ONTAP 문서</block>
   <block id="a30d432611fbd01e1559279ca4b99466" category="paragraph">Cloud Volumes ONTAP 시스템에서 WORM 스토리지를 활성화한 후에는 WORM 스토리지의 모든 관리에 ONTAP CLI를 사용해야 합니다.  지침은 다음을 참조하세요.<block ref="4043230af2751621c7cbfb902f557f9b" category="inline-link-rx"></block> .</block>
   <block id="ac6d04f622113714dd7e0660e975a02b" category="section-title">Cloud Volumes ONTAP 시스템에서 WORM 활성화</block>
@@ -6363,4 +6362,68 @@
   <block id="ff18cbae63293952942e32e52d2873b4" category="doc">NTP 서버를 사용하여 Cloud Volumes ONTAP 시스템 시간을 동기화합니다</block>
   <block id="29b0f551bb46a64e0ba83250d3fa3e71" category="paragraph">Cloud Volumes ONTAP 클러스터용 Network Time Protocol(NTP) 서버를 구성하면 클러스터 시간과 네트워크 내 다른 시스템 및 외부 서버의 시간을 정확하게 동기화할 수 있습니다. 외부 NTP 서버와 클러스터 시간을 동기화하면 인프라 전체의 시간 일관성을 유지하는 데 도움이 됩니다. NetApp은 새로운 Cloud Volumes ONTAP 배포 시 기본적으로 NTP 서버를 구성합니다. 하지만 기존 Cloud Volumes ONTAP 클러스터에 NTP 서버가 구성되어 있지 않은 경우, 네트워크 내외부의 정확한 시간 동기화를 위해 NTP 서버를 구성해야 합니다.</block>
   <block id="34df2c4da19b4e31f0349125e9cabfc7" category="section-title">2026년 3월 10일</block>
+  <block id="19fd9c11abb625f1aabd43382d3c4ecc" category="doc">탭별로 수행할 수 없는 활동</block>
+  <block id="d09c3afe3c25138ceca8e5d353ce66ad" category="section-title">탭별로 수행할 수 없는 활동</block>
+  <block id="59fb49c7093907fa9e7f335ab190da2f" category="paragraph">다음 표에는 탭별로 제한된 활동이 요약되어 있습니다.</block>
+  <block id="5c6ba25104401c9ee0650230fc6ba413" category="cell">탭</block>
+  <block id="d33bd391ad5ed956588c0cd4c08279ea" category="cell">수행할 수 없는 활동</block>
+  <block id="3cbb7699679cf8ac6bb42f2d93fd4d72" category="list-text">볼륨 추가</block>
+  <block id="5288a56300efd1e1c3e2751aa731a390" category="list-text">애그리게이트 추가</block>
+  <block id="a319340d2793ad3feb216caae04b1972" category="list-text">System Manager를 엽니다</block>
+  <block id="50384ef287bf4f3284ec6c4fdcbb197d" category="list-text">켜기/끄기 버튼 사용</block>
+  <block id="cc940bf2667209e4d71ddc12d8f2e5ed" category="list-text">암호 설정</block>
+  <block id="905cb7c01c2c938fc7dfb74be192c7fe" category="list-text">ONTAP 버전 업데이트</block>
+  <block id="89d30dd0d2abc48eac8a8820c224f0cb" category="list-text">작업 공간에서 시스템을 제거합니다</block>
+  <block id="611740b36c016d17e48d1933b790fbcd" category="list-text">시스템을 삭제합니다</block>
+  <block id="39ca4d74366a4f92b22ffc56ae7560da" category="list-text">*지금 업그레이드* 사용</block>
+  <block id="ec4d6779edb1b535eaa6bb011e1d3e8a" category="list-text">전체 기능 연필 메뉴에서 *시스템 태그* 편집</block>
+  <block id="dfac2097a6da49d3b50831a5175ce966" category="list-text">모든 기능 연필 메뉴에서 *예정된 다운타임* 편집</block>
+  <block id="75592ee45c7658257f6bd79f9b3116ad" category="list-text">전체 기능 연필 메뉴에서 *Storage classes*를 편집하세요.</block>
+  <block id="ed9f8745eec3bd91b3ac7dd70de9e63d" category="list-text">모든 기능 연필 메뉴에서 *Instance type*을 편집하세요.</block>
+  <block id="290f18ca088f3b33f8cc9a7f895991e5" category="list-text">모든 기능 연필 메뉴에서 *충전 방식* 편집</block>
+  <block id="3f504ad8c9ab961bdefa05eee81a2824" category="list-text">모든 기능 연필 메뉴에서 *라이선스 유형* 편집</block>
+  <block id="e04768e231f98d617747c4dc0bfde356" category="list-text">모든 기능 연필 메뉴에서 *쓰기 속도* 편집</block>
+  <block id="fc793964b815197fe89abeec3562ae3e" category="list-text">전체 기능 연필 메뉴에서 *랜섬웨어 보호*를 편집하세요.</block>
+  <block id="6bc1e721b9d4e4a6413cedb0bb58befb" category="list-text">전체 기능 연필 메뉴에서 *Support registration*을 편집합니다</block>
+  <block id="39c3909abd0b8b16a08b5a37e17de261" category="list-text">모든 기능 연필 메뉴에서 *WORM*을 편집합니다</block>
+  <block id="6773349ec708bf74e9c3a96be6606ff5" category="list-text">모든 기능 연필 메뉴에서 *Data tiering*을 편집하세요.</block>
+  <block id="b6806817250ca74e0d889e8170e85823" category="list-text">모든 기능 연필 메뉴에서 *CIFS 설정*을 편집합니다</block>
+  <block id="c534251be3cf8755eaf972b5450db181" category="list-text">모든 기능 연필 메뉴에서 *경로 테이블* 편집</block>
+  <block id="c6f01c78bfe0a0a495cb5d3ed77824a9" category="cell">볼륨</block>
+  <block id="add65f7075db5dde27f485e9f855601b" category="paragraph">이 탭에서는 볼륨 업데이트가 허용되지 않으며 볼륨을 추가할 수 없습니다.</block>
+  <block id="9e32a435d22aa5cbc195e861b5fe629f" category="list-text">볼륨 설정 편집</block>
+  <block id="5b5eeee4d1e6b7007829d66c8b144064" category="list-text">스냅샷 복사본 생성</block>
+  <block id="ff1652826450f50c76cdfdda64d94e2f" category="list-text">스냅샷 복사본에서 복원</block>
+  <block id="7d89266e3a96ee597d44e7233b79f335" category="list-text">디스크 유형 변경(고급 옵션)</block>
+  <block id="dc8dba8c12d7372e239d38b7304752d6" category="list-text">계층화 정책 변경(고급 옵션)</block>
+  <block id="d5350d8759b1ec84607e47908809058e" category="cell">애그리게이트</block>
+  <block id="261c95ed5d454ef55df25657c605d472" category="list-text">용량 증대</block>
+  <block id="8ce62ed0fdfe7abb736c3597956922c2" category="list-text">애그리게이트를 삭제합니다</block>
+  <block id="444c64ac4c351f349e58d8d514287ab4" category="list-text">복제 중단</block>
+  <block id="892027dedcdbb237fc210b3a00cf2ae5" category="list-text">복제 재동기화</block>
+  <block id="78c8c117652a47404403fff983b2f82f" category="list-text">역방향 재동기화 복제</block>
+  <block id="51f4afdf17b1f2127b36e48896363c41" category="list-text">일정 편집</block>
+  <block id="487bfcf1a1cc5511a69fc77de0b7b697" category="list-text">최대 전송 속도 편집</block>
+  <block id="d93259d25822e675cbf5c2324eca93de" category="list-text">복제 업데이트</block>
+  <block id="62ef027c0c691039af4f8f02b7fbb023" category="list-text">복제 삭제</block>
+  <block id="94c95941a7abd9bad751b430ab14297c" category="cell">메인 캔버스</block>
+  <block id="770e6e1d37ec8e564116ac215a622e66" category="list-text">시스템 추가</block>
+  <block id="6a782ce4c3ebd625267758265f6b6404" category="list-text">시스템 검색(모든 운영자용)</block>
+  <block id="6aa8394552f000f4d3f4523193dd41c2" category="list-text">*Copy and sync*에 드래그 앤 드롭 사용</block>
+  <block id="52180a001f05eb6c348aa060d6cd0961" category="list-text">*Volume caching*에 드래그 앤 드롭 사용</block>
+  <block id="65c27faee6abce8e6bac90d9ca9cc69a" category="list-text">*복제*에는 드래그 앤 드롭을 사용하십시오</block>
+  <block id="34d606f181de5f7ebc55948eff861656" category="list-text">*최적화된 비용 및 성능* 액세스</block>
+  <block id="e2ea3cc0d6339d3d8dd793bdc96b91fb" category="list-text">필요한 CVO 권한을 사용할 수 있는 경우에만 Cloud Volumes ONTAP에 *복제*를 사용하십시오(FSx for ONTAP 또는 온프레미스 시스템에는 적용되지 않음).</block>
+  <block id="7e7cd88c62428b7db1b6d1da71873171" category="list-text">필요한 CVO 권한을 사용할 수 있는 경우에만 Cloud Volumes ONTAP에 대해 *볼륨 캐싱*을 사용하십시오(FSx for ONTAP 또는 온프레미스 시스템에는 적용되지 않음).</block>
+  <block id="68508a9dfe7d188ddfacdf20bf897e7f" category="list-text">시스템을 입력합니다</block>
+  <block id="f58a02a69585ec6ceb21ad1ac5eda505" category="list-text">AVS 관리 버튼을 사용합니다</block>
+  <block id="1f4c7e61bb42651b1fed2a31454fa7b2" category="cell">역할 없이</block>
+  <block id="cbc38e338398c30ad05441fc2f224550" category="paragraph">역할이 지정되지 않은 경우 모든 작업이 비활성화됩니다.</block>
+  <block id="ba289c943721589929b1aa882cf8868b" category="list-text">작업 환경에 액세스합니다</block>
+  <block id="c81a3e43374dd535dae333a1add5d041" category="list-text">복제 액세스</block>
+  <block id="bb499c548cf9f80e030b1ead19cf6245" category="list-text">Cloud Volumes ONTAP 생성 마법사를 사용하십시오</block>
+  <block id="3e83fca6406aceb42fb8b32def1004f5" category="list-text">복제 생성 마법사를 사용하십시오</block>
+  <block id="aefa282f16e03c096e52d22b7d41c04b" category="list-text">Cloud Volumes ONTAP 살펴보기</block>
+  <block id="53f76082b918614f3c41bfae0d7985c6" category="inline-link">ONTAP SnapLock을 사용하여 WORM에 파일 커밋</block>
+  <block id="90cbc44f5ba3581965b21132dff04d0e" category="paragraph">애플리케이션을 사용하여 NFS 또는 CIFS를 통해 파일을 WORM에 커밋하거나 ONTAP CLI를 사용하여 파일을 자동으로 WORM에 커밋할 수 있습니다. 또한 로그 정보와 같이 점진적으로 기록되는 데이터를 보존하기 위해 WORM 추가 가능 파일을 사용할 수 있습니다. 자세한 내용은<block ref="e55de3a3f9aa1cb3686a8e1324558ed7" category="inline-link-rx"></block>을 참조하십시오.</block>
 </blocks>

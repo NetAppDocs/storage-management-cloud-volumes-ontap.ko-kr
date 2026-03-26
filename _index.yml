@@ -1,5 +1,6 @@
 ---
 indexpage:
+  title: Cloud Volumes ONTAP 설명서
   lead: Cloud Volumes ONTAP 사용하면 데이터 보호, 보안 및 규정 준수를 강화하는 동시에 클라우드 스토리지 비용과 성능을 최적화할
     수 있습니다.
   tiles:
