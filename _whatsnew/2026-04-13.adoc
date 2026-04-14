@@ -1,0 +1,25 @@
+= Google Cloud C3 VM에서 Cloud Volumes ONTAP 지원이 향상되었습니다.
+:allow-uri-read: 
+
+
+
+
+=== Google Cloud C3 VM에서 Cloud Volumes ONTAP 지원이 향상되었습니다.
+
+Cloud Volumes ONTAP는 이제 Google Cloud C3 시리즈 VM에 대한 지원을 강화하여 다음과 같은 추가 기능을 사용할 수 있게 되었습니다.
+
+* Cloud Volumes ONTAP 배포에서 C3 제품군 내의 다양한 변형 간에 인스턴스 유형을 전환할 수 있습니다.
+* 인스턴스 유형을 변경할 때 대상 VM으로 c3-standard-44 또는 c3-standard-88 및 해당 LSSD 변형을 선택하면 Google 네트워크 서비스 송신 네트워크 계층 Tier-1이 자동으로 적용됩니다. 다른 C3 변형으로 전환하면 송신 네트워크 계층은 Standard로 설정됩니다.
++
+
+NOTE: 송신 네트워크 계층을 Tier-1으로 변경하면 추가 비용이 발생합니다. 배포 및 업그레이드 계획을 적절히 수립하십시오.
+
+* C3의 로컬 SSD(LSSD) 변형을 선택하면 Flash Cache가 기본적으로 활성화됩니다. 대상 변형이 Flash Cache를 지원하더라도 Cloud Volumes ONTAP 배포 환경에서는 C3 LSSD 변형 간에 전환할 수 없습니다.
+* 이제 C3 VM에서 새 애그리게이트와 기존 애그리게이트 모두에 볼륨을 추가할 수 있습니다.
+* NetApp Console을 통해 또는  `PUT /gcp/vsa/aggregates/{workingEnvironmentId}/{aggregateName}` API를 사용하여 볼륨을 추가할 때 IOPS 및 처리량 설정을 변경할 수 있습니다.
+
+
+.관련 링크
+* https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-gcp.html["Google Cloud에서 Cloud Volumes ONTAP에 대해 지원되는 구성"^]
+* https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/whats-new.html#cloud-volumes-ontap-support-for-next-generation-google-cloud-vms["차세대 Google Cloud VM을 위한 Cloud Volumes ONTAP 지원"^]
+

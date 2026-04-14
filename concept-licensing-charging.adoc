@@ -48,7 +48,7 @@ endif::azure[]
 ** 면허 기간이 만료되면
 
 
-* 마켓플레이스와 연간 계약을 맺은 경우 배포하는 모든 Cloud Volumes ONTAP 시스템에 대해 해당 계약 요금이 청구됩니다.  연간 마켓플레이스 계약과 BYOL을 섞어서 사용할 수는 없습니다.
+* BYOL 라이센스와 마켓플레이스의 연간 계약이 있는 경우 소비 및 초과분은 설정한 청구 기본 설정에 따라 청구됩니다. 청구 방법을 이해하려면 link:concept-licensing-charging.html#concept-licensing-charging.html#billing-preferences-and-overages["요금 설정 및 초과 사용 요금"]을(를) 참조하십시오.
 * 중국 지역에서는 BYOL을 지원하는 단일 노드 시스템만 지원됩니다. 중국 지역 배포는 BYOL 라이선스 제한에서 제외됩니다.
 
 

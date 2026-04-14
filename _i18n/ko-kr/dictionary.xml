@@ -777,7 +777,6 @@
   <block id="0956d25698d6ea6e452e1cd574ab1eea" category="paragraph">귀하의 라이선스 요금이 항상 먼저 청구되지만, 다음의 경우에는 마켓플레이스의 시간당 요금으로 청구됩니다.</block>
   <block id="6246af80c9ea9c857c70d2c643fcb249" category="list-text">허가된 용량을 초과하는 경우</block>
   <block id="fdde7a7f3783aa0ce1e585f8be9c2def" category="list-text">면허 기간이 만료되면</block>
-  <block id="36e4d5ff70cec517180ae18f1c34d2fd" category="list-text">마켓플레이스와 연간 계약을 맺은 경우 배포하는 모든 Cloud Volumes ONTAP 시스템에 대해 해당 계약 요금이 청구됩니다.  연간 마켓플레이스 계약과 BYOL을 섞어서 사용할 수는 없습니다.</block>
   <block id="5bdd4028830bea76f4939d67baa460ff" category="paragraph">배포 후에는 용량 기반 라이선싱을 사용하는 Cloud Volumes ONTAP 시스템의 패키지를 변경할 수 있습니다.  예를 들어, Essentials 패키지로 Cloud Volumes ONTAP 시스템을 배포한 경우 비즈니스 요구 사항이 변경되면 Professional 패키지로 변경할 수 있습니다.</block>
   <block id="63b54c0d3b4fb8e35270bfdf7b2bdcbb" category="inline-link-macro">충전 방법을 변경하는 방법을 알아보세요</block>
   <block id="ec3e25d80cfc0e5561493729eadecef7" category="paragraph"><block ref="ea19fa0e06a6047bcaabb9af62b066c3" category="inline-link-macro-rx"></block> .</block>
@@ -6426,4 +6425,17 @@
   <block id="aefa282f16e03c096e52d22b7d41c04b" category="list-text">Cloud Volumes ONTAP 살펴보기</block>
   <block id="53f76082b918614f3c41bfae0d7985c6" category="inline-link">ONTAP SnapLock을 사용하여 WORM에 파일 커밋</block>
   <block id="90cbc44f5ba3581965b21132dff04d0e" category="paragraph">애플리케이션을 사용하여 NFS 또는 CIFS를 통해 파일을 WORM에 커밋하거나 ONTAP CLI를 사용하여 파일을 자동으로 WORM에 커밋할 수 있습니다. 또한 로그 정보와 같이 점진적으로 기록되는 데이터를 보존하기 위해 WORM 추가 가능 파일을 사용할 수 있습니다. 자세한 내용은<block ref="e55de3a3f9aa1cb3686a8e1324558ed7" category="inline-link-rx"></block>을 참조하십시오.</block>
+  <block id="d5affa88c9505737da2bd460b6fd43bb" category="doc">Google Cloud C3 VM에서 Cloud Volumes ONTAP 지원이 향상되었습니다.</block>
+  <block id="0c095222c728afb1d3c25c10e5f27e3c" category="paragraph">Cloud Volumes ONTAP는 이제 Google Cloud C3 시리즈 VM에 대한 지원을 강화하여 다음과 같은 추가 기능을 사용할 수 있게 되었습니다.</block>
+  <block id="f0de228b367386d27d7b8cbf65c47859" category="list-text">Cloud Volumes ONTAP 배포에서 C3 제품군 내의 다양한 변형 간에 인스턴스 유형을 전환할 수 있습니다.</block>
+  <block id="b6d05c51f23a9bec9f5098e25088be1b" category="list-text">인스턴스 유형을 변경할 때 대상 VM으로 c3-standard-44 또는 c3-standard-88 및 해당 LSSD 변형을 선택하면 Google 네트워크 서비스 송신 네트워크 계층 Tier-1이 자동으로 적용됩니다. 다른 C3 변형으로 전환하면 송신 네트워크 계층은 Standard로 설정됩니다.</block>
+  <block id="8c530a5dacbdac6ea799436763592a2b" category="admonition">송신 네트워크 계층을 Tier-1으로 변경하면 추가 비용이 발생합니다. 배포 및 업그레이드 계획을 적절히 수립하십시오.</block>
+  <block id="592c8c8f58ba9f6037877ba4f12bbd27" category="list-text">C3의 로컬 SSD(LSSD) 변형을 선택하면 Flash Cache가 기본적으로 활성화됩니다. 대상 변형이 Flash Cache를 지원하더라도 Cloud Volumes ONTAP 배포 환경에서는 C3 LSSD 변형 간에 전환할 수 없습니다.</block>
+  <block id="03fe422ae9ed1fe4cea49e5cfeeac9b8" category="list-text">이제 C3 VM에서 새 애그리게이트와 기존 애그리게이트 모두에 볼륨을 추가할 수 있습니다.</block>
+  <block id="5aaea3e4d288404c9e29a557265127f4" category="list-text">NetApp Console을 통해 또는 <block ref="a27faf3e52367bc8d4429006be3dde82" prefix=" " category="inline-code"></block> API를 사용하여 볼륨을 추가할 때 IOPS 및 처리량 설정을 변경할 수 있습니다.</block>
+  <block id="79755a85cb08431038b7bbe13d99c64f" category="list-text"><block ref="79755a85cb08431038b7bbe13d99c64f" category="inline-link-rx"></block></block>
+  <block id="5a1b1460ab07c6363c5bbb60593e8ced" category="admonition">Cloud Volumes ONTAP는 프로브 처리를 위해 액티브-패시브 모드의 로드 밸런서를 사용합니다. Azure에서는 활성 노드만 프로브에 응답합니다. 패시브 노드는 X 표시와 함께 비활성 상태로 표시될 수 있습니다. 이는 정상적인 동작이며 우려할 필요가 없습니다.</block>
+  <block id="fe4b627e339ef56fd051464a11d7b4aa" category="paragraph"><block ref="fe4b627e339ef56fd051464a11d7b4aa" category="inline-link-macro-rx"></block></block>
+  <block id="9472db468c3c681023f3ca03b59df38b" category="list-text">BYOL 라이센스와 마켓플레이스의 연간 계약이 있는 경우 소비 및 초과분은 설정한 청구 기본 설정에 따라 청구됩니다. 청구 방법을 이해하려면 <block ref="0b707007d6575618559747cfb2737b16" category="inline-link-macro-rx"></block>을(를) 참조하십시오.</block>
+  <block id="403f4a170e2d1c03d329e0f0dd8d1b84" category="section-title">2026년 4월 13일</block>
 </blocks>
