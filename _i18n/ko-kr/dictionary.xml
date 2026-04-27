@@ -3518,17 +3518,14 @@
   <block id="06f358c39bc3b4633cefd78beb67e671" category="section-title">구독 연결</block>
   <block id="8afaab6946e4a914b70539d7502e26ac" category="paragraph">NetApp 계정을 승인한 후 Keystone 구독을 연결하여 Cloud Volumes ONTAP 과 함께 사용할 수 있습니다.  이 작업을 통해 사용자는 새로운 Cloud Volumes ONTAP 시스템에 대한 요금 청구 방법으로 구독을 선택할 수 있습니다.</block>
   <block id="b0afff19aa3343a6f86619d833dbd316" category="inline-image-macro">세 개의 점이 나란히 있는 아이콘</block>
-  <block id="fc6ada65ff8f08c80e7d6167f68c89c2" category="list-text">연결하려는 구독의 경우 클릭하세요.<block ref="c9c50c6d591d91ccce1ee232fa490fb4" category="inline-image-macro-rx" type="image"></block> 그리고 *링크*를 선택하세요.</block>
   <block id="1b02ed65c5ea56c85fffa6b88378d762" category="section-title">더 많거나 적은 용량을 요청하세요</block>
   <block id="56ecf988dec174f4d23028e78eeed82c" category="list-text">하나 이상의 구독에 대해 요청된 약정 용량을 입력하세요.</block>
-  <block id="dbae9df22f08344d5508b91cb73c6d15" category="list-text">아래로 스크롤하여 요청에 대한 추가 세부 정보를 입력한 다음 *제출*을 클릭합니다.</block>
   <block id="8f140d9c4d508c36e3d4c57102f117eb" category="paragraph">귀하의 요청은 NetApp 시스템에 처리를 위한 티켓을 생성합니다.</block>
   <block id="ec6e0d1bd46f010ced65478c609b1636" category="section-title">모니터 사용</block>
   <block id="20ea4c62f4c9e4254314fe7fbbef0319" category="inline-link">구독 사용량 모니터링에 대해 자세히 알아보세요</block>
   <block id="d7105dd212dc96a8b292b6b48f84916f" category="paragraph"><block ref="d7105dd212dc96a8b292b6b48f84916f" category="inline-link-rx"></block></block>
   <block id="0c0401d1e9169d6dd38462b1e0d04126" category="section-title">구독 연결 해제</block>
   <block id="492847bcbc9ec0bd3075b612aa43e4a7" category="list-text">* Keystone*을 선택하세요.</block>
-  <block id="a666a430e484ea214384aefaa30da852" category="list-text">연결을 해제하려는 구독의 경우 다음을 클릭하세요.<block ref="c9c50c6d591d91ccce1ee232fa490fb4" category="inline-image-macro-rx" type="image"></block> *연결 해제*를 선택하세요.</block>
   <block id="6e1a9790b199742bec95dea2070e2f3f" category="summary">NetApp Console 에서 노드 기반 라이선스를 관리하여 각 Cloud Volumes ONTAP 시스템에 필요한 용량을 갖춘 유효한 라이선스가 있는지 확인하세요.</block>
   <block id="160221c1e99e53b72af8a65c2440852b" category="doc">Cloud Volumes ONTAP 에 대한 노드 기반 라이선싱 관리</block>
   <block id="63e5ea33dc9b9a10458ac73abae91075" category="paragraph">NetApp Console 에서 노드 기반 라이선스를 관리하여 각 Cloud Volumes ONTAP 시스템에 필요한 용량을 갖춘 유효한 라이선스가 있는지 확인하세요.</block>
@@ -3600,7 +3597,6 @@
   <block id="f979ec1d84a4416797fae20cc61f839b" category="inline-link">Cloud Volumes ONTAP 시스템을 삭제하는 방법을 알아보세요</block>
   <block id="0d0947c9b1ebe3ee650df057f8192855" category="paragraph"><block ref="87175a08736eca79154ad91c69792fcd" category="inline-link-rx"></block> .</block>
   <block id="342dcce6bda294bb4b60fc9333bcafbe" category="inline-link-macro">노드 기반 라이센스를 용량 기반으로 변환</block>
-  <block id="cb90b48918ed9cd8ea355c04c171177b" category="paragraph">링크:<block ref="7f9a8649ca2d86db235ba56502d14f92" category="inline-link-macro-rx"></block> <block ref="431f655d5a9ac309b561fc62a4c619ea" category="inline-link-macro-rx"></block></block>
   <block id="bd0ed9183db9306d8ce58c50abb4a96b" category="summary">NetApp Console 스토리지 VM 재해 복구에 대한 설정이나 오케스트레이션 지원을 제공하지 않습니다.  시스템 관리자나 CLI를 사용해야 합니다.</block>
   <block id="76872305ddb703eedd7fbe3e66263d83" category="doc">Cloud Volumes ONTAP 에 대한 스토리지 VM 재해 복구 설정</block>
   <block id="d25bf5fb042a0cc652d82492e5410fb6" category="paragraph">NetApp Console 스토리지 VM(SVM) 재해 복구에 대한 설정이나 오케스트레이션 지원을 제공하지 않습니다.  이러한 작업을 수행하려면 ONTAP 시스템 관리자나 ONTAP CLI를 사용하세요.</block>
@@ -5731,7 +5727,6 @@
   <block id="a53c428d90f592127da49a8d5a558130" category="paragraph">NetApp 담당자가 귀하의 계정에 구독에 대한 액세스를 승인하여 귀하의 요청을 처리합니다.</block>
   <block id="9c2f6d6e4376237ad065b1baa0ad822d" category="paragraph">이제 구독이 콘솔 조직이나 계정에 연결되었으며 Cloud Volumes ONTAP 작업 환경을 만들 때 선택할 수 있습니다.</block>
   <block id="10d2905ee5dfcb309d64e3633fb774c1" category="paragraph">구독 서비스 수준에 대한 약정 용량을 변경하려면 콘솔에서 직접 NetApp 에 ​​요청을 보낼 수 있습니다. 서비스 수준에 대한 추가 용량을 요청하면 Cloud Volumes ONTAP 시스템에 더 많은 스토리지가 제공됩니다.</block>
-  <block id="e45b542fbde799582edd5059bc1991a9" category="list-text">용량을 조정하려는 구독의 경우 클릭하세요. <block ref="c9c50c6d591d91ccce1ee232fa490fb4" category="inline-image-macro-rx" type="image"></block> *자세히 보기 및 편집*을 선택하세요.</block>
   <block id="a3a13a09504a7f25eb72dede89db4f24" category="paragraph">Digital Advisor 대시보드를 사용하면 Keystone 구독 사용량을 모니터링하고 보고서를 생성할 수 있습니다.</block>
   <block id="e29343f0ee1c0051a367e02b49c1c5ff" category="paragraph">콘솔에서 Keystone 구독을 더 이상 사용하지 않으려면 구독 연결을 해제할 수 있습니다. 기존 Cloud Volumes ONTAP 구독에 연결되지 않은 구독만 연결 해제할 수 있습니다.</block>
   <block id="0e1096776546966fb22c4752766d55a9" category="paragraph">구독이 콘솔 조직 또는 계정에서 연결 해제되어 Cloud Volumes ONTAP 작업 환경을 생성할 때 더 이상 선택할 수 없습니다.</block>
@@ -6438,4 +6433,9 @@
   <block id="fe4b627e339ef56fd051464a11d7b4aa" category="paragraph"><block ref="fe4b627e339ef56fd051464a11d7b4aa" category="inline-link-macro-rx"></block></block>
   <block id="9472db468c3c681023f3ca03b59df38b" category="list-text">BYOL 라이센스와 마켓플레이스의 연간 계약이 있는 경우 소비 및 초과분은 설정한 청구 기본 설정에 따라 청구됩니다. 청구 방법을 이해하려면 <block ref="0b707007d6575618559747cfb2737b16" category="inline-link-macro-rx"></block>을(를) 참조하십시오.</block>
   <block id="403f4a170e2d1c03d329e0f0dd8d1b84" category="section-title">2026년 4월 13일</block>
+  <block id="b3590df4b69c4ddf7017e6977baebe49" category="list-text">연결하려는 구독에 대해 <block ref="c9c50c6d591d91ccce1ee232fa490fb4" category="inline-image-macro-rx" type="image"></block>를 선택하고 *연결*을 선택합니다.</block>
+  <block id="665103db45058514d7e3b032c990783d" category="list-text">용량을 조정하려는 구독의 경우 <block ref="c9c50c6d591d91ccce1ee232fa490fb4" category="inline-image-macro-rx" type="image"></block>를 선택하고 *상세 보기 및 편집*을 선택합니다.</block>
+  <block id="f638b98047aa1e2c9642d2de1bcdd0d0" category="list-text">아래로 스크롤하여 요청에 대한 추가 정보를 입력한 다음 *Submit*을 선택합니다.</block>
+  <block id="dc96e19fba7ac18b79e69398a4792825" category="list-text">연결을 해제하려는 구독의 경우 <block ref="c9c50c6d591d91ccce1ee232fa490fb4" category="inline-image-macro-rx" type="image"></block>를 선택하고 *연결 해제*를 선택합니다.</block>
+  <block id="5e5b6fbbd6a3b4edf3913541e4fecf17" category="list-text"><block ref="5e5b6fbbd6a3b4edf3913541e4fecf17" category="inline-link-rx"></block></block>
 </blocks>

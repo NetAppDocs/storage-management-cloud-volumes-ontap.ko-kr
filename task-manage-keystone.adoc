@@ -45,7 +45,7 @@ NetApp 계정을 승인한 후 Keystone 구독을 연결하여 Cloud Volumes ONT
 .단계
 . NetApp Console 메뉴에서 *관리 > Licenses and subscriptions*을 선택합니다.
 . * Keystone 구독*을 선택하세요.
-. 연결하려는 구독의 경우 클릭하세요.image:icon-action.png["세 개의 점이 나란히 있는 아이콘"] 그리고 *링크*를 선택하세요.
+. 연결하려는 구독에 대해 image:icon-action.png["세 개의 점이 나란히 있는 아이콘"]를 선택하고 *연결*을 선택합니다.
 
 
 .결과
@@ -60,9 +60,9 @@ NetApp 계정을 승인한 후 Keystone 구독을 연결하여 Cloud Volumes ONT
 .단계
 . NetApp Console 메뉴에서 *관리 > Licenses and subscriptions*을 선택합니다.
 . * Keystone 구독*을 선택하세요.
-. 용량을 조정하려는 구독의 경우 클릭하세요. image:icon-action.png["세 개의 점이 나란히 있는 아이콘"] *자세히 보기 및 편집*을 선택하세요.
+. 용량을 조정하려는 구독의 경우 image:icon-action.png["세 개의 점이 나란히 있는 아이콘"]를 선택하고 *상세 보기 및 편집*을 선택합니다.
 . 하나 이상의 구독에 대해 요청된 약정 용량을 입력하세요.
-. 아래로 스크롤하여 요청에 대한 추가 세부 정보를 입력한 다음 *제출*을 클릭합니다.
+. 아래로 스크롤하여 요청에 대한 추가 정보를 입력한 다음 *Submit*을 선택합니다.
 
 
 .결과
@@ -85,7 +85,7 @@ https://docs.netapp.com/us-en/keystone-staas/integrations/aiq-keystone-details.h
 .단계
 . NetApp Console 메뉴에서 *관리 > Licenses and subscriptions*을 선택합니다.
 . * Keystone*을 선택하세요.
-. 연결을 해제하려는 구독의 경우 다음을 클릭하세요.image:icon-action.png["세 개의 점이 나란히 있는 아이콘"] *연결 해제*를 선택하세요.
+. 연결을 해제하려는 구독의 경우 image:icon-action.png["세 개의 점이 나란히 있는 아이콘"]를 선택하고 *연결 해제*를 선택합니다.
 
 
 .결과
