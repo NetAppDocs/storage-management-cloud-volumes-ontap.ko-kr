@@ -4348,24 +4348,14 @@
   <block id="ced56e040f2bc500101207628f04b8bb" category="paragraph">단일 노드 Cloud Volumes ONTAP 시스템에서 고객 관리 키를 사용하려면 콘솔 에이전트에 다음 권한이 있는지 확인하세요.</block>
   <block id="791fab48bebea2a79a35d70b5cc07227" category="inline-link">최신 권한 목록 보기</block>
   <block id="78b9037265070d084c1d8bcd663811e7" category="paragraph"><block ref="78b9037265070d084c1d8bcd663811e7" category="inline-link-rx"></block></block>
-  <block id="6c4f57df7db9a2fd3182761ed256a263" category="list-text">다음 API 호출을 사용하여 Azure 구독의 주요 자격 증명 모음 목록을 가져옵니다.</block>
-  <block id="b5bc96f48f2241c984568df161fa1a37" category="paragraph">HA 쌍의 경우:<block ref="77c22cb91fef3c1e85c041013cec246d" prefix=" " category="inline-code"></block></block>
-  <block id="ac20be2c156e351d08e2cd3c7c63b584" category="paragraph">단일 노드의 경우:<block ref="842256d0af833acbb8f3ef6a213881aa" prefix=" " category="inline-code"></block></block>
   <block id="b6f3298f001780c2e92cb754103fc2fa" category="paragraph">*이름*과 *리소스그룹*을 기록해 두세요.  다음 단계에서 해당 값을 지정해야 합니다.</block>
-  <block id="212141c3add693db818cb1f0846d9175" category="inline-link">이 API 호출에 대해 자세히 알아보세요</block>
-  <block id="a83ee83b3849362150d7c85a1be1dc34" category="paragraph"><block ref="4cff09ac69609cc9da2148aed42c5230" category="inline-link-rx"></block> .</block>
   <block id="2b5fd7dc9f96f2389712995daa429eff" category="list-text">다음 API 호출을 사용하여 볼트 내의 키 목록을 가져옵니다.</block>
-  <block id="36f6292958809659e87a23e35367128f" category="paragraph">HA 쌍의 경우:<block ref="f8a0d0d5fcdc5c84dd440a7298a8034e" prefix=" " category="inline-code"></block></block>
-  <block id="c68587c00641c7e16e2241848fb1cbae" category="paragraph">단일 노드의 경우:<block ref="920cfb8c95c81320bbcb032fcf04cd84" prefix=" " category="inline-code"></block></block>
   <block id="6e4db7c4c3e0f9865e99813a78473894" category="paragraph">*keyName*을 기록해 두세요.  다음 단계에서는 해당 값(볼트 이름과 함께)을 지정해야 합니다.</block>
   <block id="bc44d65a22e6f0480445dda8a4a6d4a5" category="list-text">다음 API 호출을 사용하여 Cloud Volumes ONTAP 시스템을 만듭니다.</block>
-  <block id="29a9f6ccdce3262a08caf70f33efc623" category="list-text">HA 쌍의 경우:</block>
   <block id="d2327a7fa1604c97fc1263d7cfae3fa7" category="paragraph"><block ref="d0063cc3da358487623c7a9f922d502c" prefix="" category="inline-code"></block></block>
   <block id="0b026614551113ad09fa76895c5dd5ce" category="paragraph">요청 본문에는 다음 필드가 포함되어야 합니다.</block>
   <block id="1f8370f663ec71e8fac7dc386794543c" category="admonition">포함하다<block ref="d740baa07e4af19d0de1f45650cf4bc0" prefix=" " category="inline-code"></block> 저장소 계정 암호화에 사용할 리소스를 만든 경우 필드입니다.</block>
-  <block id="2ffa17dd74caa90edaf33636b3e374b1" category="paragraph"><block ref="792ba555e1629fb9b0b5e00711256a74" category="inline-link-rx"></block> .</block>
   <block id="6507ffa8d8b9388092f62e253e32e85d" category="paragraph"><block ref="d1a53319a230158b10e72e4bd96c5bbc" prefix="" category="inline-code"></block></block>
-  <block id="7881621c3d4c91216ebe58ee1cdc87e0" category="paragraph"><block ref="52c47b6a301b0fb242044f1b14c5f663" category="inline-link-rx"></block> .</block>
   <block id="c9a9b22c97e2474e63fdb09a6f5f4a75" category="paragraph">데이터 암호화를 위해 고객 관리 키를 사용하도록 구성된 새로운 Cloud Volumes ONTAP 시스템이 있습니다.</block>
   <block id="cbb7648d740bfbc79c9b844ff98a7694" category="summary">필요한 권한이 있는 IAM 역할은 각 Cloud Volumes ONTAP 노드에 연결되어야 합니다. HA 중재자의 경우도 마찬가지입니다.  콘솔에서 IAM 역할을 자동으로 생성하도록 하는 것이 가장 쉽지만, 사용자가 직접 역할을 지정할 수도 있습니다.</block>
   <block id="84a333a53e4f22cbaaa6d41a10b81021" category="doc">Cloud Volumes ONTAP 노드에 대한 AWS IAM 역할 설정</block>
@@ -6190,7 +6180,6 @@
   <block id="f3d300c94dc8da268fd71f595a4b1c36" category="list-text">단일 노드 시스템의 Azure 디스크 유형</block>
   <block id="3c283478e1082153da1a28f6cae2070a" category="list-text">단일 노드 시스템의 경우 새로 추가된 포트는 _e0b_입니다. 관리형 디스크를 사용하는 HA 페어 배포의 경우 새로 추가된 포트는 _e0d_입니다. 페이지 블롭을 사용하는 HA 페어 배포의 경우 새로 추가된 포트는 _e0e_입니다. VM 이름이 아닌 노드 이름을 사용하십시오. <block ref="9cd5e832790132a87592f2958fc2b1a6" prefix=" " category="inline-code"></block>을 실행하여 노드 이름을 확인할 수 있습니다.</block>
   <block id="e22a8b8a02dd778a344b734bd97fdc83" category="list-text">*볼륨 암호화를 위한 Azure Disk Encryption* (단일 노드 시스템, 여러 영역의 HA 쌍 및 HA 단일 AZ 배포용)</block>
-  <block id="41fc554ff7fbcb7b9ef31dbfe008e047" category="list-text">단일 노드 시스템의 경우:</block>
   <block id="929a94de085a28985069e5a8fe181ffa" category="list-text">단일 노드 시스템의 버전 9.4</block>
   <block id="70d92c1e2419b7500249e84f56bfda5d" category="section-title">2026년 2월 12일</block>
   <block id="4da572800ccc44d02dab68a24d7ba671" category="list-text">단일 노드 시스템이 지원됩니다.</block>
@@ -6438,4 +6427,57 @@
   <block id="f638b98047aa1e2c9642d2de1bcdd0d0" category="list-text">아래로 스크롤하여 요청에 대한 추가 정보를 입력한 다음 *Submit*을 선택합니다.</block>
   <block id="dc96e19fba7ac18b79e69398a4792825" category="list-text">연결을 해제하려는 구독의 경우 <block ref="c9c50c6d591d91ccce1ee232fa490fb4" category="inline-image-macro-rx" type="image"></block>를 선택하고 *연결 해제*를 선택합니다.</block>
   <block id="5e5b6fbbd6a3b4edf3913541e4fecf17" category="list-text"><block ref="5e5b6fbbd6a3b4edf3913541e4fecf17" category="inline-link-rx"></block></block>
+  <block id="66f0f207e553b92ff141bcd4fe27ad0f" category="doc">AWS의 Cloud Volumes ONTAP 및 데이터 서비스에 대한 유연한 요금 청구</block>
+  <block id="55abafc1dd088c3ce83eae8e4a747314" category="paragraph">NetApp은 AWS에서 Cloud Volumes ONTAP 구독에 대한 향상된 청구 옵션을 제공하여 Cloud Volumes ONTAP 용량 및 BlueXP 백업 및 복구와 같은 NetApp 데이터 서비스 비용 지불 방식을 더욱 세밀하게 제어할 수 있도록 지원합니다. 이전에는 모든 Cloud Volumes ONTAP 및 데이터 서비스 사용량이 AWS 마켓플레이스의 NetApp Intelligent Services(NIS) 목록을 통해 통합적으로 청구되었습니다.</block>
+  <block id="c6527bb2f1b87269be16603057b53a2c" category="paragraph">AWS 엔터프라이즈 할인 프로그램(EDP) 변경으로 인해 NetApp은 AWS 마켓플레이스에 독립형 Cloud Volumes ONTAP 구독을 출시했습니다. 이를 통해 Cloud Volumes ONTAP 용량과 데이터 서비스 요금을 분리하여 청구할 수 있습니다. 이러한 분리를 통해 EDP 크레딧 및 비용 관리에 있어 더욱 유연성을 확보할 수 있습니다. NetApp은 Cloud Volumes ONTAP 사용량에 대한 비용 관리를 개선하기 위해 독립형 구독을 사용하는 것을 권장하며, EDP 요건이 적용되는 2026년 7월 31일 이후에는 데이터 서비스 요금 청구를 위해 NIS 구독을 계속 사용할 것을 권장합니다.</block>
+  <block id="bc5abfb3f56ed8d61846aead3435d204" category="paragraph">AWS의 독립형 Cloud Volumes ONTAP 구독은 유효한 용량 기반 Essentials 또는 Freemium 라이센스 패키지만 지원합니다. Professional 패키지는 지원되지 않습니다. 필요에 가장 적합한 청구 방법을 선택할 수 있습니다.</block>
+  <block id="620ae1035cf673b2bf4915b820a55641" category="list-text">*독립형 Cloud Volumes ONTAP 구독(권장)*: AWS 마켓플레이스에서 독립형 구독을 통해 Cloud Volumes ONTAP 사용량에 대한 비용을 지불하고, 데이터 서비스 요금은 NIS 구독을 통해 계속 청구됩니다. 이 옵션은 NetApp Console의 AWS 계정에 독립형 및 NIS 구독이 모두 연결된 대부분의 고객에게 권장됩니다.</block>
+  <block id="89df3be47eb3a96e140986018ec88f25" category="list-text">*통합 NIS 구독*: 기존 NIS 목록을 통해 Cloud Volumes ONTAP과 데이터 서비스를 함께 결제하세요. 이 통합 방식은 NetApp Console에서 AWS 계정에 NIS 구독만 연결된 기존 고객에게 적용됩니다. 하지만 NetApp은 더 나은 비용 관리를 위해 Cloud Volumes ONTAP 사용량에 대한 결제 기본 설정을 지정하고 독립형 구독으로 전환하는 것을 권장합니다.</block>
+  <block id="f0bbf3eb80d447bdeec06a404e0deecc" category="paragraph">구독 유형에 따라 다음과 같은 시나리오가 제공됩니다.</block>
+  <block id="136ebd87e9330d7c5a86db1bea619a09" category="paragraph-title">독립형 구독만 가능(신규 고객)</block>
+  <block id="4878475e6c6d651007ba24b57dd8f52c" category="paragraph">NetApp Console의 AWS 계정에 독립형 AWS 구독만 연결되어 있고 NIS 구독이 없는 경우, 배포 시 Essentials 라이선스 패키지만 선택할 수 있습니다. 데이터 서비스 *Backup and Recovery* 옵션을 사용할 수 없습니다.</block>
+  <block id="b841a0c2e7683cb86c696f570ce9b7c5" category="paragraph-title">독립 실행형 및 NIS 구독(기존 고객) 모두</block>
+  <block id="e5f964639d2d368944a708c9d9159fb8" category="paragraph">AWS 계정에 NIS 구독과 독립 실행형 구독이 모두 연결되어 있고 NetApp Console의 *청구 기본 설정* 탭에서 청구 기본 설정을 지정하지 않은 경우 Cloud Volumes ONTAP 사용량은 기본적으로 NIS를 통해 청구됩니다. 독립 실행형 목록에서는 Professional을 지원하지 않으므로 Professional 패키지를 실행하는 모든 Cloud Volumes ONTAP 인스턴스에서도 기본적으로 이 방식이 적용됩니다. 청구 기본 설정을 지정하여 각 서비스에 대한 청구 방식을 선택할 수 있습니다.</block>
+  <block id="6dd79ef85372ac622a4d4c5dc46a3c46" category="list-text">독립형 구독을 Cloud Volumes ONTAP(Essentials 패키지 포함)의 기본 결제 계정으로 설정하세요. Professional 패키지만 있는 경우 Essentials 패키지로 전환하고 결제 기본 설정을 지정하여 Cloud Volumes ONTAP 사용량을 청구할 수 있습니다. 이 방법은 Cloud Volumes ONTAP EDP 크레딧을 보다 효과적으로 관리하는 데 도움이 되므로 권장합니다.</block>
+  <block id="a77b7d4efa6f963267f588c46c34df1b" category="list-text">NIS 구독을 사용하여 데이터 서비스 요금을 청구하거나 Professional 패키지를 통해 Cloud Volumes ONTAP 사용량을 청구합니다. 배포 중에 *Backup and Recovery* 데이터 서비스를 활성화하고 Professional 라이센스 패키지를 선택하여 NIS 구독을 통해 데이터 서비스 요금을 청구합니다.</block>
+  <block id="8c746863961baaa82aba27b4fd37e769" category="paragraph-title">NIS 구독 전용(기존 고객)</block>
+  <block id="f838fe2f68473e970c4c89e5cbfc3369" category="paragraph">이는 AWS 계정과 연결된 NIS 구독을 보유한 기존 고객에게 적용됩니다. 현재와 같이 Cloud Volumes ONTAP과 데이터 서비스를 함께 청구할 수 있습니다. 하지만 NetApp은 Cloud Volumes ONTAP 사용량에 대한 비용 관리를 개선하기 위해 독립형 구독 방식으로 전환하는 것을 권장합니다.</block>
+  <block id="2a4095338c2cb1e2257dd4e02f2451ce" category="list-text">AWS 포털에서 새로운 독립형 목록을 구독하세요.</block>
+  <block id="ee8232a8731e2273fe25bf49ea87389a" category="list-text">독립형 구독을 AWS 계정에 연결하세요.</block>
+  <block id="46568565f79aa968105d34a67e84131a" category="list-text">Essentials 패키지를 사용한 Cloud Volumes ONTAP 사용에 대해 결제 기본 설정을 독립형 구독으로 설정하십시오.</block>
+  <block id="ef9583ff5df47277e937b49f54639572" category="list-text">(해당되는 경우) Professional 패키지를 Essentials 패키지로 변경하고 결제 방식을 설정하세요.</block>
+  <block id="8460f8e45452fdd819096e78fca80090" category="list-text">NIS 구독을 통해 데이터 서비스 요금 청구를 계속 진행하십시오.</block>
+  <block id="2aef8c7aa3736a735e2c270ba5fba388" category="admonition">여러 구독 유형을 사용하거나 목록 간에 마이그레이션하는 경우 중복 측정이 발생하지 않습니다.</block>
+  <block id="d813fcacf432155f3260728eb45bbdba" category="list-text"><block ref="d813fcacf432155f3260728eb45bbdba" category="inline-link-rx"></block></block>
+  <block id="4271feea4f5dd0d69f423f75fc48dbde" category="inline-link">용량 라이선스 요금 부과 방식 변경</block>
+  <block id="9e2298e44558506acec619a75ec64821" category="list-text"><block ref="9e2298e44558506acec619a75ec64821" category="inline-link-rx"></block></block>
+  <block id="49edf2231803c3970b4111ca04fcaa6c" category="paragraph">Cloud Volumes ONTAP 배포 중에 AWS 중재자 프록시 필드는 서버 주소를 허용합니다. IP 주소 대신 정규화된 도메인 이름(FQDN)을 입력하면 AWS VPC가 사용자 지정 DNS 서버로 구성되지 않는 한 FQDN이 확인되지 않습니다. 이는 AWS에서 기본적으로 제공하는 DNS가 공용 DNS 레코드와 내부 AWS 호스트만 확인할 수 있고 고객 프록시 서버와 같은 외부 FQDN은 확인할 수 없기 때문입니다. 이러한 상황이 발생하는 경우 다음 두 가지 옵션이 있습니다.</block>
+  <block id="7a6c754b06c29e6aace6db3f477f89ef" category="list-text">FQDN 대신 프록시 서버의 IP 주소를 미디에이터 프록시 필드에 직접 추가하세요.</block>
+  <block id="6b1fcef9c5f9f96f0e1006fa2c790eaf" category="list-text">사용자 지정 DNS 서버 주소를 포함하는 DHCP 옵션 세트를 VPC에서 구성하십시오. 이렇게 하면 배포 중에 프록시 서버 필드에 FQDN을 입력할 때 AWS가 FQDN을 확인할 수 있습니다. 자세한 내용은<block ref="969ddf18b8d2c2a0ea7f2f758bfa092b" category="inline-link-rx"></block>를 참조하십시오.</block>
+  <block id="f1786d348e00a4d81c8256bfab2317bf" category="list-text">다음 API 호출을 사용하여 Azure 구독에 있는 키 자격 증명 모음 목록을 가져옵니다.</block>
+  <block id="271091fec63fe3a7ae5ab9329c07fa38" category="inline-link">HA 쌍의 경우</block>
+  <block id="642952a918ce09b4f08372d3c04cf646" category="paragraph"><block ref="6128714d4f22124bb54e7e5f6deb8b10" category="inline-link-rx"></block>:<block ref="77c22cb91fef3c1e85c041013cec246d" prefix=" " category="inline-code"></block></block>
+  <block id="849916757860d46d7e8a7cb162993e59" category="inline-link">단일 노드의 경우</block>
+  <block id="5431d1164495e657ec4e4557ecdfc072" category="paragraph"><block ref="0b2344536f5c6ce02c9c82e07e278eec" category="inline-link-rx"></block>:<block ref="842256d0af833acbb8f3ef6a213881aa" prefix=" " category="inline-code"></block></block>
+  <block id="37cd30060e66dbd940c6e8bde54f715b" category="paragraph">HA 쌍의 경우:<block ref="16653123b6ee27115a225558fd9da1c0" prefix=" " category="inline-code"></block></block>
+  <block id="89f7751e2475c204f6d76abe7aaee02b" category="paragraph">단일 노드의 경우:<block ref="8092e0725ee020a83a92ad74dc7efae2" prefix=" " category="inline-code"></block></block>
+  <block id="3fe773fa56c2b46ff7ef74a505be49ae" category="inline-link">이 API 호출</block>
+  <block id="f14649643d91bddc807cd1ecaec59c6b" category="list-text">HA 쌍의 경우 다음을 사용하십시오<block ref="6802f329e6a1f640b155b8257c09eb6a" category="inline-link-rx"></block>:</block>
+  <block id="14a0873ed547bbfb56894fcdf062b28d" category="list-text">단일 노드 시스템의 경우 다음을 사용하십시오<block ref="0065b883a121c3c77a0cfc4bb1492b9b" category="inline-link-rx"></block>:</block>
+  <block id="6d8ebc410ea7b66d3c2aaf33b8e39094" category="inline-link">Cloud Volumes ONTAP API 워크플로우 사용을 준비하세요</block>
+  <block id="6ca12661dc1853ba82377290ca0b3bc2" category="list-text"><block ref="d16c17f65bc41006807ee1e260dfb738" category="inline-link-rx"></block>.</block>
+  <block id="08764d6f7da0033c29de0076a443fe0c" category="inline-link">ONTAP 관리 REST API에 대해 알아보십시오</block>
+  <block id="5baeba7934fe8a34975ccc38f19366dd" category="list-text"><block ref="d1a64a155005c90f3066c3fa3b060d30" category="inline-link-rx"></block>.</block>
+  <block id="37ddcf030b7d3101678de58c0621fc89" category="section-title">독립형 AWS 목록에 대한 기본 결제 설정</block>
+  <block id="ec2384719451e3975840b6469dfcfbf4" category="paragraph">AWS 계정에 연결된 독립형 AWS 구독이 있는 경우 해당 구독을 통해 Cloud Volumes ONTAP 비용을 결제할 수 있습니다. NetApp Intelligent Services(NIS) 구독도 있는 경우 NIS 구독과 연결된 패키지를 통해 데이터 서비스 비용을 결제할 수 있습니다. 기존 구독의 경우 NetApp은 Cloud Volumes ONTAP 사용량에 대한 비용 관리를 개선하기 위해 독립형 구독 방식으로 전환하는 것을 권장합니다.</block>
+  <block id="b41b9dda9f87c33a6102264990ae2f8a" category="paragraph">AWS 계정과 연결된 NIS 구독을 보유하고 있는 기존 고객이라면 NetApp은 Cloud Volumes ONTAP 사용량에 대한 비용 관리를 개선하기 위해 독립형 구독 방식으로 전환할 것을 권장합니다. 전체 과정은 다음과 같습니다.</block>
+  <block id="01368c26a9edc2b99ad0caa355acb956" category="list-text">(해당되는 경우) Professional 패키지를 Essentials 패키지로 전환하고 결제 기본 설정을 지정합니다. Professional 패키지를 Essentials 패키지로 전환하는 방법에 대한 자세한 내용은<block ref="3a4158127b53937d0c91a79e9c5866e1" category="inline-link-rx"></block>를 참조하십시오.</block>
+  <block id="9eab041ce6a01ba028dd95a8c5f1992c" category="list-text">NetApp Console의 왼쪽 패널에서 *Administration &gt; Licenses and subscriptions &gt; Billing preferences &gt; Cloud Volumes ONTAP*을 선택합니다.</block>
+  <block id="055fe1da24359dd71a9c8b67896496aa" category="list-text">AWS 탭에서 독립형 구독을 선택하고 옵션 아이콘 <block ref="ac91b27a7720c4844510cacb9be7afe5" category="inline-image-macro-rx" type="image"></block>을 클릭합니다.</block>
+  <block id="ca114d54630fd2217b0a7f7b707b2524" category="list-text">구성 편집 창에서 *AWS 계정 자격 증명* 필드에 독립 실행형 목록의 구독 번호를 선택합니다.</block>
+  <block id="1a8a4084eaf9e7b7e14963049e616310" category="list-text">*Configure*를 클릭합니다. AWS에서 Cloud Volumes ONTAP 청구를 위한 기본 옵션으로 구독이 표시됩니다.</block>
+  <block id="5308f0957f4f665b7b8a7a70e7f26dbb" category="inline-link">빠른 생성 기능을 사용하여 Cloud Volumes ONTAP 배포</block>
+  <block id="69bad18c1431b72e27676656dcb02294" category="list-text">새로운 Cloud Volumes ONTAP 시스템을 배포할 때는 독립형 구독을 통해 요금을 청구하려면 Essentials 패키지를 선택하십시오. 자세한 내용은<block ref="3bd26a21bb4b5b57e3e4e28150d4f309" category="inline-link-rx"></block>를 참조하십시오.</block>
+  <block id="a731966b7a272e5b052ef9a7b9ea958e" category="paragraph">데이터 서비스에 NIS 구독을 사용하려면 *데이터 서비스* 탭에서 NIS 구독에 대해 동일한 단계를 반복하십시오. 새 Cloud Volumes ONTAP 시스템을 배포할 때는 NIS 구독을 통해 요금을 청구하도록 Professional 패키지를 선택하십시오.</block>
+  <block id="55a36fface9a3342eae20532f4dd2f82" category="section-title">2026년 5월 12일</block>
 </blocks>
