@@ -5,7 +5,7 @@ settings:
     release_notes_repo: console-relnotes
   harmony_integration: maestro
   internal:
-    pdf_enabled: true
+    pdf_enabled: false
   prod:
     pdf_enabled: true
     harmony_enabled: false
@@ -67,9 +67,9 @@ sidebar:
         url: "/task-set-up-iam-roles.html"
       - title: 라이센스 설정
         url: "/task-set-up-licensing-aws.html"
-      - title: AWS에서 Cloud Volumes ONTAP 에 대한 빠른 배포 방법 사용
+      - title: AWS에서 기본값을 사용하여 Cloud Volumes ONTAP 배포
         url: "/task-quick-deploy-aws.html"
-      - title: AWS에서 Cloud Volumes ONTAP 에 대한 고급 배포 방법 사용
+      - title: AWS에서 고급 옵션을 사용하여 Cloud Volumes ONTAP 배포
         url: "/task-deploying-otc-aws.html"
       - title: AWS Secret 지역에 Cloud Volumes ONTAP 배포
         url: "/task-getting-started-aws-c2s.html"
@@ -94,7 +94,9 @@ sidebar:
           url: "/task-azure-high-availability-mode.html"
         - title: 단일 가용성 영역에 대해 VMOrchestratorZonalMultiFD 활성화
           url: "/task-saz-feature.html"
-        - title: Azure에서 Cloud Volumes ONTAP 실행
+        - title: Azure에서 기본값으로 Cloud Volumes ONTAP 배포
+          url: "/task-quick-deploy-azure.html"
+        - title: Azure에서 고급 옵션을 사용하여 Cloud Volumes ONTAP 배포
           url: "/task-deploying-otc-azure.html"
         - title: Azure 플랫폼 이미지 확인
           entries:

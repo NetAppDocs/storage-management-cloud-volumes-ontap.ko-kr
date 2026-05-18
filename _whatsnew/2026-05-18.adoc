@@ -1,0 +1,17 @@
+= Azure에서 간소화된 Cloud Volumes ONTAP 배포
+:allow-uri-read: 
+
+
+
+
+=== Azure에서 간소화된 Cloud Volumes ONTAP 배포
+
+이제 빠른 생성 기능을 사용하여 단일 노드 및 고가용성(HA) 구성 모두에 대해 Azure에 Cloud Volumes ONTAP을 배포할 수 있습니다. 이 간소화된 프로세스는 고급 방법에 비해 단계 수를 줄이고, 단일 페이지에서 기본값을 자동으로 설정하며, 탐색 과정을 최소화하여 배포를 더 빠르고 쉽게 만들어 줍니다.
+
+
+NOTE: 빠른 생성 기능을 사용하여 Azure에 새 Cloud Volumes ONTAP 시스템을 배포하면 NetApp Console에서 기본적으로 Azure 자격 증명을 선택합니다. 초기 Azure 자격 증명을 사용하여 모든 Cloud Volumes ONTAP 시스템을 배포할 수 있습니다. 다른 구독 및/또는 자격 증명을 사용하려면 고급 방법 배포로 전환해야 합니다. 이 제한 사항은 향후 릴리스에서 해결될 예정입니다.
+
+.관련 링크
+* https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-quick-deploy-azure.html["빠른 생성 기능을 사용하여 Azure에 Cloud Volumes ONTAP 배포"^]
+* https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-deploying-otc-azure.html["Azure의 고급 옵션을 사용하여 Cloud Volumes ONTAP 배포"^]
+

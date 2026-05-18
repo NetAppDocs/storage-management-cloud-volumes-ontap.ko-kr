@@ -2832,7 +2832,6 @@
   <block id="92ac6875448afadccc706b220d2412c3" category="cell">Active Directory DNS를 사용하여 NTP 서버를 구성하려면 *Active Directory 도메인 사용*을 선택합니다.  다른 주소를 사용하여 NTP 서버를 구성해야 하는 경우 API를 사용해야 합니다. 를 참조하세요<block ref="ad561d482c49648a0d36f6a86e379ff3" category="inline-link-rx"></block> 자세한 내용은.  CIFS 서버를 생성할 때만 NTP 서버를 구성할 수 있습니다.  CIFS 서버를 만든 후에는 구성할 수 없습니다.</block>
   <block id="a9a68a4c2a3e1d9ea3aa0198251e51b3" category="paragraph">자세한 내용은 다음을 참조하세요.<block ref="449d1f3dba62fd34c10497ac720687ce" category="inline-link-macro-rx"></block> ,<block ref="1e62300500e1ad0802bb2b24113c7036" category="inline-link-macro-rx"></block> , 그리고<block ref="9af56c326a803ff09c4af3da1cdbc4e2" category="inline-link-rx"></block></block>
   <block id="b5fc4208e494804d1484996e111220af" category="summary">AWS에서 단일 시스템 구성이나 HA 쌍으로 Cloud Volumes ONTAP 인스턴스를 시작할 수 있습니다.</block>
-  <block id="a3272fd5c4bd1903de9b1b2f5e1665a8" category="doc">AWS에서 Cloud Volumes ONTAP 실행</block>
   <block id="9390f8a96c7c5355d756fc44464e1732" category="paragraph">AWS에서 단일 시스템 구성이나 HA 쌍으로 Cloud Volumes ONTAP 시작할 수 있습니다.  이 방법은 빠른 배포 방법보다 더 많은 구성 옵션과 유연성을 제공하는 고급 배포 환경을 제공합니다.</block>
   <block id="e59e28c3414f799d5603536ada649276" category="list-text">당신은 ~을 가져야합니다<block ref="3b4cd71362cf3504bd6ec81f00bd2e64" category="inline-link-rx"></block> .</block>
   <block id="a868fdec3895d3124b3057eb37731062" category="paragraph">구성을 선택하고 관리자로부터 AWS 네트워킹 정보를 얻어서 준비했어야 합니다. 자세한 내용은 다음을 참조하세요.<block ref="b2852d75c9a2b653b1ca3941854c33b3" category="inline-link-macro-rx"></block> .</block>
@@ -2938,7 +2937,6 @@
   <block id="221e8f6e98d75a4db804bf88879345c0" category="list-text"><block ref="221e8f6e98d75a4db804bf88879345c0" category="inline-link-macro-rx"></block></block>
   <block id="6390591b27e881b05ba32426d12f2b17" category="list-text"><block ref="6390591b27e881b05ba32426d12f2b17" category="inline-link-macro-rx"></block></block>
   <block id="0f703b696e22955e2930127e854c1e29" category="summary">NetApp Console 에서 Cloud Cloud Volumes ONTAP 시스템을 만들어 Azure에서 단일 Cloud Cloud Volumes ONTAP 시스템을 시작할 수 있습니다.</block>
-  <block id="70c84621a7336f391b4b7df86b5f1396" category="doc">Azure에서 Cloud Volumes ONTAP 실행</block>
   <block id="0473d750e2a3daca568511b768f19dad" category="list-text">당신은 ~을 가져야합니다<block ref="21b9e54d07d93b52dd801e203dadcd2a" category="inline-link-rx"></block> .</block>
   <block id="1942ca6a74b110784dab141845e32ec9" category="paragraph">구성을 계획해야 하며, 관리자로부터 필요한 Azure 네트워킹 세부 정보를 받아야 합니다. 자세한 내용은 다음을 참조하세요. <block ref="342e106d00de7bc2efc5fca274754fe1" category="inline-link-macro-rx"></block> .</block>
   <block id="4a990655560c303b19831e9bf63722cf" category="paragraph"><block ref="a19594f8ac35f50a09725bf53aa8cda6" category="inline-link-macro-rx"></block> .</block>
@@ -4135,28 +4133,8 @@
   <block id="f508651fe98cc3415eb1f58ed2bed8a0" category="paragraph">ONTAP System Manager 및 ONTAP CLI를 사용하여 ARP를 활성화하는 방법에 대한 자세한 내용은 다음을 참조하십시오.<block ref="b15a4c9c991d002f8e900421f382aab3" category="inline-link-rx"></block> .</block>
   <block id="a35eb7b32c61adf984cdcc0cc1594b1c" category="image-alt">스크린샷은 Autonomous Ransomware Protection의 추가 라이선스를 보여줍니다.</block>
   <block id="2fde968374b314fab80910a4b4b46fd5" category="summary">단일 시스템 구성이나 AWS의 HA 쌍으로 Cloud Volumes ONTAP 인스턴스를 빠르게 배포할 수 있습니다.</block>
-  <block id="df21da50f7b519faae186f1e43c17239" category="paragraph">단일 노드와 고가용성(HA) 구성 모두에 대해 빠른 배포 방법을 사용하여 AWS에 Cloud Volumes ONTAP 배포할 수 있습니다.  이 간소화된 프로세스는 고급 방법에 비해 배포 단계를 줄여줍니다.  또한 단일 페이지에 기본값을 자동으로 설정하고 탐색을 최소화하여 작업 흐름을 더 명확하게 해줍니다.</block>
-  <block id="f4d9251cb6baf7aaf8aacb13b64583f3" category="paragraph">NetApp Console 에서 AWS에 Cloud Volumes ONTAP 시스템을 추가하려면 다음이 필요합니다.</block>
-  <block id="23308548687959b344a096c6b0bae802" category="inline-link">프로젝트 또는 작업 공간과 연결된 콘솔 에이전트</block>
-  <block id="53bb40073556c6e0c2d5a2300b5cdf2f" category="list-text">당신은 ~을 가져야합니다<block ref="204252e86f6f1e5199f82785452591cf" category="inline-link-rx"></block> .</block>
-  <block id="31fd3917028d3e963193a4c795d8230a" category="paragraph">Cloud Volumes ONTAP 시스템을 생성한 직후, NetApp Console 지정된 VPC에서 테스트 인스턴스를 시작하여 연결을 확인합니다.  성공하면 콘솔은 즉시 인스턴스를 종료한 다음 시스템 배포를 시작합니다.  콘솔에서 연결을 확인할 수 없는 경우 시스템 생성이 실패합니다.  테스트 인스턴스는 다음 중 하나입니다.<block ref="5ef1a68e904a3597d2b907cd2782dc2a" prefix=" " category="inline-code"></block> (기본 VPC 테넌시의 경우) 또는<block ref="80d12d97ae3fdbfc793b03ba2263193e" prefix=" " category="inline-code"></block> (전용 VPC 테넌시용).</block>
   <block id="7610912a02afeabe582d133e3aacaeb1" category="list-text">[[구독]]캔버스 페이지에서 *시스템 추가*를 클릭하고 안내를 따르세요.</block>
-  <block id="0213ba83da4728f61c50e9f003561727" category="list-text">*Amazon Web Services* &gt; * Cloud Volumes ONTAP* &gt; *새로 추가*를 선택합니다.  기본적으로 *빠른 생성* 옵션이 선택되어 있습니다.</block>
-  <block id="7678631716f127507640973c04d4d7f2" category="inline-image-macro">width=800,alt="AWS 빠른 생성"</block>
-  <block id="e027f4c7cbd5869ce59e9268db3155b7" category="paragraph"><block ref="e027f4c7cbd5869ce59e9268db3155b7" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="9aea8161bcc752fa6d3dda6fa4f6ef80" category="list-title">시스템 세부 정보</block>
-  <block id="711c73ff7306ce769fe8d1365ad843b6" category="list-text">*클라우드 공급자 계정*: 선택한 콘솔 에이전트에 따라 계정 세부 정보가 자동으로 채워집니다.  여러 계정이 있는 경우 사용할 계정을 선택하세요.  콘솔 에이전트를 사용할 수 없는 경우 다음 메시지가 표시됩니다.<block ref="1594e6ec88af22ac86c24dc97d8aa3e8" category="inline-link-rx"></block> .</block>
-  <block id="6215b333e4bac48e04b82d9b5c656d16" category="list-text">*이름*: 시스템 이름입니다.  콘솔은 시스템(클러스터) 이름을 사용하여 Cloud Volumes ONTAP 시스템과 Amazon EC2 인스턴스의 이름을 지정합니다.  해당 옵션을 선택하면 사전 정의된 보안 그룹의 접두사로도 이름이 사용됩니다.</block>
-  <block id="be488f7879d6d4643df8df156e845288" category="list-text">* ONTAP 자격 증명* 이는 Cloud Volumes ONTAP 클러스터 관리자 계정의 자격 증명입니다.  이러한 자격 증명을 사용하면 ONTAP System Manager나 ONTAP CLI를 통해 Cloud Volumes ONTAP 에 연결할 수 있습니다.  기본 _admin_ 사용자 이름을 유지하거나 사용자 지정 사용자 이름으로 변경할 수 있습니다.</block>
-  <block id="174bb344f9ccc0d461077d3a3fab95e6" category="list-text">*태그* AWS 태그는 AWS 리소스에 대한 메타데이터입니다.  콘솔은 Cloud Volumes ONTAP 인스턴스와 인스턴스에 연결된 각 AWS 리소스에 태그를 추가합니다.  Cloud Volumes ONTAP 시스템을 생성할 때 사용자 인터페이스에서 최대 15개의 태그를 추가할 수 있으며, 시스템을 생성한 후에 태그를 더 추가할 수 있습니다.  API는 시스템을 생성할 때 태그를 4개로 제한하지 않습니다.  태그에 대한 정보는 다음을 참조하세요.<block ref="9bd250e03cdf80384a24635f16673602" category="inline-link-rx"></block> .</block>
   <block id="ed38874183f73e374cbbb3c0f4153523" category="list-title">배포 및 구성</block>
-  <block id="84c26349068a8d379294086769b1dbf4" category="list-text">*배포 유형*: 사용할 배포 유형을 선택합니다. 단일 노드, 단일 가용성 영역(AZ)의 고가용성(HA), 여러 AZ의 HA입니다.</block>
-  <block id="10998bd4fd45e438e0a5d473fa026ec2" category="list-text">*네트워크 구성* : 기록해 두신 네트워크 정보를 입력하세요.<block ref="fd0086af96971a0360fa581d84484686" category="inline-link-rx"></block> .</block>
-  <block id="a691a19e1be7950cdfda17bc54add849" category="list-text">*AWS 지역*: 기본적으로 서브넷 리소스가 있는 VPC가 있는 연결된 클라우드 계정의 지역이 선택됩니다.</block>
-  <block id="5870f7a0eec344fcf6fbcf6886836fae" category="list-text">*VPC*: 서브넷이 있는 AWS 지역의 VPC를 입력하세요.  서브넷이 없으면 VPC의 기본값이 선택됩니다.</block>
-  <block id="3850f164243211371486f6a7386e3702" category="list-text">*서브넷*: 단일 노드 배포 또는 단일 AZ의 HA 배포에 대해서만 VPC에 대한 서브넷을 선택할 수 있습니다.</block>
-  <block id="520b661a272c9e6f55f469cc9c24193d" category="paragraph-title">고가용성</block>
-  <block id="94ca6ef273c7d6d636dc97bac5bd754d" category="paragraph">HA 구성을 선택한 경우 다음 정보를 입력하세요.</block>
   <block id="72cff6c2263a7acacd2038a8bbecd8b9" category="open-title">단일 AZ의 HA</block>
   <block id="effa98e6d1daf04a4234aa9381503058" category="list-text">*중재자 접근*: 중재자 접근 정보를 지정합니다.  중재자는 HA 쌍의 상태를 모니터링하고 장애 발생 시 쿼럼을 제공하는 별도의 인스턴스입니다.  AWS EC2 서비스에 연결할 수 있도록 중재자 인스턴스에 키 쌍 이름을 제공하고 연결 방법을 선택합니다.</block>
   <block id="5675099bca3e8dda76b7414befffa02a" category="open-title">여러 AZ의 HA</block>
@@ -4164,16 +4142,12 @@
   <block id="7a52df4a87715b07e27b6566530f7aae" category="list-text">*유동 IP*: 여러 AZ를 선택한 경우 NFS 및 CIFS 서비스와 클러스터 및 SVM 관리를 위한 유동 IP 주소를 지정합니다.  IP 주소는 해당 지역의 모든 VPC에 대한 CIDR 블록 외부에 있어야 합니다.  추가 세부 사항은 다음을 참조하세요.<block ref="e677af9e7ca6c446fefd39f21658da89" category="inline-link-macro-rx"></block> .</block>
   <block id="8dce48b3257ef975d0a5d55cefad5b71" category="list-text">*경로 테이블*: 여러 AZ를 선택한 경우, 플로팅 IP 주소에 대한 경로가 포함된 경로 테이블을 선택합니다.  두 개 이상의 경로 테이블이 있는 경우 올바른 경로 테이블을 선택하는 것이 중요합니다.  그렇지 않으면 일부 클라이언트가 Cloud Volumes ONTAP HA 쌍에 액세스하지 못할 수도 있습니다.  경로 테이블에 대한 자세한 내용은 다음을 참조하세요.<block ref="8ed06851f50fcdbded65cb78f986bfa5" category="inline-link-rx"></block> .</block>
   <block id="e8b12e750d764758dbe212c4aa89ee5b" category="list-title">충전 및 서비스</block>
-  <block id="9e394512026e5b57a6bccc1315b99546" category="list-text">*마켓플레이스 구독*: 이 Cloud Volumes ONTAP 시스템과 함께 사용할 AWS 마켓플레이스 구독을 선택하세요.</block>
   <block id="a15c8cbe9fed78c41f8d32443cf6e36b" category="inline-link-macro">Cloud Volumes ONTAP 라이선스에 대해 알아보세요</block>
-  <block id="9f57f81f79c5b841235e1a2dc081a0cb" category="list-text">*라이선스*: 이 Cloud Volumes ONTAP 시스템에 사용할 라이선스 유형을 선택하세요.  Professional, Essential, Premium 라이선스 중에서 선택할 수 있습니다.  다양한 라이센스에 대한 정보는 다음을 참조하세요.<block ref="827c6d1762aff7ea0827cad65bbc8690" category="inline-link-macro-rx"></block> .</block>
   <block id="e06fe5b3c12a682f694b5afcf91d7c10" category="list-text">*데이터 서비스 및 기능*: Cloud Volumes ONTAP 에서 사용하지 않으려는 서비스를 활성화 상태로 유지하거나 비활성화합니다.</block>
   <block id="e2962533860a405596c6c379003ecdfa" category="inline-link">NetApp 분류에 대해 자세히 알아보세요</block>
-  <block id="5673dbdc94710739494b2b4fcd07c07f" category="list-text"><block ref="5673dbdc94710739494b2b4fcd07c07f" category="inline-link-rx"></block></block>
   <block id="ff3d1f58a19f3b8e0bab491b41acecc3" category="list-text"><block ref="ff3d1f58a19f3b8e0bab491b41acecc3" category="inline-link-macro-rx"></block></block>
   <block id="b9c874d376943147dbadbc9046fb82f0" category="admonition">WORM 및 데이터 계층화를 활용하려면 백업 및 복구를 비활성화하고 버전 9.8 이상의 Cloud Volumes ONTAP 시스템을 배포해야 합니다.</block>
   <block id="30e7f6b5f6dce304885b4864823eb15f" category="list-text">* NetApp 지원 사이트 계정*: 계정이 여러 개인 경우 사용할 계정을 선택하세요.</block>
-  <block id="290612199861c31d1036b185b4e69b75" category="paragraph-title">요약</block>
   <block id="7fc9f222a523c4e64609fc3932b07a00" category="paragraph">입력한 세부 정보를 확인하거나 편집한 다음 *만들기*를 클릭하세요.</block>
   <block id="9ced3f212444ec92ce068e43e3a313c4" category="inline-link-macro">고급 배포를 사용하여 AWS에 Cloud Volumes ONTAP 배포</block>
   <block id="4870541f85a6bd6c624b90dbfb2301d9" category="list-text"><block ref="4870541f85a6bd6c624b90dbfb2301d9" category="inline-link-macro-rx"></block></block>
@@ -5536,7 +5510,6 @@
   <block id="57831ce128ea817f6507e4e9d32b2371" category="paragraph"><block ref="57831ce128ea817f6507e4e9d32b2371" category="inline-image-macro-rx" type="image"></block></block>
   <block id="089dd3c79ae56f1da7a6b2c50edab075" category="section-title">Google Cloud의 더 큰 디스크</block>
   <block id="cbddd29e855faaf713258fb82116edf0" category="section-title">Google Cloud의 새로운 머신 유형</block>
-  <block id="cc43ac2c3e66d6d0b58d982ca8a50a38" category="paragraph">Cloud Volumes ONTAP 이제 다음과 같은 머신 유형을 지원합니다.</block>
   <block id="1ac4c5bf1cc05cf3d4aa859843ec87b4" category="list-text">Explore 라이선스와 BYOL을 사용하는 n2-standard-4</block>
   <block id="e73d4d7c476b6b18ed15adb41d3ea1b2" category="list-text">Standard 라이선스와 BYOL을 갖춘 n2-standard-8</block>
   <block id="08ce51aefda2c98505d3ef29ab430caf" category="list-text">프리미엄 라이선스와 BYOL을 갖춘 n2-standard-32</block>
@@ -5587,8 +5560,6 @@
   <block id="0178b985155f8038a3bb894fe24ece79" category="sidebar">AWS KMS 설정</block>
   <block id="e26c5d07fc30848902a99c95897441b4" category="sidebar">IAM 역할 설정</block>
   <block id="e907b41f5f3d7332bee5a43fbbf78a08" category="sidebar">라이센스 설정</block>
-  <block id="79a0f341badc43467674384b63131dab" category="sidebar">AWS에서 Cloud Volumes ONTAP 에 대한 빠른 배포 방법 사용</block>
-  <block id="b8228ea9776a5a74592df84aacf3832f" category="sidebar">AWS에서 Cloud Volumes ONTAP 에 대한 고급 배포 방법 사용</block>
   <block id="275e611a605380e34988066f6fa53eae" category="sidebar">AWS Secret 지역에 Cloud Volumes ONTAP 배포</block>
   <block id="1649f10406b5e0e0054f2cb76197f63a" category="sidebar">Microsoft Azure에서 시작하기</block>
   <block id="6cd0e178ea21e9518654ab6a94374db4" category="sidebar">NetApp Console 에서 시작하기</block>
@@ -6373,7 +6344,6 @@
   <block id="b6806817250ca74e0d889e8170e85823" category="list-text">모든 기능 연필 메뉴에서 *CIFS 설정*을 편집합니다</block>
   <block id="c534251be3cf8755eaf972b5450db181" category="list-text">모든 기능 연필 메뉴에서 *경로 테이블* 편집</block>
   <block id="c6f01c78bfe0a0a495cb5d3ed77824a9" category="cell">볼륨</block>
-  <block id="add65f7075db5dde27f485e9f855601b" category="paragraph">이 탭에서는 볼륨 업데이트가 허용되지 않으며 볼륨을 추가할 수 없습니다.</block>
   <block id="9e32a435d22aa5cbc195e861b5fe629f" category="list-text">볼륨 설정 편집</block>
   <block id="5b5eeee4d1e6b7007829d66c8b144064" category="list-text">스냅샷 복사본 생성</block>
   <block id="ff1652826450f50c76cdfdda64d94e2f" category="list-text">스냅샷 복사본에서 복원</block>
@@ -6401,7 +6371,6 @@
   <block id="68508a9dfe7d188ddfacdf20bf897e7f" category="list-text">시스템을 입력합니다</block>
   <block id="f58a02a69585ec6ceb21ad1ac5eda505" category="list-text">AVS 관리 버튼을 사용합니다</block>
   <block id="1f4c7e61bb42651b1fed2a31454fa7b2" category="cell">역할 없이</block>
-  <block id="cbc38e338398c30ad05441fc2f224550" category="paragraph">역할이 지정되지 않은 경우 모든 작업이 비활성화됩니다.</block>
   <block id="ba289c943721589929b1aa882cf8868b" category="list-text">작업 환경에 액세스합니다</block>
   <block id="c81a3e43374dd535dae333a1add5d041" category="list-text">복제 액세스</block>
   <block id="bb499c548cf9f80e030b1ead19cf6245" category="list-text">Cloud Volumes ONTAP 생성 마법사를 사용하십시오</block>
@@ -6480,4 +6449,79 @@
   <block id="69bad18c1431b72e27676656dcb02294" category="list-text">새로운 Cloud Volumes ONTAP 시스템을 배포할 때는 독립형 구독을 통해 요금을 청구하려면 Essentials 패키지를 선택하십시오. 자세한 내용은<block ref="3bd26a21bb4b5b57e3e4e28150d4f309" category="inline-link-rx"></block>를 참조하십시오.</block>
   <block id="a731966b7a272e5b052ef9a7b9ea958e" category="paragraph">데이터 서비스에 NIS 구독을 사용하려면 *데이터 서비스* 탭에서 NIS 구독에 대해 동일한 단계를 반복하십시오. 새 Cloud Volumes ONTAP 시스템을 배포할 때는 NIS 구독을 통해 요금을 청구하도록 Professional 패키지를 선택하십시오.</block>
   <block id="55a36fface9a3342eae20532f4dd2f82" category="section-title">2026년 5월 12일</block>
+  <block id="a0183314c2ab3e36d7dc149d1630d662" category="paragraph">Amazon Web Services(AWS) 및 Microsoft Azure에서<block ref="956eaa6186169471a13345860cad0757" prefix=" " category="inline-code"></block>를 사용하여 단일 노드 및 고가용성(HA) 구성 모두에서 Cloud Volumes ONTAP을 더 빠르게 배포할 수 있습니다. 이 간소화된 프로세스는 단일 페이지에서 기본값을 자동으로 설정하고 탐색을 최소화하여 고급 방법에 비해 배포 단계를 줄여줍니다.</block>
+  <block id="fe315d7471968d18b362c1b1144a20b0" category="paragraph">시작하기 전에 다음 사항을 확인하십시오.</block>
+  <block id="e1698d0f79b1f839d16516155d0a01c6" category="list-text">프로젝트 또는 작업 영역과 연결되어 실행 중인 Console 에이전트입니다. Console 에이전트는 항상 실행 중이어야 합니다. 자세한 내용은 다음을 참조하세요.</block>
+  <block id="53101ed6c57b4f1b9f3eb58eb938c2b1" category="inline-link">NetApp Console 에이전트에 대해 알아보십시오</block>
+  <block id="79b9be0ac010d5490772bdb3188d576d" category="list-text"><block ref="79b9be0ac010d5490772bdb3188d576d" category="inline-link-rx"></block></block>
+  <block id="9db458bccb025b8de9d4cfd46a4d1578" category="inline-link">Console 에이전트 배포 방법을 선택하세요</block>
+  <block id="21b44c8a4c386ac4ac342bec49229b4b" category="list-text"><block ref="21b44c8a4c386ac4ac342bec49229b4b" category="inline-link-rx"></block></block>
+  <block id="6bad41fe3567c2d39d19367d752e1c5e" category="list-text">사용하려는 구성에 대한 이해가 필요합니다. 시작하기 전에 구성을 선택하고 관리자로부터 네트워킹 정보를 얻으십시오. 자세한 내용은 다음을 참조하십시오.</block>
+  <block id="099d77fc11d7ea7fec2d2c87952f8b4a" category="inline-link-macro">AWS에서 구성 계획하기</block>
+  <block id="94531787ea8a868597a2894b983d3997" category="paragraph"><block ref="94531787ea8a868597a2894b983d3997" category="inline-link-macro-rx"></block></block>
+  <block id="4e296cbc4b3d694916a73a8bccc2618a" category="inline-link-macro">Azure에서 구성 계획하기</block>
+  <block id="50919a3648d500b5cae93df54bad1660" category="paragraph"><block ref="50919a3648d500b5cae93df54bad1660" category="inline-link-macro-rx"></block></block>
+  <block id="a376066b1c9ac3588b98de51d7bbc4bf" category="list-text">Cloud Volumes ONTAP의 라이센스 요구 사항에 대한 지식. 자세한 내용은 다음을 참조하십시오.</block>
+  <block id="9aa23690f6c27d4c58c0535af311d9fb" category="inline-link-macro">AWS에서 라이센스 설정</block>
+  <block id="7735a57d0da8542c857a04e291065b2b" category="paragraph"><block ref="7735a57d0da8542c857a04e291065b2b" category="inline-link-macro-rx"></block></block>
+  <block id="6c4c5ba58ef9ea44b4eb3ab36a6bd2a1" category="inline-link-macro">Azure에서 라이센스 설정</block>
+  <block id="0288547ecbb8c53c47e0944833e74a36" category="paragraph"><block ref="0288547ecbb8c53c47e0944833e74a36" category="inline-link-macro-rx"></block></block>
+  <block id="de0793340005b3646591da3edbd5904e" category="list-text">CIFS 구성을 위한 DNS 및 Active Directory. 자세한 내용은 다음을 참조하십시오.</block>
+  <block id="1c3a425a6ee31be89702420f83144b0c" category="inline-link-macro">AWS의 네트워킹 요구 사항</block>
+  <block id="698986dc4292e89123e221e515a0d74b" category="paragraph"><block ref="698986dc4292e89123e221e515a0d74b" category="inline-link-macro-rx"></block></block>
+  <block id="c0cf3ac9b58bf7128b0edea2d7f775eb" category="inline-link-macro">Azure의 네트워킹 요구 사항</block>
+  <block id="67b834b1ef658ae3f312e7de4ba6af6c" category="paragraph"><block ref="67b834b1ef658ae3f312e7de4ba6af6c" category="inline-link-macro-rx"></block></block>
+  <block id="ec7684f8f216cf1ecdb9a9b62758a4a6" category="list-text">클라우드 공급자(*Amazon Web Services* 또는 *Microsoft Azure*)를 선택 &gt; *Cloud Volumes ONTAP/Cloud Volumes ONTAP HA* &gt; *새 항목 추가*를 선택합니다. 기본적으로 *빠른 생성* 옵션이 선택되어 있습니다.</block>
+  <block id="ce69e2301391e8a099e5f4ffad83e207" category="example-title">빠른 생성 옵션의 샘플 스크린샷</block>
+  <block id="886e58b8c16a5f0b3dea467125601a3f" category="inline-image-macro">width=500,alt="AWS Quick Create"</block>
+  <block id="05fbaa940416f58a5e46a739d2f4c7fc" category="paragraph"><block ref="05fbaa940416f58a5e46a739d2f4c7fc" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="ca20e4c4a1178db5332b6e4d1fec5e3f" category="inline-image-macro">width=500,alt="Azure Quick Create"</block>
+  <block id="1e8cbffa0dad5ef3f32fd257d35128c8" category="paragraph"><block ref="1e8cbffa0dad5ef3f32fd257d35128c8" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="5b98d59e0e7d352cc2eba9b98c195920" category="list-title">시스템 세부 정보</block>
+  <block id="0703e60c8ce9c50b32557a493769fc66" category="list-text">*클라우드 공급자 계정/자격 증명*: 계정 및 구독 세부 정보는 Console 에이전트를 기반으로 자동으로 채워집니다. 계정이나 구독이 여러 개인 경우 사용할 항목을 선택하세요. Console 에이전트를 사용할 수 없는 경우 메시지가 표시됩니다<block ref="689b13c9a5c20aa1149b467cd9e2d99d" category="inline-link-rx"></block>.</block>
+  <block id="df29b7782e1e52af5c3787266b32e641" category="list-text">*이름*: Cloud Volumes ONTAP 시스템(클러스터 이름이라고도 함)의 이름을 입력하십시오. NetApp Console은 시스템(클러스터) 이름을 사용하여 Cloud Volumes ONTAP 시스템과 VM 인스턴스의 이름을 지정합니다. 또한, 사전 정의된 보안 그룹을 선택한 경우 이 이름을 접두사로 사용합니다.</block>
+  <block id="493afb06da102ef4f588b9ee9f70eccc" category="list-text">*ONTAP 자격 증명*: Cloud Volumes ONTAP 클러스터 관리자 계정에 대한 자격 증명입니다. 이러한 자격 증명을 사용하여 ONTAP System Manager 또는 ONTAP CLI를 통해 Cloud Volumes ONTAP에 연결할 수 있습니다. 기본 _admin_ 사용자 이름을 유지하거나 사용자 지정 사용자 이름으로 변경할 수 있습니다.</block>
+  <block id="ed359bcb0198329923d6f27a3212b199" category="list-text">*태그*: 태그는 AWS 또는 Azure 리소스에 대한 메타데이터입니다. NetApp Console은 Cloud Volumes ONTAP 인스턴스와 해당 인스턴스에 연결된 각 리소스에 태그를 추가합니다. Cloud Volumes ONTAP 시스템을 생성할 때 사용자 인터페이스에서 최대 15개의 태그를 추가할 수 있으며, 생성 후에도 추가할 수 있습니다. 자세한 내용은 다음을 참조하십시오.</block>
+  <block id="a16435cab7ba0f508c1af2b05a09518f" category="paragraph"><block ref="9b64f9d4e4f17e41dd8f7e0bd2ac90d8" category="inline-link-rx"></block>.</block>
+  <block id="194c4ba8c0f429994571ad7132771038" category="inline-link">Azure 설명서: 리소스 태그 지정</block>
+  <block id="293180eda7fdbd2f72c67b87bef17b82" category="paragraph"><block ref="7958b061e6b74f8d105bdf1dc2f21002" category="inline-link-rx"></block>.</block>
+  <block id="6a83697d05182d9c2179c652101b9141" category="list-text">*배포 유형/토폴로지*: 사용할 배포 유형을 선택합니다. 단일 노드, 단일 가용성 영역(AZ)의 고가용성(HA) 또는 여러 AZ의 HA를 선택할 수 있습니다.</block>
+  <block id="93b02b826b8b0ee6968fee7191f8ba74" category="list-text">*네트워크 구성*: 지역, VNet 및 서브넷에 대한 계획 워크시트에 기록한 네트워크 정보를 입력하십시오.</block>
+  <block id="4b0247d45dc33f090b8c6022fd0ec5b3" category="list-text">*지역*: 기본적으로 리소스와 연결된 클라우드 계정의 지역이 선택됩니다.</block>
+  <block id="ff833a169e227e2cc350fcca7164aee7" category="list-text">*가용 영역*: 선택한 배포 유형에 따라 가용 영역을 선택할 수 있으며, 선택한 지역에서 가용 영역을 지원하는 경우에만 가능합니다.</block>
+  <block id="fb39fa266aef6376da5693e7f07daf4f" category="list-text">*서브넷*: 지역에 사용할 서브넷을 선택합니다.</block>
+  <block id="801f4bb28be5a6f5408b765580d77054" category="open-title">AWS의 경우</block>
+  <block id="7134d99cb386a398472ce390ec6cde1e" category="paragraph">*VPC*: AWS의 경우, 계획된 서브넷이 포함된 해당 리전의 VPC를 입력하십시오.</block>
+  <block id="9a648a165c10a9b39e904785f2c76d90" category="paragraph-title">AWS 고가용성</block>
+  <block id="3d6749f5155069d11e17402eb45411c4" category="paragraph">HA 구성을 선택한 경우 다음 정보를 입력하십시오.</block>
+  <block id="c90b3762df86fca042965f850d0dd3a9" category="paragraph">*마켓플레이스 구독*: AWS에서 이 Cloud Volumes ONTAP 시스템과 함께 사용할 AWS 마켓플레이스 구독을 선택하십시오.</block>
+  <block id="5e69c1ba6e88231ba98e5b867048d898" category="open-title">Azure용</block>
+  <block id="e1d2077933857aa679ffd3a25a805a92" category="paragraph">*VNET*: Azure의 경우 필요한 VNET을 선택합니다.</block>
+  <block id="5c1db3b64150a669729713d1441519fb" category="list-text">*License*: 이 Cloud Volumes ONTAP 시스템에서 사용할 라이센스 유형을 선택하십시오. Professional, Essentials 및 Freemium 라이센스 중에서 선택할 수 있습니다. 다양한 라이센스에 대한 자세한 내용은 <block ref="827c6d1762aff7ea0827cad65bbc8690" category="inline-link-macro-rx"></block>를 참조하십시오.</block>
+  <block id="180f6ba8b7bb3ff016c53f089f146fab" category="list-text"><block ref="180f6ba8b7bb3ff016c53f089f146fab" category="inline-link-rx"></block></block>
+  <block id="77bb73ceddf23085496529ef175197ec" category="list-text"><block ref="77bb73ceddf23085496529ef175197ec" category="inline-link-rx"></block></block>
+  <block id="2b859e73b5f5458c61f5f161cbe275c4" category="paragraph">_Azure_의 *개요* 섹션에는 배포 프로세스가 완료될 때 할당될 리소스가 표시됩니다.</block>
+  <block id="63d192276eafa7b25df1a392b878676d" category="paragraph">AWS에서 Cloud Volumes ONTAP 시스템을 생성한 직후 NetApp Console은 지정된 VPC에 테스트 인스턴스를 시작하여 연결을 확인합니다. 연결에 성공하면 Console은 즉시 인스턴스를 종료한 후 시스템 배포를 시작합니다. Console에서 연결을 확인할 수 없으면 시스템 생성이 실패합니다. 테스트 인스턴스는<block ref="5ef1a68e904a3597d2b907cd2782dc2a" prefix=" " category="inline-code"></block>(기본 VPC 테넌시의 경우) 또는<block ref="80d12d97ae3fdbfc793b03ba2263193e" prefix=" " category="inline-code"></block>(전용 VPC 테넌시의 경우)입니다.</block>
+  <block id="3efb304bc88bbdc4d58653e95875c0e1" category="paragraph">Cloud Volumes ONTAP 시스템 배포 중 문제가 발생하면 오류 메시지를 확인하십시오. 시스템에서 *환경 다시 생성*을 선택하여 <block ref="9b6545e4cea9b4ad4979d41bb9170e2b" prefix=" " category="inline-code"></block> 모드 마법사를 사용하여 배포를 계속 진행할 수도 있습니다.</block>
+  <block id="edbf603043ea71af5a3f46821ad9d4a3" category="admonition">배포 프로세스가 완료된 후에는 AWS 또는 Azure 클라우드 포털에서 시스템에서 생성된 Cloud Volumes ONTAP 구성, 특히 시스템 태그를 수정하지 마십시오. 이러한 구성을 변경하면 예기치 않은 동작이나 데이터 손실이 발생할 수 있습니다.</block>
+  <block id="a4ad56ab8baa8582d6dba6091a9bd877" category="doc">Azure에서 간소화된 Cloud Volumes ONTAP 배포</block>
+  <block id="8bfd035a33aa401829a9de89b5e0c246" category="paragraph">이제 빠른 생성 기능을 사용하여 단일 노드 및 고가용성(HA) 구성 모두에 대해 Azure에 Cloud Volumes ONTAP을 배포할 수 있습니다. 이 간소화된 프로세스는 고급 방법에 비해 단계 수를 줄이고, 단일 페이지에서 기본값을 자동으로 설정하며, 탐색 과정을 최소화하여 배포를 더 빠르고 쉽게 만들어 줍니다.</block>
+  <block id="22f179b38b6aab375d21adc5216a57da" category="admonition">빠른 생성 기능을 사용하여 Azure에 새 Cloud Volumes ONTAP 시스템을 배포하면 NetApp Console에서 기본적으로 Azure 자격 증명을 선택합니다. 초기 Azure 자격 증명을 사용하여 모든 Cloud Volumes ONTAP 시스템을 배포할 수 있습니다. 다른 구독 및/또는 자격 증명을 사용하려면 고급 방법 배포로 전환해야 합니다. 이 제한 사항은 향후 릴리스에서 해결될 예정입니다.</block>
+  <block id="da7aee176a6e0989fc4edf2b02e0af34" category="inline-link">빠른 생성 기능을 사용하여 Azure에 Cloud Volumes ONTAP 배포</block>
+  <block id="8928e512cc17b6dd2c97fcb7dff5a06a" category="list-text"><block ref="8928e512cc17b6dd2c97fcb7dff5a06a" category="inline-link-rx"></block></block>
+  <block id="6d1c2cdb212ea73452146a3edb82fe12" category="inline-link">Azure의 고급 옵션을 사용하여 Cloud Volumes ONTAP 배포</block>
+  <block id="3cf666a1e5ff2ecf85c4a0bcf868d65f" category="list-text"><block ref="3cf666a1e5ff2ecf85c4a0bcf868d65f" category="inline-link-rx"></block></block>
+  <block id="36988e8f47cb48af40dd817b7f6b4d72" category="paragraph">다음과 같은 볼륨 작업을 수행할 수 없습니다.</block>
+  <block id="bf0e55251fc2d98ac6842f182450e467" category="paragraph">역할이 할당되지 않은 경우 다음을 포함한 어떠한 작업도 수행할 수 없습니다.</block>
+  <block id="94b7b54556632ab5a087eae13f0e0af9" category="doc">AWS의 고급 옵션을 사용하여 Cloud Volumes ONTAP 배포</block>
+  <block id="1b26e39c9aec7d9422f257c07a5dbb5d" category="list-text"><block ref="221e8f6e98d75a4db804bf88879345c0" category="inline-link-macro-rx"></block> *</block>
+  <block id="fab04a1941385806648057c8597be7c4" category="list-text"><block ref="fab04a1941385806648057c8597be7c4" category="inline-link-macro-rx"></block></block>
+  <block id="c92ac4b81ff77c3da7bc410dc79cb66b" category="inline-link-macro">고급 배포를 사용하여 Azure에 Cloud Volumes ONTAP 배포</block>
+  <block id="cc5e18929848d96ede4034c97f00652a" category="list-text"><block ref="cc5e18929848d96ede4034c97f00652a" category="inline-link-macro-rx"></block></block>
+  <block id="3bfca6a430fa87d8630a8459fe8a4aa1" category="section-title">2026년 5월 18일</block>
+  <block id="e6720d527b65636c528e1236740bb883" category="paragraph">이제 Cloud Volumes ONTAP은 Google Cloud에서 다음과 같은 PAYGO 라이센스를 사용하여 다음 머신 유형을 지원합니다.</block>
+  <block id="4efc5a6487a0b2b074b6549924edcf20" category="sidebar">AWS에서 기본값을 사용하여 Cloud Volumes ONTAP 배포</block>
+  <block id="690f86e0be68ddfe1eb22f837c53e53c" category="sidebar">AWS에서 고급 옵션을 사용하여 Cloud Volumes ONTAP 배포</block>
+  <block id="7fa0d9a7585aaeb29c655dac03f5e3d6" category="sidebar">Azure에서 기본값으로 Cloud Volumes ONTAP 배포</block>
+  <block id="75903a04d1a65d3e18c839c67b54316d" category="sidebar">Azure에서 고급 옵션을 사용하여 Cloud Volumes ONTAP 배포</block>
 </blocks>
