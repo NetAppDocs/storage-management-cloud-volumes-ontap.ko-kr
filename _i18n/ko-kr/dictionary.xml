@@ -3833,7 +3833,6 @@
   <block id="f2feb7d422d422c2517d2196d66d00bc" category="list-text"><block ref="7746ebc5fdfe5251edf41796732ea010" prefix="" category="inline-code"></block>IP가 파트너 노드로 마이그레이션될 수 있음을 나타냅니다.</block>
   <block id="05bdf9757241650a006a0bd9021d3169" category="list-text">노드 1에 iSCSI LIF를 생성합니다.</block>
   <block id="849dd632a2c28933451bca01b48c3973" category="list-text">이 iSCSI LIF는 스토리지 VM의 플로팅 IP의 LIF 마이그레이션을 지원하는 데 필요합니다.  iSCSI LIF일 필요는 없지만 노드 간 마이그레이션을 위해 구성할 수는 없습니다.</block>
-  <block id="d68a88edd93f0fd2099f8bff543a11a3" category="list-text"><block ref="0e101bbae12005006f38a776a7e27d49" prefix="" category="inline-code"></block>IP 주소가 노드 간에 마이그레이션되지 않음을 나타냅니다.</block>
   <block id="111daac7647573990b5b56876902380e" category="list-text">_private_ip_는 cvo_node1의 eth0(e0a)에 있는 사용되지 않는 보조 개인 IP 주소입니다.</block>
   <block id="5414bcb74ffdbf70d2afb028e1eb0d0b" category="list-text">노드 2에 iSCSI LIF를 생성합니다.</block>
   <block id="0a2292629d42074cb011142b9cd8f433" category="list-text">_private_ip_는 cvo_node2의 eth0(e0a)에 있는 사용되지 않는 보조 개인 IP 주소입니다.</block>
@@ -6526,4 +6525,5 @@
   <block id="75903a04d1a65d3e18c839c67b54316d" category="sidebar">Azure에서 고급 옵션을 사용하여 Cloud Volumes ONTAP 배포</block>
   <block id="8af1ad3469dad38ef46da37595e3b758" category="inline-link-macro">NetApp Console용 Licenses and subscriptions 역할에 대해 알아보십시오</block>
   <block id="1ccb85040042290f711464fbb5e06609" category="paragraph">*필수 Console 역할* 이 작업을 수행하려면 Licenses and subscriptions 관리자 역할이 필요합니다<block ref="f7bfd1d1e66654a9d76ee2fffeede42a" category="inline-link-macro-rx"></block></block>
+  <block id="1c568211164221a5a183fa65ce0d8ad7" category="list-text"><block ref="f5fb311c04d189ade108ad02dc187c52" prefix="" category="inline-code"></block>는 IP 주소가 노드 간에 마이그레이션되지 않음을 나타냅니다.</block>
 </blocks>
