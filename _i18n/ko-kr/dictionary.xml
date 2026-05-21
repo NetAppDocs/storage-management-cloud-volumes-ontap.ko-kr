@@ -5759,7 +5759,6 @@
   <block id="1fe428516837eeacfb2efcf589684031" category="list-text">9.12.1 P18</block>
   <block id="60712fb4ddcab7f940097cec71789c95" category="inline-link-macro">Azure에서 지원됨</block>
   <block id="5b4234e88e699bcad5cf3cb47499cc7a" category="admonition">중국 지역의 경우 단일 노드 배포는 Cloud Volumes ONTAP 9.12.1 GA 및 9.13.0 GA에서만 지원됩니다. 이러한 버전을 Cloud Volumes ONTAP 의 최신 패치 및 릴리스로 업그레이드할 수 있습니다.<block ref="49fae7188ea01a36257ae97784b414e8" category="inline-link-macro-rx"></block> . 중국 지역에 이후 Cloud Volumes ONTAP 버전을 배포하려면 NetApp 지원팀에 문의하세요. 중국 지역에서는 NetApp 에서 직접 구매한 라이선스만 지원되며, 마켓플레이스 구독은 이용할 수 없습니다.</block>
-  <block id="cde8893afeb44f6e80f8c28b3d91be6f" category="admonition">선택한 버전에 대해 최신 릴리스 후보, 일반 출시 버전 또는 패치 릴리스가 제공되는 경우 BlueXP 작업 환경을 생성할 때 시스템을 해당 버전으로 업데이트합니다.  예를 들어, Cloud Volumes ONTAP 9.16.1 P3를 선택하고 9.16.1 P4를 사용할 수 있는 경우 업데이트가 발생합니다. 업데이트는 한 릴리스에서 다른 릴리스로 전달되지 않습니다(예: 9.15에서 9.16로 전달).</block>
   <block id="bfac3fe9125d6e450e2abe9717a99a20" category="cell">9.11.1 P20</block>
   <block id="14875de99eeeb97599f38dd52d96437b" category="paragraph">Azure에 이전 버전의 Cloud Volumes ONTAP 있는 경우 먼저 다음 버전으로 업그레이드한 후 지원되는 업그레이드 경로를 따라 대상 버전에 도달해야 합니다.  예를 들어 Cloud Volumes ONTAP 9.7 P7이 있는 경우 다음 업그레이드 경로를 따르세요.</block>
   <block id="765914ebc72765a6e31ff30ff9088e9c" category="list-text">9.7 P7 -&gt; 9.8 P18</block>
@@ -6396,7 +6395,6 @@
   <block id="dc96e19fba7ac18b79e69398a4792825" category="list-text">연결을 해제하려는 구독의 경우 <block ref="c9c50c6d591d91ccce1ee232fa490fb4" category="inline-image-macro-rx" type="image"></block>를 선택하고 *연결 해제*를 선택합니다.</block>
   <block id="5e5b6fbbd6a3b4edf3913541e4fecf17" category="list-text"><block ref="5e5b6fbbd6a3b4edf3913541e4fecf17" category="inline-link-rx"></block></block>
   <block id="66f0f207e553b92ff141bcd4fe27ad0f" category="doc">AWS의 Cloud Volumes ONTAP 및 데이터 서비스에 대한 유연한 요금 청구</block>
-  <block id="55abafc1dd088c3ce83eae8e4a747314" category="paragraph">NetApp은 AWS에서 Cloud Volumes ONTAP 구독에 대한 향상된 청구 옵션을 제공하여 Cloud Volumes ONTAP 용량 및 BlueXP 백업 및 복구와 같은 NetApp 데이터 서비스 비용 지불 방식을 더욱 세밀하게 제어할 수 있도록 지원합니다. 이전에는 모든 Cloud Volumes ONTAP 및 데이터 서비스 사용량이 AWS 마켓플레이스의 NetApp Intelligent Services(NIS) 목록을 통해 통합적으로 청구되었습니다.</block>
   <block id="c6527bb2f1b87269be16603057b53a2c" category="paragraph">AWS 엔터프라이즈 할인 프로그램(EDP) 변경으로 인해 NetApp은 AWS 마켓플레이스에 독립형 Cloud Volumes ONTAP 구독을 출시했습니다. 이를 통해 Cloud Volumes ONTAP 용량과 데이터 서비스 요금을 분리하여 청구할 수 있습니다. 이러한 분리를 통해 EDP 크레딧 및 비용 관리에 있어 더욱 유연성을 확보할 수 있습니다. NetApp은 Cloud Volumes ONTAP 사용량에 대한 비용 관리를 개선하기 위해 독립형 구독을 사용하는 것을 권장하며, EDP 요건이 적용되는 2026년 7월 31일 이후에는 데이터 서비스 요금 청구를 위해 NIS 구독을 계속 사용할 것을 권장합니다.</block>
   <block id="bc5abfb3f56ed8d61846aead3435d204" category="paragraph">AWS의 독립형 Cloud Volumes ONTAP 구독은 유효한 용량 기반 Essentials 또는 Freemium 라이센스 패키지만 지원합니다. Professional 패키지는 지원되지 않습니다. 필요에 가장 적합한 청구 방법을 선택할 수 있습니다.</block>
   <block id="620ae1035cf673b2bf4915b820a55641" category="list-text">*독립형 Cloud Volumes ONTAP 구독(권장)*: AWS 마켓플레이스에서 독립형 구독을 통해 Cloud Volumes ONTAP 사용량에 대한 비용을 지불하고, 데이터 서비스 요금은 NIS 구독을 통해 계속 청구됩니다. 이 옵션은 NetApp Console의 AWS 계정에 독립형 및 NIS 구독이 모두 연결된 대부분의 고객에게 권장됩니다.</block>
@@ -6526,4 +6524,6 @@
   <block id="8af1ad3469dad38ef46da37595e3b758" category="inline-link-macro">NetApp Console용 Licenses and subscriptions 역할에 대해 알아보십시오</block>
   <block id="1ccb85040042290f711464fbb5e06609" category="paragraph">*필수 Console 역할* 이 작업을 수행하려면 Licenses and subscriptions 관리자 역할이 필요합니다<block ref="f7bfd1d1e66654a9d76ee2fffeede42a" category="inline-link-macro-rx"></block></block>
   <block id="1c568211164221a5a183fa65ce0d8ad7" category="list-text"><block ref="f5fb311c04d189ade108ad02dc187c52" prefix="" category="inline-code"></block>는 IP 주소가 노드 간에 마이그레이션되지 않음을 나타냅니다.</block>
+  <block id="090499247beb18776ed4674afbd7c45d" category="paragraph">NetApp은 AWS에서 Cloud Volumes ONTAP 구독에 대한 향상된 청구 옵션을 제공하여 Cloud Volumes ONTAP 용량 및 NetApp Backup and Recovery와 같은 NetApp 데이터 서비스 비용 지불 방식을 더욱 세밀하게 제어할 수 있도록 지원합니다. 이전에는 모든 Cloud Volumes ONTAP 및 데이터 서비스 사용량이 AWS 마켓플레이스의 NetApp Intelligent Services(NIS) 목록을 통해 통합적으로 청구되었습니다.</block>
+  <block id="3ac842cf432c6d2ce6346cfe9dea6126" category="admonition">선택한 버전에 대해 최신 릴리스 후보, 일반 출시 또는 패치 릴리스가 있는 경우 콘솔은 작업 환경을 생성할 때 시스템을 해당 버전으로 업데이트합니다. 예를 들어 Cloud Volumes ONTAP 9.16.1 P3을 선택했는데 9.16.1 P4를 사용할 수 있는 경우 업데이트가 발생합니다. 단, 9.15에서 9.16으로의 업데이트와 같이 릴리스 간에는 업데이트가 발생하지 않습니다.</block>
 </blocks>
