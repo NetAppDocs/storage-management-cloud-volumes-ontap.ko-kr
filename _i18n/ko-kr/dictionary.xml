@@ -5988,7 +5988,6 @@
   <block id="233af50e7ac5078d6cabb58ab95095b9" category="summary">기존 Google Cloud 배포 환경의 경우 시스템을 Cloud Volumes ONTAP 9.16.1 이상으로 업그레이드한 다음 Google Cloud Deployment Manager에서 Cloud Infrastructure Manager로 전환하는 전환 도구를 수동으로 실행해야 합니다.</block>
   <block id="b9e5aa43ec2007eccaf097117438e531" category="doc">기존 Cloud Volumes ONTAP 배포를 Infrastructure Manager로 전환합니다.</block>
   <block id="8c41baf1ca98e1184f48c4721d44d431" category="inline-link">NetApp 지원 사이트</block>
-  <block id="416146100ffb7fc54fb8a24ca7b63ae8" category="paragraph">전환 도구는<block ref="33e3c3ba324846178fad333329821dd2" category="inline-link-rx"></block>에서 사용할 수 있으며 다음과 같은 산출물을 생성합니다.</block>
   <block id="fe91a45b95e89e219ea69631edff8521" category="list-text"><block ref="b1042b7d7203a022c297b13679f7d1f8" prefix=" " category="inline-code"></block>에 저장된 Terraform 아티팩트.</block>
   <block id="787ab3bb526ace3e3d9f5b857facafbf" category="list-text">디버그 로그는 <block ref="abecaca0429ea0c44adcba537eb94f89" prefix=" " category="inline-code"></block> 디렉터리에 저장됩니다. 문제 해결을 위해 이 로그가 필요합니다. <block ref="6ec9e5b046607d57923aee80f990225d" prefix=" " category="inline-code"></block> 버킷에는 Terraform 로그가 저장됩니다.</block>
   <block id="07f770dff2ab3ed070b0fafe70eae22a" category="paragraph">Infrastructure Manager를 사용하는 Cloud Volumes ONTAP 시스템은 데이터와 레코드를 Google Cloud Storage 버킷에 저장합니다. 이러한 버킷에 대해 추가 비용이 발생할 수 있지만 버킷이나 해당 콘텐츠를 편집하거나 삭제하지 마십시오.</block>
@@ -6139,7 +6138,6 @@
   <block id="1eee4678eb4e1cadd4e212ce0bba084d" category="section-title">단일 노드 시스템에서 스토리지 VM 생성</block>
   <block id="a547059e96288e55a3cd3b932e2c4157" category="paragraph">이 단계는 단일 노드 시스템에 새 스토리지 VM을 생성합니다. NAS LIF를 생성하려면 프라이빗 IP 주소 하나가 필요하며, 관리 LIF를 생성하려면 선택적으로 프라이빗 IP 주소 하나가 더 필요합니다.</block>
   <block id="cc7c35c7684e4d7f8bffed328fc1b629" category="paragraph">구성 및 라이센스 유형에 따라 NetApp Console용 API를 사용하여 단일 노드 시스템 또는 고가용성(HA) 구성에서 여러 스토리지 VM을 생성할 수 있습니다.</block>
-  <block id="9f0e6a06ff24050ef4f1a71b2eb1d838" category="section-title">단일 노드 시스템</block>
   <block id="070c7339120bbab9748136420da7e629" category="paragraph">단일 노드 시스템에 스토리지 VM을 생성하려면 다음 API 호출을 사용하십시오.</block>
   <block id="dda2b753a17e4e4abcca100288667de4" category="section-title">단일 노드 시스템 및 HA 쌍에서 스토리지 VM 관리</block>
   <block id="d05761c1dc243186f9c42f463199d5a9" category="list-text">단일 노드 시스템에서 스토리지 VM의 이름을 변경하려면 다음 API 호출을 사용하십시오.</block>
@@ -6526,4 +6524,6 @@
   <block id="1c568211164221a5a183fa65ce0d8ad7" category="list-text"><block ref="f5fb311c04d189ade108ad02dc187c52" prefix="" category="inline-code"></block>는 IP 주소가 노드 간에 마이그레이션되지 않음을 나타냅니다.</block>
   <block id="090499247beb18776ed4674afbd7c45d" category="paragraph">NetApp은 AWS에서 Cloud Volumes ONTAP 구독에 대한 향상된 청구 옵션을 제공하여 Cloud Volumes ONTAP 용량 및 NetApp Backup and Recovery와 같은 NetApp 데이터 서비스 비용 지불 방식을 더욱 세밀하게 제어할 수 있도록 지원합니다. 이전에는 모든 Cloud Volumes ONTAP 및 데이터 서비스 사용량이 AWS 마켓플레이스의 NetApp Intelligent Services(NIS) 목록을 통해 통합적으로 청구되었습니다.</block>
   <block id="3ac842cf432c6d2ce6346cfe9dea6126" category="admonition">선택한 버전에 대해 최신 릴리스 후보, 일반 출시 또는 패치 릴리스가 있는 경우 콘솔은 작업 환경을 생성할 때 시스템을 해당 버전으로 업데이트합니다. 예를 들어 Cloud Volumes ONTAP 9.16.1 P3을 선택했는데 9.16.1 P4를 사용할 수 있는 경우 업데이트가 발생합니다. 단, 9.15에서 9.16으로의 업데이트와 같이 릴리스 간에는 업데이트가 발생하지 않습니다.</block>
+  <block id="120dc003edb30e1d44fc4426ef7b9e3d" category="paragraph">전환 도구는 NetApp 지원 사이트에서 사용할 수 있으며 다음과 같은 산출물을 생성합니다.</block>
+  <block id="f669698de3cebd29244fce6e24b7e95d" category="section-title">단일 노드 시스템</block>
 </blocks>
