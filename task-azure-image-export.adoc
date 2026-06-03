@@ -142,7 +142,7 @@ PS /home/user1> Get-AzureStorageBlobCopyState –Container $containerName –Con
 wget <URL of filename/Containers/vm-images/9150.01000024.05090105.vhd>
 ----
 +
-URL은 표준 형식을 따릅니다.  자동화를 위해 아래와 같이 URL 문자열을 파생시킬 수 있습니다.  또는 Azure CLI를 사용할 수 있습니다. `az` URL을 가져오는 명령입니다.  URL 예시:https://examplesaname.bluexpinfraprod.eastus2.data.azurecr.io/vm-images/9150.01000024.05090105.vhd[]
+URL은 표준 형식을 따릅니다. 자동화를 위해 아래와 같이 URL 문자열을 생성할 수 있습니다. 또는 Azure CLI `az` 명령을 사용하여 URL을 가져올 수도 있습니다. 예시 URL: +https://examplesaname.bluexpinfraprod.eastus2.data.azurecr.io/vm-images/9150.01000024.05090105.vhd+
 
 . 관리되는 디스크 정리
 +
@@ -256,7 +256,7 @@ PS /home/user1> Remove-AzDisk -ResourceGroupName $diskRG -DiskName $diskName
 wget <URL of file examplesaname/Containers/vm-images/9150.01000024.05090105.vhd>
 ----
 +
-URL은 표준 형식을 따릅니다.  자동화를 위해 아래와 같이 URL 문자열을 파생시킬 수 있습니다.  또는 Azure CLI를 사용할 수 있습니다. `az` URL을 가져오는 명령입니다.  URL 예시:https://examplesaname.bluexpinfraprod.eastus2.data.azurecr.io/vm-images/9150.01000024.05090105.vhd[]
+URL은 표준 형식을 따릅니다. 자동화를 위해 아래와 같이 URL 문자열을 생성할 수 있습니다. 또는 Azure CLI `az` 명령을 사용하여 URL을 가져올 수도 있습니다. 예시 URL: +https://examplesaname.bluexpinfraprod.eastus2.data.azurecr.io/vm-images/9150.01000024.05090105.vhd+
 
 . 관리되는 디스크 정리
 +

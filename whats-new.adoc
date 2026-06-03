@@ -228,7 +228,7 @@ https://docs.cloud.google.com/compute/docs/general-purpose-machines#c3_series["G
 
 Azure 단일 및 다중 가용성 영역에 배포된 Cloud Volumes ONTAP 9.18.1 이상 버전은 전송 중인 데이터를 보호하기 위한 계층형 보안 전략의 일환으로 Azure 가상 네트워크(VNet) 암호화를 지원합니다. Cloud Volumes ONTAP는 Azure의 기본 데이터그램 전송 계층 보안(DTLS) 프로토콜을 활용하여 ONTAP 노드, 관리 인터페이스 및 기타 Azure 서비스 간의 통신을 보호하고, 데이터 가로채기 및 무단 액세스를 방지합니다. 이러한 네트워크 수준 암호화는 ONTAP에 내장된 스토리지 및 저장 데이터 보호 기능을 보완하여 데이터에 대한 엔드 투 엔드 보안을 제공합니다.
 
-https://review.docs.netapp.com/us-en/storage-management-cloud-volumes-ontap_gcp-sn-c3-support/reference-networking-azure.html#networking-for-azure-vnet-encryption["Azure VNet 암호화를 위한 네트워킹"^]
+https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/reference-networking-azure.html#networking-for-azure-vnet-encryption["Azure VNet 암호화를 위한 네트워킹"]
 
 
 

@@ -1526,7 +1526,6 @@
   <block id="c8f224037ea295aeec347c94779d9932" category="section-title">아웃바운드 인터넷 접속</block>
   <block id="a4b96c4e196d51924875a82348b64eb4" category="paragraph">콘솔 에이전트는 일상 업무를 위해 여러 엔드포인트에 연결합니다.  엔드포인트에 대한 정보는 다음을 참조하세요.<block ref="e553aa98dbd6de43170bbf57fd2de45c" category="inline-link-rx"></block> 그리고<block ref="3b443e9dd660f6a0a57c859f2ddcc1c3" category="inline-link-rx"></block> .</block>
   <block id="6486582264c3651aad9b7bb2237218eb" category="cell">사용할 수 없는 경우 영향</block>
-  <block id="d5788def9bc230ba887427df9594dd27" category="cell"><block ref="d5788def9bc230ba887427df9594dd27" category="inline-link-rx"></block></block>
   <block id="cce8a0225002a3fa8095ed8782f394a3" category="cell">키 볼트</block>
   <block id="b1905fad16d0cb92c82e293f1516f810" category="cell">고객 관리 키(CMK)를 사용할 때 Azure Key Vault에서 클라이언트 비밀 키를 검색하는 데 사용됩니다.</block>
   <block id="bcf88b7ababd6bfaff375da727117c30" category="cell">표준, 제한, 비공개 모드.</block>
@@ -2161,7 +2160,6 @@
   <block id="d65e638e11d00fc79443255884da16db" category="list-text">일치하는 이미지 버전으로 마켓플레이스 이미지에서 새 관리 디스크를 만듭니다.</block>
   <block id="0088c78e043b70edf9579595a2ee25d7" category="list-text">관리 디스크에서 Azure Storage로 VHD 파일을 내보냅니다.  적절한 액세스 수준으로 컨테이너를 만듭니다.  이 예에서 우리는 다음과 같은 이름의 컨테이너를 사용했습니다.<block ref="58aaa54fc7b24aa9f47628c9303e6032" prefix=" " category="inline-code"></block> ~와 함께<block ref="0e7278cda02a9c0446dcc75a4df34eb2" prefix=" " category="inline-code"></block> 접근 수준.  Azure Portal에서 저장소 계정 액세스 키를 가져옵니다. *저장소 계정 &gt; _examplesaname_ &gt; 액세스 키 &gt; _key1_ &gt; _key_ &gt; 표시 &gt; _&lt;복사&gt;_*</block>
   <block id="d58ff5368da0a9e07116d0914b0e100f" category="list-text">생성된 이미지를 Linux 시스템에 다운로드합니다.  사용하다<block ref="af9d83836ecf1f49c598bcb1995b3c98" prefix=" " category="inline-code"></block> VHD 파일을 다운로드하는 명령:</block>
-  <block id="6338049c264f4d8252a094ef7cc5b989" category="paragraph">URL은 표준 형식을 따릅니다.  자동화를 위해 아래와 같이 URL 문자열을 파생시킬 수 있습니다.  또는 Azure CLI를 사용할 수 있습니다.<block ref="cc8c0a97c2dfcd73caff160b65aa39e2" prefix=" " category="inline-code"></block> URL을 가져오는 명령입니다.  URL 예시:<block ref="2e490f42fcbf7cc055c7df53c297fc39" category="inline-link-rx"></block></block>
   <block id="e29c7c72ff42387a45d366d92342fa54" category="list-text">관리되는 디스크 정리</block>
   <block id="7f38ba9b55c53cbc26b23634ed761a33" category="section-title">Linux에서 Azure CLI를 사용하여 VHD 파일 내보내기</block>
   <block id="de4a72dd00c713fbc81776255cd85070" category="paragraph">로컬 Linux 시스템에서 Azure CLI를 사용하여 마켓플레이스 이미지를 VHD 파일로 내보냅니다.</block>
@@ -4207,13 +4205,10 @@
   <block id="bd7492db1a0b8c1b34be6a58c6374a50" category="list-text">대상 VM에 새 NIC를 만듭니다.</block>
   <block id="a6b97c800c08f0f47cf048c9cd043899" category="list-text">소스 클러스터 서브넷의 서브넷 ID를 찾습니다.</block>
   <block id="5a90251e4d045fbd97e56cd055766b1e" category="list-text">소스 클러스터 서브넷의 서브넷 ID를 사용하여 대상 VM에 새 NIC를 만듭니다.  여기에 새 NIC의 이름을 입력합니다.</block>
-  <block id="5fd584f186e30730537d22a78bb11616" category="inline-xref">브로드캐스트 도메인, 새 NIC에 대한 클러스터 간 LIF</block>
-  <block id="d863813a11392f8ccc266be047976b56" category="list-text">개인IP주소를 저장합니다.  이 IP 주소 &lt;new_added_nic_primary_addr&gt;는 클러스터 간 LIF를 생성하는 데 사용됩니다.<block ref="13642ed959fde49bda6806fad0d107cf" category="inline-xref-macro-rx"></block> .</block>
   <block id="c720b471b5c9a398d1674113fb61ccb3" category="list-text">새 NIC를 VM에 연결합니다.</block>
   <block id="04144942b75846f169eab289baa03332" category="list-text">VM(노드)을 시작합니다.</block>
   <block id="891b715fb21f166e1ddefb85f1ada848" category="list-text">Azure Portal에서 *네트워킹*으로 이동하여 새 NIC(예: nic-new)가 있는지, 가속 네트워킹이 활성화되어 있는지 확인합니다.</block>
   <block id="0b2645871b4d5e300b856a5676815053" category="paragraph">HA 쌍 배포의 경우 파트너 노드에 대해 단계를 반복합니다.</block>
-  <block id="75ca82ebaa2ab2a348dab6de8af96db1" category="section-title">2단계: 새 NIC에 대한 새 IP 공간, 브로드캐스트 도메인 및 클러스터 간 LIF 만들기</block>
   <block id="f81ad401f01ac6ccee4552cee262ea96" category="paragraph">클러스터 간 LIF를 위한 별도의 IP 공간은 클러스터 간 복제를 위한 네트워킹 기능 간의 논리적 분리를 제공합니다.</block>
   <block id="bf5db4b0d890ae0f47f0666b4786c11e" category="paragraph">다음 단계에서는 ONTAP CLI를 사용하세요.</block>
   <block id="5caa556e7511fbc031e556f35273b4b5" category="list-text">새로운 IPspace(new_ipspace)를 생성합니다.</block>
@@ -6165,7 +6160,6 @@
   <block id="1a7265e4a0716c5c59fbf92d4b2b8f8b" category="section-title">Azure의 Cloud Volumes ONTAP용 VNet 보안</block>
   <block id="a128f7270c0bfb9c5f5d16ec39f0d354" category="paragraph">Azure 단일 및 다중 가용성 영역에 배포된 Cloud Volumes ONTAP 9.18.1 이상 버전은 전송 중인 데이터를 보호하기 위한 계층형 보안 전략의 일환으로 Azure 가상 네트워크(VNet) 암호화를 지원합니다. Cloud Volumes ONTAP는 Azure의 기본 데이터그램 전송 계층 보안(DTLS) 프로토콜을 활용하여 ONTAP 노드, 관리 인터페이스 및 기타 Azure 서비스 간의 통신을 보호하고, 데이터 가로채기 및 무단 액세스를 방지합니다. 이러한 네트워크 수준 암호화는 ONTAP에 내장된 스토리지 및 저장 데이터 보호 기능을 보완하여 데이터에 대한 엔드 투 엔드 보안을 제공합니다.</block>
   <block id="472b8c31c7082d1e8c4c46bb6921f950" category="inline-link">Azure VNet 암호화를 위한 네트워킹</block>
-  <block id="2f932ac183ffb505894bacafe67a78d0" category="paragraph"><block ref="2f932ac183ffb505894bacafe67a78d0" category="inline-link-rx"></block></block>
   <block id="9c297e88761d2ab159b96b1ba8f49580" category="inline-link">Azure Virtual Network(VNet) 암호화</block>
   <block id="539afb5045a490ab5c07c8b2f81797d3" category="paragraph">Cloud Volumes ONTAP는 VNet 내부 또는 피어링된 VNet 간의 VM 간 트래픽<block ref="a484d984d3918d739142ebb03b7cf0fe" category="inline-link-rx"></block>을 지원합니다. 이 기능은 Azure VNet 계층에서 구성되며 Cloud Volumes ONTAP 토폴로지(단일 노드 또는 HA)와는 무관합니다.</block>
   <block id="6da8d6e9b798741f378936006c625899" category="paragraph">VM의 NIC에서 가속 네트워킹이 활성화되어 있는지 확인하고 Azure VNet 암호화 요구 사항 및 제한 사항을 검토한 후 해당 기능을 활성화하면 됩니다. NetApp 관리형 로드 밸런서 개체는 수정해서는 안 됩니다.</block>
@@ -6245,8 +6239,6 @@
   <block id="81886430867de94e8c64a4d6ee03885f" category="list-text">디스크 크기: 100 GB</block>
   <block id="4f78751a4c59d02232a84cf0f75f106b" category="list-text">외부 IP 할당: False</block>
   <block id="1ce82e3f1abec4157983f159c2519b6e" category="list-text">네트워크: 기본 또는 프라이빗.</block>
-  <block id="f6ab2d5d47935ec62410c5a522057350" category="inline-link">Google API</block>
-  <block id="31ee5d7a195dd642f2dd5c5892f66a66" category="list-text"><block ref="3a79aa9a9ac20e9b7507d4a67f3c5626" category="inline-link-rx"></block>에 액세스하도록 구성된 서브넷. 서브넷이 Google API에 액세스할 수 있도록 하려면 다음 단계를 수행하십시오.</block>
   <block id="4e778f784bb81e3fa2540f16b2e516f1" category="list-text">서브넷에 대해 "Private Google Access"가 켜져 있는지 확인하십시오.</block>
   <block id="3ddc338aacbdc94d99095f1bc9dc5e9f" category="list-text">*VPC Network 레벨 &gt; Private Service Access 탭 &gt; 서비스에 할당된 IP 범위*로 이동하십시오.</block>
   <block id="d67cbfbd26657ae0f146b4f91df6172e" category="list-text">*IP 범위 할당*을 선택하고 Google Compute Service에 대한 프라이빗 연결의 내부 IP 범위를 할당합니다.</block>
@@ -6526,4 +6518,12 @@
   <block id="3ac842cf432c6d2ce6346cfe9dea6126" category="admonition">선택한 버전에 대해 최신 릴리스 후보, 일반 출시 또는 패치 릴리스가 있는 경우 콘솔은 작업 환경을 생성할 때 시스템을 해당 버전으로 업데이트합니다. 예를 들어 Cloud Volumes ONTAP 9.16.1 P3을 선택했는데 9.16.1 P4를 사용할 수 있는 경우 업데이트가 발생합니다. 단, 9.15에서 9.16으로의 업데이트와 같이 릴리스 간에는 업데이트가 발생하지 않습니다.</block>
   <block id="120dc003edb30e1d44fc4426ef7b9e3d" category="paragraph">전환 도구는 NetApp 지원 사이트에서 사용할 수 있으며 다음과 같은 산출물을 생성합니다.</block>
   <block id="f669698de3cebd29244fce6e24b7e95d" category="section-title">단일 노드 시스템</block>
+  <block id="fbc3e3c2759ebe3efb09314a1953aa89" category="paragraph"><block ref="fbc3e3c2759ebe3efb09314a1953aa89" category="inline-link-rx"></block></block>
+  <block id="b39f7544362881f0aafb15d7d3e6bc25" category="cell">\https://vault.azure.net</block>
+  <block id="9662693f3c1663d2242d4d8d1147a767" category="inline-link">Google Cloud API</block>
+  <block id="2080a2c0b869df45aca08894b2c01246" category="list-text"><block ref="51f295940ba1bc73660c1286161697d0" category="inline-link-rx"></block>에 액세스하도록 구성된 서브넷. 서브넷이 Google API에 액세스할 수 있도록 하려면 다음 단계를 수행하십시오.</block>
+  <block id="07217be0b3d28cf0ad81e35564e43c03" category="paragraph">URL은 표준 형식을 따릅니다. 자동화를 위해 아래와 같이 URL 문자열을 생성할 수 있습니다. 또는 Azure CLI<block ref="cc8c0a97c2dfcd73caff160b65aa39e2" prefix=" " category="inline-code"></block> 명령을 사용하여 URL을 가져올 수도 있습니다. 예시 URL: +https://examplesaname.bluexpinfraprod.eastus2.data.azurecr.io/vm-images/9150.01000024.05090105.vhd+</block>
+  <block id="bc076a99113847f4719da894c77ecddb" category="inline-xref">새로운 NIC용 브로드캐스트 도메인 및 인터클러스터 LIF</block>
+  <block id="f1d926658b88d28bd7f5b0cf55a6dd7a" category="list-text">privateIPAddress를 저장하세요. 이 IP 주소&lt;new_added_nic_primary_addr&gt;는 <block ref="dad33d52d8c169ff9af931bc22cbdf4c" category="inline-xref-macro-rx"></block>에서 클러스터 간 LIF를 생성하는 데 사용됩니다.</block>
+  <block id="e8ffd3ffeea761edd5ebf0cfb97c0bb0" category="section-title">[[step-second]]2단계: 새 NIC에 대한 새 IPspace, 브로드캐스트 도메인 및 인터클러스터 LIF 생성</block>
 </blocks>

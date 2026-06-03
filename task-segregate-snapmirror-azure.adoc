@@ -85,7 +85,7 @@ az network vnet subnet show -g <src_vnet-rg> -n <src_subnet> --vnet-name <vnet> 
 ----
 az network nic create -g <dest_node-rg> -n <dest_node-vm-nic-new> --subnet <id_from_prev_command> --accelerated-networking true
 ----
-.. 개인IP주소를 저장합니다.  이 IP 주소 <new_added_nic_primary_addr>는 클러스터 간 LIF를 생성하는 데 사용됩니다.<<Step 2: Create a new IPspace,브로드캐스트 도메인, 새 NIC에 대한 클러스터 간 LIF>> .
+.. privateIPAddress를 저장하세요. 이 IP 주소<new_added_nic_primary_addr>는 <<step-second,새로운 NIC용 브로드캐스트 도메인 및 인터클러스터 LIF>>에서 클러스터 간 LIF를 생성하는 데 사용됩니다.
 
 
 . 새 NIC를 VM에 연결합니다.
@@ -112,7 +112,7 @@ HA 쌍 배포의 경우 파트너 노드에 대해 단계를 반복합니다.
 
 
 
-== 2단계: 새 NIC에 대한 새 IP 공간, 브로드캐스트 도메인 및 클러스터 간 LIF 만들기
+== [[step-second]]2단계: 새 NIC에 대한 새 IPspace, 브로드캐스트 도메인 및 인터클러스터 LIF 생성
 
 클러스터 간 LIF를 위한 별도의 IP 공간은 클러스터 간 복제를 위한 네트워킹 기능 간의 논리적 분리를 제공합니다.
 
