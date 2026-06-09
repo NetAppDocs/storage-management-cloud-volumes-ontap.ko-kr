@@ -1,0 +1,17 @@
+= AWS에서 Cloud Volumes ONTAP에 지원되는 새로운 EC2 인스턴스
+:allow-uri-read: 
+
+
+
+
+=== AWS에서 Cloud Volumes ONTAP에 지원되는 새로운 EC2 인스턴스
+
+Cloud Volumes ONTAP 9.16.1 이상 버전은 AWS에서 신규 및 기존 단일 노드와 고가용성(HA) 쌍 배포 모두에 대해 M6id 및 M6idn EC2 인스턴스 제품군을 지원합니다. 이러한 6세대 인스턴스는 5세대 범용 시스템에 비해 더 빠른 처리 속도, 강력한 네트워킹 기능 및 향상된 성능을 제공합니다.
+
+* *M6id 인스턴스*: 고속 저지연 로컬 NVMe 스토리지를 통해 컴퓨팅 성능과 메모리 용량의 균형을 제공합니다. 모든 M6id 인스턴스 크기는 Flash Cache를 지원합니다. 이러한 인스턴스는 데이터 로깅 및 미디어 처리와 같은 워크로드에 적합합니다.
+* *M6idn 인스턴스*: M6id 인스턴스와 동일한 로컬 NVMe 스토리지 기능을 제공합니다. 모든 M6idn 인스턴스 크기는 Flash Cache를 지원합니다.
+
+
+고성능 또는 메모리 집약적인 워크로드에는 m6id.xlarge, m6id.2xlarge, m6idn.xlarge 및 m6idn.2xlarge 인스턴스 유형을 권장하지 않습니다. 이러한 워크로드에는 코어 개수와 메모리 용량이 더 큰 인스턴스 유형을 사용하십시오.
+
+자세한 내용은 https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-aws.html["AWS의 Cloud Volumes ONTAP 에 지원되는 구성"^]을 참조하세요.
