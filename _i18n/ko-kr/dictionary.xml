@@ -6532,4 +6532,7 @@
   <block id="2723587cecc87d757adc3d7f42677613" category="paragraph">자세한 내용은<block ref="5facb34de99943f35a6951018b8a6bef" category="inline-link-rx"></block>을 참조하세요.</block>
   <block id="3e323562bd488e4cbd90a025b9424181" category="section-title">2026년 6월 8일</block>
   <block id="ee679c5a83450dd8f0c139cea8a1cc40" category="doc">AWS의 Cloud Volumes ONTAP용 새 EC2 인스턴스 지원</block>
+  <block id="f1e8426ee8789bca46b26081b788d901" category="doc">Cloud Volumes ONTAP의 새로운 Azure 지역 지원</block>
+  <block id="58c64fbe360d29edfbfa0f1e30f23980" category="paragraph">이제 말레이시아 서부(malaysiawest) 지역의 Azure에서 단일 및 다중 가용 영역에 Cloud Volumes ONTAP 9.12.1 GA 이상 버전을 배포할 수 있습니다. 여기에는 단일 노드 및 고가용성(HA) 배포가 모두 포함됩니다.</block>
+  <block id="13a1b8a317b4b6dbe05a3757a911ea12" category="section-title">2026년 6월 11일</block>
 </blocks>
