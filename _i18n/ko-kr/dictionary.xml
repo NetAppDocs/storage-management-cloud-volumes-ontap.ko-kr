@@ -452,7 +452,6 @@
   <block id="8b35709cd044db5067d3521df2dcaf1e" category="paragraph">Cloud Volumes ONTAP 시스템을 추가할 때 스토리지 계층을 선택할 수 있으며, 나중에 언제든지 변경할 수 있습니다.  저장 계층 변경에 대한 자세한 내용은 다음을 참조하세요.<block ref="689d305972679ec3d62f87ce158f78a1" category="inline-link-macro-rx"></block> .</block>
   <block id="a38b9b490932e9d5b5db3e24784ec656" category="paragraph">데이터 계층화를 위한 스토리지 액세스 계층은 볼륨별이 아닌 시스템 전체에 적용됩니다.</block>
   <block id="3844834e9306a66948e49d6149c5a299" category="section-title">Google Cloud의 데이터 계층화</block>
-  <block id="f6535844f45781691afa19e3fe67a627" category="paragraph">Google Cloud에서 데이터 계층화를 활성화하면 Cloud Volumes ONTAP 핫 데이터의 성능 계층으로 영구 디스크를 사용하고 비활성 데이터의 용량 계층으로 Google Cloud Storage 버킷을 사용합니다.</block>
   <block id="3b8940895816a07ee6f7b4cd2d7353e3" category="list-text">성능 계층은 SSD 영구 디스크, 균형 영구 디스크 또는 표준 영구 디스크가 될 수 있습니다.</block>
   <block id="f2bc66356d174d95b97b4e9b8b873540" category="list-text">Cloud Volumes ONTAP 시스템은 비활성 데이터를 단일 Google Cloud Storage 버킷에 계층화합니다.</block>
   <block id="c70455c0571fb32b900ce3ff0f662cbf" category="paragraph">콘솔은 각 시스템에 대한 버킷을 생성하고 이를 fabric-pool-_cluster unique identifier_로 명명합니다.  각 볼륨마다 다른 버킷이 생성되지 않습니다.</block>
@@ -462,11 +461,6 @@
   <block id="ed2bfa2a7df130888132e9df08fe91a7" category="list-text">접근 제어: 세분화됨</block>
   <block id="59ec9a96a05b9ff668ebee36565638b7" category="list-text">보호: 없음</block>
   <block id="77d680745644d1c19a022cc0a306f88b" category="list-text">데이터 암호화: Google 관리 키</block>
-  <block id="1a09137ca087e36b72504f4276c7cd08" category="list-text">계층형 데이터의 기본 저장 클래스는 _표준 저장_ 클래스입니다.  데이터에 자주 접근하지 않는다면 _Nearline Storage_ 또는 _Coldline Storage_로 변경하여 저장 비용을 줄일 수 있습니다.  저장 클래스를 변경하면 이후의 비활성 데이터는 선택한 클래스로 직접 이동됩니다.</block>
-  <block id="0d79695d01dd236a00fcb17dec14227f" category="admonition">저장 클래스를 변경해도 기존의 비활성 데이터는 기본 저장 클래스를 유지합니다.  기존 비활성 데이터의 저장 클래스를 변경하려면 수동으로 지정해야 합니다.</block>
-  <block id="2071f090de049a0bafd6e8e9ebc886a4" category="inline-link">Google Cloud 문서: 스토리지 클래스</block>
-  <block id="5cb074dc9cd7d3ff4cc8d81685f4cf8b" category="paragraph">데이터에 액세스하는 경우 액세스 비용이 더 높아지므로 스토리지 클래스를 변경하기 전에 이 점을 고려하세요.  자세한 내용은 다음을 참조하세요.<block ref="3f6491f63b376fc9e505b3fd50e825aa" category="inline-link-rx"></block> .</block>
-  <block id="f24b126c7812ed3265acaed1b04b6cd4" category="paragraph">시스템을 생성할 때 저장 계층을 선택할 수 있으며, 나중에 언제든지 변경할 수 있습니다.  저장 클래스 변경에 대한 자세한 내용은 다음을 참조하세요.<block ref="689d305972679ec3d62f87ce158f78a1" category="inline-link-macro-rx"></block> .</block>
   <block id="238d935e644053bb35c58e2b34583131" category="section-title">데이터 계층화 및 용량 제한</block>
   <block id="2646e089c806882f23bac38369cf85f4" category="paragraph">데이터 계층화를 활성화하면 시스템 용량 제한이 동일하게 유지됩니다.  제한은 성능 계층과 용량 계층에 걸쳐 분산됩니다.</block>
   <block id="837170b3ba6314929f53008e61dfc57b" category="section-title">볼륨 티어링 정책</block>
@@ -6535,4 +6529,8 @@
   <block id="f1e8426ee8789bca46b26081b788d901" category="doc">Cloud Volumes ONTAP의 새로운 Azure 지역 지원</block>
   <block id="58c64fbe360d29edfbfa0f1e30f23980" category="paragraph">이제 말레이시아 서부(malaysiawest) 지역의 Azure에서 단일 및 다중 가용 영역에 Cloud Volumes ONTAP 9.12.1 GA 이상 버전을 배포할 수 있습니다. 여기에는 단일 노드 및 고가용성(HA) 배포가 모두 포함됩니다.</block>
   <block id="13a1b8a317b4b6dbe05a3757a911ea12" category="section-title">2026년 6월 11일</block>
+  <block id="7cf6c49769b974e82419eeccae1b1712" category="paragraph">Google Cloud에서 데이터 계층화를 사용하도록 설정하면 Cloud Volumes ONTAP은 자주 사용되는 데이터의 성능 계층으로 영구 디스크를 사용하고, 사용되지 않는 데이터의 용량 계층으로 Google Cloud Storage 버킷을 사용합니다. 시스템을 생성할 때 스토리지 계층을 선택할 수 있으며, 이후 언제든지 변경할 수 있습니다. 스토리지 클래스 변경에 대한 자세한 내용은 <block ref="689d305972679ec3d62f87ce158f78a1" category="inline-link-macro-rx"></block>을 참조하십시오.</block>
+  <block id="c3d731221ec9d09a910395abd309640a" category="inline-link">스토리지 클래스</block>
+  <block id="40377bff33838260be995513a1e2c8e6" category="inline-link">Google Cloud 문서: 객체 수명 주기 관리</block>
+  <block id="0a69db980802dac8e0b54038dc2364d0" category="list-text">Google Cloud는 <block ref="ec8949881e2dffa4d0e8750c51cd0497" category="inline-link-rx"></block>비용 및 데이터 가용성을 관리하는 데 사용됩니다. 데이터 액세스 시 비용이 증가하므로 예상 데이터 액세스 빈도에 따라 스토리지 클래스를 선택하는 것이 좋습니다. 계층형 데이터의 기본 스토리지 클래스는 _Standard Storage_입니다. 수동으로 변경하지 않는 한 모든 비활성 데이터는 기본 스토리지 클래스를 유지합니다. 비활성 데이터의 스토리지 클래스를 변경하려면 <block ref="9f653ab672497f99d3217a50d3927264" category="inline-link-rx"></block>을 참조하십시오.</block>
 </blocks>
