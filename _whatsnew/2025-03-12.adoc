@@ -4,6 +4,7 @@
 
 
 
+[[new-regions-supported-for-multiple-availability-zone-deployments-in-azure]]
 === Azure에서 여러 가용성 영역 배포를 지원하는 새로운 지역
 
 다음 지역은 이제 Cloud Volumes ONTAP 9.12.1 GA 이상에 대해 Azure에서 HA 다중 가용성 영역 배포를 지원합니다.

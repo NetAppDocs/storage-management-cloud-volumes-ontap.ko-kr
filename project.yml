@@ -133,7 +133,9 @@ sidebar:
         url: "/task-setting-up-gcp-encryption.html"
       - title: 라이센스 설정
         url: "/task-set-up-licensing-google.html"
-      - title: Google Cloud에서 Cloud Volumes ONTAP 실행
+      - title: Google Cloud에서 기본값으로 Cloud Volumes ONTAP 배포
+        url: "/task-quick-deploy-gcp.html"
+      - title: Google Cloud의 고급 옵션을 사용하여 Cloud Volumes ONTAP 배포
         url: "/task-deploying-gcp.html"
       - title: Google Cloud Platform 이미지 검증
         entries:

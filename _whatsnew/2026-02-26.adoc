@@ -4,6 +4,7 @@
 
 
 
+[[support-for-google-infrastructure-manager-for-private-mode-deployments]]
 === 비공개 모드 배포를 위한 Google Infrastructure Manager 지원
 
 Cloud Volumes ONTAP 9.16.1 이상에서는 이제 Google Cloud에서 새로운 프라이빗 모드 배포 시  https://docs.cloud.google.com/infrastructure-manager/docs/overview["Google Cloud Infrastructure Manager"^] (IM)을  https://docs.cloud.google.com/deployment-manager/docs/deprecations["Cloud Deployment Manager"^] (DM) 대신 지원합니다. Google은 더 발전된 Infrastructure Manager를 위해 가까운 시일 내에 Deployment Manager를 인프라 서비스에서 지원 중단할 예정입니다.

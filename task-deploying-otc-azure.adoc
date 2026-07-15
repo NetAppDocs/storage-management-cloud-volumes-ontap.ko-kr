@@ -49,6 +49,7 @@ link:task-set-up-licensing-azure.html["라이선싱 설정 방법 알아보기"^
 ====
 
 
+[[launch-a-single-node-cloud-volumes-ontap-system-in-azure]]
 == Azure에서 단일 노드 Cloud Volumes ONTAP 시스템 실행
 
 Azure에서 단일 노드 Cloud Volumes ONTAP 시스템을 시작하려면 Console에서 단일 노드 시스템을 생성해야 합니다.
@@ -273,6 +274,7 @@ CAUTION: 배포 프로세스가 완료된 후에는 Azure Portal에서 시스템
 
 
 
+[[launch-a-cloud-volumes-ontap-ha-pair-in-azure]]
 == Azure에서 Cloud Volumes ONTAP HA 쌍 시작
 
 Azure에서 Cloud Volumes ONTAP HA 쌍을 시작하려면 콘솔에서 HA 시스템을 만들어야 합니다.

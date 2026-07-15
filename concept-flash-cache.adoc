@@ -18,18 +18,21 @@ summary: 일부 Cloud Volumes ONTAP 구성에는 로컬 NVMe 스토리지가 포
 
 
 
+[[whats-flash-cache]]
 == 플래시 캐시란 무엇인가요?
 
 Flash Cache는 최근 읽은 사용자 데이터와 NetApp 메타데이터를 실시간으로 지능적으로 캐싱하여 데이터 액세스 속도를 높입니다. 데이터베이스, 이메일, 파일 서비스 등 무작위 읽기 작업이 많은 작업에 효과적입니다.
 
 
 
+[[supported-configurations]]
 == 지원되는 구성
 
 Flash Cache는 특정 Cloud Volumes ONTAP 구성에서 지원됩니다.  지원되는 구성을 보려면 https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/index.html["Cloud Volumes ONTAP 릴리스 노트"^]
 
 
 
+[[limitations]]
 == 제한 사항
 
 ifdef::aws[]

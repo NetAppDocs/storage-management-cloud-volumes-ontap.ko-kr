@@ -1,0 +1,86 @@
+= Cloud Volumes ONTAP 9.19.1 RC
+:allow-uri-read: 
+
+
+
+
+[[cloud-volumes-ontap-9-19-1-rc]]
+=== Cloud Volumes ONTAP 9.19.1 RC
+
+이제 NetApp Console을 사용하여 Google Cloud에서 Cloud Volumes ONTAP 9.19.1 릴리스 후보(RC) 버전을 배포하고 관리할 수 있습니다. 이 버전은 Amazon Web Service(AWS) 및 Microsoft Azure(Azure)에서는 배포 및 업그레이드가 불가능합니다.
+
+link:https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/["Cloud Volumes ONTAP 의 이 릴리스에 대해 자세히 알아보세요."^] .
+
+
+
+[[support-for-next-generation-google-cloud-vms-in-cloud-volumes-ontap-ha]]
+=== Cloud Volumes ONTAP HA 에서 차세대 Google Cloud VM 지원
+
+9.19.1에서 NetApp은 Cloud Volumes ONTAP 고가용성(HA) 배포를 N2 VM에서 차세대 Google Cloud C3 시리즈 VM으로 전환하여 더욱 빠르고 확장 가능한 환경을 제공합니다.
+
+
+NOTE: 이 지원은 단일 가용 영역(AZ) 고가용성(HA) 배포에만 적용됩니다.
+
+이제 Google Cloud에서 Cloud Volumes ONTAP 9.19.1 이상 버전을 배포할 때 C3 시리즈 VM을 활용할 수 있습니다. 이러한 VM은 향상된 성능과 더 높은 용량 한도를 제공합니다. Google Virtual NIC(gVNIC)와 Hyperdisk Balanced 디스크를 사용하여 집약적인 워크로드에서 동적인 성능을 제공합니다.
+
+Cloud Volumes ONTAP 시스템이 9.19.1 이상 버전인 경우, 단일 AZ에 간편하게 배포할 수 있도록 사전 구성된 패키지는 자동으로 C3 VM을 사용하며, 워크로드 요구 사항에 따라 IOPS 및 처리량 매개변수를 사용자 지정할 수 있습니다. 마찬가지로, 애그리게이트를 생성할 때 Google Cloud에서 성능과 확장성을 향상시키기 위해 Zonal Hyperdisk Balanced 디스크를 추가할 수 있습니다. 또한 기본 Flash Cache 지원을 위해 C3 시리즈 머신의 LSSD 버전을 선택할 수도 있습니다.
+
+다음 사항에 유의하십시오:
+
+* Cloud Volumes ONTAP 배포 환경에서는 C3 VM을 N2-series VM으로 또는 그 반대로 변경할 수 없습니다. 하지만 C3 제품군 내의 다른 변형 인스턴스 유형 간에는 전환이 가능합니다.
++
+
+NOTE: C3 제품군 내에서 인스턴스 유형을 변경하는 데 걸리는 시간은 연결된 데이터 디스크 수에 따라 달라질 수 있습니다. 성능 저하를 방지하려면 사전에 구성을 계획하십시오.
+
+* 인스턴스 유형을 변경할 때 대상 VM으로 c3-standard-44 또는 c3-standard-88과 해당 로컬 SSD(LSSD) 변형을 선택하면 Google 네트워크 서비스 송신 네트워크 계층이 자동으로 _Tier-1_로 적용됩니다. 다른 C3 변형으로 되돌리면 송신 네트워크 계층은 _Standard_로 설정됩니다.
++
+
+NOTE: 송신 네트워크 계층을 _Tier-1_로 변경하면 추가 비용이 발생합니다. 배포 및 업그레이드 계획을 적절히 수립하십시오.
+
+* C3의 LSSD 변형을 선택하면 Flash Cache가 기본적으로 활성화됩니다. 대상 변형이 Flash Cache를 지원하더라도 Cloud Volumes ONTAP 배포 환경에서는 C3 LSSD 변형 간에 전환할 수 없습니다.
+* C3 VM에서 새 애그리게이트와 기존 애그리게이트 모두에 볼륨을 추가할 수 있습니다.
+* N2 VM 유형의 Cloud Volumes ONTAP 시스템을 C3 VM 유형으로 복제할 때 디스크 유형은 기본적으로 Hyperdisk Balanced로 설정됩니다.
+* NetApp Console 또는  `PUT /gcp/ha/aggregates/{workingEnvironmentId}/{aggregateName}` API를 사용하여 애그리게이트를 추가할 때 IOPS 및 처리량 설정을 변경할 수 있습니다.
+
+
+https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-gcp.html["Google Cloud에서 Cloud Volumes ONTAP에 대해 지원되는 구성"^]
+
+https://docs.cloud.google.com/compute/docs/general-purpose-machines#c3_series["Google 문서: C3 머신 시리즈"^]
+
+
+
+[[simplified-cloud-volumes-ontap-deployment-in-google-cloud]]
+=== Google Cloud에서 Cloud Volumes ONTAP 배포 간소화
+
+이제 *빠른 생성* 마법사를 사용하여 단일 노드 및 고가용성(HA) 구성 모두에 대해 Google Cloud에 Cloud Volumes ONTAP을 배포할 수 있습니다. 이 간소화된 프로세스는 단계를 줄이고, 단일 페이지에서 기본값을 자동으로 설정하며, 탐색을 최소화하여 더 빠르고 쉽게 배포할 수 있도록 합니다.
+
+.관련 링크
+* https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-quick-deploy-gcp.html["빠른 생성을 사용하여 Google Cloud에 Cloud Volumes ONTAP 배포"^]
+* https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-deploying-gcp.html["Google Cloud의 고급 옵션을 사용하여 Cloud Volumes ONTAP 배포"^]
+
+
+
+
+[[introducing-access-roles-for-cloud-volumes-ontap]]
+=== Cloud Volumes ONTAP의 액세스 역할 소개
+
+NetApp은 Cloud Volumes ONTAP에 대한 ID 및 액세스 관리(IAM) 역할을 도입하여 역할 기반 액세스 제어(RBAC)를 통해 보안을 강화하고 규정 준수를 간소화합니다. 사용자는 NetApp Console에 기존 자격 증명을 사용하여 로그인하고 Cloud Volumes ONTAP 작업을 계속 수행할 수 있습니다. 그러나 이제 인증은 ID 페더레이션을 통해 이루어지므로 Console 관리자가 이러한 기능을 더욱 세밀하게 제어할 수 있습니다. 모든 사용자는 Cloud Volumes ONTAP에서 작업을 수행하려면 다음 역할 중 하나를 보유해야 합니다. 역할이 없으면 사용자는 Cloud Volumes ONTAP 인스턴스를 보거나 액세스할 수 없습니다.
+
+* *Cloud Volumes ONTAP 뷰어*: Cloud Volumes ONTAP 화면 및 탭에 대한 읽기 전용 액세스 권한을 부여합니다. 이 역할에서는 특정 화면 및 작업 버튼이 비활성화됩니다.
+* *Cloud Volumes ONTAP operator*: 볼륨 추가, 스토리지 관리, 복제 구성과 같은 일상적인 관리 작업을 지원합니다.
+* *Cloud Volumes ONTAP admin*: 모든 Cloud Volumes ONTAP 작업에 대한 전체 액세스 권한을 제공합니다.
+
+
+Console 관리자는 *Administration > Identity*에서 Cloud Volumes ONTAP 사용자에게 역할을 할당합니다. 역할 권한은 사용자의 소속 조직을 기준으로 하며 해당 조직 내의 모든 Cloud Volumes ONTAP 시스템에 적용됩니다.
+
+Cloud Volumes ONTAP은 각 사용자의 권한을 로컬 캐시에 저장하여 RBAC를 적용하며, 이 캐시는 매시간 자동으로 갱신됩니다. 사용자에게 새 역할이 할당되거나 기존 역할이 변경되면 변경 사항이 적용되는 데 최대 1시간이 소요될 수 있으며, 이후 해당 역할에서 허용된 모든 워크플로가 활성화됩니다.
+
+
+NOTE: 콘솔 에이전트를 처음 배포하거나 기존 콘솔 에이전트를 Console 4.9.0 이상 버전으로 업그레이드할 때, 일회성 시딩 프로세스가 조직의 모든 기존 사용자에게 Cloud Volumes ONTAP 역할을 자동으로 할당합니다. 이 프로세스는 완료하는 데 최대 30분이 소요될 수 있습니다. 완료되면 콘솔은 기존 사용자에게 적절한 역할을 할당합니다.
+
+Cloud Volumes ONTAP 역할은 Amazon Web Service(AWS), Microsoft Azure(Azure) 및 Google Cloud 환경에 적용됩니다.
+
+.관련 링크
+* https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["NetApp Console 액세스 역할"^]
+* https://docs.netapp.com/us-en/console-setup-admin/reference-iam-cvo-roles.html["NetApp Console의 Cloud Volumes ONTAP 액세스 역할"^]
+

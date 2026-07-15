@@ -21,6 +21,7 @@ CAUTION: NetApp Console 에서 모든 디스크와 집계를 만들고 삭제해
 
 
 
+[[overview]]
 == 개요
 
 Cloud Volumes ONTAP 클라우드 공급자 스토리지를 디스크로 사용하고 이를 하나 이상의 집계로 그룹화합니다.  집계는 하나 이상의 볼륨에 대한 저장소를 제공합니다.
@@ -36,6 +37,7 @@ ifdef::aws[]
 
 
 
+[[aws-storage]]
 == AWS 스토리지
 
 AWS에서 Cloud Volumes ONTAP 사용자 데이터에 EBS 스토리지를 사용하고 일부 EC2 인스턴스 유형에서는 로컬 NVMe 스토리지를 Flash Cache로 사용합니다.
@@ -68,6 +70,7 @@ ifdef::azure[]
 
 
 
+[[azure-storage]]
 == Azure 스토리지
 
 Azure에서 애그리게이트는 최대 12개의 동일한 크기의 디스크를 포함할 수 있습니다. 디스크 유형과 최대 디스크 크기는 단일 노드 시스템을 사용하는지 또는 HA 쌍을 사용하는지에 따라 달라집니다.
@@ -113,11 +116,14 @@ ifdef::gcp[]
 
 
 
+[[google-cloud-storage]]
 == 구글 클라우드 스토리지
 
 Google Cloud에서는 집계에 크기가 모두 같은 디스크를 최대 6개까지 포함할 수 있습니다.  최대 디스크 크기는 64TiB입니다.
 
 디스크 유형은 _영역 SSD 영구 디스크_, _영역 균형 영구 디스크_ 또는 _영역 표준 영구 디스크_가 될 수 있습니다.  Google Storage 버킷과 영구 디스크를 페어링할 수 있습니다.link:concept-data-tiering.html["저렴한 객체 스토리지"] .
+
+Cloud Volumes ONTAP 9.18.1 이상 버전에서 단일 노드 배포를 위한 Hyperdisk Balanced 디스크를 지원하고, 9.19.1 이상 버전에서는 단일 가용 영역(AZ)의 고가용성(HA) 구성을 위한 Hyperdisk Balanced 디스크를 지원합니다.
 
 *관련 링크*
 
@@ -129,12 +135,14 @@ endif::gcp[]
 
 
 
+[[raid-type]]
 == RAID 유형
 
 각 Cloud Volumes ONTAP 집계의 RAID 유형은 RAID0(스트라이핑)입니다.  Cloud Volumes ONTAP 디스크 가용성과 내구성을 위해 클라우드 공급자를 활용합니다.  다른 RAID 유형은 지원되지 않습니다.
 
 
 
+[[hot-spares]]
 === 핫 스페어
 
 RAID0은 중복성을 위한 핫 스페어 사용을 지원하지 않습니다.

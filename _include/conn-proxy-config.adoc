@@ -4,6 +4,7 @@
 
 
 
+[[network-proxy-configuration-of-netapp-console-agent]]
 === NetApp Console 에이전트의 네트워크 프록시 구성
 
 NetApp Console 에이전트의 프록시 서버 구성을 사용하여 Cloud Volumes ONTAP 에서 아웃바운드 인터넷 액세스를 활성화할 수 있습니다.  콘솔은 두 가지 유형의 프록시를 지원합니다.
