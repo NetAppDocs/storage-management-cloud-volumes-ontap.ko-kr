@@ -1,0 +1,46 @@
+= AWS Marketplace에서 Cloud Volumes ONTAP의 간편한 온보딩 소개
+:allow-uri-read: 
+
+
+
+
+[[introducing-simplified-onboarding-of-cloud-volumes-ontap-from-aws-marketplace]]
+=== AWS Marketplace에서 Cloud Volumes ONTAP의 간편한 온보딩 소개
+
+NetApp은 AWS Marketplace에서 Cloud Volumes ONTAP을 위한 간소화된 온보딩 워크플로를 도입하여 수동 작업과 온보딩 과정의 마찰을 줄였습니다.
+
+이전에는 AWS Marketplace에서 Cloud Volumes ONTAP을 배포하려면 여러 화면을 탐색하고 역할, 정책 및 자격 증명을 수동으로 구성해야 했습니다. 이로 인해 온보딩 속도가 느리고 오류 발생 가능성이 높았습니다.
+
+새로운 온보딩 워크플로는 다음과 같은 기능을 통해 마켓플레이스 구독에서 완벽하게 작동하는 Cloud Volumes ONTAP 환경으로의 전환을 간소화합니다.
+
+. AWS Marketplace의 Cloud Volumes ONTAP 전용 상품 목록 구독: AWS Marketplace에서 Cloud Volumes ONTAP 독립형 상품 목록을 구독하고, 구독을 구매한 후, AWS 계정을 설정합니다(계정이 없는 경우).
+. NetApp 콘솔의 안내 경로: NetApp 콘솔에서 계정을 설정하면 콘솔이 자동으로 배포 여정을 안내하며, 오른쪽 측면에 안내 경로를 표시합니다. 콘솔을 종료해야 하는 경우 나중에 안내 경로를 다시 시작할 수 있습니다.
+. 구독 연동: 구독을 콘솔에 자동으로 연동하여 수동으로 연결하는 번거로움을 줄일 수 있습니다.
+. AWS 자격 증명 구성을 사용한 Console 에이전트 배포: 필요한 AWS 역할을 자동으로 생성할 수 있습니다. 이 프로세스는 필요한 역할과 정책이 포함된 AWS CloudFormation 스택을 AWS 계정에 배포하여 검토할 수 있도록 한 다음, NetApp Console과 연결하여 수동 IAM 설정을 제거합니다. 그런 다음 에이전트 구성, 네트워킹 및 보안 그룹 설정을 진행하여 에이전트 배포를 시작할 수 있습니다.
+. AWS에 새로운 Cloud Volumes ONTAP 시스템 배포:  `Quick create` 마법사로 바로 이동하여 더욱 빠르고 간편하게 Cloud Volumes ONTAP를 배포할 수 있습니다.
+
+
+.관련 링크
+* https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-quick-deploy-aws.html["빠른 생성 기능을 사용하여 Cloud Volumes ONTAP 배포"^]
+* https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/whats-new.html#flexible-billing-for-cloud-volumes-ontap-and-data-services-in-aws["AWS의 Cloud Volumes ONTAP 및 데이터 서비스에 대한 유연한 요금 청구"^]
+
+
+
+
+[[well-architected-configuration-analysis-for-cloud-volumes-ontap-in-azure]]
+=== Azure의 Cloud Volumes ONTAP에 대한 잘 설계된 구성 분석
+
+NetApp Console에서 이제 Microsoft Azure에서 실행되는 Cloud Volumes ONTAP 시스템에 대한 잘 설계된 구성 분석 기능을 지원합니다. Console은 배포 환경을 매일 분석하여 잘 설계된 상태, 인사이트 및 권장 사항을 제공함으로써 NetApp 모범 사례 및 잘 설계된 프레임워크에 부합하는 시스템을 유지 관리할 수 있도록 지원합니다.
+
+잘 설계된 대시보드는 분석된 시스템의 총 개수를 표시하고 구성 및 심각도 수준별로 리소스를 분류합니다. 시스템 관리자인 경우 Console 대시보드에서 조직 내 구성 문제에 대한 권장 사항을 직접 확인하고 모든 권장 사항이 포함된 CSV 보고서를 다운로드할 수 있습니다. 구성은 다음 기준에 따라 분류됩니다.
+
+* *안정성*: 장애 발생 시에도 워크로드가 정확하고 일관되게 작동하도록 보장합니다.
+* *Security*: 위험 평가 및 완화를 통해 데이터, 시스템 및 자산을 보호합니다.
+* *운영 우수성*: 비즈니스 가치를 극대화하기 위해 아키텍처를 최적화합니다.
+* *비용 최적화*: 비용을 절감하고 최적화하여 더 큰 비즈니스 가치를 실현합니다.
+
+
+.관련 링크
+* https://docs.netapp.com/us-en/console-well-architected/cvo/configuration-analysis-cvo.html["Cloud Volumes ONTAP 구성 분석"^]
+* https://docs.netapp.com/us-en/console-well-architected/improve-configurations-cvo.html["잘 설계된 시스템 구성 구현"^]
+

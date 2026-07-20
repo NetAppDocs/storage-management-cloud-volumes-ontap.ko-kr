@@ -4444,34 +4444,13 @@
   <block id="b8bed80dbd79102cbf54b5efe00489c3" category="paragraph">를 참조하세요<block ref="ad561d482c49648a0d36f6a86e379ff3" category="inline-link-rx"></block> "GcpEncryption" 매개변수 사용에 대한 자세한 내용은 다음을 참조하세요.</block>
   <block id="b10aaff78dfb34e8e7e4c718d4519219" category="summary">Cloud Volumes ONTAP 과 함께 Amazon 암호화를 사용하려면 AWS Key Management Service를 설정해야 합니다.</block>
   <block id="24558fa2d9e2dec026acbaef1270de6f" category="doc">AWS에서 고객 관리 키를 사용하도록 Cloud Volumes ONTAP 설정</block>
-  <block id="b7b5da9f4d5594bacc1509df196de5c3" category="paragraph">Cloud Volumes ONTAP 과 함께 Amazon 암호화를 사용하려면 AWS Key Management Service(KMS)를 설정해야 합니다.</block>
-  <block id="9f56109c17c31f07ff65b26766248ab0" category="list-text">활성 고객 마스터 키(CMK)가 있는지 확인하세요.</block>
-  <block id="bb48d7bc648620f7021e1939a70399e5" category="paragraph">CMK는 AWS 관리형 CMK이거나 고객 관리형 CMK일 수 있습니다.  NetApp Console 및 Cloud Volumes ONTAP 과 동일한 AWS 계정에 있을 수도 있고 다른 AWS 계정에 있을 수도 있습니다.</block>
-  <block id="7f7975d07f7b22c5ac4adcb7da7f9ff6" category="inline-link">AWS 문서: 고객 마스터 키(CMK)</block>
-  <block id="4f6aed083674727be0bd5c99c02ac1eb" category="paragraph"><block ref="4f6aed083674727be0bd5c99c02ac1eb" category="inline-link-rx"></block></block>
-  <block id="28977d81dd9c36c8a12defa3b8a35dc6" category="list-text">콘솔에 대한 권한을 제공하는 IAM 역할을 _키 사용자_로 추가하여 각 CMK에 대한 키 정책을 수정합니다.</block>
-  <block id="059c070cf8c0f3089e8a516b29039297" category="paragraph">IAM(Identity and Access Management) 역할을 주요 사용자로 추가하면 콘솔에서 Cloud Volumes ONTAP 과 함께 CMK를 사용할 수 있는 권한이 부여됩니다.</block>
   <block id="12c408bd16ab2b7bec2d2fd9df4058ec" category="inline-link">AWS 문서: 키 편집</block>
   <block id="4db012a57fce0c7516bb8ccf07c2a6ee" category="paragraph"><block ref="4db012a57fce0c7516bb8ccf07c2a6ee" category="inline-link-rx"></block></block>
-  <block id="16a004e232c7bf28e178d1cf7ee9bf7d" category="list-text">CMK가 다른 AWS 계정에 있는 경우 다음 단계를 완료하세요.</block>
-  <block id="5b8718002a145a073d09eaa86149213b" category="list-text">CMK가 있는 계정에서 KMS 콘솔로 이동합니다.</block>
-  <block id="d2baa122967120a2e92786dc0cfbf8d3" category="list-text">키를 선택하세요.</block>
-  <block id="c1f5858ac0acbfbb819098e1d9d4ff3c" category="list-text">*일반 구성* 창에서 키의 ARN을 복사합니다.</block>
-  <block id="0484251ad0f9d4b7109de7ebe51452b9" category="paragraph">Cloud Volumes ONTAP 시스템을 생성할 때 콘솔에 ARN을 제공해야 합니다.</block>
-  <block id="84afdfea6618796c7ba3de20efb0315c" category="list-text">*다른 AWS 계정* 창에서 콘솔에 권한을 제공하는 AWS 계정을 추가합니다.</block>
-  <block id="5ea0fd87cc4e646dcd09e3c5840247c3" category="paragraph">일반적으로 이 계정에는 콘솔이 배포됩니다.  AWS에 콘솔이 설치되어 있지 않은 경우 콘솔에 대한 AWS 액세스 키를 제공한 계정을 사용하세요.</block>
   <block id="f6c3e4ba12741405212a36846aa18da7" category="inline-image-macro">이 스크린샷은 AWS KMS 콘솔의 "다른 AWS 계정 추가" 버튼을 보여줍니다.</block>
   <block id="6473cb5c9e5edeaeac6c86095a320b04" category="paragraph"><block ref="6473cb5c9e5edeaeac6c86095a320b04" category="inline-image-macro-rx" type="image"></block></block>
   <block id="b6baefed4491989a402be507143bf2ca" category="inline-image-macro">이 스크린샷은 AWS KMS 콘솔의 "다른 AWS 계정" 대화 상자를 보여줍니다.</block>
   <block id="0ac4079be63ae59e0b253ede02d0600d" category="paragraph"><block ref="0ac4079be63ae59e0b253ede02d0600d" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="1da28a44874fafde4e4b450d1e806278" category="list-text">이제 콘솔에 권한을 제공하는 AWS 계정으로 전환하고 IAM 콘솔을 엽니다.</block>
-  <block id="82bb5935870011035cbcd473a3789892" category="list-text">아래 나열된 권한을 포함하는 IAM 정책을 만듭니다.</block>
-  <block id="020e8a2ae8633978c02347a8143cbf53" category="list-text">콘솔에 대한 권한을 제공하는 IAM 역할이나 IAM 사용자에게 정책을 연결합니다.</block>
-  <block id="11d39808224367470cc67c228de1b9a3" category="paragraph">다음 정책은 콘솔이 외부 AWS 계정에서 CMK를 사용하는 데 필요한 권한을 제공합니다.  "리소스" 섹션에서 지역 및 계정 ID를 수정하세요.</block>
   <block id="c2a34cad77f0451e7d0f58a7e0e6e450" category="inline-link">AWS 문서: 다른 계정의 사용자가 KMS 키를 사용하도록 허용</block>
-  <block id="802482a11bca72c205b3a1d95ff61b0a" category="paragraph">이 프로세스에 대한 추가 세부 사항은 다음을 참조하세요.<block ref="9601f431d0df2b9877da4b65b53342b6" category="inline-link-rx"></block> .</block>
-  <block id="c81afb1b84ded76b91ff7f71834201df" category="list-text">고객 관리 CMK를 사용하는 경우 Cloud Volumes ONTAP IAM 역할을 _키 사용자_로 추가하여 CMK에 대한 키 정책을 수정합니다.</block>
-  <block id="c13f89355236652e9c75af1eec63418d" category="paragraph">Cloud Volumes ONTAP 시스템을 생성할 때 IAM 역할이 생성되므로 Cloud Volumes ONTAP 배포한 _후에_ 이 단계를 수행해야 합니다.  (물론, 기존 Cloud Volumes ONTAP IAM 역할을 사용할 수도 있으므로 이 단계를 미리 수행할 수 있습니다.)</block>
   <block id="f71bca1a74e3009d7cff4912558ab628" category="summary">Cloud Volumes ONTAP 있는 VPC 외부에서 NAS 클라이언트가 플로팅 IP 주소에 액세스할 수 있도록 AWS 전송 게이트웨이를 설정합니다.  이 기능은 장애가 발생하면 노드 간에 플로팅 IP가 자동으로 마이그레이션되므로 유용합니다.</block>
   <block id="88f49ea08cc48c12826d7601b30c9af6" category="doc">Cloud Volumes ONTAP HA 쌍에 대한 AWS 전송 게이트웨이 설정</block>
   <block id="74800c4b0c4f7420856e108da469e4d7" category="paragraph">HA 쌍에 대한 액세스를 활성화하기 위해 AWS 전송 게이트웨이를 설정합니다.<block ref="b4592641b260566283cc706f7ca397da" category="inline-link-macro-rx"></block> HA 쌍이 있는 VPC 외부에서.</block>
@@ -6050,7 +6029,6 @@
   <block id="9bdf94b25b3f8ba7bb03a42f48691647" category="cell">Google Cloud 정보</block>
   <block id="b2fe6e8e5b070e72b892f6e209852031" category="admonition">Cloud Volumes ONTAP 시스템이 AWS Local Zone에 있는 경우 Amazon Simple Storage Service(Amazon S3)로의 데이터 계층화는 지원되지 않습니다. Local Zone 외부의 Amazon S3 버킷에 액세스하면 지연 시간이 길어지고 Cloud Volumes ONTAP 활동에 영향을 미치기 때문입니다.</block>
   <block id="d9a38c751a133d3cc1d6d336083fca10" category="list-text">시스템을 생성할 때 API 요청에 "gcpEncryption" 매개변수를 사용하십시오.</block>
-  <block id="02d14173028105a436e6e5dab6a4b14f" category="paragraph">이 단계는 Cloud Volumes ONTAP에서 데이터 계층화를 활성화했으며 Amazon Simple Storage Service(Amazon S3) 버킷에 저장된 데이터를 암호화하려는 경우에 필요합니다.</block>
   <block id="4fe6c7577974d296eafe073a58b28cd0" category="list-text">AWS의 경우, Amazon Simple Storage Service(Amazon S3)에 대한 VPC 엔드포인트가 필요합니다. <block ref="8bf18368a4d50e7d264c6ce0821cc35b" category="inline-xref-macro-rx"></block>.</block>
   <block id="5a608055757169c6aba0a0f0941983c0" category="section-title">콜드 데이터를 Amazon S3로 계층화하기 위한 요구 사항</block>
   <block id="c7a88ab28024271a86ee9c37f4e572db" category="paragraph">Cloud Volumes ONTAP이 Amazon S3에 연결되어 있는지 확인하십시오. 가장 좋은 연결 방법은 S3 서비스에 대한 VPC 엔드포인트를 생성하는 것입니다. 자세한 지침은<block ref="739944581ddd86bd6d09f3841372a69b" category="inline-link-rx"></block>을 참조하십시오.</block>
@@ -6572,4 +6550,70 @@
   <block id="d61e9edc9775b872ce6780755f978cb5" category="list-text"><block ref="d61e9edc9775b872ce6780755f978cb5" category="inline-link-macro-rx"></block></block>
   <block id="658eb72da44348bf013db3a71420c2be" category="section-title">2026년 7월 14일</block>
   <block id="e5ca7e45a0041c75558cb2e9b26352b5" category="sidebar">Google Cloud에서 기본값으로 Cloud Volumes ONTAP 배포</block>
+  <block id="63a331b4a7ef8ade5f4d0df6929fdd39" category="doc">AWS Marketplace에서 Cloud Volumes ONTAP의 간편한 온보딩 소개</block>
+  <block id="3c7e14792d1bfe3f0ac2972bb2b2b283" category="paragraph">NetApp은 AWS Marketplace에서 Cloud Volumes ONTAP을 위한 간소화된 온보딩 워크플로를 도입하여 수동 작업과 온보딩 과정의 마찰을 줄였습니다.</block>
+  <block id="07de933840f509439b88a42c1b5a81f8" category="paragraph">이전에는 AWS Marketplace에서 Cloud Volumes ONTAP을 배포하려면 여러 화면을 탐색하고 역할, 정책 및 자격 증명을 수동으로 구성해야 했습니다. 이로 인해 온보딩 속도가 느리고 오류 발생 가능성이 높았습니다.</block>
+  <block id="7b0a4d96333ac82141b9bf7031a4427c" category="paragraph">새로운 온보딩 워크플로는 다음과 같은 기능을 통해 마켓플레이스 구독에서 완벽하게 작동하는 Cloud Volumes ONTAP 환경으로의 전환을 간소화합니다.</block>
+  <block id="d8a801d58e75e021f2941c09a13ac4cc" category="list-text">AWS Marketplace의 Cloud Volumes ONTAP 전용 상품 목록 구독: AWS Marketplace에서 Cloud Volumes ONTAP 독립형 상품 목록을 구독하고, 구독을 구매한 후, AWS 계정을 설정합니다(계정이 없는 경우).</block>
+  <block id="2beff62713d0ca26e8bbeb26d118da72" category="list-text">NetApp 콘솔의 안내 경로: NetApp 콘솔에서 계정을 설정하면 콘솔이 자동으로 배포 여정을 안내하며, 오른쪽 측면에 안내 경로를 표시합니다. 콘솔을 종료해야 하는 경우 나중에 안내 경로를 다시 시작할 수 있습니다.</block>
+  <block id="3545b8b6c97019ee16382e1e9f1566d6" category="list-text">구독 연동: 구독을 콘솔에 자동으로 연동하여 수동으로 연결하는 번거로움을 줄일 수 있습니다.</block>
+  <block id="7fe500a5c571cd7ec037fadddeb65e6d" category="list-text">AWS 자격 증명 구성을 사용한 Console 에이전트 배포: 필요한 AWS 역할을 자동으로 생성할 수 있습니다. 이 프로세스는 필요한 역할과 정책이 포함된 AWS CloudFormation 스택을 AWS 계정에 배포하여 검토할 수 있도록 한 다음, NetApp Console과 연결하여 수동 IAM 설정을 제거합니다. 그런 다음 에이전트 구성, 네트워킹 및 보안 그룹 설정을 진행하여 에이전트 배포를 시작할 수 있습니다.</block>
+  <block id="1dc23a84b7e2b375289ce6857c758408" category="list-text">AWS에 새로운 Cloud Volumes ONTAP 시스템 배포: <block ref="956eaa6186169471a13345860cad0757" prefix=" " category="inline-code"></block> 마법사로 바로 이동하여 더욱 빠르고 간편하게 Cloud Volumes ONTAP를 배포할 수 있습니다.</block>
+  <block id="92818173e0caa5fc0e16c368b850e85b" category="list-text"><block ref="92818173e0caa5fc0e16c368b850e85b" category="inline-link-rx"></block></block>
+  <block id="45155a6d96a264e24647f30ebb774e4f" category="list-text"><block ref="45155a6d96a264e24647f30ebb774e4f" category="inline-link-rx"></block></block>
+  <block id="e8f7f517a7c22ec0466a4d916c974b67" category="section-title">Azure의 Cloud Volumes ONTAP에 대한 잘 설계된 구성 분석</block>
+  <block id="8579a865aaeb9e025994731e2e5b4b7b" category="paragraph">NetApp Console에서 이제 Microsoft Azure에서 실행되는 Cloud Volumes ONTAP 시스템에 대한 잘 설계된 구성 분석 기능을 지원합니다. Console은 배포 환경을 매일 분석하여 잘 설계된 상태, 인사이트 및 권장 사항을 제공함으로써 NetApp 모범 사례 및 잘 설계된 프레임워크에 부합하는 시스템을 유지 관리할 수 있도록 지원합니다.</block>
+  <block id="7be0ecfd06a37dfa6ce465eeee7e76b0" category="paragraph">잘 설계된 대시보드는 분석된 시스템의 총 개수를 표시하고 구성 및 심각도 수준별로 리소스를 분류합니다. 시스템 관리자인 경우 Console 대시보드에서 조직 내 구성 문제에 대한 권장 사항을 직접 확인하고 모든 권장 사항이 포함된 CSV 보고서를 다운로드할 수 있습니다. 구성은 다음 기준에 따라 분류됩니다.</block>
+  <block id="d1288590d0a85a5033a8db4112eab3bf" category="list-text">*안정성*: 장애 발생 시에도 워크로드가 정확하고 일관되게 작동하도록 보장합니다.</block>
+  <block id="f9a9871ceb0b0b6106ac0c3761f8ccd5" category="list-text">*Security*: 위험 평가 및 완화를 통해 데이터, 시스템 및 자산을 보호합니다.</block>
+  <block id="3e21d0873324d070ffd9f5112b99ce4d" category="list-text">*운영 우수성*: 비즈니스 가치를 극대화하기 위해 아키텍처를 최적화합니다.</block>
+  <block id="886863730bd12cb56f89bdf0ee2221be" category="list-text">*비용 최적화*: 비용을 절감하고 최적화하여 더 큰 비즈니스 가치를 실현합니다.</block>
+  <block id="109cdb23e41e8df9e7f4319a28a800c9" category="inline-link">Cloud Volumes ONTAP 구성 분석</block>
+  <block id="30e75dda73d152784f441d20f2d17069" category="list-text"><block ref="30e75dda73d152784f441d20f2d17069" category="inline-link-rx"></block></block>
+  <block id="5bff0e2ec30fb9a44ab23683ebe9af90" category="inline-link">잘 설계된 시스템 구성 구현</block>
+  <block id="fae0b0bdb2210aacd56925bf63411bc1" category="list-text"><block ref="fae0b0bdb2210aacd56925bf63411bc1" category="inline-link-rx"></block></block>
+  <block id="8381df48e9be426c5a0c10881c1deb6b" category="paragraph">Amazon Web Services(AWS) 암호화를 Cloud Volumes ONTAP와 함께 사용하려면 AWS Key Management Service(KMS)를 설정해야 합니다.</block>
+  <block id="d4a0c1bae3ce52b89988e4025c15728f" category="paragraph">고객 마스터 키(CMK)는 AWS 또는 고객이 관리할 수 있습니다. NetApp Console 및 Cloud Volumes ONTAP와 동일한 AWS 계정에 있거나 다른 AWS 계정(공유 계정)에 있을 수 있습니다. AWS는 AWS Console을 통해서만 키 관리를 지원합니다. 자세한 내용은<block ref="489bfcd850e0fa4bfd74a278f7f67b66" category="inline-link-rx"></block>을 참조하십시오.</block>
+  <block id="6268b495b409110e383079b8b2ae93f9" category="list-text">NetApp Console 에이전트 Identity and Access Management(IAM) 역할에 대한 정보를 AWS용으로 확보하십시오.</block>
+  <block id="c1d1bc4bdd0bc87aaad76e92fbec1706" category="list-text">CMK가 활성화되어 있는지 확인하십시오.</block>
+  <block id="9217c4f5b4501a4862e09fe127627878" category="section-title">단일 계정에 대해 고객 관리형 KMS 키 설정</block>
+  <block id="a906c6aaae826fb656cef193eebf11b5" category="paragraph">콘솔 에이전트와 Cloud Volumes ONTAP이 동일한 AWS 계정에 있는 경우 다음 단계를 완료하십시오.</block>
+  <block id="f9ac849f5e1614f6ef5b6e2cbb46e838" category="list-text">Console 에이전트의 IAM 역할에 S3 암호화 권한을 부여합니다. <block ref="599a8ceed768fab9cc6e39dff7c9f215" prefix=" " category="inline-code"></block> 작업을 IAM 역할 정책에 추가합니다.</block>
+  <block id="ab5ce703f4e6f60b339fe82426134f8e" category="list-text">Console 에이전트가 고객 관리 암호화 키(CMEK)에 액세스할 수 있도록 설정합니다. AWS Console에서 다음 방법 중 하나를 사용합니다.</block>
+  <block id="6cce6d20d452367c8502a560c4a5a63b" category="open-title">해당 역할을 핵심 사용자로 추가(권장)</block>
+  <block id="d81295ff72a7b82f918db127295bd011" category="list-text">AWS 콘솔에서 *KMS &gt; 고객 관리 키*로 이동하여 CMEK 키를 선택합니다.</block>
+  <block id="af25bfcae8badfa6701e34c8050d7bf0" category="list-text">*주요 사용자* 섹션에서 *추가*를 선택합니다.</block>
+  <block id="f25e3b4ac9f715022dc141f032f143bc" category="list-text">예를 들어 콘솔 에이전트 인스턴스 역할을 선택하고<block ref="0998f1a8ed75faa08f8e75a04491bb3f" prefix=" " category="inline-code"></block>, *추가*를 클릭합니다.</block>
+  <block id="345e93a96b6e66cb9274dbad975c0db2" category="list-text">변경 사항을 저장합니다.</block>
+  <block id="0000e285f8e7eb4ed4e4797573887078" category="open-title">KMS 키 정책 업데이트</block>
+  <block id="b2d497ac6fb7d8b94cfc9f64937f0219" category="list-text">AWS 콘솔에서 *KMS*로 이동하여 키를 검색합니다.</block>
+  <block id="017bf802eb557b1991791133d0197878" category="list-text">*키 정책* 탭을 선택하고 *편집*을 선택합니다.</block>
+  <block id="a7790957568914751d78c83520426791" category="list-text">키에 대한 액세스를 허용하는 구문을 찾아<block ref="20132c8c5718ce52dc21622e28f60cd5" prefix=" " category="inline-code"></block> Console 에이전트 역할 Amazon Resource Name(ARN)을<block ref="8804b01fe5f36aa163269316113bacde" prefix=" " category="inline-code"></block> 배열에 추가합니다. 다음 예의 자리 표시자를 해당 값으로 바꿉니다.</block>
+  <block id="5a39ea12818a872b0a7453832cb711c7" category="list-text"><block ref="5e6047cb0bac084e0f3daff9fa08ad03" prefix="" category="inline-code"></block>: 12자리 AWS 계정 ID</block>
+  <block id="57a4a91c9e564088f01c0b623cd4ae49" category="list-text"><block ref="153ab1f1ba95459c5e317c089df965a3" prefix="" category="inline-code"></block>: Console 에이전트의 IAM 역할 이름</block>
+  <block id="44c5dcd3316f82b16264c57cdacdeaae" category="section-title">공유 계정에 대해 고객 관리형 KMS 키를 설정합니다.</block>
+  <block id="5c0b0544e826f4a61c68da40496bb210" category="paragraph">콘솔 에이전트가 하나의 AWS 계정(계정 A)에서 실행되고 Cloud Volumes ONTAP이 다른 AWS 계정(계정 B)에 배포된 경우, 먼저 계정 A에 대한 단일 계정 단계를 모두 완료한 다음 이 단계를 완료하십시오.</block>
+  <block id="a34307276baec7905af5061fc383703a" category="list-text">계정 B의 가정된 역할에<block ref="599a8ceed768fab9cc6e39dff7c9f215" prefix=" " category="inline-code"></block> 작업을 추가하십시오. FabricPool 버킷 암호화 호출이 계정 B의 가정된 역할로 실행되기 때문에 이 작업이 필요합니다. 이 권한은 티어링에 사용되는 S3 버킷의 기본 암호화를 활성화하는 데 적용됩니다.</block>
+  <block id="01c2a112e11dcc6710e473ba8274ebc6" category="list-text">CMEK 키가 계정 B에 저장된 경우, 계정 A의 에이전트 역할은 해당 키를 사용하기 위해 직접 액세스 권한이 필요합니다. 계정 B의 KMS 키 정책은 이러한 계정 간 액세스 권한을 부여합니다.</block>
+  <block id="deca4a1ba3b5c41ca30151078a91da33" category="list-text">계정 B의 AWS 콘솔에서 *KMS &gt; 고객 관리 키*로 이동하여 Cloud Volumes ONTAP 배포에 사용된 CMEK 키를 선택합니다.</block>
+  <block id="dc1a95574af67e82444486d40acc7e06" category="list-text">*키 정책* 탭을 열고 *편집*을 선택합니다.</block>
+  <block id="7ec2c0ccb22f0194a78395d47d9a5798" category="list-text">계정 A에 대한 IAM 역할에 키에 대한 액세스 권한을 부여하는 문을 추가합니다.</block>
+  <block id="cad1c43d1df965b5d0ebe349b39a3e87" category="admonition">계정 B에 대한 키 정책은 계정 A의 Console 에이전트 역할이 해당 키를 사용할 수 있도록 신뢰할 수 있는지 여부를 제어합니다. 이 정책 문은 계정 A에 대한 IAM 정책 외에 추가로 필요합니다.</block>
+  <block id="d9f65eda3d1691ba9f3981b546b733db" category="list-text">계정 A의 Console 에이전트에 대한 IAM 정책을 업데이트하여 계정 B의 키에 대한 KMS API 호출을 허용하십시오.</block>
+  <block id="34781b59af6b7e7057dbff3e8d75639b" category="list-text">계정 A의 AWS 콘솔에서 *IAM &gt; 역할*로 이동하여 콘솔 에이전트 역할을 선택합니다(예:<block ref="0998f1a8ed75faa08f8e75a04491bb3f" prefix=" " category="inline-code"></block> 또는<block ref="19487023927f67e9ee4927df69475acb" prefix=" " category="inline-code"></block>).</block>
+  <block id="26542555615ff4bf6f583704505da204" category="list-text">계정 B 키에 대한 KMS 권한을 추가하거나 업데이트합니다.</block>
+  <block id="111ee22ed87f062516252ca928d0ca1f" category="admonition">계정 B의 키 정책은 키에 대한 액세스를 제어합니다. 계정 A의 IAM 정책은 Console 에이전트 역할이 KMS API를 호출할 수 있도록 허용합니다. 두 계정 중 하나라도 구성이 누락된 경우 AWS는 액세스를 제한합니다.</block>
+  <block id="c6e822ad6f9df2b1031f9ab9992b9207" category="list-text">계정 B의 CMEK에 계정 A를 허용된 외부 AWS 계정으로 추가합니다.</block>
+  <block id="91bf5517a0bad22be034687674e336f0" category="list-text">계정 B의 AWS KMS 콘솔에서 대상 KMS 키를 열고 *기타 AWS 계정* 섹션을 찾습니다.</block>
+  <block id="f6129b767d39d9ed34d7ae6053c62161" category="list-text">*다른 AWS 계정 추가*를 선택하고 계정 A의 AWS 계정 ID를 입력합니다.</block>
+  <block id="e9c94f00457ea21a40fc65f895551b15" category="list-text">Amazon 문서:</block>
+  <block id="4bf879127e6f8ada001e22da7cd613fc" category="inline-link">AWS KMS 키</block>
+  <block id="19d72fcc9111cffa779bff14e2fa7ee5" category="list-text"><block ref="19d72fcc9111cffa779bff14e2fa7ee5" category="inline-link-rx"></block></block>
+  <block id="eea6e94cc47bf2127cc8510d58c2d283" category="list-text"><block ref="eea6e94cc47bf2127cc8510d58c2d283" category="inline-link-rx"></block></block>
+  <block id="bd60f8eeb5b9937557c375734de5e99f" category="list-text">NetApp Console 설명서:</block>
+  <block id="e54158140168d6bfda7951dabc8a0468" category="inline-link">NetApp Console에서 AWS 자격 증명 및 권한에 대해 알아보세요.</block>
+  <block id="a1c934fae6db0a99059aed88ff3d47b3" category="list-text"><block ref="a1c934fae6db0a99059aed88ff3d47b3" category="inline-link-rx"></block></block>
+  <block id="51c9eb8f2bdf1ba7a4e0dbc5ca8299bd" category="inline-link">NetApp Console의 AWS 자격 증명 및 마켓플레이스 구독 관리</block>
+  <block id="fd6c8706b70c72f62dc54104dbcb57c2" category="list-text"><block ref="fd6c8706b70c72f62dc54104dbcb57c2" category="inline-link-rx"></block></block>
+  <block id="ac750267020c9b3c0e32de825d9b57fc" category="section-title">2026년 7월 20일</block>
 </blocks>
