@@ -63,7 +63,7 @@ NetApp Console에서 이제 Microsoft Azure에서 실행되는 Cloud Volumes ONT
 
 .관련 링크
 * https://docs.netapp.com/us-en/console-well-architected/cvo/configuration-analysis-cvo.html["Cloud Volumes ONTAP 구성 분석"^]
-* https://docs.netapp.com/us-en/console-well-architected/improve-configurations-cvo.html["잘 설계된 시스템 구성 구현"^]
+* https://docs.netapp.com/us-en/console-well-architected/cvo/improve-configurations-cvo.html["잘 설계된 Cloud Volumes ONTAP 시스템 구성 구현"^]
 
 
 

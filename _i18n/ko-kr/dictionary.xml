@@ -6570,8 +6570,6 @@
   <block id="886863730bd12cb56f89bdf0ee2221be" category="list-text">*비용 최적화*: 비용을 절감하고 최적화하여 더 큰 비즈니스 가치를 실현합니다.</block>
   <block id="109cdb23e41e8df9e7f4319a28a800c9" category="inline-link">Cloud Volumes ONTAP 구성 분석</block>
   <block id="30e75dda73d152784f441d20f2d17069" category="list-text"><block ref="30e75dda73d152784f441d20f2d17069" category="inline-link-rx"></block></block>
-  <block id="5bff0e2ec30fb9a44ab23683ebe9af90" category="inline-link">잘 설계된 시스템 구성 구현</block>
-  <block id="fae0b0bdb2210aacd56925bf63411bc1" category="list-text"><block ref="fae0b0bdb2210aacd56925bf63411bc1" category="inline-link-rx"></block></block>
   <block id="8381df48e9be426c5a0c10881c1deb6b" category="paragraph">Amazon Web Services(AWS) 암호화를 Cloud Volumes ONTAP와 함께 사용하려면 AWS Key Management Service(KMS)를 설정해야 합니다.</block>
   <block id="d4a0c1bae3ce52b89988e4025c15728f" category="paragraph">고객 마스터 키(CMK)는 AWS 또는 고객이 관리할 수 있습니다. NetApp Console 및 Cloud Volumes ONTAP와 동일한 AWS 계정에 있거나 다른 AWS 계정(공유 계정)에 있을 수 있습니다. AWS는 AWS Console을 통해서만 키 관리를 지원합니다. 자세한 내용은<block ref="489bfcd850e0fa4bfd74a278f7f67b66" category="inline-link-rx"></block>을 참조하십시오.</block>
   <block id="6268b495b409110e383079b8b2ae93f9" category="list-text">NetApp Console 에이전트 Identity and Access Management(IAM) 역할에 대한 정보를 AWS용으로 확보하십시오.</block>
@@ -6616,4 +6614,6 @@
   <block id="51c9eb8f2bdf1ba7a4e0dbc5ca8299bd" category="inline-link">NetApp Console의 AWS 자격 증명 및 마켓플레이스 구독 관리</block>
   <block id="fd6c8706b70c72f62dc54104dbcb57c2" category="list-text"><block ref="fd6c8706b70c72f62dc54104dbcb57c2" category="inline-link-rx"></block></block>
   <block id="ac750267020c9b3c0e32de825d9b57fc" category="section-title">2026년 7월 20일</block>
+  <block id="12959707639320f789d4bb4fbba777f1" category="inline-link">잘 설계된 Cloud Volumes ONTAP 시스템 구성 구현</block>
+  <block id="e8227a8388a93064d0bbb4e13f50ff6e" category="list-text"><block ref="e8227a8388a93064d0bbb4e13f50ff6e" category="inline-link-rx"></block></block>
 </blocks>
