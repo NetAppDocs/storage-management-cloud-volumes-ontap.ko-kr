@@ -1,0 +1,837 @@
+---
+sidebar: sidebar 
+permalink: reference-configs-aws.html 
+keywords: ec2, instance, type, explore, standard, premium, byol, capacity, maximum, virtual machine, Cloud Volumes ONTAP, supported, configurations, sizes, disks, networking, bandwidth, professional package 
+summary: AWS에서는 여러 가지 Cloud Volumes ONTAP 구성이 지원됩니다. 
+---
+= AWS의 Cloud Volumes ONTAP 에 지원되는 구성
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+AWS에서는 여러 가지 Cloud Volumes ONTAP 구성이 지원됩니다.
+
+
+
+[[supported-disks-in-aws]]
+== AWS에서 지원되는 디스크
+
+사용자 데이터 스토리지 외에도 NetApp은 AWS에서 시스템 데이터를 위한 클라우드 스토리지도 구매합니다.
+
+
+
+[[internal-disks-for-system-data]]
+=== 시스템 데이터용 내부 디스크
+
+AWS에서 시스템 데이터를 저장하는 데 사용되는 내부 디스크는 다음과 같습니다.
+
+* 부트, 루트, 코어 데이터를 위한 노드당 3개의 디스크:
++
+** 부팅 데이터용 47GiB io1 디스크
+** 루트 데이터용 140GiB gp3 디스크
+** 코어 데이터용 540GiB gp2 디스크
+
+
+* HA 쌍의 경우:
++
+** 중재자 인스턴스용 st1 EBS 볼륨 2개, 루트 디스크로 약 8GiB 중 하나, 데이터 디스크로 4GiB 중 하나
+** 각 노드에 140GiB gp3 디스크 1개, 다른 노드의 루트 데이터 사본 포함
++
+
+NOTE: 일부 영역에서는 사용 가능한 EBS 디스크 유형이 gp2만 가능합니다.
+
+
+
+* 각 부팅 디스크와 루트 디스크에 대한 하나의 EBS 스냅샷
++
+
+NOTE: 재부팅 시 스냅샷이 자동으로 생성됩니다.
+
+* AWS에서 키 관리 서비스(KMS)를 사용하여 데이터 암호화를 활성화하면 Cloud Volumes ONTAP 의 부팅 및 루트 디스크도 암호화됩니다.  여기에는 HA 쌍의 중재자 인스턴스에 대한 부팅 디스크가 포함됩니다.  디스크는 Cloud Volumes ONTAP 시스템을 추가할 때 선택하는 CMK를 사용하여 암호화됩니다.
+
+
+
+TIP: AWS에서는 NVRAM 이 부팅 디스크에 있습니다.
+
+
+
+[[aws-storage-for-user-data]]
+=== 사용자 데이터를 위한 AWS 스토리지
+
+AWS에서 Cloud Volumes ONTAP 사용자 데이터에 EBS 스토리지를 사용하고 일부 EC2 인스턴스 유형에서는 로컬 NVMe 스토리지를 Flash Cache로 사용합니다.
+
+EBS 스토리지:: AWS에서는 집계에 크기가 모두 같은 디스크를 최대 6개까지 포함할 수 있습니다. 하지만 Amazon EBS Elastic Volumes 기능을 지원하는 구성이 있는 경우 집계에는 최대 8개의 디스크가 포함될 수 있습니다. link:concept-aws-elastic-volumes.html["Elastic Volumes 지원에 대해 자세히 알아보세요"] .
++
+--
+최대 디스크 크기는 16TiB입니다.
+
+기본 EBS 디스크 유형은 범용 SSD(gp3 또는 gp2), 프로비저닝된 IOPS SSD(io1) 또는 처리량 최적화 HDD(st1)일 수 있습니다. EBS 디스크를 Amazon Simple Storage Service(Amazon S3)와 연결하여 link:concept-data-tiering.html["저렴한 객체 스토리지"]할 수 있습니다.
+
+
+NOTE: 처리량 최적화 HDD(st1)를 사용하는 경우 개체 스토리지에 데이터를 계층화하는 것은 권장되지 않습니다.
+
+--
+로컬 NVMe 스토리지:: 일부 EC2 인스턴스 유형에는 로컬 NVMe 스토리지가 포함되어 있으며 이를 Cloud Volumes ONTAP 에서 사용합니다.link:concept-flash-cache.html["Flash Cache"] .
+
+
+
+
+[[supported-disk-sizes]]
+=== 지원되는 디스크 크기
+
+AWS에서 애그리게이트는 최대 6개의 동일한 크기의 디스크를 포함할 수 있습니다. 하지만 Amazon EBS Elastic Volumes 기능을 지원하는 구성의 경우, 애그리게이트는 최대 8개의 디스크를 포함할 수 있습니다. https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-aws-elastic-volumes.html["Elastic Volumes 지원에 대해 자세히 알아보세요"^]
+
+[cols="3*"]
+|===
+| 범용 SSD(gp3 및 gp2) | 프로비저닝된 IOPS SSD(io1) | 처리량 최적화 HDD(st1) 
+
+
+ a| 
+* 100 GiB
+* 500기가바이트
+* 1티비
+* 2티비
+* 4 TiB
+* 6티비
+* 8 TiB
+* 16 TiB
+
+ a| 
+* 100 GiB
+* 500기가바이트
+* 1티비
+* 2티비
+* 4 TiB
+* 6티비
+* 8 TiB
+* 16 TiB
+
+ a| 
+* 500기가바이트
+* 1티비
+* 2티비
+* 4 TiB
+* 6티비
+* 8 TiB
+* 16 TiB
+
+
+|===
+
+
+[[disk-provisioning-for-aggregates-in-aws]]
+=== AWS의 애그리게이트에 대한 디스크 프로비저닝
+
+Elastic Volumes를 지원하는 AWS의 집계의 경우 RAID 그룹의 디스크 크기도 늘어납니다. link:concept-aws-elastic-volumes.html["Elastic Volumes 지원에 대해 자세히 알아보세요"] .
+
+
+
+==== AWS의 집계를 위한 디스크 크기 선택
+
+콘솔이 AWS에서 Cloud Volumes ONTAP 에 대한 새로운 집계를 생성할 때 집계 수가 증가함에 따라 디스크 크기를 점차 늘려 AWS 데이터 디스크 제한에 도달하기 전에 시스템 용량을 극대화합니다.
+
+예를 들어, 콘솔은 다음과 같은 디스크 크기를 선택할 수 있습니다.
+
+[cols="3*"]
+|===
+| 집계 번호 | 디스크 크기 | 최대 집계 용량 
+
+
+| 1 | 500기가바이트 | 3티비 
+
+
+| 4 | 1티비 | 6티비 
+
+
+| 6 | 2티비 | 12티비 
+|===
+
+NOTE: 이 동작은 Amazon EBS Elastic Volumes 기능을 지원하는 집계에는 적용되지 않습니다.  탄력적 볼륨이 활성화된 집계는 하나 또는 두 개의 RAID 그룹으로 구성됩니다.  각 RAID 그룹에는 동일한 용량을 가진 4개의 동일한 디스크가 있습니다. link:concept-aws-elastic-volumes.html["Elastic Volumes 지원에 대해 자세히 알아보세요"] .
+
+고급 할당 옵션을 사용하면 디스크 크기를 직접 선택할 수 있습니다.
+
+
+
+[[supported-number-of-nodes]]
+== 지원되는 노드 수
+
+Cloud Volumes ONTAP는 AWS에서 단일 노드 시스템과 내결함성 및 중단 없는 운영을 위한 고가용성(HA) 노드 쌍으로 제공됩니다.
+
+단일 노드 시스템을 HA 페어로 업그레이드하는 것은 지원되지 않습니다. 단일 노드 시스템과 HA 쌍 간에 전환하려면 새 시스템을 배포하고 기존 시스템의 데이터를 새 시스템으로 복제해야 합니다.
+
+
+
+[[supported-storage]]
+== 지원되는 스토리지
+
+Cloud Volumes ONTAP는 여러 유형의 EBS 디스크와 데이터 계층화를 위한 S3 객체 스토리지를 지원합니다. 최대 스토리지 용량은 선택한 라이센스 모델에 따라 결정됩니다.
+
+
+
+[[storage-support-by-license]]
+=== 라이센스에 따른 스토리지 지원
+
+각 라이센스는 서로 다른 최대 시스템 용량을 지원합니다. 최대 시스템 용량에는 디스크 기반 스토리지와 데이터 계층화에 사용되는 오브젝트 스토리지가 포함됩니다. NetApp은 이 제한을 초과하는 것을 지원하지 않습니다.
+
+다음 표는 각 라이선스에 대해 지원되는 스토리지 및 EC2 머신 유형 조합을 나열합니다. vCPU, 메모리, 네트워크 대역폭 및 Amazon EBS 대역폭을 포함한 최신 EC2 인스턴스 사양은 https://aws.amazon.com/ec2/instance-types/["Amazon EC2 인스턴스 유형"^]을 참조하십시오.
+
+Cloud Volumes ONTAP는 예약 또는 온디맨드 EC2 인스턴스에서 실행할 수 있습니다. 다른 인스턴스 유형을 사용하는 솔루션은 지원되지 않습니다.
+
+[role="tabbed-block"]
+====
+.용량 기반 라이센스
+--
+[cols="h,d,d"]
+|===
+|  | 프리미엄 | 용량 기반 라이센스(Essentials 및 Professional) 
+
+
+ a| 
+*최대 시스템 용량* ^1^ (디스크 + 오브젝트 스토리지)
+| 500기가바이트  a| 
+유연한 ^2^
+
+
+
+ a| 
+*지원되는 시스템 유형*
+ a| 
+.C5 시리즈
+[%collapsible]
+=====
+* c5.9xlarge
+* c5.18xlarge ^7^
+
+
+=====
+.C5a 시리즈
+[%collapsible]
+=====
+* c5a.12xlarge
+
+
+=====
+.C5d 시리즈
+[%collapsible]
+=====
+* c5d.4xlarge ^8^
+* c5d.9xlarge
+* c5d.18xlarge ^7^
+
+
+=====
+.C5n 시리즈
+[%collapsible]
+=====
+* c5n.9xlarge
+* c5n.18xlarge ^7^
+
+
+=====
+.M5 시리즈
+[%collapsible]
+=====
+* m5.xlarge ^8^
+* m5.2xlarge ^8^
+* m5.4xlarge ^8^
+* m5.16xlarge
+
+
+=====
+.M5a 시리즈
+[%collapsible]
+=====
+* m5a.2xlarge
+* m5a.16xlarge
+
+
+=====
+.M5d 시리즈
+[%collapsible]
+=====
+* m5d.8xlarge
+* m5d.12xlarge
+
+
+=====
+.M5dn 시리즈
+[%collapsible]
+=====
+* m5dn.4xlarge
+* m5dn.12xlarge
+* m5dn.24xlarge ^7^
+
+
+=====
+.M5n 시리즈
+[%collapsible]
+=====
+* m5n.2xlarge
+
+
+=====
+.M6id 시리즈
+[%collapsible]
+=====
+* m6id.xlarge ^9^
+* m6id.2xlarge ^9^
+* m6id.4xlarge ^9^
+* m6id.8xlarge ^9^
+* m6id.16xlarge ^7,9^
+* m6id.32xlarge ^7,9^
+
+
+=====
+.M6idn 시리즈
+[%collapsible]
+=====
+* m6idn.xlarge ^9^
+* m6idn.2xlarge ^9^
+* m6idn.4xlarge ^9^
+* m6idn.8xlarge ^9^
+* m6idn.16xlarge ^7,9^
+* m6idn.32xlarge ^9^
+
+
+=====
+.R5 시리즈
+[%collapsible]
+=====
+* r5.xlarge ^8^
+* r5.2xlarge ^8^
+* r5.8xlarge
+* r5.12xlarge ^6^
+
+
+=====
+.R5d 시리즈
+[%collapsible]
+=====
+* r5d.2xlarge
+
+
+=====
+
+
+ a| 
+*지원되는 디스크 유형*
+ a| 
+* 범용 SSD(gp3 및 gp2) ^3^,^5^
+* 프로비저닝된 IOPS SSD(io1) ^3^
+* 처리량 최적화 HDD(st1) ^4^
+
+
+
+
+ a| 
+*S3로 콜드 데이터 계층화*
+ a| 
+지원됨
+
+|===
+. HA 쌍의 경우 용량 제한은 전체 HA 쌍에 적용됩니다. 노드별로 적용되는 것이 아닙니다. 예를 들어 PAYGO Premium 라이센스를 사용하는 경우 두 노드 간에 최대 368TiB의 용량을 사용할 수 있습니다.
+. 일부 구성에서는 디스크 제한으로 인해 디스크만으로는 용량 제한에 도달할 수 없습니다. 이러한 경우에는 https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-data-tiering.html["비활성 데이터를 개체 스토리지로 계층화"^]를 통해 용량 제한에 도달할 수 있습니다. 디스크 제한에 대한 자세한 내용은 link:reference-limits-aws.html["스토리지 제한"]를 참조하십시오.
++
+용량 기반 라이선스를 사용하는 각 Cloud Volumes ONTAP 시스템은 객체 스토리지로의 계층화를 지원합니다. 계층화된 총 용량은 클라우드 공급자의 버킷 제한까지 확장할 수 있습니다. 라이선스는 용량 제한을 부과하지 않지만 계층화를 구성하고 관리할 때 최적의 성능, 안정성 및 비용 효율성을 보장하기 위해 https://www.netapp.com/pdf.html?item=/media/17239-tr-4598.pdf["FabricPool 모범 사례"^]를 따라야 합니다.
+
+. PAYGO Explore를 제외한 모든 Cloud Volumes ONTAP 구성에서 SSD를 사용할 경우 향상된 쓰기 성능이 활성화됩니다.
+. 처리량 최적화 HDD(st1)를 사용하는 경우 오브젝트 스토리지로 데이터를 계층화하는 것은 권장되지 않습니다.
+. AWS Local Zones의 Cloud Volumes ONTAP 구성에서는 범용 SSD(gp2) 디스크 유형만 지원합니다. AWS Local Zones에서는 다른 디스크 유형이 지원되지 않습니다.
+. r5.12xlarge 인스턴스 유형에는 지원 가능성과 관련된 알려진 제한 사항이 있습니다. 패닉으로 인해 노드가 예기치 않게 재부팅될 경우 시스템에서 문제 해결 및 근본 원인 파악에 사용되는 코어 파일을 수집하지 못할 수 있습니다. 고객은 위험과 제한된 지원 조건을 수락하며 이러한 상황이 발생할 경우 모든 지원 책임을 부담합니다. 이 제한 사항은 새로 배포된 HA 쌍과 9.8에서 업그레이드된 HA 쌍에 영향을 미칩니다. 이 제한 사항은 새로 배포된 단일 노드 시스템에는 영향을 미치지 않습니다.
+. 이러한 EC2 인스턴스 유형은 64개 이상의 vCPU를 지원하지만 Cloud Volumes ONTAP는 최대 64개의 vCPU를 지원합니다.
+. AWS Local Zones는 xlarge에서 4xlarge 크기의 다음 EC2 인스턴스 유형 제품군에서 지원됩니다: M5, C5, C5d, R5 및 R5d. link:https://aws.amazon.com/about-aws/global-infrastructure/localzones/features/?nc=sn&loc=2["로컬 영역에서 지원되는 EC2 인스턴스 유형에 대한 최신 및 전체 세부 정보는 AWS를 참조하십시오."^].
++
+AWS Local Zones에서는 이러한 인스턴스 유형에서 높은 쓰기 속도가 지원되지 않습니다.
+
+. 이러한 인스턴스 유형을 사용하려면 ONTAP 9.16.1 GA 이상이 필요합니다.
+
+
+--
+.기타 라이선스
+--
+[cols="h,d,d,d,d"]
+|===
+|  | PAYGO Explore | PAYGO Standard | PAYGO Premium | 노드 기반 BYOL 
+
+
+| 최대 시스템 용량(디스크 + 오브젝트 스토리지) | 2티비 | 10 TiB | 368TiB ^2^ | 라이센스당 368 TiB ^2^ 
+
+
+| 지원되는 시스템 유형  a| 
+.M5 시리즈
+[%collapsible]
+=====
+* m5.xlarge ^8^
+
+
+=====
+.M6id 시리즈
+[%collapsible]
+=====
+* m6id.xlarge ^9^
+
+
+=====
+.M6idn 시리즈
+[%collapsible]
+=====
+* m6idn.xlarge ^9^
+
+
+===== a| 
+.M5 시리즈
+[%collapsible]
+=====
+* m5.2xlarge ^8^
+
+
+=====
+.M5a 시리즈
+[%collapsible]
+=====
+* m5a.2xlarge
+
+
+=====
+.M6id 시리즈
+[%collapsible]
+=====
+* m6id.2xlarge ^9^
+
+
+=====
+.M6idn 시리즈
+[%collapsible]
+=====
+* m6idn.2xlarge ^9^
+
+
+=====
+.R5 시리즈
+[%collapsible]
+=====
+* r5.xlarge ^8^
+
+
+===== a| 
+.C5 시리즈
+[%collapsible]
+=====
+* c5.9xlarge
+* c5.18xlarge ^7^
+
+
+=====
+.C5a 시리즈
+[%collapsible]
+=====
+* c5a.12xlarge
+
+
+=====
+.C5d 시리즈
+[%collapsible]
+=====
+* c5d.4xlarge ^8^
+* c5d.9xlarge
+* c5d.18xlarge ^7^
+
+
+=====
+.C5n 시리즈
+[%collapsible]
+=====
+* c5n.9xlarge
+* c5n.18xlarge ^7^
+
+
+=====
+.M5 시리즈
+[%collapsible]
+=====
+* m5.4xlarge ^8^
+* m5.16xlarge
+
+
+=====
+.M5a 시리즈
+[%collapsible]
+=====
+* m5a.16xlarge
+
+
+=====
+.M5d 시리즈
+[%collapsible]
+=====
+* m5d.8xlarge
+* m5d.12xlarge
+
+
+=====
+.M5dn 시리즈
+[%collapsible]
+=====
+* m5dn.4xlarge
+* m5dn.12xlarge
+* m5dn.24xlarge ^7^
+
+
+=====
+.M5n 시리즈
+[%collapsible]
+=====
+* m5n.2xlarge
+
+
+=====
+.M6id 시리즈
+[%collapsible]
+=====
+* m6id.4xlarge ^9^
+* m6id.8xlarge ^9^
+* m6id.16xlarge ^7,9^
+* m6id.32xlarge ^7,9^
+
+
+=====
+.M6idn 시리즈
+[%collapsible]
+=====
+* m6idn.4xlarge ^9^
+* m6idn.8xlarge ^9^
+* m6idn.16xlarge ^7,9^
+* m6idn.32xlarge ^9^
+
+
+=====
+.R5 시리즈
+[%collapsible]
+=====
+* r5.2xlarge ^8^
+* r5.8xlarge
+* r5.12xlarge ^6^
+
+
+=====
+.R5d 시리즈
+[%collapsible]
+=====
+* r5d.2xlarge
+
+
+===== a| 
+.C5 시리즈
+[%collapsible]
+=====
+* c5.9xlarge
+* c5.18xlarge ^7^
+
+
+=====
+.C5a 시리즈
+[%collapsible]
+=====
+* c5a.12xlarge
+
+
+=====
+.C5d 시리즈
+[%collapsible]
+=====
+* c5d.4xlarge ^8^
+* c5d.9xlarge
+* c5d.18xlarge ^7^
+
+
+=====
+.C5n 시리즈
+[%collapsible]
+=====
+* c5n.9xlarge
+* c5n.18xlarge ^7^
+
+
+=====
+.M5 시리즈
+[%collapsible]
+=====
+* m5.xlarge ^8^
+* m5.2xlarge ^8^
+* m5.4xlarge ^8^
+* m5.16xlarge
+
+
+=====
+.M5a 시리즈
+[%collapsible]
+=====
+* m5a.2xlarge
+* m5a.16xlarge
+
+
+=====
+.M5d 시리즈
+[%collapsible]
+=====
+* m5d.8xlarge
+* m5d.12xlarge
+
+
+=====
+.M5dn 시리즈
+[%collapsible]
+=====
+* m5dn.4xlarge
+* m5dn.12xlarge
+* m5dn.24xlarge ^7^
+
+
+=====
+.M5n 시리즈
+[%collapsible]
+=====
+* m5n.2xlarge
+
+
+=====
+.M6id 시리즈
+[%collapsible]
+=====
+* m6id.xlarge ^9^
+* m6id.2xlarge ^9^
+* m6id.4xlarge ^9^
+* m6id.8xlarge ^9^
+* m6id.16xlarge ^7,9^
+* m6id.32xlarge ^7,9^
+
+
+=====
+.M6idn 시리즈
+[%collapsible]
+=====
+* m6idn.xlarge ^9^
+* m6idn.2xlarge ^9^
+* m6idn.4xlarge ^9^
+* m6idn.8xlarge ^9^
+* m6idn.16xlarge ^7,9^
+* m6idn.32xlarge ^9^
+
+
+=====
+.R5 시리즈
+[%collapsible]
+=====
+* r5.xlarge ^8^
+* r5.2xlarge ^8^
+* r5.8xlarge
+* r5.12xlarge ^6^
+
+
+=====
+.R5d 시리즈
+[%collapsible]
+=====
+* r5d.2xlarge
+
+
+=====
+
+
+| 지원되는 디스크 유형  a| 
+* 범용 SSD(gp3 및 gp2) ^3^,^5^
+* 프로비저닝된 IOPS SSD(io1) ^3^
+* 처리량 최적화 HDD(st1) ^4^
+
+
+
+
+| S3로 콜드 데이터 계층화 | 지원되지 않음 3+| 지원됨 
+|===
+. HA 쌍의 경우 용량 제한은 전체 HA 쌍에 적용됩니다. 노드별로 적용되는 것이 아닙니다. 예를 들어 PAYGO Premium 라이센스를 사용하는 경우 두 노드 간에 최대 368TiB의 용량을 사용할 수 있습니다.
+. 일부 구성에서는 디스크 제한으로 인해 디스크만으로는 용량 제한에 도달할 수 없습니다. 이러한 경우에는 https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-data-tiering.html["비활성 데이터를 개체 스토리지로 계층화"^]를 통해 용량 제한에 도달할 수 있습니다. 디스크 제한에 대한 자세한 내용은 link:reference-limits-aws.html["스토리지 제한"]를 참조하십시오.
++
+용량 기반 라이선스를 사용하는 각 Cloud Volumes ONTAP 시스템은 객체 스토리지로의 계층화를 지원합니다. 계층화된 총 용량은 클라우드 공급자의 버킷 제한까지 확장할 수 있습니다. 라이선스는 용량 제한을 부과하지 않지만 계층화를 구성하고 관리할 때 최적의 성능, 안정성 및 비용 효율성을 보장하기 위해 https://www.netapp.com/pdf.html?item=/media/17239-tr-4598.pdf["FabricPool 모범 사례"^]를 따라야 합니다.
+
+. PAYGO Explore를 제외한 모든 Cloud Volumes ONTAP 구성에서 SSD를 사용할 경우 향상된 쓰기 성능이 활성화됩니다.
+. 처리량 최적화 HDD(st1)를 사용하는 경우 오브젝트 스토리지로 데이터를 계층화하는 것은 권장되지 않습니다.
+. AWS Local Zones의 Cloud Volumes ONTAP 구성에서는 범용 SSD(gp2) 디스크 유형만 지원합니다. AWS Local Zones에서는 다른 디스크 유형이 지원되지 않습니다.
+. r5.12xlarge 인스턴스 유형에는 지원 가능성과 관련된 알려진 제한 사항이 있습니다. 패닉으로 인해 노드가 예기치 않게 재부팅될 경우 시스템에서 문제 해결 및 근본 원인 파악에 사용되는 코어 파일을 수집하지 못할 수 있습니다. 고객은 위험과 제한된 지원 조건을 수락하며 이러한 상황이 발생할 경우 모든 지원 책임을 부담합니다. 이 제한 사항은 새로 배포된 HA 쌍과 9.8에서 업그레이드된 HA 쌍에 영향을 미칩니다. 이 제한 사항은 새로 배포된 단일 노드 시스템에는 영향을 미치지 않습니다.
+. 이러한 EC2 인스턴스 유형은 64개 이상의 vCPU를 지원하지만 Cloud Volumes ONTAP는 최대 64개의 vCPU를 지원합니다.
+. AWS Local Zones는 xlarge에서 4xlarge 크기의 다음 EC2 인스턴스 유형 제품군에서 지원됩니다: M5, C5, C5d, R5 및 R5d. link:https://aws.amazon.com/about-aws/global-infrastructure/localzones/features/?nc=sn&loc=2["로컬 영역에서 지원되는 EC2 인스턴스 유형에 대한 최신 및 전체 세부 정보는 AWS를 참조하십시오."^].
++
+AWS Local Zones에서는 이러한 인스턴스 유형에서 높은 쓰기 속도가 지원되지 않습니다.
+
+. 이러한 인스턴스 유형을 사용하려면 ONTAP 9.16.1 GA 이상이 필요합니다.
+
+
+--
+====
+
+
+[[c4-m4-and-r4-instances-no-longer-supported]]
+=== c4, m4, r4 인스턴스는 더 이상 지원되지 않습니다.
+
+Cloud Volumes ONTAP는 더 이상 AWS의 c4, m4, r4 EC2 인스턴스 유형을 지원하지 않습니다.
+
+시스템이 c4, m4 또는 r4 인스턴스에서 실행 중인 경우, 이번 릴리스로 업그레이드하기 전에 c5, m5 또는 r5 인스턴스로 변경하십시오.
+
+link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-change-ec2-instance.html["Cloud Volumes ONTAP의 EC2 인스턴스 유형을 변경하는 방법에 대해 알아보십시오"^].
+
+자세한 내용은 다음 리소스를 참조하십시오.
+
+* https://kb.netapp.com/Cloud/Cloud_Volumes_ONTAP/Converting_an_AWS_Xen_CVO_instance_to_Nitro_KVM["기술 자료(KB) 문서: AWS Xen CVO 인스턴스를 Nitro KVM으로 변환"^]
+* https://kb.netapp.com/Cloud/Cloud_Volumes_ONTAP/Unable_to_change_the_instance_type_from_r4_to_r5_with_disk_count_error["KB 문서: 디스크 개수 오류로 인해 인스턴스 유형을 r4에서 r5로 변경할 수 없음"^]
+* link:https://mysupport.netapp.com/info/communications/ECMLP2880231.html["이러한 인스턴스 유형의 가용성 및 지원 종료에 대해 자세히 알아보십시오"^]
+
+
+
+
+[[support-for-flash-cache-and-high-write-speed]]
+== Flash Cache 및 고속 쓰기 속도 지원
+
+다음 표는 Flash Cache 및 높은 쓰기 속도를 지원하는 EC2 인스턴스 유형을 나타냅니다.
+
+[cols="d,d,d"]
+|===
+| 지원되는 인스턴스 | Flash Cache | 높은 쓰기 속도 
+
+
+| c5.9xlarge | 지원되지 않음 | 지원됨 
+
+
+| c5.18xlarge | 지원되지 않음 | 지원됨 
+
+
+| c5a.12xlarge | 지원되지 않음 | 지원됨 
+
+
+| c5d.4xlarge | 지원됨 | 지원됨 
+
+
+| c5d.9xlarge | 지원됨 | 지원됨 
+
+
+| c5d.18xlarge | 지원됨 | 지원됨 
+
+
+| c5n.9xlarge | 지원되지 않음 | 지원됨 
+
+
+| c5n.18xlarge | 지원되지 않음 | 지원됨 
+
+
+| m5.xlarge | 지원되지 않음 | 지원됨(단일 노드만 해당) 
+
+
+| m5.2xlarge | 지원되지 않음 | 지원됨 
+
+
+| m5.4xlarge | 지원되지 않음 | 지원됨 
+
+
+| m5.16xlarge | 지원되지 않음 | 지원됨 
+
+
+| m5a.2xlarge | 지원되지 않음 | 지원됨 
+
+
+| m5a.16xlarge | 지원되지 않음 | 지원됨 
+
+
+| m5d.8xlarge | 지원됨 | 지원됨 
+
+
+| m5d.12xlarge | 지원됨 | 지원됨 
+
+
+| m5dn.4xlarge | 지원됨 | 지원됨 
+
+
+| m5dn.12xlarge | 지원됨 | 지원됨 
+
+
+| m5dn.24xlarge | 지원됨 | 지원됨 
+
+
+| m5n.2xlarge | 지원되지 않음 | 지원됨 
+
+
+| m6id.xlarge | 지원됨 ^*^ | 지원됨(단일 노드만 해당) 
+
+
+| m6id.2xlarge | 지원됨 ^*^ | 지원됨 
+
+
+| m6id.4xlarge | 지원됨 | 지원됨 
+
+
+| m6id.8xlarge | 지원됨 | 지원됨 
+
+
+| m6id.16xlarge | 지원됨 | 지원됨 
+
+
+| m6id.32xlarge | 지원됨 | 지원됨 
+
+
+| m6idn.xlarge | 지원됨 ^*^ | 지원됨(단일 노드만 해당) 
+
+
+| m6idn.2xlarge | 지원됨 ^*^ | 지원됨 
+
+
+| m6idn.4xlarge | 지원됨 | 지원됨 
+
+
+| m6idn.8xlarge | 지원됨 | 지원됨 
+
+
+| m6idn.16xlarge | 지원됨 | 지원됨 
+
+
+| m6idn.32xlarge | 지원됨 | 지원됨 
+
+
+| r5.xlarge | 지원되지 않음 | 지원됨(단일 노드만 해당) 
+
+
+| r5.2xlarge | 지원되지 않음 | 지원됨 
+
+
+| r5.8xlarge | 지원되지 않음 | 지원됨 
+
+
+| r5.12xlarge | 지원되지 않음 | 지원됨 
+
+
+| r5d.2xlarge | 지원됨 | 지원됨 
+|===
+pass:[*] Flash Cache는 m6id.xlarge, m6id.2xlarge, m6idn.xlarge 및 m6idn.2xlarge에서 지원됩니다. 그러나 이러한 인스턴스 유형은 16개 미만의 코어 프로세서를 가지고 있으며 고성능 또는 메모리 집약적인 워크로드에는 권장되지 않습니다. 과부하 시 메모리 제약으로 인해 재시작될 수 있습니다. 이를 방지하려면 코어 개수와 메모리 용량이 더 큰 인스턴스 유형을 사용하십시오.
+
+다음 참고 사항은 지원되는 인스턴스 동작 및 배포 옵션에 대한 일반적인 지침을 제공합니다.
+
+* 일부 인스턴스 유형에는 Cloud Volumes ONTAP가 Flash Cache로 사용하는 로컬 NVMe 스토리지가 포함됩니다. Flash Cache는 최근에 읽은 사용자 데이터와 NetApp 메타데이터의 실시간 지능형 캐싱을 통해 데이터 액세스 속도를 높입니다. 데이터베이스, 이메일, 파일 서비스를 포함한 랜덤 읽기 집약적 워크로드에 효과적입니다. Flash Cache 성능 향상을 활용하려면 모든 볼륨에서 압축을 비활성화해야 합니다 https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-flash-cache.html["Flash Cache에 대해 자세히 알아보십시오"^].
+* Cloud Volumes ONTAP는 단일 노드 시스템을 사용하는 경우 지원되는 모든 인스턴스 유형에서 고속 쓰기를 지원합니다. HA 쌍을 사용하는 경우 고속 쓰기는 지원되는 인스턴스 유형에서만 지원됩니다 https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-write-speed.html["쓰기 속도 선택에 대해 자세히 알아보십시오"^].
+* EC2 인스턴스 유형을 선택할 때 공유 인스턴스인지 전용 인스턴스인지 지정할 수 있습니다.
+
+
+
+
+[[supported-regions]]
+=== 지원되는 지역
+
+AWS 리전 지원에 대한 자세한 내용은 https://bluexp.netapp.com/cloud-volumes-global-regions["Cloud Volumes 글로벌 지역"^]를 참조하십시오.
+
+.관련 정보
+* https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html["Amazon EC2 인스턴스 유형"^]
+* https://aws.amazon.com/ec2/instance-types/m5/["Amazon EC2 M5 인스턴스"^]
+* https://aws.amazon.com/ec2/instance-types/m6i/["Amazon EC2 M6i 인스턴스"^]
+* https://aws.amazon.com/ec2/instance-types/c5/["Amazon EC2 C5 인스턴스"^]
+* https://aws.amazon.com/ec2/instance-types/r5/["Amazon EC2 R5 인스턴스"^]
+

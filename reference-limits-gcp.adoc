@@ -1,0 +1,262 @@
+---
+sidebar: sidebar 
+permalink: reference-limits-gcp.html 
+keywords: limits, maximum, storage, aggregates, disks, volumes, capacity, luns, size, storage virtual machine, SVM 
+summary: Cloud Volumes ONTAP는 안정적인 운영을 위해 Google Cloud에 스토리지 구성 제한을 두고 있습니다. 최상의 성능을 위해서는 시스템을 최대값으로 구성하지 마십시오. 
+---
+= Google Cloud의 Cloud Volumes ONTAP 스토리지 제한 사항
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Cloud Volumes ONTAP에는 안정적인 운영을 위한 스토리지 구성 제한이 있습니다. 최상의 성능을 위해서는 시스템을 최대값으로 구성하지 마십시오.
+
+
+
+[[maximum-system-capacity-by-license]]
+== 라이센스별 최대 시스템 용량
+
+Cloud Volumes ONTAP 시스템의 최대 시스템 용량은 라이센스에 따라 결정됩니다. 최대 시스템 용량에는 디스크 기반 스토리지와 데이터 계층화에 사용되는 오브젝트 스토리지가 포함됩니다.
+
+NetApp은 시스템 용량 제한 초과를 지원하지 않습니다. 라이센스 용량 제한에 도달하면 NetApp Console에 조치 필요 메시지가 표시되고 더 이상 디스크를 추가할 수 없습니다.
+
+일부 구성에서는 디스크 제한으로 인해 디스크만으로는 용량 제한에 도달할 수 없습니다.  https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-data-tiering.html["비활성 데이터를 개체 스토리지로 계층화"^]를 통해 용량 제한에 도달할 수 있습니다. 자세한 내용은 아래의 디스크 제한을 참조하십시오.
+
+[[cap-license-gcp]]
+.용량 기반 라이센스의 용량 제한
+용량 기반 라이선스를 사용하는 각 Cloud Volumes ONTAP 시스템은 객체 스토리지로의 계층화를 지원합니다. 계층화된 총 용량은 클라우드 공급자의 버킷 제한까지 확장할 수 있습니다. 라이선스는 용량 제한을 부과하지 않지만 계층화를 구성하고 관리할 때 최적의 성능, 안정성 및 비용 효율성을 보장하기 위해 https://www.netapp.com/pdf.html?item=/media/17239-tr-4598.pdf["FabricPool 모범 사례"^]를 따라야 합니다. 자세한 내용은 https://cloud.google.com/storage/docs/buckets["Google Cloud 문서"^]를 참조하십시오.
+
+다른 라이센스 유형에 대한 용량 제한::
+
+
+[cols="25,75"]
+|===
+| 라이센스 | 최대 시스템 용량(디스크 + 오브젝트 스토리지) 
+
+
+| 프리미엄 | 500 GB 
+
+
+| PAYGO Explore | 2TB(Explore에서는 데이터 계층화가 지원되지 않음) 
+
+
+| PAYGO Standard | 10 TB 
+
+
+| PAYGO Premium | 368 TB 
+
+
+| 노드 기반 라이센스 | 2 PiB(여러 라이센스 필요) 
+|===
+.HA 쌍의 경우 라이센스 용량 제한이 노드당인가요, 아니면 전체 HA 쌍에 대한 것인가요?
+용량 제한은 전체 HA 쌍에 대한 것입니다. 노드별 제한이 아닙니다. 예를 들어 Premium 라이센스를 사용하는 경우 두 노드 간에 최대 368TB의 용량을 사용할 수 있습니다.
+
+.HA 쌍의 경우 미러링된 데이터는 라이센스 용량 제한에 포함되나요?
+아니요, 그렇지 않습니다. HA 쌍의 데이터는 노드 간에 동기적으로 미러링되므로 Google Cloud에서 장애가 발생하더라도 데이터에 액세스할 수 있습니다. 예를 들어 노드 A에서 8TB 디스크를 구매하면 NetApp Console에서 노드 B에 미러링된 데이터에 사용되는 8TB 디스크도 할당합니다. 총 16TB의 용량이 설정되지만 라이센스 제한에는 8TB만 포함됩니다.
+
+
+
+[[aggregate-limits]]
+== 애그리게이트 제한
+
+Cloud Volumes ONTAP는 Google Cloud Platform 디스크를 _애그리게이트_로 그룹화합니다. 애그리게이트는 볼륨에 스토리지를 제공합니다.
+
+[cols="2*"]
+|===
+| 매개변수 | 제한 
+
+
+| 최대 데이터 애그리게이트 수 ^1^  a| 
+* 단일 노드의 경우 99
+* 전체 HA 쌍에 대해 64개
+
+
+
+
+| 최대 애그리게이트 크기 | 256TB의 원시 용량 ^2^ 
+
+
+| 애그리게이트당 디스크 | 1-6 ^3^ 
+
+
+| 애그리게이트당 최대 RAID 그룹 수 | 1 
+|===
+참고:
+
+. 데이터 애그리게이트의 최대 개수에는 루트 애그리게이트가 포함되지 않습니다.
+. 애그리게이트를 구성하는 디스크에 따라 애그리게이트 용량 제한이 결정됩니다. 이 제한에는 데이터 계층화에 사용되는 오브젝트 스토리지가 포함되지 않습니다.
+. 집계된 모든 디스크의 크기는 동일해야 합니다.
+
+
+
+
+[[disk-and-tiering-limits]]
+== 디스크 및 계층화 제한
+
+아래 표는 디스크만 사용했을 때와 디스크 및 콜드 데이터를 객체 스토리지로 계층화했을 때의 최대 시스템 용량을 보여줍니다. 디스크 제한은 사용자 데이터가 포함된 디스크에만 적용됩니다. 이 제한에는 부팅 디스크, 루트 디스크 또는 NVRAM이 포함되지 않습니다.
+
+[cols="60,40"]
+|===
+| 매개변수 | 제한 
+
+
+| 최대 데이터 디스크  a| 
+* 단일 노드 시스템의 경우 124
+* HA 쌍의 경우 노드당 123개
+
+
+
+
+| 최대 디스크 크기 | 64 TB 
+
+
+| 디스크만 사용하는 최대 시스템 용량 | 256 TB ^1^ 
+
+
+| 디스크 및 콜드 데이터 계층화를 통한 최대 시스템 용량(Google Cloud Storage 버킷 사용) | 라이센스에 따라 다릅니다. 위의 최대 시스템 용량 제한을 참조하십시오. 
+|===
+^1^ 이 제한은 Google Cloud Platform의 가상 머신 제한에 의해 정의됩니다.
+
+
+
+[[storage-vm-limits]]
+== 스토리지 VM 제한
+
+일부 구성에서는 Cloud Volumes ONTAP용 추가 스토리지 VM(SVM)을 생성할 수 있습니다.
+
+이는 테스트를 거친 한계치입니다. 스토리지 VM을 추가로 구성하는 것은 지원되지 않습니다.
+
+https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-managing-svms-gcp.html["추가 스토리지 VM을 생성하는 방법을 알아보세요."^].
+
+[cols="2*"]
+|===
+| 라이센스 유형 | 스토리지 VM 제한 
+
+
+| *프리미엄*  a| 
+총 24개의 스토리지 VM ^1^
+
+
+
+| *용량 기반 PAYGO 또는 BYOL* ^2^  a| 
+총 24개의 스토리지 VM ^1^
+
+
+
+| *노드 기반 BYOL* ^3^  a| 
+총 24개의 스토리지 VM ^1^
+
+
+
+| *노드 기반 PAYGO*  a| 
+* 데이터 제공을 위한 1개의 스토리지 VM
+* 재해 복구를 위한 스토리지 VM 1개
+
+
+|===
+. 이 24개의 스토리지 VM은 데이터를 제공하거나 재해 복구(DR)용으로 구성할 수 있습니다.
+. 용량 기반 라이선스의 경우 추가 스토리지 VM에 대한 추가 라이선스 비용은 없지만 스토리지 VM당 최소 4TiB 용량 요금이 부과됩니다. 예를 들어 스토리지 VM 2개를 생성하고 각각 2TiB의 프로비저닝된 용량이 있는 경우 총 8TiB가 청구됩니다.
+. 노드 기반 BYOL의 경우, Cloud Volumes ONTAP에 기본적으로 제공되는 첫 번째 스토리지 VM을 초과하는 각 추가 _데이터 제공_ 스토리지 VM마다 추가 라이선스가 필요합니다. 스토리지 VM 추가 라이선스를 받으려면 담당 계정 팀에 문의하십시오.
++
+재해 복구(DR)용으로 구성하는 스토리지 VM은 추가 라이센스가 필요하지 않지만(무료), 스토리지 VM 제한에 포함됩니다. 예를 들어, 데이터 제공 스토리지 VM이 12개이고 재해 복구용으로 구성된 스토리지 VM이 12개인 경우, 제한에 도달하여 추가 스토리지 VM을 생성할 수 없습니다.
+
+
+
+
+
+[[logical-storage-limits]]
+== 논리적 스토리지 제한
+
+[cols="22,22,56"]
+|===
+| 논리적 스토리지 | 매개변수 | 제한 
+
+
+.2+| *파일* | 최대 크기 ^2^ | 128 TB 
+
+
+| 볼륨당 최대값 | 볼륨 크기에 따라 최대 20억 
+
+
+| *FlexClone 볼륨* | 계층적 클론 깊이 ^12^ | 499 
+
+
+.3+| *FlexVol 볼륨* | 노드당 최대값 | 500 
+
+
+| 최소 크기 | 20 MB 
+
+
+| 최대 크기 ^3^ | 300 TiB 
+
+
+| * Qtree * | FlexVol 볼륨당 최대 | 4,995 
+
+
+| *Snapshot 복사본* | FlexVol 볼륨당 최대 | 1,023 
+|===
+. 계층적 클론 깊이는 단일 FlexVol 볼륨에서 생성할 수 있는 중첩된 FlexClone 볼륨 계층 구조의 최대 깊이입니다.
+. ONTAP 9.12.1P2부터 제한은 128TB입니다. ONTAP 9.11.1 및 이전 버전에서는 제한이 16TB입니다.
+. FlexVol 볼륨 생성은 최대 300TiB 크기까지 지원되며, 다음 도구 및 최소 버전이 필요합니다.
++
+** Cloud Volumes ONTAP 9.12.1 P2 및 9.13.0 P2부터 System Manager 및 ONTAP CLI
+** Cloud Volumes ONTAP 9.13.1부터
+
+
+
+
+
+
+[[iscsi-storage-limits]]
+== iSCSI 스토리지 제한
+
+[cols="3*"]
+|===
+| iSCSI 스토리지 | 매개변수 | 제한 
+
+
+.4+| * LUN * | 노드당 최대값 | 1,024 
+
+
+| LUN 맵의 최대 수 | 1,024 
+
+
+| 최대 크기 | 16 TB 
+
+
+| 볼륨당 최대값 | 512 
+
+
+| *igroup* | 노드당 최대값 | 256 
+
+
+.2+| *이니시에이터* | 노드당 최대값 | 512 
+
+
+| igroup당 최대값 | 128 
+
+
+| *iSCSI 세션* | 노드당 최대값 | 1,024 
+
+
+.2+| *LIF* | 포트당 최대 | 1 
+
+
+| 포트셋당 최대 | 32 
+
+
+| *포트셋* | 노드당 최대값 | 256 
+|===
+
+
+[[cloud-volumes-ontap-ha-pairs-do-not-support-immediate-storage-giveback]]
+== Cloud Volumes ONTAP HA 쌍은 즉각적인 스토리지 반환을 지원하지 않습니다.
+
+노드가 재부팅된 후 파트너는 스토리지를 반환하기 전에 데이터를 동기화해야 합니다. 데이터 재동기화에 걸리는 시간은 노드가 다운된 동안 클라이언트가 기록한 데이터 양과 스토리지 반환 시점의 데이터 쓰기 속도에 따라 달라집니다.
+
+https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-ha-google-cloud.html["Google Cloud에서 실행되는 Cloud Volumes ONTAP HA 쌍에서 스토리지가 어떻게 작동하는지 알아보십시오"^].

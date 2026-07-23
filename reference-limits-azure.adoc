@@ -1,0 +1,755 @@
+---
+sidebar: sidebar 
+permalink: reference-limits-azure.html 
+keywords: limits, maximum, storage, aggregates, disks, volumes, capacity, luns, size, storage virtual machine, SVM, page blobs, ebs, managed disks 
+summary: Cloud Volumes ONTAP는 안정적인 운영을 위해 Azure에 스토리지 구성 제한을 두고 있습니다. 최상의 성능을 위해서는 시스템을 최대값으로 구성하지 마십시오. 
+---
+= Azure의 Cloud Volumes ONTAP 에 대한 저장소 한도
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Cloud Volumes ONTAP에는 안정적인 운영을 위한 스토리지 구성 제한이 있습니다. 최상의 성능을 위해서는 시스템을 최대값으로 구성하지 마십시오.
+
+
+
+[[maximum-system-capacity-by-license]]
+== 라이센스별 최대 시스템 용량
+
+Cloud Volumes ONTAP 시스템의 최대 시스템 용량은 라이센스에 따라 결정됩니다. 최대 시스템 용량에는 디스크 기반 스토리지와 데이터 계층화에 사용되는 오브젝트 스토리지가 포함됩니다.
+
+NetApp은 시스템 용량 제한 초과를 지원하지 않습니다. 라이선스 용량 제한에 도달하면 NetApp Console에 조치 필요 메시지가 표시되고 디스크 추가가 차단됩니다.
+
+[[cap-license-azure]]
+.용량 기반 라이센스의 용량 제한
+용량 기반 라이선스를 사용하는 각 Cloud Volumes ONTAP 시스템은 객체 스토리지로의 계층화를 지원합니다. 계층화된 총 용량은 클라우드 공급자의 버킷 제한까지 확장할 수 있습니다. 라이선스는 용량 제한을 부과하지 않지만 계층화를 구성하고 관리할 때 최적의 성능, 안정성 및 비용 효율성을 보장하기 위해 https://www.netapp.com/pdf.html?item=/media/17239-tr-4598.pdf["FabricPool 모범 사례"^]를 따라야 합니다.  https://learn.microsoft.com/en-us/azure/storage/common/scalability-targets-standard-account["관리 디스크에 대한 Azure 설명서"^] 및 https://learn.microsoft.com/en-us/azure/storage/blobs/scalability-targets["Blob 저장소에 대한 Azure 설명서"^]를 참조하십시오.
+
+다른 라이센스 유형에 대한 용량 제한::
+
+
+[cols="25,75"]
+|===
+| 라이센스 | 최대 시스템 용량(디스크 + 오브젝트 스토리지) 
+
+
+| 프리미엄 | 500기가바이트 
+
+
+| PAYGO Explore | 2TiB(Explore에서는 데이터 계층화가 지원되지 않음) 
+
+
+| PAYGO Standard | 10 TiB 
+
+
+| PAYGO Premium | 368 TiB 
+
+
+| 노드 기반 라이센스 | 2 PiB(여러 라이센스 필요) 
+|===
+.HA의 경우 라이센스 용량 제한이 노드당 적용됩니까, 아니면 전체 HA 쌍에 적용됩니까?
+용량 제한은 전체 HA 쌍에 대한 것입니다. 노드별 제한이 아닙니다. 예를 들어 Premium 라이센스를 사용하는 경우 두 노드 간에 최대 368TiB의 용량을 사용할 수 있습니다.
+
+
+
+[[aggregate-limits]]
+== 애그리게이트 제한
+
+Cloud Volumes ONTAP는 Azure 스토리지를 디스크로 사용하고 이를 _애그리게이트_로 그룹화합니다. 애그리게이트는 볼륨에 스토리지를 제공합니다.
+
+[cols="2*"]
+|===
+| 매개변수 | 제한 
+
+
+| 최대 애그리게이트 수 | 디스크 제한과 동일합니다 
+
+
+| 최대 애그리게이트 크기 ^1^ | 단일 노드의 경우 384TiB의 원시 용량 ^2^ PAYGO를 사용하는 단일 노드의 경우 352TiB의 원시 용량 페이지 Blob을 사용하는 HA 쌍의 경우 96TiB의 원시 용량 관리 디스크를 사용하는 HA 쌍의 경우 384TiB의 원시 용량 
+
+
+| 애그리게이트당 디스크 | 1-12 ^3^ 
+
+
+| 애그리게이트당 최대 RAID 그룹 수 | 1 
+|===
+참고:
+
+. 애그리게이트 용량 제한은 애그리게이트를 구성하는 디스크를 기준으로 합니다. 이 제한에는 데이터 계층화에 사용되는 오브젝트 스토리지는 포함되지 않습니다.
+. 노드 기반 라이선스를 사용하는 경우 384 TiB에 도달하려면 BYOL 라이선스 2개가 필요합니다.
+. 집계된 모든 디스크의 크기는 동일해야 합니다.
+
+
+
+
+[[disk-and-tiering-limits-by-vm-size]]
+== VM 크기별 디스크 및 계층화 제한
+
+용량 제한은 VM 크기 및 시스템 유형(단일 노드 또는 HA 쌍 시스템)에 따라 다릅니다.
+
+아래 참고 사항은 표의 숫자에 대해 설명합니다.
+
+* 디스크 제한은 사용자 데이터가 포함된 디스크에만 적용됩니다.
++
+제한 사항에는 루트 디스크, 코어 디스크 및 VNVRAM이 포함되지 않습니다.
+
+* 디스크만 사용할 때와 디스크 및 콜드 데이터 계층화를 오브젝트 스토리지에 함께 사용할 때의 최대 시스템 용량을 확인할 수 있습니다.
+* 관리형 디스크를 사용하는 단일 노드 및 HA 시스템은 디스크당 최대 32TiB의 용량을 지원합니다. 지원되는 디스크 수는 VM 크기에 따라 다릅니다.
+* 페이지 블롭을 사용하는 HA 시스템은 페이지 블롭당 최대 8TiB의 용량을 지원합니다. 지원되는 디스크 수는 VM 크기에 따라 다릅니다.
+* 특정 VM 크기를 사용하는 단일 노드 시스템에 대해 명시된 896 TiB 디스크 기반 제한은 _테스트된_ 제한입니다.
+
+
+
+
+[[limits-for-different-deployment-modes-of-capacity-based-licensing]]
+=== 용량 기반 라이센스의 다양한 배포 모드에 대한 제한 사항
+
+다음 디스크 제한은 용량 기반 라이센스 패키지를 사용하는 Cloud Volumes ONTAP 시스템에 적용됩니다. https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-licensing.html["Cloud Volumes ONTAP 라이센스 옵션에 대해 알아보십시오"^]
+
+
+NOTE: 단일 노드, 페이지 블롭이 있는 단일 가용성 영역의 HA 쌍, 공유 관리 디스크가 있는 단일 및 다중 가용성 영역의 HA 쌍에 대한 최대 시스템 용량 및 데이터 계층화 용량 제한은 <<cap-license-azure>>을 참조하십시오.
+
+
+
+==== 단일 노드
+
+[cols="14,20,31"]
+|===
+| VM 크기 | 노드당 최대 데이터 디스크 수 | 디스크만 사용하는 최대 시스템 용량 
+
+
+| DS4_v2 | 29 | 896 TiB 
+
+
+| DS5_v2 | 61 | 896 TiB 
+
+
+| DS13_v2 | 29 | 896 TiB 
+
+
+| DS14_v2 | 61 | 896 TiB 
+
+
+| DS15_v2 | 61 | 896 TiB 
+
+
+| E4s_v3 | 5 | 160 TiB 
+
+
+| E8s_v3 | 13 | 416 TiB 
+
+
+| E32s_v3 | 29 | 896 TiB 
+
+
+| E48s_v3 | 29 | 896 TiB 
+
+
+| E64is_v3 | 29 | 896 TiB 
+
+
+| E4ds_v4 | 5 | 160 TiB 
+
+
+| E8ds_v4 | 13 | 416 TiB 
+
+
+| E32ds_v4 | 29 | 896 TiB 
+
+
+| E48ds_v4 | 29 | 896 TiB 
+
+
+| E80ids_v4 | 61 | 896 TiB 
+
+
+| E4ds_v5 | 5 | 160 TiB 
+
+
+| E8ds_v5 | 13 | 416 TiB 
+
+
+| E20ds_v5 | 29 | 896 TiB 
+
+
+| E32ds_v5 | 29 | 896 TiB 
+
+
+| E48ds_v5 | 29 | 896 TiB 
+
+
+| E64ds_v5 | 29 | 896 TiB 
+
+
+| L8s_v3 | 12 | 384 TiB 
+
+
+| L16s_v3 | 28 | 896 TiB 
+
+
+| L32s_v3 | 28 | 896 TiB 
+
+
+| L48s_v3 | 28 | 896 TiB 
+
+
+| L64s_v3 | 28 | 896 TiB 
+|===
+
+
+==== 페이지 Blob이 있는 단일 가용성 영역의 HA 쌍 시스템
+
+[cols="14,20,31"]
+|===
+| VM 크기 | HA 쌍의 최대 데이터 디스크 수 | 디스크만 사용하는 최대 시스템 용량 
+
+
+| DS4_v2 | 29 | 232 TiB 
+
+
+| DS5_v2 | 61 | 488 TiB 
+
+
+| DS13_v2 | 29 | 232 TiB 
+
+
+| DS14_v2 | 61 | 488 TiB 
+
+
+| DS15_v2 | 61 | 488 TiB 
+
+
+| E8s_v3 | 13 | 104 TiB 
+
+
+| E48s_v3 | 29 | 232 TiB 
+
+
+| E8ds_v4 | 13 | 104 TiB 
+
+
+| E32ds_v4 | 29 | 232 TiB 
+
+
+| E48ds_v4 | 29 | 232 TiB 
+
+
+| E80ids_v4 | 61 | 488 TiB 
+|===
+
+
+==== 공유 관리 디스크를 사용하는 단일 가용성 영역의 HA 쌍
+
+[cols="14,20,31"]
+|===
+| VM 크기 | HA 쌍의 최대 데이터 디스크 수 | 디스크만 사용하는 최대 시스템 용량 
+
+
+| E8ds_v4 | 12 | 384 TiB 
+
+
+| E32ds_v4 | 28 | 896 TiB 
+
+
+| E48ds_v4 | 28 | 896 TiB 
+
+
+| E80ids_v4 | 28 | 896 TiB 
+
+
+| E8ds_v5 | 12 | 384 TiB 
+
+
+| E20ds_v5 | 28 | 896 TiB 
+
+
+| E32ds_v5 | 28 | 896 TiB 
+
+
+| E48ds_v5 | 28 | 896 TiB 
+
+
+| E64ds_v5 | 28 | 896 TiB 
+
+
+| L16s_v3 | 28 | 896 TiB 
+
+
+| L32s_v3 | 28 | 896 TiB 
+
+
+| L48s_v3 | 28 | 896 TiB 
+
+
+| L64s_v3 | 28 | 896 TiB 
+|===
+
+
+==== 공유 관리 디스크를 사용하는 여러 가용성 영역의 HA 쌍
+
+[cols="14,20,31"]
+|===
+| VM 크기 | HA 쌍의 최대 데이터 디스크 수 | 디스크만 사용하는 최대 시스템 용량 
+
+
+| E8ds_v4 | 12 | 384 TiB 
+
+
+| E32ds_v4 | 28 | 896 TiB 
+
+
+| E48ds_v4 | 28 | 896 TiB 
+
+
+| E80ids_v4 | 28 | 896 TiB 
+
+
+| E8ds_v5 | 12 | 384 TiB 
+
+
+| E20ds_v5 | 28 | 896 TiB 
+
+
+| E32ds_v5 | 28 | 896 TiB 
+
+
+| E48ds_v5 | 28 | 896 TiB 
+
+
+| E64ds_v5 | 28 | 896 TiB 
+
+
+| L16s_v3 | 28 | 896 TiB 
+
+
+| L32s_v3 | 28 | 896 TiB 
+
+
+| L48s_v3 | 28 | 896 TiB 
+
+
+| L64s_v3 | 28 | 896 TiB 
+|===
+
+
+[[limits-for-different-deployment-modes-of-node-based-licensing]]
+=== 노드 기반 라이센스의 다양한 배포 모드에 대한 제한 사항
+
+노드 기반 라이센스를 사용하는 Cloud Volumes ONTAP 시스템에는 다음 디스크 제한이 적용됩니다. 노드 기반 라이센스는 노드별로 Cloud Volumes ONTAP 라이센스를 부여할 수 있는 이전 세대 모델입니다. 노드 기반 라이센스는 기존 고객에게 계속 제공됩니다.
+
+Cloud Volumes ONTAP BYOL 단일 노드 또는 HA 쌍 시스템에 대해 여러 개의 노드 기반 라이센스를 구입하여 368TiB 이상의 용량을 할당할 수 있으며, 최대 테스트 및 지원되는 시스템 용량 제한인 2PiB까지 할당할 수 있습니다. 디스크 제한으로 인해 디스크만 사용하여 용량 제한에 도달하지 못할 수 있으므로 주의하십시오. 디스크 제한을 초과하려면 https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-data-tiering.html["비활성 데이터를 개체 스토리지로 계층화"^]. https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-manage-node-licenses.html["Cloud Volumes ONTAP에 추가 시스템 라이센스를 추가하는 방법에 대해 알아보십시오"^]. Cloud Volumes ONTAP는 최대 테스트 및 지원되는 시스템 용량인 2PiB까지 지원하며, 2PiB 제한을 초과하면 지원되지 않는 시스템 구성이 됩니다.
+
+
+
+==== 단일 노드
+
+단일 노드에는 PAYGO Premium 및 BYOL의 두 가지 노드 기반 라이센스 옵션이 있습니다.
+
+.PAYGO Premium이 포함된 단일 노드
+[%collapsible]
+====
+[cols="14,20,31,33"]
+|===
+| VM 크기 | 노드당 최대 데이터 디스크 수 | 디스크만 사용하는 최대 시스템 용량 | 디스크 및 데이터 계층화를 사용한 최대 시스템 용량 
+
+
+| DS5_v2 | 61 | 368 TiB | 368 TiB 
+
+
+| DS14_v2 | 61 | 368 TiB | 368 TiB 
+
+
+| DS15_v2 | 61 | 368 TiB | 368 TiB 
+
+
+| E32s_v3 | 29 | 368 TiB | 368 TiB 
+
+
+| E48s_v3 | 29 | 368 TiB | 368 TiB 
+
+
+| E64is_v3 | 29 | 368 TiB | 368 TiB 
+
+
+| E32ds_v4 | 29 | 368 TiB | 368 TiB 
+
+
+| E48ds_v4 | 29 | 368 TiB | 368 TiB 
+
+
+| E80ids_v4 | 61 | 368 TiB | 368 TiB 
+
+
+| E20ds_v5 | 29 | 896 TiB | 2 PiB 
+
+
+| E32ds_v5 | 29 | 896 TiB | 2 PiB 
+
+
+| E48ds_v5 | 29 | 896 TiB | 2 PiB 
+
+
+| E64ds_v5 | 29 | 896 TiB | 2 PiB 
+|===
+====
+.BYOL을 사용하는 단일 노드
+[%collapsible]
+====
+[cols="10,18,18,18,18,18"]
+|===
+| VM 크기 | 노드당 최대 데이터 디스크 수 2+| 하나의 라이센스로 최대 시스템 용량 2+| 여러 라이센스를 사용한 최대 시스템 용량 
+
+
+2+|  | *디스크만 해당* | *디스크 + 데이터 계층화* | *디스크만 해당* | *디스크 + 데이터 계층화* 
+
+
+| DS4_v2 | 29 | 368 TiB | 368 TiB | 896 TiB | 2 PiB 
+
+
+| DS5_v2 | 61 | 368 TiB | 368 TiB | 896 TiB | 2 PiB 
+
+
+| DS13_v2 | 29 | 368 TiB | 368 TiB | 896 TiB | 2 PiB 
+
+
+| DS14_v2 | 61 | 368 TiB | 368 TiB | 896 TiB | 2 PiB 
+
+
+| DS15_v2 | 61 | 368 TiB | 368 TiB | 896 TiB | 2 PiB 
+
+
+| L8s_v2 | 13 | 368 TiB | 368 TiB | 416 TiB | 2 PiB 
+
+
+| E4s_v3 | 5 | 160 TiB | 368 TiB | 160 TiB | 2 PiB 
+
+
+| E8s_v3 | 13 | 368 TiB | 368 TiB | 416 TiB | 2 PiB 
+
+
+| E32s_v3 | 29 | 368 TiB | 368 TiB | 896 TiB | 2 PiB 
+
+
+| E48s_v3 | 29 | 368 TiB | 368 TiB | 896 TiB | 2 PiB 
+
+
+| E64is_v3 | 29 | 368 TiB | 368 TiB | 896 TiB | 2 PiB 
+
+
+| E4ds_v4 | 5 | 160 TiB | 368 TiB | 160 TiB | 2 PiB 
+
+
+| E8ds_v4 | 13 | 368 TiB | 368 TiB | 416 TiB | 2 PiB 
+
+
+| E32ds_v4 | 29 | 368 TiB | 368 TiB | 896 TiB | 2 PiB 
+
+
+| E48ds_v4 | 29 | 368 TiB | 368 TiB | 896 TiB | 2 PiB 
+
+
+| E80ids_v4 | 61 | 368 TiB | 368 TiB | 896 TiB | 2 PiB 
+
+
+| E4ds_v5 | 5 | 160 TiB | 368 TiB | 160 TiB | 2 PiB 
+
+
+| E8ds_v5 | 13 | 368 TiB | 368 TiB | 416 TiB | 2 PiB 
+
+
+| E20ds_v5 | 29 | 368 TiB | 368 TiB | 896 TiB | 2 PiB 
+
+
+| E32ds_v5 | 29 | 368 TiB | 368 TiB | 896 TiB | 2 PiB 
+
+
+| E48ds_v5 | 29 | 368 TiB | 368 TiB | 896 TiB | 2 PiB 
+
+
+| E64ds_v5 | 29 | 368 TiB | 368 TiB | 896 TiB | 2 PiB 
+|===
+====
+
+
+==== HA 쌍
+
+HA 쌍에는 페이지 블롭과 다중 가용 영역의 두 가지 구성 유형이 있습니다. 각 구성에는 PAYGO Premium과 BYOL의 두 가지 노드 기반 라이센스 옵션이 있습니다.
+
+.PAYGO Premium: 페이지 blob이 있는 단일 가용성 영역의 HA 쌍
+[%collapsible]
+====
+[cols="14,20,31,33"]
+|===
+| VM 크기 | HA 쌍의 최대 데이터 디스크 수 | 디스크만 사용하는 최대 시스템 용량 | 디스크 및 데이터 계층화를 사용한 최대 시스템 용량 
+
+
+| DS5_v2 | 61 | 368 TiB | 368 TiB 
+
+
+| DS14_v2 | 61 | 368 TiB | 368 TiB 
+
+
+| DS15_v2 | 61 | 368 TiB | 368 TiB 
+
+
+| E8s_v3 | 13 | 104 TiB | 368 TiB 
+
+
+| E48s_v3 | 29 | 232 TiB | 368 TiB 
+
+
+| E32ds_v4 | 29 | 232 TiB | 368 TiB 
+
+
+| E48ds_v4 | 29 | 232 TiB | 368 TiB 
+
+
+| E80ids_v4 | 61 | 368 TiB | 368 TiB 
+|===
+====
+.PAYGO Premium: 공유 관리 디스크를 사용하는 다중 가용 영역 구성의 HA 쌍
+[%collapsible]
+====
+[cols="14,20,31,33"]
+|===
+| VM 크기 | HA 쌍의 최대 데이터 디스크 수 | 디스크만 사용하는 최대 시스템 용량 | 디스크 및 데이터 계층화를 사용한 최대 시스템 용량 
+
+
+| E32ds_v4 | 28 | 368 TiB | 368 TiB 
+
+
+| E48ds_v4 | 28 | 368 TiB | 368 TiB 
+
+
+| E80ids_v4 | 28 | 368 TiB | 368 TiB 
+
+
+| E20ds_v5 | 28 | 896 TiB | 2 PiB 
+
+
+| E32ds_v5 | 28 | 896 TiB | 2 PiB 
+
+
+| E48ds_v5 | 28 | 896 TiB | 2 PiB 
+
+
+| E64ds_v5 | 28 | 896 TiB | 2 PiB 
+|===
+====
+.BYOL: 페이지 Blob을 사용하는 단일 가용성 영역의 HA 쌍
+[%collapsible]
+====
+[cols="10,18,18,18,18,18"]
+|===
+| VM 크기 | HA 쌍의 최대 데이터 디스크 수 2+| 하나의 라이센스로 최대 시스템 용량 2+| 여러 라이센스를 사용한 최대 시스템 용량 
+
+
+2+|  | *디스크만 해당* | *디스크 + 데이터 계층화* | *디스크만 해당* | *디스크 + 데이터 계층화* 
+
+
+| DS4_v2 | 29 | 232 TiB | 368 TiB | 232 TiB | 2 PiB 
+
+
+| DS5_v2 | 61 | 368 TiB | 368 TiB | 488 TiB | 2 PiB 
+
+
+| DS13_v2 | 29 | 232 TiB | 368 TiB | 232 TiB | 2 PiB 
+
+
+| DS14_v2 | 61 | 368 TiB | 368 TiB | 488 TiB | 2 PiB 
+
+
+| DS15_v2 | 61 | 368 TiB | 368 TiB | 488 TiB | 2 PiB 
+
+
+| E8s_v3 | 13 | 104 TiB | 368 TiB | 104 TiB | 2 PiB 
+
+
+| E48s_v3 | 29 | 232 TiB | 368 TiB | 232 TiB | 2 PiB 
+
+
+| E8ds_v4 | 13 | 104 TiB | 368 TiB | 104 TiB | 2 PiB 
+
+
+| E32ds_v4 | 29 | 232 TiB | 368 TiB | 232 TiB | 2 PiB 
+
+
+| E48ds_v4 | 29 | 232 TiB | 368 TiB | 232 TiB | 2 PiB 
+
+
+| E80ids_v4 | 61 | 368 TiB | 368 TiB | 488 TiB | 2 PiB 
+|===
+====
+.BYOL: 공유 관리 디스크를 사용하는 다중 가용성 영역 구성의 HA 쌍
+[%collapsible]
+====
+[cols="10,18,18,18,18,18"]
+|===
+| VM 크기 | HA 쌍의 최대 데이터 디스크 수 2+| 하나의 라이센스로 최대 시스템 용량 2+| 여러 라이센스를 사용한 최대 시스템 용량 
+
+
+2+|  | *디스크만 해당* | *디스크 + 데이터 계층화* | *디스크만 해당* | *디스크 + 데이터 계층화* 
+
+
+| E8ds_v4 | 12 | 368 TiB | 368 TiB | 368 TiB | 2 PiB 
+
+
+| E32ds_v4 | 28 | 368 TiB | 368 TiB | 368 TiB | 2 PiB 
+
+
+| E48ds_v4 | 28 | 368 TiB | 368 TiB | 368 TiB | 2 PiB 
+
+
+| E80ids_v4 | 28 | 368 TiB | 368 TiB | 368 TiB | 2 PiB 
+
+
+| E8ds_v5 | 12 | 368 TiB | 368 TiB | 368 TiB | 2 PiB 
+
+
+| E20ds_v5 | 28 | 368 TiB | 368 TiB | 368 TiB | 2 PiB 
+
+
+| E32ds_v5 | 28 | 368 TiB | 368 TiB | 368 TiB | 2 PiB 
+
+
+| E48ds_v5 | 28 | 368 TiB | 368 TiB | 368 TiB | 2 PiB 
+
+
+| E64ds_v5 | 28 | 368 TiB | 368 TiB | 368 TiB | 2 PiB 
+|===
+====
+
+
+[[storage-vm-limits]]
+== 스토리지 VM 제한
+
+일부 구성에서는 Cloud Volumes ONTAP용 추가 스토리지 VM(SVM)을 생성할 수 있습니다.
+
+이는 테스트를 거친 한계치입니다. 스토리지 VM을 추가로 설정하는 것은 지원되지 않습니다.
+
+https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-managing-svms-azure.html["추가 스토리지 VM을 생성하는 방법을 알아보세요."^].
+
+[cols="2*"]
+|===
+| 라이센스 유형 | 스토리지 VM 제한 
+
+
+| *프리미엄*  a| 
+총 24개의 스토리지 VM ^1,2^
+
+
+
+| *용량 기반 PAYGO 또는 BYOL* ^3^  a| 
+총 24개의 스토리지 VM ^1,2^
+
+
+
+| *노드 기반 BYOL* ^4^  a| 
+총 24개의 스토리지 VM ^1,2^
+
+
+
+| *노드 기반 PAYGO*  a| 
+* 데이터 제공을 위한 1개의 스토리지 VM
+* 재해 복구를 위한 스토리지 VM 1개
+
+
+|===
+. 이 24개의 스토리지 VM은 데이터를 제공하거나 재해 복구(DR)용으로 구성할 수 있습니다.
+. 각 스토리지 VM은 최대 3개의 LIF를 가질 수 있으며, 이 중 2개는 데이터 LIF이고 1개는 SVM 관리 LIF입니다.
+. 용량 기반 라이선스의 경우 추가 스토리지 VM에 대한 추가 라이선스 비용은 없지만 스토리지 VM당 최소 4TiB 용량 요금이 부과됩니다. 예를 들어 스토리지 VM 2개를 생성하고 각각 2TiB의 프로비저닝된 용량이 있는 경우 총 8TiB가 청구됩니다.
+. 노드 기반 BYOL의 경우, Cloud Volumes ONTAP에 기본적으로 제공되는 첫 번째 스토리지 VM을 초과하는 각 추가 _데이터 제공_ 스토리지 VM마다 추가 라이선스가 필요합니다. 스토리지 VM 추가 라이선스를 받으려면 담당 계정 팀에 문의하십시오.
++
+재해 복구(DR)용 스토리지 VM에는 추가 라이선스가 필요하지 않지만 스토리지 VM 제한에 포함됩니다. 예를 들어 데이터 서비스용 스토리지 VM이 12개, DR용 스토리지 VM이 12개인 경우 제한에 도달한 것이므로 더 이상 생성할 수 없습니다.
+
+
+
+
+
+[[file-and-volume-limits]]
+== 파일 및 볼륨 제한
+
+[cols="22,22,56"]
+|===
+| 논리적 스토리지 | 매개변수 | 제한 
+
+
+.2+| *파일* | 최대 크기 ^2^ | 128 TB 
+
+
+| 볼륨당 최대값 | 볼륨 크기에 따라 최대 20억 
+
+
+| *FlexClone 볼륨* | 계층적 클론 깊이 ^1^ | 499 
+
+
+.3+| *FlexVol 볼륨* | 노드당 최대값 | 500 
+
+
+| 최소 크기 | 20 MB 
+
+
+| 최대 크기 ^3^ | 300 TiB 
+
+
+| * Qtree * | FlexVol 볼륨당 최대 | 4,995 
+
+
+| *Snapshot 복사본* | FlexVol 볼륨당 최대 | 1,023 
+|===
+. 계층적 클론 깊이는 단일 FlexVol 볼륨에서 생성할 수 있는 중첩된 FlexClone 볼륨 계층 구조의 최대 깊이입니다.
+. ONTAP 9.12.1P2부터 제한은 128TB입니다. ONTAP 9.11.1 및 이전 버전에서는 제한이 16TB입니다.
+. FlexVol 볼륨 생성은 최대 300TiB 크기까지 지원되며, 다음 도구 및 최소 버전이 필요합니다.
++
+** Cloud Volumes ONTAP 9.12.1 P2 및 9.13.0 P2부터 System Manager 및 ONTAP CLI
+** Cloud Volumes ONTAP 9.13.1부터
+
+
+
+
+
+
+[[iscsi-storage-limits]]
+== iSCSI 스토리지 제한
+
+[cols="3*"]
+|===
+| iSCSI 스토리지 | 매개변수 | 제한 
+
+
+.4+| * LUN * | 노드당 최대값 | 1,024 
+
+
+| LUN 맵의 최대 수 | 1,024 
+
+
+| 최대 크기 | 16 TiB 
+
+
+| 볼륨당 최대값 | 512 
+
+
+| *igroup* | 노드당 최대값 | 256 
+
+
+.2+| *이니시에이터* | 노드당 최대값 | 512 
+
+
+| igroup당 최대값 | 128 
+
+
+| *iSCSI 세션* | 노드당 최대값 | 1,024 
+
+
+.2+| *LIF* | 포트당 최대 | 32 
+
+
+| 포트셋당 최대 | 32 
+
+
+| *포트셋* | 노드당 최대값 | 256 
+|===

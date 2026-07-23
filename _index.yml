@@ -6,76 +6,105 @@ indexpage:
   tiles:
   - title: 시작하기
     links:
-    - title: Cloud Volumes ONTAP 에 대해 알아보세요
+    - title: 새로운 소식
+      url: whats-new.html
+    - title: Cloud Volumes ONTAP란 무엇입니까?
       url: concept-overview-cvo.html
-    - title: AWS 빠른 시작
-      url: task-getting-started-aws.html
-    - title: AWS 최고 비밀/비밀 클라우드 지역에 대한 빠른 시작
-      url: task-getting-started-aws-c2s.html
-      flavor: aws
-    - title: Azure 빠른 시작
-      url: task-getting-started-azure.html
-      flavor: azure
-    - title: Google Cloud 빠른 시작
-      url: task-getting-started-gcp.html
-      flavor: gcp
-  - title: 라이센스
+    - title: 보안 및 규정 준수
+      url: concept-security.html
+    - title: 지원되는 버전
+      url: reference-versions.html
+    - title: 지원되는 업그레이드 경로
+      url: task-updating-ontap-cloud.html#supported-upgrade-paths
+    - title: 기본 구성
+      url: reference-default-configs.html
+  - title: Cloud Volumes ONTAP 에 대해 알아보세요
     links:
-    - title: 라이센스 개요
+    - title: 라이센스
       url: concept-licensing.html
-    - title: 용량 기반 라이선스 관리
-      url: task-manage-capacity-licenses.html
-    - title: 할당되지 않은 노드 기반 라이선스 교환
-      url: task-manage-node-licenses.html#exchange-unassigned-node-based-licenses
-    - title: Keystone 구독 관리
-      url: task-manage-keystone.html
-  - title: 스토리지 관리
-    links:
-    - title: 볼륨 생성
-      url: task-create-volumes.html
-    - title: 비활성 데이터를 개체 스토리지로 계층화
-      url: task-tiering.html
-    - title: FlexCache 로 데이터 액세스 가속화
-      url: task-accelerate-data-access.html
-    - title: ONTAP SAN 호스트 구성
-      url: https://docs.netapp.com/us-en/ontap-sanhost
-  - title: 시스템 관리
-    links:
-    - title: Cloud Volumes ONTAP 업그레이드
-      url: task-updating-ontap-cloud.html
-    - title: Cloud Volumes ONTAP 중지 및 시작
-      url: task-managing-state.html
-  - title: 보안
-    links:
-    - title: NetApp 암호화로 볼륨 암호화
-      url: task-encrypting-volumes.html
-    - title: 랜섬웨어 보호 강화
-      url: task-protecting-ransomware.html
-  - title: API
-    links:
-    - title: Cloud Volumes ONTAP API 개요
-      url: https://docs.netapp.com/us-en/bluexp-automation/cm/overview.html
-    - title: API 사용을 준비하세요
-      url: https://docs.netapp.com/us-en/bluexp-automation/cm/prepare.html
-    - title: API 참조
-      url: https://docs.netapp.com/us-en/bluexp-automation/cm/api_ref_resources.html
-  - title: 문제 해결
-    links:
-    - title: NetApp 지식 기반
-      url: https://kb.netapp.com/Advice_and_Troubleshooting/Cloud_Services/Cloud_Volumes_ONTAP_(CVO)
-  - title: 참조
+    - title: 보안
+      url: concept-security.html
+    - title: 암호화에 대해 알아보기
+      url: concept-security.html
+    - title: 스토리지 관리
+      url: concept-storage-management.html
+    - title: Cloud Volumes ONTAP 클러스터에 사용되는 디스크 및 집계
+      url: reference-default-configs.html
+    - title: Cloud Volumes ONTAP 워크로드에 대한 성능 모니터링
+      url: concept-performance.html
+  - title: AWS
     links:
     - title: 지원되는 구성
-      url: https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/index.html
+      url: reference-configs-aws.html
+    - title: AWS의 Cloud Volumes ONTAP HA 쌍에 대해 알아보세요
+      url: concept-ha.html
+    - title: AWS에서의 네트워킹 요구 사항/보안 요구 사항
+      url: reference-networking-aws.html
+    - title: 빠른 배포
+      url: task-quick-deploy-aws.html
+    - title: 비밀 클라우드에 AWS 배포
+      url: task-getting-started-aws-c2s.html
+    - title: AWS Key Management Service로 암호화 키 관리
+      url: task-aws-key-management.html
+  - title: 하늘빛
+    links:
+    - title: 지원되는 구성
+      url: reference-configs-azure.html
+    - title: Azure의 Cloud Volumes ONTAP HA 쌍에 대해 알아보세요
+      url: concept-ha-azure.html
+    - title: Azure의 네트워킹 요구 사항/보안 요구 사항
+      url: reference-networking-azure.html
+    - title: 빠른 배포
+      url: task-quick-deploy-azure.html
+    - title: 마켓플레이스에 배포
+      url: task-deploy-cvo-azure-mktplc.html
+    - title: Azure Key Vault를 사용하여 암호화 키 관리
+      url: task-azure-key-vault.html
+  - title: 구글 클라우드
+    links:
+    - title: 지원되는 구성
+      url: reference-configs-gcp.html
+    - title: Google Cloud의 Cloud Volumes ONTAP HA 쌍에 대해 알아보세요
+      url: concept-ha-google-cloud.html
+    - title: Google Cloud에서의 네트워킹 요구 사항/보안 요구 사항
+      url: reference-networking-gcp.html
+    - title: 빠른 배포
+      url: task-getting-started-gcp.html
+    - title: Google Cloud KMS를 사용하여 암호화 키 관리
+      url: task-google-key-manager.html
+  - title: 시스템 및 스토리지 관리
+    links:
+    - title: 용량 기반 라이선싱 관리
+      url: task-manage-capacity-licenses.html
+    - title: 노드 기반 라이선스를 용량 기반 라이선스로 변환
+      url: task-convert-node-capacity.html
+    - title: 시스템에 FlexVol 볼륨을 생성합니다
+      url: task-create-volumes.html
+    - title: 비활성 데이터 계층화
+      url: task-tiering.html
+    - title: 스토리지 VM 관리
+      url: task-managing-svms.html
+    - title: Cloud Volumes ONTAP에서 볼륨 암호화
+      url: task-encrypting-volumes.html
+  - title: API 참조 (NetApp Console 자동화)
+    links:
+    - title: API 참조
+      url: https://docs.netapp.com/us-en/console-automation/cm/overview.html
+    - title: Cloud Volumes ONTAP API 개요
+      url: https://docs.netapp.com/us-en/console-automation/cm/prepare.html
+    - title: API 사용을 준비하세요
+      url: https://docs.netapp.com/us-en/console-automation/cm/prepare.html
+  - title: 추가 자료
+    links:
+    - title: 문제 해결
+      url: https://kb.netapp.com/Advice_and_Troubleshooting/Cloud_Services/Cloud_Volumes_ONTAP_(CVO)
+    - title: ONTAP 사용자 인터페이스
+      url: https://docs.netapp.com/us-en/ontap/concepts/introducing-ontap-interfaces-concept.html
+    - title: Cloud Volumes ONTAP에 ONTAP CLI 사용
+      url: https://docs.netapp.com/us-en/ontap-cli/index.html
     - title: 지원되는 클라우드 지역
       url: https://bluexp.netapp.com/cloud-volumes-global-regions
     - title: 계산기
       url: https://www.netapp.com/ontap-cloud/pricing/
-  - title: 블로그 및 커뮤니티
-    links:
-    - title: NetApp Console
-      url: https://www.netapp.com/console
-    - title: NetApp Data Services
-      url: https://www.netapp.com/data-services/
     - title: NetApp 커뮤니티
       url: https://community.netapp.com/

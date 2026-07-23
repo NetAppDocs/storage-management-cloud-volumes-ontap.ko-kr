@@ -221,3 +221,11 @@ Essentials 라이선스 요금에 대한 자세한 내용은 다음을 참조하
 기본 볼륨이 있는 HA 쌍에 추가로 100TiB가 프로비저닝됩니다.  구매하신 라이선스에는 _Essentials Primary HA_ 용량이 할당되어 있지 않습니다.  _Essentials Primary HA_ 라이선스의 가격은 _Essentials Primary Single Node_와 _Essentials Secondary HA_ 라이선스보다 높습니다.
 
 이 예에서 콘솔은 추가 100TiB에 대해 시장 가격으로 초과 요금을 청구합니다.  초과 요금은 월별 청구서에 표시됩니다.
+
+.관련 링크
+* link:concept-licensing.html["Cloud Volumes ONTAP 라이선싱"]
+* link:task-manage-capacity-licenses.html["Cloud Volumes ONTAP 에 대한 용량 기반 라이선싱 관리"]
+* link:task-manage-node-licenses.html["노드 기반 라이선싱 관리"]
+* link:task-convert-node-capacity.html["노드 기반 라이선스를 용량 기반 라이선스로 변환"]
+* link:task-manage-keystone.html["Keystone 구독 관리"]
+

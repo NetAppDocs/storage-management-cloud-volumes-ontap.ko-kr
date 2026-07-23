@@ -509,7 +509,7 @@ NOTE: 소스는 Cloud Volumes ONTAP 시스템의 인터페이스(IP 주소)입�
 * https://docs.netapp.com/us-en/bluexp-setup-admin/reference-ports-azure.html["Azure의 보안 그룹 규칙"^]
 
 
-.관련 주제
+.관련 링크
 * link:task-verify-autosupport.html["Cloud Volumes ONTAP 에 대한 AutoSupport 설정 확인"]
 * https://docs.netapp.com/us-en/ontap/networking/ontap_internal_ports.html["ONTAP 내부 포트에 대해 알아보세요"^] .
 

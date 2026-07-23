@@ -1,0 +1,61 @@
+---
+sidebar: sidebar 
+permalink: reference-limitations-aws.html 
+keywords: limitations, aws, amazon web services, flashe cache, alarms, cloudwatch, giveback, govcloud, c2s, aws outpost, outposts 
+summary: 이러한 알려진 제한 사항은 Amazon Web Services의 Cloud Volumes ONTAP에만 해당됩니다. 
+---
+= AWS의 Cloud Volumes ONTAP에 대해 알려진 제한 사항
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+다음은 Amazon Web Services의 Cloud Volumes ONTAP에 특정한 알려진 제한 사항입니다. link:reference-limitations.html["모든 클라우드 공급자의 Cloud Volumes ONTAP에 대한 제한 사항"]도 검토해 보시기 바랍니다.
+
+
+
+[[aws-outpost-limitations]]
+== AWS Outpost 제한 사항
+
+AWS Outpost를 보유하고 있다면 배포 시 Outpost VPC를 선택하여 해당 Outpost에 Cloud Volumes ONTAP을 배포할 수 있습니다. 사용 방법은 AWS의 다른 VPC와 동일합니다. 단, AWS Outpost에 Console 에이전트를 먼저 배포해야 합니다.
+
+지적해야 할 몇 가지 제한 사항이 있습니다.
+
+* 현재 단일 노드 Cloud Volumes ONTAP 시스템만 지원됩니다.
+* Cloud Volumes ONTAP 과 함께 사용할 수 있는 EC2 인스턴스는 Outpost에서 사용 가능한 인스턴스로 제한됩니다.
+* 현재는 일반용 SSD(gp2)만 지원됩니다.
+
+
+
+
+[[flash-cache-limitations]]
+== Flash Cache 제한 사항
+
+C5D 및 R5D 인스턴스 유형에는 로컬 NVMe 스토리지가 포함되어 있으며, Cloud Volumes ONTAP는 이를 _Flash Cache_로 사용합니다. 다음 제한 사항에 유의하십시오.
+
+* Cloud Volumes ONTAP 9.12.0까지의 Flash Cache 성능 향상을 활용하려면 모든 볼륨에서 압축을 비활성화해야 합니다. Cloud Volumes ONTAP 9.12.1로 배포 또는 업그레이드하는 경우 압축을 비활성화할 필요가 없습니다.
++
+NetApp Console에서 볼륨을 생성할 때 스토리지 효율성을 선택하지 않거나 볼륨을 생성한 후 http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-vsmg/GUID-8508A4CB-DB43-4D0D-97EB-859F58B29054.html["CLI를 사용하여 데이터 압축을 비활성화합니다."^]할 수 있습니다.
+
+* Cloud Volumes ONTAP 에서는 재부팅 후 캐시 재가동이 지원되지 않습니다.
+
+
+
+
+[[false-alarms-reported-by-amazon-cloudwatch]]
+== Amazon CloudWatch에서 보고된 잘못된 알람
+
+Cloud Volumes ONTAP는 유휴 상태일 때 CPU를 해제하지 않으므로 https://aws.amazon.com/cloudwatch/["Amazon CloudWatch"^]에서 100% 사용률을 확인하여 EC2 인스턴스에 대한 높은 CPU 경고를 보고할 수 있습니다. 이 경고는 무시할 수 있습니다. ONTAP statistics 명령은 CPU의 실제 사용률을 표시합니다.
+
+
+
+[[cloud-volumes-ontap-ha-pairs-do-not-support-immediate-storage-giveback]]
+== Cloud Volumes ONTAP HA 쌍은 즉각적인 스토리지 반환을 지원하지 않습니다.
+
+노드가 재부팅된 후 파트너는 스토리지를 반환하기 전에 데이터를 동기화해야 합니다. 데이터 재동기화에 걸리는 시간은 노드가 다운된 동안 클라이언트가 기록한 데이터 양과 스토리지 반환 시점의 데이터 쓰기 속도에 따라 달라집니다.
+
+https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-ha.html["AWS에서 실행되는 Cloud Volumes ONTAP HA 쌍에서 스토리지가 작동하는 방식에 대해 알아보십시오"^].

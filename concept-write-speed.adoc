@@ -4,7 +4,7 @@ permalink: concept-write-speed.html
 keywords: write speed, high write speed, normal write speed, nvfail, writing speed, ldm, low durability mode 
 summary: NetApp Console 사용하면 Cloud Volumes ONTAP 에 대해 일반 또는 높은 쓰기 속도를 선택할 수 있습니다.  쓰기 속도를 선택하기 전에 일반 설정과 높은 설정의 차이점, 높은 쓰기 속도를 사용할 때의 위험과 권장 사항을 이해해야 합니다. 
 ---
-= 쓰기 속도
+= Cloud Volumes ONTAP의 쓰기 속도에 대해 알아보기
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -78,7 +78,7 @@ ifdef::aws[]
 
 9.8 릴리스부터 Cloud Volumes ONTAP m5.xlarge 및 r5.xlarge를 제외한 거의 모든 지원되는 EC2 인스턴스 유형을 사용할 때 HA 쌍으로 높은 쓰기 속도를 지원합니다.
 
-https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-aws.html["Cloud Volumes ONTAP 지원하는 Amazon EC2 인스턴스에 대해 자세히 알아보세요."^] .
+link:reference-configs-aws.html["Cloud Volumes ONTAP 지원하는 Amazon EC2 인스턴스에 대해 자세히 알아보세요."].
 
 endif::aws[]
 
@@ -90,7 +90,7 @@ ifdef::azure[]
 
 단일 노드 시스템을 사용하는 경우 Cloud Volumes ONTAP는 모든 VM 유형에서 높은 쓰기 속도를 지원합니다.
 
-HA 쌍을 사용하는 경우 Cloud Volumes ONTAP 9.8 릴리스부터 여러 VM 유형에서 높은 쓰기 속도를 지원합니다.  로 가다 https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-azure.html["Cloud Volumes ONTAP 릴리스 노트"^] 높은 쓰기 속도를 지원하는 VM 유형을 확인하세요.
+HA 페어를 사용하는 경우, Cloud Volumes ONTAP 9.8 릴리스부터 여러 VM 유형에서 고속 쓰기를 지원합니다. 고속 쓰기를 지원하는 VM 유형을 보려면 link:reference-configs-azure.html["Cloud Volumes ONTAP 릴리스 노트"]을 참조하십시오.
 
 endif::azure[]
 
@@ -102,9 +102,9 @@ ifdef::gcp[]
 
 단일 노드 시스템을 사용하는 경우 Cloud Volumes ONTAP는 모든 머신 유형에서 높은 쓰기 속도를 지원합니다.
 
-HA 쌍을 사용하는 경우 Cloud Volumes ONTAP 9.13.0 릴리스부터 여러 VM 유형에서 높은 쓰기 속도를 지원합니다.  로 가다 https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-gcp.html#supported-configurations-by-license["Cloud Volumes ONTAP 릴리스 노트"^] 높은 쓰기 속도를 지원하는 VM 유형을 확인하세요.
+HA 페어를 사용하는 경우, Cloud Volumes ONTAP 9.13.0 릴리스부터 여러 VM 유형에서 고속 쓰기를 지원합니다. 고속 쓰기를 지원하는 VM 유형을 보려면 link:reference-configs-gcp.html#supported-configurations-by-license["Cloud Volumes ONTAP 릴리스 노트"^]을 참조하십시오.
 
-https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-gcp.html["Cloud Volumes ONTAP 지원하는 Google Cloud 머신 유형에 대해 자세히 알아보세요."^] .
+link:reference-configs-gcp.html["Cloud Volumes ONTAP 지원하는 Google Cloud 머신 유형에 대해 자세히 알아보세요."^].
 
 endif::gcp[]
 

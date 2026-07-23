@@ -1,0 +1,17 @@
+= Azure에서 칠레 중부 지역 지원
+:allow-uri-read: 
+
+
+
+
+[[support-for-chile-central-region-in-azure]]
+=== Azure에서 칠레 중부 지역 지원
+
+이제 Azure의 칠레 중앙(chilecentral) 지역에 Cloud Volumes ONTAP 9.12.1 GA 이상 버전을 배포할 수 있습니다. 지원되는 배포 유형은 다음과 같습니다.
+
+* 단일 노드
+* 로컬 중복 스토리지(LRS)를 사용하여 단일 가용성 영역에서 고가용성(HA) 구현
+* 영역 중복 스토리지(ZRS)를 사용하여 여러 가용 영역에서 고가용성(HA) 구현
+
+
+지원되는 모든 지역 목록은 다음을 참조하세요. https://bluexp.netapp.com/cloud-volumes-global-regions["Azure의 글로벌 지역 맵"^] .

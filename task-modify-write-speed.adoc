@@ -4,7 +4,7 @@ permalink: task-modify-write-speed.html
 keywords: write speed, high write speed, normal write speed, change write speed 
 summary: 스토리지 요구 사항이 변경되면 Cloud Volumes ONTAP 시스템의 구성을 변경해야 할 수도 있습니다.  예를 들어, 사용량에 따른 요금 지불 구성을 변경하고, 인스턴스나 VM 유형을 변경하는 등의 작업이 가능합니다. 
 ---
-= 시스템 쓰기 속도 수정
+= Cloud Volumes ONTAP에서 시스템 쓰기 속도 수정
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

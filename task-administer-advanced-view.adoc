@@ -108,7 +108,8 @@ System Manager를 사용하여 Cloud Volumes ONTAP 시스템을 관리하세요.
 Cloud Volumes ONTAP 과 함께 System Manager를 사용하는 데 도움이 필요한 경우 다음을 참조할 수 있습니다. https://docs.netapp.com/us-en/ontap/index.html["ONTAP 문서"^] 단계별 지침을 확인하세요.  도움이 될 만한 몇 가지 ONTAP 문서 링크는 다음과 같습니다.
 
 * https://docs.netapp.com/us-en/ontap/ontap-security-hardening/roles-applications-authentication.html["ONTAP 역할, 애플리케이션 및 인증"^]
-* https://docs.netapp.com/us-en/ontap/system-admin/access-cluster-system-manager-browser-task.html["시스템 관리자를 사용하여 클러스터에 액세스합니다."^] .
+* https://docs.netapp.com/us-en/ontap/concepts/introducing-ontap-interfaces-concept.html["ONTAP 사용자 인터페이스"^]
+* https://docs.netapp.com/us-en/ontap/concept_administration_overview.html["ONTAP System Manager를 사용한 클러스터 관리에 대해 알아보세요"^]
 * https://docs.netapp.com/us-en/ontap/volume-admin-overview-concept.html["볼륨 및 LUN 관리"^]
 * https://docs.netapp.com/us-en/ontap/network-manage-overview-concept.html["네트워크 관리"^]
 * https://docs.netapp.com/us-en/ontap/concept_dp_overview.html["데이터 보호"^]

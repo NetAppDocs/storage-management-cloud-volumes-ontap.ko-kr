@@ -4,7 +4,7 @@ permalink: concept-flash-cache.html
 keywords: cloud volumes ontap, flash cache, read-intensive, read, random, databases, email, file services, compression, performance, nvme 
 summary: 일부 Cloud Volumes ONTAP 구성에는 로컬 NVMe 스토리지가 포함되어 있으며, Cloud Volumes ONTAP 더 나은 성능을 위해 이를 Flash Cache로 사용합니다. 
 ---
-= Flash Cache
+= Flash Cache 및 Cloud Volumes ONTAP
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -48,8 +48,8 @@ endif::aws[]
 * Cloud Volumes ONTAP 에서는 재부팅 후 캐시 재가동이 지원되지 않습니다.
 
 
-.관련 주제
-* https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-aws.html["AWS의 Cloud Volumes ONTAP 에 지원되는 구성"^]
-* https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-azure.html["Azure의 Cloud Volumes ONTAP 에 지원되는 구성"^]
-* https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-gcp.html["Google Cloud에서 Cloud Volumes ONTAP에 대해 지원되는 구성"^]
+.관련 링크
+* link:reference-configs-aws.html["AWS의 Cloud Volumes ONTAP 에 지원되는 구성"]
+* link:reference-configs-azure.html["Azure의 Cloud Volumes ONTAP 에 지원되는 구성"]
+* link:reference-configs-gcp.html["Google Cloud에서 Cloud Volumes ONTAP에 대해 지원되는 구성"]
 

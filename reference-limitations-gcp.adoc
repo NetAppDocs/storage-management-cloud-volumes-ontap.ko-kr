@@ -1,0 +1,35 @@
+---
+sidebar: sidebar 
+permalink: reference-limitations-gcp.html 
+keywords: limitations, google cloud platform, gcp, psc, private service connect 
+summary: 알려진 제한 사항은 이 제품 릴리스에서 지원하지 않거나 올바르게 상호 운용되지 않는 플랫폼, 장치 또는 기능을 나타냅니다. 이러한 제한 사항을 주의 깊게 검토하세요. 
+---
+= Google Cloud에서 Cloud Volumes ONTAP의 알려진 제한 사항
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+다음은 Google Cloud Platform의 Cloud Volumes ONTAP에 특정한 알려진 제한 사항입니다. link:reference-limitations.html["모든 클라우드 공급자의 Cloud Volumes ONTAP에 대한 제한 사항"]도 검토해 보시기 바랍니다.
+
+
+
+[[limitation-with-packet-mirroring]]
+== 패킷 미러링의 제한 사항
+
+https://cloud.google.com/vpc/docs/packet-mirroring["패킷 미러링"^] Cloud Volumes ONTAP를 배포하는 Google Cloud VPC에서 비활성화되어야 합니다.
+
+패킷 미러링이 활성화된 경우 Cloud Volumes ONTAP이 제대로 작동하지 않습니다.
+
+
+
+[[google-private-service-connect-limitations]]
+== Google Private Service Connect 제한 사항
+
+Cloud Volumes ONTAP를 배포하는 VPC 내에서  https://cloud.google.com/vpc/docs/private-service-connect["Google Private Service Connect"^]을(를) 활용하는 경우 필요한  https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-google.html["API 엔드포인트"^](으)로 트래픽을 전달하는 DNS 레코드를 구현해야 합니다.
+
+Private Service Connect에서는 현재 Cloud Volumes ONTAP의 데이터를 Google Cloud Storage 버킷으로 계층화하는 기능이 지원되지 않습니다.

@@ -52,7 +52,7 @@ https://docs.microsoft.com/en-us/azure/storage/common/storage-scalability-target
 
 
 
-NOTE: Cloud Volumes ONTAP 9.15.0P1부터 새로운 고가용성 쌍 배포에 대해 Azure 페이지 Blob이 더 이상 지원되지 않습니다.  현재 기존 고가용성 쌍 배포에서 Azure 페이지 Blob을 사용하는 경우 Edsv4 시리즈 VM 및 Edsv5 시리즈 VM에서 최신 VM 인스턴스 유형으로 마이그레이션할 수 있습니다. link:https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-azure.html#ha-pairs["Azure에서 지원되는 구성에 대해 자세히 알아보세요."^] .
+NOTE: Cloud Volumes ONTAP 9.15.0P1 버전부터는 새로운 고가용성 쌍 배포에서 Azure 페이지 Blob이 더 이상 지원되지 않습니다. 기존 고가용성 쌍 배포에서 Azure 페이지 Blob을 사용하는 경우 Edsv4 시리즈 VM 및 Edsv5 시리즈 VM과 같은 최신 VM 인스턴스 유형으로 마이그레이션할 수 있습니다. link:link:reference-configs-azure.html#ha-pairs["Azure에서 지원되는 구성에 대해 자세히 알아보세요."].
 
 
 

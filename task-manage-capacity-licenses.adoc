@@ -255,3 +255,11 @@ NOTE: FlexClone 볼륨은 이 보고서에 포함되지 않습니다. 이러한 
 
 . 다운로드한 파일을 열어 보고서에 접근하세요.
 
+
+.관련 링크
+* https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-licensing.html["Cloud Volumes ONTAP 라이선싱"^]
+* https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-licensing-charging.html["용량 기반 라이선스에 대해 자세히 알아보세요"^]
+* https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-manage-node-licenses.html["노드 기반 라이선싱 관리"^]
+* https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-convert-node-capacity.html["노드 기반 라이선스를 용량 기반 라이선스로 변환"^]
+* https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-manage-keystone.html["Keystone 구독 관리"^]
+
