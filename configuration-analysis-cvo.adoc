@@ -1,0 +1,122 @@
+---
+sidebar: sidebar 
+permalink: configuration-analysis-cvo.html 
+keywords: Cloud Volumes ONTAP, license, well-architected, WAD, CVO 
+summary: NetApp Console의 잘 설계된 대시보드는 스토리지 시스템 구성을 정기적으로 분석하여 Cloud Volumes ONTAP 시스템에 구성 문제가 있는지 확인합니다. 문제가 발견되면 대시보드에 문제의 내용과 스토리지 시스템이 최상의 성능, 비용 효율성 및 모범 사례 준수를 달성할 수 있도록 변경해야 할 사항이 표시됩니다. 
+---
+= Cloud Volumes ONTAP의 구성 분석(Well-architected 대시보드)
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: https://docs.netapp.com/us-en/console-well-architected/media/
+
+
+[role="lead"]
+NetApp Console의 잘 설계된 대시보드는 스토리지 시스템 구성을 정기적으로 분석하여 Cloud Volumes ONTAP 시스템에 구성 문제가 있는지 확인합니다. 문제가 발견되면 대시보드에 문제의 내용과 스토리지 시스템이 최상의 성능, 비용 효율성 및 모범 사례 준수를 달성할 수 있도록 변경해야 할 사항이 표시됩니다.
+
+주요 기능은 다음과 같습니다:
+
+* 일일 구성 분석
+* NetApp ONTAP 스토리지 시스템 및 파트너 스토리지 공급업체를 위한 자동 모범 사례 검증
+* 사전 예방적 관찰 가능성
+* 인사이트를 실행으로
+
+
+다음에서 해결되지 않은 지시문: https://raw.githubusercontent.com/NetAppDocs/console-well-architected/main/cvo/configuration-analysis-cvo.adoc[] - include::well-architected-workloads.adoc[]
+
+
+
+[[analysis-requirements]]
+== 분석 요구 사항
+
+Cloud Volumes ONTAP 시스템을 완벽하게 분석하려면 link:https://docs.netapp.com/us-en/console-setup-admin/concept-agent-install-options.html#agent-console-deploy["NetApp 콘솔 에이전트를 배포합니다."^] 시스템과 NetApp Console 간의 연결을 설정해야 합니다.
+
+
+
+[[best-practices-and-recommendations-for-cloud-volumes-ontap-systems]]
+== Cloud Volumes ONTAP 시스템을 위한 모범 사례 및 권장 사항
+
+잘 설계된 대시보드는 스토리지 구성을 평가하여 ONTAP 구성 모범 사례 및 Azure Well-Architected Framework 준수 여부에 대한 심층적인 정보를 제공합니다. 또한 평가 결과는 개선 사항 및 수정 사항을 권장합니다.
+
+잘 설계된 분석은 프레임워크의 다음 핵심 요소인 _안정성_, _보안_, _운영 우수성_, _비용 최적화_ 및 _성능 효율성_으로 구성을 분류합니다.
+
+
+
+[[reliability]]
+=== 안정성
+
+신뢰성은 장애 발생 시에도 워크로드가 의도된 기능을 정확하고 일관되게 수행하도록 보장합니다.
+
+* *스냅샷 정책*
++
+효율적인 백업과 빠른 복원을 위해 로컬 스냅샷을 예약하세요. 스냅샷은 볼륨의 즉각적인 특정 시점 이미지입니다.
+
+* *SSD 용량 여유 공간*
++
+SSD 스토리지 계층의 사용률은 80%를 초과해서는 안 됩니다. 이는 용량 풀 스토리지 계층의 데이터 읽기 및 쓰기 작업에 영향을 미치고 시스템의 처리량 용량에 악영향을 줄 수 있습니다. 용량이 부족해지면 데이터 볼륨은 읽기 전용이 됩니다. 새 데이터를 쓰려는 서비스도 실패합니다.
+
+
+
+
+
+[[security]]
+=== 보안
+
+보안은 위험 평가 및 완화 전략을 통해 데이터, 시스템 및 자산을 보호하는 데 중점을 둡니다.
+
+* *AI 기반 자율 랜섬웨어 보호(ARP/AI)*
++
+NetApp AI 기반 자율형 랜섬웨어 보호(ARP/AI)는 사이버 복원력을 강화하고 랜섬웨어 위협으로부터 볼륨을 보호합니다. 모든 볼륨에 대해 ARP/AI를 활성화하는 것이 좋습니다.
+
+
+
+
+
+[[operational-excellence]]
+=== 운영 우수성
+
+운영 우수성은 최고의 아키텍처와 비즈니스 가치를 제공하는 데 중점을 둡니다.
+
+* *볼륨 용량 여유 공간*
++
+볼륨 용량 사용률이 80%를 초과하지 않도록 권장합니다. 이는 애플리케이션의 데이터 읽기 및 쓰기에 영향을 미칠 수 있습니다. 볼륨 용량 증가는 수동 또는 볼륨 자동 확장 기능을 사용하여 자동으로 수행할 수 있습니다.
+
+* *FlexCache 쓰기 모드*
++
+최적의 성능을 위해 워크로드에 가장 적합한 FlexCache 쓰기 모드를 사용하는 것이 좋습니다. 쓰기 우회 모드는 작은 파일을 사용하는 읽기 중심 워크로드에서 더 나은 성능을 제공하며, 쓰기 백 모드는 큰 파일을 사용하는 쓰기 중심 워크로드에서 더 나은 성능을 제공합니다.
+
+* *FlexCache 복제본 크기*
++
+최적의 크기를 유지하고 캐시가 자주 액세스되는(핫) 데이터에 집중하여 효율성을 극대화하려면 캐시 볼륨에서 볼륨 자동 확장 및 스크러빙을 활성화하는 것이 좋습니다.
+
+* *ONTAP 버전 준수*
++
+완벽한 호환성, 지원 및 새로운 기능 이용을 위해 최신 ONTAP 버전으로 업그레이드하십시오.
+
+
+
+
+
+[[cost-optimization]]
+=== 비용 최적화
+
+비용 최적화는 비용을 낮게 유지하면서 비즈니스에 가장 큰 가치를 얻을 수 있도록 도와줍니다.
+
+* *SSD 용량 과잉 프로비저닝*
++
+SSD 용량 계층을 과도하게 할당하면 불필요한 비용이 발생합니다. 20%의 여유 공간 버퍼를 유지하면서 SSD 계층 용량을 줄이는 것이 좋습니다. 용량 축소 작업은 몇 시간에서 며칠까지 소요될 수 있으며, 이 시간 동안 다른 파일 시스템 작업은 지원되지 않습니다.
+
+* *콜드 데이터 티어링*
++
+콜드 데이터 계층화를 활성화하여 콜드 데이터를 SSD 스토리지 계층에서 비용이 저렴한 스토리지로 이동하세요. 모든 볼륨에 계층화 정책을 적용하는 것이 좋습니다. Azure Blob Storage는 비활성 데이터의 용량 계층 역할을 합니다.
+
+
+
+.다음 단계
+link:https://docs.netapp.com/us-en/console-well-architected/cvo/improve-configurations-cvo.html["잘 설계된 Cloud Volumes ONTAP 시스템 구성 구현"]
+
+.관련 링크
+* https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/whats-new.html#well-architected-configuration-analysis-for-cloud-volumes-ontap-in-azure["Azure의 Cloud Volumes ONTAP에 대한 잘 설계된 구성 분석"^]
+
