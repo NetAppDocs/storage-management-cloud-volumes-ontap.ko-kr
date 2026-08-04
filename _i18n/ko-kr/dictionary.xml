@@ -5304,8 +5304,6 @@
   <block id="a81c707e35ab82b2b21b18864fb458e9" category="sidebar">리소스 그룹 이동</block>
   <block id="c871aaf8a95c147d6774c7ccaf68c0eb" category="sidebar">Google Cloud 관리</block>
   <block id="57478f8fdb7096e76f6786fa003c8e66" category="sidebar">기계 유형 변경</block>
-  <block id="cb993f96a433ab0d99c7a6a17a1ddc9c" category="sidebar">시스템 관리자의 관리</block>
-  <block id="fab7a3813da88237a3633c0b925bf6d0" category="sidebar">CLI에서의 관리</block>
   <block id="f6e43df1ac65ed84364d47e2313ea212" category="sidebar">AutoSupport 설정 확인</block>
   <block id="b1bf30693cbd3a53c3081b47d5526717" category="sidebar">EMS 구성</block>
   <block id="b8c05ba27f3f7ff64dca585f43789e57" category="sidebar">Cloud Volumes ONTAP 라이선싱</block>
@@ -7358,7 +7356,6 @@
   <block id="d45ddb9ce602eba8b90aee11b1ee25cf" category="paragraph">나중에 해제된 구성을 포함하려면 잘 설계된 대시보드에서 다시 활성화할 수 있습니다. 이렇게 하면 구성이 분석에 복원되어 권장 사항 및 수정 사항을 확인할 수 있습니다.</block>
   <block id="37c159a88b5bcfaeea126c1581ba5f53" category="list-text"><block ref="37c159a88b5bcfaeea126c1581ba5f53" category="inline-link-macro-rx"></block></block>
   <block id="6cb16892d109192c0cd1c62fbd1330a2" category="summary">NetApp Console의 잘 설계된 대시보드는 스토리지 시스템 구성을 정기적으로 분석하여 Cloud Volumes ONTAP 시스템에 구성 문제가 있는지 확인합니다. 문제가 발견되면 대시보드에 문제의 내용과 스토리지 시스템이 최상의 성능, 비용 효율성 및 모범 사례 준수를 달성할 수 있도록 변경해야 할 사항이 표시됩니다.</block>
-  <block id="d3884a08dbd1a0feb34aaf7e47b2fb8c" category="doc">Cloud Volumes ONTAP의 구성 분석(Well-architected 대시보드)</block>
   <block id="1c11d2e59190fe6a4e37f1e68abafcb4" category="paragraph">주요 기능은 다음과 같습니다:</block>
   <block id="ebc3bf5de769bc75ad8e36a90a0ed695" category="list-text">일일 구성 분석</block>
   <block id="d0367f15d2fd772d543d692442807fa1" category="list-text">NetApp ONTAP 스토리지 시스템 및 파트너 스토리지 공급업체를 위한 자동 모범 사례 검증</block>
@@ -7485,9 +7482,195 @@
   <block id="053caf626e9d43c46f92fe521566f3b6" category="list-text"><block ref="053caf626e9d43c46f92fe521566f3b6" category="inline-link-rx"></block></block>
   <block id="943927e98f08f5eceb9f92c4aa75b01e" category="inline-link">ONTAP 문서: ONTAP S3 멀티 프로토콜 지원</block>
   <block id="0deac7ad5245fcfcbef0120b299cd7a5" category="list-text"><block ref="0deac7ad5245fcfcbef0120b299cd7a5" category="inline-link-rx"></block></block>
-  <block id="ec8ffaaa6739d3cbfaf04807424e73ec" category="paragraph">include::https://raw.githubusercontent.com/NetAppDocs/console-licenses-subscriptions/main/task-manage-capacity-licenses.adoc[lines=15..-1]</block>
-  <block id="986293de703cc99b95fc2636d61190e5" category="paragraph">include::https://raw.githubusercontent.com/NetAppDocs/console-licenses-subscriptions/main/task-manage-node-based-licenses.adoc[lines=15..-1]</block>
   <block id="91d90ea5487ed9ed44e834f42f272ccb" category="section-title">2026년 8월 3일</block>
   <block id="1c1a960c3a731e7c8f48049e14d10120" category="sidebar">Cloud Volumes ONTAP 및 Microsoft OneLake</block>
-  <block id="cabae2c7e02c764400d120dec64c7495" category="sidebar">Cloud Volumes ONTAP 및 Well-architected 대시보드</block>
+  <block id="93ed65a89f306426be7980ddc22595e8" category="paragraph">용량 기반 라이선스를 사용하면 Cloud Volumes ONTAP를 TiB 용량 단위로 구매할 수 있습니다.</block>
+  <block id="96a603641f48a14047d20b26a1cfeefa" category="paragraph">용량 기반 Cloud Volumes ONTAP 라이선스는 NetApp Console에서 관리할 수 있습니다.</block>
+  <block id="d3c2fb9e07de60e097ad32d8e9ad56eb" category="admonition">콘솔에서 관리되는 제품 및 서비스의 실제 사용량과 측정은 항상 GiB 및 TiB 단위로 계산되지만, GB/GiB와 TB/TiB라는 용어는 혼용되어 사용됩니다. 이는 클라우드 마켓플레이스 목록, 가격 견적, 목록 설명 및 기타 지원 문서에 반영됩니다.</block>
+  <block id="8caaaa4afae93c31b741be21eed669cc" category="inline-link">Cloud Volumes ONTAP 라이선스에 대해 자세히 알아보세요.</block>
+  <block id="5a4b99b6fc841017a0f50698712eacbd" category="paragraph"><block ref="13c3a734f25ff867542070e2d18cd1d4" category="inline-link-rx"></block>.</block>
+  <block id="a5e948b3ddd458b93125330e6dde9f94" category="section-title">NetApp Console에 라이선스를 추가하는 방법</block>
+  <block id="792eeb7f686f2ad37b664f6478d40bed" category="paragraph">NetApp 영업 담당자를 통해 라이선스를 구매하시면 NetApp에서 시리얼 번호와 추가 라이선스 정보를 이메일로 보내드립니다.</block>
+  <block id="8948f0f0bc878d55b118339a79ece349" category="paragraph">한편, NetApp Console은 NetApp의 라이선스 서비스에 자동으로 쿼리를 보내 NetApp 지원 사이트 계정과 연결된 라이선스에 대한 세부 정보를 가져옵니다. 오류가 없으면 라이선스를 추가합니다.</block>
+  <block id="ad0be4bc913a8026a3f5e42fc7656d23" category="inline-link">구매한 라이선스를 계정에 추가하는 방법을 알아보십시오.</block>
+  <block id="4db74114ac6514de873c5bc9b5b30cf1" category="paragraph">콘솔에서 라이선스를 추가할 수 없는 경우 수동으로 추가해야 합니다. 예를 들어 콘솔 에이전트가 인터넷에 접속할 수 없는 위치에 설치된 경우 라이선스를 직접 추가해야 합니다.<block ref="21379db3c6d74c3a5d2d6d121cdcf537" category="inline-link-rx"></block>.</block>
+  <block id="03021ab228ad1d1c921bbf536e2913a4" category="section-title">계정에서 사용된 용량 확인</block>
+  <block id="61233c99902f0b66422b062168ba63a5" category="paragraph">콘솔에서는 계정의 총 사용량과 라이선스 패키지별 사용량을 확인할 수 있습니다. 이를 통해 요금 청구 방식을 이해하고 추가 용량 구매가 필요한지 판단할 수 있습니다.</block>
+  <block id="f6d5cd6d364915d1012d5e7d29aa3d78" category="list-text">왼쪽 탐색 창에서 *관리 &gt; Licenses and subscriptions*을 선택합니다.</block>
+  <block id="a495aa39c60dc5d48d7bb146e6f7265a" category="list-text">*개요* 탭에서 Cloud Volumes ONTAP 타일은 계정에 대해 현재 프로비저닝된 용량을 표시합니다.</block>
+  <block id="85ac3ef33729a6408e85a09c9b5ebc4f" category="inline-image-macro">width=300 Cloud Volumes ONTAP 라이센스 및 구독의 용량 요약을 보여주는 스크린샷입니다.</block>
+  <block id="ef94465b68195bb5523f36cf2d8ea3bd" category="paragraph"><block ref="ef94465b68195bb5523f36cf2d8ea3bd" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="b989e51822e011c35b6e3fc2f6e007cf" category="list-text">_직접 라이선스_ 는 NetApp 계정에 있는 모든 Cloud Volumes ONTAP 시스템의 프로비저닝된 총 용량을 의미합니다. 요금은 볼륨 내의 로컬 공간, 사용량, 저장 공간 또는 유효 공간과 관계없이 각 볼륨의 프로비저닝된 크기를 기준으로 부과됩니다.</block>
+  <block id="80495a5c91b6e7cae60c8c5c750734bc" category="list-text">_연간 계약_ 은 NetApp에서 구매한 총 라이센스 용량(BYOL(Bring Your Own License) 또는 Marketplace Contract)입니다.</block>
+  <block id="18ef4a3a3844dea97bcae43ccdf60b1e" category="list-text">_PAYGO_는 클라우드 마켓플레이스 구독을 사용하여 프로비저닝된 총 용량을 의미합니다. PAYGO를 통한 요금은 사용한 용량이 라이선스 용량보다 많거나 Console에서 BYOL 라이선스를 사용할 수 없는 경우에만 적용됩니다.</block>
+  <block id="d02d58b5b8770f720f9d912913a80f1a" category="list-text">*보기*를 선택하여 각 라이선스 패키지의 사용된 용량을 확인합니다.</block>
+  <block id="a4f95858d82d890dcc9a5123e1f315e6" category="list-text">구매하신 각 패키지 라이선스에 대한 자세한 내용을 보려면 *라이선스* 탭을 선택합니다.</block>
+  <block id="d30bc4bd5cee7ac23a1df54311d1f4b3" category="inline-link">Essentials 패키지 요금에 대해 알아보기</block>
+  <block id="cab4333b3833fa9cdc6796a75eee578b" category="paragraph">에센셜 패키지에 표시되는 용량을 더 잘 이해하려면 충전 방식에 대해 알아두는 것이 좋습니다.<block ref="02565e6913727744dad1b0044ad87804" category="inline-link-rx"></block>.</block>
+  <block id="452cf2122664eef3e8c620ec413c8d43" category="list-text">*구독* 탭을 선택하면 라이센스 모델별 사용 용량을 확인할 수 있습니다. 이 탭에는 PAYGO 및 연간 계약 라이센스가 모두 포함되어 있습니다.</block>
+  <block id="a6fd7fff8d44ac917f29be623cc64da2" category="paragraph">현재 보고 있는 조직과 관련된 구독만 표시됩니다.</block>
+  <block id="24456dcfa7781b6f3a972b5f11ed0d88" category="list-text">구독 정보를 보면서 표에 표시된 세부 정보와 상호 작용할 수 있습니다. 행을 펼치면 더 자세한 내용을 볼 수 있습니다.</block>
+  <block id="56594b7222b35921f9fe676eadf6bbdf" category="inline-image-macro">테이블 헤더 끝에 있는 더하기 아이콘</block>
+  <block id="2eab7ff26639a8d2e45cece515ff781f" category="list-text"><block ref="98b11313fea6c4106e5a3c018f0ffbc9" category="inline-image-macro-rx" type="image"></block>을 선택하여 표에 표시할 열을 선택합니다. 기본적으로 '기간' 및 '자동 갱신' 열은 표시되지 않습니다. '자동 갱신' 열에는 Azure 계약에 대한 갱신 정보만 표시됩니다.</block>
+  <block id="8ac1ecc7ceb7a49d071b4f1b71f0e176" category="section-title">패키지 세부 정보 보기</block>
+  <block id="f88e8fee4b6b78cbc9779b73098653b5" category="paragraph">Cloud Volumes ONTAP 페이지에서 레거시 모드로 전환하면 패키지별 사용 용량에 대한 자세한 정보를 확인할 수 있습니다.</block>
+  <block id="4a95292c803539c8cf72591c54db0644" category="list-text">*보기*를 선택하여 각 라이선스 패키지에 대해 프로비저닝된 용량을 확인합니다.</block>
+  <block id="40d1f3228e91a00383279859612f7ba5" category="list-text">*고급 보기로 전환*을 선택합니다.</block>
+  <block id="3df898a44cd4e747f0651fff3683bca8" category="inline-image-macro">고급 보기로 전환 버튼의 스크린샷</block>
+  <block id="4247aeb98dbe93036110943452fb15a7" category="paragraph"><block ref="4247aeb98dbe93036110943452fb15a7" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="cf5e0e2d5e3b97433dcea18ed2c97b91" category="list-text">원하는 패키지의 세부 정보를 확인합니다.</block>
+  <block id="f651647ac9ca970bf81f92917731dcbb" category="inline-image-macro">표준 보기로 전환 버튼의 스크린샷</block>
+  <block id="322ba871ee257d334ca304536b56b324" category="paragraph"><block ref="322ba871ee257d334ca304536b56b324" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="662442d32a5fd91298fcf8b6391fdf17" category="section-title">충전 방식 변경</block>
+  <block id="3a320310638e1b673183daababec1ba0" category="paragraph">용량 기반 라이선스는 패키지 형태로 제공됩니다. Cloud Volumes ONTAP 시스템을 생성할 때 비즈니스 요구 사항에 따라 여러 라이선스 패키지 중에서 선택할 수 있습니다. 시스템 생성 후 요구 사항이 변경되면 언제든지 패키지를 변경할 수 있습니다. 예를 들어 Essentials 패키지에서 Professional 패키지로 변경할 수 있습니다.</block>
+  <block id="58dcfad3183b701a8f1b8781a5644d09" category="inline-link">용량 기반 라이선스 패키지에 대해 자세히 알아보십시오.</block>
+  <block id="6b5c2460f150173d3723de8a857a4d33" category="paragraph"><block ref="179c8a3ed717f2c4de3149f0e9edf685" category="inline-link-rx"></block>.</block>
+  <block id="31ccaa5879eee7a69ef3c48f1004c59c" category="list-text">과금 방식을 변경해도 NetApp에서 구매한 라이센스(BYOL)를 통해 요금이 청구되는지 또는 클라우드 제공업체의 마켓플레이스 종량제(PAYGO) 구독을 통해 요금이 청구되는지에는 영향을 미치지 않습니다.</block>
+  <block id="ac2e949b0b6c58b83082083327f0fd77" category="paragraph">Console은 항상 먼저 라이선스를 사용하여 요금을 청구합니다. 라이선스를 사용할 수 없는 경우 마켓플레이스 구독을 사용하여 요금을 청구합니다. BYOL 구독을 마켓플레이스 구독으로 또는 그 반대로 전환할 필요는 없습니다.</block>
+  <block id="cfdb32f80009b1e5c5c0468dda9f013d" category="list-text">클라우드 제공업체의 마켓플레이스에서 개별 제안 또는 계약을 체결한 경우, 계약에 포함되지 않은 결제 방식으로 변경하면 BYOL(NetApp에서 라이센스를 구매한 경우) 또는 PAYGO 요금으로 청구됩니다.</block>
+  <block id="2daabc6822724771970f17e8ae6a4cee" category="list-text">*개요* 탭을 선택합니다.</block>
+  <block id="5b37c7034b369fcc6d9b931180eef46f" category="list-text">Cloud Volumes ONTAP 타일에서 *보기*를 선택합니다.</block>
+  <block id="13bb1907bdca20408e78b483332beab6" category="inline-image-macro">레거시 보기로 전환 버튼의 스크린샷</block>
+  <block id="07d6c0208f77e132c7e96286497713f8" category="paragraph"><block ref="07d6c0208f77e132c7e96286497713f8" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="0e4bc6fa91df5edc0eafb52c324b38f3" category="list-text">아래로 스크롤하여 *용량 기반 라이선스* 표를 찾은 다음 *요금 부과 방식 변경*을 선택합니다.</block>
+  <block id="7c32cfa3b543a8f69513e758629bc263" category="inline-image-macro">Console의 Cloud Volumes ONTAP 페이지 스크린샷으로, 표 바로 위에 '요금 부과 방식 변경' 버튼이 있습니다.</block>
+  <block id="7c3ea09c5ec07ba244bc674f632d4c79" category="paragraph"><block ref="7c3ea09c5ec07ba244bc674f632d4c79" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="e6e33712a923fd615674fad11214317f" category="list-text">*요금 청구 방법 변경* 팝업 창에서 Cloud Volumes ONTAP 시스템을 선택하고 새 요금 청구 방법을 선택한 다음 패키지 유형 변경이 서비스 요금에 영향을 미친다는 점을 확인하십시오.</block>
+  <block id="c2a404ae45ebabafb7f3598bcd8a1a18" category="list-text">*충전 방식 변경*을 선택합니다.</block>
+  <block id="85be1733025dd0b3e190d956ed6e380c" category="paragraph">콘솔에서 네 가지 사용량 보고서를 다운로드할 수 있습니다. 이러한 사용량 보고서는 구독의 용량 세부 정보를 제공하고 Cloud Volumes ONTAP 구독의 리소스에 대한 요금 청구 방식을 알려줍니다. 다운로드 가능한 보고서는 특정 시점의 데이터를 캡처하며 다른 사람과 쉽게 공유할 수 있습니다.</block>
+  <block id="fe1db4ddb29c070770259869ba7aa5bb" category="inline-image-macro">이 스크린샷은 Cloud Volumes ONTAP 용량 기반 라이선스 페이지를 보여주며 사용량 보고서 버튼을 강조 표시합니다.</block>
+  <block id="61b0c512c4663de969f8c21e23e50f0e" category="paragraph"><block ref="61b0c512c4663de969f8c21e23e50f0e" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="d11dcbec58d47bd13de1dcccfbd640ff" category="paragraph">다음 보고서를 다운로드하실 수 있습니다. 표시된 용량 값은 TiB 단위입니다.</block>
+  <block id="821a4394ac44729da9f70ce04118fc86" category="list-text">*사용량 개요*: 이 보고서는 계정 전체에서 사용된 총 용량을 요약하고 결제 방식(선불 라이선스 vs. 종량제)별로 분류하여 보여줍니다. 다음 정보가 포함됩니다.</block>
+  <block id="1976d7f704de389d9fe064e08ea35b2d" category="cell">열</block>
+  <block id="c596c9291f76a11af1aefc235c262de6" category="cell">총 소비 용량</block>
+  <block id="51163c1c09d1460ef27f5dd97ed9ea7f" category="cell">계정에 있는 모든 Cloud Volumes ONTAP 시스템의 총 프로비저닝 용량입니다.</block>
+  <block id="8dd7541d6c4e83402d88448119068a02" category="cell">총 사전 계약 용량</block>
+  <block id="f70b0a4d5f326e83950dad59aec6fa68" category="cell">BYOL 라이선스 및 Marketplace 계약을 포함하여 NetApp에서 구매한 총 라이선스 용량입니다. 이 값은 총 BYOL 용량과 총 마켓플레이스 계약 용량의 합계입니다.</block>
+  <block id="b01a146aed01aa8af61e034befc116ce" category="cell">총 BYOL 용량</block>
+  <block id="461f8f7091d5494362a76c93edc9a423" category="cell">NetApp에서 직접 구매한 BYOL(Bring Your Own License) 라이센스가 적용되는 사전 약정 용량의 부분입니다.</block>
+  <block id="109323142d354af9ccc7eb636b1dcbce" category="cell">전체 마켓플레이스 계약 용량</block>
+  <block id="78848eca2f87ad4a3c7b9b07889aae3a" category="cell">클라우드 제공업체의 마켓플레이스를 통해 구매한 연간 마켓플레이스 계약 또는 비공개 오퍼로 확보된 사전 약정 용량의 비율입니다.</block>
+  <block id="baf09c6c43fd26effd8f15e252649384" category="cell">총 PAYGO 용량</block>
+  <block id="f343ac0562a9bcbf4a1f16afb4d9c944" category="cell">사전 약정 라이선스로 적용되지 않는 소비 용량 부분으로, 종량제(PAYGO) 시간당 마켓플레이스 요금으로 청구됩니다.</block>
+  <block id="de061f005aa315f137edfbea4185d9cf" category="list-text">*Cloud Volumes ONTAP 패키지 사용량*: 이 보고서는 상위 수준 사용량 보고서와 동일한 용량 분석 정보를 라이선스 패키지별로 제공합니다. 다음 정보가 포함됩니다.</block>
+  <block id="0f8a95f201dfe022d77e0b59d46d4c77" category="cell">계정에 있는 모든 Cloud Volumes ONTAP 시스템에서 이 패키지에 대해 프로비저닝된 총 용량입니다.</block>
+  <block id="ba7a4b5109f3d946e68653e9dca24924" category="cell">NetApp에서 구매한 이 패키지의 총 라이선스 용량(BYOL 라이선스 및 마켓플레이스 계약 포함)입니다. 이 값은 총 BYOL 용량과 총 마켓플레이스 계약 용량의 합계입니다.</block>
+  <block id="da684f1b634af2847a1baa8db1db2ac7" category="cell">이 패키지에 대해 사전 약정된 용량 중 사용자가 NetApp에서 직접 구매한 BYOL(Bring Your Own License) 라이센스로 적용되는 부분입니다.</block>
+  <block id="fa6bbae52be77ec691f2ed981782a8c3" category="cell">이 패키지에 대해 사전 약정된 용량의 일부는 클라우드 공급업체의 마켓플레이스를 통해 구매한 연간 마켓플레이스 계약 또는 비공개 오퍼로 충당됩니다.</block>
+  <block id="7978965a49086eecb3f75ef44abb3cbe" category="cell">이 패키지에서 사용된 용량 중 사전 약정된 라이선스에 포함되지 않은 부분은 PAYGO(pay-as-you-go) 시간당 마켓플레이스 요금으로 청구됩니다.</block>
+  <block id="a65d4ec7ff2941ad2ea2bc688a6dbbb3" category="list-text">*스토리지 VM 사용량*: 이 보고서는 Cloud Volumes ONTAP 시스템 및 스토리지 가상 머신(SVM) 전반에 걸쳐 청구된 용량이 어떻게 분배되는지 보여줍니다. 이 정보는 보고서에서만 확인할 수 있습니다. 다음 내용을 포함합니다.</block>
+  <block id="40052c32370d83faceb0cb6dc62c2d53" category="cell">시스템 ID 및 이름</block>
+  <block id="d618d6f2db44ccd4eb860a4f494fc02b" category="cell">Cloud Volumes ONTAP 시스템의 고유 식별자(UUID) 및 표시 이름입니다.</block>
+  <block id="c8e2277ecfb1427838c488c217f99466" category="cell">클라우드</block>
+  <block id="f36be790a1c0b2db000cad5e1f143392" category="cell">시스템이 배포된 클라우드 제공업체(예: AWS, Azure 또는 Google Cloud).</block>
+  <block id="4736cd35bf5b3fe63e1b1785fb2aa664" category="cell">NetApp 계정 ID</block>
+  <block id="63af7f48ddc938f8833d32b0716868d6" category="cell">시스템과 연결된 NetApp 계정의 식별자입니다.</block>
+  <block id="3c4e32d95f12c00d16a76057a7af18f6" category="cell">시스템 구성</block>
+  <block id="ad5c67cce7e6fab8ce505f2ae3c2df11" category="cell">시스템의 배포 구성(예: 단일 노드 또는 HA 쌍).</block>
+  <block id="203c4205822c007d08ecafe163b02ea2" category="cell">SVM 이름</block>
+  <block id="3355bd383b4614928e6109a99305d004" category="cell">Cloud Volumes ONTAP 시스템 내의 스토리지 가상 머신(SVM) 이름입니다.</block>
+  <block id="b567847dd629376ac84ed4958fd61687" category="cell">프로비저닝된 용량</block>
+  <block id="c5f488f842043ae15f7cfa0e8b69385b" category="cell">SVM에 할당된 총 용량입니다.</block>
+  <block id="a09b8df9fd0007770b0a8c10f9a17d81" category="cell">청구된 용량 요약</block>
+  <block id="f8ae5e430a4359a104373b4d18d6f868" category="cell">SVM에 실제로 청구된 용량입니다. 각 SVM에는 최소 청구 가능 용량(기본값 4TiB, 계정별로 다를 수 있음)이 있습니다. SVM에 프로비저닝된 용량이 최소값 이하인 경우 이 값은 최소값으로 올림 처리되고, 그렇지 않으면 프로비저닝된 용량과 동일하게 처리됩니다.</block>
+  <block id="671095c17b0e9e0deda06cff2fa103e6" category="cell">마켓플레이스 결제 조건</block>
+  <block id="4226ed0668452ac09bb7af302a7c9242" category="cell">관련 마켓플레이스 구독의 청구 기간(예: 시간 단위 또는 연간).</block>
+  <block id="d38764d5edf26bd9b744840cd2ea3c17" category="cell">Cloud Volumes ONTAP 패키지 또는 기능</block>
+  <block id="ab31194e65fa04061f03e7c38298214e" category="cell">SVM과 관련된 라이선스 패키지 또는 기능(예: Essentials 또는 Professional).</block>
+  <block id="a016fcdfd1d7159ffd537d78d4b68f74" category="cell">SaaS 마켓플레이스 구독 이름 청구</block>
+  <block id="aab205b2459de7a7ecd46aff12fc336e" category="cell">결제에 사용되는 마켓플레이스 구독 이름입니다.</block>
+  <block id="fe6ac599d13d94a0ee0800482bec7e41" category="cell">SaaS 마켓플레이스 구독 ID 청구</block>
+  <block id="2c13015a3d1386955dffbbcbd1c49ce2" category="cell">결제에 사용되는 마켓플레이스 구독의 고유 식별자입니다.</block>
+  <block id="427af860f9733f0c5427a1408195bb2b" category="cell">워크로드 유형</block>
+  <block id="e16dc33bf75ec44279b2f544d4b7a250" category="cell">SVM의 볼륨이 운영 데이터에 사용되는 *기본*(읽기/쓰기) 볼륨인지, 아니면 백업 및 복제에 사용되는 SnapMirror 복제본과 같은 데이터 보호 대상 볼륨인 *보조*(DP) 볼륨인지를 나타냅니다.</block>
+  <block id="2d0394437aca88cac134fb1bce72e08f" category="list-text">*볼륨 사용량*: 이 보고서는 Cloud Volumes ONTAP 시스템에서 볼륨별로 청구된 용량이 어떻게 분배되는지 보여줍니다. 이 정보는 Console의 어떤 화면에서도 제공되지 않습니다. 다음 정보가 포함됩니다.</block>
+  <block id="de39b41004ed04a88578e2985a04fc6c" category="cell">해당 볼륨을 포함하는 Cloud Volumes ONTAP 시스템의 고유 식별자(UUID) 및 표시 이름입니다.</block>
+  <block id="0d8e21203d5a81d1fa5620283cbeb8d9" category="cell">볼륨을 포함하는 스토리지 가상 머신(SVM)의 이름입니다.</block>
+  <block id="cccc95b62282240886ee975a3f122adb" category="cell">볼륨 ID</block>
+  <block id="e7a38d895cb4f8d8f3a338217e14a339" category="cell">볼륨의 고유 식별자입니다.</block>
+  <block id="fc18634852d4299cd5f8c7ad55ddefbe" category="cell">볼륨 유형</block>
+  <block id="7860112ba253041aab5726c5a5f6777c" category="cell">볼륨 유형(예: 읽기/쓰기 또는 데이터 보호).</block>
+  <block id="3756f66a273f440893f16ee968ce3450" category="cell">볼륨 프로비저닝 용량</block>
+  <block id="b41f9ba0b51c7f3d54a31c655a83017f" category="cell">볼륨에 프로비저닝된 총 용량입니다.</block>
+  <block id="8b3da2ed858ee5c956acde26c9ef7dd0" category="admonition">FlexClone 볼륨은 요금이 부과되지 않으므로 이 보고서에 포함되지 않습니다.</block>
+  <block id="b2b74732b80350970fadfac4db3ba17e" category="list-text">*개요* 탭에서 Cloud Volumes ONTAP 타일의 *보기*를 선택합니다.</block>
+  <block id="f4c2ce2a853a74c3742ccc54482c074e" category="list-text">*사용량 보고서*를 선택합니다.</block>
+  <block id="23e918e9f1c9f1bb5769dcc236489de2" category="paragraph">사용량 보고서가 다운로드됩니다.</block>
+  <block id="05655bb3cbd3604d6c71a1db823ad94f" category="list-text">다운로드한 파일을 열어 보고서를 확인하십시오.</block>
+  <block id="63e5ea33dc9b9a10458ac73abae91075" category="paragraph">NetApp Console에서 노드 기반 라이선스를 관리하여 각 Cloud Volumes ONTAP 시스템에 필요한 용량의 유효한 라이선스가 있는지 확인하십시오.</block>
+  <block id="4627bd080634e9380c75a1cc04a09486" category="paragraph">_노드 기반 라이선스_ 는 이전 세대 라이센스 모델 이며 신규 고객에게는 제공되지 않습니다.</block>
+  <block id="0d4e36aae457a1001b3373de2fd510f1" category="list-text">NetApp에서 구매한 BYOL(Bring Your Own License) 라이센스</block>
+  <block id="17ac9e85cf5b6f7b77acf61fb7721242" category="list-text">클라우드 제공업체의 마켓플레이스에서 시간 단위로 지불하는 종량제(PAYGO) 구독 서비스</block>
+  <block id="3501754bb69f70ed8f72d23562bab97c" category="paragraph">노드 기반 Cloud Volumes ONTAP 라이선스는 NetApp Console에서 관리할 수 있습니다.</block>
+  <block id="9426b05d2fc423b761e34f9d75b4066d" category="section-title">PAYGO 라이선스 관리</block>
+  <block id="fcd2026c30c1b902d032e35337e8888c" category="paragraph">Licenses and subscriptions 메뉴를 통해 일련번호 및 PAYGO 라이센스 유형을 포함하여 각 PAYGO Cloud Volumes ONTAP 시스템에 대한 세부 정보를 확인할 수 있습니다.</block>
+  <block id="343c7ed77049523f4d99e8d4c436a330" category="list-text">드롭다운 메뉴에서 *노드 기반 라이선스*를 선택합니다.</block>
+  <block id="87089bacab591352ad6ad6579e34d93e" category="list-text">*PAYGO*를 클릭합니다.</block>
+  <block id="82be8e06ac169a3de0fce42cd01f5760" category="list-text">각 PAYGO 라이선스에 대한 자세한 내용은 표에서 확인하십시오.</block>
+  <block id="bbfa86a1d5f6c6f85f7a434a983b34e1" category="inline-image-macro">Licenses and subscriptions 페이지의 표에 있는 세 개의 유료 라이선스를 보여주는 스크린샷입니다. 각 행에는 이름, 시스템 유형, 일련 번호, 패키지 및 라이선스 관리 링크가 표시됩니다.</block>
+  <block id="cf03ba6c2dea0eb29457f99fdcd69b82" category="paragraph"><block ref="cf03ba6c2dea0eb29457f99fdcd69b82" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="a45c9786e45613660f519d740b30671a" category="list-text">필요한 경우 *PAYGO 라이선스 관리*를 클릭하여 PAYGO 라이선스를 변경하거나 인스턴스 유형을 변경하십시오.</block>
+  <block id="00b61e8d20d055a6505bd5bc88e18aeb" category="section-title">BYOL 라이선스 관리</block>
+  <block id="33375e3f722897194d509130054856dd" category="paragraph">NetApp에서 직접 구매한 라이선스를 시스템 라이선스 및 추가 용량 라이선스를 추가 및 제거하여 관리할 수 있습니다.</block>
+  <block id="4742f5b0c38f7c105542ecb15a214212" category="section-title">할당되지 않은 라이선스 추가</block>
+  <block id="d0052e7943aa77623453a3374803765d" category="paragraph">콘솔에 노드 기반 라이선스를 추가하여 새 Cloud Volumes ONTAP 시스템을 생성할 때 라이선스를 선택할 수 있도록 합니다. 콘솔에서는 이러한 라이선스를 _할당되지 않음_으로 표시합니다.</block>
+  <block id="bec033f0535da0f58c9f0a7ccd96e793" category="paragraph">아직 라이선스 파일이 없는 경우 아래 섹션을 참조하십시오.</block>
+  <block id="684d5df2e069e529d4a4c518d654dc44" category="paragraph">콘솔에서 라이선스를 추가합니다. 새 Cloud Volumes ONTAP 시스템과 연결하기 전까지는 라이선스가 할당되지 않은 것으로 표시됩니다. 연결이 완료되면 라이선스는 *Licenses and subscriptions*의 *BYOL* 탭으로 이동합니다.</block>
+  <block id="df5b9d272738b4adaa43e7eb4949a0e5" category="section-title">할당되지 않은 노드 기반 라이선스 교환</block>
+  <block id="76a67f9205ca80ce535686592126df9d" category="paragraph">사용하지 않은 Cloud Volumes ONTAP용 노드 기반 라이선스가 있는 경우, 해당 라이선스를 NetApp Backup and Recovery 라이선스, NetApp Data Classification 라이선스 또는 NetApp Cloud Tiering 라이선스로 변환하여 교환할 수 있습니다.</block>
+  <block id="82330159ba1b86113008185841af38f9" category="paragraph">라이선스를 교환하면 Cloud Volumes ONTAP 라이선스가 취소되고 해당 서비스에 대한 달러 상당의 라이선스가 생성됩니다.</block>
+  <block id="488b3f4a79a8819dabc209f2405c7ba7" category="list-text">Cloud Volumes ONTAP HA 쌍에 대한 라이센스 모델은 51TiB 직접 라이센스로 변환됩니다.</block>
+  <block id="d8961eb56e3c50e0da29ec362dcb385a" category="list-text">Cloud Volumes ONTAP 단일 노드 라이선스는 32TiB 직접 라이선스로 변환됩니다.</block>
+  <block id="89f1c05b91f27a0ccc4736c51deee49f" category="paragraph">변환된 라이선스는 Cloud Volumes ONTAP 라이선스와 동일한 만료일을 갖습니다.</block>
+  <block id="e0225acc5a75bb0346dd94ed24206c81" category="inline-link-macro">노드 기반 라이선스를 교환하는 방법에 대한 단계별 안내를 참조하십시오.</block>
+  <block id="d82de0388f091aa9d43371708eb95310" category="paragraph"><block ref="b4c22b5293d3ee433dee9c4b3632dbee" category="inline-link-macro-rx"></block></block>
+  <block id="fff69e388498c7da2216c0a49587cbc8" category="list-text">*라이선스 교환*을 클릭합니다.</block>
+  <block id="25abdaf706ab9bbfe1775de2626f958f" category="inline-image-macro">할당되지 않은 라이선스 페이지에 나타나는 Exchange 라이선스 옵션의 스크린샷입니다.</block>
+  <block id="59069c86e2c388bcb56b4ec04ba7c1b1" category="paragraph"><block ref="59069c86e2c388bcb56b4ec04ba7c1b1" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="b2bcb667f1a3e2cd665dce56fa38946c" category="list-text">라이선스를 교환할 서비스를 선택하십시오.</block>
+  <block id="d54ac11d311c4a7a85e11a557ee305e3" category="list-text">메시지가 표시되면 HA 쌍에 대한 추가 라이선스를 선택하십시오.</block>
+  <block id="1e4109afcb540c886b450b6944b83567" category="list-text">법적 동의 내용을 읽고 *동의*를 클릭합니다.</block>
+  <block id="f56693ead48da8f8372b53a387f22165" category="paragraph">콘솔은 할당되지 않은 라이선스를 사용자가 선택한 서비스로 변환합니다. 새 라이선스는 *데이터 서비스 라이선스* 탭에서 확인할 수 있습니다.</block>
+  <block id="bed8ee00b54ae810def15122c80a9dba" category="section-title">시스템 라이선스 파일 받기</block>
+  <block id="022919ed552faad7f4de98d1abe88fc1" category="paragraph">대부분의 경우 콘솔은 NetApp 지원 사이트 계정을 사용하여 라이선스 파일을 자동으로 가져올 수 있습니다. 하지만 자동으로 가져올 수 없는 경우 라이선스 파일을 수동으로 업로드해야 합니다. 라이선스 파일이 없는 경우 netapp.com에서 다운로드할 수 있습니다.</block>
+  <block id="3eff90cc077e6c35c01b4fa2ce08352e" category="list-text"><block ref="d4604fbd185a778fcb9e2d4bce6d880d" category="inline-link-rx"></block>로 이동하여 NetApp 지원 사이트 자격 증명을 사용하여 로그인하십시오.</block>
+  <block id="7260bbc39295ef94e60be19b73affac6" category="inline-image-macro">스크린샷: 사용 가능한 제품 라인이 있는 NetApp 라이선스 생성기 웹 페이지의 예시를 보여줍니다.</block>
+  <block id="c7db6ec8c72cc25c90f19ebafe2ddfbd" category="paragraph"><block ref="c7db6ec8c72cc25c90f19ebafe2ddfbd" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="58f676020d30c00d4b3fb18fc835e7ca" category="section-title">시스템 라이선스 업데이트</block>
+  <block id="b0f33031496e38b99d72e702000365e8" category="paragraph">NetApp 담당자에게 연락하여 BYOL 구독을 갱신하면 콘솔이 NetApp에서 새 라이선스를 자동으로 가져와 Cloud Volumes ONTAP 시스템에 설치합니다. 콘솔이 보안 인터넷 연결을 통해 라이선스 파일에 액세스할 수 없는 경우, 사용자가 직접 파일을 다운로드한 후 수동으로 업로드할 수 있습니다.</block>
+  <block id="eda4b0f5ee71694deda064c01799f329" category="list-text">*BYOL* 탭에서 Cloud Volumes ONTAP 시스템에 대한 세부 정보를 펼치십시오.</block>
+  <block id="d91a847294f18b5d31d438a059c2532d" category="list-text">시스템 라이선스 옆에 있는 작업 메뉴를 클릭하고 *라이선스 업데이트*를 선택하십시오.</block>
+  <block id="98022931ad96bfc8db710666a48e0416" category="list-text">라이선스 파일(HA 쌍을 사용하는 경우 여러 파일)을 업로드합니다.</block>
+  <block id="1c523ff18e24f3b5d4d5fa45c4410b01" category="list-text">*라이선스 업데이트*를 클릭합니다.</block>
+  <block id="825a0cb9a8312e85f3aa745487c0dbe9" category="paragraph">콘솔은 Cloud Volumes ONTAP 시스템의 라이선스를 업데이트합니다.</block>
+  <block id="2c2e7695734e076306fc8ba50ca70c1b" category="section-title">추가 용량 라이선스 관리</block>
+  <block id="d452bdec5cf94a61fe23690b513f4a71" category="paragraph">Cloud Volumes ONTAP BYOL 시스템에 기본 제공되는 368TiB 용량보다 더 많은 용량을 할당하려면 추가 용량 라이선스를 구매할 수 있습니다. 예를 들어, 추가 라이선스 용량 1개를 구매하여 Cloud Volumes ONTAP에 최대 736TiB의 용량을 할당할 수 있습니다. 또는 추가 용량 라이선스 3개를 구매하여 최대 1.4PiB의 용량을 확보할 수도 있습니다.</block>
+  <block id="691e9010d46bcb06693d90df5c955334" category="paragraph">단일 노드 시스템 또는 HA 쌍에 대해 구매할 수 있는 라이센스 수는 무제한입니다.</block>
+  <block id="6e869ff6c9fd5eb76baa394c52e2ef18" category="section-title">용량 라이선스 추가</block>
+  <block id="41a0a4fe38c3f00a9fae3056955c9f80" category="paragraph">콘솔 오른쪽 하단의 채팅 아이콘을 통해 문의하시면 추가 용량 라이선스를 구매하실 수 있습니다. 라이선스 구매 후 Cloud Volumes ONTAP 시스템에 적용할 수 있습니다.</block>
+  <block id="423cdc57679399d47229e2f74dfc102b" category="list-text">*용량 라이선스 추가*를 클릭합니다.</block>
+  <block id="b0bfc70f0e7f3f10c4334bd53c2c2a27" category="list-text">일련 번호를 입력하거나 라이선스 파일(HA 쌍을 사용하는 경우 여러 파일)을 업로드하십시오.</block>
+  <block id="c4e9cc48e592b9354b10b9d54e14525c" category="section-title">용량 라이선스 업데이트</block>
+  <block id="2526a0404b7268bca72e19dd834baa1e" category="paragraph">추가 용량 라이선스의 기간을 연장한 경우 콘솔에서 라이선스를 업데이트해야 합니다.</block>
+  <block id="555efdea73381bcd8582646f75b68253" category="list-text">용량 라이선스 옆에 있는 작업 메뉴를 클릭하고 *라이선스 업데이트*를 선택하십시오.</block>
+  <block id="df478b8a8dcb38cfbba69a02ff5cae20" category="section-title">용량 라이선스 제거</block>
+  <block id="9906134ee224bc081497b19c4269cc34" category="paragraph">추가 용량 라이선스가 만료되어 더 이상 사용하지 않는 경우 언제든지 제거할 수 있습니다.</block>
+  <block id="c320af21170d1ca43751b7580a1125f4" category="list-text">용량 라이선스 옆에 있는 작업 메뉴를 클릭하고 *라이선스 제거*를 선택하십시오.</block>
+  <block id="03b194a23dcb353466fbfb7acff64363" category="list-text">*제거*를 클릭합니다.</block>
+  <block id="594cb44c6500d8855ad820b0653e02c7" category="section-title">PAYGO와 BYOL 간의 전환</block>
+  <block id="a704128156d562fe5860508e9584ee34" category="paragraph">종량제(PAYGO) 노드별 라이선스에서 BYOL 노드별 라이선스로(또는 그 반대로) 시스템을 전환하는 것은 지원되지 않습니다. 종량제 구독에서 BYOL 구독으로 전환하려면 새 시스템을 배포하고 기존 시스템의 데이터를 새 시스템으로 복제해야 합니다.</block>
+  <block id="c019dbada10848ba4363bd4710a34f6b" category="list-text">새로운 Cloud Volumes ONTAP 시스템을 생성합니다.</block>
+  <block id="9bd20ffd5e91ec2bb61bc593be38bb13" category="list-text">복제해야 하는 각 볼륨에 대해 시스템 간에 일회성 데이터 복제를 설정하십시오.</block>
+  <block id="95b10ad2ca24b4c8bd5673b7383531a2" category="inline-link">시스템 간 데이터 복제 방법을 알아보세요.</block>
+  <block id="882d5f98206dd8157654127073c920f2" category="paragraph"><block ref="882d5f98206dd8157654127073c920f2" category="inline-link-rx"></block></block>
+  <block id="ebf88a96d90d43fcac8c0ab5a9fda0dd" category="list-text">더 이상 필요하지 않은 Cloud Volumes ONTAP 시스템을 원래 시스템을 삭제하여 종료하십시오.</block>
+  <block id="f979ec1d84a4416797fae20cc61f839b" category="inline-link">Cloud Volumes ONTAP 시스템을 삭제하는 방법을 알아보십시오.</block>
+  <block id="ffc60ab0361bc3c2ef3b3728cce5a231" category="paragraph"><block ref="ac0e83bff3dad475c8103a64904a607a" category="inline-link-rx"></block>.</block>
+  <block id="342dcce6bda294bb4b60fc9333bcafbe" category="inline-link">노드 기반 라이선스를 용량 기반 라이선스로 변환</block>
+  <block id="5e5b6fbbd6a3b4edf3913541e4fecf17" category="list-text"><block ref="5e5b6fbbd6a3b4edf3913541e4fecf17" category="inline-link-rx"></block></block>
+  <block id="3fad075b9721b22aae0e7e5689caf7ba" category="sidebar">ONTAP 시스템 관리자를 통한 관리</block>
+  <block id="4375417a8b8f335f3352e1f741532269" category="sidebar">ONTAP CLI를 사용한 관리</block>
+  <block id="932294ad5d34f659aa544ec559cad4ad" category="sidebar">Cloud Volumes ONTAP 및 Keystone</block>
+  <block id="887238a149638ebe371e1475e7cf53de" category="sidebar">Cloud Volumes ONTAP 및 잘 설계된 대시보드</block>
 </blocks>
