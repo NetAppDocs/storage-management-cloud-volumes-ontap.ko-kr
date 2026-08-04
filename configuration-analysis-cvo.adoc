@@ -24,7 +24,7 @@ NetApp Console의 잘 설계된 대시보드는 스토리지 시스템 구성을
 * 인사이트를 실행으로
 
 
-다음에서 해결되지 않은 지시문: https://raw.githubusercontent.com/NetAppDocs/console-well-architected/main/cvo/configuration-analysis-cvo.adoc[] - include::well-architected-workloads.adoc[]
+ https://raw.githubusercontent.com/NetAppDocs/console-well-architected/main/cvo/configuration-analysis-cvo.adoc[]에서 해결되지 않은 지시어 - include::_include/well-architected-workloads.adoc[]
 
 
 
