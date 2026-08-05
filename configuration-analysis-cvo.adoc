@@ -24,7 +24,25 @@ NetApp Console의 잘 설계된 대시보드는 스토리지 시스템 구성을
 * 인사이트를 실행으로
 
 
- https://raw.githubusercontent.com/NetAppDocs/console-well-architected/main/cvo/configuration-analysis-cvo.adoc[]에서 해결되지 않은 지시어 - include::_include/well-architected-workloads.adoc[]
+
+
+[[how-it-works]]
+== 작동 방식
+
+Workload Factory는 지원되는 클라우드 스토리지 시스템 배포 환경에서 실행되는 워크로드를 매일 분석합니다. 분석 결과는 우수한 아키텍처 상태, 인사이트 및 권장 사항을 제공합니다.
+
+일일 분석이 완료되면 배포의 Well-architected 대시보드에 구성 상태가 "최적화됨" 또는 "최적화되지 않음"으로 표시됩니다. 구성 문제는 범주별로 분류되어 있으며, 구성 문제 목록과 권장 사항도 확인할 수 있습니다. 구성 문제에 대한 권장 사항을 검토할 수 있습니다. 일부 문제는 Workload Factory에서 자동으로 수정되지만, 다른 문제는 수동 수정이 필요합니다. 이 경우 Workload Factory는 권장 변경 사항을 구현하는 데 도움이 되는 자세한 지침을 제공합니다.
+
+사용자 환경에 적용되지 않는 구성에 대한 분석은 제외할 수 있습니다. 이렇게 하면 불필요한 알림과 부정확한 최적화 결과를 방지할 수 있습니다.
+
+또한 일반 언어로 사용자 지정 규칙을 만들어 조직 표준 및 NetApp 모범 사례에 따라 환경의 유효성을 검사할 수 있습니다. 모의 실행을 통해 규칙을 테스트한 다음, 모든 환경에서 실행되도록 예약할 수 있습니다. link:https://docs.netapp.com/us-en/console-well-architected/learn-custom-rules.html["사용자 지정 규칙에 대해 자세히 알아보기"^].
+
+
+
+[[why-it-matters]]
+== 중요한 이유
+
+Workload Factory는 지속적인 평가와 권장 사항 및 문제 해결 기능을 결합하여 대규모 스토리지, 데이터베이스 및 VMware 환경에 최적의 솔루션을 적용합니다. NetApp Console에서 자동으로 적용되는 수정 사항은 인적 오류를 줄이고, 일관된 관리를 보장하며, 워크로드 인프라 전반의 성능과 안정성을 유지합니다.
 
 
 

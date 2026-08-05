@@ -22,16 +22,16 @@ indexpage:
     links:
     - title: 라이센스
       url: concept-licensing.html
-    - title: 보안
-      url: concept-security.html
+    - title: 노드 기반 라이센스 변환
+      url: "/task-convert-node-capacity.html"
+    - title: Cloud Volumes ONTAP 스토리지 VM
+      url: task-managing-svms.html
     - title: 암호화에 대해 알아보기
       url: concept-security.html
     - title: 스토리지 관리
       url: concept-storage-management.html
     - title: Cloud Volumes ONTAP 클러스터에 사용되는 디스크 및 집계
       url: reference-default-configs.html
-    - title: Cloud Volumes ONTAP 워크로드에 대한 성능 모니터링
-      url: concept-performance.html
   - title: AWS
     links:
     - title: 지원되는 구성
@@ -94,6 +94,18 @@ indexpage:
       url: https://docs.netapp.com/us-en/console-automation/cm/prepare.html
     - title: API 사용을 준비하세요
       url: https://docs.netapp.com/us-en/console-automation/cm/prepare.html
+  - title: Cloud Volumes ONTAP 및 기타 NetApp 제품
+    links:
+    - title: Cloud Volumes ONTAP 및 플래시 캐시
+      url: "/concept-flash-cache.html"
+    - title: Cloud Volumes ONTAP 및 AutoSupport-Digital Advisor
+      url: "/concept-active-iq.html"
+    - title: Cloud Volumes ONTAP 및 Microsoft OneLake
+      url: "/task-azure-onelake.html"
+    - title: Cloud Volumes ONTAP 및 잘 설계된 대시보드
+      url: "/configuration-analysis-cvo.html"
+    - title: Cloud Volumes ONTAP 및 Keystone
+      url: "/task-manage-keystone.html"
   - title: 추가 자료
     links:
     - title: 문제 해결

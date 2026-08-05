@@ -319,7 +319,7 @@ sidebar:
       url: "/task-administer-advanced-view.html"
     - title: ONTAP CLI를 사용한 관리
       url: "/task-connecting-to-otc.html"
-    - title: Flash Cache 및 Cloud Volumes ONTAP
+    - title: Cloud Volumes ONTAP 및 플래시 캐시
       url: "/concept-flash-cache.html"
     - title: Cloud Volumes ONTAP 및 AutoSupport-Digital Advisor
       url: "/concept-active-iq.html"
