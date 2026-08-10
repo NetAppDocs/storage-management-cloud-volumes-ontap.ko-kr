@@ -14,15 +14,15 @@ summary:
 
 
 [role="lead"]
-Azure Marketplace 직접 배포를 사용하면 Cloud Volumes ONTAP 빠르고 쉽게 배포할 수 있습니다.  Azure 마켓플레이스에서 몇 번의 클릭만으로 Cloud Volumes ONTAP 빠르게 배포하고 사용자 환경에서 핵심 기능과 성능을 살펴볼 수 있습니다.
+Azure Marketplace 직접 배포를 사용하면 Cloud Volumes ONTAP을 빠르고 쉽게 배포할 수 있습니다. Azure Marketplace에서 몇 번의 클릭만으로 Cloud Volumes ONTAP을 신속하게 배포하고 환경에서 핵심 기능과 역량을 살펴볼 수 있습니다.
 
 이 제안에 대한 자세한 내용은 다음을 참조하세요.link:concept-azure-mktplace-direct.html["NetApp Console 과 마켓플레이스에서 Cloud Volumes ONTAP 제품에 대해 알아보세요."] .
 
 .이 작업에 관하여
-Azure Marketplace 직접 배포를 사용하여 배포된 Cloud Volumes ONTAP 시스템은 다음과 같은 속성을 갖습니다.  Azure 마켓플레이스를 통해 배포된 독립 실행형 인스턴스의 기능은 NetApp Console 에서 검색될 때 변경됩니다.
+Azure Marketplace 직접 배포를 사용하여 배포된 Cloud Volumes ONTAP 시스템은 다음과 같은 속성을 갖습니다. Azure Marketplace를 통해 배포된 독립 실행형 인스턴스의 기능은 NetApp Console에서 검색될 때 변경됩니다.
 
 * 최신 Cloud Volumes ONTAP 버전(9.16.1 이상).
-* 프로비저닝 용량이 500GiB로 제한된 Cloud Volumes ONTAP 의 무료 라이선스입니다.  이 라이선스에는 NetApp 지원이 포함되지 않으며 만료 날짜도 없습니다.
+* Cloud Volumes ONTAP의 무료 라이선스는 최대 500GiB의 프로비저닝 용량까지 제공되며, NetApp 지원은 제공되지 않고 만료일도 없습니다. 500GiB를 초과하는 용량을 사용하려면 유효한 라이선스 권한이 필요하며 추가 요금이 발생할 수 있습니다. Cloud Volumes ONTAP의 전체 기능과 고급 관리 기능을 활용하려면 Cloud Volumes ONTAP 시스템을 NetApp Console에 연결하십시오. NetApp Console을 통한 검색 및 관리에는 NetApp Console 계정과 연결된 유효한 Azure Marketplace 구독이 필요합니다.
 * 단일 가용성 영역(AZ)에서 고가용성(HA) 모드로 구성된 두 개의 노드는 기본 일련 번호로 제공됩니다.  스토리지 가상 머신(스토리지 VM)은 다음에 배포됩니다.link:concept-ha-azure.html#ha-single-availability-zone-configuration-with-shared-managed-disks["유연한 오케스트레이션 모드"] .
 * 기본적으로 생성된 인스턴스에 대한 집계입니다.
 * 500GiB 프로비저닝 용량의 프리미엄 SSD v2 관리 디스크와 루트 디스크, 데이터 디스크.
@@ -39,7 +39,7 @@ Azure Marketplace 직접 배포를 사용하여 배포된 Cloud Volumes ONTAP �
 
 
 .시작하기 전에
-* 유효한 Azure Marketplace 구독이 있는지 확인하세요.
+* NetApp Console에서 배포된 시스템을 검색하고 관리하려면 NetApp Console 계정이 유효한 Azure Marketplace 구독과 연결되어 있는지 확인하십시오. NetApp Console에서 시스템을 검색하려면 유효한 구독이 필요합니다.
 * 네트워킹 요구 사항을 충족하는지 확인하세요.link:concept-ha-azure.html#ha-single-availability-zone-configuration-with-shared-managed-disks["단일 AZ에 HA 배포"] Azure에서. link:reference-networking-azure.html["Cloud Volumes ONTAP 에 대한 Azure 네트워킹 설정"] .
 * Cloud Volumes ONTAP 배포하려면 다음 Azure 역할 중 하나가 할당되어야 합니다.
 +
@@ -99,14 +99,14 @@ NOTE: Microsoft Azure 제한 사항을 준수하려면 새 가상 네트워크�
 [[troubleshoot-deployment-issues]]
 == 배포 문제 해결
 
-Azure 마켓플레이스를 통해 직접 배포된 Cloud Volumes ONTAP 시스템에는 NetApp 의 지원이 포함되지 않습니다.  배포 중에 문제가 발생하면 독립적으로 문제를 해결하고 해결할 수 있습니다.
+Azure Marketplace를 통해 직접 배포된 Cloud Volumes ONTAP 시스템에는 NetApp의 지원이 포함되지 않습니다. 배포 중에 문제가 발생하는 경우 직접 문제를 해결할 수 있습니다.
 
 .단계
-. Azure Marketplace 사이트에서 *부팅 진단 > 직렬 로그*로 이동합니다.
+. Azure Marketplace 사이트에서 *부팅 진단 > 시리얼 로그*로 이동합니다.
 . 직렬 로그를 다운로드하고 조사하세요.
 . 문제 해결을 위해서는 제품 설명서와 지식 기반(KB) 문서를 참조하세요.
 +
-** https://learn.microsoft.com/en-us/partner-center/["Azure 마켓플레이스 문서"]
+** https://learn.microsoft.com/en-us/partner-center/["Azure Marketplace 설명서"]
 ** https://www.netapp.com/support-and-training/documentation/["NetApp 문서"]
 ** https://kb.netapp.com/["NetApp KB 문서"]
 
@@ -118,10 +118,10 @@ Azure 마켓플레이스를 통해 직접 배포된 Cloud Volumes ONTAP 시스�
 [[discover-the-deployed-systems-in-console]]
 == 콘솔에서 배포된 시스템을 찾아보세요
 
-Azure Marketplace 직접 배포를 사용하여 배포한 Cloud Volumes ONTAP 시스템을 검색하고 콘솔의 *시스템* 페이지에서 관리할 수 있습니다.  콘솔 에이전트는 시스템을 검색하고, 시스템을 추가하고, 필요한 라이선스를 적용하고, 이러한 시스템에 대해 콘솔의 모든 기능을 잠금 해제합니다.  PSSD v2 관리형 디스크가 있는 단일 AZ의 원래 HA 구성은 유지되며, 시스템은 원래 배포와 동일한 Azure 구독 및 리소스 그룹에 등록됩니다.
+Azure Marketplace 직접 배포를 사용하여 배포한 Cloud Volumes ONTAP 시스템을 콘솔의 *시스템* 페이지에서 검색하고 관리할 수 있습니다. 콘솔 에이전트는 시스템을 검색하고 추가하며 필요한 라이선스를 적용하여 해당 시스템에 대한 콘솔의 모든 기능을 활성화합니다. PSSD v2 관리 디스크를 사용하는 단일 AZ의 원래 HA 구성은 유지되며, 시스템은 원래 배포와 동일한 Azure 구독 및 리소스 그룹에 등록됩니다.
 
 .이 작업에 관하여
-Azure Marketplace 직접 배포를 사용하여 배포된 Cloud Volumes ONTAP 시스템을 검색하면 콘솔 에이전트는 다음 작업을 수행합니다.
+Azure Marketplace 직접 배포를 사용하여 배포된 Cloud Volumes ONTAP 시스템을 검색하면 Console 에이전트는 다음 작업을 수행합니다.
 
 * 발견된 시스템의 무료 라이센스를 일반적인 용량 기반으로 대체합니다.link:concept-licensing.html#packages["프리미엄 라이선스"] .
 * 배포된 시스템의 기존 기능을 유지하고, 데이터 보호, 데이터 관리, 보안 기능 등 콘솔의 추가 기능을 추가합니다.
@@ -135,13 +135,13 @@ Azure Marketplace 직접 배포를 사용하여 배포된 Cloud Volumes ONTAP �
 
 
 .시작하기 전에
-Azure Marketplace에서 배포가 완료되었는지 확인하세요.  콘솔 에이전트는 배포가 완료되고 검색이 가능한 경우에만 시스템을 검색할 수 있습니다.
+Azure Marketplace에서 배포가 완료되었는지 확인하십시오. 콘솔 에이전트는 배포가 완료되어 시스템이 검색 가능한 상태일 때만 시스템을 검색할 수 있습니다.
 
 .단계
 콘솔에서는 기존 시스템을 검색하기 위한 표준 절차를 따릅니다. link:task-adding-systems.html["콘솔에 기존 Cloud Volumes ONTAP 시스템 추가"] .
 
 
-CAUTION: 검색하는 동안 실패 메시지가 표시될 수 있지만 검색 프로세스가 완료될 때까지 무시할 수 있습니다. 검색 중에는 Azure Marketplace 포털에서 시스템 생성 Cloud Volumes ONTAP 구성, 특히 시스템 태그를 수정하지 마세요. 이러한 구성을 변경하면 예상치 못한 시스템 동작이 발생할 수 있습니다.
+CAUTION: 검색 중에 오류 메시지가 표시될 수 있지만 검색 프로세스가 완료될 때까지 무시해도 됩니다. 검색 중에 Azure Marketplace 포털에서 시스템에서 생성된 Cloud Volumes ONTAP 구성, 특히 시스템 태그를 수정하지 마십시오. 이러한 구성을 변경하면 예기치 않은 시스템 동작이 발생할 수 있습니다.
 
 .당신이 완료한 후
 검색이 완료되면 콘솔의 *시스템* 페이지에 나열된 시스템을 볼 수 있습니다.  다음과 같은 다양한 관리 작업을 수행할 수 있습니다.link:task-manage-aggregates.html["집계 확장"] ,link:task-create-volumes.html["볼륨 추가"] ,link:task-managing-svms-azure.html["추가 스토리지 VM 프로비저닝"] , 그리고link:task-change-azure-vm.html["인스턴스 유형 변경"] .
@@ -149,6 +149,7 @@ CAUTION: 검색하는 동안 실패 메시지가 표시될 수 있지만 검색 
 .관련 링크
 저장소 생성에 대한 자세한 내용은 ONTAP 설명서를 참조하세요.
 
+* https://docs.netapp.com/us-en/console-licenses-subscriptions/task-manage-subscriptions.html["새 마켓플레이스 구독 추가"^]
 * https://docs.netapp.com/us-en/ontap/volumes/create-volume-task.html["NFS용 볼륨 생성"^]
 * https://docs.netapp.com/us-en/ontap-cli/lun-create.html["iSCSI에 대한 LUN 생성"^]
 * https://docs.netapp.com/us-en/ontap-cli/vserver-cifs-share-create.html["CIFS에 대한 공유 생성"^]

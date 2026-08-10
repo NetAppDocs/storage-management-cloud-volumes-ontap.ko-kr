@@ -1,0 +1,20 @@
+= 프라이빗 클라우드 모드에서 Cloud Volumes ONTAP 배포
+:allow-uri-read: 
+
+
+
+
+[[deploy-cloud-volumes-ontap-in-private-mode]]
+== 프라이빗 클라우드 모드에서 Cloud Volumes ONTAP 배포
+
+문서화된 단계별 변환 프로세스를 따라 기존 환경 내에 직접 프라이빗 모드로 Cloud Volumes ONTAP 을 배포할 수 있습니다.  프라이빗 모드 배포에서는 Cloud Volumes ONTAP 시스템이 자체 가상 프라이빗 클라우드(VPC) 또는 가상 네트워크(VNet)에 배포되며 공용 인터넷에 연결되지 않습니다.  프라이빗 모드 배포를 통해 조직의 보안 및 규정 준수 요구 사항을 충족할 수 있습니다.
+
+이전에는 프라이빗 모드 배포에서 NetApp에서 구매할 수 있는 노드 기반 라이선스만 사용했습니다. 노드 기반 라이선스는 Cloud Volumes ONTAP의 이전 세대 라이선스입니다. NetApp은 예외를 제외하고 노드 기반 라이선스의 구매, 연장 및 갱신을  https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/whats-new.html#restricted-availability-of-byol-licensing-for-cloud-volumes-ontap["2025-06-25"]부터 제한해 왔습니다. 2026년 7월 31일부터 미국 공공 부문(USPS) 및 기타 프라이빗 클라우드 배포 등 예외적인 경우에 대한 노드 기반 라이선스가 가용성 종료(EOA)에 도달합니다.
+
+노드 기반 라이선스를 사용하는 프라이빗 클라우드 배포 환경이 있는 경우 다음을 수행합니다.
+
+* 노드 기반 라이선스를 더 이상 구매하거나 갱신할 수 없습니다.
+* 새로운 기능 및 향상된 기능을 이용할 수 없습니다.
+* 노드 기반 제약으로 인해 운영상의 경직성이 계속해서 증가할 것입니다.
+* 노드 기반 라이선스가 만료되면 용량 기반 프라이빗 모드 라이선스로 전환해야 합니다. 자세한 내용은 https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-convert-node-capacity.html["노드 기반 라이선스를 용량 기반 라이선스로 변환"^]을 참조하십시오.
+

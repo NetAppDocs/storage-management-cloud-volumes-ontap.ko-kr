@@ -4,7 +4,7 @@ permalink: task-manage-node-licenses.html
 keywords: license, licensing, install, updating license, system license, add system license, adding a system license,  update byol license, nlf, license generator, extra, by-node, NetApp Console, cloud backup, cloud data sense, cloud tiering 
 summary: NetApp Console 에서 노드 기반 라이선스를 관리하여 각 Cloud Volumes ONTAP 시스템에 필요한 용량을 갖춘 유효한 라이선스가 있는지 확인하세요. 
 ---
-= Cloud Volumes ONTAP 에 대한 노드 기반 라이선싱 관리
+= Cloud Volumes ONTAP의 노드 기반 라이센스 관리
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

@@ -1,0 +1,27 @@
+= Cloud Volumes ONTAP 9.19.1
+:allow-uri-read: 
+
+
+
+
+[[cloud-volumes-ontap-9-19-1]]
+=== Cloud Volumes ONTAP 9.19.1
+
+이제 NetApp Console을 사용하여 Amazon Web Service(AWS) 및 Google Cloud에서 Cloud Volumes ONTAP 9.19.1 정식 출시(GA) 버전을 배포하고 관리할 수 있습니다. 이 버전은 Microsoft Azure(Azure)에서는 배포 및 업그레이드가 불가능합니다.
+
+https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/["Cloud Volumes ONTAP 의 이 릴리스에 대해 자세히 알아보세요."^].
+
+
+
+[[ability-to-convert-node-based-licenses-to-capacity-based-licensing-in-private-mode]]
+=== 프라이빗 모드에서 노드 기반 라이선스를 용량 기반 라이선스로 변환할 수 있는 기능
+
+NetApp은 프라이빗 모드 Cloud Volumes ONTAP 구축을 위한 용량 기반 라이선스 도입을 발표하게 되어 기쁩니다. 이제 노드 기반 라이선스를 용량 기반 라이선스로 전환하여 프라이빗 모드 Cloud Volumes ONTAP 구축 비용을 최적화할 수 있습니다. 프라이빗 모드 구축의 경우, 기존 노드 기반 라이선스와 유사한 용량의 Essentials(BYOL(Bring Your Own License)) 패키지를 NetApp에서 직접 구매할 수 있습니다.
+
+이 전환 옵션은 NetApp이 노드 기반 라이선싱에서 용량 기반 라이선싱으로 단계적으로 전환하는 계획을 지원합니다. 각 시스템에 고정된 용량을 할당하는 노드 기반 라이선싱과 달리, 용량 기반 라이선싱은 Cloud Volumes ONTAP 시스템 전체에서 공유되는 용량 풀을 사용하므로 스토리지 요구 사항 변화에 따라 워크로드를 유연하게 재분배할 수 있습니다.
+
+.관련 링크
+* https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-licensing.html#end-of-availability-of-node-based-licenses["노드 기반 라이선스 제공 종료"^]
+* https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-convert-node-capacity.html#conversion-in-a-private-mode-deployment["프라이빗 클라우드 모드 배포에서의 변환"^]
+* https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-manage-node-licenses.html["Cloud Volumes ONTAP의 노드 기반 라이센스 관리"^]
+

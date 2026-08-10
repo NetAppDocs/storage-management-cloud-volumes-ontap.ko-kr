@@ -26,7 +26,7 @@ summary: 용량 기반 라이선스의 요금 청구, 소비 모델, 가격 책�
 * *BYOL*: 자체 라이선스 지참(BYOL)  모든 클라우드 공급자에 Cloud Volumes ONTAP 배포하는 데 사용할 수 있는 NetApp 에서 구매한 라이선스입니다.
 +
 
-NOTE: NetApp BYOL 라이선스 구매, 연장 및 갱신을 제한하고 있습니다. 자세한 내용은 다음을 참조하세요.  https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/whats-new.html#restricted-availability-of-byol-licensing-for-cloud-volumes-ontap["Cloud Volumes ONTAP 에 대한 BYOL 라이선싱의 제한된 가용성"^] .
+NOTE: NetApp은 BYOL 라이선스의 구매, 연장 및 갱신을 제한하고 있으며, 프라이빗 모드 배포 등 특정 시나리오에서 사용 가능 여부를 제한하고 있습니다. 자세한 내용은 https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/whats-new.html#restricted-availability-of-byol-licensing-for-cloud-volumes-ontap["Cloud Volumes ONTAP 에 대한 BYOL 라이선싱의 제한된 가용성"^]을 참조하십시오.
 
 
 
@@ -35,7 +35,7 @@ ifdef::azure[]
 endif::azure[]
 
 * *PAYGO*: 사용량에 따른 요금 지불(PAYGO) 구독은 클라우드 공급업체의 마켓플레이스에서 제공하는 시간당 구독입니다.
-* *연간*: 클라우드 공급업체의 마켓플레이스와 맺은 연간 계약입니다.
+* *마켓플레이스 구독/연간 계약*: 클라우드 제공업체의 마켓플레이스에서 제공하는 연간 계약입니다. 프라이빗 클라우드 모드 배포에서는 마켓플레이스 구독을 지원하지 않습니다.
 
 
 다음 사항에 유의하세요.
