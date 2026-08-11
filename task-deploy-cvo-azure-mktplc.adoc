@@ -22,7 +22,7 @@ Azure Marketplace 직접 배포를 사용하면 Cloud Volumes ONTAP을 빠르고
 Azure Marketplace 직접 배포를 사용하여 배포된 Cloud Volumes ONTAP 시스템은 다음과 같은 속성을 갖습니다. Azure Marketplace를 통해 배포된 독립 실행형 인스턴스의 기능은 NetApp Console에서 검색될 때 변경됩니다.
 
 * 최신 Cloud Volumes ONTAP 버전(9.16.1 이상).
-* Cloud Volumes ONTAP의 무료 라이선스는 최대 500GiB의 프로비저닝 용량까지 제공되며, NetApp 지원은 제공되지 않고 만료일도 없습니다. 500GiB를 초과하는 용량을 사용하려면 유효한 라이선스 권한이 필요하며 추가 요금이 발생할 수 있습니다. Cloud Volumes ONTAP의 전체 기능과 고급 관리 기능을 활용하려면 Cloud Volumes ONTAP 시스템을 NetApp Console에 연결하십시오. NetApp Console을 통한 검색 및 관리에는 NetApp Console 계정과 연결된 유효한 Azure Marketplace 구독이 필요합니다.
+* Cloud Volumes ONTAP의 무료 라이선스는 최대 500GiB의 프로비저닝 용량까지 제공되며, NetApp 지원은 제공되지 않고 만료일도 없습니다. 500GiB를 초과하는 용량을 사용하려면 유효한 라이선스 권한이 필요하며 요금이 부과될 수 있습니다. Cloud Volumes ONTAP의 전체 기능과 고급 관리 기능을 활용하려면 Cloud Volumes ONTAP 시스템을 콘솔에 연결하십시오. 콘솔을 통한 검색 및 관리에는 콘솔 계정과 연결된 유효한 Azure Marketplace 구독이 필요합니다.
 * 단일 가용성 영역(AZ)에서 고가용성(HA) 모드로 구성된 두 개의 노드는 기본 일련 번호로 제공됩니다.  스토리지 가상 머신(스토리지 VM)은 다음에 배포됩니다.link:concept-ha-azure.html#ha-single-availability-zone-configuration-with-shared-managed-disks["유연한 오케스트레이션 모드"] .
 * 기본적으로 생성된 인스턴스에 대한 집계입니다.
 * 500GiB 프로비저닝 용량의 프리미엄 SSD v2 관리 디스크와 루트 디스크, 데이터 디스크.
@@ -39,7 +39,7 @@ Azure Marketplace 직접 배포를 사용하여 배포된 Cloud Volumes ONTAP �
 
 
 .시작하기 전에
-* NetApp Console에서 배포된 시스템을 검색하고 관리하려면 NetApp Console 계정이 유효한 Azure Marketplace 구독과 연결되어 있는지 확인하십시오. NetApp Console에서 시스템을 검색하려면 유효한 구독이 필요합니다.
+* 콘솔에서 배포된 시스템을 검색하고 관리하려면 콘솔 계정이 유효한 Azure Marketplace 구독과 연결되어 있는지 확인하십시오. 콘솔에서 시스템을 검색하려면 유효한 구독이 필요합니다.
 * 네트워킹 요구 사항을 충족하는지 확인하세요.link:concept-ha-azure.html#ha-single-availability-zone-configuration-with-shared-managed-disks["단일 AZ에 HA 배포"] Azure에서. link:reference-networking-azure.html["Cloud Volumes ONTAP 에 대한 Azure 네트워킹 설정"] .
 * Cloud Volumes ONTAP 배포하려면 다음 Azure 역할 중 하나가 할당되어야 합니다.
 +

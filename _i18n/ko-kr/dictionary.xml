@@ -7440,7 +7440,6 @@
   <block id="f03154f7f37caaaf71be53099307d2dd" category="image-alt">스크린샷 onelake shortcut1</block>
   <block id="a919cd6db92990e9b06efbf013b4fdcf" category="list-text">바로가기 생성 후, 레이크하우스의 *탐색기 &gt; 파일*에서 바로가기가 나타나는지, 그리고 바로가기를 통해 Cloud Volumes ONTAP 볼륨에 저장된 파일을 탐색할 수 있는지 확인하십시오.</block>
   <block id="c4def819c84308172fa9bda9ea6e62a6" category="image-alt">OneLake Lakehouse Explorer 창의 파일 아래에 표시된 확인된 Cloud Volumes ONTAP S3 바로가기 연결을 보여주는 스크린샷</block>
-  <block id="876e2bd10a8ed908ec1b5d07f979b521" category="section-title">다음 단계: Azure AI Search를 사용하여 데이터 색인 생성</block>
   <block id="30417398e9fe4a1bffd15ca2840d9bb0" category="paragraph">OneLake 바로가기를 생성한 후에는 Azure AI Search를 구성하여 OneLake를 통해 Cloud Volumes ONTAP 볼륨에 저장된 데이터를 인덱싱할 수 있습니다. Azure AI Search 인덱싱을 통해 Microsoft Copilot 및 Azure OpenAI 등 AI 애플리케이션에서 해당 데이터를 사용할 수 있습니다.</block>
   <block id="5edb5e6aaf1d17e92c8915d0f28994f7" category="inline-link-macro">Microsoft 설명서: OneLake 파일 인덱싱 방법</block>
   <block id="d04ad284d76f9123254a30d0ddecc3dd" category="paragraph">자세한 내용은 <block ref="55c5b78106d0736636dce6f21b4ff462" category="inline-link-macro-rx"></block>을 참조하십시오.</block>
@@ -7708,8 +7707,6 @@
   <block id="17769cb7fca5b211bc545524162cdb9b" category="doc">Azure Marketplace에서 Cloud Volumes ONTAP 배포</block>
   <block id="89e89d68b4151e5d8f4ca5de0e1d2733" category="paragraph">Azure Marketplace 직접 배포를 사용하면 Cloud Volumes ONTAP을 빠르고 쉽게 배포할 수 있습니다. Azure Marketplace에서 몇 번의 클릭만으로 Cloud Volumes ONTAP을 신속하게 배포하고 환경에서 핵심 기능과 역량을 살펴볼 수 있습니다.</block>
   <block id="2eb690ea4652e421c3e51dd6085019ed" category="paragraph">Azure Marketplace 직접 배포를 사용하여 배포된 Cloud Volumes ONTAP 시스템은 다음과 같은 속성을 갖습니다. Azure Marketplace를 통해 배포된 독립 실행형 인스턴스의 기능은 NetApp Console에서 검색될 때 변경됩니다.</block>
-  <block id="21dd5156944102d55cd9ade369833082" category="list-text">Cloud Volumes ONTAP의 무료 라이선스는 최대 500GiB의 프로비저닝 용량까지 제공되며, NetApp 지원은 제공되지 않고 만료일도 없습니다. 500GiB를 초과하는 용량을 사용하려면 유효한 라이선스 권한이 필요하며 추가 요금이 발생할 수 있습니다. Cloud Volumes ONTAP의 전체 기능과 고급 관리 기능을 활용하려면 Cloud Volumes ONTAP 시스템을 NetApp Console에 연결하십시오. NetApp Console을 통한 검색 및 관리에는 NetApp Console 계정과 연결된 유효한 Azure Marketplace 구독이 필요합니다.</block>
-  <block id="83776a163fbb96376e571a31d146ef23" category="list-text">NetApp Console에서 배포된 시스템을 검색하고 관리하려면 NetApp Console 계정이 유효한 Azure Marketplace 구독과 연결되어 있는지 확인하십시오. NetApp Console에서 시스템을 검색하려면 유효한 구독이 필요합니다.</block>
   <block id="dafc0a5d872858be8406e85eb31f93a9" category="list-text">Azure Marketplace 사이트에서 NetApp 제품을 검색합니다.</block>
   <block id="d98c7da71ebf35b1e2ca8161b1966b59" category="paragraph">Azure Marketplace를 통해 직접 배포된 Cloud Volumes ONTAP 시스템에는 NetApp의 지원이 포함되지 않습니다. 배포 중에 문제가 발생하는 경우 직접 문제를 해결할 수 있습니다.</block>
   <block id="6f99f6ffa31874382f91c0d7c2df5bcf" category="list-text">Azure Marketplace 사이트에서 *부팅 진단 &gt; 시리얼 로그*로 이동합니다.</block>
@@ -7722,4 +7719,7 @@
   <block id="aea9c467234db8f0360906cb49a2233c" category="inline-link">새 마켓플레이스 구독 추가</block>
   <block id="6dee350fc875c2ca1694dcd7936e6fa8" category="list-text"><block ref="6dee350fc875c2ca1694dcd7936e6fa8" category="inline-link-rx"></block></block>
   <block id="6ffc226d668d783acc3c710ae22bd61d" category="section-title">2026년 8월 10일</block>
+  <block id="6663a337c6a8024d02aa9f2785f0f713" category="section-title">Azure AI 검색 활성화</block>
+  <block id="3a39d92162680621c6913009ec265358" category="list-text">Cloud Volumes ONTAP의 무료 라이선스는 최대 500GiB의 프로비저닝 용량까지 제공되며, NetApp 지원은 제공되지 않고 만료일도 없습니다. 500GiB를 초과하는 용량을 사용하려면 유효한 라이선스 권한이 필요하며 요금이 부과될 수 있습니다. Cloud Volumes ONTAP의 전체 기능과 고급 관리 기능을 활용하려면 Cloud Volumes ONTAP 시스템을 콘솔에 연결하십시오. 콘솔을 통한 검색 및 관리에는 콘솔 계정과 연결된 유효한 Azure Marketplace 구독이 필요합니다.</block>
+  <block id="6199597ffe2b56ead0cc4e51afe97353" category="list-text">콘솔에서 배포된 시스템을 검색하고 관리하려면 콘솔 계정이 유효한 Azure Marketplace 구독과 연결되어 있는지 확인하십시오. 콘솔에서 시스템을 검색하려면 유효한 구독이 필요합니다.</block>
 </blocks>
