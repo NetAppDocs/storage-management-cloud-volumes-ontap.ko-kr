@@ -21,6 +21,7 @@ NetApp은 AWS Marketplace에서 Cloud Volumes ONTAP을 위한 간소화된 온�
 
 
 .관련 링크
+* https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-onboard-cvo-aws-marketplace.html["AWS Marketplace에서 Cloud Volumes ONTAP 온보딩"^]
 * https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-quick-deploy-aws.html["빠른 생성 기능을 사용하여 Cloud Volumes ONTAP 배포"^]
 * https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/whats-new.html#flexible-billing-for-cloud-volumes-ontap-and-data-services-in-aws["AWS의 Cloud Volumes ONTAP 및 데이터 서비스에 대한 유연한 요금 청구"^]
 

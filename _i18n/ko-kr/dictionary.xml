@@ -7722,4 +7722,125 @@
   <block id="6663a337c6a8024d02aa9f2785f0f713" category="section-title">Azure AI 검색 활성화</block>
   <block id="3a39d92162680621c6913009ec265358" category="list-text">Cloud Volumes ONTAP의 무료 라이선스는 최대 500GiB의 프로비저닝 용량까지 제공되며, NetApp 지원은 제공되지 않고 만료일도 없습니다. 500GiB를 초과하는 용량을 사용하려면 유효한 라이선스 권한이 필요하며 요금이 부과될 수 있습니다. Cloud Volumes ONTAP의 전체 기능과 고급 관리 기능을 활용하려면 Cloud Volumes ONTAP 시스템을 콘솔에 연결하십시오. 콘솔을 통한 검색 및 관리에는 콘솔 계정과 연결된 유효한 Azure Marketplace 구독이 필요합니다.</block>
   <block id="6199597ffe2b56ead0cc4e51afe97353" category="list-text">콘솔에서 배포된 시스템을 검색하고 관리하려면 콘솔 계정이 유효한 Azure Marketplace 구독과 연결되어 있는지 확인하십시오. 콘솔에서 시스템을 검색하려면 유효한 구독이 필요합니다.</block>
+  <block id="03646431a428b1129a0642a9e9a930d6" category="inline-link">AWS Marketplace에서 Cloud Volumes ONTAP 온보딩</block>
+  <block id="22b14536778a26fb341e73c9dfc20414" category="list-text"><block ref="22b14536778a26fb341e73c9dfc20414" category="inline-link-rx"></block></block>
+  <block id="9a707d77cf426a13d6626ab2d67f565d" category="doc">Azure에서 오스트리아 동부 및 벨기에 중부 지역에 대한 지원</block>
+  <block id="44e833213a99257d69192896111996f4" category="paragraph">이제 Azure의 오스트리아 동부(austriaeast) 및 벨기에 중부(belgiumcentral) 리전에 Cloud Volumes ONTAP 9.12.1 GA 이상 버전을 배포할 수 있습니다. 지원되는 배포 유형은 다음과 같습니다.</block>
+  <block id="1ee2856eba991f06fff41aa25f053f64" category="paragraph">또한 다음 엔드포인트에 대한 아웃바운드 연결을 설정해야 합니다.</block>
+  <block id="0eda8bbe61d2248f5418aba76b8dc5b1" category="list-text">\https://api.workloads.netapp.com</block>
+  <block id="9f45fe3cd2af64a1afc3f4b7f81bdae6" category="list-text">\https://ws.workloads.bluexp.netapp.com</block>
+  <block id="69fad001104806c7d3df4d9a347564cb" category="inline-link-macro">AWS Marketplace에서 Cloud Volumes ONTAP 온보딩</block>
+  <block id="96b530e768c1d37cb28e1a93deb3f72b" category="paragraph">AWS Marketplace 또는 NetApp Console을 사용하여 AWS에 Cloud Volumes ONTAP을 온보딩할 수 있습니다. 다음 표는 AWS에 Cloud Volumes ONTAP을 배포하기 위해 완료해야 하는 작업에 대한 개략적인 개요를 제공합니다. AWS Marketplace를 통한 온보딩은 Console 에이전트 배포 및 구독 연결을 자동화하는 간소화된 환경을 제공합니다. AWS Marketplace를 통한 온보딩에 대한 자세한 내용은 <block ref="837547e59085e904a77e7f4e64639022" category="inline-link-macro-rx"></block>을 참조하십시오.</block>
+  <block id="dbf314f960a580dec77c3328f5a7dcfe" category="list-text">AWS 마켓플레이스의 독립형 Cloud Volumes ONTAP 구독을 통해 Cloud Volumes ONTAP 용량에 대한 요금을 청구하려면 Cloud Volumes ONTAP 시스템에서 지원되는 용량 기반 패키지(Essentials 또는 Freemium)를 사용해야 합니다. Professional 패키지는 독립형 목록에서 지원되지 않으며 NIS 구독을 통해 요금이 청구됩니다. 원하는 패키지를 선택한 후 NetApp Console의 *청구 기본 설정*에서 Cloud Volumes ONTAP 요금 청구에 사용할 마켓플레이스 구독을 선택하십시오.</block>
+  <block id="a21deb009c8ff7309664108fdf426e10" category="summary">AWS Marketplace에서 Cloud Volumes ONTAP을 구독하고 조직 생성, 구독 연결, 에이전트 배포 및 최초 시스템 생성 등을 포함한 설정을 NetApp Console에서 완료합니다.</block>
+  <block id="ce95e653013e10f07ac1b69529baf3bb" category="doc">AWS Marketplace에서 Cloud Volumes ONTAP 구독 및 배포</block>
+  <block id="a56d9a462f5d920c9293b0c67186d9e1" category="paragraph">AWS Marketplace에서 Cloud Volumes ONTAP을 구독하고 NetApp Console의 안내에 따라 온보딩 프로세스를 진행하세요. 구독부터 배포까지 간편한 경로를 통해 Cloud Volumes ONTAP을 빠르게 시작하고 운영할 수 있습니다. 안내형 환경은 AWS Marketplace 구독부터 배포까지의 프로세스를 간소화하여 광범위한 클라우드 또는 ONTAP 전문 지식 없이도 Cloud Volumes ONTAP을 배포할 수 있도록 지원합니다.</block>
+  <block id="6a38f577211073eeb02102781c7a7724" category="paragraph">AWS Marketplace에서 Cloud Volumes ONTAP을 구독하고 배포하는 단계는 다음과 같습니다.</block>
+  <block id="9d45170ac0ac56a9ff0cb7cc857e63f0" category="list-text">AWS Marketplace에서 Cloud Volumes ONTAP 구독.</block>
+  <block id="02ab25857b97c370d093230f750bedf8" category="list-text">Console에 가입하십시오.</block>
+  <block id="07fed0f9fcd003852926ec161d68a5ed" category="list-text">(필요한 경우) 조직을 생성하고 마켓플레이스 구독을 연결합니다.</block>
+  <block id="a5dea32886a7e080be6f9329f1fb446a" category="list-text">AWS에 Console 에이전트 배포.</block>
+  <block id="aff1b02ecbb84d53a7ea17d4cd323753" category="list-text">첫 번째 Cloud Volumes ONTAP 시스템 추가.</block>
+  <block id="1216ca4f430de5c3a0d9702bcbabaa02" category="paragraph">간소화된 온보딩 프로세스를 통해 구독 연결, IAM 역할 구성, 에이전트 프로비저닝 및 시스템 초기화에 필요한 최소한의 입력만으로 에이전트 배포가 자동화됩니다. 백엔드 오케스트레이션은 CloudFormation 스택 생성, VPC 연결 유효성 검사 및 리소스 종속성을 자동으로 처리합니다. 이를 통해 수동 구성 단계와 화면 전환 횟수가 줄어들어 더 적은 설정 오류 및 중단으로 Cloud Volumes ONTAP을 더 빠르게 배포할 수 있습니다. 배포를 진행하면서 오른쪽 패널에서 진행 상황을 추적할 수 있습니다.</block>
+  <block id="d102ad960823e2e5bdf818a47be9d5b3" category="paragraph">온보딩 워크플로를 시작하기 전에 다음 필수 조건을 검토하십시오.</block>
+  <block id="172b7630d3591caad16d4e53bb8caa5b" category="list-text">AWS Marketplace에서 구독하려면 권한이 있는 AWS 계정이 필요합니다. 자동화된 IAM 설정을 사용하려면 AWS 관리자이거나 아래에 표시된 권한을 보유해야 합니다.</block>
+  <block id="6a5a62604841f01985bd66ce12b68800" category="list-text">AWS에서 에이전트 배포를 위해 IAM 역할을 생성하거나 사용할 수 있습니다.</block>
+  <block id="48a51e79fb6a62108e71ba7e037a9b37" category="list-text">NetApp Console에 로그인하거나 계정을 만들 수 있습니다.</block>
+  <block id="09f8a40b3c8ade5b73c631a145579e8d" category="inline-link-macro">AWS 마켓플레이스에서 NetApp Console 에이전트 배포</block>
+  <block id="2884c4b8debb63cfcef54c15dde97b1f" category="paragraph">AWS 에이전트 배포에 필요한 모든 필수 조건은 <block ref="d87c3906dbbd3aa004bc4ac3ab4610c2" category="inline-link-macro-rx"></block>을 참조하십시오.</block>
+  <block id="f444f7c358bbe34ac520595600b8b22c" category="section-title">AWS Marketplace에서 구독</block>
+  <block id="c8a45b103b3411fa57280389e905876d" category="paragraph">AWS Marketplace에서 Cloud Volumes ONTAP 제품을 찾아 온보딩 프로세스를 시작합니다.</block>
+  <block id="d30611ae1c4aa386020b8e622fda43df" category="list-text">AWS 계정을 사용하여 AWS Marketplace로 이동합니다.</block>
+  <block id="65a60fa3ef358594aeb5c3013a500873" category="list-text">NetApp Cloud Volumes ONTAP 제품을 찾습니다. AWS Marketplace에는 Cloud Volumes ONTAP 제품이 두 가지 있습니다.</block>
+  <block id="6bf9cb27d1125662310a04223e3dedcf" category="list-text">Cloud Volumes ONTAP 연간 구독을 위한 독립형 상품입니다.</block>
+  <block id="fdfb3edef005048dd4efa8424b37cd80" category="list-text">NetApp 데이터 서비스 및 Cloud Volumes ONTAP 구독을 위한 NetApp Intelligent Service(NIS) 결합 제품입니다. 이 온보딩 워크플로의 경우 _독립형_ 제품을 선택하십시오.</block>
+  <block id="a4cede66de2477ac18bbdee0f03c3b4b" category="list-text">상품 상세 정보와 가격 조건을 검토합니다.</block>
+  <block id="885d2379a584c302d318353e375f294c" category="list-text">구독하고 결제를 완료하십시오.</block>
+  <block id="f1b64129ed9863a99f0398b63b8a21eb" category="list-text">구독을 완료하면 AWS는 Console 가입 또는 로그인 페이지로 리디렉션합니다.</block>
+  <block id="af9938b36ef2a60606b45bb8ffe35344" category="section-title">NetApp Console에 가입하거나 로그인합니다.</block>
+  <block id="96b3a57bf37c129501b50b711ec35358" category="paragraph">마켓플레이스 구독을 완료한 후 Console에 액세스하여 설정을 계속 진행하십시오.</block>
+  <block id="e7d1b65dd28597571fba7d964af5a41c" category="list-text">콘솔 페이지에서 다음 중 하나를 선택합니다.</block>
+  <block id="df754221abc49063bd0903d180e996c6" category="list-text">신규 사용자라면 *가입*하세요.</block>
+  <block id="7056635c8b9f8d28fc7e21996cb93294" category="list-text">이미 계정이 있는 경우 *NetApp Console에 로그인하세요.*</block>
+  <block id="115e2aa74ec72f678a8f9c0ff8a23d84" category="list-text">*가입하기*를 선택한 경우 다음을 완료하십시오.</block>
+  <block id="0ed642aae1713d162a22c10261227792" category="list-text">필수 입력 항목을 입력하세요:</block>
+  <block id="ce8ae9da5b7cd6c3df2929543a9af92d" category="list-text">이메일</block>
+  <block id="dc647eb65e6711e155375218212b3964" category="list-text">비밀번호</block>
+  <block id="f11b368cddfe37c47af9b9d91c6ba4f0" category="list-text">성명</block>
+  <block id="1c76cbfe21c6f44c1d1e59d54f3e4420" category="list-text">회사</block>
+  <block id="59716c97497eb9694541f7c3d37b1a4d" category="list-text">국가</block>
+  <block id="e6cd86d61f4639c8a27006c6c29b3e9f" category="list-text">*다음*을 선택하십시오.</block>
+  <block id="39f666f68e0b42f2f9f878864293d3b0" category="list-text">주소, 도시, 주, 우편번호, 전화번호 등의 연락처 정보를 입력합니다(선택 사항).</block>
+  <block id="7408a50737fd936622eeec54bbeb439c" category="list-text">*가입하기*를 선택합니다.</block>
+  <block id="84f2c0f29bde8033b3d6707753db6bc8" category="list-text">라이선스 약관에 동의합니다.</block>
+  <block id="606b520330e1b3dd8468aa4c696f320b" category="list-text">service@console.netapp.com에서 보낸 메시지를 사용하여 이메일 주소를 확인하십시오.</block>
+  <block id="e01bdff1ce4770f66f1a74a9b5892c8b" category="list-text">콘솔에 로그인하고 인증을 완료합니다.</block>
+  <block id="ac9188736d7d24740d106bad6d2f1a24" category="section-title">조직 만들기</block>
+  <block id="db32d51e7a32c3835f9ca7138ba5e779" category="paragraph">처음 사용하는 사용자이거나 NetApp Console 조직에 아직 소속되어 있지 않은 경우에만 이 단계를 완료하십시오.</block>
+  <block id="dfa6580bc43676ec0428470c4226197e" category="paragraph">이미 조직에 속해 있는 경우 이 섹션을 건너뛰고 <block ref="5a5b9f60942f56579652f4a550dadca9" category="inline-xref-macro-rx"></block>으로 계속 진행하십시오.</block>
+  <block id="b60fce2f30234b8c655d26812f8d684c" category="paragraph">사용자, 역할, 권한, 라이선스 및 시스템을 관리할 조직을 생성합니다.</block>
+  <block id="4c27c7ddbdd91ad9f40d0e69913d02f8" category="list-text">조직 이름을 입력하십시오.</block>
+  <block id="340e0bcb7d46eb5bd14fee5c751d3175" category="list-text">선택 사항: NetApp 지원 사이트(NSS) 계정을 연결합니다.</block>
+  <block id="bf18811faac9b8e4fcaebab51afd1113" category="list-text">*생성*을 선택합니다.</block>
+  <block id="34c93ad83166c6e80fe3fea1d5eaa0df" category="section-title">구독 연결</block>
+  <block id="e7044d37a1ed84ca9f7caa2b9d24ef7f" category="paragraph">조직을 생성하면 Console에서 자동으로 마켓플레이스 구독을 해당 조직에 연결하려고 시도합니다.</block>
+  <block id="3bdc84428bee979e77f1781f40304f42" category="inline-link-macro">구독 관리 방법을 알아보십시오</block>
+  <block id="6038ef325e8557cc84b0ef6c053a062d" category="paragraph">자동 연결이 실패하면 구독을 수동으로 연결하십시오. <block ref="31ece82e919075b6d4fa8e64ff8627ac" category="inline-link-macro-rx"></block>.</block>
+  <block id="999c350fcbd9f270e794eb9f39020947" category="section-title">AWS에 Console 에이전트 배포</block>
+  <block id="5cb502f88565459be3dfd091651deb1b" category="paragraph">구독을 연결하면 콘솔에서 AWS 리소스 및 Cloud Volumes ONTAP 시스템을 관리하기 위한 에이전트 배포 흐름이 자동으로 열립니다.</block>
+  <block id="0e5a6ed81e42dfb7b8082abc4bd85af9" category="inline-link-macro">AWS 권한 참조</block>
+  <block id="57a69cea62fbfee2c988421746b5ec77" category="paragraph">에이전트 배포 중에 사용되는 권한에 대한 자세한 내용은 <block ref="8640373d61143a22452f799c5e012ff9" category="inline-link-macro-rx"></block>을 참조하십시오.</block>
+  <block id="b11b04338f764b72f59f7c3db188b3ad" category="list-text">에이전트를 배포하는 데 필요한 최소 권한을 얻으려면 소개 페이지에 언급된 단계를 따르거나, 에이전트 배포를 위한 역할을 자동으로 생성하는 단계를 진행할 수 있습니다.</block>
+  <block id="701ad266790171c293af9ebdab49b1dd" category="list-text">*AWS 자격 증명* 페이지에서 에이전트 배포에 필요한 자격 증명을 제공하려면 다음 옵션 중 하나를 선택하십시오.</block>
+  <block id="f6775e307e0e96c3d2d2aa4261c2dc06" category="open-title">저를 위한 역할 생성 (권장)</block>
+  <block id="7d1dd887a48c9c23271325fc57dc9b7d" category="paragraph">이 옵션을 선택하면 AWS CloudFormation Quick Create 흐름이 열려 에이전트 배포 역할을 생성합니다. 관리자 권한이 있는 사용자라면 이 옵션을 사용하여 CloudFormation 스택을 자동으로 활용하여 정책, 역할을 생성하고 사용자를 인증하여 에이전트를 생성할 수 있습니다.</block>
+  <block id="947040282161ce63e6c467b9272f0987" category="list-text">AWS 계정 ID와 선택적으로 외부 ID를 추가합니다. 콘솔에서 기본 역할 이름을 설정합니다.</block>
+  <block id="058984dad8b35b2edf4e90cc0d99e422" category="list-text">약관에 동의하고 *스택 생성*을 선택합니다.</block>
+  <block id="dd9b75b6f9c28d257df9b082c4cd3f22" category="inline-image-macro">width=50% AWS 계정 ID와 선택적으로 에이전트 배포 역할에 대한 외부 ID를 입력하는 AWS CloudFormation 스택 생성 페이지의 스크린샷입니다.</block>
+  <block id="cb8aa7095d78f4373b1a7bc44eb8ccc3" category="paragraph"><block ref="cb8aa7095d78f4373b1a7bc44eb8ccc3" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="1a8675104d64ecc19112dddcea8c45b8" category="list-text">AWS에서 IAM 역할을 구성하고 ARN이 생성되면 역할을 확인하고 저장하십시오.</block>
+  <block id="c922cc18eca71598d4a86b7707d7eba0" category="open-title">역할 가정</block>
+  <block id="6a2a0f10cb2f085ebdbde5eebef49a3e" category="paragraph">이는 수동 역할 할당 워크플로의 일부입니다. 기존 IAM 역할 ARN을 입력하십시오. 이 역할 편집에 대한 자세한 내용은<block ref="4d74176964b79f9dc8cf6e9b4edd3262" category="inline-link-rx"></block>을 참조하십시오.</block>
+  <block id="e656cb1ebc2e559e3bcc2002585434ed" category="open-title">AWS 키</block>
+  <block id="dfb7a0fc5277c45a86764545309957ce" category="paragraph">이는 수동 역할 할당 워크플로의 일부입니다. AWS 액세스 키와 비밀 키를 입력하십시오. 자세한 내용은<block ref="075c8733f05483e5267d384d7c0db32a" category="inline-link-rx"></block>을 참조하십시오.</block>
+  <block id="68ff9a106c651bd2460baf0343787e09" category="list-text">AWS 에이전트를 배포합니다.</block>
+  <block id="bb65b2f90c49dcd84ae767d9f986f148" category="list-text">*AWS 에이전트 세부 정보* 페이지에서 에이전트 인스턴스 이름과 에이전트 역할을 설정하거나 확인합니다.</block>
+  <block id="4d3d862d7ac1ef0cd306cce2d43b61c6" category="list-text">*네트워크* 페이지에서 VPC, 서브넷, 키 페어, 공용 IP 동작 및 프록시 설정을 선택합니다.</block>
+  <block id="0cb0d7dbb504e41f0b9980e3f106ae8e" category="list-text">*보안 그룹*을 구성합니다. 에이전트 VM에 대한 문제 해결 액세스를 위해 인바운드 HTTP(80), HTTPS(443) 및 SSH(22)를 허용합니다.</block>
+  <block id="e60a9f11dba1e6072ec9503cca905c92" category="list-text">각 섹션 요약을 검토하고 *추가*를 선택하여 배포하십시오.</block>
+  <block id="3ed9f44843bea0baa9e9721e607d24c2" category="paragraph">전체 네트워크 연결 및 권한 요구 사항은 다음을 참조하십시오.</block>
+  <block id="ef9fe436c6881c3aeb226ecf309827f0" category="inline-link">AWS Marketplace 배포를 위한 네트워킹 설정</block>
+  <block id="13ccd8cfe31fc2437285f8fa41bb39d0" category="list-text"><block ref="13ccd8cfe31fc2437285f8fa41bb39d0" category="inline-link-rx"></block></block>
+  <block id="2d3fc94cd0898448a15e6e05f4098b6f" category="inline-link">AWS 권한 설정</block>
+  <block id="57d5f449d9cc74edd78470cc9873c16e" category="list-text"><block ref="57d5f449d9cc74edd78470cc9873c16e" category="inline-link-rx"></block></block>
+  <block id="43663d02f9f2280fb62656e0e2171f96" category="list-text"><block ref="43663d02f9f2280fb62656e0e2171f96" category="inline-link-rx"></block></block>
+  <block id="7ac3658f7b2ea40441a46f7d503df9d6" category="list-text">배포가 완료될 때까지 진행 상황 대화 상자를 추적하세요. 이벤트 로그를 확장하여 자세한 활동을 확인할 수 있습니다.</block>
+  <block id="40b1bbcf1d63550b5ee1a9ca612f354d" category="paragraph">배포가 완료되면 첫 번째 Cloud Volumes ONTAP 시스템을 생성하거나 시스템 페이지에 남아 나중에 시스템을 추가할 수 있습니다.</block>
+  <block id="63919d343a2d06159ee93f9535a4ca2e" category="section-title">첫 번째 Cloud Volumes ONTAP 시스템 추가</block>
+  <block id="e1373b355aa6da2aad7bba187ff4e9f2" category="paragraph">에이전트 준비가 완료되면 AWS에서 첫 번째 Cloud Volumes ONTAP 시스템을 생성하십시오.</block>
+  <block id="b0845b98104086e018330dff1f994b3a" category="list-text">배포 후 나타나는 메시지에서 *시스템 추가*를 선택하십시오.</block>
+  <block id="beec7c8b8f52f7e44dec39ce075d3abb" category="list-text">Cloud Volumes ONTAP 시스템 생성 워크플로를 시작합니다.</block>
+  <block id="e4998cdb09fc1ae76d7c7b0f97a04fd9" category="list-text">시스템 구성을 완료합니다.</block>
+  <block id="8dbb4c9a73791ff9189a74648db065ad" category="paragraph">자세한 시스템 배포 지침은 <block ref="3bd26a21bb4b5b57e3e4e28150d4f309" category="inline-link-rx"></block>을 참조하십시오.</block>
+  <block id="72d7b93cee23363a2907b2be8b237290" category="section-title">문제 해결 및 복구</block>
+  <block id="cb1bc5edf506394ee9927cb447901c17" category="paragraph">온보딩 프로세스를 완료하기 전에 중단했거나 에이전트 배포에 실패한 경우 이 섹션을 사용하십시오. 이 단계를 통해 중단된 부분부터 다시 시작하거나 배포를 복구하고 재시도할 수 있습니다.</block>
+  <block id="90a521d73cad15b4a353df47ccdc06d8" category="section-title">설정 재개</block>
+  <block id="e933831d8f6e421c7eea9aa2e2c76bb9" category="paragraph">설정이 완료되기 전에 종료하더라도 마지막으로 완료된 단계부터 설정을 다시 시작할 수 있습니다.</block>
+  <block id="e440edd270e603c687695db87b77144a" category="list-text">NetApp 콘솔 홈 페이지로 이동합니다.</block>
+  <block id="733fbe662fa606d61fff360b4b1246b5" category="list-text">온보딩을 계속하려면 *설정 재개*를 선택하십시오.</block>
+  <block id="2a208a77ab0c5ca79397c57987de1a1a" category="section-title">배포 실패 복구</block>
+  <block id="628f962201a560f694204274ce3d88ec" category="paragraph">배포가 실패할 경우:</block>
+  <block id="1b523bb53ad2000e3344ff316e869855" category="list-text">배포 보고서를 다운로드하십시오.</block>
+  <block id="07be83ce12a3bf78ef715d65c6c54020" category="list-text">구성 및 로그를 검토하십시오.</block>
+  <block id="160e5aa077c7539416162287f02990f8" category="list-text">배포를 다시 시도하려면 *처음부터 다시 시작*을 선택하십시오.</block>
+  <block id="d2cfcb99c2e8baa996b4db2415ca247d" category="inline-link-macro">에이전트 문제를 해결하는 방법을 알아보십시오.</block>
+  <block id="69adeb1c49bb37715a017c9a902b7d1d" category="paragraph"><block ref="61813908742cfb0bf968ca5176776caa" category="inline-link-macro-rx"></block>.</block>
+  <block id="8c157a27a72f45bb42efe091d45115ef" category="paragraph">관련 설정 작업 및 문제 해결에는 다음 자료를 활용하십시오.</block>
+  <block id="d87c3906dbbd3aa004bc4ac3ab4610c2" category="list-text"><block ref="d87c3906dbbd3aa004bc4ac3ab4610c2" category="inline-link-macro-rx"></block></block>
+  <block id="ff462988ef2bf728297fe5ed85ddc08d" category="inline-link-macro">AWS 구독 구성</block>
+  <block id="187e653c7125a081fc8f4c8454b7978a" category="list-text"><block ref="187e653c7125a081fc8f4c8454b7978a" category="inline-link-macro-rx"></block></block>
+  <block id="2639be1d095a58dd96a72a823ff1b61b" category="inline-link-macro">NetApp Console 에이전트 문제 해결</block>
+  <block id="a610575fc8363bddd388bfee0dc0a7ee" category="list-text"><block ref="a610575fc8363bddd388bfee0dc0a7ee" category="inline-link-macro-rx"></block></block>
+  <block id="43026f5cdef9b8d7671a52ecabf5bea0" category="list-text"><block ref="43026f5cdef9b8d7671a52ecabf5bea0" category="inline-link-rx"></block></block>
+  <block id="f6bbe5efd3f2141104f822ac01ed3102" category="section-title">2026년 8월 25일</block>
 </blocks>

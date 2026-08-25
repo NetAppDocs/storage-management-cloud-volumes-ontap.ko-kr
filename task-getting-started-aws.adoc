@@ -16,6 +16,8 @@ summary: AWS에 Cloud Volumes ONTAP을 배포하기 위한 필수 조건을 모�
 [role="lead"]
 Cloud Volumes ONTAP를 배포하려면 먼저 AWS 구독 및 Cloud Volumes ONTAP 라이선스에 대한 정보를 알아야 합니다. 또한 AWS 계정에 대해 생성된 NetApp Console 에이전트가 있는지 확인해야 합니다. 이 항목의 대부분 내용은 Cloud Volumes ONTAP를 배포하기 전에 Console 설정의 일부로 수행해야 합니다.
 
+AWS Marketplace 또는 NetApp Console을 사용하여 AWS에 Cloud Volumes ONTAP을 온보딩할 수 있습니다. 다음 표는 AWS에 Cloud Volumes ONTAP을 배포하기 위해 완료해야 하는 작업에 대한 개략적인 개요를 제공합니다. AWS Marketplace를 통한 온보딩은 Console 에이전트 배포 및 구독 연결을 자동화하는 간소화된 환경을 제공합니다. AWS Marketplace를 통한 온보딩에 대한 자세한 내용은 link:task-onboard-cvo-aws-marketplace.html["AWS Marketplace에서 Cloud Volumes ONTAP 온보딩"]을 참조하십시오.
+
 [cols="20,35,25,25"]
 |===
 | 일 | 설명 | 참조 | 프라이빗 환경 배포 관련 참고 사항 

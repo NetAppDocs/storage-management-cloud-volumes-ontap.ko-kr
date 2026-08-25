@@ -61,6 +61,8 @@ sidebar:
     - title: Amazon Web Services에 배포
       flavor: aws
       entries:
+      - title: AWS Marketplace에서 Cloud Volumes ONTAP 온보딩
+        url: "/task-onboard-cvo-aws-marketplace.html"
       - title: 배포 개요
         url: "/task-getting-started-aws.html"
       - title: 구성을 계획하세요

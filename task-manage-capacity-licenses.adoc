@@ -106,6 +106,7 @@ https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-licensing.html[
 Console은 항상 먼저 라이선스를 사용하여 요금을 청구합니다. 라이선스를 사용할 수 없는 경우 마켓플레이스 구독을 사용하여 요금을 청구합니다. BYOL 구독을 마켓플레이스 구독으로 또는 그 반대로 전환할 필요는 없습니다.
 
 * 클라우드 제공업체의 마켓플레이스에서 개별 제안 또는 계약을 체결한 경우, 계약에 포함되지 않은 결제 방식으로 변경하면 BYOL(NetApp에서 라이센스를 구매한 경우) 또는 PAYGO 요금으로 청구됩니다.
+* AWS 마켓플레이스의 독립형 Cloud Volumes ONTAP 구독을 통해 Cloud Volumes ONTAP 용량에 대한 요금을 청구하려면 Cloud Volumes ONTAP 시스템에서 지원되는 용량 기반 패키지(Essentials 또는 Freemium)를 사용해야 합니다. Professional 패키지는 독립형 목록에서 지원되지 않으며 NIS 구독을 통해 요금이 청구됩니다. 원하는 패키지를 선택한 후 NetApp Console의 *청구 기본 설정*에서 Cloud Volumes ONTAP 요금 청구에 사용할 마켓플레이스 구독을 선택하십시오.
 
 
 .단계
