@@ -7843,4 +7843,16 @@
   <block id="a610575fc8363bddd388bfee0dc0a7ee" category="list-text"><block ref="a610575fc8363bddd388bfee0dc0a7ee" category="inline-link-macro-rx"></block></block>
   <block id="43026f5cdef9b8d7671a52ecabf5bea0" category="list-text"><block ref="43026f5cdef9b8d7671a52ecabf5bea0" category="inline-link-rx"></block></block>
   <block id="f6bbe5efd3f2141104f822ac01ed3102" category="section-title">2026년 8월 25일</block>
+  <block id="9775ec01b640ec37d790fc80fcd304fa" category="doc">Azure Secret 및 Top Secret 지역에서의 Cloud Volumes ONTAP 지원(비공개 미리 보기)</block>
+  <block id="71220dfc0ef52806d7063323e20a8d01" category="paragraph">Cloud Volumes ONTAP는 이제 비공개 미리 보기로 Azure Government Secret 및 Top Secret 지역에 배포를 지원합니다. 이 기능을 통해 Cloud Volumes ONTAP를 Microsoft의 기밀 Azure 환경으로 확장하여 정부 및 국방 고객이 국가 안보 관련 워크로드를 지원하기 위한 데이터 관리, 보호 및 재해 복구에 ONTAP를 사용할 수 있습니다. 참여를 원하시면 NetApp 담당 팀에 문의하십시오.</block>
+  <block id="9a4d5529d16b869118217275b6da762d" category="paragraph">자세한 내용은 Azure 설명서를 참조하세요.</block>
+  <block id="d6cb1d3533b658f7c8098c480b799207" category="inline-link">미국 정부 공관을 위한 클라우드^</block>
+  <block id="77063c44fc617a6f3c637b1e2c35bd37" category="list-text"><block ref="77063c44fc617a6f3c637b1e2c35bd37" category="inline-link-rx"></block></block>
+  <block id="985c02ef44894c5b9eb81c7ef41befb6" category="inline-link">Azure Government Secret</block>
+  <block id="97003784d2f5493688983ca3efa74e68" category="list-text"><block ref="97003784d2f5493688983ca3efa74e68" category="inline-link-rx"></block></block>
+  <block id="68e1f1aba2e1561ee3226c9bcfef5ee1" category="inline-link">Azure Government Top Secret</block>
+  <block id="3a487e075186bbd01e8a952b88b55326" category="list-text"><block ref="3a487e075186bbd01e8a952b88b55326" category="inline-link-rx"></block></block>
+  <block id="c465a7bd98f96ab6b7e15dbed5471998" category="list-text">*원격 데이터 복제*</block>
+  <block id="b03b92c4dfcafd9226ecc9026f960e01" category="paragraph">원격 복제를 통해 Cloud Volumes ONTAP 데이터를 보호하십시오. 원격 데이터 복제는 서로 다른 위치에 동기화된 데이터 복사본을 유지하여 시스템 장애나 재해 발생 시에도 비즈니스 연속성을 보장하는 재해 복구 기능을 제공합니다.</block>
+  <block id="5e6b403f3ce4af919738fd94fe35d2d0" category="section-title">2026년 9월 2일</block>
 </blocks>
