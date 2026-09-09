@@ -65,7 +65,7 @@ endif::aws[]
 --
 .특정 집계
 --
-.. *집계* 탭에서 필요한 집계로 이동하여 클릭하십시오.image:icon-action.png[""] 상.
+.. *Aggregates* 탭에서 필요한 애그리게이트로 이동하여 image:icon-action.png["추가 작업을 위한 가로 점 세 개가 표시된 아이콘입니다."] 아이콘을 클릭합니다.
 .. *볼륨 추가*를 선택하세요.image:screenshot_add_volume_button_agg.png["집계 탭 아래에 있는 볼륨 추가 버튼의 스크린샷입니다."]
 
 

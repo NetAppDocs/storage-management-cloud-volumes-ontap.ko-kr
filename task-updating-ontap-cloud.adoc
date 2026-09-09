@@ -457,7 +457,7 @@ NOTE: 콘솔에 액세스하는 컴퓨터는 Cloud Volumes ONTAP 에 네트워�
 
 .단계
 . Cloud Volumes ONTAP 시스템에서 *집계* 탭을 클릭합니다.
-. 필요한 집계 타일에서 다음을 클릭합니다.image:icon-action.png[""] 아이콘을 클릭한 다음 *집계 세부 정보 보기*를 선택하세요.
+. 필요한 애그리게이트 타일에서 image:icon-action.png["추가 작업을 위한 가로 점 세 개가 표시된 아이콘입니다."] 아이콘을 클릭한 다음 *애그리게이트 세부 정보 보기*를 선택합니다.
 +
 image:screenshots_aggregate_details_state.png["스크린샷: 집계에 대한 정보를 볼 때 상태 필드가 표시됩니다."]
 
@@ -574,7 +574,7 @@ NOTE: 미리 정의된 Cloud Volumes ONTAP 보안 그룹은 기본적으로 아�
 ** `/opt/application/netapp/cloudmanager/ontap/images/`
 
 
-. 시스템에서 다음을 클릭합니다.image:icon-action.png[""] 아이콘을 클릭한 다음 * Cloud Volumes ONTAP 업데이트*를 클릭합니다.
+. 시스템에서 image:icon-action.png["추가 작업을 위한 가로 점 세 개가 표시된 아이콘입니다."] 아이콘을 클릭한 다음 *Cloud Volumes ONTAP 업데이트*를 클릭합니다.
 . Cloud Volumes ONTAP 버전 업데이트 페이지에서 URL을 입력한 다음 *이미지 변경*을 클릭합니다.
 +
 위에 표시된 경로의 콘솔 에이전트에 소프트웨어 이미지를 복사한 경우 다음 URL을 입력합니다.
