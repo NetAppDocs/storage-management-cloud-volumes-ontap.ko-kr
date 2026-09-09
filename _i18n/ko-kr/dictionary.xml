@@ -7855,4 +7855,5 @@
   <block id="c465a7bd98f96ab6b7e15dbed5471998" category="list-text">*원격 데이터 복제*</block>
   <block id="b03b92c4dfcafd9226ecc9026f960e01" category="paragraph">원격 복제를 통해 Cloud Volumes ONTAP 데이터를 보호하십시오. 원격 데이터 복제는 서로 다른 위치에 동기화된 데이터 복사본을 유지하여 시스템 장애나 재해 발생 시에도 비즈니스 연속성을 보장하는 재해 복구 기능을 제공합니다.</block>
   <block id="5e6b403f3ce4af919738fd94fe35d2d0" category="section-title">2026년 9월 2일</block>
+  <block id="ee3e9d951c79faa2be7ec2e79fdaf3dd" category="paragraph">Workload Factory는 스토리지 시스템 구성을 정기적으로 분석하여 Cloud Volumes ONTAP 시스템의 구성 문제를 파악합니다. 문제가 발견되면 잘 설계된 대시보드에 문제 내용과 스토리지 시스템의 최적 성능, 비용 효율성 및 모범 사례 준수를 보장하기 위해 필요한 변경 사항에 대한 권장 사항이 표시됩니다.</block>
 </blocks>
