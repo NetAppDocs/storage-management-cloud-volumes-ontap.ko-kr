@@ -25,7 +25,7 @@ Cloud Volumes ONTAP에는 안정적인 운영을 위한 스토리지 구성 제�
 
 NetApp은 시스템 용량 제한 초과를 지원하지 않습니다. 라이센스 용량 제한에 도달하면 NetApp Console에 조치 필요 메시지가 표시되고 더 이상 디스크를 추가할 수 없습니다.
 
-일부 구성에서는 디스크 제한으로 인해 디스크만으로는 용량 제한에 도달할 수 없습니다. 이러한 경우에는 https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-data-tiering.html["비활성 데이터를 개체 스토리지로 계층화"^]를 통해 용량 제한에 도달할 수 있습니다. 자세한 내용은 아래의 용량 및 디스크 제한을 참조하십시오.
+일부 구성에서는 디스크 제한으로 인해 디스크만으로는 용량 제한에 도달할 수 없습니다. 이러한 경우에는 https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-data-tiering.html["비활성 데이터를 개체 스토리지로 계층화"^]를 통해 용량 제한에 도달할 수 있습니다. 자세한 내용은 아래의 용량 및 디스크 제한을 참조하십시오.
 
 [[cap-license-aws]]
 .용량 기반 라이센스의 용량 제한
@@ -94,7 +94,7 @@ Cloud Volumes ONTAP는 EBS 볼륨을 디스크로 사용하고 이를 _애그리
 
 . HA 쌍의 두 노드 모두에 18개의 애그리게이트를 생성할 수 없습니다. 데이터 디스크 제한을 초과하기 때문입니다.
 . 최대 애그리게이트 크기는 디스크에 따라 달라지며 데이터 계층화에 사용하는 오브젝트 스토리지는 포함되지 않습니다.
-. Amazon EBS Elastic Volumes 기능을 지원하는 구성의 경우, 하나의 애그리게이트에 최대 8개의 디스크를 포함할 수 있으며, 이를 통해 최대 128TiB의 용량을 확보할 수 있습니다. 기본적으로 Cloud Volumes ONTAP 9.11.0 이상 시스템에서는 gp3 또는 io1 디스크를 사용할 때 Amazon EBS Elastic Volumes가 활성화되어 있습니다. https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-aws-elastic-volumes.html["Elastic Volumes 지원에 대해 자세히 알아보세요"^]
+. Amazon EBS Elastic Volumes 기능을 지원하는 구성의 경우, 하나의 애그리게이트에 최대 8개의 디스크를 포함할 수 있으며, 이를 통해 최대 128TiB의 용량을 확보할 수 있습니다. 기본적으로 Cloud Volumes ONTAP 9.11.0 이상 시스템에서는 gp3 또는 io1 디스크를 사용할 때 Amazon EBS Elastic Volumes가 활성화되어 있습니다. https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-aws-elastic-volumes.html["Elastic Volumes 지원에 대해 자세히 알아보세요"^]
 . 집계된 모든 디스크의 크기는 동일해야 합니다.
 
 
@@ -120,7 +120,7 @@ Cloud Volumes ONTAP는 EBS 볼륨을 디스크로 사용하고 이를 _애그리
 [[limits-for-different-deployment-modes-of-capacity-based-licensing]]
 === 용량 기반 라이센스의 다양한 배포 모드에 대한 제한 사항
 
-다음 디스크 제한 사항은 용량 기반 라이센스 패키지를 사용하는 Cloud Volumes ONTAP 시스템에 적용됩니다. https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-licensing.html["Cloud Volumes ONTAP 라이센스 옵션에 대해 알아보십시오"^]
+다음 디스크 제한 사항은 용량 기반 라이센스 패키지를 사용하는 Cloud Volumes ONTAP 시스템에 적용됩니다. https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-licensing.html["Cloud Volumes ONTAP 라이센스 옵션에 대해 알아보십시오"^]
 
 
 NOTE: 단일 노드 및 HA 구성에 대한 최대 시스템 용량 및 데이터 계층화 용량 제한에 대해서는 <<cap-license-aws>>을 참조하십시오.
@@ -178,7 +178,7 @@ NOTE: 단일 노드 및 HA 구성에 대한 최대 시스템 용량 및 데이�
 
 다음 디스크 제한 사항은 노드 기반 라이센스를 사용하는 Cloud Volumes ONTAP 시스템에 적용됩니다. 노드 기반 라이센스는 노드별로 Cloud Volumes ONTAP 라이센스를 부여할 수 있는 이전 세대 라이센스 모델입니다. 노드 기반 라이센스는 기존 고객에게 계속 제공됩니다.
 
-Cloud Volumes ONTAP BYOL 단일 노드 또는 HA 쌍 시스템에 대해 여러 개의 노드 기반 라이센스를 구입하여 368TiB 이상의 용량을 할당할 수 있으며, 최대 테스트 및 지원되는 시스템 용량 제한인 2PiB까지 할당할 수 있습니다. 디스크 제한으로 인해 디스크만 사용하여 용량 제한에 도달하지 못할 수 있으므로 주의하십시오. 디스크 제한을 초과하려면 https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-data-tiering.html["비활성 데이터를 개체 스토리지로 계층화"^]. https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-manage-node-licenses.html["Cloud Volumes ONTAP에 추가 시스템 라이센스를 추가하는 방법에 대해 알아보십시오"^]. Cloud Volumes ONTAP는 최대 테스트 및 지원되는 시스템 용량인 2PiB까지 지원하지만, 2PiB 제한을 초과하면 지원되지 않는 시스템 구성이 됩니다.
+Cloud Volumes ONTAP BYOL 단일 노드 또는 HA 쌍 시스템에 대해 여러 개의 노드 기반 라이센스를 구입하여 368TiB 이상의 용량을 할당할 수 있으며, 최대 테스트 및 지원되는 시스템 용량 제한인 2PiB까지 할당할 수 있습니다. 디스크 제한으로 인해 디스크만 사용하여 용량 제한에 도달하지 못할 수 있으므로 주의하십시오. 디스크 제한을 초과하려면 https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-data-tiering.html["비활성 데이터를 개체 스토리지로 계층화"^]. https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-manage-node-licenses.html["Cloud Volumes ONTAP에 추가 시스템 라이센스를 추가하는 방법에 대해 알아보십시오"^]. Cloud Volumes ONTAP는 최대 테스트 및 지원되는 시스템 용량인 2PiB까지 지원하지만, 2PiB 제한을 초과하면 지원되지 않는 시스템 구성이 됩니다.
 
 AWS Secret Cloud 및 Top Secret Cloud 리전에서는 Cloud Volumes ONTAP 9.12.1부터 여러 노드 기반 라이센스 구매가 지원됩니다.
 
@@ -283,7 +283,7 @@ AWS Secret Cloud 및 Top Secret Cloud 리전에서는 Cloud Volumes ONTAP 9.12.1
 
 일부 구성에서는 Cloud Volumes ONTAP용 추가 스토리지 VM(SVM)을 생성할 수 있습니다.
 
-https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-managing-svms-aws.html["추가 스토리지 VM을 생성하는 방법을 알아보세요."^].
+https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-managing-svms-aws.html["추가 스토리지 VM을 생성하는 방법을 알아보세요."^].
 
 [cols="40,60"]
 |===

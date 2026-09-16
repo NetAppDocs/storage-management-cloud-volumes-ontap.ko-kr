@@ -30,7 +30,7 @@ Azure에서는 다음과 같은 네트워킹 요구 사항을 충족해야 합�
 
 Cloud Volumes ONTAP 시스템은 다양한 기능을 위해 외부 엔드포인트에 액세스하기 위해 아웃바운드 인터넷 액세스가 필요합니다.  엄격한 보안 요구 사항이 있는 환경에서 이러한 엔드포인트가 차단되면 Cloud Volumes ONTAP 제대로 작동할 수 없습니다.
 
-콘솔 에이전트는 일상 업무를 위해 여러 엔드포인트에 연결합니다.  엔드포인트에 대한 정보는 다음을 참조하세요. https://docs.netapp.com/us-en/bluexp-setup-admin/task-install-connector-on-prem.html#step-3-set-up-networking["콘솔 에이전트에서 연결된 엔드포인트 보기"^] 그리고 https://docs.netapp.com/us-en/bluexp-setup-admin/reference-networking-saas-console.html["콘솔 사용을 위한 네트워킹 준비"^] .
+콘솔 에이전트는 일상적인 작업을 위해 여러 엔드포인트와도 통신합니다. 엔드포인트에 대한 자세한 내용은  https://docs.netapp.com/us-en/console-setup-admin/task-install-connector-on-prem.html#step-3-set-up-networking["콘솔 에이전트에서 연결된 엔드포인트 보기"^] 및  https://docs.netapp.com/us-en/console-setup-admin/reference-networking-saas-console.html["콘솔 사용을 위한 네트워킹 준비"^]을 참조하십시오.
 
 
 
@@ -89,7 +89,7 @@ NetApp Console 에이전트의 프록시 서버 구성을 사용하여 Cloud Vol
 * *투명 프록시*: 네트워크는 콘솔 에이전트의 프록시를 통해 Cloud Volumes ONTAP 에서 아웃바운드 트래픽을 자동으로 라우팅하도록 구성됩니다.  투명 프록시를 설정할 때 관리자는 프록시 서버의 HTTP 주소가 아닌 Cloud Volumes ONTAP 에서의 연결을 위한 루트 CA 인증서만 제공하면 됩니다.  다음을 사용하여 Cloud Volumes ONTAP 시스템에 동일한 루트 CA 인증서를 가져와 업로드해야 합니다. https://docs.netapp.com/us-en/ontap-cli/security-certificate-install.html["ONTAP CLI: 보안 인증서 설치"^] 명령.
 
 
-프록시 서버 구성에 대한 정보는 다음을 참조하세요. https://docs.netapp.com/us-en/bluexp-setup-admin/task-configuring-proxy.html["프록시 서버를 사용하도록 콘솔 에이전트 구성"^] .
+프록시 서버 구성에 대한 자세한 내용은  https://docs.netapp.com/us-en/console-setup-admin/task-configuring-proxy.html["프록시 서버를 사용하도록 콘솔 에이전트 구성"^]을 참조하십시오.
 
 
 
@@ -224,7 +224,7 @@ Azure 리소스 그룹에 두 번째 Cloud Volumes ONTAP HA 쌍을 배포하려�
 [[security-group-rules]]
 === 보안 그룹 규칙
 
-콘솔은 Cloud Volumes ONTAP 성공적으로 작동할 수 있도록 인바운드 및 아웃바운드 규칙을 포함하는 Azure 보안 그룹을 만듭니다. https://docs.netapp.com/us-en/bluexp-setup-admin/reference-ports-azure.html["콘솔 에이전트에 대한 보안 그룹 규칙 보기"^] .
+콘솔은 Cloud Volumes ONTAP 성공적으로 작동하는 데 필요한 인바운드 및 아웃바운드 규칙을 포함하는 Azure 보안 그룹을 생성합니다. https://docs.netapp.com/us-en/console-setup-admin/reference-ports-azure.html["콘솔 에이전트에 대한 보안 그룹 규칙 보기"^].
 
 Cloud Volumes ONTAP 용 Azure 보안 그룹에는 노드 간 내부 통신을 위해 적절한 포트가 열려 있어야 합니다. https://docs.netapp.com/us-en/ontap/networking/ontap_internal_ports.html["ONTAP 내부 포트에 대해 알아보세요"^] .
 
@@ -505,8 +505,8 @@ NOTE: 소스는 Cloud Volumes ONTAP 시스템의 인터페이스(IP 주소)입�
 
 아직 콘솔 에이전트를 만들지 않았다면 콘솔 에이전트에 대한 네트워킹 요구 사항도 검토해야 합니다.
 
-* https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-azure.html["콘솔 에이전트에 대한 네트워킹 요구 사항 보기"^]
-* https://docs.netapp.com/us-en/bluexp-setup-admin/reference-ports-azure.html["Azure의 보안 그룹 규칙"^]
+* https://docs.netapp.com/us-en/console-setup-admin/task-quick-start-connector-azure.html["콘솔 에이전트에 대한 네트워킹 요구 사항 보기"^]
+* https://docs.netapp.com/us-en/console-setup-admin/reference-ports-azure.html["Azure의 보안 그룹 규칙"^]
 
 
 .관련 링크

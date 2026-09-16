@@ -18,7 +18,7 @@ Cloud Volumes ONTAP 클러스터용 Network Time Protocol(NTP) 서버를 구성�
 
 다음과 같이 NTP 서버를 지정할 수 있습니다.
 
-* https://docs.netapp.com/us-en/bluexp-automation/cm/api_ref_resources.html["NetApp Console API"^].
+* https://docs.netapp.com/us-en/console-automation/cm/api_ref_resources.html["NetApp Console API"^].
 * ONTAP CLI 명령 https://docs.netapp.com/us-en/ontap-cli//cluster-time-service-ntp-server-create.html["클러스터 시간 서비스 NTP 서버 생성"^].
 
 
@@ -27,8 +27,8 @@ NOTE: NTP 서버를 구성하지 않으면 서비스 중단 및 시간 동기화
 
 .관련 링크
 * 기술 자료(KB) 문서: https://kb.netapp.com/Cloud/ncds/nds/cvo/cvo_kbs/How_does_a_CVO_cluster_use_NTP["CVO 클러스터는 NTP를 어떻게 사용합니까?"]
-* https://docs.netapp.com/us-en/bluexp-automation/cm/prepare.html["API 사용을 준비하세요"^]
-* https://docs.netapp.com/us-en/bluexp-automation/cm/workflow_processes.html#organization-of-cloud-volumes-ontap-workflows["Cloud Volumes ONTAP 워크플로"^]
-* https://docs.netapp.com/us-en/bluexp-automation/platform/get_identifiers.html#get-the-connector-identifier["필수 식별자 가져오기"^]
-* https://docs.netapp.com/us-en/bluexp-automation/platform/use_rest_apis.html["NetApp Console 에 REST API 사용"^]
+* https://docs.netapp.com/us-en/console-automation/cm/prepare.html["API 사용을 준비하세요"^]
+* https://docs.netapp.com/us-en/console-automation/cm/workflow_processes.html#organization-of-cloud-volumes-ontap-workflows["Cloud Volumes ONTAP 워크플로"^]
+* https://docs.netapp.com/us-en/console-automation/platform/get_identifiers.html#get-the-connector-identifier["필수 식별자 가져오기"^]
+* https://docs.netapp.com/us-en/console-automation/platform/use_rest_apis.html["NetApp Console 에 REST API 사용"^]
 

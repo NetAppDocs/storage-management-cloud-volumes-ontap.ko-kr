@@ -30,7 +30,7 @@ AWS에서 다음 요구 사항을 충족했는지 확인하세요.
 
 Cloud Volumes ONTAP 시스템은 다양한 기능을 위해 외부 엔드포인트에 액세스하기 위해 아웃바운드 인터넷 액세스가 필요합니다.  엄격한 보안 요구 사항이 있는 환경에서 이러한 엔드포인트가 차단되면 Cloud Volumes ONTAP 제대로 작동할 수 없습니다.
 
-콘솔 에이전트는 일상 업무를 위해 여러 엔드포인트에 연결합니다.  사용된 엔드포인트에 대한 정보는 다음을 참조하세요. https://docs.netapp.com/us-en/bluexp-setup-admin/task-install-connector-on-prem.html#step-3-set-up-networking["콘솔 에이전트에서 연결된 엔드포인트 보기"^] 그리고 https://docs.netapp.com/us-en/bluexp-setup-admin/reference-networking-saas-console.html["콘솔 사용을 위한 네트워킹 준비"^] .
+콘솔 에이전트는 일상적인 작업을 위해 여러 엔드포인트에 연결합니다. 사용되는 엔드포인트에 대한 자세한 내용은  https://docs.netapp.com/us-en/console-setup-admin/task-install-connector-on-prem.html#step-3-set-up-networking["콘솔 에이전트에서 연결된 엔드포인트 보기"^] 및  https://docs.netapp.com/us-en/console-setup-admin/reference-networking-saas-console.html["콘솔 사용을 위한 네트워킹 준비"^]을 참조하십시오.
 
 
 
@@ -108,7 +108,7 @@ NetApp Console 에이전트의 프록시 서버 구성을 사용하여 Cloud Vol
 * *투명 프록시*: 네트워크는 콘솔 에이전트의 프록시를 통해 Cloud Volumes ONTAP 에서 아웃바운드 트래픽을 자동으로 라우팅하도록 구성됩니다.  투명 프록시를 설정할 때 관리자는 프록시 서버의 HTTP 주소가 아닌 Cloud Volumes ONTAP 에서의 연결을 위한 루트 CA 인증서만 제공하면 됩니다.  다음을 사용하여 Cloud Volumes ONTAP 시스템에 동일한 루트 CA 인증서를 가져와 업로드해야 합니다. https://docs.netapp.com/us-en/ontap-cli/security-certificate-install.html["ONTAP CLI: 보안 인증서 설치"^] 명령.
 
 
-프록시 서버 구성에 대한 정보는 다음을 참조하세요. https://docs.netapp.com/us-en/bluexp-setup-admin/task-configuring-proxy.html["프록시 서버를 사용하도록 콘솔 에이전트 구성"^] .
+프록시 서버 구성에 대한 자세한 내용은  https://docs.netapp.com/us-en/console-setup-admin/task-configuring-proxy.html["프록시 서버를 사용하도록 콘솔 에이전트 구성"^]을 참조하십시오.
 
 
 
@@ -228,7 +228,7 @@ TIP: 여러 가용성 영역에 배포되는 경우 여러 LIF가 연결됩니�
 콘솔이 보안 그룹을 자동으로 생성하므로 직접 보안 그룹을 만들 필요가 없습니다.  자신의 것을 사용해야 하는 경우 다음을 참조하세요.link:reference-security-groups.html["보안 그룹 규칙"] .
 
 
-TIP: 콘솔 에이전트에 대한 정보를 찾고 계신가요? https://docs.netapp.com/us-en/bluexp-setup-admin/reference-ports-aws.html["콘솔 에이전트에 대한 보안 그룹 규칙 보기"^]
+TIP: 콘솔 에이전트에 대한 정보를 찾고 계십니까? https://docs.netapp.com/us-en/console-setup-admin/reference-ports-aws.html["콘솔 에이전트에 대한 보안 그룹 규칙 보기"^]
 
 
 
@@ -340,8 +340,8 @@ image:diagram_ha_networking.png["Cloud Volumes ONTAP HA 아키텍처의 구성 �
 
 아직 콘솔 에이전트를 만들지 않았다면 네트워킹 요구 사항을 검토해야 합니다.
 
-* https://docs.netapp.com/us-en/bluexp-setup-admin/concept-install-options-aws.html["콘솔 에이전트에 대한 네트워킹 요구 사항 보기"^]
-* https://docs.netapp.com/us-en/bluexp-setup-admin/reference-ports-aws.html["AWS의 보안 그룹 규칙"^]
+* https://docs.netapp.com/us-en/console-setup-admin/concept-install-options-aws.html["콘솔 에이전트에 대한 네트워킹 요구 사항 보기"^]
+* https://docs.netapp.com/us-en/console-setup-admin/reference-ports-aws.html["AWS의 보안 그룹 규칙"^]
 
 
 .관련 링크

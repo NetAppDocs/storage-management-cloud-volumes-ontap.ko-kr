@@ -11,6 +11,6 @@
 
 하지만 최적화된 라이선스를 추가하거나 갱신하는 기능은 API를 통해 제공될 예정입니다.
 
-라이센스 패키지에 대한 정보는 다음을 참조하세요. https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-licensing.html["Cloud Volumes ONTAP 라이선싱"^] .
+라이선스 패키지에 대한 자세한 내용은  https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-licensing.html["Cloud Volumes ONTAP 라이선싱"^]을 참조하십시오.
 
-다른 충전 방법으로 전환하는 방법에 대한 정보는 다음을 참조하세요. https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-manage-capacity-licenses.html["용량 기반 라이선싱 관리"^] .
+다른 청구 방식으로 전환하는 방법에 대한 자세한 내용은  https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-manage-capacity-licenses.html["용량 기반 라이선싱 관리"^]을 참조하십시오.

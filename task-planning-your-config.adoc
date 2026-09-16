@@ -137,10 +137,10 @@ EBS 디스크 성능에 대한 자세한 내용은 다음을 참조하세요. ht
 
 사용자 데이터 저장 외에도 콘솔은 Cloud Volumes ONTAP 시스템 데이터(부팅 데이터, 루트 데이터, 코어 데이터 및 NVRAM)를 위한 클라우드 스토리지도 구매합니다.  계획을 세우려면 Cloud Volumes ONTAP 배포하기 전에 이러한 세부 정보를 검토하는 것이 도움이 될 수 있습니다.
 
-link:reference-default-configs.html#aws["AWS에서 Cloud Volumes ONTAP 시스템 데이터의 기본 디스크 보기"] .
+link:reference-configs-aws.html#aws["AWS에서 Cloud Volumes ONTAP 시스템 데이터의 기본 디스크 보기"].
 
 
-TIP: 콘솔 에이전트에도 시스템 디스크가 필요합니다. https://docs.netapp.com/us-en/bluexp-setup-admin/reference-connector-default-config.html["콘솔 에이전트의 기본 구성에 대한 세부 정보 보기"^] .
+TIP: 콘솔 에이전트를 사용하려면 시스템 디스크도 필요합니다. https://docs.netapp.com/us-en/console-setup-admin/reference-connector-default-config.html["콘솔 에이전트의 기본 구성에 대한 세부 정보 보기"^].
 
 
 

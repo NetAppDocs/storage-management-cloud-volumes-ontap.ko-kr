@@ -21,4 +21,4 @@ BlueXP 이제 프라이빗 모드에서 Cloud Volumes ONTAP 고가용성(HA) 배
 
 NOTE: 제한 모드에서 BlueXP 사용하는 경우 AWS 로컬 영역은 지원되지 않습니다.
 
-HA 배포를 통한 AWS 로컬 영역에 대한 자세한 내용은 다음을 참조하세요.link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-ha.html#aws-local-zones["AWS 로컬 영역"^] .
+HA 배포를 지원하는 AWS 로컬 영역에 대한 자세한 내용은 link:https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-ha.html#aws-local-zones["AWS 로컬 영역"^]을 참조하십시오.

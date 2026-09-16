@@ -74,7 +74,7 @@ Elastic Volumes 기능은 버전 9.11.0 이상에서 생성된 _새로운_ Cloud
 * ec2:볼륨 수정
 
 
-이러한 권한은 다음에 포함됩니다. https://docs.netapp.com/us-en/bluexp-setup-admin/reference-permissions-aws.html["NetApp 에서 제공하는 정책"^]
+이러한 권한은 다음에 포함되어 있습니다. https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-aws.html["NetApp 에서 제공하는 정책"^]
 
 
 
@@ -196,6 +196,6 @@ link:task-manage-aggregates.html["집계 용량을 늘리는 방법을 알아보
 대상 Cloud Volumes ONTAP 시스템이 Elastic Volumes를 지원하는 경우 대상 볼륨은 Elastic Volumes가 활성화된 집계에 배치됩니다(gp3 또는 io1 디스크를 선택하는 경우).
 
 +
-https://docs.netapp.com/us-en/bluexp-replication/task-replicating-data.html["데이터 복제를 설정하는 방법을 알아보세요"^]
+https://docs.netapp.com/us-en/data-services-replication/task-replicating-data.html["데이터 복제를 설정하는 방법을 알아보세요"^]
 
 

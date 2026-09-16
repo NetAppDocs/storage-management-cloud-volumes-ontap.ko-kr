@@ -34,7 +34,7 @@ NetApp Console 배포하는 Azure 구성 요소에 대해 다음 사항을 참�
 
 Azure 표준 부하 분산 장치:: 로드 밸런서는 Cloud Volumes ONTAP HA 쌍으로 들어오는 트래픽을 관리합니다.
 단일 가용성 영역의 VM:: Cloud Volumes ONTAP 9.15.1부터 단일 가용성 영역(AZ)에서 이기종 가상 머신(VM)을 만들고 관리할 수 있습니다.  동일한 AZ 내의 별도의 장애 도메인에 고가용성(HA) 노드를 배포하여 최적의 가용성을 보장할 수 있습니다.  이 기능을 활성화하는 유연한 오케스트레이션 모드에 대해 자세히 알아보려면 다음을 참조하세요. https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/["Microsoft Azure 설명서: 가상 머신 확장 집합"^] .
-디스크:: 고객 데이터는 프리미엄 스토리지 페이지 블롭에 저장됩니다.  각 노드는 다른 노드의 저장소에 접근할 수 있습니다.  추가 저장 공간도 필요합니다.link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/reference-default-configs.html#azure-ha-pair["부트, 루트 및 코어 데이터"^] .
+디스크:: 고객 데이터는 프리미엄 스토리지 페이지 블롭에 저장됩니다. 각 노드는 다른 노드의 스토리지에 접근할 수 있습니다. 추가 스토리지도 link:reference-configs-azure.html#azure-ha-pair["부트, 루트 및 코어 데이터"]에 필요합니다.
 저장 계정::
 +
 --
@@ -52,7 +52,7 @@ https://docs.microsoft.com/en-us/azure/storage/common/storage-scalability-target
 
 
 
-NOTE: Cloud Volumes ONTAP 9.15.0P1 버전부터는 새로운 고가용성 쌍 배포에서 Azure 페이지 Blob이 더 이상 지원되지 않습니다. 기존 고가용성 쌍 배포에서 Azure 페이지 Blob을 사용하는 경우 Edsv4 시리즈 VM 및 Edsv5 시리즈 VM과 같은 최신 VM 인스턴스 유형으로 마이그레이션할 수 있습니다. link:link:reference-configs-azure.html#ha-pairs["Azure에서 지원되는 구성에 대해 자세히 알아보세요."].
+NOTE: Cloud Volumes ONTAP 9.15.0P1 버전부터는 새로운 고가용성 쌍 배포에서 Azure 페이지 Blob이 더 이상 지원되지 않습니다. 기존 고가용성 쌍 배포에서 Azure 페이지 Blob을 사용하는 경우 Edsv4 시리즈 VM 및 Edsv5 시리즈 VM과 같은 최신 VM 인스턴스 유형으로 마이그레이션할 수 있습니다. link:reference-configs-azure.html#ha-pairs["Azure에서 지원되는 구성에 대해 자세히 알아보세요."].
 
 
 
@@ -82,7 +82,7 @@ Azure 표준 부하 분산 장치:: 로드 밸런서는 Cloud Volumes ONTAP HA �
 
 NOTE: 위의 기준을 충족하는 환경에 대해 프리미엄 SSD 관리형 디스크를 선택하면 콘솔에서 프리미엄 SSD v2 관리형 디스크를 자동으로 배포합니다. Premium SSD v1 Managed Disks로 전환할 수 없습니다.
 
-디스크:: 고객 데이터는 로컬 중복 스토리지(LRS) 관리 디스크에 저장됩니다.  각 노드는 다른 노드의 저장소에 접근할 수 있습니다.  추가 저장 공간도 필요합니다.link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/reference-default-configs.html#azure-ha-pair["부팅, 루트, 파트너 루트, 코어 및 NVRAM 데이터"^] .
+디스크:: 고객 데이터는 로컬 중복 스토리지(LRS) 관리 디스크에 저장됩니다. 각 노드는 다른 노드의 스토리지에 접근할 수 있습니다. 추가 스토리지도 link:reference-configs-azure.html#azure-ha-pair["부팅, 루트, 파트너 루트, 코어 및 NVRAM 데이터"]에 필요합니다.
 저장 계정:: 스토리지 계정은 진단 로그를 처리하고 Blob 스토리지로 계층화하기 위해 관리형 디스크 기반 배포에 사용됩니다.
 
 
@@ -99,7 +99,7 @@ image:diagram_ha_azure_maz.png["콘솔과 클라이언트에서 들어오는 트
 
 Azure 표준 부하 분산 장치:: 로드 밸런서는 Cloud Volumes ONTAP HA 쌍으로 들어오는 트래픽을 관리합니다.
 가용성 영역:: HA 다중 가용성 영역 구성은 두 개의 Cloud Volumes ONTAP 노드를 서로 다른 가용성 영역에 배포하는 배포 모델을 활용하여 노드가 서로 다른 장애 도메인에 위치하도록 하여 중복성과 가용성을 제공합니다.  유연한 오케스트레이션 모드에서 Virtual Machine Scale Sets가 Azure의 가용성 영역을 사용하는 방법을 알아보려면 다음을 참조하세요. https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-use-availability-zones?tabs=cli-1%2Cportal-2["Microsoft Azure 설명서: 가용성 영역을 사용하는 가상 머신 확장 집합 만들기"^] .
-디스크:: 고객 데이터는 ZRS(Zone-Redundant Storage) 관리 디스크에 저장됩니다.  각 노드는 다른 노드의 저장소에 접근할 수 있습니다.  추가 저장 공간도 필요합니다.link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/reference-default-configs.html#azure-ha-pair["부트, 루트, 파트너 루트 및 코어 데이터"^] .
+디스크:: 고객 데이터는 영역 중복 스토리지(ZRS) 관리 디스크에 저장됩니다. 각 노드는 다른 노드의 스토리지에 접근할 수 있습니다. 추가 스토리지도 link:reference-configs-azure.html#azure-ha-pair["부트, 루트, 파트너 루트 및 코어 데이터"]에 필요합니다.
 저장 계정:: 스토리지 계정은 진단 로그를 처리하고 Blob 스토리지로 계층화하기 위해 관리형 디스크 기반 배포에 사용됩니다.
 
 

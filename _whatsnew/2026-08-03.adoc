@@ -7,7 +7,7 @@
 [[cloud-volumes-ontap-integration-with-microsoft-onelake]]
 === Cloud Volumes ONTAP과 Microsoft OneLake 통합
 
-Cloud Volumes ONTAP이 이제 공개 미리 보기로  https://learn.microsoft.com/en-us/fabric/onelake/onelake-overview["Microsoft OneLake"^]와의 통합을 지원합니다. Cloud Volumes ONTAP을  https://community.fabric.microsoft.com/["Microsoft Fabric"^]와  https://learn.microsoft.com/en-us/fabric/onelake/onelake-overview["Microsoft OneLake"^]을 사용하여 통합하면 기존 Cloud Volumes ONTAP NAS 데이터를 Power BI, Azure AI Search, OpenAI 및 Microsoft Copilot 등 Microsoft 분석 및 AI 서비스에서 사용할 수 있습니다. 이 통합에는 데이터 이동이나 중복이 필요하지 않습니다. 이 통합은  https://docs.netapp.com/us-en/ontap/s3-multiprotocol/index.html["ONTAP S3 멀티 프로토콜"^] 액세스를 사용하여 Cloud Volumes ONTAP을 기존 Microsoft Fabric 레이크하우스에 연결합니다.
+이제 Cloud Volumes ONTAP에서 공개 프리뷰로 link:https://learn.microsoft.com/en-us/fabric/onelake/onelake-overview["Microsoft OneLake"^]과의 통합을 지원합니다. Power BI, Azure AI Search, OpenAI, Microsoft Copilot 등의 Microsoft 분석 및 AI 서비스에서 기존 Cloud Volumes ONTAP NAS 데이터를 사용할 수 있도록 link:https://learn.microsoft.com/en-us/fabric/onelake/onelake-overview["Microsoft OneLake"^]을 사용하여 Cloud Volumes ONTAP를 link:https://community.fabric.microsoft.com/["Microsoft Fabric"^]과 통합할 수 있습니다. 이 통합에는 데이터 이동이나 복제가 필요하지 않습니다. 이 통합은 link:https://docs.netapp.com/us-en/ontap/s3-multiprotocol/index.html["ONTAP S3 멀티 프로토콜"^] 액세스를 사용하여 Cloud Volumes ONTAP를 기존 Microsoft Fabric 레이크하우스에 연결합니다.
 
 .관련 기사 및 자료:
 * https://www.netapp.com/blog/optimize-ai-analytics-microsoft-onelake/?utm_content=nativelink&utm_medium=internal&utm_source=linkedin&utm_campaign=b2d-port-all-na-ww-digi-blog-1747859361262&es_id=956c739202["NetApp 블로그: Microsoft OneLake 및 NetApp Cloud Volumes ONTAP로 AI 및 분석 최적화"^]

@@ -26,8 +26,8 @@ AWS에서 단일 시스템 구성이나 HA 쌍으로 Cloud Volumes ONTAP 시작�
 [[licensing]]
 * 이미 실행 중인 콘솔 에이전트입니다.
 +
-** 당신은 ~을 가져야합니다 https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-aws.html["시스템과 연결된 콘솔 에이전트"^] .
-** https://docs.netapp.com/us-en/bluexp-setup-admin/concept-connectors.html["항상 콘솔 에이전트를 실행 상태로 두어야 합니다."^] .
+** 다음이 있어야 합니다 https://docs.netapp.com/us-en/console-setup-admin/task-quick-start-connector-aws.html["시스템과 연결된 콘솔 에이전트"^].
+** https://docs.netapp.com/us-en/console-setup-admin/concept-connectors.html["항상 콘솔 에이전트를 실행 상태로 두어야 합니다."^].
 
 
 * 사용하려는 구성에 대한 이해.
@@ -59,7 +59,7 @@ AWS에서 Cloud Volumes ONTAP 시작하려면 NetApp Console 에서 새 시스�
 . [[구독]]*시스템* 페이지에서 *시스템 추가*를 클릭하고 안내를 따르세요.
 . *Amazon Web Services*와 * Cloud Volumes ONTAP Single Node*를 선택하세요.
 . *고급 만들기*를 선택하세요.  기본적으로 *빠른 생성* 모드가 선택되어 있으므로 기본값에 대한 메시지가 표시될 수 있습니다. *계속*을 클릭하세요.
-. 메시지가 표시되면 https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-aws.html["콘솔 에이전트 생성"^] .
+. 메시지가 표시되면, https://docs.netapp.com/us-en/console-setup-admin/task-quick-start-connector-aws.html["콘솔 에이전트 생성"^].
 . *세부 정보 및 자격 증명*: 선택적으로 AWS 자격 증명과 구독을 변경하고, 시스템 이름을 입력하고, 필요한 경우 태그를 추가한 다음 비밀번호를 입력합니다.
 +
 이 페이지의 일부 필드는 설명이 필요 없습니다.  다음 표에서는 지침이 필요할 수 있는 필드를 설명합니다.
@@ -79,7 +79,7 @@ AWS에서 Cloud Volumes ONTAP 시작하려면 NetApp Console 에서 새 시스�
 | 사용자 이름과 비밀번호 | 이는 Cloud Volumes ONTAP 클러스터 관리자 계정의 자격 증명입니다.  이러한 자격 증명을 사용하면 ONTAP System Manager나 ONTAP CLI를 통해 Cloud Volumes ONTAP 에 연결할 수 있습니다.  기본 _admin_ 사용자 이름을 유지하거나 사용자 지정 사용자 이름으로 변경하세요. 
 
 
-| 자격 증명 편집 | 이 시스템을 배포하려는 계정과 연결된 AWS 자격 증명을 선택하세요.  AWS 마켓플레이스 구독을 연결하여 이 Cloud Volumes ONTAP 시스템과 함께 사용할 수도 있습니다. 선택한 자격 증명을 새 AWS 마켓플레이스 구독과 연결하려면 *구독 추가*를 클릭하세요. 구독은 연간 계약 또는 시간당 요금으로 Cloud Volumes ONTAP 결제할 수 있습니다. https://docs.netapp.com/us-en/bluexp-setup-admin/task-adding-aws-accounts.html["NetApp Console 에 추가 AWS 자격 증명을 추가하는 방법을 알아보세요."^] . 
+| 자격 증명 편집 | 이 시스템을 배포할 계정과 연결된 AWS 자격 증명을 선택하십시오. AWS 마켓플레이스 구독을 이 Cloud Volumes ONTAP 시스템과 연결할 수도 있습니다. 선택한 자격 증명을 새 AWS 마켓플레이스 구독과 연결하려면 *구독 추가*를 클릭하십시오. 구독은 연간 계약 또는 Cloud Volumes ONTAP 시간당 요금으로 결제하는 방식일 수 있습니다. https://docs.netapp.com/us-en/console-setup-admin/task-adding-aws-accounts.html["NetApp Console 에 추가 AWS 자격 증명을 추가하는 방법을 알아보세요."^]. 
 |===
 +
 
@@ -87,15 +87,15 @@ TIP: 여러 IAM 사용자가 동일한 AWS 계정에서 작업하는 경우 각 
 
 . *서비스*: Cloud Volumes ONTAP 에서 사용하지 않으려는 서비스를 활성화 상태로 유지하거나 개별 서비스를 비활성화합니다.
 +
-** https://docs.netapp.com/us-en/bluexp-classification/concept-cloud-compliance.html["NetApp Data Classification 에 대해 자세히 알아보세요"^]
-** https://docs.netapp.com/us-en/bluexp-backup-recovery/concept-backup-to-cloud.html["NetApp Backup and Recovery 에 대해 자세히 알아보세요"^]
+** https://docs.netapp.com/us-en/data-services-data-classification/concept-cloud-compliance.html["NetApp Data Classification 에 대해 자세히 알아보세요"^]
+** https://docs.netapp.com/us-en/data-services-backup-recovery/concept-backup-to-cloud.html["NetApp Backup and Recovery 에 대해 자세히 알아보세요"^]
 +
 
 TIP: WORM 및 데이터 계층화를 활용하려면 백업 및 복구를 비활성화하고 버전 9.8 이상의 Cloud Volumes ONTAP 시스템을 배포해야 합니다.
 
 
 
-. *위치 및 연결*: 기록한 네트워크 정보를 입력하세요. https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-planning-your-config.html#collect-networking-information["AWS 워크시트"^] .
+. *위치 및 연결*:  https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-planning-your-config.html#collect-networking-information["AWS 워크시트"^]에서 기록한 네트워크 정보를 입력하십시오.
 +
 다음 표에서는 지침이 필요할 수 있는 필드를 설명합니다.
 
@@ -248,11 +248,11 @@ image:screenshot_cot_vol.gif["스크린샷: Cloud Volumes ONTAP 인스턴스에 
 | DNS 도메인 | Cloud Volumes ONTAP 스토리지 가상 머신(SVM)의 DNS 도메인입니다.  대부분의 경우 도메인은 AD 도메인과 동일합니다. 
 
 
-| NTP 서버 | Active Directory DNS를 사용하여 NTP 서버를 구성하려면 *Active Directory 도메인 사용*을 선택합니다.  다른 주소를 사용하여 NTP 서버를 구성해야 하는 경우 API를 사용해야 합니다. 를 참조하세요 https://docs.netapp.com/us-en/bluexp-automation/index.html["NetApp Console 자동화 문서"^] 자세한 내용은.  CIFS 서버를 생성할 때만 NTP 서버를 구성할 수 있습니다.  CIFS 서버를 만든 후에는 구성할 수 없습니다. 
+| NTP 서버 | Active Directory DNS를 사용하여 NTP 서버를 구성하려면 *Active Directory 도메인 사용*을 선택하십시오. 다른 주소를 사용하여 NTP 서버를 구성해야 하는 경우 API를 사용해야 합니다. 자세한 내용은 https://docs.netapp.com/us-en/console-automation/index.html["NetApp Console 자동화 문서"^]을 참조하십시오. NTP 서버는 CIFS 서버를 생성할 때만 구성할 수 있습니다. CIFS 서버를 생성한 후에는 구성할 수 없습니다. 
 |===
 . *사용 프로필, 디스크 유형 및 계층화 정책*: 스토리지 효율성 기능을 활성화할지 여부를 선택하고 필요한 경우 볼륨 계층화 정책을 편집합니다.
 +
-자세한 내용은 다음을 참조하세요.link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-planning-your-config.html#choose-a-volume-usage-profile["볼륨 사용 프로필 이해"^] ,link:concept-data-tiering.html["데이터 계층화 개요"^] , 그리고 https://kb.netapp.com/Cloud/Cloud_Volumes_ONTAP/What_Inline_Storage_Efficiency_features_are_supported_with_CVO#["KB: CVO에서는 어떤 인라인 스토리지 효율성 기능이 지원되나요?"^]
+자세한 내용은 link:https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-planning-your-config.html#choose-a-volume-usage-profile["볼륨 사용 프로필 이해"^], link:concept-data-tiering.html["데이터 계층화 개요"^], 및 https://kb.netapp.com/Cloud/Cloud_Volumes_ONTAP/What_Inline_Storage_Efficiency_features_are_supported_with_CVO#["KB: CVO에서는 어떤 인라인 스토리지 효율성 기능이 지원되나요?"^]을 참조하십시오.
 
 . *검토 및 승인*: 선택 사항을 검토하고 확인합니다.
 +
@@ -327,7 +327,7 @@ AWS 로컬 영역을 사용하려면 먼저 로컬 영역을 활성화하고 AWS
 | 사용자 이름과 비밀번호 | 이는 Cloud Volumes ONTAP 클러스터 관리자 계정의 자격 증명입니다.  이러한 자격 증명을 사용하면 ONTAP System Manager나 ONTAP CLI를 통해 Cloud Volumes ONTAP 에 연결할 수 있습니다.  기본 _admin_ 사용자 이름을 유지하거나 사용자 지정 사용자 이름으로 변경하세요. 
 
 
-| 자격 증명 편집 | 이 Cloud Volumes ONTAP 시스템에 사용할 AWS 자격 증명과 마켓플레이스 구독을 선택하세요. 선택한 자격 증명을 새 AWS 마켓플레이스 구독과 연결하려면 *구독 추가*를 클릭하세요. 구독은 연간 계약 또는 시간당 요금으로 Cloud Volumes ONTAP 결제할 수 있습니다. NetApp 에서 직접 라이선스를 구매한 경우(BYOL(Bring Your Own License)), AWS 구독은 필요하지 않습니다. NetApp BYOL 라이선스 구매, 연장 및 갱신을 제한하고 있습니다. 자세한 내용은 다음을 참조하세요.  https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/whats-new.html#restricted-availability-of-byol-licensing-for-cloud-volumes-ontap["Cloud Volumes ONTAP 에 대한 BYOL 라이선싱의 제한된 가용성"^] . https://docs.netapp.com/us-en/bluexp-setup-admin/task-adding-aws-accounts.html["콘솔에 추가 AWS 자격 증명을 추가하는 방법을 알아보세요."^] . 
+| 자격 증명 편집 | 이 Cloud Volumes ONTAP 시스템에 사용할 AWS 자격 증명 및 마켓플레이스 구독을 선택합니다. 선택한 자격 증명을 새 AWS 마켓플레이스 구독과 연결하려면 *구독 추가*를 클릭합니다. 구독은 연간 계약 또는 시간당 요금으로 Cloud Volumes ONTAP 비용을 지불하는 방식일 수 있습니다. NetApp에서 직접 라이선스를 구매한 경우(BYOL(사용자 라이선스 사용)) AWS 구독이 필요하지 않습니다. NetApp은 BYOL 라이선스의 구매, 연장 및 갱신을 제한했습니다. 자세한 내용은  https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/whats-new.html#restricted-availability-of-byol-licensing-for-cloud-volumes-ontap["Cloud Volumes ONTAP 에 대한 BYOL 라이선싱의 제한된 가용성"^]을(를) 참조하십시오. https://docs.netapp.com/us-en/console-setup-admin/task-adding-aws-accounts.html["콘솔에 추가 AWS 자격 증명을 추가하는 방법을 알아보세요."^]. 
 |===
 +
 
@@ -335,8 +335,8 @@ TIP: 여러 IAM 사용자가 동일한 AWS 계정에서 작업하는 경우 각 
 
 . *서비스*: 해당 Cloud Volumes ONTAP 시스템에서 사용하지 않으려는 서비스를 활성화 상태로 유지하거나 개별 서비스를 비활성화합니다.
 +
-** https://docs.netapp.com/us-en/bluexp-classification/concept-cloud-compliance.html["NetApp Data Classification 에 대해 자세히 알아보세요"^]
-** https://docs.netapp.com/us-en/bluexp-backup-recovery/task-backup-to-s3.html["백업 및 복구에 대해 자세히 알아보세요"^]
+** https://docs.netapp.com/us-en/data-services-data-classification/concept-cloud-compliance.html["NetApp Data Classification 에 대해 자세히 알아보세요"^]
+** https://docs.netapp.com/us-en/data-services-backup-recovery/task-backup-to-s3.html["백업 및 복구에 대해 자세히 알아보세요"^]
 +
 
 TIP: WORM 및 데이터 계층화를 활용하려면 백업 및 복구를 비활성화하고 버전 9.8 이상의 Cloud Volumes ONTAP 시스템을 배포해야 합니다.
@@ -371,7 +371,7 @@ TIP: WORM 및 데이터 계층화를 활용하려면 백업 및 복구를 비활
 . *연결 및 SSH 인증*: HA 쌍과 중재자에 대한 연결 방법을 선택합니다.
 . *유동 IP*: 여러 AZ를 선택한 경우 유동 IP 주소를 지정하세요.
 +
-IP 주소는 해당 지역의 모든 VPC에 대한 CIDR 블록 외부에 있어야 합니다.  추가 세부 사항은 다음을 참조하세요.link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/reference-networking-aws.html#requirements-for-ha-pairs-in-multiple-azs["여러 AZ에서 Cloud Volumes ONTAP HA에 대한 AWS 네트워킹 요구 사항"^] .
+IP 주소는 해당 리전의 모든 VPC에 대해 CIDR 블록 외부에 있어야 합니다. 자세한 내용은 link:https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/reference-networking-aws.html#requirements-for-ha-pairs-in-multiple-azs["여러 AZ에서 Cloud Volumes ONTAP HA에 대한 AWS 네트워킹 요구 사항"^]을 참조하십시오.
 
 . *경로 테이블*: 여러 AZ를 선택한 경우, 플로팅 IP 주소에 대한 경로를 포함해야 하는 경로 테이블을 선택합니다.
 +
@@ -506,11 +506,11 @@ image:screenshot_cot_vol.gif["스크린샷: Cloud Volumes ONTAP 인스턴스에 
 | DNS 도메인 | Cloud Volumes ONTAP 스토리지 가상 머신(SVM)의 DNS 도메인입니다.  대부분의 경우 도메인은 AD 도메인과 동일합니다. 
 
 
-| NTP 서버 | Active Directory DNS를 사용하여 NTP 서버를 구성하려면 *Active Directory 도메인 사용*을 선택합니다.  다른 주소를 사용하여 NTP 서버를 구성해야 하는 경우 API를 사용해야 합니다. 를 참조하세요 https://docs.netapp.com/us-en/bluexp-automation/index.html["NetApp Console 자동화 문서"^] 자세한 내용은.  CIFS 서버를 생성할 때만 NTP 서버를 구성할 수 있습니다.  CIFS 서버를 만든 후에는 구성할 수 없습니다. 
+| NTP 서버 | Active Directory DNS를 사용하여 NTP 서버를 구성하려면 *Active Directory 도메인 사용*을 선택하십시오. 다른 주소를 사용하여 NTP 서버를 구성해야 하는 경우 API를 사용해야 합니다. 자세한 내용은 https://docs.netapp.com/us-en/console-automation/index.html["NetApp Console 자동화 문서"^]을 참조하십시오. NTP 서버는 CIFS 서버를 생성할 때만 구성할 수 있습니다. CIFS 서버를 생성한 후에는 구성할 수 없습니다. 
 |===
 . *사용 프로필, 디스크 유형 및 계층화 정책*: 스토리지 효율성 기능을 활성화할지 여부를 선택하고 필요한 경우 볼륨 계층화 정책을 편집합니다.
 +
-자세한 내용은 다음을 참조하세요.link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-planning-your-config.html#choose-a-volume-usage-profile["볼륨 사용 프로필을 선택하세요"^] 그리고link:concept-data-tiering.html["데이터 계층화 개요"^] .
+자세한 내용은 link:https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-planning-your-config.html#choose-a-volume-usage-profile["볼륨 사용 프로필을 선택하세요"^] 및 link:concept-data-tiering.html["데이터 계층화 개요"^]을 참조하십시오.
 
 . *검토 및 승인*: 선택 사항을 검토하고 확인합니다.
 +

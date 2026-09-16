@@ -26,9 +26,9 @@ Cloud Volumes ONTAP를 배포하려면 먼저 Azure 구독 및 Cloud Volumes ONT
  a| 
 아직 Console 에이전트가 없는 경우 Cloud Volumes ONTAP를 배포하기 전에 먼저 생성하십시오.
  a| 
-콘솔 설정 가이드를 참조하십시오: https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-azure.html["Azure에서 Console 에이전트 생성"^]
+콘솔 설정 가이드를 참조하십시오: https://docs.netapp.com/us-en/console-setup-admin/task-quick-start-connector-azure.html["Azure에서 Console 에이전트 생성"^]
  a| 
-인터넷에 접속할 수 없는 서브넷에 배포하는 경우 콘솔 에이전트를 수동으로 설치하고 해당 콘솔 에이전트에서 실행되는 NetApp Console 사용자 인터페이스에 액세스하십시오. 콘솔 설정 가이드를 참조하십시오. https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-private-mode.html["인터넷 연결 없이 Console 에이전트를 수동으로 설치합니다."^]
+인터넷에 접속할 수 없는 서브넷에 배포하는 경우 콘솔 에이전트를 수동으로 설치하고 해당 콘솔 에이전트에서 실행되는 NetApp Console 사용자 인터페이스에 액세스하십시오. 콘솔 설정 가이드를 참조하십시오: https://docs.netapp.com/us-en/console-setup-admin/task-quick-start-private-mode.html["인터넷 연결 없이 Console 에이전트를 수동으로 설치합니다."^]
 
 
 
@@ -77,8 +77,8 @@ AutoSupport에 대한 아웃바운드 인터넷 액세스는 필요하지 않습
 
 |===
 .관련 링크
-* https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-azure.html["콘솔에서 콘솔 에이전트 만들기"^]
-* https://docs.netapp.com/us-en/bluexp-setup-admin/task-install-connector-azure-marketplace.html["Azure Marketplace에서 콘솔 에이전트 만들기"^]
-* https://docs.netapp.com/us-en/bluexp-setup-admin/task-install-connector-on-prem.html["Linux 호스트에 콘솔 에이전트 소프트웨어 설치"^]
-* https://docs.netapp.com/us-en/bluexp-setup-admin/reference-permissions-azure.html["콘솔이 권한으로 수행하는 작업"^]
+* https://docs.netapp.com/us-en/console-setup-admin/task-quick-start-connector-azure.html["콘솔에서 콘솔 에이전트 만들기"^]
+* https://docs.netapp.com/us-en/console-setup-admin/task-install-connector-azure-marketplace.html["Azure Marketplace에서 콘솔 에이전트 만들기"^]
+* https://docs.netapp.com/us-en/console-setup-admin/task-install-connector-on-prem.html["Linux 호스트에 콘솔 에이전트 소프트웨어 설치"^]
+* https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-azure.html["콘솔이 권한으로 수행하는 작업"^]
 

@@ -71,7 +71,7 @@ Cloud Volumes ONTAP에서 다중 관리자 검증을 활성화하면 지원되�
 
 Cloud Volumes ONTAP 데이터의 백업 및 복구 계획에 클라우드 공급자의 스냅샷을 사용해서는 안 됩니다. Cloud Volumes ONTAP에서 호스팅되는 데이터를 백업 및 복원하려면 항상 ONTAP 스냅샷 복사본 또는 타사 백업 솔루션을 사용해야 합니다.
 
-https://docs.netapp.com/us-en/bluexp-backup-recovery/concept-backup-to-cloud.html["NetApp Backup and Recovery를 사용하여 ONTAP 데이터를 백업하고 복원하는 방법을 알아보세요"^].
+https://docs.netapp.com/us-en/data-services-backup-recovery/concept-backup-to-cloud.html["NetApp Backup and Recovery를 사용하여 ONTAP 데이터를 백업하고 복원하는 방법을 알아보세요"^].
 
 
 NOTE: WAFL 파일 시스템의 ONTAP 정합성 시점은 데이터 정합성을 결정합니다. ONTAP만 WAFL 파일 시스템을 중지하여 충돌 시에도 정합성 보장 백업을 생성할 수 있습니다.

@@ -26,6 +26,7 @@ Azure에서는 여러 Cloud Volumes ONTAP 구성이 지원됩니다.
 
 
 [[internal-disks-for-system-data-azure-single-node]]
+[[azure-single-node]]
 === 시스템 데이터용 내부 디스크 Azure(단일 노드)
 
 Azure에서 시스템 데이터를 저장하는 데 사용되는 내부 디스크는 다음과 같습니다.
@@ -51,6 +52,7 @@ Cloud Volumes ONTAP 에 대해 선택한 가상 머신이 데이터 디스크로
 
 
 [[internal-disks-for-system-data-azure-ha-pair]]
+[[azure-ha-pair]]
 === 시스템 데이터용 내부 디스크 Azure HA 쌍
 
 .페이지 블롭이 있는 HA 쌍
@@ -358,7 +360,7 @@ Cloud Volumes ONTAP는 클라우드 공급자가 제공하는 예약 또는 주�
 참고:
 
 . ^1^ DSv2 및 Esv3 머신 제품군은 Azure에서 Cloud Volumes ONTAP의 새 인스턴스를 배포할 때 NetApp Console에서 더 이상 선택할 수 없습니다. 이러한 제품군은 기존 시스템에서만 유지 및 지원됩니다. Azure에서 Cloud Volumes ONTAP의 새 배포는 9.12.1 릴리스부터 지원됩니다. Es_v4 또는 Cloud Volumes ONTAP 9.12.1 이상과 호환되는 다른 시리즈로 전환하는 것이 좋습니다. 단, API를 통한 새 배포에서는 DS_v2 및 Es_v3 시리즈 시스템을 사용할 수 있습니다.
-. ^2^ 이 VM 유형에는 로컬 NVMe 스토리지가 포함되어 있으며, Cloud Volumes ONTAP는 이를 _Flash Cache_로 사용합니다. Flash Cache는 최근에 읽은 사용자 데이터와 NetApp 메타데이터의 실시간 지능형 캐싱을 통해 데이터 액세스 속도를 높입니다. 데이터베이스, 이메일 및 파일 서비스를 포함한 무작위 읽기 집약적 워크로드에 효과적입니다 https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-flash-cache.html["자세히 알아보기"^].
+. ^2^ 이 VM 유형에는 로컬 NVMe 스토리지가 포함되어 있으며, Cloud Volumes ONTAP는 이를 _Flash Cache_로 사용합니다. Flash Cache는 최근에 읽은 사용자 데이터와 NetApp 메타데이터의 실시간 지능형 캐싱을 통해 데이터 액세스 속도를 높입니다. 데이터베이스, 이메일 및 파일 서비스를 포함한 무작위 읽기 집약적 워크로드에 효과적입니다 https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-flash-cache.html["자세히 알아보기"^].
 +
 Azure에서 Flash Cache를 구성하는 데 필요한 최소 ONTAP 버전은 9.13.1 GA입니다.
 
@@ -367,10 +369,10 @@ Azure에서 Flash Cache를 구성하는 데 필요한 최소 ONTAP 버전은 9.1
 새로운 Cloud Volumes ONTAP 시스템을 배포할 때 이러한 VM 유형 중 하나를 선택하면 VNVRAM에 Ultra SSD를 사용하지 _않는_ 다른 VM 유형으로 변경할 수 없습니다. 예를 들어 E8ds_v4에서 E8s_v3으로 변경할 수는 없지만 두 VM 유형 모두 Ultra SSD를 사용하므로 E8ds_v4에서 E32ds_v4로는 변경할 수 있습니다. 반대로 다른 VM 유형을 사용하여 Cloud Volumes ONTAP을 배포한 경우 VNVRAM에 Ultra SSD를 사용하는 다른 VM 유형으로 변경할 수 없습니다. 예를 들어 VNVRAM에 Ultra SSD를 사용하지 않는 E8s_v3을 사용하는 E8ds_v4로 변경할 수 없습니다.
 
 +
-마찬가지로, Premium SSD 관리 디스크를 선택한 환경이 Premium SSD v2 관리 디스크에 대한 https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-ha-azure.html#ha-single-availability-zone-configuration-with-shared-managed-disks["기준"^]를 충족하는 경우 NetApp Console에서 Premium SSD v2 관리 디스크를 자동으로 배포합니다. Premium SSD v1 관리 디스크로 전환할 수 없습니다.
+마찬가지로, Premium SSD 관리 디스크를 선택한 환경이 Premium SSD v2 관리 디스크에 대한 https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-ha-azure.html#ha-single-availability-zone-configuration-with-shared-managed-disks["기준"^]를 충족하는 경우 NetApp Console에서 Premium SSD v2 관리 디스크를 자동으로 배포합니다. Premium SSD v1 관리 디스크로 전환할 수 없습니다.
 
-. ^4^ 단일 노드 배포에서 지원되는 디스크 유형에 대한 자세한 내용은 https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/reference-default-configs.html#azure-single-node["Azure(단일 노드)"^]을 참조하십시오. 단일 노드 시스템을 사용하는 경우 모든 인스턴스 유형에서 고속 쓰기가 지원됩니다. 배포 중 또는 배포 후 언제든지 콘솔에서 고속 쓰기를 활성화할 수 있습니다 https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-write-speed.html["쓰기 속도 선택에 대해 자세히 알아보십시오"^]. SSD를 사용하는 경우 향상된 쓰기 성능이 활성화됩니다.
-. ^5^ 2025년 8월 11일부터 Cloud Volumes ONTAP Optimized 라이센스는 더 이상 사용되지 않으며 Azure 마켓플레이스에서 종량제(PAYGO) 구독에 대한 구매 또는 갱신이 불가능합니다. 자세한 내용은 https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/whats-new.html#11-august-2025["최적화된 라이선스의 사용 가능 기간이 종료되었습니다."^]을 참조하십시오.
+. ^4^ 단일 노드 배포에서 지원되는 디스크 유형에 대한 자세한 내용은 link:reference-configs-azure.html#azure-single-node["Azure(단일 노드)"]을 참조하십시오. 단일 노드 시스템을 사용하는 경우 모든 인스턴스 유형에서 고속 쓰기가 지원됩니다. 배포 중 또는 배포 후 언제든지 Console에서 고속 쓰기를 활성화할 수 있습니다. https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-write-speed.html["쓰기 속도 선택에 대해 자세히 알아보십시오"^]. SSD를 사용하는 경우 향상된 쓰기 성능이 활성화됩니다.
+. ^5^ 2025년 8월 11일부터 Cloud Volumes ONTAP Optimized 라이센스는 더 이상 사용되지 않으며 Azure 마켓플레이스에서 종량제(PAYGO) 구독에 대한 구매 또는 갱신이 불가능합니다. 자세한 내용은 https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/whats-new.html#11-august-2025["최적화된 라이선스의 사용 가능 기간이 종료되었습니다."^]을 참조하십시오.
 . ^6^ Edsv6 VM 유형은 Cloud Volumes ONTAP 9.17.1 이상의 새 배포에 대해 지원됩니다. 다른 VM 유형(예: Edsv5에서 Edsv6으로)을 사용하는 기존 배포로 전환할 수 없으며 Edsv6 변형 간의 크기 변경(예: E20ds_v6 → E32ds_v6)만 지원됩니다. 이 VM 유형에 대한 자세한 내용은 https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/memory-optimized/edsv6-series?tabs=sizebasic["Azure 설명서: Edsv6 크기 시리즈"^]을 참조하십시오.
 . ^7^ Ebdsv5 및 E104ids_v5 VM은 Cloud Volumes ONTAP 9.18.1 이상 버전의 신규 배포 및 업그레이드에 사용할 수 있습니다. 기존의 Edsv4, Edsv5 또는 기타 Ebdsv5 VM 유형을 Ebdsv5로 변경하거나 업그레이드할 수 있습니다. Ebdsv5 또는 Eidsv5 VM을 E104ids_v5로 업그레이드할 수도 있습니다.
 
@@ -610,15 +612,15 @@ Azure에서 Flash Cache를 구성하는 데 필요한 최소 ONTAP 버전은 9.1
 참고:
 
 . ^1^ Azure에서 Cloud Volumes ONTAP의 새 인스턴스를 배포할 때 Console에서 DS_v2 및 Es_v3 시스템 제품군을 더 이상 선택할 수 없습니다. 이러한 제품군은 기존 시스템에서만 유지 및 지원됩니다. Azure에서 Cloud Volumes ONTAP의 새 배포는 9.12.1 릴리스부터 지원됩니다. Es_v4 또는 Cloud Volumes ONTAP 9.12.1 이상과 호환되는 다른 시리즈로 전환하는 것이 좋습니다. 단, API를 통한 새 배포에서는 DS_v2 및 Es_v3 시리즈 시스템을 사용할 수 있습니다.
-. ^2^ 이 VM 유형에는 로컬 NVMe 스토리지가 포함되어 있으며, Cloud Volumes ONTAP는 이를 _Flash Cache_로 사용합니다. Flash Cache는 최근에 읽은 사용자 데이터와 NetApp 메타데이터의 실시간 지능형 캐싱을 통해 데이터 액세스 속도를 높입니다. 데이터베이스, 이메일 및 파일 서비스를 포함한 무작위 읽기 집약적 워크로드에 효과적입니다 https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-flash-cache.html["자세히 알아보기"^].
+. ^2^ 이 VM 유형에는 로컬 NVMe 스토리지가 포함되어 있으며, Cloud Volumes ONTAP는 이를 _Flash Cache_로 사용합니다. Flash Cache는 최근에 읽은 사용자 데이터와 NetApp 메타데이터의 실시간 지능형 캐싱을 통해 데이터 액세스 속도를 높입니다. 데이터베이스, 이메일 및 파일 서비스를 포함한 무작위 읽기 집약적 워크로드에 효과적입니다 https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-flash-cache.html["자세히 알아보기"^].
 . ^3^ 이러한 VM 유형은 VNVRAM에  https://docs.microsoft.com/en-us/azure/virtual-machines/windows/disks-enable-ultra-ssd["Ultra SSD"^]를 사용하므로 쓰기 성능이 향상됩니다.
 +
 새로운 Cloud Volumes ONTAP 시스템을 배포할 때 이러한 VM 유형 중 하나를 선택하면 VNVRAM에 Ultra SSD를 사용하지 _않는_ 다른 VM 유형으로 변경할 수 없습니다. 예를 들어 E8ds_v4에서 E8s_v3으로 변경할 수는 없지만 두 VM 유형 모두 Ultra SSD를 사용하므로 E8ds_v4에서 E32ds_v4로는 변경할 수 있습니다. 반대로 다른 VM 유형을 사용하여 Cloud Volumes ONTAP을 배포한 경우 VNVRAM에 Ultra SSD를 사용하는 다른 VM 유형으로 변경할 수 없습니다. 예를 들어 VNVRAM에 Ultra SSD를 사용하지 않는 E8s_v3을 사용하는 E8ds_v4로 변경할 수 없습니다.
 
 +
-마찬가지로, Premium SSD 관리 디스크를 선택한 환경이 Premium SSD v2 관리 디스크에 대한 https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-ha-azure.html#ha-single-availability-zone-configuration-with-shared-managed-disks["기준"^]를 충족하는 경우 NetApp Console에서 Premium SSD v2 관리 디스크를 자동으로 배포합니다. Premium SSD v1 관리 디스크로 전환할 수 없습니다.
+마찬가지로, Premium SSD 관리 디스크를 선택한 환경이 Premium SSD v2 관리 디스크에 대한 https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-ha-azure.html#ha-single-availability-zone-configuration-with-shared-managed-disks["기준"^]를 충족하는 경우 NetApp Console에서 Premium SSD v2 관리 디스크를 자동으로 배포합니다. Premium SSD v1 관리 디스크로 전환할 수 없습니다.
 
-. ^4^ 단일 노드 시스템을 사용하는 경우 모든 인스턴스 유형에서 고속 쓰기가 지원됩니다. 배포 중 또는 배포 후 언제든지 콘솔에서 고속 쓰기를 활성화할 수 있습니다 https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-write-speed.html["쓰기 속도 선택에 대해 자세히 알아보십시오"^]. SSD를 사용하는 경우 향상된 쓰기 성능이 활성화됩니다.
+. ^4^ 단일 노드 시스템을 사용하는 경우 모든 인스턴스 유형에서 고속 쓰기가 지원됩니다. 배포 중 또는 배포 후 언제든지 콘솔에서 고속 쓰기를 활성화할 수 있습니다 https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-write-speed.html["쓰기 속도 선택에 대해 자세히 알아보십시오"^]. SSD를 사용하는 경우 향상된 쓰기 성능이 활성화됩니다.
 . ^5^PAYGO Explore에서는 Azure Blob 스토리지로의 데이터 계층화가 지원되지 않습니다.
 . ^6^ Edsv6 VM 유형은 Cloud Volumes ONTAP 9.17.1 이상의 새 배포에 대해 지원됩니다. 다른 VM 유형(예: Edsv5에서 Edsv6으로)을 사용하는 기존 배포로 전환할 수 없으며 Edsv6 변형 간의 크기 변경(예: E20ds_v6 → E32ds_v6)만 지원됩니다. 이 VM 유형에 대한 자세한 내용은 https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/memory-optimized/edsv6-series?tabs=sizebasic["Azure 설명서: Edsv6 크기 시리즈"^]을 참조하십시오.
 . ^7^ Ebdsv5 및 E104ids_v5 VM은 Cloud Volumes ONTAP 9.18.1 이상 버전의 신규 배포 및 업그레이드에 사용할 수 있습니다. 기존의 Edsv4, Edsv5 또는 기타 Ebdsv5 VM 유형을 Ebdsv5로 변경하거나 업그레이드할 수 있습니다. Ebdsv5 또는 Eidsv5 VM을 E104ids_v5로 업그레이드할 수도 있습니다.
@@ -782,13 +784,13 @@ Azure에서 Cloud Volumes ONTAP을 HA 쌍으로 배포할 때 다음 구성 중�
 |===
 참고:
 
-. ^1^ Cloud Volumes ONTAP는 HA 쌍을 사용할 때 이러한 VM 유형에서 높은 쓰기 속도를 지원합니다. 배포 중 또는 배포 후 언제든지 콘솔에서 고속 쓰기를 활성화할 수 있습니다 https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-write-speed.html["쓰기 속도 선택에 대해 자세히 알아보십시오"^].
+. ^1^ Cloud Volumes ONTAP는 HA 쌍을 사용할 때 이러한 VM 유형에서 높은 쓰기 속도를 지원합니다. 배포 중 또는 배포 후 언제든지 콘솔에서 고속 쓰기를 활성화할 수 있습니다 https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-write-speed.html["쓰기 속도 선택에 대해 자세히 알아보십시오"^].
 . ^2^ 이 VM은 Azure 유지 관리 제어가 필요한 경우에만 권장됩니다. 가격이 높기 때문에 다른 사용 사례에는 권장되지 않습니다.
 . ^3^ 다중 가용성 영역 지원은 ONTAP 버전 9.13.1부터 시작됩니다.
 . ^4^ 다중 가용성 영역 지원은 ONTAP 버전 9.14.1 RC1부터 시작됩니다.
-. ^5^ 이 VM 유형에는 로컬 NVMe 스토리지가 포함되어 있으며, Cloud Volumes ONTAP는 이를 _Flash Cache_로 사용합니다. Flash Cache는 최근에 읽은 사용자 데이터와 NetApp 메타데이터의 실시간 지능형 캐싱을 통해 데이터 액세스 속도를 높입니다. 데이터베이스, 이메일 및 파일 서비스를 포함한 무작위 읽기 집약적 워크로드에 효과적입니다 https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-flash-cache.html["자세히 알아보기"^].
-. ^6^ Premium SSD v2 관리 디스크에 대한 https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-ha-azure.html#ha-single-availability-zone-configuration-with-shared-managed-disks["기준"^]를 충족하는 환경에 대해 Premium SSD 관리 디스크를 선택하면 Console에서 Premium SSD v2 관리 디스크를 자동으로 배포합니다. Premium SSD v1 관리 디스크로 전환할 수 없습니다. 단일 및 다중 가용성 영역의 HA 배포를 위한 시스템 데이터용 내부 디스크에 대한 자세한 내용은 https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/reference-default-configs.html#azure-ha-pair["Azure(HA 쌍)"^]를 참조하십시오.
-. ^7^ 2025년 8월 11일부터 Cloud Volumes ONTAP Optimized 라이센스는 더 이상 사용되지 않으며 종량제(PAYGO) 구독의 경우 Azure 마켓플레이스에서 구매 또는 갱신할 수 없습니다 https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/whats-new.html#11-august-2025["최적화된 라이선스의 사용 가능 기간이 종료되었습니다."^].
+. ^5^ 이 VM 유형에는 로컬 NVMe 스토리지가 포함되어 있으며, Cloud Volumes ONTAP는 이를 _Flash Cache_로 사용합니다. Flash Cache는 최근에 읽은 사용자 데이터와 NetApp 메타데이터의 실시간 지능형 캐싱을 통해 데이터 액세스 속도를 높입니다. 데이터베이스, 이메일 및 파일 서비스를 포함한 무작위 읽기 집약적 워크로드에 효과적입니다 https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-flash-cache.html["자세히 알아보기"^].
+. ^6^ Premium SSD v2 관리 디스크에 대한 요구 사항을 충족하는 환경에 Premium SSD 관리 디스크를 선택하면 https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-ha-azure.html#ha-single-availability-zone-configuration-with-shared-managed-disks["기준"^] 콘솔에서 Premium SSD v2 관리 디스크를 자동으로 배포합니다. Premium SSD v1 관리 디스크로 전환할 수 없습니다. 단일 및 다중 가용성 영역의 HA 배포를 위한 시스템 데이터용 내부 디스크에 대한 자세한 내용은 link:reference-configs-azure.html#azure-ha-pair["Azure(HA 쌍)"]을 참조하십시오.
+. ^7^ 2025년 8월 11일부터 Cloud Volumes ONTAP Optimized 라이센스는 더 이상 사용되지 않으며 종량제(PAYGO) 구독의 경우 Azure 마켓플레이스에서 구매 또는 갱신할 수 없습니다 https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/whats-new.html#11-august-2025["최적화된 라이선스의 사용 가능 기간이 종료되었습니다."^].
 . ^8^ Edsv6 VM 유형은 Cloud Volumes ONTAP 9.17.1 이상의 새 배포에 대해 지원됩니다. 다른 VM 유형(예: Edsv5에서 Edsv6으로)을 사용하는 기존 배포로 전환할 수 없으며 Edsv6 변형 간의 크기 변경(예: E20ds_v6 → E32ds_v6)만 지원됩니다. 이 VM 유형에 대한 자세한 내용은 https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/memory-optimized/edsv6-series?tabs=sizebasic["Azure 설명서: Edsv6 크기 시리즈"^]을 참조하십시오.
 . ^9^ Ebdsv5 및 E104ids_v5 VM은 Cloud Volumes ONTAP 9.18.1 이상 버전의 신규 배포 및 업그레이드에 사용할 수 있습니다. 기존의 Edsv4, Edsv5 또는 기타 Ebdsv5 VM 유형을 Ebdsv5로 변경하거나 업그레이드할 수 있습니다. Ebdsv5 또는 Eidsv5 VM을 E104ids_v5로 업그레이드할 수도 있습니다.
 
@@ -937,11 +939,11 @@ Azure에서 Cloud Volumes ONTAP을 HA 쌍으로 배포할 때 다음 구성 중�
 |===
 참고:
 
-. ^1^ Cloud Volumes ONTAP는 HA 쌍을 사용할 때 이러한 VM 유형에서 높은 쓰기 속도를 지원합니다. 배포 중 또는 배포 후 언제든지 콘솔에서 고속 쓰기를 활성화할 수 있습니다 https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-write-speed.html["쓰기 속도 선택에 대해 자세히 알아보십시오"^].
+. ^1^ Cloud Volumes ONTAP는 HA 쌍을 사용할 때 이러한 VM 유형에서 높은 쓰기 속도를 지원합니다. 배포 중 또는 배포 후 언제든지 콘솔에서 고속 쓰기를 활성화할 수 있습니다 https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-write-speed.html["쓰기 속도 선택에 대해 자세히 알아보십시오"^].
 . ^2^ 이 VM은 Azure 유지 관리 제어가 필요한 경우에만 권장됩니다. 가격이 높기 때문에 다른 사용 사례에는 권장되지 않습니다.
 . ^3^ 이러한 VM 유형은 공유 관리 디스크에서 실행되는 단일 가용성 영역 구성의 HA 쌍에 대해서만 지원됩니다.
 . ^4^ 이러한 VM 유형은 공유 관리 디스크에서 실행되는 단일 가용성 영역 및 다중 가용성 영역 구성의 HA 쌍에 대해 지원됩니다. Ls_v3 VM 유형의 경우 다중 가용성 영역 지원은 ONTAP 버전 9.13.1부터 시작됩니다. Eds_v5 VM 유형의 경우 다중 가용성 영역 지원은 ONTAP 버전 9.14.1 RC1부터 시작됩니다.
-. ^5^ 이 VM 유형에는 로컬 NVMe 스토리지가 포함되어 있으며, Cloud Volumes ONTAP는 이를 _Flash Cache_로 사용합니다. Flash Cache는 최근에 읽은 사용자 데이터와 NetApp 메타데이터의 실시간 지능형 캐싱을 통해 데이터 액세스 속도를 높입니다. 데이터베이스, 이메일 및 파일 서비스를 포함한 무작위 읽기 집약적 워크로드에 효과적입니다 https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-flash-cache.html["자세히 알아보기"^].
+. ^5^ 이 VM 유형에는 로컬 NVMe 스토리지가 포함되어 있으며, Cloud Volumes ONTAP는 이를 _Flash Cache_로 사용합니다. Flash Cache는 최근에 읽은 사용자 데이터와 NetApp 메타데이터의 실시간 지능형 캐싱을 통해 데이터 액세스 속도를 높입니다. 데이터베이스, 이메일 및 파일 서비스를 포함한 무작위 읽기 집약적 워크로드에 효과적입니다 https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-flash-cache.html["자세히 알아보기"^].
 . ^6^ Edsv6 VM 유형은 Cloud Volumes ONTAP 9.17.1 이상의 새 배포에 대해 지원됩니다. 다른 VM 유형(예: Edsv5에서 Edsv6으로)을 사용하는 기존 배포로 전환할 수 없으며 Edsv6 변형 간의 크기 변경(예: E20ds_v6 → E32ds_v6)만 지원됩니다. 이 VM 유형에 대한 자세한 내용은 https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/memory-optimized/edsv6-series?tabs=sizebasic["Azure 설명서: Edsv6 크기 시리즈"^]을 참조하십시오.
 . ^7^ Ebdsv5 및 E104ids_v5 VM은 Cloud Volumes ONTAP 9.18.1 이상 버전의 신규 배포 및 업그레이드에 사용할 수 있습니다. 기존의 Edsv4, Edsv5 또는 기타 Ebdsv5 VM 유형을 Ebdsv5로 변경하거나 업그레이드할 수 있습니다. Ebdsv5 또는 Eidsv5 VM을 E104ids_v5로 업그레이드할 수도 있습니다.
 
@@ -1090,7 +1092,7 @@ NOTE: Azure 페이지 Blob은 새로운 배포에 대해 지원되지 않습니�
 . ^1^ Cloud Volumes ONTAP는 HA 쌍을 사용할 때 이러한 VM 유형에서 높은 쓰기 속도를 지원합니다. 배포 중 또는 배포 후 언제든지 콘솔에서 고속 쓰기를 활성화할 수 있습니다 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/concept-write-speed.html["쓰기 속도 선택에 대해 자세히 알아보십시오"^].
 . ^2^ 이 VM은 Azure 유지 관리 제어가 필요한 경우에만 권장됩니다. 가격이 높기 때문에 다른 사용 사례에는 권장되지 않습니다.
 . ^3^ 이러한 VM은 Cloud Volumes ONTAP 9.11.1 이하 버전의 배포에서만 지원됩니다. 이러한 VM 유형을 사용하면 기존 페이지 블롭 배포를 Cloud Volumes ONTAP 9.11.1에서 9.12.1로 업그레이드할 수 있습니다. Cloud Volumes ONTAP 9.12.1 이상 버전에서는 새로운 페이지 블롭 배포를 수행할 수 없습니다.
-. ^4^ 2025년 8월 11일부터 Cloud Volumes ONTAP Optimized 라이센스는 더 이상 사용되지 않으며 Azure 마켓플레이스에서 종량제(PAYGO) 구독에 대한 구매 또는 갱신이 불가능합니다. 자세한 내용은 https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/whats-new.html#11-august-2025["최적화된 라이선스의 사용 가능 기간이 종료되었습니다."^]을 참조하십시오.
+. ^4^ 2025년 8월 11일부터 Cloud Volumes ONTAP Optimized 라이센스는 더 이상 사용되지 않으며 Azure 마켓플레이스에서 종량제(PAYGO) 구독에 대한 구매 또는 갱신이 불가능합니다. 자세한 내용은 https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/whats-new.html#11-august-2025["최적화된 라이선스의 사용 가능 기간이 종료되었습니다."^]을 참조하십시오.
 
 
 --
@@ -1300,7 +1302,7 @@ Azure 지역 지원에 대한 자세한 내용은 https://bluexp.netapp.com/clou
 
 .관련 링크
 * link:task-planning-your-config-azure.html["Azure에서 시스템에 맞는 디스크 유형과 디스크 크기를 선택하는 방법을 알아보세요."]
-* link:task-deploying-otc-azure.html#launching-a-cloud-volumes-ontap-ha-pair-in-azure["Azure에서 Cloud Volumes ONTAP HA 쌍 시작"]
+* link:task-deploying-otc-azure.html#launch-a-cloud-volumes-ontap-ha-pair-in-azure["Azure에서 Cloud Volumes ONTAP HA 쌍 시작"]
 * https://docs.microsoft.com/en-us/azure/virtual-machines/disks-types["Microsoft Azure 설명서: Azure 관리 디스크 유형"^]
 * https://docs.microsoft.com/en-us/azure/storage/blobs/storage-blob-pageblob-overview["Microsoft Azure 설명서: Azure 페이지 Blob 개요"^]
 * https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-limits-azure.html["Azure에서 Cloud Volumes ONTAP 의 저장소 한도 검토"^]

@@ -28,7 +28,7 @@ Cloud Volumes ONTAP를 배포하려면 먼저 Google Cloud 구독 및 Cloud Volu
  a| 
 콘솔 설정 가이드를 참조하십시오: https://docs.netapp.com/us-en/console-setup-admin/task-install-agent-google-gcloud.html["Google Cloud에서 Console 에이전트 생성"^]
  a| 
-인터넷에 접속할 수 없는 서브넷에 배포하는 경우 콘솔 에이전트를 수동으로 설치하고 해당 콘솔 에이전트에서 실행되는 NetApp Console 사용자 인터페이스에 액세스하십시오. 콘솔 설정 가이드를 참조하십시오. https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-private-mode.html["인터넷 연결 없이 Console 에이전트를 수동으로 설치합니다."^]
+인터넷에 접속할 수 없는 서브넷에 배포하는 경우 콘솔 에이전트를 수동으로 설치하고 해당 콘솔 에이전트에서 실행되는 NetApp Console 사용자 인터페이스에 액세스하십시오. 콘솔 설정 가이드를 참조하십시오: https://docs.netapp.com/us-en/console-setup-admin/task-quick-start-private-mode.html["인터넷 연결 없이 Console 에이전트를 수동으로 설치합니다."^]
 
 
 
@@ -70,7 +70,7 @@ Cloud Volumes ONTAP 사용하려면 Google Cloud 서비스 계정이 필요합�
  a| 
 * link:task-creating-gcp-service-account.html["서비스 계정 설정"]
 * link:concept-data-tiering.html["데이터 계층화에 대해 알아보기"]
-* 다음을 참조하십시오 https://docs.netapp.com/us-en/bluexp-backup-recovery/concept-backup-to-cloud.html["NetApp Backup and Recovery 문서"^]
+* 다음을 참조하십시오 https://docs.netapp.com/us-en/data-services-backup-recovery/concept-backup-to-cloud.html["NetApp Backup and Recovery 문서"^]
 
  a| 
 프라이빗 환경 배포에는 추가적인 고려 사항이 없습니다.
@@ -109,7 +109,7 @@ API를 활성화해야 합니다. 클라우드 관리자와 협력하여 프라�
 
 |===
 .관련 링크
-* https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-google.html["콘솔 에이전트 생성"^]
-* https://docs.netapp.com/us-en/bluexp-setup-admin/task-install-connector-on-prem.html["Linux 호스트에 콘솔 에이전트 소프트웨어 설치"^]
+* https://docs.netapp.com/us-en/console-setup-admin/task-quick-start-connector-google.html["콘솔 에이전트 생성"^]
+* https://docs.netapp.com/us-en/console-setup-admin/task-install-connector-on-prem.html["Linux 호스트에 콘솔 에이전트 소프트웨어 설치"^]
 * https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-gcp.html["콘솔 에이전트에 대한 Google Cloud 권한"^]
 

@@ -55,7 +55,7 @@ Digital Advisor 사용자 인터페이스는 콘솔에 완벽하게 통합되어
 +
 image:screenshot_aiq_digital_advisor.png["콘솔의 Digital Advisor 사용자 인터페이스 스크린샷입니다."]
 
-* 콘솔에 NSS 계정을 등록하지 않은 경우 지금 NSS 계정을 등록하면 Digital Advisor UI가 나타납니다.  참조하다 https://docs.netapp.com/us-en/bluexp-setup-admin/task-adding-nss-accounts.html["조직 또는 계정과 연결된 NSS 자격 증명 관리"] 지침을 보려면.
+* 콘솔에 NSS 계정을 등록하지 않은 경우 지금 NSS 계정을 등록하면 Digital Advisor UI가 나타납니다. 지침은 https://docs.netapp.com/us-en/console-setup-admin/task-adding-nss-accounts.html["조직 또는 계정과 연결된 NSS 자격 증명 관리"]을 참조하십시오.
 
 
 

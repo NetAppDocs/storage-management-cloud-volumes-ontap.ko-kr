@@ -58,4 +58,4 @@ Cloud Volumes ONTAP는 유휴 상태일 때 CPU를 해제하지 않으므로 htt
 
 노드가 재부팅된 후 파트너는 스토리지를 반환하기 전에 데이터를 동기화해야 합니다. 데이터 재동기화에 걸리는 시간은 노드가 다운된 동안 클라이언트가 기록한 데이터 양과 스토리지 반환 시점의 데이터 쓰기 속도에 따라 달라집니다.
 
-https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-ha.html["AWS에서 실행되는 Cloud Volumes ONTAP HA 쌍에서 스토리지가 작동하는 방식에 대해 알아보십시오"^].
+https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-ha.html["AWS에서 실행되는 Cloud Volumes ONTAP HA 쌍에서 스토리지가 작동하는 방식에 대해 알아보십시오"^].

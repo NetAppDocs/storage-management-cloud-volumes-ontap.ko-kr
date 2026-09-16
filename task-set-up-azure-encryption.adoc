@@ -221,7 +221,7 @@ NOTE: Azure 고객 관리 암호화 키를 사용하려면 키 자격 증명 모
 "Microsoft.KeyVault/vaults/accessPolicies/write",
 "Microsoft.ManagedIdentity/userAssignedIdentities/assign/action"
 ----
-https://docs.netapp.com/us-en/bluexp-setup-admin/reference-permissions-azure.html["최신 권한 목록 보기"^]
+https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-azure.html["최신 권한 목록 보기"^]
 
 .단계
 . 다음 API 호출을 사용하여 Azure 구독에 있는 키 자격 증명 모음 목록을 가져옵니다.
@@ -293,5 +293,5 @@ NOTE: 포함하다 `"userAssignedIdentity": " userAssignedIdentityId"` 저장소
 
 .관련 링크
 * https://docs.netapp.com/us-en/console-automation/cm/wf_cvo_before.html["Cloud Volumes ONTAP API 워크플로우 사용을 준비하세요"^].
-* https://docs.netapp.com/us-en/bluexp-automation/cm/api_ref_resources.html#azure-haworking-environments["ONTAP 관리 REST API에 대해 알아보십시오"^].
+* https://docs.netapp.com/us-en/console-automation/cm/api_ref_resources.html#azure-haworking-environments["ONTAP 관리 REST API에 대해 알아보십시오"^].
 

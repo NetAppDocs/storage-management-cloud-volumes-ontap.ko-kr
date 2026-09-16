@@ -94,7 +94,7 @@ HA 구성이 여러 가용성 영역에 걸쳐 분산되어 있는 경우 _유�
 
 여러 가용성 영역에 HA 구성을 배포하기 전에 부동 IP 주소와 경로 테이블에 대한 요구 사항을 검토해야 합니다.  구성을 배포할 때 부동 IP 주소를 지정해야 합니다.  개인 IP 주소는 자동으로 생성됩니다.
 
-자세한 내용은 다음을 참조하세요. link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/reference-networking-aws.html#requirements-for-ha-pairs-in-multiple-azs["여러 AZ에서 Cloud Volumes ONTAP HA에 대한 AWS 네트워킹 요구 사항"^] .
+자세한 내용은 link:https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/reference-networking-aws.html#requirements-for-ha-pairs-in-multiple-azs["여러 AZ에서 Cloud Volumes ONTAP HA에 대한 AWS 네트워킹 요구 사항"^]을 참조하십시오.
 
 
 

@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: task-getting-started-aws-c2s.html 
 keywords: commercial cloud services, c2s, secret cloud, top secret cloud, aws secret region, the Console 
-summary: 표준 AWS 지역과 마찬가지로 Cloud Volumes ONTAP AWS Secret Cloud 및 Top Secret Cloud 환경에 배포하여 클라우드 스토리지에 엔터프라이즈급 기능을 제공할 수 있습니다.  AWS Secret Cloud 및 Top Secret Cloud 지역은 미국 정보 커뮤니티에 한정된 폐쇄된 지역입니다. 이 페이지의 지침은 AWS Secret Cloud 및 Top Secret Cloud 지역 사용자에게만 적용됩니다. 
+summary: Cloud Volumes ONTAP을 AWS Secret Cloud 및 Top Secret Cloud 환경에 배포할 수 있습니다. AWS Secret Cloud 및 Top Secret Cloud 리전은 미국 정보기관 전용으로 운영되는 폐쇄형 리전입니다. 이 페이지의 지침은 AWS Secret Cloud 및 Top Secret Cloud 리전 사용자에게만 적용됩니다. 
 ---
 = AWS Secret Cloud 또는 AWS Top Secret Cloud에 Cloud Volumes ONTAP 배포
 :hardbreaks:
@@ -33,7 +33,7 @@ AWS에서 Cloud Volumes ONTAP 배포하고 관리하려면 콘솔 에이전트�
 AWS Secret Cloud와 Top Secret Cloud에서는 콘솔이 _비공개 모드_로 작동합니다.  개인 모드에서는 콘솔에서 SaaS 계층에 연결할 수 없습니다.  콘솔 에이전트에 액세스할 수 있는 로컬 웹 기반 애플리케이션을 통해 콘솔에 액세스할 수 있습니다.
 
 +
-개인 모드의 작동 방식에 대해 자세히 알아보려면 다음을 참조하세요.link:https://docs.netapp.com/us-en/bluexp-setup-admin/concept-modes.html#private-mode["콘솔의 개인 배포 모드"^] .
+개인 모드 작동 방식에 대한 자세한 내용은 link:https://docs.netapp.com/us-en/console-setup-admin/concept-modes.html#private-mode["콘솔의 개인 배포 모드"^]을(를) 참조하십시오.
 
 
 

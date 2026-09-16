@@ -173,7 +173,7 @@ ifdef::azure[]
 "Microsoft.Network/virtualNetworks/subnets/write",
 "Microsoft.Network/routeTables/join/action",
 ----
-사용자 정의 역할에는 기본적으로 권한이 포함됩니다. https://docs.netapp.com/us-en/bluexp-setup-admin/reference-permissions-azure.html["콘솔 에이전트에 대한 Azure 권한 보기"^]
+사용자 지정 역할에는 기본적으로 권한이 포함됩니다. https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-azure.html["콘솔 에이전트에 대한 Azure 권한 보기"^]
 
 endif::azure[]
 
@@ -301,7 +301,7 @@ Cloud Volumes ONTAP 데이터 보호 볼륨에서 용량 계층으로 데이터�
 image:screenshot_replication_tiering.gif["볼륨을 복제할 때 S3 계층화 옵션을 보여주는 스크린샷입니다."]
 
 +
-데이터 복제에 대한 도움말은 다음을 참조하세요. https://docs.netapp.com/us-en/bluexp-replication/task-replicating-data.html["클라우드에서 데이터 복제 및 클라우드로 데이터 복제"^] .
+데이터 복제에 대한 도움말은  https://docs.netapp.com/us-en/data-services-replication/task-replicating-data.html["클라우드에서 데이터 복제 및 클라우드로 데이터 복제"^]을 참조하십시오.
 
 
 

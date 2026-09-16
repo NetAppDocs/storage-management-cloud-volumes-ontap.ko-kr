@@ -22,6 +22,6 @@ NetApp은 프라이빗 모드 Cloud Volumes ONTAP 구축을 위한 용량 기반
 
 .관련 링크
 * https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-licensing.html#end-of-availability-of-node-based-licenses["노드 기반 라이선스 제공 종료"^]
-* https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-convert-node-capacity.html#conversion-in-a-private-mode-deployment["프라이빗 클라우드 모드 배포에서의 변환"^]
+* https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-convert-node-capacity.html#conversion-in-a-private-mode-deployment["프라이빗 클라우드 모드 배포에서의 변환"^]
 * https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-manage-node-licenses.html["Cloud Volumes ONTAP의 노드 기반 라이센스 관리"^]
 

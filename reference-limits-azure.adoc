@@ -108,7 +108,7 @@ Cloud Volumes ONTAP는 Azure 스토리지를 디스크로 사용하고 이를 _�
 [[limits-for-different-deployment-modes-of-capacity-based-licensing]]
 === 용량 기반 라이센스의 다양한 배포 모드에 대한 제한 사항
 
-다음 디스크 제한은 용량 기반 라이센스 패키지를 사용하는 Cloud Volumes ONTAP 시스템에 적용됩니다. https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-licensing.html["Cloud Volumes ONTAP 라이센스 옵션에 대해 알아보십시오"^]
+다음 디스크 제한은 용량 기반 라이센스 패키지를 사용하는 Cloud Volumes ONTAP 시스템에 적용됩니다. https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-licensing.html["Cloud Volumes ONTAP 라이센스 옵션에 대해 알아보십시오"^]
 
 
 NOTE: 단일 노드, 페이지 블롭이 있는 단일 가용성 영역의 HA 쌍, 공유 관리 디스크가 있는 단일 및 다중 가용성 영역의 HA 쌍에 대한 최대 시스템 용량 및 데이터 계층화 용량 제한은 <<cap-license-azure>>을 참조하십시오.
@@ -341,7 +341,7 @@ NOTE: 단일 노드, 페이지 블롭이 있는 단일 가용성 영역의 HA �
 
 노드 기반 라이센스를 사용하는 Cloud Volumes ONTAP 시스템에는 다음 디스크 제한이 적용됩니다. 노드 기반 라이센스는 노드별로 Cloud Volumes ONTAP 라이센스를 부여할 수 있는 이전 세대 모델입니다. 노드 기반 라이센스는 기존 고객에게 계속 제공됩니다.
 
-Cloud Volumes ONTAP BYOL 단일 노드 또는 HA 쌍 시스템에 대해 여러 개의 노드 기반 라이센스를 구입하여 368TiB 이상의 용량을 할당할 수 있으며, 최대 테스트 및 지원되는 시스템 용량 제한인 2PiB까지 할당할 수 있습니다. 디스크 제한으로 인해 디스크만 사용하여 용량 제한에 도달하지 못할 수 있으므로 주의하십시오. 디스크 제한을 초과하려면 https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-data-tiering.html["비활성 데이터를 개체 스토리지로 계층화"^]. https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-manage-node-licenses.html["Cloud Volumes ONTAP에 추가 시스템 라이센스를 추가하는 방법에 대해 알아보십시오"^]. Cloud Volumes ONTAP는 최대 테스트 및 지원되는 시스템 용량인 2PiB까지 지원하며, 2PiB 제한을 초과하면 지원되지 않는 시스템 구성이 됩니다.
+Cloud Volumes ONTAP BYOL 단일 노드 또는 HA 쌍 시스템에 대해 여러 개의 노드 기반 라이센스를 구입하여 368TiB 이상의 용량을 할당할 수 있으며, 최대 테스트 및 지원되는 시스템 용량 제한인 2PiB까지 할당할 수 있습니다. 디스크 제한으로 인해 디스크만 사용하여 용량 제한에 도달하지 못할 수 있으므로 주의하십시오. 디스크 제한을 초과하려면 https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-data-tiering.html["비활성 데이터를 개체 스토리지로 계층화"^]. https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-manage-node-licenses.html["Cloud Volumes ONTAP에 추가 시스템 라이센스를 추가하는 방법에 대해 알아보십시오"^]. Cloud Volumes ONTAP는 최대 테스트 및 지원되는 시스템 용량인 2PiB까지 지원하며, 2PiB 제한을 초과하면 지원되지 않는 시스템 구성이 됩니다.
 
 
 
@@ -631,7 +631,7 @@ HA 쌍에는 페이지 블롭과 다중 가용 영역의 두 가지 구성 유�
 
 이는 테스트를 거친 한계치입니다. 스토리지 VM을 추가로 설정하는 것은 지원되지 않습니다.
 
-https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-managing-svms-azure.html["추가 스토리지 VM을 생성하는 방법을 알아보세요."^].
+https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-managing-svms-azure.html["추가 스토리지 VM을 생성하는 방법을 알아보세요."^].
 
 [cols="2*"]
 |===

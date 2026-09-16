@@ -30,6 +30,6 @@ https://cloud.google.com/vpc/docs/packet-mirroring["패킷 미러링"^] Cloud Vo
 [[google-private-service-connect-limitations]]
 == Google Private Service Connect 제한 사항
 
-Cloud Volumes ONTAP를 배포하는 VPC 내에서  https://cloud.google.com/vpc/docs/private-service-connect["Google Private Service Connect"^]을(를) 활용하는 경우 필요한  https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-google.html["API 엔드포인트"^](으)로 트래픽을 전달하는 DNS 레코드를 구현해야 합니다.
+Cloud Volumes ONTAP를 배포하는 VPC 내에서  https://cloud.google.com/vpc/docs/private-service-connect["Google Private Service Connect"^]을(를) 활용하는 경우 필요한  https://docs.netapp.com/us-en/console-setup-admin/task-quick-start-connector-google.html["API 엔드포인트"^](으)로 트래픽을 전달하는 DNS 레코드를 구현해야 합니다.
 
 Private Service Connect에서는 현재 Cloud Volumes ONTAP의 데이터를 Google Cloud Storage 버킷으로 계층화하는 기능이 지원되지 않습니다.

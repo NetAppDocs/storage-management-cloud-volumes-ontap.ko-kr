@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: concept-licensing.html 
-keywords: 'freemium, professional, essentials, licensing, licenses, cloud volumes ontap charging, cloud volumes ontap licenses, cloud volumes ontap licensing, cvo licenses, cvo licensing, byol, bring your own license, paygo, pay as you go, keystone flex, keystone, cloud backup, digital wallet, bluexp license conversion for node based, license end of support (EOS) node-based, end of availability (EOA) of node-based' 
+keywords: freemium, professional, essentials, licensing, licenses, cloud volumes ontap charging, cloud volumes ontap licenses, cloud volumes ontap licensing, cvo licenses, cvo licensing, byol, bring your own license, paygo, pay as you go, keystone flex, keystone, cloud backup, digital wallet, bluexp license conversion for node based, end of support, eos, end of availability, eoa, node-based 
 summary: Cloud Volumes ONTAP 에는 여러 가지 라이선싱 옵션이 제공됩니다. 각 옵션을 사용하면 필요에 맞는 구성을 선택할 수 있습니다. 
 ---
 = Cloud Volumes ONTAP 라이선싱
@@ -18,7 +18,7 @@ Cloud Volumes ONTAP에 사용할 수 있는 라이센스 모델이 여러 가지
 
 클라우드 마켓플레이스 또는 NetApp(BYOL(Bring Your Own License))을 통해 라이선스 및 구독을 구매하거나 갱신할 수 있습니다. 마켓플레이스에서는 연간 구독 및 종량제(PAYGO) 옵션을 제공합니다. 자세한 내용은 link:concept-license-management.html["Cloud Volumes ONTAP 의 용량 기반 라이선스에 대해 자세히 알아보세요."]을 참조하십시오.
 
-BYOL 라이선스는 NetApp에서 구매할 수 있으며 모든 클라우드 공급자에서 사용할 수 있습니다. BYOL 라이선스 사용 가능 여부에 대한 자세한 내용은 https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/whats-new.html#restricted-availability-of-byol-licensing-for-cloud-volumes-ontap["Cloud Volumes ONTAP 에 대한 BYOL 라이선싱의 제한된 가용성"^]을 참조하십시오.
+BYOL 라이선스는 NetApp에서 구매할 수 있으며 모든 클라우드 공급자에서 사용할 수 있습니다. BYOL 라이선스 사용 가능 여부에 대한 자세한 내용은 https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/whats-new.html#restricted-availability-of-byol-licensing-for-cloud-volumes-ontap["Cloud Volumes ONTAP 에 대한 BYOL 라이선싱의 제한된 가용성"^]을 참조하십시오.
 
 
 
@@ -61,14 +61,14 @@ NOTE: NetApp Console 에서 관리되는 제품과 서비스의 실제 사용량
 
 ifdef::azure[]
 
-* link:link:reference-configs-azure.html["Azure에서 지원되는 구성"]
+* link:reference-configs-azure.html["Azure에서 지원되는 구성"]
 
 
 endif::azure[]
 
 ifdef::gcp[]
 
-* link:link:reference-configs-gcp.html["Google Cloud에서 지원되는 구성"^]
+* link:reference-configs-gcp.html["Google Cloud에서 지원되는 구성"^]
 
 
 endif::gcp[]
@@ -120,7 +120,7 @@ Essentials 패키지로 전환된 Cloud Volumes ONTAP 시스템은 프로비저�
 * NetApp Backup and Recovery 사용한 무제한 볼륨 백업이 포함되지만 Professional 패키지를 사용하는 Cloud Volumes ONTAP 시스템에만 해당됩니다.
 +
 
-NOTE: 백업 및 복구에는 사용량에 따른 요금(PAYGO) 구독이 필요하지만, 이 서비스 사용에는 요금이 부과되지 않습니다.  백업 및 복구에 대한 라이센싱 설정에 대한 자세한 내용은 다음을 참조하세요. https://docs.netapp.com/us-en/bluexp-backup-recovery/task-licensing-cloud-backup.html["백업 및 복구에 대한 라이선싱 설정"^] .
+NOTE: 백업 및 복구 서비스를 이용하려면 사용량 기반 요금제(PAYGO) 구독이 필요하지만, 이 서비스를 사용하는 데에는 요금이 부과되지 않습니다. 백업 및 복구 서비스 라이선스 설정에 대한 자세한 내용은 https://docs.netapp.com/us-en/data-services-backup-recovery/task-licensing-cloud-backup.html["백업 및 복구에 대한 라이선싱 설정"^]을 참조하십시오.
 
 * 추가 비용으로 NetApp의 클라우드 데이터 서비스를 추가하세요
 
@@ -132,10 +132,10 @@ NOTE: 백업 및 복구에는 사용량에 따른 요금(PAYGO) 구독이 필요
 
 Cloud Volumes ONTAP 시스템에 대한 PAYGO 및 BYOL 라이선스를 사용하려면 콘솔 에이전트가 작동 중이어야 합니다.
 
-https://docs.netapp.com/us-en/bluexp-setup-admin/concept-connectors.html#impact-on-cloud-volumes-ontap["콘솔 에이전트에 대해 알아보세요"^] .
+https://docs.netapp.com/us-en/console-setup-admin/concept-connectors.html#impact-on-cloud-volumes-ontap["콘솔 에이전트에 대해 알아보세요"^].
 
 
-NOTE: NetApp BYOL 라이선스 구매, 연장 및 갱신을 제한하고 있습니다. 자세한 내용은 다음을 참조하세요.  https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/whats-new.html#restricted-availability-of-byol-licensing-for-cloud-volumes-ontap["Cloud Volumes ONTAPP 에 대한 BYOL 라이선싱의 제한된 가용성"^] .
+NOTE: NetApp은 BYOL 라이선스의 구매, 연장 및 갱신을 제한합니다. 자세한 내용은 https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/whats-new.html#restricted-availability-of-byol-licensing-for-cloud-volumes-ontap["Cloud Volumes ONTAPP 에 대한 BYOL 라이선싱의 제한된 가용성"^]을 참조하십시오.
 
 
 

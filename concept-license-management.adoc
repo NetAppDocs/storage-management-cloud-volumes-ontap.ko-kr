@@ -21,7 +21,7 @@ NOTE: 노드 기반 라이선스는 Cloud Volumes ONTAP 의 이전 세대 라이
 
 link:concept-licensing.html["Cloud Volumes ONTAP 라이선스에 대해 알아보세요"].
 
-link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-manage-node-licenses.html["노드 기반 라이선스를 관리하는 방법에 대해 자세히 알아보세요."^] .
+link:https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-manage-node-licenses.html["노드 기반 라이선스를 관리하는 방법에 대해 자세히 알아보세요."^].
 
 
 
@@ -31,7 +31,7 @@ link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-manage-node-l
 노드 기반 라이선스는 NetApp에서 구매할 수 있습니다. 단일 노드 시스템 또는 HA 쌍에 대해 구매할 수 있는 라이선스 수는 무제한입니다.
 
 
-NOTE: NetApp BYOL 라이선스 구매, 연장 및 갱신을 제한하고 있습니다. 자세한 내용은 다음을 참조하세요.  https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/whats-new.html#restricted-availability-of-byol-licensing-for-cloud-volumes-ontap["Cloud Volumes ONTAPP 에 대한 BYOL 라이선싱의 제한된 가용성"^] .
+NOTE: NetApp은 BYOL 라이선스의 구매, 연장 및 갱신을 제한합니다. 자세한 내용은 https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/whats-new.html#restricted-availability-of-byol-licensing-for-cloud-volumes-ontap["Cloud Volumes ONTAPP 에 대한 BYOL 라이선싱의 제한된 가용성"^]을 참조하십시오.
 
 노드 기반 라이선스는 단일 노드 또는 HA 쌍에 최대 368TiB의 용량을 제공합니다. Cloud Volumes ONTAP BYOL 시스템에 368TiB 이상의 용량을 할당하기 위해 여러 라이선스를 구매했을 수 있습니다. 예를 들어, Cloud Volumes ONTAP 에 최대 736TiB의 용량을 할당하기 위해 두 개의 라이선스를 구매할 수 있습니다. 또는 최대 1.4PiB의 용량을 확보하기 위해 네 개의 라이선스를 구매할 수도 있습니다.
 
@@ -44,7 +44,7 @@ NOTE: NetApp BYOL 라이선스 구매, 연장 및 갱신을 제한하고 있습�
 
 노드 기반 BYOL 시스템을 만들면 콘솔에서 라이선스의 일련 번호와 NetApp 지원 사이트 계정을 입력하라는 메시지가 표시됩니다.  콘솔은 계정을 사용하여 NetApp 에서 라이선스 파일을 다운로드하고 이를 Cloud Volumes ONTAP 시스템에 설치합니다.
 
-https://docs.netapp.com/us-en/bluexp-setup-admin/task-adding-nss-accounts.html["콘솔에 NetApp 지원 사이트 계정을 추가하는 방법을 알아보세요."^] .
+https://docs.netapp.com/us-en/console-setup-admin/task-adding-nss-accounts.html["콘솔에 NetApp 지원 사이트 계정을 추가하는 방법을 알아보세요."^].
 
 콘솔이 보안 인터넷 연결을 통해 라이센스 파일에 액세스할 수 없는 경우 다음을 수행할 수 있습니다.link:task-manage-node-licenses.html["직접 파일을 얻은 다음 콘솔에 수동으로 파일을 업로드합니다."] .
 

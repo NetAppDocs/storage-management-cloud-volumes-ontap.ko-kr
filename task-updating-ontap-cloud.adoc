@@ -375,7 +375,7 @@ Cloud Volumes ONTAP 더 이상 c4, m4, r4 EC2 인스턴스 유형을 지원하�
 
 c4, m4 및 r4 EC2 인스턴스 유형은 c5, m5 및 r5 EC2 인스턴스 유형보다 노드당 더 많은 디스크를 허용합니다.  실행 중인 c4, m4 또는 r4 EC2 인스턴스의 노드당 디스크 수가 c5, m5 및 r5 인스턴스의 노드당 최대 디스크 허용량보다 낮은 경우 EC2 인스턴스 유형을 c5, m5 또는 r5로 변경할 수 있습니다.
 
-link:https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-limits-aws.html#disk-and-tiering-limits-by-ec2-instance["EC2 인스턴스별 디스크 및 계층화 제한 확인"^] link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-change-ec2-instance.html["Cloud Volumes ONTAP 의 EC2 인스턴스 유형 변경"^]
+link:https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-limits-aws.html#disk-and-tiering-limits-by-ec2-instance["EC2 인스턴스별 디스크 및 계층화 제한 확인"^] link:https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-change-ec2-instance.html["Cloud Volumes ONTAP 의 EC2 인스턴스 유형 변경"^]
 
 인스턴스 유형을 변경할 수 없는 경우 다음 단계를 따르세요.<<향상된 네트워킹 활성화>> .
 
@@ -618,6 +618,6 @@ _maxDownloadSessions_의 값은 1이거나 1보다 큰 정수일 수 있습니�
 
 32는 예시 값입니다. 사용해야 하는 값은 NAT 구성과 동시에 가질 수 있는 세션 수에 따라 달라집니다.
 
-https://docs.netapp.com/us-en/bluexp-automation/cm/api_ref_resources.html#occmconfig["/occm/config API 호출에 대해 자세히 알아보세요"^] .
+https://docs.netapp.com/us-en/console-automation/cm/api_ref_resources.html#occmconfig["/occm/config API 호출에 대해 자세히 알아보세요"^].
 
 endif::gcp[]

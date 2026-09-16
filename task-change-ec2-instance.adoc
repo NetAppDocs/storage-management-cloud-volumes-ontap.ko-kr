@@ -36,7 +36,7 @@ TIP: NetApp Console 인수를 시작하고 반환을 기다리는 방식으로 �
 
 
 .참조
-AWS에서 지원하는 인스턴스 유형 목록은 link:reference-configs-aws.html#supported-ec2-compute["지원되는 EC2 인스턴스"]을 참조하세요.
+AWS에서 지원하는 인스턴스 유형 목록은 link:reference-configs-aws.html#supported-storage["지원되는 EC2 인스턴스"]을 참조하세요.
 
 c4, m4 또는 r4 인스턴스에서 인스턴스 유형을 변경할 수 없는 경우 KB 문서를 참조하세요.link:https://kb.netapp.com/Cloud/Cloud_Volumes_ONTAP/Converting_an_AWS_Xen_CVO_instance_to_Nitro_(KVM)["AWS Xen CVO 인스턴스를 Nitro(KVM)로 변환"^] .
 

@@ -9,7 +9,7 @@
 
 이제 Azure에서 Premium SSD v2 관리형 디스크의 성능을 IOPS 및 처리량 매개변수를 수정하여 향상시킬 수 있습니다.  이 기능을 사용하면 워크로드 요구 사항에 따라 시스템의 스토리지 성능을 최적화할 수 있습니다.
 
-https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-manage-perf-params-azure.html["Azure Cloud Volumes ONTAP 에서 Premium SSD v2 디스크 성능을 관리하세요."^].
+https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-manage-perf-params-azure.html["Azure Cloud Volumes ONTAP 에서 Premium SSD v2 디스크 성능을 관리하세요."^].
 
 
 

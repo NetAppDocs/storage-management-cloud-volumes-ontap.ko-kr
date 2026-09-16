@@ -371,4 +371,4 @@ Cloud Volumes ONTAP HA 구성을 위한 미리 정의된 내부 보안 그룹에
 [[rules-for-the-console-agent]]
 == 콘솔 에이전트에 대한 규칙
 
-https://docs.netapp.com/us-en/bluexp-setup-admin/reference-ports-aws.html["콘솔 에이전트에 대한 보안 그룹 규칙 보기"^]
+https://docs.netapp.com/us-en/console-setup-admin/reference-ports-aws.html["콘솔 에이전트에 대한 보안 그룹 규칙 보기"^]

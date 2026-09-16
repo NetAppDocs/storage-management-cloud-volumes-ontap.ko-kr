@@ -11,9 +11,9 @@ BlueXP 이제 기존의 명시적 프록시 연결 외에도 투명 프록시 �
 
 Cloud Volumes ONTAP 에서 프록시 서버를 사용하는 방법에 대한 자세한 내용은 다음을 참조하세요.
 
-* https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/reference-networking-aws.html#network-configurations-to-support-connector-proxy-servers["AWS에서 커넥터 프록시를 지원하는 네트워크 구성"^]
-* https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/azure/reference-networking-azure.html#network-configurations-to-support-connector["Azure에서 커넥터 프록시를 지원하는 네트워크 구성"^]
-* https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/reference-networking-gcp.html#network-configurations-to-support-connector-proxy["Google Cloud에서 커넥터 프록시를 지원하는 네트워크 구성"^]
+* https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/reference-networking-aws.html#network-configurations-to-support-connector-proxy-servers["AWS에서 커넥터 프록시를 지원하는 네트워크 구성"^]
+* https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/azure/reference-networking-azure.html#network-configurations-to-support-connector["Azure에서 커넥터 프록시를 지원하는 네트워크 구성"^]
+* https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/reference-networking-gcp.html#network-configurations-to-support-connector-proxy["Google Cloud에서 커넥터 프록시를 지원하는 네트워크 구성"^]
 
 
 

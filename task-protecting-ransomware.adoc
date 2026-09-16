@@ -63,7 +63,7 @@ image:screenshot_ransomware_protection.gif["시스템 내에서 사용할 수 �
 
 Cloud Volumes ONTAP 랜섬웨어 공격을 나타낼 수 있는 비정상적인 활동을 사전에 감지하고 경고하기 위해 워크로드에 대한 분석을 수행하는 ARP(Autonomous Ransomware Protection) 기능을 지원합니다.
 
-다음을 통해 제공되는 파일 확장자 보호와 별도로 https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-protecting-ransomware.html#protection-from-common-ransomware-file-extensions["랜섬웨어 보호 설정"] ARP 기능은 작업 부하 분석을 사용하여 감지된 "비정상적인 활동"을 기반으로 잠재적인 공격에 대해 사용자에게 경고합니다.  랜섬웨어 보호 설정과 ARP 기능은 모두 종합적인 랜섬웨어 보호를 위해 함께 사용할 수 있습니다.
+파일 확장자 보호 기능과는 별개로, https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-protecting-ransomware.html#protection-from-common-ransomware-file-extensions["랜섬웨어 보호 설정"] ARP 기능은 워크로드 분석을 통해 감지된 "비정상 활동"을 기반으로 잠재적인 공격에 대해 사용자에게 경고합니다. 랜섬웨어 보호 설정과 ARP 기능은 함께 사용하여 포괄적인 랜섬웨어 보호 기능을 구현할 수 있습니다.
 
 ARP 기능은 추가 비용 없이 BYOL(Bring Your Own License) 및 마켓플레이스 구독을 통해 라이선스를 사용할 수 있습니다.
 
