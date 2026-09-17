@@ -38,7 +38,7 @@ AWS 계정과 연결된 NIS 구독을 보유하고 있는 기존 고객이라면
 . AWS 탭에서 독립형 구독을 선택하고 옵션 아이콘 image:screenshot_gallery_options.gif["카밥 아이콘"]을 클릭합니다.
 . 구성 편집 창에서 *AWS 계정 자격 증명* 필드에 독립 실행형 목록의 구독 번호를 선택합니다.
 . *Configure*를 클릭합니다. AWS에서 Cloud Volumes ONTAP 청구를 위한 기본 옵션으로 구독이 표시됩니다.
-. 새로운 Cloud Volumes ONTAP 시스템을 배포할 때는 독립형 구독을 통해 요금을 청구하려면 Essentials 패키지를 선택하십시오. 자세한 내용은 https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-quick-deploy-aws.html["빠른 생성 기능을 사용하여 Cloud Volumes ONTAP 배포"^]를 참조하십시오.
+. 새로운 Cloud Volumes ONTAP 시스템을 배포할 때는 독립형 구독을 통해 요금을 청구하려면 Essentials 패키지를 선택하십시오. 자세한 내용은 https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-quick-deploy-aws.html["AWS에서 빠른 생성 기능을 사용하여 Cloud Volumes ONTAP 배포"^]을 참조하십시오.
 
 
 데이터 서비스에 NIS 구독을 사용하려면 *데이터 서비스* 탭에서 NIS 구독에 대해 동일한 단계를 반복하십시오. 새 Cloud Volumes ONTAP 시스템을 배포할 때는 NIS 구독을 통해 요금을 청구하도록 Professional 패키지를 선택하십시오.

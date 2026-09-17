@@ -1478,7 +1478,6 @@
   <block id="80292c326dbd4c631ce6da31d922620c" category="paragraph">Azure에 배포하는 각 Cloud Volumes ONTAP HA 쌍에 대해 전용 리소스 그룹을 사용해야 합니다.  리소스 그룹에서는 HA 쌍을 하나만 지원합니다.</block>
   <block id="2d7b1fe0a5512f641a66eaf3dabde3d2" category="paragraph">Azure 리소스 그룹에 두 번째 Cloud Volumes ONTAP HA 쌍을 배포하려고 하면 콘솔에서 연결 문제가 발생합니다.</block>
   <block id="72cb359256f1b923869ffe5643075163" category="paragraph">Cloud Volumes ONTAP 용 Azure 보안 그룹에는 노드 간 내부 통신을 위해 적절한 포트가 열려 있어야 합니다.<block ref="9235b6a724dccf5c41be51f4736123ae" category="inline-link-rx"></block> .</block>
-  <block id="e3f7f3a3bb47d39a7fd58de8d5070b2b" category="paragraph">미리 정의된 보안 그룹을 수정하거나 사용자 지정 보안 그룹을 사용하는 것은 권장하지 않습니다.  하지만 반드시 그렇게 해야 하는 경우 배포 프로세스에서 Cloud Volumes ONTAP 시스템이 자체 서브넷 내에서 전체 액세스 권한을 가져야 한다는 점에 유의하세요.  배포가 완료된 후 네트워크 보안 그룹을 수정하기로 결정한 경우 클러스터 포트와 HA 네트워크 포트를 열어 두세요.  이를 통해 Cloud Volumes ONTAP 클러스터 내에서 원활한 통신(노드 간 모든 통신)이 보장됩니다.</block>
   <block id="302d2301b273d2d6c222fdca1f337988" category="paragraph">Cloud Volumes ONTAP 시스템을 추가하고 미리 정의된 보안 그룹을 선택하면 다음 중 하나 내에서 트래픽을 허용하도록 선택할 수 있습니다.</block>
   <block id="3ed4080616d1d3c88deef90096108130" category="list-text">*선택된 VNet만 해당*: 인바운드 트래픽의 소스는 Cloud Volumes ONTAP 시스템의 VNet 서브넷 범위와 콘솔 에이전트가 있는 VNet의 서브넷 범위입니다.  이것은 권장되는 옵션입니다.</block>
   <block id="cd8b82367babbe39683e8fb9f0c22ed5" category="list-text">*모든 VNet*: 인바운드 트래픽의 소스는 0.0.0.0/0 IP 범위입니다.</block>
@@ -5771,8 +5770,6 @@
   <block id="055fe1da24359dd71a9c8b67896496aa" category="list-text">AWS 탭에서 독립형 구독을 선택하고 옵션 아이콘 <block ref="ac91b27a7720c4844510cacb9be7afe5" category="inline-image-macro-rx" type="image"></block>을 클릭합니다.</block>
   <block id="ca114d54630fd2217b0a7f7b707b2524" category="list-text">구성 편집 창에서 *AWS 계정 자격 증명* 필드에 독립 실행형 목록의 구독 번호를 선택합니다.</block>
   <block id="1a8a4084eaf9e7b7e14963049e616310" category="list-text">*Configure*를 클릭합니다. AWS에서 Cloud Volumes ONTAP 청구를 위한 기본 옵션으로 구독이 표시됩니다.</block>
-  <block id="5308f0957f4f665b7b8a7a70e7f26dbb" category="inline-link">빠른 생성 기능을 사용하여 Cloud Volumes ONTAP 배포</block>
-  <block id="69bad18c1431b72e27676656dcb02294" category="list-text">새로운 Cloud Volumes ONTAP 시스템을 배포할 때는 독립형 구독을 통해 요금을 청구하려면 Essentials 패키지를 선택하십시오. 자세한 내용은<block ref="3bd26a21bb4b5b57e3e4e28150d4f309" category="inline-link-rx"></block>를 참조하십시오.</block>
   <block id="a731966b7a272e5b052ef9a7b9ea958e" category="paragraph">데이터 서비스에 NIS 구독을 사용하려면 *데이터 서비스* 탭에서 NIS 구독에 대해 동일한 단계를 반복하십시오. 새 Cloud Volumes ONTAP 시스템을 배포할 때는 NIS 구독을 통해 요금을 청구하도록 Professional 패키지를 선택하십시오.</block>
   <block id="55a36fface9a3342eae20532f4dd2f82" category="section-title">2026년 5월 12일</block>
   <block id="fe315d7471968d18b362c1b1144a20b0" category="paragraph">시작하기 전에 다음 사항을 확인하십시오.</block>
@@ -5826,8 +5823,6 @@
   <block id="edbf603043ea71af5a3f46821ad9d4a3" category="admonition">배포 프로세스가 완료된 후에는 AWS 또는 Azure 클라우드 포털에서 시스템에서 생성된 Cloud Volumes ONTAP 구성, 특히 시스템 태그를 수정하지 마십시오. 이러한 구성을 변경하면 예기치 않은 동작이나 데이터 손실이 발생할 수 있습니다.</block>
   <block id="a4ad56ab8baa8582d6dba6091a9bd877" category="doc">Azure에서 간소화된 Cloud Volumes ONTAP 배포</block>
   <block id="8bfd035a33aa401829a9de89b5e0c246" category="paragraph">이제 빠른 생성 기능을 사용하여 단일 노드 및 고가용성(HA) 구성 모두에 대해 Azure에 Cloud Volumes ONTAP을 배포할 수 있습니다. 이 간소화된 프로세스는 고급 방법에 비해 단계 수를 줄이고, 단일 페이지에서 기본값을 자동으로 설정하며, 탐색 과정을 최소화하여 배포를 더 빠르고 쉽게 만들어 줍니다.</block>
-  <block id="da7aee176a6e0989fc4edf2b02e0af34" category="inline-link">빠른 생성 기능을 사용하여 Azure에 Cloud Volumes ONTAP 배포</block>
-  <block id="8928e512cc17b6dd2c97fcb7dff5a06a" category="list-text"><block ref="8928e512cc17b6dd2c97fcb7dff5a06a" category="inline-link-rx"></block></block>
   <block id="6d1c2cdb212ea73452146a3edb82fe12" category="inline-link">Azure의 고급 옵션을 사용하여 Cloud Volumes ONTAP 배포</block>
   <block id="3cf666a1e5ff2ecf85c4a0bcf868d65f" category="list-text"><block ref="3cf666a1e5ff2ecf85c4a0bcf868d65f" category="inline-link-rx"></block></block>
   <block id="94b7b54556632ab5a087eae13f0e0af9" category="doc">AWS의 고급 옵션을 사용하여 Cloud Volumes ONTAP 배포</block>
@@ -5910,8 +5905,6 @@
   <block id="7f779554154f7bbce7ebe34e61b8a90f" category="list-text">NetApp Console 또는 <block ref="566e7ce0d4fe7a4872db87a6368a9417" prefix=" " category="inline-code"></block> API를 사용하여 애그리게이트를 추가할 때 IOPS 및 처리량 설정을 변경할 수 있습니다.</block>
   <block id="2d6c818daeac263c2afd4036d7f74e1e" category="section-title">Google Cloud에서 Cloud Volumes ONTAP 배포 간소화</block>
   <block id="cb811eee80c50a73b0cadcc740ccb6e0" category="paragraph">이제 *빠른 생성* 마법사를 사용하여 단일 노드 및 고가용성(HA) 구성 모두에 대해 Google Cloud에 Cloud Volumes ONTAP을 배포할 수 있습니다. 이 간소화된 프로세스는 단계를 줄이고, 단일 페이지에서 기본값을 자동으로 설정하며, 탐색을 최소화하여 더 빠르고 쉽게 배포할 수 있도록 합니다.</block>
-  <block id="66ac7407a9c84ca6778fae23ed993062" category="inline-link">빠른 생성을 사용하여 Google Cloud에 Cloud Volumes ONTAP 배포</block>
-  <block id="0dfb1e2c47e659e01c54c2e333c51aab" category="list-text"><block ref="0dfb1e2c47e659e01c54c2e333c51aab" category="inline-link-rx"></block></block>
   <block id="2ac8bb0efb00600c2a41354a94948174" category="inline-link">Google Cloud의 고급 옵션을 사용하여 Cloud Volumes ONTAP 배포</block>
   <block id="6c9068df44f8a14533034d80a58ea324" category="list-text"><block ref="6c9068df44f8a14533034d80a58ea324" category="inline-link-rx"></block></block>
   <block id="12d92330947695a8724da477e7db5baa" category="section-title">Cloud Volumes ONTAP의 액세스 역할 소개</block>
@@ -5965,7 +5958,6 @@
   <block id="3545b8b6c97019ee16382e1e9f1566d6" category="list-text">구독 연동: 구독을 콘솔에 자동으로 연동하여 수동으로 연결하는 번거로움을 줄일 수 있습니다.</block>
   <block id="7fe500a5c571cd7ec037fadddeb65e6d" category="list-text">AWS 자격 증명 구성을 사용한 Console 에이전트 배포: 필요한 AWS 역할을 자동으로 생성할 수 있습니다. 이 프로세스는 필요한 역할과 정책이 포함된 AWS CloudFormation 스택을 AWS 계정에 배포하여 검토할 수 있도록 한 다음, NetApp Console과 연결하여 수동 IAM 설정을 제거합니다. 그런 다음 에이전트 구성, 네트워킹 및 보안 그룹 설정을 진행하여 에이전트 배포를 시작할 수 있습니다.</block>
   <block id="1dc23a84b7e2b375289ce6857c758408" category="list-text">AWS에 새로운 Cloud Volumes ONTAP 시스템 배포: <block ref="956eaa6186169471a13345860cad0757" prefix=" " category="inline-code"></block> 마법사로 바로 이동하여 더욱 빠르고 간편하게 Cloud Volumes ONTAP를 배포할 수 있습니다.</block>
-  <block id="92818173e0caa5fc0e16c368b850e85b" category="list-text"><block ref="92818173e0caa5fc0e16c368b850e85b" category="inline-link-rx"></block></block>
   <block id="45155a6d96a264e24647f30ebb774e4f" category="list-text"><block ref="45155a6d96a264e24647f30ebb774e4f" category="inline-link-rx"></block></block>
   <block id="e8f7f517a7c22ec0466a4d916c974b67" category="section-title">Azure의 Cloud Volumes ONTAP에 대한 잘 설계된 구성 분석</block>
   <block id="8579a865aaeb9e025994731e2e5b4b7b" category="paragraph">NetApp Console에서 이제 Microsoft Azure에서 실행되는 Cloud Volumes ONTAP 시스템에 대한 잘 설계된 구성 분석 기능을 지원합니다. Console은 배포 환경을 매일 분석하여 잘 설계된 상태, 인사이트 및 권장 사항을 제공함으로써 NetApp 모범 사례 및 잘 설계된 프레임워크에 부합하는 시스템을 유지 관리할 수 있도록 지원합니다.</block>
@@ -6905,7 +6897,6 @@
   <block id="2890ecdc70e02afe7e3a31c92bf55434" category="paragraph">프라이빗 환경 모드 배포에도 유사한 절차가 적용됩니다.</block>
   <block id="ce7ffa9f1434857273b5b40df89fe170" category="paragraph">콘솔에서 Cloud Volumes ONTAP 배포</block>
   <block id="9afbf91fc5dacff8aee5144e68e0c23c" category="paragraph">사전 준비 작업을 모두 완료했으면 마법사의 단계를 따라 AWS에 Cloud Volumes ONTAP을 배포할 수 있습니다.</block>
-  <block id="7988489db427729a73853b519bbd74e5" category="list-text"><block ref="7988489db427729a73853b519bbd74e5" category="inline-link-macro-rx"></block></block>
   <block id="dd80703f7d89793c8c6bcd9eb27c0ffa" category="inline-link-macro">고급 옵션을 사용하여 Cloud Volumes ONTAP 배포</block>
   <block id="63e3b7b0b8eabb63c1a575019f00025a" category="list-text"><block ref="63e3b7b0b8eabb63c1a575019f00025a" category="inline-link-macro-rx"></block></block>
   <block id="13a8f9ff894e3f4bcda70be513c557c4" category="paragraph">배포를 시작하기 전에 NetApp에서 Cloud Volumes ONTAP 라이선스를 구매했는지 확인하십시오. 프라이빗 모드 배포에는 노드 기반 BYOL 라이선스가 필요합니다. 마켓플레이스 구독을 통한 Cloud Volumes ONTAP 사용량 청구는 지원되지 않습니다. NetApp에서 라이선스 파일을 받아 배포 중에 업로드하십시오. 자세한 내용은 다음을 참조하십시오.</block>
@@ -6923,7 +6914,6 @@
   <block id="8067dceda8c922cafa53a5f6a696c873" category="paragraph"><block ref="8067dceda8c922cafa53a5f6a696c873" category="inline-link-macro-rx"></block></block>
   <block id="34f79dfeddc8c0c0cf29bb075dba1e0a" category="paragraph">모든 사전 요구 사항을 충족했으면 마법사의 단계를 완료하여 Azure에 Cloud Volumes ONTAP을 배포할 수 있습니다.</block>
   <block id="6563093287f74a616e9d7ac49b4d6a44" category="paragraph">다음을 참조하십시오.</block>
-  <block id="a0e1f80d9ffd45a9a79c524fcf4e035b" category="list-text"><block ref="a0e1f80d9ffd45a9a79c524fcf4e035b" category="inline-link-macro-rx"></block></block>
   <block id="e67c04a7ad4eeda74ceb878c0553eff4" category="list-text"><block ref="e67c04a7ad4eeda74ceb878c0553eff4" category="inline-link-macro-rx"></block></block>
   <block id="755ff4f3bf37dc77238bd9ce18d2513f" category="doc">Google Cloud에서 Cloud Volumes ONTAP 배포 개요</block>
   <block id="3c0c2050848fa2bd86d68cd9d6bc0637" category="paragraph">Cloud Volumes ONTAP를 배포하려면 먼저 Google Cloud 구독 및 Cloud Volumes ONTAP 라이선스에 대한 정보를 알아야 합니다. 또한 Google Cloud 프로젝트 및 조직에 대해 NetApp Console 에이전트가 생성되었는지 확인해야 합니다. 이 항목의 대부분 내용은 Cloud Volumes ONTAP를 배포하기 전에 Console 설정의 일부로 수행해야 합니다.</block>
@@ -6946,7 +6936,6 @@
   <block id="3aa88e14f76a8581416d0bc54d696335" category="paragraph">Google Cloud 문서를 참조하세요: <block ref="0d7e4a8564255c1fc289d23249d3b568" category="inline-link-rx"></block></block>
   <block id="17e44be1a44fd14dacaae11875ff356b" category="paragraph">API를 활성화해야 합니다. 클라우드 관리자와 협력하여 프라이빗 환경에서 필요한 API를 활성화하십시오.</block>
   <block id="19d8bd352f2c40ce75403d13170b311b" category="paragraph">사전 준비 작업을 모두 완료했으면 마법사의 단계를 따라 Google Cloud에 Cloud Volumes ONTAP을 배포할 수 있습니다.</block>
-  <block id="8db3889b9094da1779e8e10e063742d5" category="list-text"><block ref="8db3889b9094da1779e8e10e063742d5" category="inline-link-macro-rx"></block></block>
   <block id="7c9fa6cfa8bf4914f6804681fe5a5c2d" category="list-text"><block ref="7c9fa6cfa8bf4914f6804681fe5a5c2d" category="inline-link-macro-rx"></block></block>
   <block id="0375af31d39c4bfde1c980cd053ab2b9" category="doc">Cloud Volumes ONTAP 스토리지 VM</block>
   <block id="54448f9a8312c7b08e3e97308160554c" category="paragraph">스토리지 VM(SVM)은 클라이언트에게 스토리지 및 데이터 서비스를 제공하는 ONTAP 내에서 실행되는 가상 머신입니다. 이를 _SVM_ 또는 _vserver_라고도 합니다. Cloud Volumes ONTAP는 기본적으로 하나의 스토리지 VM으로 구성되지만, 일부 구성에서는 추가 스토리지 VM을 지원합니다.</block>
@@ -7527,7 +7516,6 @@
   <block id="b0845b98104086e018330dff1f994b3a" category="list-text">배포 후 나타나는 메시지에서 *시스템 추가*를 선택하십시오.</block>
   <block id="beec7c8b8f52f7e44dec39ce075d3abb" category="list-text">Cloud Volumes ONTAP 시스템 생성 워크플로를 시작합니다.</block>
   <block id="e4998cdb09fc1ae76d7c7b0f97a04fd9" category="list-text">시스템 구성을 완료합니다.</block>
-  <block id="8dbb4c9a73791ff9189a74648db065ad" category="paragraph">자세한 시스템 배포 지침은 <block ref="3bd26a21bb4b5b57e3e4e28150d4f309" category="inline-link-rx"></block>을 참조하십시오.</block>
   <block id="72d7b93cee23363a2907b2be8b237290" category="section-title">문제 해결 및 복구</block>
   <block id="cb1bc5edf506394ee9927cb447901c17" category="paragraph">온보딩 프로세스를 완료하기 전에 중단했거나 에이전트 배포에 실패한 경우 이 섹션을 사용하십시오. 이 단계를 통해 중단된 부분부터 다시 시작하거나 배포를 복구하고 재시도할 수 있습니다.</block>
   <block id="90a521d73cad15b4a353df47ccdc06d8" category="section-title">설정 재개</block>
@@ -7849,4 +7837,16 @@
   <block id="7df6c0dd0528ad9774b45898063090a4" category="paragraph"><block ref="dc9f69e3a8e3128c351ac73e19819cc9" category="inline-link-rx"></block>.</block>
   <block id="01988715156f44a53eb56faf9b69550d" category="paragraph"><block ref="fdf6f50138bbdc950c2bd1272476f30e" category="inline-link-rx"></block>.</block>
   <block id="8798ec6bebe0dbdc8a5621562ddc3007" category="list-text"><block ref="8798ec6bebe0dbdc8a5621562ddc3007" category="inline-link-rx"></block></block>
+  <block id="1b74bdaaeb695f9d39e8913cd8508559" category="inline-link">Azure에서 빠른 생성을 사용하여 Cloud Volumes ONTAP 배포</block>
+  <block id="0796c5be1b7e3f0ba6006690f24de331" category="list-text"><block ref="0796c5be1b7e3f0ba6006690f24de331" category="inline-link-rx"></block></block>
+  <block id="fa64a8ba43091dc1f18b40ede22ba208" category="inline-link">Google Cloud에서 빠른 생성을 사용하여 Cloud Volumes ONTAP 배포</block>
+  <block id="c334239a4338073665306baf11363bc2" category="list-text"><block ref="c334239a4338073665306baf11363bc2" category="inline-link-rx"></block></block>
+  <block id="d9862ed1f24a79da571ce975d43849ac" category="inline-link">AWS에서 빠른 생성 기능을 사용하여 Cloud Volumes ONTAP 배포</block>
+  <block id="a8756e706557440388ef829ae5f6fe1f" category="list-text"><block ref="a8756e706557440388ef829ae5f6fe1f" category="inline-link-rx"></block></block>
+  <block id="fd857327903d761ee1b293fadbb70f89" category="paragraph">사전 정의된 보안 그룹을 수정하거나 사용자 지정 보안 그룹을 사용하는 것은 권장하지 않습니다. 하지만 꼭 필요한 경우, 배포 프로세스를 위해서는 Cloud Volumes ONTAP 시스템이 자체 서브넷 내에서 완전한 액세스 권한을 가져야 한다는 점에 유의하십시오. 배포가 완료된 후 네트워크 보안 그룹을 수정하기로 결정했다면, HA 네트워킹은 두 노드 간의 자유로운 통신에 의존하므로 클러스터 포트와 HA 네트워크 포트를 열어 두어야 합니다. 또한 노드의 IP 주소는 배포 중에 자동으로 정의됩니다. 이를 통해 Cloud Volumes ONTAP 클러스터 내에서 원활한 통신(노드 간 모든 노드에 대한 통신)이 보장됩니다.</block>
+  <block id="0f37e7019150020ad56dacb33e050ce0" category="list-text"><block ref="0f37e7019150020ad56dacb33e050ce0" category="inline-link-macro-rx"></block></block>
+  <block id="c5ff6e289ca10cde1a5f81d196d305dc" category="list-text"><block ref="c5ff6e289ca10cde1a5f81d196d305dc" category="inline-link-macro-rx"></block></block>
+  <block id="0a96b1cb21a865ff7a38d495809cc48e" category="list-text"><block ref="0a96b1cb21a865ff7a38d495809cc48e" category="inline-link-macro-rx"></block></block>
+  <block id="75b888c439b50482e442b156f85f8b7b" category="paragraph">자세한 시스템 배포 지침은 <block ref="51799ed8a3c9382ecde3d4e502dc227c" category="inline-link-rx"></block>을 참조하십시오.</block>
+  <block id="60bc46bac54334a76b532d0019347623" category="list-text">새로운 Cloud Volumes ONTAP 시스템을 배포할 때는 독립형 구독을 통해 요금을 청구하려면 Essentials 패키지를 선택하십시오. 자세한 내용은<block ref="51799ed8a3c9382ecde3d4e502dc227c" category="inline-link-rx"></block>을 참조하십시오.</block>
 </blocks>

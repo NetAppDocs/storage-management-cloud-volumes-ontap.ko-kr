@@ -63,7 +63,7 @@ AutoSupport에 대한 아웃바운드 인터넷 액세스는 필요하지 않습
  a| 
 다음을 참조하십시오.
 
-* link:task-quick-deploy-azure.html["빠른 생성 기능을 사용하여 Cloud Volumes ONTAP 배포"]
+* link:task-quick-deploy-azure.html["Azure에서 빠른 생성을 사용하여 Cloud Volumes ONTAP 배포"]
 * link:task-deploying-otc-azure.html["고급 옵션을 사용하여 Cloud Volumes ONTAP 배포"]
 
  a| 
@@ -71,7 +71,6 @@ AutoSupport에 대한 아웃바운드 인터넷 액세스는 필요하지 않습
 
 * link:concept-license-management.html["노드 기반 BYOL에 대한 라이선스 관리"]
 * link:task-manage-node-licenses.html["노드 기반 BYOL 라이선스 관리"]
-* link:task-quick-deploy-azure.html["빠른 생성 기능을 사용하여 Cloud Volumes ONTAP 배포"]
 * link:task-deploying-otc-azure.html["고급 옵션을 사용하여 Cloud Volumes ONTAP 배포"]
 
 

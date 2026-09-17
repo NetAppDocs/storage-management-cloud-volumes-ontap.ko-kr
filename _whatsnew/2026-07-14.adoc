@@ -55,7 +55,7 @@ https://docs.cloud.google.com/compute/docs/general-purpose-machines#c3_series["G
 이제 *빠른 생성* 마법사를 사용하여 단일 노드 및 고가용성(HA) 구성 모두에 대해 Google Cloud에 Cloud Volumes ONTAP을 배포할 수 있습니다. 이 간소화된 프로세스는 단계를 줄이고, 단일 페이지에서 기본값을 자동으로 설정하며, 탐색을 최소화하여 더 빠르고 쉽게 배포할 수 있도록 합니다.
 
 .관련 링크
-* https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-quick-deploy-gcp.html["빠른 생성을 사용하여 Google Cloud에 Cloud Volumes ONTAP 배포"^]
+* https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-quick-deploy-gcp.html["Google Cloud에서 빠른 생성을 사용하여 Cloud Volumes ONTAP 배포"^]
 * https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-deploying-gcp.html["Google Cloud의 고급 옵션을 사용하여 Cloud Volumes ONTAP 배포"^]
 
 

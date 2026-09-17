@@ -75,7 +75,7 @@ link:task-setting-up-kms.html["AWS KMS 설정"]
  a| 
 사전 준비 작업을 모두 완료했으면 마법사의 단계를 따라 AWS에 Cloud Volumes ONTAP을 배포할 수 있습니다.
  a| 
-* link:task-quick-deploy-aws.html["빠른 생성 기능을 사용하여 Cloud Volumes ONTAP 배포"]
+* link:task-quick-deploy-aws.html["AWS에서 빠른 생성 기능을 사용하여 Cloud Volumes ONTAP 배포"]
 * link:task-deploying-otc-aws.html["고급 옵션을 사용하여 Cloud Volumes ONTAP 배포"]
 
  a| 
@@ -83,7 +83,6 @@ link:task-setting-up-kms.html["AWS KMS 설정"]
 
 * link:concept-license-management.html["노드 기반 BYOL에 대한 라이선스 관리"]
 * link:task-manage-node-licenses.html["노드 기반 BYOL 라이선스 관리"]
-* link:task-quick-deploy-aws.html["빠른 생성 기능을 사용하여 Cloud Volumes ONTAP 배포"]
 * link:task-deploying-otc-aws.html["고급 옵션을 사용하여 Cloud Volumes ONTAP 배포"]
 
 

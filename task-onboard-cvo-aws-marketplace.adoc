@@ -222,7 +222,7 @@ image:screenshot-stack-creation.png["width=50% AWS 계정 ID와 선택적으로 
 . 시스템 구성을 완료합니다.
 
 
-자세한 시스템 배포 지침은  https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-quick-deploy-aws.html["빠른 생성 기능을 사용하여 Cloud Volumes ONTAP 배포"^]을 참조하십시오.
+자세한 시스템 배포 지침은  https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-quick-deploy-aws.html["AWS에서 빠른 생성 기능을 사용하여 Cloud Volumes ONTAP 배포"^]을 참조하십시오.
 
 
 
