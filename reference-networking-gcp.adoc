@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: reference-networking-gcp.html 
-keywords: networking, network, requirements, connection, connections, subnet, vpn, internet, proxy, HTTP, private, proxy server, routing, firewall, autosupport, connection, jump host, outbound, ports, bucket, private google access, set up data requirement, gcp networking, google networking, shared vpc, host project, service project 
-summary: Cloud Volumes ONTAP 시스템이 제대로 작동할 수 있도록 Google Cloud 네트워킹을 설정하세요. 
+keywords: networking, network, requirements, connection, connections, subnet, vpn, internet, proxy, HTTP, private, proxy server, routing, firewall, autosupport, connection, jump host, outbound, ports, bucket, private google access, set up data requirement, gcp networking, google networking, shared vpc, host project, service project; private mode or in a project protected by VPC Service Controls 
+summary: Cloud Volumes ONTAP 시스템이 제대로 작동하도록 Google Cloud 네트워킹을 설정합니다. 이 문서에서는 네트워킹 요구 사항, 프라이빗 IP 주소, VPC, 서브넷, 패킷 미러링, 방화벽 규칙, CVO에 대한 HA 구성 및 콘솔 에이전트 요구 사항을 다룹니다. 
 ---
 = Cloud Volumes ONTAP 에 대한 Google Cloud 네트워킹 설정
 :hardbreaks:
@@ -512,10 +512,10 @@ NOTE: 새로운 Google Cloud HA 쌍 배포에 대해 높은 쓰기 속도를 구
 
 
 
-[[infrastructure-manager-configuration-for-private-mode-deployments]]
-=== 프라이빗 모드 배포를 위한 Infrastructure Manager 구성
+[[infrastructure-manager-configuration-in-private-mode-or-protected-environments]]
+=== 프라이빗 모드 또는 보호 환경에서의 Infrastructure Manager 구성
 
-Cloud Volumes ONTAP 9.16.1 이상 버전을 프라이빗 모드로 배포하려면 Google에서 향후 지원을 중단할 예정인 Deployment Manager 대신 Cloud Volumes ONTAP가 Google Cloud Infrastructure Manager를 배포 서비스로 사용하도록 몇 가지 구성을 변경해야 합니다.
+비공개 모드 또는 VPC 서비스 제어로 보호되는 프로젝트에 Cloud Volumes ONTAP 9.16.1 이상을 배포하려면 Cloud Volumes ONTAP이 Google에서 향후 지원을 중단할 예정인 Deployment Manager 대신 Google Cloud Infrastructure Manager를 배포 서비스로 사용할 수 있도록 몇 가지 구성을 변경해야 합니다.
 
 .시작하기 전에
 * Cloud Volumes ONTAP 시스템이 9.16.1 이상인지 확인하십시오. 그렇지 않은 경우 시스템을 업그레이드하십시오. 지침은 https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-updating-ontap-cloud.html["Cloud Volumes ONTAP 업그레이드"]을 참조하십시오.
@@ -526,6 +526,9 @@ Cloud Volumes ONTAP 9.16.1 이상 버전을 프라이빗 모드로 배포하려�
 
 .단계
 . Cloud Volumes ONTAP 배포와 동일한 리전에 이 구성을 사용하여 프라이빗 워커 풀을 생성합니다. 프라이빗 워커 풀 생성에 대한 자세한 내용은  https://docs.cloud.google.com/build/docs/private-pools/create-manage-private-pools#creating_a_new_private_pool["Google Cloud 문서: 프라이빗 풀 생성 및 관리"^] 및  https://cloud.google.com/build/pricing["Google Cloud Build 가격 책정"^]을 참조하십시오.
++
+VPC 서비스 제어로 보호되는 프로젝트에 Cloud Volumes ONTAP을 배포하는 경우 콘솔 에이전트와 동일한 프로젝트에 프라이빗 워커 풀을 생성해야 합니다. 워커 풀은 실행 중 상태여야 합니다. Google Cloud의 기본 공용 Cloud Build 워커 풀은 서비스 경계 내에서 실행할 수 없습니다.
+
 +
 워커 풀은 다음 구성을 가져야 합니다.
 
@@ -548,6 +551,13 @@ Cloud Volumes ONTAP 9.16.1 이상 버전을 프라이빗 모드로 배포하려�
 
 . 이 워커 풀을 배포하고 Cloud Volumes ONTAP 관리를 위해 계속 실행 상태로 유지하세요. Google Cloud는 이 워커 풀을 사용하여 모든 Terraform 작업을 격리된 환경에서 실행합니다.
 . 프라이빗 모드에서 Cloud Volumes ONTAP을 배포할 때 *GCP Worker Pool* 필드에서 이 워커 풀의 이름을 선택하십시오. 지침은 link:task-deploying-gcp.html["Google Cloud에서 Cloud Volumes ONTAP 실행"]을 참조하십시오.
++
+VPC Service Controls로 보호되는 프로젝트에 Cloud Volumes ONTAP을 배포하는 경우 API를 사용하여 Cloud Volumes ONTAP 시스템을 생성하고 생성 요청 본문에  `workerPool` 매개변수를 포함해야 합니다.
+
++
+
+NOTE: Cloud Volumes ONTAP 콘솔 UI를 사용하여 Cloud Volumes ONTAP을 배포할 때 워커 풀을 포함하는 것은 현재 지원되지 않습니다. VPC 서비스 제어로 보호되는 프로젝트의 경우 API가 Cloud Volumes ONTAP을 배포하는 유일한 지원 방법입니다.
+
 
 
 

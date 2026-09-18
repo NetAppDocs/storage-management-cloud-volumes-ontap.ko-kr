@@ -1651,7 +1651,6 @@
   <block id="a21848ca8e1b04c74552ca38f4284f2b" category="cell">Syslog 전달 메시지</block>
   <block id="e4ccfb5e65126f4e0ac934b981e1c7e0" category="paragraph">아직 콘솔 에이전트를 만들지 않았다면 콘솔 에이전트에 대한 네트워킹 요구 사항도 검토해야 합니다.</block>
   <block id="569fe31933e5918613ae1efa70e82d16" category="inline-link">Azure의 보안 그룹 규칙</block>
-  <block id="806bf55e3fada643423a5e8b443a821f" category="summary">Cloud Volumes ONTAP 시스템이 제대로 작동할 수 있도록 Google Cloud 네트워킹을 설정하세요.</block>
   <block id="8163eb1a73467820de782c3a3ebd563a" category="doc">Cloud Volumes ONTAP 에 대한 Google Cloud 네트워킹 설정</block>
   <block id="589257f6242e3a6232a5f72f7867c4b6" category="inline-link-macro">Google Cloud에서 HA 쌍이 작동하는 방식 알아보기</block>
   <block id="c8e39b92d04aae2c3a6d3e6f428d480e" category="paragraph">HA 쌍을 배포하려면 다음을 수행해야 합니다.<block ref="135d51832239d75e9eff2c1e7574765f" category="inline-link-macro-rx"></block> .</block>
@@ -3933,7 +3932,6 @@
   <block id="31cfe21e9465f2898f2b13f830136b3b" category="inline-link">콘솔에 NetApp 지원 사이트 계정 추가</block>
   <block id="3207026ba19ccd796b2c4277be209fbb" category="paragraph">콘솔은 NetApp 지원 사이트 계정과 연결된 라이선스에 대한 세부 정보를 얻기 위해 NetApp 라이선스 서비스에 자동으로 쿼리를 보냅니다.  오류가 없으면 콘솔이 자동으로 라이선스를 콘솔에 추가합니다.</block>
   <block id="78f7ee59f5b8117330beb5ce37c3e39d" category="inline-link-macro">콘솔에 라이센스를 수동으로 추가합니다.</block>
-  <block id="c95180dbd3a8987d4dea53f7e95fae82" category="paragraph">Cloud Volumes ONTAP 에서 라이선스를 사용하려면 먼저 콘솔에서 라이선스를 사용할 수 있어야 합니다.  필요한 경우 다음을 수행할 수 있습니다.<block ref="19f97ce9176222c84cb0e330227fb9ce" category="inline-link-macro-rx"></block> .</block>
   <block id="cd47b6ba1f96bb028270f3efb891831c" category="list-text">콘솔의 *시스템* 페이지에서 *시스템 추가*를 클릭하고 단계를 따르세요.</block>
   <block id="56d5a0565e658b5d14d92cd4f4f444ae" category="paragraph">NetApp 에서 구매한 라이선스는 항상 먼저 청구되지만, 라이선스 용량을 초과하거나 라이선스 기간이 만료되면 마켓플레이스의 시간당 요금으로 청구됩니다.</block>
   <block id="0412ae79fd9c84c83f86aee6ff87fc52" category="list-text">콘솔로 돌아온 후, 청구 방법 페이지가 나타나면 용량 기반 패키지를 선택하세요.</block>
@@ -5629,8 +5627,6 @@
   <block id="2977507bb7188d1e96246a14057a3902" category="inline-link">프라이빗 모드 배포를 위한 빠른 시작</block>
   <block id="2d0e6ad25589f8f4affb38c55f4f325f" category="list-text"><block ref="2d0e6ad25589f8f4affb38c55f4f325f" category="inline-link-rx"></block></block>
   <block id="4caab03d94f5f056dee76ac3abd4066d" category="inline-link">프라이빗 모드 배포를 위한 Infrastructure Manager 구성</block>
-  <block id="d79d7aeb01a8087d8ac3417a9437a457" category="paragraph">프라이빗 모드 배포에서는 Cloud Volumes ONTAP가 Infrastructure Manager를 사용하기 시작하려면 몇 가지 구성 변경이 필요합니다. <block ref="a3ca45cd087005e24df23da60619241b" category="inline-link-rx"></block>을 참조하십시오.</block>
-  <block id="72f140aadeef542ffaaccb8f92bb751b" category="paragraph">Cloud Volumes ONTAP 9.16.1 이상 버전을 프라이빗 모드로 배포하려면 Google에서 향후 지원을 중단할 예정인 Deployment Manager 대신 Cloud Volumes ONTAP가 Google Cloud Infrastructure Manager를 배포 서비스로 사용하도록 몇 가지 구성을 변경해야 합니다.</block>
   <block id="d8ded2f209878a774abc9ec32f535df0" category="list-text">Cloud Volumes ONTAP 시스템이 9.16.1 이상인지 확인하십시오. 그렇지 않은 경우 시스템을 업그레이드하십시오. 지침은<block ref="2bd5b2c5d36e72902dcf55c00d490964" category="inline-link-rx"></block>을 참조하십시오.</block>
   <block id="d65cea469279b26fd96aefa9946737d3" category="list-text">Google Cloud API가 사용 설정되어 있는지 확인하세요. <block ref="284597b9b55c9d9b3851ec2830376fdc" category="inline-link-rx"></block>를 참조하십시오.</block>
   <block id="c1a7d01779c80df928434b55a0985909" category="inline-link">여기에서 Cloud Build API를 활성화하세요</block>
@@ -5657,7 +5653,6 @@
   <block id="a55abb3f1f891995d70f70a7d8476b90" category="example-title">비공개 모드 배포의 경우 다음 추가 필수 조건을 충족해야 합니다.</block>
   <block id="043abbc7d82ea8f85b4eb2cfc1ed8c1a" category="list-text">최신 Console 에이전트 버전을 사용하고 있는지 확인하십시오. NetApp Support Site에서 제품 설치 프로그램을 다운로드한 다음 호스트에 에이전트를 수동으로 설치하여 에이전트가 Infrastructure Manager API를 사용할 수 있도록 하십시오.</block>
   <block id="25dde09ff44d3749c7c30e9d6de5ea84" category="list-text">도구를 비공개 모드로 실행하는 경우 다른 API와 함께 Cloud Build API도 활성화했는지 확인하십시오<block ref="284597b9b55c9d9b3851ec2830376fdc" category="inline-link-rx"></block>.</block>
-  <block id="61396513f8cad4235cc6230c5b5bd890" category="list-text">개인 모드 배포를 위해 네트워크 구성을 완료하고 작업자 풀을 생성했는지 확인하십시오. <block ref="394ae5ca2623ff2541a3ab80e68c7904" category="inline-link-macro-rx"></block>을(를) 참조하십시오.</block>
   <block id="cee17a2118e2f87df1ef45ab60919d83" category="cell">cloudbuild.googleapis.com</block>
   <block id="e61855b4554dd4f867078342b0fe3ed9" category="cell">비공개 모드에만 필요한 빌드 작업</block>
   <block id="77ef2eaf8c2a9596bf70daf2be42abe2" category="cell">pypi.org</block>
@@ -5691,7 +5686,6 @@
   <block id="56fe813ce089ce40cf0ddd7a34baa41d" category="section-title">변환 도구 실행</block>
   <block id="127f0169d9159483efb1bf11269a83d6" category="paragraph">이 단계는 Ubuntu 및 SUSE Linux Enterprise Server 모두에서 변환 도구를 실행하는 데 적용됩니다.</block>
   <block id="582f01440b1fe8b3b54fbaaa3e0ae2a5" category="example-title">프라이빗 모드 배포에서 도구 실행</block>
-  <block id="e3e9593585f6673afa2b7fc51d4207a1" category="paragraph"><block ref="8fc12ad6381abbb87712055c7f5e50f1" prefix=" " category="inline-code"></block> 매개변수를 지정하여 개인 모드 배포에서 도구를 실행하십시오. 작업자 풀 구성에 대해서는 <block ref="394ae5ca2623ff2541a3ab80e68c7904" category="inline-link-macro-rx"></block>을 참조하십시오.</block>
   <block id="c6e9d79a05da6fd3036f2ce45e30d798" category="paragraph">이 도구는 모든 Cloud Volumes ONTAP 시스템 및 SVM 세부 정보 목록을 표시합니다. 실행이 완료되면 변환된 모든 시스템의 상태를 확인할 수 있습니다. 변환된 각 시스템은 Google Console의 Infrastructure Manager에서 _&lt;system-name-imdeploy&gt;_ 형식으로 표시되며, 이는 Console에서 이제 해당 Cloud Volumes ONTAP 시스템을 관리하기 위해 Infrastructure Manager API를 사용한다는 것을 나타냅니다.</block>
   <block id="73f8b632600f6bf7d4edd2fb31ec35be" category="admonition">변환 후 Google Cloud 콘솔에서 Deployment Manager의 배포 객체를 삭제하지 마세요. 이 배포 객체에는 변환된 시스템을 롤백하는 데 필요한 정보가 포함되어 있습니다.</block>
   <block id="56a5c925d77740ea69d50272863f3f75" category="section-title">2026년 2월 26일</block>
@@ -7033,8 +7027,6 @@
   <block id="3583e4a3e4e2e122cff65b8ad9045348" category="list-text">사전 예방적 관찰 가능성</block>
   <block id="16fcd85dc9469370b62b4b46381f8e2a" category="list-text">인사이트를 실행으로</block>
   <block id="3f6f8b4e204fd3aa39cac35661de164d" category="section-title">분석 요구 사항</block>
-  <block id="021c4674734853c034b954078fa080f3" category="inline-link-macro">NetApp 콘솔 에이전트를 배포합니다.</block>
-  <block id="ed3de084ebd57dfb5d10d8d07d5ff7c2" category="paragraph">Cloud Volumes ONTAP 시스템을 완벽하게 분석하려면 <block ref="19a2c83f86e8c849ea6629f601093445" category="inline-link-macro-rx"></block> 시스템과 NetApp Console 간의 연결을 설정해야 합니다.</block>
   <block id="f064aed6dd86a2b762ecf9bcf528b941" category="section-title">Cloud Volumes ONTAP 시스템을 위한 모범 사례 및 권장 사항</block>
   <block id="df022fa81268ad87abe9b34e29e60ea4" category="paragraph">잘 설계된 대시보드는 스토리지 구성을 평가하여 ONTAP 구성 모범 사례 및 Azure Well-Architected Framework 준수 여부에 대한 심층적인 정보를 제공합니다. 또한 평가 결과는 개선 사항 및 수정 사항을 권장합니다.</block>
   <block id="ffd9fc00ab43b8283346c6266e00d684" category="paragraph">잘 설계된 분석은 프레임워크의 다음 핵심 요소인 _안정성_, _보안_, _운영 우수성_, _비용 최적화_ 및 _성능 효율성_으로 구성을 분류합니다.</block>
@@ -7421,7 +7413,6 @@
   <block id="22b14536778a26fb341e73c9dfc20414" category="list-text"><block ref="22b14536778a26fb341e73c9dfc20414" category="inline-link-rx"></block></block>
   <block id="9a707d77cf426a13d6626ab2d67f565d" category="doc">Azure에서 오스트리아 동부 및 벨기에 중부 지역에 대한 지원</block>
   <block id="44e833213a99257d69192896111996f4" category="paragraph">이제 Azure의 오스트리아 동부(austriaeast) 및 벨기에 중부(belgiumcentral) 리전에 Cloud Volumes ONTAP 9.12.1 GA 이상 버전을 배포할 수 있습니다. 지원되는 배포 유형은 다음과 같습니다.</block>
-  <block id="1ee2856eba991f06fff41aa25f053f64" category="paragraph">또한 다음 엔드포인트에 대한 아웃바운드 연결을 설정해야 합니다.</block>
   <block id="0eda8bbe61d2248f5418aba76b8dc5b1" category="list-text">\https://api.workloads.netapp.com</block>
   <block id="9f45fe3cd2af64a1afc3f4b7f81bdae6" category="list-text">\https://ws.workloads.bluexp.netapp.com</block>
   <block id="69fad001104806c7d3df4d9a347564cb" category="inline-link-macro">AWS Marketplace에서 Cloud Volumes ONTAP 온보딩</block>
@@ -7849,4 +7840,15 @@
   <block id="0a96b1cb21a865ff7a38d495809cc48e" category="list-text"><block ref="0a96b1cb21a865ff7a38d495809cc48e" category="inline-link-macro-rx"></block></block>
   <block id="75b888c439b50482e442b156f85f8b7b" category="paragraph">자세한 시스템 배포 지침은 <block ref="51799ed8a3c9382ecde3d4e502dc227c" category="inline-link-rx"></block>을 참조하십시오.</block>
   <block id="60bc46bac54334a76b532d0019347623" category="list-text">새로운 Cloud Volumes ONTAP 시스템을 배포할 때는 독립형 구독을 통해 요금을 청구하려면 Essentials 패키지를 선택하십시오. 자세한 내용은<block ref="51799ed8a3c9382ecde3d4e502dc227c" category="inline-link-rx"></block>을 참조하십시오.</block>
+  <block id="8dfa69a16c9a3090245af0738da1b3b3" category="paragraph">프라이빗 모드 배포에서는 Cloud Volumes ONTAP가 Infrastructure Manager를 사용하기 시작하려면 몇 가지 구성 변경이 필요합니다. 을 참조하십시오.<block ref="2d72fce957adfd77b9a2cafc57bfb2b8" category="inline-link-rx"></block></block>
+  <block id="54675850f07c5f375dabbd24ce963055" category="paragraph">Cloud Volumes ONTAP와 연결된 Console 에이전트가 다음 엔드포인트에 액세스할 수 있는지 확인하십시오.</block>
+  <block id="8e7b9a9e43a2aeb3a7aabc300317310a" category="summary">Cloud Volumes ONTAP 시스템이 제대로 작동하도록 Google Cloud 네트워킹을 설정합니다. 이 문서에서는 네트워킹 요구 사항, 프라이빗 IP 주소, VPC, 서브넷, 패킷 미러링, 방화벽 규칙, CVO에 대한 HA 구성 및 콘솔 에이전트 요구 사항을 다룹니다.</block>
+  <block id="ecdc6a1891228ecd86842e25403089c2" category="section-title">프라이빗 모드 또는 보호 환경에서의 Infrastructure Manager 구성</block>
+  <block id="09099a34e07c1b55b04062d463b379d9" category="paragraph">비공개 모드 또는 VPC 서비스 제어로 보호되는 프로젝트에 Cloud Volumes ONTAP 9.16.1 이상을 배포하려면 Cloud Volumes ONTAP이 Google에서 향후 지원을 중단할 예정인 Deployment Manager 대신 Google Cloud Infrastructure Manager를 배포 서비스로 사용할 수 있도록 몇 가지 구성을 변경해야 합니다.</block>
+  <block id="3be0ccabbc043586c0889f1f415a8b9f" category="paragraph">VPC 서비스 제어로 보호되는 프로젝트에 Cloud Volumes ONTAP을 배포하는 경우 콘솔 에이전트와 동일한 프로젝트에 프라이빗 워커 풀을 생성해야 합니다. 워커 풀은 실행 중 상태여야 합니다. Google Cloud의 기본 공용 Cloud Build 워커 풀은 서비스 경계 내에서 실행할 수 없습니다.</block>
+  <block id="f4a4ada049ad3a9b0e3d9b625436e9a9" category="paragraph">VPC Service Controls로 보호되는 프로젝트에 Cloud Volumes ONTAP을 배포하는 경우 API를 사용하여 Cloud Volumes ONTAP 시스템을 생성하고 생성 요청 본문에 <block ref="127211a07a94fab89b03bd83ab2202c0" prefix=" " category="inline-code"></block> 매개변수를 포함해야 합니다.</block>
+  <block id="115d3c8236e5dc5d086a75c0cf66c531" category="admonition">Cloud Volumes ONTAP 콘솔 UI를 사용하여 Cloud Volumes ONTAP을 배포할 때 워커 풀을 포함하는 것은 현재 지원되지 않습니다. VPC 서비스 제어로 보호되는 프로젝트의 경우 API가 Cloud Volumes ONTAP을 배포하는 유일한 지원 방법입니다.</block>
+  <block id="70a3e02e226af164a67315a0bf5fe570" category="list-text">개인 모드 배포를 위해 네트워크 구성을 완료하고 작업자 풀을 생성했는지 확인하십시오. 자세한 내용은 <block ref="e482e79d7a86cf247d85a7cad0d36465" category="inline-link-macro-rx"></block>을 참조하십시오.</block>
+  <block id="d7d760cd1b52022e615021b6f8f10dee" category="paragraph"><block ref="8fc12ad6381abbb87712055c7f5e50f1" prefix=" " category="inline-code"></block> 매개변수를 지정하여 개인 모드 배포에서 도구를 실행하십시오. 작업자 풀 구성에 대해서는 <block ref="e482e79d7a86cf247d85a7cad0d36465" category="inline-link-macro-rx"></block>을 참조하십시오.</block>
+  <block id="80eeb3d4d3560338374cd151f3c11997" category="paragraph">Cloud Volumes ONTAP에서 사용하려면 먼저 콘솔에서 라이센스를 사용할 수 있어야 합니다. 필요한 경우 <block ref="197414bd6021ce3306666e377bab3f64" category="inline-link-macro-rx"></block>할 수 있습니다.</block>
 </blocks>

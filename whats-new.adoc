@@ -474,7 +474,7 @@ Cloud Volumes ONTAP 9.16.1 이상에서는 이제 Google Cloud에서 새로운 �
 
 
 |===
-프라이빗 모드 배포에서는 Cloud Volumes ONTAP가 Infrastructure Manager를 사용하기 시작하려면 몇 가지 구성 변경이 필요합니다.  https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/reference-networking-gcp.html#infrastructure-manager-configuration-for-private-mode-deployments["프라이빗 모드 배포를 위한 Infrastructure Manager 구성"^]을 참조하십시오.
+프라이빗 모드 배포에서는 Cloud Volumes ONTAP가 Infrastructure Manager를 사용하기 시작하려면 몇 가지 구성 변경이 필요합니다. 을 참조하십시오. https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/reference-networking-gcp.html#infrastructure-manager-configuration-in-private-mode-or-protected-environments["프라이빗 모드 배포를 위한 Infrastructure Manager 구성"^]
 
 .관련 링크
 * https://docs.netapp.com/us-en/console-setup-admin/whats-new.html#console-agent-4-2-0["NetApp Console Agent 4.2.0 릴리스 노트"^]

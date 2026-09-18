@@ -44,7 +44,7 @@ Infrastructure Manager를 사용하는 Cloud Volumes ONTAP 시스템은 데이�
 ====
 ** 최신 Console 에이전트 버전을 사용하고 있는지 확인하십시오. NetApp Support Site에서 제품 설치 프로그램을 다운로드한 다음 호스트에 에이전트를 수동으로 설치하여 에이전트가 Infrastructure Manager API를 사용할 수 있도록 하십시오.
 ** 도구를 비공개 모드로 실행하는 경우 다른 API와 함께 Cloud Build API도 활성화했는지 확인하십시오 https://docs.netapp.com/us-en/console-setup-admin/task-install-agent-google-gcloud.html#step-5-enable-google-cloud-apis["Google Cloud API 활성화"^].
-** 개인 모드 배포를 위해 네트워크 구성을 완료하고 작업자 풀을 생성했는지 확인하십시오. link:reference-networking-gcp.html#infrastructure-manager-configuration-for-private-mode-deployments["프라이빗 모드 배포를 위한 Infrastructure Manager 구성"]을(를) 참조하십시오.
+** 개인 모드 배포를 위해 네트워크 구성을 완료하고 작업자 풀을 생성했는지 확인하십시오. 자세한 내용은 link:reference-networking-gcp.html#infrastructure-manager-configuration-in-private-mode-or-protected-environments["프라이빗 모드 배포를 위한 Infrastructure Manager 구성"]을 참조하십시오.
 
 
 ====
@@ -293,7 +293,7 @@ dmconvert \
 .프라이빗 모드 배포에서 도구 실행
 [%collapsible]
 ====
- `--worker-pool` 매개변수를 지정하여 개인 모드 배포에서 도구를 실행하십시오. 작업자 풀 구성에 대해서는 link:reference-networking-gcp.html#infrastructure-manager-configuration-for-private-mode-deployments["프라이빗 모드 배포를 위한 Infrastructure Manager 구성"]을 참조하십시오.
+ `--worker-pool` 매개변수를 지정하여 개인 모드 배포에서 도구를 실행하십시오. 작업자 풀 구성에 대해서는 link:reference-networking-gcp.html#infrastructure-manager-configuration-in-private-mode-or-protected-environments["프라이빗 모드 배포를 위한 Infrastructure Manager 구성"]을 참조하십시오.
 
 [source, cli]
 ----
