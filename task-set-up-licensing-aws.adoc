@@ -52,7 +52,7 @@ AWS 계정과 연결된 NIS 구독을 보유하고 있는 기존 고객이라면
 
 Essentials 및 Professional 패키지는 다음과 같은 소비 모델 또는 구매 옵션으로 이용 가능합니다.
 
-* NetApp 에서 구매한 라이선스(BYOL(Bring Your Own License))
+* NetApp에서 구매한 라이센스(BYOL, Bring-Your-Own License)
 * AWS Marketplace의 시간당 결제(PAYGO) 구독
 * AWS Marketplace의 연간 계약
 

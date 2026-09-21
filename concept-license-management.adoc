@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: concept-license-management.html 
 keywords: byol, bring your own license, expiration, warning, node-based byol, node license, capacity 
-summary: 노드 기반 BYOL이 있는 각 Cloud Volumes ONTAP 시스템에는 활성 구독과 함께 설치된 시스템 라이선스가 있어야 합니다.  콘솔은 라이선스를 관리하고 라이선스가 만료되기 전에 경고를 표시하여 프로세스를 간소화합니다. 
+summary: '표준 모드 및 프라이빗 클라우드 Cloud Volumes ONTAP 배포 환경에서 용량 기반 및 노드 기반 BYOL 라이센스의 작동 방식(갱신 및 만료 동작 포함)에 대해 알아보십시오.' 
 ---
-= Cloud Volumes ONTAP 노드 기반 BYOL에 대해 알아보기
+= Cloud Volumes ONTAP의 BYOL 라이센싱에 대해 알아보십시오
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,80 +14,113 @@ summary: 노드 기반 BYOL이 있는 각 Cloud Volumes ONTAP 시스템에는 �
 
 
 [role="lead"]
-노드 기반 BYOL(Bring Your Own License)이 있는 각 Cloud Volumes ONTAP 시스템에는 활성 구독과 함께 설치된 시스템 라이선스가 있어야 합니다.  NetApp Console 라이선스를 관리하고 라이선스가 만료되기 전에 경고를 표시하여 프로세스를 간소화합니다.
+BYOL(Bring-Your-Own License)은 클라우드 마켓플레이스 구독을 사용하는 대신 NetApp에서 직접 라이선스를 구매하는 Cloud Volumes ONTAP 요금 모델입니다.
 
+BYOL(Bring Your Own License)은 가용성 제한이 적용될 수 있지만 표준 모드 및 프라이빗 클라우드 모드 배포에서 사용할 수 있습니다. BYOL 라이선스는 NetApp Console의 *라이선스 및 구독* 섹션에 있는 *직접 라이선스*에서 관리할 수 있습니다. 각 라이선스는 회사 및 특정 NetApp 지원 사이트 자격 증명과 연결됩니다.
 
-NOTE: 노드 기반 라이선스는 Cloud Volumes ONTAP 의 이전 세대 라이선스입니다. 노드 기반 라이선스는 NetApp (BYOL)에서 구매할 수 있으며, 특정 경우에만 라이선스를 갱신할 수 있습니다.
-
-link:concept-licensing.html["Cloud Volumes ONTAP 라이선스에 대해 알아보세요"].
-
-link:https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-manage-node-licenses.html["노드 기반 라이선스를 관리하는 방법에 대해 자세히 알아보세요."^].
-
-
-
-[[byol-system-licenses]]
-== BYOL 시스템 라이선스
-
-노드 기반 라이선스는 NetApp에서 구매할 수 있습니다. 단일 노드 시스템 또는 HA 쌍에 대해 구매할 수 있는 라이선스 수는 무제한입니다.
-
-
-NOTE: NetApp은 BYOL 라이선스의 구매, 연장 및 갱신을 제한합니다. 자세한 내용은 https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/whats-new.html#restricted-availability-of-byol-licensing-for-cloud-volumes-ontap["Cloud Volumes ONTAPP 에 대한 BYOL 라이선싱의 제한된 가용성"^]을 참조하십시오.
-
-노드 기반 라이선스는 단일 노드 또는 HA 쌍에 최대 368TiB의 용량을 제공합니다. Cloud Volumes ONTAP BYOL 시스템에 368TiB 이상의 용량을 할당하기 위해 여러 라이선스를 구매했을 수 있습니다. 예를 들어, Cloud Volumes ONTAP 에 최대 736TiB의 용량을 할당하기 위해 두 개의 라이선스를 구매할 수 있습니다. 또는 최대 1.4PiB의 용량을 확보하기 위해 네 개의 라이선스를 구매할 수도 있습니다.
-
-디스크 제한으로 인해 디스크만 사용하여 용량 제한에 도달하지 못할 수도 있습니다. 디스크 한도를 초과할 수 있습니다.link:concept-data-tiering.html["비활성 데이터를 개체 스토리지로 계층화"] .  디스크 제한에 대한 정보는 다음을 참조하세요. https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/["Cloud Volumes ONTAP 릴리스 노트의 저장 한도"^] .
+* NetApp은 유효한 마켓플레이스 구독이 있는 표준 모드 배포에 대해 BYOL 라이선스의 구매, 연장 및 갱신을 제한합니다. 자세한 내용은 https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/whats-new.html#restricted-availability-of-byol-licensing-for-cloud-volumes-ontap["Cloud Volumes ONTAP 에 대한 BYOL 라이선싱의 제한된 가용성"^]을 참조하십시오.
+* NetApp은 노드 기반 라이선스를 단계적으로 폐지하고 용량 기반 라이선스로 전환하고 있습니다. 노드 기반 라이선스는 일부 USPS 고객 구축 환경 및 중국 내 구축 환경 등 일부 기존 구축 환경에 한해 계속 사용할 수 있습니다. 자세한 내용은 https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-licensing.html#end-of-availability-of-node-based-licenses["노드 기반 라이선스 제공 종료"^]을 참조하십시오.
 
 
 
-[[license-management-for-a-new-system]]
-== 새 시스템에 대한 라이선스 관리
 
-노드 기반 BYOL 시스템을 만들면 콘솔에서 라이선스의 일련 번호와 NetApp 지원 사이트 계정을 입력하라는 메시지가 표시됩니다.  콘솔은 계정을 사용하여 NetApp 에서 라이선스 파일을 다운로드하고 이를 Cloud Volumes ONTAP 시스템에 설치합니다.
+[[byol-deployment-modes]]
+== BYOL 배포 모드
 
-https://docs.netapp.com/us-en/console-setup-admin/task-adding-nss-accounts.html["콘솔에 NetApp 지원 사이트 계정을 추가하는 방법을 알아보세요."^].
+[role="tabbed-block"]
+====
+.표준 모드 배포
+--
+* BYOL 대신 NetApp은 소비량 청구를 위해 연간 또는 사용량 기반 요금제(PAYGO) 마켓플레이스 구독 방식을 선호합니다.
+* 표준 모드 배포에서는 일반적으로 노드 기반 라이선스 대신 용량 기반 라이선스를 사용합니다. 기존 표준 모드 배포 중 노드 기반 라이선스를 사용하는 경우는 극히 드뭅니다.
 
-콘솔이 보안 인터넷 연결을 통해 라이센스 파일에 액세스할 수 없는 경우 다음을 수행할 수 있습니다.link:task-manage-node-licenses.html["직접 파일을 얻은 다음 콘솔에 수동으로 파일을 업로드합니다."] .
+
+--
+.프라이빗 모드 배포
+--
+* 프라이빗 모드 배포는 마켓플레이스 구독을 사용할 수 없으므로 BYOL 라이선스에 전적으로 의존합니다.
+* 새로운 배포 환경에서는 노드 기반 라이선스 대신 용량 기반 Essentials 패키지를 사용하십시오. 노드 기반 라이선스는 일부 기존 프라이빗 모드 배포 환경에서 사용됩니다.
+
+
+--
+====
+
+
+[[compare-byol-license-types-in-private-mode]]
+=== 프라이빗 모드에서 BYOL 라이센스 유형 비교
+
+다음 표는 프라이빗 모드에서 용량 기반 라이선스와 노드 기반 라이선스 간의 차이점을 요약한 것입니다.
+
+[cols="25,37,38"]
+|===
+| 기능 | 용량 기반 라이센스 | 노드 기반 라이센스 
+
+
+| 배포 지원  a| 
+새로운 프라이빗 모드 배포는 용량 기반 라이선스, 특히 Essentials 패키지만 지원합니다.
+ a| 
+새로운 프라이빗 모드 배포는 노드 기반 라이선스를 지원하지 않습니다. 기존 노드 기반 배포 중 제한된 수만 노드 기반 라이선스를 계속 사용할 수 있습니다.
 
 
 
-[[license-expiration]]
-== 라이센스 만료
+| 구입  a| 
+NetApp에서 용량 기반 BYOL Essentials 패키지를 구매하고 배포 중에 시스템에 할당하십시오.
+ a| 
+노드 기반 라이센스를 사용하는 기존 프라이빗 클라우드 모드 배포 환경이 있는 경우 NetApp에서 Essentials 패키지를 구매하여 용량 기반 라이센스로 전환할 수 있습니다.
 
-콘솔은 노드 기반 라이선스가 만료되기 30일 전에 경고를 표시하고, 라이선스가 만료될 때 다시 경고를 표시합니다.  다음 이미지는 사용자 인터페이스에 나타나는 30일 만료 경고를 보여줍니다.
+
+
+| 용량  a| 
+최초 500GiB 사용량은 라이선스 요금에 포함되지 않습니다. 워크로드 요구 사항이 증가함에 따라 추가 패키지를 구매할 수 있습니다.
+ a| 
+노드 기반 라이센스는 단일 노드 또는 HA 쌍에 대해 최대 368 TiB의 용량을 제공합니다. Cloud Volumes ONTAP 시스템에 368 TiB를 초과하여 할당하려면 여러 라이센스를 구매하십시오. 예를 들어, 라이센스 2개는 최대 736 TiB를 제공하고 라이센스 4개는 최대 1.4 PiB를 제공합니다.
+
+
+
+| 범위  a| 
+용량 기반 라이선스는 Cloud Volumes ONTAP 시스템 전체에서 공유되는 용량 풀을 활용합니다. 스토리지 요구 사항이 변경되면 사용 가능한 용량을 재분배할 수 있습니다.
+ a| 
+각 노드 기반 라이선스는 하나의 Cloud Volumes ONTAP 시스템에 적용되며 해당 시스템에 고정된 용량을 제공합니다.
+
+
+
+| 양도 가능성  a| 
+용량 기반 라이선스는 Console 계정과 연결됩니다. 해당 계정으로 생성된 시스템은 라이선스 용량과 일련 번호를 공유할 수 있습니다. 예를 들어, 5TiB 라이선스는 각각 2.5TiB 용량의 시스템 두 대를 지원하거나 5TiB 용량의 시스템 한 대를 지원할 수 있습니다. Console에서 라이선스 일련 번호를 확인하고 동일한 계정으로 여러 시스템에 동일한 라이선스를 할당할 수 있습니다.
+ a| 
+노드 기반 BYOL 라이선스는 기존 시스템을 삭제하고 해당 라이선스를 사용하여 새 시스템을 생성함으로써 이전할 수 있습니다. 클라우드 제공업체 간에는 _클라우드에 구애받지 않는_ 일련 번호만 사용 가능합니다. 이러한 일련 번호는 _908xxxx_ 접두사로 시작합니다.
+
+|===
+
+
+[[manage-and-renew-byol-licenses]]
+== BYOL 라이선스 관리 및 갱신
+
+
+
+[[renew-a-byol-license]]
+=== BYOL 라이선스 갱신
+
+NetApp 담당자에게 문의하여 BYOL 라이선스를 갱신하십시오. 콘솔에서 갱신된 라이선스를 자동으로 가져와 Cloud Volumes ONTAP 시스템에 설치합니다.
+
+콘솔이 보안 인터넷 연결을 통해 라이선스 파일에 액세스할 수 없는 경우 라이선스 파일을 다운로드하고 link:task-manage-node-licenses.html["Console에 수동으로 업로드합니다"].
+
+Console과 연결된 NetApp Support Site 자격 증명을 관리하려면  https://docs.netapp.com/us-en/console-setup-admin/task-adding-nss-accounts.html["NetApp Console과 연결된 NSS 자격 증명을 관리합니다."^]을(를) 참조하십시오.
+
+
+
+[[respond-to-an-expiration-warning]]
+=== 만료 경고에 응답
+
+콘솔은 노드 기반 라이선스 만료 30일 전과 만료일에 경고 메시지를 표시합니다. Cloud Volumes ONTAP 시스템을 선택하여 경고 메시지를 확인하고 라이선스를 갱신하십시오.
 
 image:screenshot_warning.gif["스크린샷: 경고 아이콘이 포함된 Cloud Volumes ONTAP 시스템을 보여줍니다.  아이콘은 작업이 필요함을 나타냅니다."]
 
-메시지를 검토할 시스템을 선택할 수 있습니다.
+조직 관리자 또는 계정 관리자이고 해당 옵션을 활성화한 경우 콘솔에서 Cloud Volumes ONTAP 보고서에 라이선스 만료 경고를 포함하고 이메일로도 전송합니다.
 
-조직 또는 계정 관리자가 해당 옵션을 활성화한 경우 콘솔에는 이메일로 전송되는 Cloud Volumes ONTAP 보고서에 라이선스 만료 경고가 포함되어 있습니다.  이메일 보고서에는 2주마다 라이선스 만료 경고가 포함되어 있습니다.
-
-정해진 기간 내에 라이센스를 갱신하지 않으면 Cloud Volumes ONTAP 시스템이 자동으로 종료됩니다.  다시 시작하면 다시 꺼집니다.
-
-
-
-[[license-renewal]]
-== 면허 갱신
-
-NetApp 담당자에게 연락하여 노드 기반 BYOL 구독을 갱신하는 경우 콘솔은 자동으로 NetApp 에서 새 라이선스를 받아 Cloud Volumes ONTAP 시스템에 설치합니다.
-
-콘솔이 보안 인터넷 연결을 통해 라이센스 파일에 액세스할 수 없는 경우 다음을 수행할 수 있습니다.link:task-manage-node-licenses.html["직접 파일을 얻은 다음 콘솔에 수동으로 파일을 업로드합니다."] .
-
-
-
-[[license-transfer-to-a-new-system]]
-== 새로운 시스템으로 라이센스 이전
-
-노드 기반 BYOL 라이선스는 기존 시스템을 삭제한 다음 동일한 라이선스를 사용하여 새 시스템을 만들 때 Cloud Volumes ONTAP 시스템 간에 전송할 수 있습니다.
-
-예를 들어, 기존 라이선스 시스템을 삭제한 다음 다른 VPC/VNet 또는 클라우드 공급자의 새로운 BYOL 시스템에서 라이선스를 사용할 수 있습니다.  모든 클라우드 공급자에서는 _클라우드 독립적_ 일련 번호만 작동합니다.  클라우드에 독립적인 일련 번호는 _908xxxx_ 접두사로 시작합니다.
-
-BYOL 라이선스는 회사와 특정 NetApp 지원 사이트 자격 증명에 연결되어 있다는 점을 알아두는 것이 중요합니다.
+라이선스가 만료되기 전에 갱신하지 않으면 Cloud Volumes ONTAP 시스템이 종료됩니다. 라이선스를 갱신하지 않고 시스템을 다시 시작하면 시스템이 다시 종료됩니다.
 
 .관련 링크
-* link:concept-licensing.html["Cloud Volumes ONTAP 라이선싱"^]
-* link:concept-licensing-charging.html["용량 기반 라이선스에 대해 자세히 알아보세요"^]
-* link:task-manage-capacity-licenses.html["Cloud Volumes ONTAP 에 대한 용량 기반 라이선싱 관리"^]
-* link:task-manage-node-licenses.html["노드 기반 라이선싱 관리"^]
-* link:task-convert-node-capacity.html["노드 기반 라이선스를 용량 기반 라이선스로 변환"^]
-* link:task-manage-keystone.html["Keystone 구독 관리"^]
+* https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-licensing.html["Cloud Volumes ONTAP 라이선싱"^]
+* https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-manage-node-licenses.html["프라이빗 클라우드 모드 BYOL 업로드를 포함한 노드 기반 라이센스를 관리합니다."^]
+* https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-convert-node-capacity.html["노드 기반 라이선스를 용량 기반 라이선스로 변환"^]
 

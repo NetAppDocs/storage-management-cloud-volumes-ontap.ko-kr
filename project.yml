@@ -287,7 +287,7 @@ sidebar:
         url: "/concept-licensing-charging.html"
       - title: 용량 기반 라이선스 관리
         url: "/task-manage-capacity-licenses.html"
-      - title: 노드 기반 BYOL에 대해 알아보기
+      - title: BYOL 라이센스에 대해 알아보십시오
         url: "/concept-license-management.html"
       - title: 노드 기반 라이선스 관리
         url: "/task-manage-node-licenses.html"

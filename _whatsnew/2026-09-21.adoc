@@ -1,0 +1,21 @@
+= 프라이빗 모드 배포에서 용량 기반 라이선스 지원
+:allow-uri-read: 
+
+
+
+
+[[support-for-capacity-based-licenses-in-private-mode-deployments]]
+=== 프라이빗 모드 배포에서 용량 기반 라이선스 지원
+
+이제 AWS, Azure 및 Google Cloud에서 용량 기반 라이선스를 사용하여 프라이빗 모드로 Cloud Volumes ONTAP 시스템을 배포할 수 있습니다.
+
+NetApp은 프라이빗 모드에서 용량 기반 라이센스 모델을 위해 Essentials 패키지만 지원합니다. NetApp에서 용량 기반 BYOL(Bring-Your-Own License) Essentials 패키지를 구매하여 배포 시 시스템에 할당하십시오. 사용한 용량 중 처음 500GiB는 라이센스 비용에 포함되지 않습니다. 워크로드 요구 사항이 증가함에 따라 추가 패키지를 구매할 수 있습니다.
+
+NetApp은 모든 프라이빗 모드 Cloud Volumes ONTAP 구축에 용량 기반 라이선스를 권장합니다. 노드 기반 라이선스를 사용하는 기존 프라이빗 모드 구축 환경이 있는 경우, NetApp에서 Essentials 패키지를 구매하여 용량 기반 라이선스로 전환할 수 있습니다. 이러한 새로운 구축 기능과 전환 옵션을 통해 NetApp은 노드 기반 라이선스에서 용량 기반 라이선스로 점진적으로 전환하려는 계획을 추진하고 있습니다.
+
+.관련 링크
+* https://review.docs.netapp.com/us-en/storage-management-cloud-volumes-ontap_capacity-license-darkmode/concept-licensing.html["Cloud Volumes ONTAP 라이선싱"^]
+* https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-license-management.html["Cloud Volumes ONTAP BYOL에 대해 알아보기"^]
+* https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-licensing.html#end-of-availability-of-node-based-licenses["노드 기반 라이선스 제공 종료"^]
+* https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-manage-node-licenses.html["Cloud Volumes ONTAP의 노드 기반 라이센스 관리"^]
+

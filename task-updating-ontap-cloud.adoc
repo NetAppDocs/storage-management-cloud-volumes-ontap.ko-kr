@@ -348,7 +348,7 @@ Cloud Volumes ONTAP 이전 릴리스로 되돌리거나 다운그레이드하는
 [[support-registration]]
 === 지원 등록
 
-이 페이지에 설명된 방법을 사용하여 소프트웨어를 업그레이드하려면 Cloud Volumes ONTAP NetApp 지원팀에 등록해야 합니다.  이는 종량제(PAYGO)와 자체 라이선스 사용(BYOL) 모두에 적용됩니다.  당신은 필요합니다link:task-registering.html["PAYGO 시스템 수동 등록"] BYOL 시스템은 기본적으로 등록됩니다.
+이 페이지에 설명된 방법 중 하나를 사용하여 소프트웨어를 업그레이드하려면 Cloud Volumes ONTAP를 NetApp 지원팀에 등록해야 합니다. 이는 종량제(PAYGO) 및 BYOL(Bring-Your-Own License) 모두에 적용됩니다. BYOL 시스템은 기본적으로 등록되어 있지만 link:task-registering.html["PAYGO 시스템 수동 등록"]해야 합니다.
 
 
 TIP: 지원에 등록되지 않은 시스템도 새 버전이 출시되면 콘솔에 표시되는 소프트웨어 업데이트 알림을 받게 됩니다.  하지만 소프트웨어를 업그레이드하려면 먼저 시스템을 등록해야 합니다.

@@ -32,7 +32,7 @@ Cloud Volumes ONTAP 기본적으로 어떻게 구성되는지 이해하면 시�
 ** FlexClone
 ** iSCSI
 ** Cloud Volumes ONTAP 9.12.1 GA부터 시작하는 다중 테넌트 암호화 키 관리(MTEKM)
-** NetApp 볼륨 암호화(BYOL(Bring Your Own License) 또는 PAYGO(Registered Pay-as-You-Go) 시스템에만 해당)
+** NetApp 볼륨 암호화(BYOL(Bring-Your-Own License) 또는 등록된 종량제(PAYGO) 시스템에만 해당)
 ** NFS ifdef::aws[] endif::aws[] ifdef::azure[] endif::azure[]
 ** SnapMirror
 ** SnapRestore

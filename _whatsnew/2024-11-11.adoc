@@ -25,7 +25,7 @@ NetApp 계약 의무와 운영상의 필요 사항을 준수하기 위해 다음
 * 미국 공공 부문 고객
 * 개인 모드 배포
 * AWS에서 Cloud Volumes ONTAP 의 중국 지역 배포
-* 유효하고 만료되지 않은 노드별 BYOL 라이선스가 있는 경우
+* 유효하고 만료되지 않은 노드별 BYOL(Bring-Your-Own License) 패키지가 있는 경우
 
 
 https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-licensing.html#end-of-availability-of-node-based-licenses["노드 기반 라이선스 제공 종료"^]

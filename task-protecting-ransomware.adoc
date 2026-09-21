@@ -65,7 +65,7 @@ Cloud Volumes ONTAP 랜섬웨어 공격을 나타낼 수 있는 비정상적인 
 
 파일 확장자 보호 기능과는 별개로, https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-protecting-ransomware.html#protection-from-common-ransomware-file-extensions["랜섬웨어 보호 설정"] ARP 기능은 워크로드 분석을 통해 감지된 "비정상 활동"을 기반으로 잠재적인 공격에 대해 사용자에게 경고합니다. 랜섬웨어 보호 설정과 ARP 기능은 함께 사용하여 포괄적인 랜섬웨어 보호 기능을 구현할 수 있습니다.
 
-ARP 기능은 추가 비용 없이 BYOL(Bring Your Own License) 및 마켓플레이스 구독을 통해 라이선스를 사용할 수 있습니다.
+ARP 기능은 추가 비용 없이 BYOL(Bring-Your-Own License) 및 마켓플레이스 구독을 통해 라이선스를 사용하는 경우 모두에서 사용할 수 있습니다.
 
 ARP 지원 볼륨에는 "학습 모드" 또는 "활성" 상태가 지정됩니다.
 

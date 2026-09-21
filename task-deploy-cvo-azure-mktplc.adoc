@@ -149,6 +149,7 @@ CAUTION: 검색 중에 오류 메시지가 표시될 수 있지만 검색 프로
 .관련 링크
 저장소 생성에 대한 자세한 내용은 ONTAP 설명서를 참조하세요.
 
+* link:task-onboard-cvo-aws-marketplace.html["AWS Marketplace에서 Cloud Volumes ONTAP 구독 및 배포"]
 * https://docs.netapp.com/us-en/console-licenses-subscriptions/task-manage-subscriptions.html["새 마켓플레이스 구독 추가"^]
 * https://docs.netapp.com/us-en/ontap/volumes/create-volume-task.html["NFS용 볼륨 생성"^]
 * https://docs.netapp.com/us-en/ontap-cli/lun-create.html["iSCSI에 대한 LUN 생성"^]

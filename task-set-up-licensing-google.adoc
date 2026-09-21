@@ -50,7 +50,7 @@ link:task-deploying-gcp.html["Google Cloud에서 Cloud Volumes ONTAP 시작하�
 
 Essentials 및 Professional 패키지는 다음과 같은 소비 모델 또는 구매 옵션으로 이용 가능합니다.
 
-* NetApp 에서 구매한 라이선스(BYOL(Bring Your Own License))
+* NetApp에서 구매한 라이센스(BYOL, Bring-Your-Own License)
 * Google Cloud Marketplace의 시간당 결제(PAYGO) 구독
 * 연간 계약
 

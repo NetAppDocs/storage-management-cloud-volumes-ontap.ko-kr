@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: task-getting-started-gcp.html 
 keywords: google cloud platform, gcp, cloud manager, deploy the Console, launch the Console, create the Console, getting started, networking, gcp networking, service account, tiering, data tiering, bucket, fabricpool, cloud backup, storage access key, gcp role, role, iam role, permissions, gcp permissions, cloud backup, the Console 
-summary: 몇 단계만 거치면 Google Cloud용 Cloud Volumes ONTAP 시작할 수 있습니다. 
+summary: 몇 단계만 거치면 Google Cloud에서 Cloud Volumes ONTAP을 시작할 수 있습니다. 
 ---
 = Google Cloud에서 Cloud Volumes ONTAP 배포 개요
 :hardbreaks:
@@ -18,7 +18,18 @@ Cloud Volumes ONTAP를 배포하려면 먼저 Google Cloud 구독 및 Cloud Volu
 
 [cols="20,35,25,25"]
 |===
-| 일 | 설명 | 참조 | 프라이빗 환경 배포 관련 참고 사항 
+| 일 | 설명 | 참조 | 비공개 모드 배포 관련 참고 사항 
+
+
+ a| 
+NetApp Console 역할 확인
+ a| 
+Cloud Volumes ONTAP에 대한 Console 에이전트를 생성하고 다른 배포 작업을 수행하려면 먼저 필요한 IAM 역할과 권한이 있는지 확인해야 합니다.
+ a| 
+콘솔 설정 가이드를 참조하십시오: https://docs.netapp.com/us-en/console-setup-admin/reference-iam-cvo-roles.html["NetApp Console의 Cloud Volumes ONTAP 액세스 역할"^] https://docs.netapp.com/us-en/console-setup-admin/task-cvo-rbac-setup.html["Cloud Volumes ONTAP에 대한 역할 기반 액세스 설정"^]
+ a| 
+역할이 올바르게 구성되었는지 확인하십시오.
+
 
 
  a| 
@@ -39,7 +50,7 @@ Cloud Volumes ONTAP를 배포하려면 먼저 Google Cloud 구독 및 Cloud Volu
  a| 
 link:task-planning-your-config-gcp.html["구성을 계획하세요"]
  a| 
-프라이빗 환경 모드 배포에도 유사한 계획 고려 사항이 필요합니다.
+개인 모드 배포에도 유사한 계획 고려 사항이 필요합니다.
 
 
 
@@ -73,7 +84,7 @@ Cloud Volumes ONTAP 사용하려면 Google Cloud 서비스 계정이 필요합�
 * 다음을 참조하십시오 https://docs.netapp.com/us-en/data-services-backup-recovery/concept-backup-to-cloud.html["NetApp Backup and Recovery 문서"^]
 
  a| 
-프라이빗 환경 배포에는 추가적인 고려 사항이 없습니다.
+개인 모드 배포에는 추가적인 고려 사항이 없습니다.
 
 
 
@@ -99,10 +110,10 @@ API를 활성화해야 합니다. 클라우드 관리자와 협력하여 프라�
 * link:task-deploying-gcp.html["고급 옵션을 사용하여 Cloud Volumes ONTAP 배포"]
 
  a| 
-배포를 시작하기 전에 NetApp에서 Cloud Volumes ONTAP 라이선스를 구매했는지 확인하십시오. 프라이빗 모드 배포에는 노드 기반 BYOL 라이선스가 필요합니다. 마켓플레이스 구독을 통한 Cloud Volumes ONTAP 사용량 청구는 지원되지 않습니다. NetApp에서 라이선스 파일을 받아 배포 중에 업로드하십시오. 자세한 내용은 다음을 참조하십시오.
+프라이빗 모드는 고급 배포만 지원합니다. 배포를 시작하기 전에 NetApp에서 Cloud Volumes ONTAP 라이센스를 구입했는지 확인하십시오. 프라이빗 모드 배포는 BYOL 라이센스를 사용합니다. 마켓플레이스 구독은 Cloud Volumes ONTAP 사용량 청구에 지원되지 않습니다. NetApp에서 라이센스 파일을 받아 배포 중에 업로드하십시오. 참조:
 
-* link:concept-license-management.html["노드 기반 BYOL에 대한 라이선스 관리"]
-* link:task-manage-node-licenses.html["노드 기반 BYOL 라이선스 관리"]
+* link:concept-license-management.html["라이선스 관리"]
+* link:task-manage-node-licenses.html["BYOL 라이선스 관리"]
 * link:task-deploying-gcp.html["고급 옵션을 사용하여 Cloud Volumes ONTAP 배포"]
 
 
