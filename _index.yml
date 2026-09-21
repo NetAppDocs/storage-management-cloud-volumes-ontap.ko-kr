@@ -69,7 +69,7 @@ indexpage:
     - title: Google Cloud에서의 네트워킹 요구 사항/보안 요구 사항
       url: reference-networking-gcp.html
     - title: 빠른 배포
-      url: task-getting-started-gcp.html
+      url: task-quick-deploy-gcp.html
     - title: Google Cloud KMS를 사용하여 암호화 키 관리
       url: task-google-key-manager.html
   - title: 시스템 및 스토리지 관리
