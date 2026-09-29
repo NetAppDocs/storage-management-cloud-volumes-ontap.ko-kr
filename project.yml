@@ -311,6 +311,8 @@ sidebar:
       url: "/task-azure-onelake.html"
     - title: Cloud Volumes ONTAP 및 잘 설계된 대시보드
       url: "/configuration-analysis-cvo.html"
+    - title: Cloud Volumes ONTAP 자동화 옵션에 대해 알아보십시오.
+      url: "/concept-cvo-automation.html"
   - title: 지식과 지원
     entries:
     - title: 지원 등록

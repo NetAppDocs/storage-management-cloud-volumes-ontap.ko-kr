@@ -13,4 +13,4 @@
 * Indonesia Central (indonesiacentral)
 
 
-모든 지역 목록은 다음을 참조하세요. https://bluexp.netapp.com/cloud-volumes-global-regions["Azure의 글로벌 지역 맵"^] .
+모든 지역 목록은 https://www.netapp.com/cloud-volumes-ontap/supported-regions/["Azure의 글로벌 지역 맵"^]을 참조하십시오.

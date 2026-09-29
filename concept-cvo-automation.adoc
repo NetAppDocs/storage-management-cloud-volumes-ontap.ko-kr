@@ -1,0 +1,158 @@
+---
+sidebar: sidebar 
+permalink: concept-cvo-automation.html 
+keywords: automation, infrastructure as code, IaC, Terraform, Ansible, Cloud Volumes ONTAP, API procedures, ONTAP CLI procedures, list of API and CLI procedures in Cloud Volumes ONTAP or CVO 
+summary: NetApp이 Cloud Volumes ONTAP를 위해 지원하는 자동화 기술에 대해 알아보십시오. 
+---
+= Cloud Volumes ONTAP 자동화 옵션에 대해 알아보십시오.
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+DevOps 팀은 데이터 센터 런타임 환경의 설정 및 관리를 자동화하기 위해 다양한 툴을 사용합니다. NetApp Console 외에도 NetApp Console API, ONTAP CLI 프로시저, Ansible 및 Terraform과 같은 자동화 툴 등 Cloud Volumes ONTAP 자동화에 사용할 수 있는 여러 기술이 있습니다. 이러한 외부 자동화 툴은 일반적으로 IaC(Infrastructure as Code) 설계를 기반으로 합니다.
+
+ https://labondemand.netapp.com/["Lab on Demand"^]를 사용하여 Cloud Volumes ONTAP 자동화를 연습하십시오.
+
+
+
+[[netapp-console-apis]]
+== NetApp 콘솔 API
+
+NetApp Console은 Cloud Volumes ONTAP 리소스를 프로그래밍 방식으로 관리하는 데 사용할 수 있는 REST API를 제공합니다. 이러한 API는 Amazon Web Services(AWS), Microsoft Azure(Azure) 및 Google Cloud에서 Cloud Volumes ONTAP 시스템 생성 및 관리, 애그리게이트와 볼륨 추가 등의 작업을 지원합니다. 사용 가능한 API 호출은 클라우드 공급자와 배포 유형(단일 노드 및 고가용성(HA) 구성 포함)에 따라 다릅니다.
+
+Cloud Volumes ONTAP API 워크플로를 사용하여 일반적인 배포 및 후속 스토리지 관리를 자동화할 수 있습니다. 일부 워크플로에는 배포 준비, 시스템 생성 및 스토리지 관리가 포함되며, AWS, Azure 및 Google Cloud에 대한 공급자별 워크플로도 제공됩니다.
+
+[cols="2,2,3"]
+|===
+| 활동 | 사용할 API 및 인터페이스 | API 참조 
+
+
+| Cloud Volumes ONTAP 시스템을 생성합니다. API 호출은 클라우드 공급업체와 단일 노드 또는 고가용성(HA) 배포 유형에 따라 다릅니다. | NetApp 콘솔 REST API 및 Cloud Volumes ONTAP API 워크플로  a| 
+* https://docs.netapp.com/us-en/console-automation/cm/wf_aws_cloud_create_we_capacity.html["AWS: 시스템 생성"^] - `POST /occm/api/vsa/working-environments` 또는 `POST /occm/api/aws/ha/working-environments`
+* https://docs.netapp.com/us-en/console-automation/cm/wf_azure_cloud_create_we_capacity.html["Azure: 시스템 생성"^] - `POST /occm/api/azure/vsa/working-environments` 또는 `POST /occm/api/azure/ha/working-environments`
+* https://docs.netapp.com/us-en/console-automation/cm/wf_gcp_cloud_create_we_capacity.html["Google Cloud: 시스템 생성"^] - `POST /occm/api/gcp/vsa/working-environments` 또는 `POST /occm/api/gcp/ha/working-environments`
+
+
+
+
+| Cloud Volumes ONTAP 시스템용 애그리게이트를 생성합니다. | NetApp Console REST API  a| 
+* https://docs.netapp.com/us-en/console-automation/cm/wf_aws_ontap_create_aggr.html["AWS: 애그리게이트 생성"^] - `POST /occm/api/vsa/aggregates` 또는 `POST /occm/api/aws/ha/aggregates`
+* https://docs.netapp.com/us-en/console-automation/cm/wf_aws_cloud_add_capacity.html["AWS: Elastic Volume 애그리게이트에 용량 추가"^] - `POST /occm/api/vsa/aggregates/{workingEnvironmentId}/{aggregateName}/add-capacity` 또는 `POST /occm/api/aws/ha/aggregates/{workingEnvironmentId}/{aggregateName}/add-capacity`
+* https://docs.netapp.com/us-en/console-automation/cm/wf_aws_ontap_add_disks_aggr.html["AWS: 애그리게이트에 디스크 추가"^] - `POST /occm/api/vsa/aggregates/{workingEnvironmentId}/{aggregateName}/disks` 또는 `POST /occm/api/aws/ha/aggregates/{workingEnvironmentId}/{aggregateName}/disks`
+
+
+
+
+| Cloud Volumes ONTAP 시스템용 CIFS 서버를 구성합니다. | NetApp Console REST API  a| 
+* https://docs.netapp.com/us-en/console-automation/cm/wf_aws_ontap_create_cifs.html["AWS: CIFS 서버 구성 생성"^] - `POST /occm/api/vsa/working-environments/{workingEnvironmentId}/cifs` 또는 `POST /occm/api/aws/ha/working-environments/{workingEnvironmentId}/cifs`
+* https://docs.netapp.com/us-en/console-automation/cm/wf_azure_ontap_create_cifs.html["Azure: CIFS 서버 구성 생성"^] - `POST /occm/api/azure/vsa/working-environments/{workingEnvironmentId}/cifs` 또는 `POST /occm/api/azure/ha/working-environments/{workingEnvironmentId}/cifs`
+* https://docs.netapp.com/us-en/console-automation/cm/wf_gcp_ontap_create_cifs.html["Google Cloud: CIFS 서버 구성 생성"^] - `POST /occm/api/gcp/vsa/working-environments/{workingEnvironmentId}/cifs` 또는 `POST /occm/api/gcp/ha/working-environments/{workingEnvironmentId}/cifs`
+
+
+
+
+| Azure 및 Google Cloud에서 추가 데이터 제공 스토리지 VM을 생성 및 관리하고 필요한 네트워크 인터페이스를 구성합니다. | NetApp Console용 Cloud Volumes ONTAP API  a| 
+link:task-managing-svms-azure.html["Azure에서 스토리지 VM 관리"] link:task-managing-svms-gcp.html["Google Cloud에서 스토리지 VM 관리"]
+
+
+
+| 고객이 관리하는 암호화 키를 사용하는 Cloud Volumes ONTAP 시스템을 생성합니다. | NetApp Console API  a| 
+link:task-set-up-azure-encryption.html["Azure에서 고객 관리 키 사용"] link:task-setting-up-gcp-encryption.html["Google Cloud에서 고객 관리 키 사용"]
+
+
+
+| 배포 후 Azure Premium SSD v2 디스크의 IOPS 및 처리량 설정을 수정합니다. | Cloud Volumes ONTAP API  a| 
+link:task-manage-perf-params-azure.html["Premium SSD v2 디스크 성능 관리"]
+
+
+
+| AWS 공유 서브넷에 Cloud Volumes ONTAP HA 쌍을 배포합니다. | Cloud Volumes ONTAP API  a| 
+link:task-deploy-aws-shared-vpc.html["AWS 공유 서브넷에 HA 쌍 배포"]
+
+
+
+| 배포 중에 오브젝트 저장소가 구성되지 않은 경우 시스템 생성 후 데이터 계층화를 활성화합니다. | Cloud Volumes ONTAP API | link:task-tiering.html["데이터 계층화 활성화"] 
+
+
+| 기존 Cloud Volumes ONTAP 클러스터에 대한 NTP 서버를 구성합니다. | NetApp Console API | link:task-sync-time.html["NTP 서버 구성"] 
+|===
+자세한 내용은 다음을 참조하십시오.
+
+* https://docs.netapp.com/us-en/console-automation/cm/overview.html["ONTAP 관리 REST API에 대해 알아보십시오"^]
+* https://docs.netapp.com/us-en/console-automation/cm/wf_cvo_before.html["Cloud Volumes ONTAP API 워크플로우 사용을 준비하세요"^]
+* https://docs.netapp.com/us-en/console-automation/cm/your_api_call.html["첫 번째 API 호출"^]
+* https://docs.netapp.com/us-en/console-automation/cm/cvo_deployment.html["REST API를 사용한 일반적인 Cloud Volumes ONTAP 배포"^]
+
+
+
+
+[[ontap-cli]]
+== ONTAP CLI
+
+ONTAP CLI를 사용하여 여러 Cloud Volumes ONTAP 관리 작업을 수행할 수 있습니다. 사용 가능한 절차 및 명령은 기능 및 클라우드 공급자에 따라 다릅니다. ONTAP CLI 또는 ONTAP System Manager를 사용하여 Cloud Volumes ONTAP를 업그레이드하지 마십시오. NetApp Console에서 업그레이드를 수행하십시오.
+
+[cols="2,2,3"]
+|===
+| 활동 | CLI 절차 또는 명령 | 참고 자료 
+
+
+| Cloud Volumes ONTAP에 대한 암호화 키 관리를 구성합니다. | ONTAP CLI 에서 AWS KMS, Azure Key Vault 또는 Google Cloud KMS 명령 사용  a| 
+link:task-aws-key-management.html["AWS KMS 키 관리 구성"] link:task-azure-key-vault.html["Azure Key Vault 키 관리 구성"] link:task-google-key-manager.html["Google Cloud KMS 키 관리 구성"]
+
+
+
+| 이벤트 관리 시스템(EMS) 이벤트 대상 및 경로를 구성합니다. | ONTAP CLI의 EMS 구성 명령 | link:task-configure-ems.html["EMS 구성"] 
+
+
+| 기존 Cloud Volumes ONTAP 클러스터에 대한 NTP 서버를 구성합니다. | `cluster time-service ntp server create` | link:task-sync-time.html["NTP 서버 구성"] 
+
+
+| 스토리지 효율성이 비활성화된 볼륨을 생성할 때 데이터 압축을 비활성화하십시오. | ONTAP CLI 볼륨 효율성 명령  a| 
+link:concept-flash-cache.html["스토리지 효율성 옵션을 검토합니다"] link:reference-limitations-aws.html["AWS 스토리지 효율성 제한 사항을 검토합니다."]
+
+
+
+| 추가 LUN을 생성합니다. | ONTAP CLI 에서 LUN 생성 명령 | link:task-create-volumes.html["볼륨 및 추가 LUN 생성"] 
+
+
+| 필요에 따라 WORM 기능을 비활성화한 볼륨을 생성하거나 SnapLock 볼륨의 스냅샷 복사본을 생성합니다. | ONTAP CLI의 볼륨 및 스냅샷 관리 명령  a| 
+link:concept-worm.html["WORM 저장소 관리"] link:reference-worm-snaplock.html["WORM 스토리지용 스냅샷 복사본 생성"]
+
+
+
+| 데이터 손실 이벤트 발생 후 문제가 해결될 때까지 데이터 액세스를 차단하도록 NVFAIL 동작을 구성하십시오. | ONTAP CLI의 NVFAIL 구성 명령 | link:concept-write-speed.html["NVFAIL 구성"] 
+
+
+| Azure 단일 노드 배포에서 SnapMirror 복제 트래픽을 분리합니다. | ONTAP CLI 네트워킹 및 SnapMirror 명령 | link:task-segregate-snapmirror-azure.html["Azure에서 SnapMirror 트래픽 분리"] 
+|===
+자세한 내용은  https://docs.netapp.com/us-en/ontap-cli/man.html["ONTAP CLI 참조 가이드"^]을(를) 참조하십시오.
+
+
+
+[[ansible]]
+== Ansible
+
+Ansible은 절차적 구성 파일을 기반으로 하는 오픈 소스 구성 관리 툴입니다.
+
+* https://galaxy.ansible.com/ui/repo/published/netapp/ontap/["Ansible Galaxy"^]
+* https://docs.ansible.com/ansible/latest/user_guide/index.html["Ansible 문서"^]
+
+
+
+
+[[terraform]]
+== Terraform
+
+Terraform은 선언적 구성 파일을 사용하는 오픈 소스 오케스트레이션 툴입니다. NetApp은 Cloud Volumes ONTAP용 Terraform 공급자를 제공합니다. 이를 사용하여 IaC를 통해 인프라를 자동화하고 통합할 수 있습니다. 자세한 내용은 https://registry.terraform.io/providers/NetApp/netapp-cloudmanager/latest["NetApp Terraform 공급자"^]을 참조하십시오.
+
+.관련 정보
+* https://docs.netapp.com/us-en/console-automation/automate/overview.html["NetApp Console 자동화 개요"^]
+* https://www.netapp.com/devops/what-is-infrastructure-as-code-iac/["코드형 인프라"^]
+* https://www.terraform.io/["Terraform"^]
+* https://www.ansible.com/["Ansible"^]
+

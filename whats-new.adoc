@@ -55,7 +55,7 @@ Cloud Volumes ONTAP는 이제 비공개 미리 보기로 Azure Government Secret
 
 자세한 내용은 Azure 설명서를 참조하세요.
 
-* https://azure.microsoft.com/en-us/blog/azure-government-top-secret-now-generally-available-for-us-national-security-missions/["미국 정부 공관을 위한 클라우드^"]
+* https://azure.microsoft.com/en-us/blog/azure-government-top-secret-now-generally-available-for-us-national-security-missions/["미국 정부 공관을 위한 클라우드 서비스"^]
 * https://azure.microsoft.com/en-us/explore/global-infrastructure/government/national-security["Azure Government Secret"^]
 * https://azure.microsoft.com/en-us/blog/azure-government-top-secret-now-generally-available-for-us-national-security-missions["Azure Government Top Secret"^]
 
@@ -77,7 +77,7 @@ Cloud Volumes ONTAP는 이제 비공개 미리 보기로 Azure Government Secret
 * 영역 중복 스토리지(ZRS)를 사용하여 여러 가용 영역에서 고가용성(HA) 구현
 
 
-지원되는 모든 지역 목록은 다음을 참조하세요. https://bluexp.netapp.com/cloud-volumes-global-regions["Azure의 글로벌 지역 맵"^] .
+지원되는 모든 지역 목록은 https://www.netapp.com/cloud-volumes-ontap/supported-regions/["Azure의 글로벌 지역 맵"^]을 참조하십시오.
 
 
 
@@ -157,7 +157,7 @@ NetApp Console의 잘 설계된 대시보드를 통해 이제 Cloud Volumes ONTA
 * 영역 중복 스토리지(ZRS)를 사용하여 여러 가용 영역에서 고가용성(HA) 구현
 
 
-지원되는 모든 지역 목록은 다음을 참조하세요. https://bluexp.netapp.com/cloud-volumes-global-regions["Azure의 글로벌 지역 맵"^] .
+지원되는 모든 지역 목록은 https://www.netapp.com/cloud-volumes-ontap/supported-regions/["Azure의 글로벌 지역 맵"^]을 참조하십시오.
 
 
 
@@ -308,7 +308,7 @@ Cloud Volumes ONTAP 역할은 Amazon Web Service(AWS), Microsoft Azure(Azure) �
 
 이제 말레이시아 서부(malaysiawest) 지역의 Azure에서 단일 및 다중 가용 영역에 Cloud Volumes ONTAP 9.12.1 GA 이상 버전을 배포할 수 있습니다. 여기에는 단일 노드 및 고가용성(HA) 배포가 모두 포함됩니다.
 
-모든 지역 목록은 다음을 참조하세요. https://bluexp.netapp.com/cloud-volumes-global-regions["Azure의 글로벌 지역 맵"^] .
+모든 지역 목록은 https://www.netapp.com/cloud-volumes-ontap/supported-regions/["Azure의 글로벌 지역 맵"^]을 참조하십시오.
 
 
 
@@ -520,7 +520,7 @@ Cloud Volumes ONTAP 9.16.1 및 그 이후 버전은 이제 Google Cloud의 새�
 * Indonesia Central (indonesiacentral)
 
 
-모든 지역 목록은 다음을 참조하세요. https://bluexp.netapp.com/cloud-volumes-global-regions["Azure의 글로벌 지역 맵"^] .
+모든 지역 목록은 https://www.netapp.com/cloud-volumes-ontap/supported-regions/["Azure의 글로벌 지역 맵"^]을 참조하십시오.
 
 
 
@@ -880,7 +880,7 @@ https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-deploy
 * 멕시코 중부
 
 
-모든 지역 목록은 다음을 참조하세요. https://bluexp.netapp.com/cloud-volumes-global-regions["Azure의 글로벌 지역 맵"^] .
+모든 지역 목록은 https://www.netapp.com/cloud-volumes-ontap/supported-regions/["Azure의 글로벌 지역 맵"^]을 참조하십시오.
 
 
 
@@ -908,7 +908,7 @@ https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-managi
 
 이제 중국 지역의 AWS에 Cloud Volumes ONTAP 9.13.1을 배포할 수 있습니다. 여기에는 단일 노드와 고가용성(HA) 배포에 대한 지원이 포함됩니다. NetApp 에서 직접 구매한 라이선스만 지원됩니다.
 
-지역별 가용성은 다음을 참조하세요. https://bluexp.netapp.com/cloud-volumes-global-regions["Cloud Volumes ONTAP 위한 글로벌 지역 맵"^] .
+지역별 가용성은  https://www.netapp.com/cloud-volumes-ontap/supported-regions/["Cloud Volumes ONTAP 위한 글로벌 지역 맵"^]을 참조하십시오.
 
 
 
@@ -940,7 +940,7 @@ https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-managi
 * 미국 정부 버지니아(미국 정부 지역 - 버지니아)
 
 
-모든 지역 목록은 다음을 참조하세요. https://bluexp.netapp.com/cloud-volumes-global-regions["Azure의 글로벌 지역 맵"^] .
+모든 지역 목록은 https://www.netapp.com/cloud-volumes-ontap/supported-regions/["Azure의 글로벌 지역 맵"^]을 참조하십시오.
 
 
 
@@ -982,7 +982,7 @@ link:https://docs.netapp.com/us-en/cloud-volumes-ontap-9161-relnotes/["이번 Cl
 
 뉴질랜드 북부 지역은 이제 Azure에서 Cloud Volumes ONTAP 9.12.1 GA 이상의 단일 노드 및 고가용성(HA) 구성이 지원됩니다.  이 지역에서는 Lsv3 인스턴스 유형이 지원되지 않습니다.
 
-지원되는 모든 지역 목록은 다음을 참조하세요. https://bluexp.netapp.com/cloud-volumes-global-regions["Azure의 글로벌 지역 맵"^] .
+지원되는 모든 지역 목록은 https://www.netapp.com/cloud-volumes-ontap/supported-regions/["Azure의 글로벌 지역 맵"^]을 참조하십시오.
 
 
 
@@ -1188,7 +1188,7 @@ WORM(Write Once Read Many) 및 ARP(Autonomous Ransomware Protection)의 내장�
 
 캐나다 서부 지역은 이제 AWS의 Cloud Volumes ONTAP 9.12.1 GA 이상에서 지원됩니다.
 
-모든 지역 목록을 보려면 다음을 참조하세요. https://bluexp.netapp.com/cloud-volumes-global-regions["AWS의 글로벌 지역 맵"^] .
+모든 지역 목록은  https://www.netapp.com/cloud-volumes-ontap/supported-regions/["AWS의 글로벌 지역 맵"^]을 참조하십시오.
 
 
 
@@ -1326,7 +1326,7 @@ HA 배포를 지원하는 AWS 로컬 영역에 대한 자세한 내용은  https
 * 캐나다 중부
 
 
-모든 지역 목록은 다음을 참조하세요. https://bluexp.netapp.com/cloud-volumes-global-regions["Azure의 글로벌 지역 맵"^] .
+모든 지역 목록은 https://www.netapp.com/cloud-volumes-ontap/supported-regions/["Azure의 글로벌 지역 맵"^]을 참조하십시오.
 
 
 
@@ -1335,7 +1335,7 @@ HA 배포를 지원하는 AWS 로컬 영역에 대한 자세한 내용은  https
 
 요하네스버그 지역(`africa-south1` 지역)은 이제 Google Cloud for Cloud Volumes ONTAP 9.12.1 GA 이상에서 지원됩니다.
 
-모든 지역 목록은 다음을 참조하세요. https://bluexp.netapp.com/cloud-volumes-global-regions["Google Cloud의 글로벌 지역 맵"^] .
+모든 지역 목록은 https://www.netapp.com/cloud-volumes-ontap/supported-regions/["Google Cloud의 글로벌 지역 맵"^]을 참조하십시오.
 
 
 
@@ -1483,7 +1483,7 @@ https://docs.netapp.com/us-en/cloud-volumes-ontap-9141-relnotes/["이번 Cloud V
 * 아랍에미리트 북부
 
 
-모든 지역 목록은 다음을 참조하세요. https://bluexp.netapp.com/cloud-volumes-global-regions["Azure의 글로벌 지역 맵"^] .
+모든 지역 목록은 https://www.netapp.com/cloud-volumes-ontap/supported-regions/["Azure의 글로벌 지역 맵"^]을 참조하십시오.
 
 
 
@@ -1499,7 +1499,7 @@ https://docs.netapp.com/us-en/cloud-volumes-ontap-9141-relnotes/["이번 Cloud V
 
 베를린 지역은 이제 Google Cloud for Cloud Volumes ONTAP 9.12.1 GA 이상에서 지원됩니다.
 
-모든 지역 목록은 다음을 참조하세요. https://bluexp.netapp.com/cloud-volumes-global-regions["Google Cloud의 글로벌 지역 맵"^] .
+모든 지역 목록은 https://www.netapp.com/cloud-volumes-ontap/supported-regions/["Google Cloud의 글로벌 지역 맵"^]을 참조하십시오.
 
 
 
@@ -1515,7 +1515,7 @@ https://docs.netapp.com/us-en/cloud-volumes-ontap-9141-relnotes/["이번 Cloud V
 
 텔아비브 지역은 이제 AWS의 Cloud Volumes ONTAP 9.12.1 GA 이상에서 지원됩니다.
 
-모든 지역 목록은 다음을 참조하세요. https://bluexp.netapp.com/cloud-volumes-global-regions["AWS의 글로벌 지역 맵"^] .
+모든 지역 목록은 https://www.netapp.com/cloud-volumes-ontap/supported-regions/["AWS의 글로벌 지역 맵"^]을 참조하십시오.
 
 
 
@@ -1531,7 +1531,7 @@ https://docs.netapp.com/us-en/cloud-volumes-ontap-9141-relnotes/["이번 Cloud V
 
 사우디아라비아 지역은 이제 Google Cloud for Cloud Volumes ONTAP 및 Connector for Cloud Volumes ONTAP 9.12.1 GA 이상에서 지원됩니다.
 
-모든 지역 목록은 다음을 참조하세요. https://bluexp.netapp.com/cloud-volumes-global-regions["Google Cloud의 글로벌 지역 맵"^] .
+모든 지역 목록은 https://www.netapp.com/cloud-volumes-ontap/supported-regions/["Google Cloud의 글로벌 지역 맵"^]을 참조하십시오.
 
 
 
@@ -1557,7 +1557,7 @@ Azure의 다음 지역은 이제 Cloud Volumes ONTAP 9.12.1 GA 이상에 대해 
 * 서부 미국 2
 
 
-여러 가용성 영역을 지원하는 모든 지역 목록은 다음을 참조하세요. https://bluexp.netapp.com/cloud-volumes-global-regions["Azure의 글로벌 지역 맵"^] .
+여러 가용 영역을 지원하는 모든 지역 목록은  https://www.netapp.com/cloud-volumes-ontap/supported-regions/["Azure의 글로벌 지역 맵"^]을 참조하십시오.
 
 
 
@@ -1662,7 +1662,7 @@ Connector 3.9.31 릴리스에는 다음과 같은 변경 사항이 도입되었�
 
 Azure의 일본 동부 및 한국 중부는 이제 Cloud Volumes ONTAP 9.12.1 GA 이상에 대해 HA 다중 가용성 영역 배포를 지원합니다.
 
-여러 가용성 영역을 지원하는 모든 지역 목록은 다음을 참조하세요. https://bluexp.netapp.com/cloud-volumes-global-regions["Azure의 글로벌 지역 맵"^] .
+여러 가용 영역을 지원하는 모든 지역 목록은  https://www.netapp.com/cloud-volumes-ontap/supported-regions/["Azure의 글로벌 지역 맵"^]을 참조하십시오.
 
 
 
@@ -1782,7 +1782,7 @@ Cloud Volumes ONTAP 9.12.1 GA부터 AWS에서 중국 지역이 다음과 같이 
 * NetApp 에서 직접 구매한 라이선스가 지원됩니다.
 
 
-지역별 가용성은 다음을 참조하세요. https://bluexp.netapp.com/cloud-volumes-global-regions["Cloud Volumes ONTAP 위한 글로벌 지역 맵"^] .
+지역별 가용성은  https://www.netapp.com/cloud-volumes-ontap/supported-regions/["Cloud Volumes ONTAP 위한 글로벌 지역 맵"^]을 참조하십시오.
 
 
 
@@ -1852,7 +1852,7 @@ https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-manage
 
 NOTE: 중국 지역에서 Cloud Volumes ONTAP 새로 배포하는 것은 9.12.1 GA 및 9.13.0 GA에서만 지원됩니다.  이러한 버전을 Cloud Volumes ONTAP 의 최신 패치 및 릴리스로 업그레이드할 수 있습니다.  중국 지역에 이후 Cloud Volumes ONTAP 버전을 배포하려면 NetApp 지원팀에 문의하세요.
 
-지역별 가용성은 다음을 참조하세요. https://bluexp.netapp.com/cloud-volumes-global-regions["Cloud Volumes ONTAP 위한 글로벌 지역 맵"^] .
+지역별 가용성은  https://www.netapp.com/cloud-volumes-ontap/supported-regions/["Cloud Volumes ONTAP 위한 글로벌 지역 맵"^]을 참조하십시오.
 
 
 
@@ -2212,7 +2212,7 @@ https://docs.netapp.com/us-en/ontap/object-storage-management/index.html["ONTAP 
 
 9.10.1 릴리스부터 Cloud Volumes ONTAP 이 이제 Azure West US 3 지역에서 지원됩니다.
 
-https://bluexp.netapp.com/cloud-volumes-global-regions["Cloud Volumes ONTAP 에 지원되는 지역의 전체 목록을 확인하세요."^]
+https://www.netapp.com/cloud-volumes-ontap/supported-regions/["Cloud Volumes ONTAP 에 지원되는 지역의 전체 목록을 확인하세요."^]
 
 
 
@@ -2387,7 +2387,7 @@ Cloud Volumes ONTAP 이제 9.10.1 릴리스부터 다음 Google Cloud 지역에�
 * 산티아고(southamerica-west1) - 단일 노드만
 
 
-https://bluexp.netapp.com/cloud-volumes-global-regions["Cloud Volumes ONTAP 에 지원되는 지역의 전체 목록을 확인하세요."^]
+https://www.netapp.com/cloud-volumes-ontap/supported-regions/["Cloud Volumes ONTAP 에 지원되는 지역의 전체 목록을 확인하세요."^]
 
 
 

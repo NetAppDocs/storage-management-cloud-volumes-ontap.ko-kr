@@ -72,4 +72,4 @@ Cloud Volumes ONTAP는 일부 VM 유형에서 로컬 NVMe 스토리지를 _Flash
 
 일부 지역에서는 HA 쌍이 지원되지 않습니다.
 
-https://bluexp.netapp.com/cloud-volumes-global-regions["지원되는 Azure 지역 목록 보기"^].
+https://www.netapp.com/cloud-volumes-ontap/supported-regions/["지원되는 Azure 지역 목록 보기"^].

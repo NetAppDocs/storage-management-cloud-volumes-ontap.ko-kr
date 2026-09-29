@@ -14,4 +14,4 @@
 * 영역 중복 스토리지(ZRS)를 사용하여 여러 가용 영역에서 고가용성(HA) 구현
 
 
-지원되는 모든 지역 목록은 다음을 참조하세요. https://bluexp.netapp.com/cloud-volumes-global-regions["Azure의 글로벌 지역 맵"^] .
+지원되는 모든 지역 목록은 https://www.netapp.com/cloud-volumes-ontap/supported-regions/["Azure의 글로벌 지역 맵"^]을 참조하십시오.
