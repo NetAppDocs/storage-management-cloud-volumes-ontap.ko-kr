@@ -32,37 +32,37 @@ NetApp Console 표준 보기에서 볼륨을 관리하거나 고급 볼륨 관�
 +
 image:screenshot_manage_vol_button.png["볼륨 탭 아래에 있는 볼륨 관리 버튼의 스크린샷입니다."]
 
-. 필요한 볼륨 타일에서 *볼륨 관리*를 클릭합니다.
+. 필요한 볼륨 타일에서 *볼륨 관리*를 선택합니다.
 +
 [cols="30,70"]
 |===
 | 일 | 행동 
 
 
-| 볼륨에 대한 정보 보기 | 볼륨 관리 패널의 볼륨 작업에서 *볼륨 세부 정보 보기*를 클릭합니다. 
+| 볼륨에 대한 정보 보기 | 볼륨 관리 패널의 볼륨 작업에서 *볼륨 세부 정보 보기*를 선택합니다. 
 
 
 | NFS 마운트 명령 받기  a| 
-.. 볼륨 관리 패널의 볼륨 작업에서 *마운트 명령*을 클릭합니다.
-.. *복사*를 클릭하세요.
+.. 볼륨 관리 패널의 볼륨 작업에서 *마운트 명령*을 선택합니다.
+.. *복사*를 선택합니다.
 
 
 
 
 | 볼륨 복제  a| 
-.. 볼륨 관리 패널의 볼륨 작업에서 *볼륨 복제*를 클릭합니다.
-.. 필요에 따라 복제 이름을 수정한 다음 *복제*를 클릭합니다.
+.. 볼륨 관리 패널의 볼륨 작업에서 *볼륨 복제*를 선택합니다.
+.. 필요에 따라 클론 이름을 수정하고 *Clone*을 선택합니다.
 
 
 이 프로세스는 FlexClone 볼륨을 생성합니다.  FlexClone 볼륨은 메타데이터에 소량의 공간을 사용하고 데이터가 변경되거나 추가될 때만 추가 공간을 사용하기 때문에 공간 효율적인 쓰기 가능한 지정 시간 복사본입니다.
 
-FlexClone 볼륨에 대해 자세히 알아보려면 다음을 참조하세요. http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-vsmg/home.html["ONTAP 9 논리 스토리지 관리 가이드"^] .
+FlexClone 볼륨에 대한 자세한 내용은 link:http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-vsmg/home.html["ONTAP 9 논리 스토리지 관리 가이드"^]을 참조하십시오.
 
 
 
 | 볼륨 편집(읽기-쓰기 볼륨만 해당)  a| 
-.. 볼륨 관리 패널의 볼륨 작업에서 *볼륨 설정 편집*을 클릭합니다.
-.. 볼륨의 스냅샷 정책, NFS 프로토콜 버전, NFS 액세스 제어 목록(내보내기 정책) 또는 공유 권한을 수정한 다음 *적용*을 클릭합니다.
+.. 볼륨 관리 패널의 볼륨 작업에서 *볼륨 설정 편집*을 선택합니다.
+.. 볼륨의 스냅샷 정책, NFS 프로토콜 버전, NFS 액세스 제어 목록(내보내기 정책) 또는 공유 권한을 수정한 다음 *적용*을 선택합니다.
 
 
 
@@ -71,30 +71,30 @@ NOTE: 사용자 정의 스냅샷 정책이 필요한 경우 ONTAP System Manager
 
 
 | 볼륨 삭제  a| 
-.. 볼륨 관리 패널의 볼륨 작업에서 *볼륨 삭제*를 클릭합니다.
+.. 볼륨 관리 패널의 볼륨 작업에서 *볼륨 삭제*를 선택합니다.
 .. 볼륨 삭제 창에서 삭제하려는 볼륨의 이름을 입력합니다.
-.. 다시 한번 *삭제*를 클릭하여 확인하세요.
+.. *삭제* 를 다시 선택하여 확인합니다.
 
 
 
 
 | 필요에 따라 스냅샷 사본을 만듭니다.  a| 
-.. 볼륨 관리 패널의 보호 작업에서 *스냅샷 복사본 만들기*를 클릭합니다.
-.. 필요한 경우 이름을 변경한 다음 *만들기*를 클릭합니다.
+.. 볼륨 관리 패널의 보호 작업에서 *스냅샷 복사본 만들기*를 선택합니다.
+.. 필요한 경우 이름을 변경한 다음 *만들기*를 선택합니다.
 
 
 
 
 | 스냅샷 복사본에서 새 볼륨으로 데이터 복원  a| 
-.. 볼륨 관리 패널의 보호 작업에서 *스냅샷 복사본에서 복원*을 클릭합니다.
-.. 스냅샷 복사본을 선택하고 새 볼륨의 이름을 입력한 다음 *복원*을 클릭합니다.
+.. 볼륨 관리 패널의 보호 작업에서 *스냅샷 복사본에서 복원*을 선택합니다.
+.. 스냅샷 복사본을 선택하고 새 볼륨의 이름을 입력한 다음 *복원*을 선택합니다.
 
 
 
 
 | 기본 디스크 유형 변경  a| 
-.. 볼륨 관리 패널의 고급 작업에서 *디스크 유형 변경*을 클릭합니다.
-.. 디스크 유형을 선택한 다음 *변경*을 클릭합니다.
+.. 볼륨 관리 패널의 고급 작업에서 *디스크 유형 변경*을 선택합니다.
+.. 디스크 유형을 선택한 다음 *변경*을 선택하십시오.
 
 
 
@@ -103,8 +103,8 @@ NOTE: 콘솔은 선택한 디스크 유형을 사용하는 기존 집계로 볼�
 
 
 | 티어링 정책 변경  a| 
-.. 볼륨 관리 패널의 고급 작업에서 *계층화 정책 변경*을 클릭합니다.
-.. 다른 정책을 선택하고 *변경*을 클릭하세요.
+.. 볼륨 관리 패널의 고급 작업에서 *계층화 정책 변경*을 선택합니다.
+.. 다른 정책을 선택하고 *변경*을 선택합니다.
 
 
 
@@ -113,9 +113,9 @@ NOTE: 콘솔은 계층화를 통해 선택한 디스크 유형을 사용하는 �
 
 
 | 볼륨 삭제  a| 
-.. 볼륨을 선택한 다음 *삭제*를 클릭합니다.
+.. 볼륨을 선택한 다음 *삭제*를 선택합니다.
 .. 대화 상자에 볼륨 이름을 입력합니다.
-.. 다시 한번 *삭제*를 클릭하여 확인하세요.
+.. *삭제* 를 다시 선택하여 확인합니다.
 
 
 |===
@@ -134,10 +134,10 @@ NOTE: 콘솔은 계층화를 통해 선택한 디스크 유형을 사용하는 �
 . ONTAP 시스템 관리자를 통해 볼륨 크기를 조정하려면 시스템 관리자 보기를 선택하십시오. 을(를) 참조하십시오. link:task-administer-advanced-view.html#get-started-with-system-manager["시스템 관리자 시작하기"].
 . 왼쪽 탐색 메뉴에서 *저장소 > 볼륨*을 선택합니다.
 . 볼륨 목록에서 크기를 조절해야 하는 볼륨을 식별합니다.
-. 옵션 아이콘을 클릭하세요image:screenshot_gallery_options.gif["카밥 아이콘"] .
+. 옵션 아이콘 image:screenshot_gallery_options.gif["카밥 아이콘"]을 선택합니다.
 . *크기 조정*을 선택하세요.
 . *볼륨 크기 조정* 화면에서 필요에 따라 용량과 스냅샷 예약 비율을 편집합니다.  기존의 사용 가능한 공간과 수정된 용량을 비교할 수 있습니다.
-. *저장*을 클릭하세요.
+. *저장*을 선택합니다.
 
 
 image:screenshot-resize-volume.png["볼륨 크기 조정 후 수정된 용량이 화면에 표시됩니다."]
@@ -152,8 +152,8 @@ image:screenshot-resize-volume.png["볼륨 크기 조정 후 수정된 용량이
 DNS 서버나 Active Directory 도메인을 변경하는 경우 Cloud Volumes ONTAP 의 CIFS 서버를 수정해야 클라이언트에 계속해서 스토리지를 제공할 수 있습니다.
 
 .단계
-. Cloud Volumes ONTAP 시스템의 *개요* 탭에서 오른쪽 패널 아래에 있는 *기능* 탭을 클릭합니다.
-. CIFS 설정 필드에서 *연필 아이콘*을 클릭하여 CIFS 설정 창을 표시합니다.
+. Cloud Volumes ONTAP 시스템의 *개요* 탭에서 오른쪽 패널 아래에 있는 *기능* 탭을 선택합니다.
+. CIFS 설정 필드에서 *연필 아이콘*을 선택하여 CIFS 설정 창을 표시합니다.
 . CIFS 서버에 대한 설정을 지정합니다.
 +
 [cols="30,70"]
@@ -170,7 +170,7 @@ DNS 서버나 Active Directory 도메인을 변경하는 경우 Cloud Volumes ON
 | 도메인에 가입할 수 있는 권한이 있는 자격 증명 | AD 도메인 내의 지정된 조직 단위(OU)에 컴퓨터를 추가할 수 있는 권한이 있는 Windows 계정의 이름과 비밀번호입니다. 
 
 
-| DNS 기본 및 보조 IP 주소 | CIFS 서버에 대한 이름 확인을 제공하는 DNS 서버의 IP 주소입니다.  나열된 DNS 서버에는 CIFS 서버가 가입할 도메인에 대한 Active Directory LDAP 서버와 도메인 컨트롤러를 찾는 데 필요한 SRV(서비스 위치 레코드)가 포함되어야 합니다. ifdef::gcp[] Google Managed Active Directory를 구성하는 경우 기본적으로 169.254.169.254 IP 주소를 사용하여 AD에 액세스할 수 있습니다. endif::gcp[] 
+| DNS 기본 및 보조 IP 주소 | CIFS 서버에 대한 이름 확인을 제공하는 DNS 서버의 IP 주소입니다. 나열된 DNS 서버에는 CIFS 서버가 가입할 도메인의 Active Directory LDAP 서버 및 도메인 컨트롤러를 찾는 데 필요한 서비스 위치 레코드(SRV)가 포함되어 있어야 합니다. Google에서 관리하는 Active Directory를 구성하는 경우 기본적으로 169.254.169.254 IP 주소로 AD에 액세스할 수 있습니다. 
 
 
 | DNS 도메인 | Cloud Volumes ONTAP 스토리지 가상 머신(SVM)의 DNS 도메인입니다.  대부분의 경우 도메인은 AD 도메인과 동일합니다. 
@@ -182,29 +182,13 @@ DNS 서버나 Active Directory 도메인을 변경하는 경우 Cloud Volumes ON
 | 조직 단위  a| 
 CIFS 서버와 연결할 AD 도메인 내의 조직 단위입니다.  기본값은 CN=Computers입니다.
 
-ifdef::aws[]
+** AWS: AWS Managed Microsoft AD를 Cloud Volumes ONTAP의 AD 서버로 구성하려면 이 필드에 *OU=Computers,OU=corp*를 입력하십시오.
+** Azure: Azure AD Domain Services를 Cloud Volumes ONTAP의 AD 서버로 구성하려면 이 필드에 *OU=AADDC Computers* 또는 *OU=AADDC Users*를 입력하십시오. Azure 설명서: link:https://docs.microsoft.com/en-us/azure/active-directory-domain-services/create-ou["Azure AD 도메인 서비스 관리형 도메인에 조직 단위(OU)를 생성합니다."^]
+** Google Cloud: Google Managed Microsoft AD를 Cloud Volumes ONTAP의 AD 서버로 구성하려면 이 필드에 *OU=Computers,OU=Cloud*를 입력하십시오. Google Cloud 설명서: link:https://cloud.google.com/managed-microsoft-ad/docs/manage-active-directory-objects#organizational_units["Google에서 관리하는 Microsoft AD의 조직 단위"^]
 
-** Cloud Volumes ONTAP 의 AD 서버로 AWS Managed Microsoft AD를 구성하려면 이 필드에 *OU=Computers,OU=corp*를 입력합니다.
-
-
-endif::aws[]
-
-ifdef::azure[]
-
-** Cloud Volumes ONTAP 의 AD 서버로 Azure AD Domain Services를 구성하려면 이 필드에 *OU=AADDC Computers* 또는 *OU=AADDC Users*를 입력합니다.link:https://docs.microsoft.com/en-us/azure/active-directory-domain-services/create-ou["Azure 설명서: Azure AD Domain Services 관리 도메인에서 OU(조직 단위) 만들기"^]
-
-
-endif::azure[]
-
-ifdef::gcp[]
-
-** Cloud Volumes ONTAP 의 AD 서버로 Google Managed Microsoft AD를 구성하려면 이 필드에 *OU=Computers,OU=Cloud*를 입력합니다.link:https://cloud.google.com/managed-microsoft-ad/docs/manage-active-directory-objects#organizational_units["Google Cloud 문서: Google Managed Microsoft AD의 조직 단위"^]
-
-
-endif::gcp[]
 
 |===
-. *설정*을 클릭하세요.
+. *설정*을 선택합니다.
 
 
 .결과
@@ -263,8 +247,8 @@ TIP: 콘솔은 애그리게이트의 사용 용량이 90%에 도달하면 "조�
 
 . 집계에서 이동할 하나 이상의 볼륨을 식별합니다.
 +
-.. Cloud Volumes ONTAP 시스템에서 *집계 탭*을 클릭합니다.
-.. 집계 타일에서 image:icon-action.png["추가 작업을 위한 가로 점 세 개가 표시된 아이콘입니다."] 아이콘을 클릭한 다음 *집계 세부 정보 보기*를 클릭합니다.
+.. Cloud Volumes ONTAP 시스템에서 *Aggregates 탭*을 선택합니다.
+.. 집계 타일에서 image:icon-action.png["추가 작업을 위한 가로 점 세 개가 표시된 아이콘입니다."] 아이콘을 선택한 다음 *집계 세부 정보 보기*를 선택합니다.
 .. *집계 세부 정보* 화면의 *개요* 탭에서 각 볼륨의 크기를 검토하고 집계에서 이동할 볼륨을 하나 이상 선택합니다.
 +
 나중에 추가 용량 문제가 발생하지 않도록 전체적으로 여유 공간을 확보할 수 있을 만큼 큰 볼륨을 선택해야 합니다.
@@ -303,11 +287,9 @@ image::screenshot_aggr_volume_overview.png[스크린샷 어그르 볼륨 개요]
 .이 작업에 관하여
 이 작업의 단계에 따라 다음과 같은 작업 필요 메시지를 수정할 수 있습니다.
 
-[]
-====
-볼륨을 이동하는 것은 용량 문제를 방지하기 위해 필요합니다. 하지만 시스템이 디스크 한도에 도달했기 때문에 콘솔에서 이 작업을 수행할 수 없습니다.
 
-====
+NOTE: 용량 문제를 방지하려면 볼륨을 이동해야 합니다. 하지만 시스템이 디스크 용량 제한에 도달하면 Console에서 이 작업을 수행할 수 없습니다.
+
 .단계
 . 사용 가능한 용량이 있는 Cloud Volumes ONTAP 시스템을 확인하거나 새로운 시스템을 배포합니다.
 . 볼륨의 일회성 데이터 복제를 수행하려면 소스 시스템을 대상 시스템으로 끌어서 놓습니다.
@@ -339,16 +321,14 @@ image::screenshot_aggr_volume_overview.png[스크린샷 어그르 볼륨 개요]
 .이 작업에 관하여
 이 작업의 단계에 따라 다음과 같은 작업 필요 메시지를 수정할 수 있습니다.
 
-[]
-====
-용량 문제를 방지하려면 두 개 이상의 볼륨을 이동하는 것이 필요합니다. 하지만 콘솔에서는 이 작업을 대신 수행할 수 없습니다.
 
-====
+NOTE: 용량 문제를 방지하려면 두 개 이상의 볼륨을 이동하는 것이 필요합니다. 하지만 콘솔에서는 이 작업을 대신 수행할 수 없습니다.
+
 .단계
 . 이동해야 하는 볼륨에 대한 사용 가능한 용량이 기존 집계에 있는지 확인하세요.
 +
-.. Cloud Volumes ONTAP 시스템에서 *집계 탭*을 클릭합니다.
-.. 필요한 애그리게이트 타일에서 image:icon-action.png["추가 작업을 위한 가로 점 세 개가 표시된 아이콘입니다."] 아이콘을 클릭한 다음 *애그리게이트 세부 정보 보기*를 클릭하여 사용 가능한 용량(프로비저닝된 크기에서 사용된 애그리게이트 용량을 뺀 값)을 확인합니다.
+.. Cloud Volumes ONTAP 시스템에서 *Aggregates 탭*을 선택합니다.
+.. 필요한 애그리게이트 타일에서 image:icon-action.png["추가 작업을 위한 가로 점 세 개가 표시된 아이콘입니다."] 아이콘을 선택한 다음 *애그리게이트 세부 정보 보기*를 선택하여 사용 가능한 용량(프로비저닝된 크기에서 사용된 애그리게이트 용량을 뺀 값)을 확인합니다.
 +
 image::screenshot_aggr_capacity.png[스크린샷 공격 용량]
 
@@ -356,8 +336,8 @@ image::screenshot_aggr_capacity.png[스크린샷 공격 용량]
 
 . 필요한 경우 기존 집계에 디스크를 추가합니다.
 +
-.. 집합체를 선택한 다음 image:icon-action.png["추가 작업을 위한 가로 점 세 개가 표시된 아이콘입니다."] 아이콘 > *디스크 추가*를 클릭합니다.
-.. 추가할 디스크 수를 선택한 다음 *추가*를 클릭합니다.
+.. 집합체를 선택한 다음 image:icon-action.png["추가 작업을 위한 가로 점 세 개가 표시된 아이콘입니다."] 아이콘 > *디스크 추가*를 선택합니다.
+.. 추가할 디스크 개수를 선택한 다음 *추가*를 선택합니다.
 
 
 . 사용 가능한 용량이 있는 집계가 없으면 새 집계를 만듭니다.

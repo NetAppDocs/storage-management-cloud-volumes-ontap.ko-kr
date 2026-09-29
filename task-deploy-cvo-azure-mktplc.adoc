@@ -62,7 +62,7 @@ NOTE: 구독에 리소스 공급자 "Microsoft.storage"를 등록한 경우에�
 .단계
 . Azure Marketplace 사이트에서 NetApp 제품을 검색합니다.
 . * NetApp Cloud Volumes ONTAP 직접*을 선택하세요.
-. *만들기*를 클릭하여 배포 마법사를 시작합니다.
+. 배포 마법사를 시작하려면 *만들기*를 선택합니다.
 . 플랜을 선택하세요.  *계획* 목록에는 일반적으로 Cloud Volumes ONTAP 의 최신 릴리스가 표시됩니다.
 . *기본* 탭에서 다음 세부 정보를 제공합니다.
 +

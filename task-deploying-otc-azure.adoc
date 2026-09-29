@@ -56,7 +56,7 @@ Azure에서 단일 노드 Cloud Volumes ONTAP 시스템을 시작하려면 Conso
 
 .단계
 . 왼쪽 탐색 메뉴에서 *저장소 > 관리*를 선택합니다.
-. [[구독]]*시스템* 페이지에서 *시스템 추가*를 클릭하고 안내를 따르세요.
+. [[subscribe]] *시스템* 페이지에서 *시스템 추가*를 선택하고 안내에 따라 진행합니다.
 . *위치 선택*: *Microsoft Azure*와 * Cloud Volumes ONTAP 단일 노드*를 선택하세요.
 . 메시지가 표시되면 https://docs.netapp.com/us-en/console-setup-admin/task-quick-start-connector-azure.html["콘솔 에이전트 생성"^].
 . *세부 정보 및 자격 증명*: 필요에 따라 Azure 자격 증명과 구독을 변경하고, 클러스터 이름을 지정하고, 필요한 경우 태그를 추가한 다음 자격 증명을 지정합니다.
@@ -130,7 +130,7 @@ TIP: 사용 중인 Azure 계정에  https://docs.netapp.com/us-en/console-setup-
 ** link:task-set-up-licensing-azure.html["라이선싱 설정 방법 알아보기"^] .
 
 
-. *사전 구성된 패키지*: Cloud Volumes ONTAP 시스템을 빠르게 배포하려면 패키지 중 하나를 선택하거나 *내 구성 만들기*를 클릭하세요.
+. *사전 구성된 패키지*: 패키지 중 하나를 선택하여 Cloud Volumes ONTAP 시스템을 신속하게 배포하거나 *나만의 구성 만들기*를 선택하십시오.
 +
 패키지 중 하나를 선택하는 경우 볼륨만 지정하고 구성을 검토하여 승인하기만 하면 됩니다.
 
@@ -177,7 +177,7 @@ link:concept-worm.html["WORM 스토리지에 대해 자세히 알아보세요"^]
 .. WORM 저장소를 활성화하는 경우 보존 기간을 선택하세요.
 
 
-. *볼륨 만들기*: 새 볼륨에 대한 세부 정보를 입력하거나 *건너뛰기*를 클릭합니다.
+. *볼륨 생성*: 새 볼륨에 대한 세부 정보를 입력하거나 *건너뛰기*를 선택하십시오.
 +
 link:concept-client-protocols.html["지원되는 클라이언트 프로토콜 및 버전에 대해 알아보세요"^] .
 
@@ -247,9 +247,9 @@ image:screenshot_cot_vol.gif["스크린샷: Cloud Volumes ONTAP 인스턴스에 
 . *검토 및 승인*: 선택 사항을 검토하고 확인합니다.
 +
 .. 구성에 대한 세부 정보를 검토하세요.
-.. *자세한 정보*를 클릭하여 콘솔에서 구매할 지원 및 Azure 리소스에 대한 세부 정보를 검토하세요.
+.. *자세한 정보*를 선택하면 지원 내용과 콘솔에서 구매할 Azure 리소스에 대한 세부 정보를 확인할 수 있습니다.
 .. *이해합니다...* 확인란을 선택하세요.
-.. *이동*을 클릭하세요.
+.. *이동*을 선택합니다.
 
 
 
@@ -257,7 +257,7 @@ image:screenshot_cot_vol.gif["스크린샷: Cloud Volumes ONTAP 인스턴스에 
 .결과
 콘솔은 Cloud Volumes ONTAP 시스템을 배포합니다.  감사 페이지에서 진행 상황을 추적할 수 있습니다.
 
-Cloud Volumes ONTAP 시스템 배포 중 문제가 발생하면 실패 메시지를 검토하세요.  시스템을 선택하고 *환경 다시 만들기*를 클릭할 수도 있습니다.
+Cloud Volumes ONTAP 시스템 배포 중 문제가 발생하면 오류 메시지를 확인하십시오. 시스템을 선택하고 *환경 다시 생성*을 선택할 수도 있습니다.
 
 추가 도움말을 보려면 다음으로 이동하세요. https://mysupport.netapp.com/site/products/all/details/cloud-volumes-ontap/guideme-tab["NetApp Cloud Volumes ONTAP 지원"^] .
 
@@ -281,7 +281,7 @@ Azure에서 Cloud Volumes ONTAP HA 쌍을 시작하려면 콘솔에서 HA 시스
 
 .단계
 . 왼쪽 탐색 메뉴에서 *저장소 > 관리*를 선택합니다.
-. [[구독]]*시스템* 페이지에서 *시스템 추가*를 클릭하고 안내를 따르세요.
+. [[subscribe]] *시스템* 페이지에서 *시스템 추가*를 선택하고 안내에 따라 진행합니다.
 . 메시지가 표시되면 https://docs.netapp.com/us-en/console-setup-admin/task-quick-start-connector-azure.html["콘솔 에이전트 생성"^].
 . *세부 정보 및 자격 증명*: 필요에 따라 Azure 자격 증명과 구독을 변경하고, 클러스터 이름을 지정하고, 필요한 경우 태그를 추가한 다음 자격 증명을 지정합니다.
 +
@@ -365,7 +365,7 @@ TIP: 사용 중인 Azure 계정에  https://docs.netapp.com/us-en/console-setup-
 ** link:task-set-up-licensing-azure.html["라이선싱 설정 방법 알아보기"^] .
 
 
-. *사전 구성된 패키지*: Cloud Volumes ONTAP 시스템을 빠르게 배포하려면 패키지 중 하나를 선택하거나 *구성 변경*을 클릭하세요.
+. *사전 구성된 패키지*: 패키지 중 하나를 선택하여 Cloud Volumes ONTAP 시스템을 신속하게 배포하거나 *구성 변경*을 선택하십시오.
 +
 패키지 중 하나를 선택하는 경우 볼륨만 지정하고 구성을 검토하여 승인하기만 하면 됩니다.
 
@@ -428,7 +428,7 @@ link:concept-worm.html["WORM 스토리지에 대해 자세히 알아보세요"^]
 +
 link:concept-worm.html["WORM 스토리지에 대해 자세히 알아보세요"^] .
 
-. *볼륨 만들기*: 새 볼륨에 대한 세부 정보를 입력하거나 *건너뛰기*를 클릭합니다.
+. *볼륨 생성*: 새 볼륨에 대한 세부 정보를 입력하거나 *건너뛰기*를 선택하십시오.
 +
 link:concept-client-protocols.html["지원되는 클라이언트 프로토콜 및 버전에 대해 알아보세요"^] .
 
@@ -498,9 +498,9 @@ image:screenshot_cot_vol.gif["스크린샷: Cloud Volumes ONTAP 인스턴스에 
 . *검토 및 승인*: 선택 사항을 검토하고 확인합니다.
 +
 .. 구성에 대한 세부 정보를 검토하세요.
-.. *자세한 정보*를 클릭하여 콘솔에서 구매할 지원 및 Azure 리소스에 대한 세부 정보를 검토하세요.
+.. *자세한 정보*를 선택하면 지원 내용과 콘솔에서 구매할 Azure 리소스에 대한 세부 정보를 확인할 수 있습니다.
 .. *이해합니다...* 확인란을 선택하세요.
-.. *이동*을 클릭하세요.
+.. *이동*을 선택합니다.
 
 
 
@@ -508,7 +508,7 @@ image:screenshot_cot_vol.gif["스크린샷: Cloud Volumes ONTAP 인스턴스에 
 .결과
 콘솔은 Cloud Volumes ONTAP 시스템을 배포합니다.  감사 페이지에서 진행 상황을 추적할 수 있습니다.
 
-Cloud Volumes ONTAP 시스템 배포 중 문제가 발생하면 실패 메시지를 검토하세요.  시스템을 선택하고 *환경 다시 만들기*를 클릭할 수도 있습니다.
+Cloud Volumes ONTAP 시스템 배포 중 문제가 발생하면 오류 메시지를 확인하십시오. 시스템을 선택하고 *환경 다시 생성*을 선택할 수도 있습니다.
 
 .당신이 완료한 후
 * CIFS 공유를 프로비저닝한 경우 사용자 또는 그룹에 파일과 폴더에 대한 권한을 부여하고 해당 사용자가 공유에 액세스하여 파일을 만들 수 있는지 확인합니다.

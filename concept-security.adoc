@@ -24,28 +24,10 @@ Cloud Volumes ONTAP 데이터 암호화를 지원하고 바이러스 및 랜섬�
 Cloud Volumes ONTAP 다음과 같은 암호화 기술을 지원합니다.
 
 * NetApp 암호화 솔루션(NVE 및 NAE)
-
-
-ifdef::aws[]
-
 * AWS 키 관리 서비스
-
-
-endif::aws[]
-
-ifdef::azure[]
-
 * Azure Storage 서비스 암호화
-
-
-endif::azure[]
-
-ifdef::gcp[]
-
 * Google Cloud Platform 기본 암호화
 
-
-endif::gcp[]
 
 클라우드 공급업체의 기본 암호화와 함께 NetApp 암호화 솔루션을 사용하면 하이퍼바이저 수준에서 데이터를 암호화할 수 있습니다.  그렇게 하면 매우 민감한 데이터의 경우 바람직할 수 있는 이중 암호화가 제공됩니다.  암호화된 데이터에 액세스하면 두 번 암호화가 해제됩니다. 한 번은 하이퍼바이저 수준에서(클라우드 공급업체의 키를 사용하여) 해제되고, 두 번째는 NetApp 암호화 솔루션을 사용하여(외부 키 관리자의 키를 사용하여) 해제됩니다.
 
@@ -66,32 +48,14 @@ Cloud Volumes ONTAP ONTAP 사용하는 표준 KMIP(Key Management Interoperabili
 
 NVE를 사용하는 경우 클라우드 공급자의 키 보관소를 사용하여 ONTAP 암호화 키를 보호하는 옵션이 있습니다.
 
-ifdef::aws[]
-
 * AWS 키 관리 서비스(KMS)
-
-
-endif::aws[]
-
-ifdef::azure[]
-
 * Azure 키 보관소(AKV)
-
-
-endif::azure[]
-
-ifdef::gcp[]
-
 * Google Cloud 키 관리 서비스
 
-
-endif::gcp[]
 
 외부 키 관리자를 설정한 후에는 새로운 집계에서 기본적으로 NetApp 집계 암호화(NAE)가 활성화됩니다.  NAE 집계에 포함되지 않은 새 볼륨에는 기본적으로 NVE가 활성화되어 있습니다(예: 외부 키 관리자를 설정하기 전에 생성된 기존 집계가 있는 경우).
 
 지원되는 키 관리자를 설정하는 것이 유일하게 필요한 단계입니다.  설정 지침은 다음을 참조하세요.link:task-encrypting-volumes.html["NetApp 암호화 솔루션으로 볼륨 암호화"] .
-
-ifdef::aws[]
 
 
 
@@ -105,10 +69,6 @@ TIP: Cloud Volumes ONTAP 시스템을 생성한 후에는 AWS 데이터 암호�
 
 이 암호화 옵션을 사용하려면 AWS KMS가 적절하게 설정되어 있는지 확인해야 합니다.  자세한 내용은 다음을 참조하세요.link:task-setting-up-kms.html["AWS KMS 설정"] .
 
-endif::aws[]
-
-ifdef::azure[]
-
 
 
 [[azure-storage-service-encryption]]
@@ -118,10 +78,6 @@ Azure의 Cloud Volumes ONTAP 에서 데이터는 자동으로 암호화됩니다
 
 원하시면 자체 암호화 키를 사용하실 수 있습니다. link:task-set-up-azure-encryption.html["Azure에서 고객 관리 키를 사용하도록 Cloud Volumes ONTAP 설정하는 방법을 알아보세요."] .
 
-endif::azure[]
-
-ifdef::gcp[]
-
 
 
 [[google-cloud-platform-default-encryption]]
@@ -130,8 +86,6 @@ ifdef::gcp[]
 https://cloud.google.com/security/encryption-at-rest/["Google Cloud Platform 저장 데이터 암호화"^]Cloud Volumes ONTAP 에서는 기본적으로 활성화되어 있습니다.  설정이 필요하지 않습니다.
 
 Google Cloud Storage는 디스크에 쓰기 전에 항상 데이터를 암호화하지만, Console API를 사용하면 _고객 관리 암호화 키_를 사용하는 Cloud Volumes ONTAP 시스템을 만들 수 있습니다.  이러한 키는 Cloud Key Management Service를 사용하여 GCP에서 생성하고 관리하는 키입니다. link:task-setting-up-gcp-encryption.html["자세히 알아보기"] .
-
-endif::gcp[]
 
 
 

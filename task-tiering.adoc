@@ -24,26 +24,10 @@ summary: 자주 사용되는 데이터의 경우 SSD 또는 HDD 성능 계층을
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["둘"]Cloud Volumes ONTAP 과 개체 스토리지 간 연결을 보장합니다.
 [role="quick-margin-list"]
-ifdef::aws[]
-
-* AWS의 경우, Amazon Simple Storage Service(Amazon S3)에 대한 VPC 엔드포인트가 필요합니다. <<Requirements to tier cold data to AWS S3,자세히 알아보기>>.
-
-
-endif::aws[]
-
-ifdef::azure[]
-
+* AWS의 경우 Amazon Simple Storage Service(Amazon S3)에 대한 VPC 엔드포인트가 필요합니다. <<Requirements to tier cold data to AWS S3,자세히 알아보기>>.
 * Azure의 경우 NetApp Console 필요한 권한이 있는 한 아무것도 할 필요가 없습니다. <<Azure Blob 스토리지에 콜드 데이터를 계층화하기 위한 요구 사항,자세히 알아보기>> .
-
-
-endif::azure[]
-
-ifdef::gcp[]
-
 * Google Cloud의 경우 Private Google Access에 대한 서브넷을 구성하고 서비스 계정을 설정해야 합니다. <<Google Cloud Storage 버킷에 콜드 데이터를 계층화하기 위한 요구 사항,자세히 알아보기>> .
 
-
-endif::gcp[]
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["삼"]계층화가 활성화된 집계가 있는지 확인하세요.
 [role="quick-margin-para"]
@@ -77,8 +61,6 @@ NetApp Console 볼륨을 생성, 수정 또는 복제할 때 계층화 정책을
 
 특정 구성 및 기능을 사용할 때 데이터 계층화를 활성화할 수 있습니다.
 
-ifdef::aws[]
-
 
 
 [[support-in-aws]]
@@ -92,10 +74,6 @@ NOTE: 처리량 최적화 HDD(st1)를 사용할 때 개체 스토리지에 데�
 
 * 비활성 데이터는 Amazon S3 버킷에 계층화됩니다.  다른 공급자로의 계층화는 지원되지 않습니다.
 
-
-endif::aws[]
-
-ifdef::azure[]
 
 
 
@@ -112,10 +90,6 @@ ifdef::azure[]
 * 비활성 데이터는 Microsoft Azure Blob에 계층화됩니다.  다른 공급자로의 계층화는 지원되지 않습니다.
 
 
-endif::azure[]
-
-ifdef::gcp[]
-
 
 
 [[support-in-google-cloud]]
@@ -125,8 +99,6 @@ ifdef::gcp[]
 * 성능 계층은 SSD 영구 디스크, 균형 영구 디스크 또는 표준 영구 디스크가 될 수 있습니다.
 * 비활성 데이터는 Google Cloud Storage에 저장됩니다.  다른 공급자로의 계층화는 지원되지 않습니다.
 
-
-endif::gcp[]
 
 
 
@@ -144,8 +116,6 @@ endif::gcp[]
 
 클라우드 제공업체에 따라 Cloud Volumes ONTAP 콜드 데이터를 개체 스토리지로 계층화할 수 있도록 특정 연결 및 권한을 설정해야 합니다.
 
-ifdef::aws[]
-
 
 
 [[requirements-to-tier-cold-data-to-amazon-s3]]
@@ -156,10 +126,6 @@ Cloud Volumes ONTAP이 Amazon S3에 연결되어 있는지 확인하십시오. �
 VPC 엔드포인트를 생성할 때 Cloud Volumes ONTAP 인스턴스에 해당하는 지역, VPC 및 경로 테이블을 선택해야 합니다.  또한 S3 엔드포인트로의 트래픽을 활성화하는 아웃바운드 HTTPS 규칙을 추가하려면 보안 그룹을 수정해야 합니다.  그렇지 않으면 Cloud Volumes ONTAP 이 S3 서비스에 연결할 수 없습니다.
 
 문제가 발생하면 다음을 참조하세요. https://aws.amazon.com/premiumsupport/knowledge-center/connect-s3-vpc-endpoint/["AWS 지원 지식 센터: 게이트웨이 VPC 엔드포인트를 사용하여 S3 버킷에 연결할 수 없는 이유는 무엇입니까?"^] .
-
-endif::aws[]
-
-ifdef::azure[]
 
 
 
@@ -174,10 +140,6 @@ ifdef::azure[]
 "Microsoft.Network/routeTables/join/action",
 ----
 사용자 지정 역할에는 기본적으로 권한이 포함됩니다. https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-azure.html["콘솔 에이전트에 대한 Azure 권한 보기"^]
-
-endif::azure[]
-
-ifdef::gcp[]
 
 
 
@@ -200,8 +162,6 @@ Cloud Volumes ONTAP 시스템을 생성할 때 이 서비스 계정을 선택하
 link:task-setting-up-gcp-encryption.html["Cloud Volumes ONTAP 에서 고객 관리 암호화 키를 사용하는 방법을 알아보세요."] .
 
 
-
-endif::gcp[]
 
 
 
@@ -240,9 +200,9 @@ image:screenshot_aggregate_tiering_enabled.png["계층화 상태를 포함한 �
 
 
 .집계에서 계층화를 활성화하는 단계
-. ONTAP 시스템 관리자에서 *스토리지 > 계층*을 클릭합니다.
-. 집계에 대한 작업 메뉴를 클릭하고 *클라우드 계층 연결*을 선택합니다.
-. 연결할 클라우드 계층을 선택하고 *저장*을 클릭합니다.
+. ONTAP System Manager에서 *스토리지 > 계층*을 선택합니다.
+. 애그리게이트에 대한 작업 메뉴를 선택하고 *클라우드 계층 연결*을 선택합니다.
+. 연결할 클라우드 계층을 선택하고 *저장*을 선택합니다.
 
 
 .다음은 무엇인가요?
@@ -263,10 +223,10 @@ Cloud Volumes ONTAP 읽기-쓰기 볼륨의 비활성 데이터를 비용 효율
 | 일 | 행동 
 
 
-| 새 볼륨을 만듭니다 | *새 볼륨 추가*를 클릭합니다. 
+| 새 볼륨을 만듭니다 | *새 볼륨 추가*를 선택합니다. 
 
 
-| 기존 볼륨 수정 | 원하는 볼륨 타일을 선택하고 *볼륨 관리*를 클릭하여 오른쪽 패널의 볼륨 관리에 액세스한 다음 오른쪽 패널 아래에서 *고급 작업*과 *계층화 정책 변경*을 클릭합니다. 
+| 기존 볼륨 수정 | 원하는 볼륨 타일을 선택하고 *볼륨 관리*를 선택하여 볼륨 관리 오른쪽 패널에 액세스한 다음 오른쪽 패널에서 *고급 작업* 및 *계층화 정책 변경*을 선택합니다. 
 |===
 . 계층화 정책을 선택하세요.
 +
@@ -317,8 +277,8 @@ Cloud Volumes ONTAP 배포한 후 30일 동안 액세스되지 않은 비활성 
 지원되는 스토리지 클래스에 대한 정보는 다음을 참조하세요.link:concept-data-tiering.html["데이터 계층화 개요"] .
 
 .단계
-. Cloud Volumes ONTAP 시스템에서 메뉴 아이콘을 클릭한 다음 *스토리지 클래스* 또는 *Blob 스토리지 계층화*를 클릭합니다.
-. 저장 클래스를 선택한 다음 *저장*을 클릭합니다.
+. Cloud Volumes ONTAP 시스템에서 메뉴 아이콘을 선택한 다음 *Storage Classes* 또는 *Blob Storage Tiering*을 선택합니다.
+. 저장 유형을 선택한 다음 *저장*을 선택합니다.
 
 
 
@@ -337,16 +297,16 @@ CAUTION: 충분한 공간이 없으면 Cloud Volumes ONTAP 이 데이터를 이�
 
 .단계
 . 왼쪽 탐색 창에서 *관리 > 에이전트*로 이동합니다.
-. Cloud Volumes ONTAP 시스템을 관리하는 콘솔 에이전트의 image:icon-action.png["추가 작업을 위한 가로 점 세 개가 표시된 아이콘입니다."] 아이콘을 클릭하십시오.
+. Cloud Volumes ONTAP 시스템을 관리하는 콘솔 에이전트의 image:icon-action.png["추가 작업을 위한 가로 점 세 개가 표시된 아이콘입니다."] 아이콘을 선택하십시오.
 . * Cloud Volumes ONTAP 설정*을 선택합니다.
 +
 image::screenshot-settings-cloud-volumes-ontap.png[설정 아이콘 아래에 있는 Cloud Volumes ONTAP 설정 옵션의 스크린샷입니다.]
 
-. *용량*에서 *데이터 계층화를 위한 집계 용량 임계값 - 여유 공간 비율*을 클릭합니다.
+. *용량* 항목에서 *데이터 계층화를 위한 애그리게이트 용량 임계값 - 여유 공간 비율*을 선택합니다.
 +
 image:screenshot-cvo-settings-page.png["Cloud Volumes ONTAP 의 용량 설정 개요입니다."]
 
-. 요구 사항에 맞게 여유 공간 비율을 변경하고 *저장*을 클릭하세요.
+. 필요에 따라 여유 공간 비율을 변경하고 *저장*을 선택합니다.
 
 
 

@@ -78,7 +78,7 @@ link:reference-networking-gcp.html["Google Cloud의 네트워킹 요구 사항"]
 
 .단계
 . 왼쪽 탐색 메뉴에서 *저장소 > 관리*를 선택합니다.
-. [[구독]]캔버스 페이지에서 *시스템 추가*를 클릭하고 안내를 따르세요.
+. [[구독]]캔버스 페이지에서 *시스템 추가*를 선택하고 안내에 따라 진행합니다.
 . 클라우드 공급자(*Amazon Web Services*, *Microsoft Azure*, *Google Cloud*)를 선택한 다음 *Cloud Volumes ONTAP/Cloud Volumes ONTAP HA* > *새로 추가*를 선택합니다. *빠른 생성* 옵션이 기본적으로 선택되어 있습니다.
 +
 .빠른 생성 옵션의 샘플 스크린샷
@@ -106,24 +106,12 @@ image:screenshot-quick-start-gcp.png["width=500,alt=\"Google Cloud Quick Create\
 
 
 .시스템 세부 정보
-. *클라우드 공급자 계정/자격 증명/Google Cloud 프로젝트*: 계정 및 구독 세부 정보는 콘솔 에이전트를 기반으로 자동으로 채워집니다. 계정이나 구독이 여러 개인 경우 사용할 항목을 선택하십시오. 콘솔 에이전트를 사용할 수 없는 경우 https://docs.netapp.com/us-en/console-setup-admin/concept-agent-install-options.html["콘솔 에이전트 생성"^]하라는 메시지가 표시됩니다.
-
-
-ifdef::gcp[]
-
-Google Cloud의 경우 프로젝트 이름이 포함된 마켓플레이스 구독을 선택해야 합니다.
-
-endif::gcp[]
-
+. *클라우드 공급자 계정/자격 증명/Google Cloud 프로젝트*: 계정 및 구독 세부 정보는 콘솔 에이전트를 기반으로 자동으로 채워집니다. 계정이나 구독이 여러 개인 경우 사용할 항목을 선택하십시오. 콘솔 에이전트를 사용할 수 없는 경우 https://docs.netapp.com/us-en/console-setup-admin/concept-agent-install-options.html["콘솔 에이전트 생성"^]하라는 메시지가 표시됩니다. Google Cloud의 경우 프로젝트 이름이 포함된 마켓플레이스 구독을 선택해야 합니다.
 . *이름*: Cloud Volumes ONTAP 시스템(클러스터 이름이라고도 함)의 이름을 입력하십시오. NetApp Console은 시스템(클러스터) 이름을 사용하여 Cloud Volumes ONTAP 시스템과 VM 인스턴스의 이름을 지정합니다. 또한, 사전 정의된 보안 그룹을 선택한 경우 이 이름을 접두사로 사용합니다.
 . *ONTAP 자격 증명*: Cloud Volumes ONTAP 클러스터 관리자 계정에 대한 자격 증명입니다. 이러한 자격 증명을 사용하여 ONTAP System Manager 또는 ONTAP CLI를 통해 Cloud Volumes ONTAP에 연결할 수 있습니다. 기본 _admin_ 사용자 이름을 유지하거나 사용자 지정 사용자 이름으로 변경할 수 있습니다.
 
 
-ifdef::gcp[]
-
 _Google Cloud_의 경우, Cloud Volumes ONTAP와 함께 link:concept-data-tiering.html["데이터 계층화"] 또는 https://docs.netapp.com/us-en/data-services-backup-recovery/concept-backup-to-cloud.html["NetApp Backup and Recovery"^]을(를) 사용할 계획이라면 *서비스 계정*을 활성화하고 미리 정의된 스토리지 관리자 역할을 가진 서비스 계정을 선택해야 합니다. link:task-creating-gcp-service-account.html["서비스 계정을 만드는 방법을 알아보세요"^]. 콘솔 에이전트와 연결된 서비스 계정입니다 https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-gcp.html["필요한 권한이 있어야 합니다"^].
-
-endif::gcp[]
 
 . *태그/레이블*: 태그는 AWS 또는 Azure 리소스에 대한 메타데이터입니다. 콘솔은 Cloud Volumes ONTAP 인스턴스와 해당 인스턴스에 연결된 각 리소스에 태그를 추가합니다. Cloud Volumes ONTAP 시스템을 생성할 때 사용자 인터페이스에서 최대 15개의 태그를 추가할 수 있으며, 시스템 생성 후에도 태그를 추가할 수 있습니다. 자세한 내용은 다음을 참조하십시오.
 +
@@ -202,40 +190,24 @@ NOTE: Cloud Volumes ONTAP 9.19.1 이상 버전에서는 link:concept-ha-google-c
 
 .충전 및 서비스
 . *License*: 이 Cloud Volumes ONTAP 시스템에서 사용할 라이센스 유형을 선택하십시오. Professional, Essentials 및 Freemium 라이센스 중에서 선택할 수 있습니다. 다양한 라이센스에 대한 자세한 내용은 link:concept-licensing.html["Cloud Volumes ONTAP 라이선스에 대해 알아보세요"^]를 참조하십시오.
-. *데이터 서비스 및 기능*: Cloud Volumes ONTAP 에서 사용하지 않으려는 서비스를 활성화 상태로 유지하거나 비활성화합니다.
-
-
-ifdef::gcp[]
-
-Google Cloud에서 백업 및 복구를 선택하거나 NetApp Cloud Tiering을 사용하려면 서비스 계정을 지정해야 합니다.
-
-endif::gcp[]
-
-* https://docs.netapp.com/us-en/data-services-data-classification/concept-classification.html["NetApp 분류에 대해 자세히 알아보세요"^]
-* https://docs.netapp.com/us-en/data-services-backup-recovery/concept-backup-to-cloud.html["NetApp Backup and Recovery 에 대해 자세히 알아보세요"^]
-* link:concept-worm.html["Cloud Volumes ONTAP 의 WORM 스토리지에 대해 알아보세요"]
+. *데이터 서비스 및 기능*: 서비스를 활성화된 상태로 유지하거나 Cloud Volumes ONTAP에서 사용하지 않을 서비스를 비활성화합니다. _Google Cloud_에서 백업 및 복구를 선택하거나 NetApp Cloud Tiering을 사용하려면 서비스 계정을 지정해야 합니다.
++
+** https://docs.netapp.com/us-en/data-services-data-classification/concept-classification.html["NetApp 분류에 대해 자세히 알아보세요"^]
+** https://docs.netapp.com/us-en/data-services-backup-recovery/concept-backup-to-cloud.html["NetApp Backup and Recovery 에 대해 자세히 알아보세요"^]
+** link:concept-worm.html["Cloud Volumes ONTAP 의 WORM 스토리지에 대해 알아보세요"]
 +
 
 TIP: WORM 및 데이터 계층화를 활용하려면 백업 및 복구를 비활성화하고 버전 9.8 이상의 Cloud Volumes ONTAP 시스템을 배포해야 합니다.
 
-+
-.. * NetApp 지원 사이트 계정*: 계정이 여러 개인 경우 사용할 계정을 선택하세요.
-.. 입력한 세부 정보를 확인하거나 편집한 다음 *만들기*를 클릭하세요.
 
 
+. * NetApp 지원 사이트 계정*: 계정이 여러 개인 경우 사용할 계정을 선택하세요.
+. 입력한 세부 정보를 확인하거나 수정한 다음 *생성*을 선택하세요.
 
-
-ifdef::azure[]
 
 _Azure_의 *개요* 섹션에는 배포 프로세스가 완료될 때 할당될 리소스가 표시됩니다.
 
-endif::azure[]
-
-ifdef::aws[]
-
 AWS에서 Cloud Volumes ONTAP 시스템을 생성한 직후 NetApp Console은 지정된 VPC에 테스트 인스턴스를 시작하여 연결을 확인합니다. 연결에 성공하면 Console은 즉시 인스턴스를 종료한 후 시스템 배포를 시작합니다. Console에서 연결을 확인할 수 없으면 시스템 생성이 실패합니다. 테스트 인스턴스는 `t2.nano`(기본 VPC 테넌시의 경우) 또는 `m3.medium`(전용 VPC 테넌시의 경우)입니다.
-
-endif::aws[]
 
 .당신이 완료한 후
 콘솔은 Cloud Volumes ONTAP 시스템을 배포합니다.  감사 페이지에서 진행 상황을 추적할 수 있습니다.

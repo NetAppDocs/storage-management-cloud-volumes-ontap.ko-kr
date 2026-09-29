@@ -10,19 +10,6 @@ settings:
     pdf_enabled: true
     harmony_enabled: false
   rss_page: whats-new.html
-  filter:
-    label: 클라우드 제공업체
-    default: 모든 클라우드 제공업체
-    options:
-    - name: 아마존 웹 서비스
-      alias: AWS
-      id: aws
-    - name: 구글 클라우드
-      alias: 구글 클라우드
-      id: gcp
-    - name: 마이크로소프트 애저
-      alias: 하늘빛
-      id: azure
   langs: ko-kr,us-en,de-de,es-es,fr-fr,it-it,pt-br,ja-jp,zh-cn,zh-tw
 sidebar:
   entries:
@@ -59,7 +46,6 @@ sidebar:
       - title: Cloud Volumes ONTAP HA 구성
         url: "/concept-degraded-ha-pair.html"
     - title: Amazon Web Services에 배포
-      flavor: aws
       entries:
       - title: AWS Marketplace에서 Cloud Volumes ONTAP 온보딩
         url: "/task-onboard-cvo-aws-marketplace.html"
@@ -92,7 +78,6 @@ sidebar:
       - title: AWS Secret 지역에 Cloud Volumes ONTAP 배포
         url: "/task-getting-started-aws-c2s.html"
     - title: Microsoft Azure에 배포
-      flavor: azure
       entries:
       - title: Azure에서 Cloud Volumes ONTAP 배포 옵션에 대해 알아보세요.
         url: "/concept-azure-mktplace-direct.html"
@@ -133,7 +118,6 @@ sidebar:
       - title: Azure Marketplace에 배포
         url: "/task-deploy-cvo-azure-mktplc.html"
     - title: Google 클라우드에 배포
-      flavor: gcp
       entries:
       - title: 배포 개요
         url: "/task-getting-started-gcp.html"
@@ -172,13 +156,10 @@ sidebar:
       - title: Cloud Volumes ONTAP 스토리지 VM
         url: "/task-managing-svms.html"
       - title: AWS에서 스토리지 VM 관리
-        flavor: aws
         url: "/task-managing-svms-aws.html"
       - title: Azure에서 스토리지 VM 관리
-        flavor: azure
         url: "/task-managing-svms-azure.html"
       - title: Google Cloud에서 스토리지 VM 관리
-        flavor: gcp
         url: "/task-managing-svms-gcp.html"
     - title: 집계 관리
       entries:
@@ -219,7 +200,6 @@ sidebar:
   - title: 클라우드 인프라 관리
     entries:
     - title: AWS 관리
-      flavor: aws
       entries:
       - title: AWS에서 지원되는 구성
         url: "/reference-configs-aws.html"
@@ -236,7 +216,6 @@ sidebar:
       - title: HA 쌍에 대한 경로 테이블 변경
         url: "/task-change-route-tables.html"
     - title: Azure 관리
-      flavor: azure
       entries:
       - title: Azure에서 지원되는 구성
         url: "/reference-configs-azure.html"
@@ -261,7 +240,6 @@ sidebar:
       - title: Azure에서 디스크 성능 계층을 업그레이드하세요
         url: "/task-upgrade-disk-perf-azure.html"
     - title: Google Cloud 관리
-      flavor: gcp
       entries:
       - title: Google Cloud에서 지원되는 구성
         url: "/reference-configs-gcp.html"

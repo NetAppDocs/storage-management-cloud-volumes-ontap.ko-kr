@@ -81,7 +81,7 @@ ONTAP S3 멀티 프로토콜 액세스를 구성하여 OneLake가 Cloud Volumes 
 . Cloud Volumes ONTAP 시스템에 맞게 ONTAP S3를 구성합니다.
 +
 .. NetApp Console의 왼쪽 탐색 메뉴에서 *스토리지 > 관리*를 선택합니다.
-.. 콘솔 에이전트를 선택한 다음 Cloud Volumes ONTAP 시스템을 클릭하고 오른쪽 메뉴 옵션에서 *System Manager*를 선택합니다.
+.. 콘솔 에이전트를 선택합니다. 그런 다음 Cloud Volumes ONTAP 시스템을 선택하고 오른쪽 메뉴 옵션에서 *System Manager*를 선택합니다.
 .. SVM에서 S3 프로토콜 액세스를 활성화하십시오. 자세한 내용은 link:https://docs.netapp.com/us-en/ontap/s3-multiprotocol/enable-access-nas-data-task.html["ONTAP 설명서: NAS 데이터에 대한 S3 클라이언트 액세스 활성화"^]을 참조하십시오.
 +
 
