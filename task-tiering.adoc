@@ -24,7 +24,6 @@ summary: 자주 사용되는 데이터의 경우 SSD 또는 HDD 성능 계층을
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["둘"]Cloud Volumes ONTAP 과 개체 스토리지 간 연결을 보장합니다.
 [role="quick-margin-list"]
-* AWS의 경우 Amazon Simple Storage Service(Amazon S3)에 대한 VPC 엔드포인트가 필요합니다. <<Requirements to tier cold data to AWS S3,자세히 알아보기>>.
 * Azure의 경우 NetApp Console 필요한 권한이 있는 한 아무것도 할 필요가 없습니다. <<Azure Blob 스토리지에 콜드 데이터를 계층화하기 위한 요구 사항,자세히 알아보기>> .
 * Google Cloud의 경우 Private Google Access에 대한 서브넷을 구성하고 서비스 계정을 설정해야 합니다. <<Google Cloud Storage 버킷에 콜드 데이터를 계층화하기 위한 요구 사항,자세히 알아보기>> .
 
