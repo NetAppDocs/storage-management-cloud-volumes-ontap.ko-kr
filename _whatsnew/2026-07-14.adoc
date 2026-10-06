@@ -64,7 +64,9 @@ https://docs.cloud.google.com/compute/docs/general-purpose-machines#c3_series["G
 [[introducing-access-roles-for-cloud-volumes-ontap]]
 === Cloud Volumes ONTAP의 액세스 역할 소개
 
-NetApp은 Cloud Volumes ONTAP에 대한 ID 및 액세스 관리(IAM) 역할을 도입하여 역할 기반 액세스 제어(RBAC)를 통해 보안을 강화하고 규정 준수를 간소화합니다. 사용자는 NetApp Console에 기존 자격 증명을 사용하여 로그인하고 Cloud Volumes ONTAP 작업을 계속 수행할 수 있습니다. 그러나 이제 인증은 ID 페더레이션을 통해 이루어지므로 Console 관리자가 이러한 기능을 더욱 세밀하게 제어할 수 있습니다. 모든 사용자는 Cloud Volumes ONTAP에서 작업을 수행하려면 다음 역할 중 하나를 보유해야 합니다. 역할이 없으면 사용자는 Cloud Volumes ONTAP 인스턴스를 보거나 액세스할 수 없습니다.
+NetApp은 Cloud Volumes ONTAP을 위한 ID 및 액세스 관리(IAM) 역할을 도입하여, 더 나은 보안과 손쉬운 규정 준수를 위해 역할 기반 액세스 제어(RBAC)를 지원합니다. 사용자는 Cloud Volumes ONTAP 작업을 위해 기존 자격 증명을 사용하여 NetApp Console에 계속 로그인할 수 있습니다. 하지만 이제 인증은 ID 페더레이션을 통해 라우팅되므로 Console 관리자가 이러한 기능을 더욱 세밀하게 제어할 수 있습니다. Cloud Volumes ONTAP 역할을 활성화하려면 Console 에이전트가 버전 4.9.0 이상에서 실행 중이어야 합니다.
+
+모든 사용자는 Cloud Volumes ONTAP에서 작업을 수행하려면 다음 역할 중 하나를 보유해야 합니다. 역할이 없으면 사용자는 Cloud Volumes ONTAP 인스턴스를 보거나 액세스할 수 없습니다.
 
 * *Cloud Volumes ONTAP 뷰어*: Cloud Volumes ONTAP 화면 및 탭에 대한 읽기 전용 액세스 권한을 부여합니다. 이 역할에서는 특정 화면 및 작업 버튼이 비활성화됩니다.
 * *Cloud Volumes ONTAP operator*: 볼륨 추가, 스토리지 관리, 복제 구성과 같은 일상적인 관리 작업을 지원합니다.
@@ -76,11 +78,11 @@ Console 관리자는 *Administration > Identity*에서 Cloud Volumes ONTAP 사�
 Cloud Volumes ONTAP은 각 사용자의 권한을 로컬 캐시에 저장하여 RBAC를 적용하며, 이 캐시는 매시간 자동으로 갱신됩니다. 사용자에게 새 역할이 할당되거나 기존 역할이 변경되면 변경 사항이 적용되는 데 최대 1시간이 소요될 수 있으며, 이후 해당 역할에서 허용된 모든 워크플로가 활성화됩니다.
 
 
-NOTE: 콘솔 에이전트를 처음 배포하거나 기존 콘솔 에이전트를 Console 4.9.0 이상 버전으로 업그레이드할 때, 일회성 시딩 프로세스가 조직의 모든 기존 사용자에게 Cloud Volumes ONTAP 역할을 자동으로 할당합니다. 이 프로세스는 완료하는 데 최대 30분이 소요될 수 있습니다. 완료되면 콘솔은 기존 사용자에게 적절한 역할을 할당합니다.
+NOTE: 콘솔 에이전트를 처음 배포하거나 기존 콘솔 에이전트를 콘솔 4.9.0 이상으로 업그레이드할 때, 일회성 시딩 프로세스가 조직의 모든 기존 사용자에게 Cloud Volumes ONTAP 역할을 자동으로 할당합니다. 이 프로세스는 완료하는 데 최대 30분이 소요될 수 있습니다. 완료되면 콘솔은 기존 사용자에게 적절한 역할을 할당합니다. 시딩 프로세스는 에이전트가 실행 중인 경우에만 진행됩니다.
 
-Cloud Volumes ONTAP 역할은 Amazon Web Service(AWS), Microsoft Azure(Azure) 및 Google Cloud 환경에 적용됩니다.
+Cloud Volumes ONTAP 역할은 Amazon Web Service(AWS), Microsoft Azure(Azure) 및 Google Cloud 환경에 적용됩니다. 이 역할은 비공개 및 제한된 배포 모드에는 적용되지 않습니다.
 
 .관련 링크
-* https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["NetApp Console 액세스 역할"^]
 * https://docs.netapp.com/us-en/console-setup-admin/reference-iam-cvo-roles.html["NetApp Console의 Cloud Volumes ONTAP 액세스 역할"^]
+* https://docs.netapp.com/us-en/console-setup-admin/task-cvo-rbac-setup.html["NetApp Console에서 Cloud Volumes ONTAP에 대한 역할 기반 액세스 설정"^]
 

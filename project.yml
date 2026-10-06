@@ -239,6 +239,16 @@ sidebar:
         url: "/task-manage-perf-params-azure.html"
       - title: Azure에서 디스크 성능 계층을 업그레이드하세요
         url: "/task-upgrade-disk-perf-azure.html"
+      - title: Workload Factory를 활용한 구성 분석 및 개선
+        entries:
+        - title: Azure의 Cloud Volumes ONTAP에 대한 구성 분석
+          url: "/concept-configuration-analysis-cvo.html"
+        - title: Azure에서 Cloud Volumes ONTAP 구성을 개선하십시오
+          url: "/task-improve-configurations-cvo.html"
+      - title: Azure의 Cloud Volumes ONTAP에 대한 구성 분석
+        url: "/concept-configuration-analysis-cvo.html"
+      - title: Azure에서 Cloud Volumes ONTAP 구성을 개선하십시오
+        url: "/task-improve-configurations-cvo.html"
     - title: Google Cloud 관리
       entries:
       - title: Google Cloud에서 지원되는 구성
@@ -309,8 +319,6 @@ sidebar:
       url: "/task-manage-keystone.html"
     - title: Cloud Volumes ONTAP 및 Microsoft OneLake
       url: "/task-azure-onelake.html"
-    - title: Cloud Volumes ONTAP 및 잘 설계된 대시보드
-      url: "/configuration-analysis-cvo.html"
     - title: Cloud Volumes ONTAP 자동화 옵션에 대해 알아보십시오.
       url: "/concept-cvo-automation.html"
   - title: 지식과 지원

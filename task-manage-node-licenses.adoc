@@ -21,7 +21,7 @@ NetApp은 모든 신규 구축에 용량 기반 라이선스를 권장합니다.
 
 NOTE: 클라우드 공급업체 마켓플레이스에서 제공하는 종량제(PAYGO) 구독은 프라이빗 모드 배포에서 사용할 수 없습니다. 프라이빗 모드에서는 NetApp이 BYOL(Bring Your Own License) 라이선스를 직접 제공합니다. 노드 기반 라이선스는 기존 프라이빗 모드 배포에서만 사용할 수 있으며 신규 배포는 불가능합니다. NetApp은 2025년 6월 25일부터 프라이빗 모드에서 노드 기반 라이선스의 구매, 연장 및 갱신을 제한했습니다. 기존에 노드 기반 라이선스를 보유하고 있는 경우 용량 기반 라이선스로 전환해야 합니다.
 
-새로운 프라이빗 모드 배포의 경우 용량 기반 라이선스를 대신 사용하십시오. 을(를) 참조하십시오. https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap_capacity-license-darkmode/task-deploying-otc-aws.html#deploy-cloud-volumes-ontap-in-private-mode["프라이빗 클라우드 모드에서 Cloud Volumes ONTAP 배포"^]
+새로운 프라이빗 모드 배포의 경우 용량 기반 라이선스를 대신 사용하십시오. 을(를) 참조하십시오. https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-deploying-otc-aws.html#deploy-cloud-volumes-ontap-in-private-mode["프라이빗 클라우드 모드에서 Cloud Volumes ONTAP 배포"^]
 
 
 

@@ -26,5 +26,5 @@ NetApp Console의 잘 설계된 대시보드를 통해 이제 Cloud Volumes ONTA
 
 나중에 해제된 구성을 포함하려면 잘 설계된 대시보드에서 다시 활성화할 수 있습니다. 이렇게 하면 구성이 분석에 복원되어 권장 사항 및 수정 사항을 확인할 수 있습니다.
 
-* link:https://docs.netapp.com/us-en/console-well-architected/cvo/improve-configurations-cvo.html["Microsoft Azure의 Cloud Volumes ONTAP 구성 수정, 해제 및 재활성화"^]
+* link:https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-improve-configurations-cvo.html["Microsoft Azure의 Cloud Volumes ONTAP 구성 수정, 해제 및 재활성화"^]
 

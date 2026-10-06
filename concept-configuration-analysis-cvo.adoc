@@ -1,0 +1,143 @@
+---
+sidebar: sidebar 
+permalink: concept-configuration-analysis-cvo.html 
+keywords: Cloud Volumes ONTAP, configuration issues, issues, improve, analyze, storage configuration, recommendation, recommendations 
+summary: NetApp Console에서 Workload Factory는 스토리지 시스템 구성을 정기적으로 분석하여 Cloud Volumes ONTAP 시스템에 구성 문제가 있는지 확인합니다. 
+---
+= Azure의 Cloud Volumes ONTAP 시스템에 대한 구성 분석
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Workload Factory는 NetApp Console에서 스토리지 시스템 구성을 정기적으로 분석하여 Azure의 Cloud Volumes ONTAP 시스템에 구성 문제가 있는지 확인합니다. 문제가 발견되면 잘 설계된 대시보드에 문제 내용과 스토리지 시스템이 최적의 성능, 비용 효율성 및 모범 사례 준수를 달성할 수 있도록 변경해야 할 사항에 대한 권장 사항이 표시됩니다.
+
+주요 기능은 다음과 같습니다:
+
+* 일일 구성 분석
+* NetApp ONTAP 스토리지 시스템 및 파트너 스토리지 공급업체를 위한 자동 모범 사례 검증
+* 사전 예방적 관찰 가능성
+* 인사이트를 실행으로
+
+
+link:https://docs.netapp.com/us-en/workload-family/index.html["Workload Factory에 대해 자세히 알아보십시오."^]
+
+
+
+[[how-it-works]]
+== 작동 방식
+
+Workload Factory는 지원되는 클라우드 스토리지 시스템 배포 환경에서 실행되는 워크로드를 매일 분석합니다. 분석 결과는 우수한 아키텍처 상태, 인사이트 및 권장 사항을 제공합니다.
+
+일일 분석이 완료되면 배포의 Well-architected 대시보드에 구성 상태가 "최적화됨" 또는 "최적화되지 않음"으로 표시됩니다. 구성 문제는 범주별로 분류되어 있으며, 구성 문제 목록과 권장 사항도 확인할 수 있습니다. 구성 문제에 대한 권장 사항을 검토할 수 있습니다. Workload Factory는 일부 문제를 자동으로 해결하지만, 다른 문제는 수동 조치가 필요합니다. 이 경우 Workload Factory는 권장 변경 사항을 구현하는 데 도움이 되는 자세한 지침을 제공합니다.
+
+사용자 환경에 적용되지 않는 구성에 대한 분석은 제외할 수 있습니다. 이렇게 하면 불필요한 알림과 부정확한 최적화 결과를 방지할 수 있습니다.
+
+또한 일반 언어로 사용자 지정 규칙을 만들어 조직 표준 및 NetApp 모범 사례에 따라 환경의 유효성을 검사할 수 있습니다. 모의 실행을 통해 규칙을 테스트한 다음, 모든 환경에서 실행되도록 예약할 수 있습니다.
+
+
+
+[[why-it-matters]]
+== 중요한 이유
+
+Workload Factory는 지속적인 평가와 권장 사항 및 문제 해결을 결합하여 대규모 스토리지, 데이터베이스 및 VMware 환경에 최적의 솔루션을 적용합니다. 자동화된 수정 기능은 인적 오류를 줄이고, 일관된 관리를 보장하며, 워크로드 인프라 전반의 성능과 안정성을 유지합니다.
+
+
+
+[[analysis-requirements]]
+== 분석 요구 사항
+
+Cloud Volumes ONTAP와 연결된 Console 에이전트가 다음 엔드포인트에 액세스할 수 있는지 확인하십시오.
+
+* \https://api.workloads.netapp.com
+* \https://ws.workloads.bluexp.netapp.com
+
+
+
+
+[[best-practices-and-recommendations-for-cloud-volumes-ontap-systems]]
+== Cloud Volumes ONTAP 시스템을 위한 모범 사례 및 권장 사항
+
+Workload Factory는 스토리지 구성을 평가하여 ONTAP 구성 모범 사례에 대한 심층적인 분석과 Azure Well-Architected Framework 준수 여부를 제공합니다. 이 평가는 또한 개선 사항 및 수정 사항을 권장합니다.
+
+잘 설계된 분석은 프레임워크의 다음 핵심 요소인 _안정성_, _보안_, _운영 우수성_, _비용 최적화_ 및 _성능 효율성_으로 구성을 분류합니다.
+
+
+
+[[reliability]]
+=== 안정성
+
+신뢰성은 장애 발생 시에도 워크로드가 의도된 기능을 정확하고 일관되게 수행하도록 보장합니다.
+
+* *스냅샷 정책*
++
+효율적인 백업과 빠른 복원을 위해 로컬 스냅샷을 예약하세요. 스냅샷은 볼륨의 즉각적인 특정 시점 이미지입니다.
+
+* *SSD 용량 여유 공간*
++
+잠재적인 애플리케이션 읽기/쓰기 및 처리량 저하를 방지하려면 SSD 스토리지 계층 사용률을 80% 미만으로 유지하십시오. 용량은 수동 또는 자동으로 늘릴 수 있습니다.
+
+* *원격 데이터 복제*
++
+원격 복제를 통해 Cloud Volumes ONTAP 데이터를 보호하십시오. 원격 데이터 복제는 서로 다른 위치에 동기화된 데이터 복사본을 유지하여 시스템 장애나 재해 발생 시에도 비즈니스 연속성을 보장하는 재해 복구 기능을 제공합니다.
+
+
+
+
+
+[[security]]
+=== 보안
+
+보안은 위험 평가 및 완화 전략을 통해 데이터, 시스템 및 자산을 보호하는 데 중점을 둡니다.
+
+* *AI 기반 자율 랜섬웨어 보호(ARP/AI)*
++
+NetApp AI 기반 자율형 랜섬웨어 보호(ARP/AI)는 사이버 복원력을 강화하고 랜섬웨어 위협으로부터 볼륨을 보호합니다. 모든 볼륨에 대해 ARP/AI를 활성화하는 것이 좋습니다.
+
+
+
+
+
+[[operational-excellence]]
+=== 운영 우수성
+
+운영 우수성은 최고의 아키텍처와 비즈니스 가치를 제공하는 데 중점을 둡니다.
+
+* *볼륨 용량 여유 공간*
++
+잠재적인 애플리케이션 읽기/쓰기 및 처리량 저하를 방지하려면 볼륨 사용률을 80% 미만으로 유지하십시오. 용량을 수동으로 또는 볼륨 자동 확장을 사용하여 늘릴 수 있습니다.
+
+* *FlexCache 쓰기 모드*
++
+최적의 성능을 위해서는 워크로드에 가장 적합한 FlexCache 쓰기 모드를 선택하십시오. 쓰기 우회 모드는 작은 파일을 사용하는 읽기 중심 워크로드에서 더 나은 성능을 제공하며, 쓰기 백 모드는 큰 파일을 사용하는 쓰기 중심 워크로드에서 더 나은 성능을 제공합니다.
+
+* *FlexCache 복제본 크기*
++
+캐시 볼륨의 자동 크기 조정 및 데이터 정리 기능을 활성화하여 최적의 크기를 유지하고 자주 액세스되는(핫) 데이터에 캐시를 집중시켜 효율성을 극대화하십시오.
+
+* *ONTAP 버전 준수*
++
+완벽한 호환성, 지원 및 새로운 기능 이용을 위해 최신 ONTAP 버전으로 업그레이드하십시오.
+
+
+
+
+
+[[cost-optimization]]
+=== 비용 최적화
+
+비용 최적화는 비용을 낮게 유지하면서 비즈니스에 가장 큰 가치를 얻을 수 있도록 도와줍니다.
+
+* *SSD 용량 과잉 프로비저닝*
++
+SSD 용량이 과도하면 불필요한 비용이 발생합니다. 20%의 여유 공간 버퍼를 유지하면서 SSD 계층을 줄이십시오. 이 작업은 몇 시간에서 며칠까지 소요될 수 있으며, 작업 중에는 다른 파일 시스템 작업이 지원되지 않습니다.
+
+* *콜드 데이터 티어링*
++
+콜드 데이터 티어링을 활성화하여 콜드 데이터를 SSD 스토리지 티어에서 비용이 저렴한 스토리지로 이동합니다. 모든 볼륨에 티어링 정책을 적용합니다.
+
+
+
+.다음 단계
+link:task-improve-configurations-cvo.html["Workload Factory를 사용하여 Azure의 Cloud Volumes ONTAP 구성을 개선하십시오"]
