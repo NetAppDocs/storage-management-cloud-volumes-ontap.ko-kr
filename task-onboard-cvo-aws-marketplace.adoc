@@ -4,7 +4,7 @@ permalink: task-onboard-cvo-aws-marketplace.html
 keywords: aws marketplace, cloud volumes ontap, onboarding, subscribe, deploy agent, setup guide, organization, subscription association 
 summary: AWS Marketplace에서 Cloud Volumes ONTAP을 구독하고 조직 생성, 구독 연결, 에이전트 배포 및 최초 시스템 생성 등을 포함한 설정을 NetApp Console에서 완료합니다. 
 ---
-= AWS Marketplace에서 Cloud Volumes ONTAP 구독 및 배포
+= AWS Marketplace에서 Cloud Volumes ONTAP 독립형 제품을 구독하고 배포하십시오.
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,76 +14,71 @@ summary: AWS Marketplace에서 Cloud Volumes ONTAP을 구독하고 조직 생성
 
 
 [role="lead"]
-AWS Marketplace에서 Cloud Volumes ONTAP을 구독하고 NetApp Console의 안내에 따라 온보딩 프로세스를 진행하세요. 구독부터 배포까지 간편한 경로를 통해 Cloud Volumes ONTAP을 빠르게 시작하고 운영할 수 있습니다. 안내형 환경은 AWS Marketplace 구독부터 배포까지의 프로세스를 간소화하여 광범위한 클라우드 또는 ONTAP 전문 지식 없이도 Cloud Volumes ONTAP을 배포할 수 있도록 지원합니다.
-
-AWS Marketplace에서 Cloud Volumes ONTAP을 구독하고 배포하는 단계는 다음과 같습니다.
-
-* AWS Marketplace에서 Cloud Volumes ONTAP 구독.
-* Console에 가입하십시오.
-* (필요한 경우) 조직을 생성하고 마켓플레이스 구독을 연결합니다.
-* AWS에 Console 에이전트 배포.
-* 첫 번째 Cloud Volumes ONTAP 시스템 추가.
-
-
-간소화된 온보딩 프로세스를 통해 구독 연결, IAM 역할 구성, 에이전트 프로비저닝 및 시스템 초기화에 필요한 최소한의 입력만으로 에이전트 배포가 자동화됩니다. 백엔드 오케스트레이션은 CloudFormation 스택 생성, VPC 연결 유효성 검사 및 리소스 종속성을 자동으로 처리합니다. 이를 통해 수동 구성 단계와 화면 전환 횟수가 줄어들어 더 적은 설정 오류 및 중단으로 Cloud Volumes ONTAP을 더 빠르게 배포할 수 있습니다. 배포를 진행하면서 오른쪽 패널에서 진행 상황을 추적할 수 있습니다.
+AWS Marketplace에서 독립형 Cloud Volumes ONTAP 제품을 구독하고 Console 에이전트를 배포한 다음 첫 번째 시스템을 생성하십시오.
 
 .시작하기 전에
-온보딩 워크플로를 시작하기 전에 다음 필수 조건을 검토하십시오.
+시작하기 전에 다음 사항을 확인하십시오:
 
-* AWS Marketplace에서 구독하려면 권한이 있는 AWS 계정이 필요합니다. 자동화된 IAM 설정을 사용하려면 AWS 관리자이거나 아래에 표시된 권한을 보유해야 합니다.
+* NetApp Console 계정 또는 계정 생성에 필요한 정보.
+* 콘솔 에이전트 네트워크가 요구 사항을 충족하는지 확인했습니다. link:https://docs.netapp.com/us-en/console-setup-admin/task-install-agent-aws-marketplace.html#step-1-set-up-networking["콘솔 에이전트 네트워킹 요구 사항에 대해 알아보십시오"^]
+* AWS Marketplace를 구독하고 제공 약관에 동의할 수 있는 권한이 있는 AWS 계정 및 ID입니다.
 +
+*Create role for me*를 선택하는 경우, CloudFormation Quick Create 스택을 제출하는 AWS ID에 아래 권한이 필요합니다. 스택 구독과 제출에 동일한 ID를 사용하려면 시작하기 전에 이러한 권한을 연결하십시오. 스택 제출에 다른 ID를 사용하는 경우 해당 ID에 권한을 연결하십시오. 이러한 권한은 CloudFormation이 배포 역할을 생성하도록 허용하며, 실행 중인 에이전트에서 사용하는 권한이 아닙니다.
+
++
+[[aws-iam-role-permissions]]
+.CloudFormation 빠른 생성에 필요한 최소 권한
 [source, json]
 ----
 {
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Sid": "CloudFormationStack",
-      "Effect": "Allow",
-      "Action": [
-        "cloudformation:CreateStack",
-        "cloudformation:DeleteStack",
-        "cloudformation:DescribeStacks",
-        "cloudformation:DescribeStackEvents",
-        "cloudformation:GetTemplateSummary",
-        "iam:CreateRole",
-        "iam:DeleteRole",
-        "iam:GetRole",
-        "iam:PutRolePolicy",
-        "iam:DeleteRolePolicy",
-        "iam:GetRolePolicy",
-        "iam:PassRole",
-        "lambda:CreateFunction",
-        "lambda:DeleteFunction",
-        "lambda:GetFunction",
-        "lambda:InvokeFunction"
-  ]
+	"Version": "2012-10-17",
+	"Statement": [
+		{
+			"Sid": "CloudFormationStack",
+			"Effect": "Allow",
+			"Action": [
+				"cloudformation:CreateStack",
+				"cloudformation:DeleteStack",
+				"cloudformation:DescribeStacks",
+				"cloudformation:DescribeStackEvents",
+				"cloudformation:GetTemplateSummary",
+				"iam:CreateRole",
+				"iam:DeleteRole",
+				"iam:GetRole",
+				"iam:PutRolePolicy",
+				"iam:DeleteRolePolicy",
+				"iam:GetRolePolicy",
+				"iam:PassRole",
+				"lambda:CreateFunction",
+				"lambda:DeleteFunction",
+				"lambda:GetFunction",
+				"lambda:InvokeFunction"
+			]
+		}
+	]
 }
 ----
-* AWS에서 에이전트 배포를 위해 IAM 역할을 생성하거나 사용할 수 있습니다.
-* NetApp Console에 로그인하거나 계정을 만들 수 있습니다.
-
-
-AWS 에이전트 배포에 필요한 모든 필수 조건은 link:https://docs.netapp.com/us-en/console-setup-admin/task-install-agent-aws-marketplace.html["AWS 마켓플레이스에서 NetApp Console 에이전트 배포"^]을 참조하십시오.
 
 
 
-[[subscribe-in-aws-marketplace]]
-== AWS Marketplace에서 구독
 
-AWS Marketplace에서 Cloud Volumes ONTAP 제품을 찾아 온보딩 프로세스를 시작합니다.
+[[subscribe-to-the-standalone-cloud-volumes-ontap-offering-in-aws-marketplace]]
+== AWS Marketplace에서 독립형 Cloud Volumes ONTAP 제품을 구독하십시오.
+
+AWS Marketplace에서 독립형 Cloud Volumes ONTAP 제품을 찾으십시오.
 
 .단계
-. AWS 계정을 사용하여 AWS Marketplace로 이동합니다.
-. NetApp Cloud Volumes ONTAP 제품을 찾습니다. AWS Marketplace에는 Cloud Volumes ONTAP 제품이 두 가지 있습니다.
+. 필요한 권한이 있는 AWS 계정을 사용하여 AWS Marketplace로 이동하십시오.
+. NetApp Cloud Volumes ONTAP 독립형 제품을 찾습니다. AWS Marketplace는 Cloud Volumes ONTAP을 위한 두 가지 제품을 제공합니다:
 +
-** Cloud Volumes ONTAP 연간 구독을 위한 독립형 상품입니다.
-** NetApp 데이터 서비스 및 Cloud Volumes ONTAP 구독을 위한 NetApp Intelligent Service(NIS) 결합 제품입니다. 이 온보딩 워크플로의 경우 _독립형_ 제품을 선택하십시오.
+** Cloud Volumes ONTAP 연간 구독을 위한 단독 상품
+** NetApp 인텔리전트 서비스는 NetApp 데이터 서비스와 Cloud Volumes ONTAP 구독을 결합한 제품입니다.
 
 
+. _단독형_ 상품을 선택하십시오. 다음 단계에 따라 단독형 상품에 가입할 수 있습니다.
 . 상품 상세 정보와 가격 조건을 검토합니다.
 . 구독하고 결제를 완료하십시오.
-. 구독을 완료하면 AWS는 Console 가입 또는 로그인 페이지로 리디렉션합니다.
+. 구독 후 *제품 설정*을 선택하면 NetApp Console로 이동하여 배포를 완료할 수 있습니다.
 
 
 
@@ -91,7 +86,7 @@ AWS Marketplace에서 Cloud Volumes ONTAP 제품을 찾아 온보딩 프로세�
 [[sign-up-or-sign-in-to-netapp-console]]
 == NetApp Console에 가입하거나 로그인합니다.
 
-마켓플레이스 구독을 완료한 후 Console에 액세스하여 설정을 계속 진행하십시오.
+마켓플레이스 구독을 완료한 후 NetApp Console에서 설정을 계속 진행하십시오.
 
 .단계
 . 콘솔 페이지에서 다음 중 하나를 선택합니다.
@@ -100,17 +95,9 @@ AWS Marketplace에서 Cloud Volumes ONTAP 제품을 찾아 온보딩 프로세�
 ** 이미 계정이 있는 경우 *NetApp Console에 로그인하세요.*
 
 
-. *가입하기*를 선택한 경우 다음을 완료하십시오.
+. *가입하기*를 선택한 경우 다음을 완료하십시오:
 +
-.. 필수 입력 항목을 입력하세요:
-+
-*** 이메일
-*** 비밀번호
-*** 성명
-*** 회사
-*** 국가
-
-
+.. 필수 입력 항목을 입력하세요.
 .. *다음*을 선택하십시오.
 .. 주소, 도시, 주, 우편번호, 전화번호 등의 연락처 정보를 입력합니다(선택 사항).
 .. *가입하기*를 선택합니다.
@@ -126,11 +113,9 @@ AWS Marketplace에서 Cloud Volumes ONTAP 제품을 찾아 온보딩 프로세�
 [[create-your-organization]]
 == 조직 만들기
 
-처음 사용하는 사용자이거나 NetApp Console 조직에 아직 소속되어 있지 않은 경우에만 이 단계를 완료하십시오.
+처음 사용하는 사용자이거나 아직 조직에 속해 있지 않은 경우에만 조직을 생성하십시오. 이미 조직에 속해 있는 경우 이 섹션을 건너뛰고 <<AWS에 Console 에이전트 배포>>(으)로 계속 진행하십시오.
 
-이미 조직에 속해 있는 경우 이 섹션을 건너뛰고 <<구독 연결>>으로 계속 진행하십시오.
-
-사용자, 역할, 권한, 라이선스 및 시스템을 관리할 조직을 생성합니다.
+조직은 사용자, 역할, 권한, 라이선스 및 시스템 관리를 지원합니다.
 
 .단계
 . 조직 이름을 입력하십시오.
@@ -140,103 +125,128 @@ AWS Marketplace에서 Cloud Volumes ONTAP 제품을 찾아 온보딩 프로세�
 
 
 
-[[associate-your-subscription]]
-== 구독 연결
-
-조직을 생성하면 Console에서 자동으로 마켓플레이스 구독을 해당 조직에 연결하려고 시도합니다.
-
-자동 연결이 실패하면 구독을 수동으로 연결하십시오. link:https://docs.netapp.com/us-en/console-licenses-subscriptions/task-manage-subscriptions.html["구독 관리 방법을 알아보십시오"^].
-
-
-
 [[deploy-a-console-agent-in-aws]]
 == AWS에 Console 에이전트 배포
 
-구독을 연결하면 콘솔에서 AWS 리소스 및 Cloud Volumes ONTAP 시스템을 관리하기 위한 에이전트 배포 흐름이 자동으로 열립니다.
+구독이 NetApp Console에 연결되면 Console 에이전트를 배포하여 AWS 리소스 및 Cloud Volumes ONTAP 시스템을 관리하십시오.
 
-에이전트 배포 중에 사용되는 권한에 대한 자세한 내용은 link:https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-aws.html["AWS 권한 참조"^]을 참조하십시오.
+.시작하기 전에
+에이전트를 배포하기 전에 AWS 권한 부여 및 네트워킹 요구 사항을 검토하십시오.
+
+* 콘솔이 에이전트를 배포할 수 있도록 권한을 부여하는 방법을 결정합니다.
++
+** *나를 위한 역할 생성*의 경우, CloudFormation Quick Create 스택을 제출하는 AWS ID에 AWS 관리자 권한 또는 <<aws-iam-role-permissions,위의 JSON 예시>>의 최소 권한이 필요합니다.
+** *역할 위임* 또는 *AWS 키*에 대한 자세한 내용은 link:https://docs.netapp.com/us-en/console-setup-admin/task-install-agent-aws-console.html#aws-permissions-agent["에이전트 배포를 위한 AWS 권한"^]을(를) 참조하십시오.
+
+
+* link:https://docs.netapp.com/us-en/console-setup-admin/task-install-agent-aws-marketplace.html#step-1-set-up-networking["콘솔 에이전트 네트워킹 요구 사항"^]에 따라 네트워킹을 설정하십시오.
+
 
 .단계
-. 에이전트를 배포하는 데 필요한 최소 권한을 얻으려면 소개 페이지에 언급된 단계를 따르거나, 에이전트 배포를 위한 역할을 자동으로 생성하는 단계를 진행할 수 있습니다.
-. *AWS 자격 증명* 페이지에서 에이전트 배포에 필요한 자격 증명을 제공하려면 다음 옵션 중 하나를 선택하십시오.
+. 환영 페이지에서 *설정 재개*를 선택하십시오.
++
+콘솔은 마켓플레이스 구독을 조직과 연결하려고 시도합니다. 자동 연결에 실패하면 구독을 수동으로 연결하십시오. link:https://docs.netapp.com/us-en/console-licenses-subscriptions/task-manage-subscriptions.html["구독 관리 방법을 알아보십시오"^].
+
++
+구독이 연결되면 콘솔에서 콘솔 에이전트를 배포하도록 안내합니다.
+
+. 콘솔에서 에이전트를 배포할 수 있도록 승인하는 방법을 선택하십시오:
++
+배포 자격 증명은 콘솔이 에이전트를 배포할 수 있도록 권한을 부여합니다. 실행 중인 에이전트는 EC2 인스턴스에 연결된 별도의 IAM 역할을 사용합니다. 콘솔은 해당 역할을 생성하거나 필요한 권한이 있는 기존 역할을 사용할 수 있습니다. link:https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-aws.html["콘솔 에이전트에 대한 AWS 권한"^]을(를) 참조하십시오.
+
++
+** 콘솔이 사용할 수 있는 역할을 CloudFormation에서 생성하도록 하려면 *나를 위한 역할 생성*을 선택하십시오.
+** *역할 수임*을 선택하고 콘솔이 해당 역할을 수임할 수 있도록 신뢰 정책이 허용하며 필요한 배포 권한이 있는 기존 IAM 역할의 ARN을 제공하십시오.
+** *AWS 키*를 선택하고 필요한 배포 권한을 가진 IAM 사용자의 액세스 키를 제공하십시오.
 +
 [role="tabbed-block"]
 ====
 .저를 위한 역할 생성 (권장)
 --
-이 옵션을 선택하면 AWS CloudFormation Quick Create 흐름이 열려 에이전트 배포 역할을 생성합니다. 관리자 권한이 있는 사용자라면 이 옵션을 사용하여 CloudFormation 스택을 자동으로 활용하여 정책, 역할을 생성하고 사용자를 인증하여 에이전트를 생성할 수 있습니다.
+콘솔에서 CloudFormation Quick Create를 사용하여 역할을 생성하려면 스택을 제출하는 AWS ID에 관리자 권한 또는 <<aws-iam-role-permissions,위의 JSON 예시>>의 최소 권한이 필요합니다.
 
-.. AWS 계정 ID와 선택적으로 외부 ID를 추가합니다. 콘솔에서 기본 역할 이름을 설정합니다.
-.. 약관에 동의하고 *스택 생성*을 선택합니다.
+... *나를 위한 역할 생성*을 선택합니다.
+... AWS 계정 ID와 선택적으로 외부 ID를 추가합니다. 콘솔에서 기본 역할 이름을 설정합니다.
+... *CloudFormation 빠른 생성 열기*를 선택합니다.
+... AWS CloudFormation 빠른 생성 페이지에서 약관에 동의하고 *스택 생성*을 선택합니다.
 +
-image:screenshot-stack-creation.png["width=50% AWS 계정 ID와 선택적으로 에이전트 배포 역할에 대한 외부 ID를 입력하는 AWS CloudFormation 스택 생성 페이지의 스크린샷입니다."]
+image:screenshot-stack-creation.png["width=35% AWS 계정 ID와 선택적으로 에이전트 배포 역할에 대한 외부 ID를 입력하는 AWS CloudFormation 스택 생성 페이지의 스크린샷입니다."]
 
-.. AWS에서 IAM 역할을 구성하고 ARN이 생성되면 역할을 확인하고 저장하십시오.
+... AWS에서 IAM 역할을 구성하고 ARN을 생성하면 역할을 확인하고 저장하십시오.
 
 
 --
 .역할 가정
 --
-이는 수동 역할 할당 워크플로의 일부입니다. 기존 IAM 역할 ARN을 입력하십시오. 이 역할 편집에 대한 자세한 내용은 https://docs.netapp.com/us-en/console-setup-admin/task-adding-aws-accounts.html#associate-an-existing-subscription-with-your-organization["NetApp Console의 AWS 자격 증명 및 마켓플레이스 구독 관리"^]을 참조하십시오.
+이미 필요한 AWS 권한이 있는 역할을 보유하고 있다면, 콘솔이 해당 역할을 사용하여 에이전트를 배포할 수 있도록 ARN을 제공하십시오. link:https://docs.netapp.com/us-en/console-setup-admin/task-install-agent-aws-console.html#aws-permissions-agent["역할 생성 방법에 대해 알아보세요"^].
+
+... *역할 수행*을 선택합니다.
++
+콘솔은 사용자가 가정한 역할에 대한 이름을 생성하며, 원하는 경우 이 이름을 변경할 수 있습니다.
+
+... 기존 역할의 ARN을 입력하십시오.
+... *자격 증명 확인*을 선택합니다.
+
 
 --
 .AWS 키
 --
-이는 수동 역할 할당 워크플로의 일부입니다. AWS 액세스 키와 비밀 키를 입력하십시오. 자세한 내용은 https://docs.netapp.com/us-en/console-setup-admin/task-adding-aws-accounts.html#add-the-credentials-to-an-existing-agent["NetApp Console의 AWS 자격 증명 및 마켓플레이스 구독 관리"^]을 참조하십시오.
+액세스 키를 사용하여 에이전트 배포를 승인하려면 AWS 액세스 키와 비밀 키를 제공하십시오. link:https://docs.netapp.com/us-en/console-setup-admin/task-install-agent-aws-console.html#aws-permissions-agent["사용자 역할 생성 방법에 대해 알아보세요"^].
+
+... *AWS 키*를 선택합니다.
+... 사용하려는 역할의 액세스 키와 시크릿을 입력하십시오.
+... *자격 증명 확인*을 선택합니다.
+
 
 --
 ====
-. AWS 에이전트를 배포합니다.
+
+
+. 에이전트 인스턴스 이름과 Console에서 실행 중인 에이전트에 대한 IAM 역할을 생성할지 또는 기존 역할을 사용할지 등 에이전트 배포 세부 정보를 구성합니다.
 +
-.. *AWS 에이전트 세부 정보* 페이지에서 에이전트 인스턴스 이름과 에이전트 역할을 설정하거나 확인합니다.
-.. *네트워크* 페이지에서 VPC, 서브넷, 키 페어, 공용 IP 동작 및 프록시 설정을 선택합니다.
-.. *보안 그룹*을 구성합니다. 에이전트 VM에 대한 문제 해결 액세스를 위해 인바운드 HTTP(80), HTTPS(443) 및 SSH(22)를 허용합니다.
+콘솔에서 콘솔 에이전트를 생성할 때, 에이전트용 IAM 역할과 프로필을 생성하거나 사용자가 제공하는 역할을 사용합니다. 이 역할에는 에이전트가 AWS 리소스를 관리할 수 있도록 하는 권한이 포함됩니다. 향후 릴리스에서 새로운 권한이 추가되면 역할이 업데이트되었는지 확인하십시오. link:https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-aws.html["Console 에이전트에 대한 IAM 정책에 대해 자세히 알아보세요"^].
 
-
-. 각 섹션 요약을 검토하고 *추가*를 선택하여 배포하십시오.
+. 필요한 경우 VPC, 서브넷, 키 페어, 퍼블릭 IP 동작 및 프록시 설정을 선택하여 네트워킹을 구성하십시오.
+. 에이전트 VM에 대한 문제 해결 액세스를 위해 인바운드 HTTP(80), HTTPS(443) 및 SSH(22)를 허용하도록 보안 그룹 규칙을 구성하십시오.
 +
-전체 네트워크 연결 및 권한 요구 사항은 다음을 참조하십시오.
+link:https://docs.netapp.com/us-en/console-setup-admin/reference-ports-aws.html["AWS에 대한 보안 그룹 규칙 보기"^].
 
+. 각 섹션의 요약을 검토하고 *추가*를 선택하여 Console 에이전트를 배포하십시오.
 +
-** https://docs.netapp.com/us-en/console-setup-admin/task-install-agent-aws-marketplace.html#step-1-set-up-networking["AWS Marketplace 배포를 위한 네트워킹 설정"^]
-** https://docs.netapp.com/us-en/console-setup-admin/task-install-agent-aws-marketplace.html#step-2-set-up-aws-permissions["AWS 권한 설정"^]
-** https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-aws.html["AWS 권한 참조"^]
+배포가 완료될 때까지 진행 상황을 추적하십시오. 이벤트 로그를 확장하여 자세한 활동을 확인할 수 있습니다.
 
 
-. 배포가 완료될 때까지 진행 상황 대화 상자를 추적하세요. 이벤트 로그를 확장하여 자세한 활동을 확인할 수 있습니다.
 
+.관련 링크
+콘솔 에이전트의 전체 네트워킹 및 권한 요구 사항은 다음을 참조하십시오.
 
-.당신이 완료한 후
-배포가 완료되면 첫 번째 Cloud Volumes ONTAP 시스템을 생성하거나 시스템 페이지에 남아 나중에 시스템을 추가할 수 있습니다.
+* https://docs.netapp.com/us-en/console-setup-admin/task-install-agent-aws-marketplace.html#step-1-set-up-networking["AWS Marketplace 배포를 위한 네트워킹 설정"^]
+* https://docs.netapp.com/us-en/console-setup-admin/task-install-agent-aws-marketplace.html#step-2-set-up-aws-permissions["AWS 권한 설정"^]
+* https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-aws.html["AWS 권한 참조"^]
+
 
 
 
 [[add-your-first-cloud-volumes-ontap-system]]
 == 첫 번째 Cloud Volumes ONTAP 시스템 추가
 
-에이전트 준비가 완료되면 AWS에서 첫 번째 Cloud Volumes ONTAP 시스템을 생성하십시오.
+콘솔에서 에이전트를 배포한 후,  https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-quick-deploy-aws.html["AWS에서 빠른 생성 기능을 사용하여 Cloud Volumes ONTAP 배포"^]의 단계를 따라 첫 번째 시스템을 생성하십시오.
 
-.단계
-. 배포 후 나타나는 메시지에서 *시스템 추가*를 선택하십시오.
-. Cloud Volumes ONTAP 시스템 생성 워크플로를 시작합니다.
-. 시스템 구성을 완료합니다.
-
-
-자세한 시스템 배포 지침은  https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-quick-deploy-aws.html["AWS에서 빠른 생성 기능을 사용하여 Cloud Volumes ONTAP 배포"^]을 참조하십시오.
+Cloud Volumes ONTAP 시스템을 생성할 준비가 되지 않았다면 언제든지 시스템 페이지로 돌아가 나중에 시스템을 생성할 수 있습니다.
 
 
 
 [[troubleshooting-and-recovery]]
 == 문제 해결 및 복구
 
-온보딩 프로세스를 완료하기 전에 중단했거나 에이전트 배포에 실패한 경우 이 섹션을 사용하십시오. 이 단계를 통해 중단된 부분부터 다시 시작하거나 배포를 복구하고 재시도할 수 있습니다.
+중단했던 온보딩 과정을 이어서 진행하거나, 실패 후 에이전트 배포를 다시 시도하십시오.
 
 
 
 [[resume-setup]]
 === 설정 재개
 
-설정이 완료되기 전에 종료하더라도 마지막으로 완료된 단계부터 설정을 다시 시작할 수 있습니다.
+온보딩이 완료되기 전에 종료하는 경우, 마지막으로 완료한 단계부터 계속 진행하십시오.
 
 .단계
 . NetApp 콘솔 홈 페이지로 이동합니다.
@@ -248,7 +258,7 @@ image:screenshot-stack-creation.png["width=50% AWS 계정 ID와 선택적으로 
 [[recover-from-deployment-failure]]
 === 배포 실패 복구
 
-배포가 실패할 경우:
+콘솔에서 에이전트를 배포할 수 없는 경우 다음 단계를 따라 다시 시도하십시오:
 
 .단계
 . 배포 보고서를 다운로드하십시오.
@@ -260,9 +270,8 @@ link:https://docs.netapp.com/us-en/console-setup-admin/task-troubleshoot-agent.h
 
 
 .관련 링크
-관련 설정 작업 및 문제 해결에는 다음 자료를 활용하십시오.
+에이전트 배포, AWS 구독 또는 Cloud Volumes ONTAP 작업에 대한 도움말은 다음을 참조하십시오:
 
-* link:https://docs.netapp.com/us-en/console-setup-admin/task-install-agent-aws-marketplace.html["AWS 마켓플레이스에서 NetApp Console 에이전트 배포"^]
 * link:https://docs.netapp.com/us-en/console-setup-admin/task-adding-aws-accounts.html#subscribe["AWS 구독 구성"^]
 * link:https://docs.netapp.com/us-en/console-setup-admin/task-troubleshoot-agent.html["NetApp Console 에이전트 문제 해결"^]
 * https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/["Cloud Volumes ONTAP 설명서"^]

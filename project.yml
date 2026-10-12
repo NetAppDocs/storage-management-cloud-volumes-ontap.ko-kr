@@ -47,7 +47,7 @@ sidebar:
         url: "/concept-degraded-ha-pair.html"
     - title: Amazon Web Services에 배포
       entries:
-      - title: AWS Marketplace에서 Cloud Volumes ONTAP 온보딩
+      - title: AWS Marketplace에서 독립형 Cloud Volumes ONTAP을 배포하십시오.
         url: "/task-onboard-cvo-aws-marketplace.html"
       - title: 배포 개요
         url: "/task-getting-started-aws.html"
