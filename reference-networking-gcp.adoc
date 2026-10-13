@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: reference-networking-gcp.html 
-keywords: networking, network, requirements, connection, connections, subnet, vpn, internet, proxy, HTTP, private, proxy server, routing, firewall, autosupport, connection, jump host, outbound, ports, bucket, private google access, set up data requirement, gcp networking, google networking, shared vpc, host project, service project; private mode or in a project protected by VPC Service Controls 
+keywords: networking, network, requirements, connection, connections, subnet, vpn, internet, proxy, HTTP, private, proxy server, routing, firewall, autosupport, connection, jump host, outbound, ports, bucket, private google access, set up data requirement, gcp networking, google networking, shared vpc, host project, service project, private mode or in a project protected by VPC Service Controls 
 summary: Cloud Volumes ONTAP 시스템이 제대로 작동하도록 Google Cloud 네트워킹을 설정합니다. 이 문서에서는 네트워킹 요구 사항, 프라이빗 IP 주소, VPC, 서브넷, 패킷 미러링, 방화벽 규칙, CVO에 대한 HA 구성 및 콘솔 에이전트 요구 사항을 다룹니다. 
 ---
 = Cloud Volumes ONTAP 에 대한 Google Cloud 네트워킹 설정
