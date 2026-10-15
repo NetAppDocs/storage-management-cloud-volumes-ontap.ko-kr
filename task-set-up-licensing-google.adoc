@@ -160,7 +160,7 @@ Keystone 구독은 사용량에 따라 비용을 지불하는 구독 기반 서�
 .단계
 . 아직 구독이 없으신 경우, https://www.netapp.com/forms/keystone-sales-contact/["NetApp 에 문의하세요"^]
 . 콘솔 사용자 계정에 하나 이상의 Keystone 구독을 승인하려면 mailto:ng-keystone-success@netapp.com[ NetApp 에 ​​문의]으로 이메일을 보내주세요.
-. NetApp 귀하의 계정을 승인한 후,link:task-manage-keystone.html#link-a-subscription["Cloud Volumes ONTAP 과 함께 사용할 구독을 연결하세요"] .
+. NetApp이 귀하의 계정을 승인한 후, link:task-manage-keystone.html["Cloud Volumes ONTAP 과 함께 사용할 구독을 연결하세요"].
 . *시스템* 페이지에서 *시스템 추가*를 선택하고 단계를 따릅니다.
 +
 .. 청구 방법을 선택하라는 메시지가 표시되면 Keystone 구독 청구 방법을 선택하세요.

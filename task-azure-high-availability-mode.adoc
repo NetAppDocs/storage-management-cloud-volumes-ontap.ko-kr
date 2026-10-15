@@ -14,22 +14,22 @@ summary: 계획되지 않은 장애 조치 시간을 줄이고 Cloud Volumes ONT
 
 
 [role="lead"]
-예기치 않은 장애 조치 시간을 줄이고 Cloud Volumes ONTAP에 대한 NFSv4 지원을 활성화하려면 Microsoft Azure의 고가용성(HA) 모드를 활성화해야 합니다. 이 모드를 활성화하면 Cloud Volumes ONTAP HA 노드는 CIFS 및 NFSv4 클라이언트에 대한 예기치 않은 장애 조치 시 낮은(60초) 복구 시간 목표(RTO)를 달성할 수 있습니다.
+Cloud Volumes ONTAP HA 쌍에 대해 Microsoft Azure의 고가용성(HA) 모드를 활성화하여 예기치 않은 장애 조치 시간을 줄이고 NFSv4를 지원하십시오. 이 모드는 예기치 않은 장애 조치 시 CIFS 및 NFSv4 클라이언트에 대해 60초의 복구 시간 목표(RTO)를 제공할 수 있습니다.
 
-Cloud Volumes ONTAP 9.10.1부터 Microsoft Azure에서 실행되는 Cloud Volumes ONTAP HA 쌍에 대한 계획되지 않은 장애 조치 시간을 줄이고 NFSv4에 대한 지원을 추가했습니다.  이러한 향상된 기능을 Cloud Volumes ONTAP 에 적용하려면 Azure 구독에서 고가용성 기능을 활성화해야 합니다.
+Cloud Volumes ONTAP 9.10.1부터 Microsoft Azure에서 실행되는 Cloud Volumes ONTAP HA 쌍의 예기치 않은 장애 조치 시간을 단축하고 NFSv4 지원을 추가했습니다. Cloud Volumes ONTAP에서 이러한 개선 사항을 사용할 수 있도록 하려면 Azure 구독에서 HA 기능을 활성화해야 합니다.
 
 .이 작업에 관하여
-NetApp Console은 Azure 구독에서 해당 기능을 활성화해야 할 때 다음과 같은 세부 정보를 표시합니다. 다음 사항에 유의하십시오.
+NetApp Console은 Azure 구독에서 이 기능을 활성화해야 할 때 프롬프트를 표시합니다. 다음 사항에 유의하십시오.
 
-* Cloud Volumes ONTAP HA 쌍의 고가용성에는 문제가 없습니다.  이 Azure 기능은 ONTAP 과 함께 작동하여 계획되지 않은 장애 조치 이벤트로 인해 NFS 프로토콜에 대한 클라이언트 관찰 애플리케이션 중단 시간을 줄입니다.
-* 이 기능을 활성화해도 Cloud Volumes ONTAP HA 쌍은 중단되지 않습니다.
-* Azure 구독에서 이 기능을 활성화해도 다른 VM에는 문제가 발생하지 않습니다.
-* Cloud Volumes ONTAP CIFS 및 NFS 클라이언트에서 클러스터 및 SVM 관리 LIF의 장애 조치 중에 내부 Azure Load Balancer를 사용합니다.
-* HA 모드가 활성화되면 콘솔은 12시간마다 시스템을 검사하여 내부 Azure Load Balancer 규칙을 업데이트합니다.
+* 이 기능은 ONTAP과 연동하여 예기치 않은 장애 조치 중에 NFS 클라이언트가 경험하는 애플리케이션 중단 시간을 줄여줍니다. 이 기능을 활성화한다고 해서 Cloud Volumes ONTAP HA 쌍의 가용성에 문제가 있는 것은 아닙니다.
+* 이 Azure 기능을 활성화해도 Cloud Volumes ONTAP HA 쌍에는 영향을 미치지 않습니다.
+* Azure 구독에서 이 기능을 활성화해도 환경의 다른 VM이나 동일 구독 내의 단일 노드 시스템에는 영향을 미치지 않습니다.
+* 장애 조치 중에 Cloud Volumes ONTAP은 CIFS 및 NFS 클라이언트에 서비스를 제공하는 클러스터 및 SVM 관리 LIF를 위해 내부 Azure 로드 밸런서를 사용합니다.
+* HA 모드를 활성화하면 콘솔이 12시간마다 시스템을 스캔하여 내부 Azure 로드 밸런서 규칙을 업데이트합니다.
 
 
 .단계
-_소유자_ 권한이 있는 Azure 사용자는 Azure CLI에서 해당 기능을 활성화할 수 있습니다.
+_소유자_ 권한이 있는 Azure 사용자로 Azure CLI를 사용하여 해당 기능을 활성화하십시오.
 
 . https://docs.microsoft.com/en-us/azure/cloud-shell/quickstart["Azure Portal에서 Azure Cloud Shell에 액세스"^]
 . 고가용성 모드 기능을 등록하세요:

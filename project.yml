@@ -197,6 +197,8 @@ sidebar:
         url: "/task-protecting-ransomware.html"
       - title: WORM 스토리지를 위한 변조 방지 스냅샷 복사본 생성
         url: "/reference-worm-snaplock.html"
+      - title: 백엔드 클러스터 네트워크 암호화 활성화
+        url: "/task-enable-cluster-encryption.html"
   - title: 클라우드 인프라 관리
     entries:
     - title: AWS 관리
@@ -223,6 +225,8 @@ sidebar:
         url: "/reference-limits-azure.html"
       - title: Azure의 HA 쌍에 대해 알아보기
         url: "/concept-ha-azure.html"
+      - title: Cloud Volumes ONTAP HA의 Azure 유지 관리 중 중단을 방지합니다.
+        url: "/task-azure-prevent-freeze.html"
       - title: Azure Key Vault를 사용하여 키 관리
         url: "/task-azure-key-vault.html"
       - title: Azure VM 유형 변경
@@ -245,10 +249,6 @@ sidebar:
           url: "/concept-configuration-analysis-cvo.html"
         - title: Azure에서 Cloud Volumes ONTAP 구성을 개선하십시오
           url: "/task-improve-configurations-cvo.html"
-      - title: Azure의 Cloud Volumes ONTAP에 대한 구성 분석
-        url: "/concept-configuration-analysis-cvo.html"
-      - title: Azure에서 Cloud Volumes ONTAP 구성을 개선하십시오
-        url: "/task-improve-configurations-cvo.html"
     - title: Google Cloud 관리
       entries:
       - title: Google Cloud에서 지원되는 구성

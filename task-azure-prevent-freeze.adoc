@@ -1,0 +1,89 @@
+---
+sidebar: sidebar 
+permalink: task-azure-prevent-freeze.html 
+keywords: Azure, maintenance event, HA, takeover, giveback, freeze, disruption 
+summary: Cloud Volumes ONTAP HA 쌍에 대한 자동 테이크오버 및 반환을 억제하여 Azure 유지 관리 중 중단을 방지하십시오. 
+---
+= Azure 유지 관리 중 Cloud Volumes ONTAP HA 쌍의 중단을 방지합니다.
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Azure 예약 유지 관리 중에 자동 테이크오버 및 기브백을 억제하도록 Cloud Volumes ONTAP HA 쌍을 구성할 수 있습니다. 이 선택적 기능은 Cloud Volumes ONTAP 9.19.1 이상 버전에서 사용할 수 있으며 기본적으로 비활성화되어 있습니다.
+
+
+NOTE: 이 기능은 Cloud Volumes ONTAP 9.19.1 버전에서 공개 미리 보기로 제공됩니다.
+
+Microsoft Azure는 예약된 유지 관리 중에 VM을 잠시 일시 중지할 수 있습니다. Cloud Volumes ONTAP HA 구성에서 ONTAP은 이러한 일시 중지를 노드 장애로 간주하고 스토리지 작업을 파트너 노드로 이동한 다음, 일시 중지된 VM이 다시 시작될 때 자동으로 작업을 반환할 수 있습니다(테이크오버 및 기브백). 이로 인해 활성 클라이언트 연결이 중단될 수 있습니다. 이 기능을 활성화하면 HA 쌍은 Azure 예약 유지 관리로 인한 일시 중지 시간 동안에도 테이크오버 및 기브백을 자동으로 시작하지 않고 계속 작동합니다.
+
+.이 작업에 관하여
+* Azure VM이 일시 중단되는 동안 클라이언트 I/O가 중단될 수 있습니다. ONTAP은 자동으로 테이크오버를 시작하지 않으므로 클라이언트 I/O는 HA 파트너로 이동하지 않고 영향을 받는 노드에 남아 있습니다. 노드가 다시 시작될 때까지 I/O가 중단될 수 있습니다.
+* 중단 시간은 Azure VM 동결 시간에 따라 달라집니다. 동결 시간이 길어질수록 I/O 중단 시간도 길어질 수 있습니다.
+* 일반적인 HA 보호 기능은 다른 장애 조건에 대해서는 계속 활성화됩니다. 이 기능은 Azure 예약 유지 관리 동결에 대해서만 테이크오버 및 기브백을 억제합니다. 노드 장애 또는 패닉 등 일반적으로 테이크오버를 트리거하는 다른 조건은 계속 작동합니다.
+* 이 기능은 HA 쌍의 두 노드 모두에 적용됩니다. 유지 관리 이벤트 동작은 두 노드 모두에서 구성되며 한 노드에서만 활성화할 수는 없습니다.
+* 이 기능은 재부팅 후에도 유지되며 사용자가 직접 비활성화할 때까지 계속 적용됩니다. 이 기능을 비활성화하면 예약된 유지 보수 작업에 대한 기본 테이크오버 및 반환 동작이 복원됩니다.
+
+
+.시작하기 전에
+* Cloud Volumes ONTAP 시스템은 9.19.1 이상 버전으로 실행되어야 합니다.
+* 이 절차를 완료하려면 Cloud Volumes ONTAP 관리자 권한이 있어야 합니다.
+* Azure 예약 유지 관리 작업으로 인한 일시적인 I/O 중단을 워크로드가 감당할 수 있는지, 그리고 중단 시간 동안 작업을 계속하는 것이 기본 응답 방식인 테이크오버 및 반환 방식보다 더 나은지 확인하십시오.
+
+
+
+
+[[prevent-automatic-takeover-and-giveback-during-azure-scheduled-maintenance]]
+== Azure 예약 유지 관리 중에 자동 테이크오버 및 반환을 방지합니다.
+
+.단계
+. Azure HA 쌍의 시스템 ID를 확인합니다. 리소스 식별 및 API 호출에 대한 자세한 내용은  https://docs.netapp.com/us-en/console-automation/cm/your_api_call.html#step-1-select-the-identifie["첫 번째 API 호출"^]을(를) 참조하십시오.
+. 다음 엔드포인트에 `PUT` 요청을 전송하고 `{id}`를 시스템 ID로 교체합니다.
++
+`PUT /occm/api/azure/ha/working-environments/{id}/opt-off-maintenance-event`
+
++
+요청 본문에서  `enabled`을(를)  `true`(으)로 설정합니다:
+
++
+[source, json]
+----
+{
+  "enabled": true
+}
+----
+
+
+.결과
+요청이 성공하면 본문이 비어 있는 HTTP 202가 반환됩니다.
+
+
+IMPORTANT: API는 HA 쌍의 노드를 순차적으로 업데이트합니다. 작업이 완료되기 전에 요청이 실패하면 두 노드의 설정이 서로 다를 수 있으므로 요청을 다시 시도하기 전에 두 노드의 설정을 모두 확인하십시오.
+
+
+
+[[disable-the-feature-to-restore-default-behavior]]
+== 기본 동작으로 복원하려면 해당 기능을 비활성화하십시오
+
+Azure 예약 유지 관리 중에 기본 테이크오버 및 반환 동작을 복원하려면 해당 기능을 비활성화하십시오.
+
+.단계
+. 동일한 엔드포인트에 `PUT` 요청을 전송하고, `{id}`를 시스템 ID로 교체합니다.
++
+`PUT /occm/api/azure/ha/working-environments/{id}/opt-off-maintenance-event`
+
++
+요청 본문에서  `enabled`을(를)  `false`(으)로 설정하십시오:
+
++
+[source, json]
+----
+{
+  "enabled": false
+}
+----
+

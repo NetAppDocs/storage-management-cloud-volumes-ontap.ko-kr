@@ -1190,7 +1190,6 @@
   <block id="f1ff33b1bdbf816203ee716386af3578" category="list-text">데이터 볼륨은 aggr1에도 있습니다.</block>
   <block id="1eba71d64e6c5e410e558530711e835b" category="summary">알려진 제한 사항은 이 제품 릴리스에서 지원하지 않거나 올바르게 상호 운용되지 않는 플랫폼, 장치 또는 기능을 나타냅니다. 이러한 제한 사항을 주의 깊게 검토하세요.</block>
   <block id="482723983a4f2af954e36ff41e567451" category="doc">알려진 제한 사항</block>
-  <block id="06c86f2b2f40c7b5ae916f820dace6f3" category="inline-link">Cloud Volumes ONTAP 릴리스 노트로 이동</block>
   <block id="a9a4cd5ea793be3406daa718aa41e840" category="section-title">콘솔은 FlexGroup 볼륨 생성을 지원하지 않습니다.</block>
   <block id="36e65cc6fe6b3547cf9b7396631f7367" category="paragraph">Cloud Volumes ONTAP FlexGroup 볼륨을 지원하지만 콘솔은 현재 FlexGroup 볼륨 생성을 지원하지 않습니다.  ONTAP System Manager 또는 ONTAP CLI에서 FlexGroup 볼륨을 생성하는 경우 콘솔에서 용량 관리 모드를 설정해야 합니다.<block ref="e1ba155a9f2e8c3be94020eef32a0301" prefix=" " category="inline-code"></block> .<block ref="086247a9b57fde6eefee2a0c4752242d" prefix=" " category="inline-code"></block> FlexGroup 볼륨에서는 모드가 제대로 작동하지 않을 수 있습니다.</block>
   <block id="4eb542d6930b1a0eae1e891a8bd8ec57" category="admonition">콘솔에서 FlexGroup 볼륨을 생성하는 기능은 향후 릴리스에서 제공될 예정입니다.</block>
@@ -1918,12 +1917,6 @@
   <block id="7926415a130a1678f0dd302e6e12b7fc" category="paragraph">*tar.gz 파일을 추출한 후의 출력 예:*</block>
   <block id="d2a65c4b3d7d612fe9fcff1cd53a7468" category="summary">계획되지 않은 장애 조치 시간을 줄이고 Cloud Volumes ONTAP 에 대한 NFSv4 지원을 활성화하려면 Microsoft Azure의 고가용성 모드를 활성화해야 합니다.</block>
   <block id="2c01d75f7ab3854f30dad654b7836fd5" category="doc">Azure에서 Cloud Volumes ONTAP 에 대해 고가용성 모드 활성화</block>
-  <block id="3cf5fe492293bbbf3d99776de821b378" category="paragraph">Cloud Volumes ONTAP 9.10.1부터 Microsoft Azure에서 실행되는 Cloud Volumes ONTAP HA 쌍에 대한 계획되지 않은 장애 조치 시간을 줄이고 NFSv4에 대한 지원을 추가했습니다.  이러한 향상된 기능을 Cloud Volumes ONTAP 에 적용하려면 Azure 구독에서 고가용성 기능을 활성화해야 합니다.</block>
-  <block id="4b86a9bfe35da8d5b3e1175b8664656d" category="list-text">Cloud Volumes ONTAP HA 쌍의 고가용성에는 문제가 없습니다.  이 Azure 기능은 ONTAP 과 함께 작동하여 계획되지 않은 장애 조치 이벤트로 인해 NFS 프로토콜에 대한 클라이언트 관찰 애플리케이션 중단 시간을 줄입니다.</block>
-  <block id="74c86f2714a033254b4bc8058a066937" category="list-text">이 기능을 활성화해도 Cloud Volumes ONTAP HA 쌍은 중단되지 않습니다.</block>
-  <block id="aede641e1d7acdfda83bae4962f9cad6" category="list-text">Azure 구독에서 이 기능을 활성화해도 다른 VM에는 문제가 발생하지 않습니다.</block>
-  <block id="61d250b56c4dbcf65efb9a23e69575b2" category="list-text">Cloud Volumes ONTAP CIFS 및 NFS 클라이언트에서 클러스터 및 SVM 관리 LIF의 장애 조치 중에 내부 Azure Load Balancer를 사용합니다.</block>
-  <block id="7d8b7e414092c32abfb47d483a738b9f" category="list-text">HA 모드가 활성화되면 콘솔은 12시간마다 시스템을 검사하여 내부 Azure Load Balancer 규칙을 업데이트합니다.</block>
   <block id="dede8f1d754e5872747fd6fdd219a9da" category="inline-link">Azure Portal에서 Azure Cloud Shell에 액세스</block>
   <block id="826fb3564b49a63adcbf5c36eec58144" category="list-text"><block ref="826fb3564b49a63adcbf5c36eec58144" category="inline-link-rx"></block></block>
   <block id="3cad9b9a9f4d8a66f7f9dabc18c3c350" category="list-text">고가용성 모드 기능을 등록하세요:</block>
@@ -3760,7 +3753,6 @@
   <block id="3af4fb97c9f77d1ba8d551d286a88c61" category="list-text">아직 구독이 없으신 경우,<block ref="49d6686f1a400348bbcff579d9d978a6" category="inline-link-rx"></block></block>
   <block id="1515dd7dd8745717115e7de707e60c28" category="list-text">사용자 계정에 하나 이상의 Keystone 구독을 승인하려면 mailto:ng-keystone-success@netapp.com[ NetApp 에 ​​문의]으로 이메일을 보내주세요.</block>
   <block id="72aa254218c757aad3e3703bdaf90694" category="inline-link-macro">Cloud Volumes ONTAP 과 함께 사용할 구독을 연결하세요</block>
-  <block id="cf2d2d8d3f12faf0a0924f5c5c89598b" category="list-text">NetApp 귀하의 계정을 승인한 후,<block ref="92e1d32055031f48c102a52373394710" category="inline-link-macro-rx"></block> .</block>
   <block id="23a6fec51e7e7d398bc37636e86e1522" category="list-text">청구 방법을 선택하라는 메시지가 표시되면 Keystone 구독 청구 방법을 선택하세요.</block>
   <block id="e428b29d4d6bf82f76acfdd75e9dc62f" category="inline-image-macro">Cloud Volumes ONTAP 시스템을 생성할 때 Keystone 구독 옵션의 스크린샷입니다.</block>
   <block id="fac566a675ffdff100e743a78e19c604" category="paragraph"><block ref="fac566a675ffdff100e743a78e19c604" category="inline-image-macro-rx" type="image"></block></block>
@@ -4185,7 +4177,6 @@
   <block id="1ce11a955fcab73f91ead73e47d4f374" category="list-text">추출된 공개 키를 사용하여 서명을 복호화하고 다운로드한 disk.raw 파일의 내용을 확인합니다.</block>
   <block id="9d72c2bef829db2eecf218dce9aa0f18" category="doc">Cloud Volumes ONTAP 의 새로운 기능</block>
   <block id="282a076d9f3b028a74e6186a429822bd" category="paragraph">NetApp Console 에서 Cloud Volumes ONTAP 관리의 새로운 기능을 알아보세요.</block>
-  <block id="fba77b4c3f3b2f8af51a858aaf78b37e" category="paragraph">이 페이지에 설명된 개선 사항은 콘솔을 통해 Cloud Volumes ONTAP 관리하는 데 특화되어 있습니다.  Cloud Volumes ONTAP 소프트웨어 자체의 새로운 기능을 알아보려면<block ref="708e09e3f2783926556b9c6d77f63a27" category="inline-link-rx"></block> .</block>
   <block id="b9d888f58b09c4007db0247286e392b5" category="section-title">2025년 8월 11일</block>
   <block id="f2673d4a3fe0162a501d43f5168ae950" category="section-title">2025년 7월 14일</block>
   <block id="98d06a8873f74ad318a67a8dee1dcd5f" category="section-title">2025년 6월 25일</block>
@@ -5303,9 +5294,6 @@
   <block id="6da8d6e9b798741f378936006c625899" category="paragraph">VM의 NIC에서 가속 네트워킹이 활성화되어 있는지 확인하고 Azure VNet 암호화 요구 사항 및 제한 사항을 검토한 후 해당 기능을 활성화하면 됩니다. NetApp 관리형 로드 밸런서 개체는 수정해서는 안 됩니다.</block>
   <block id="ce656a6c436f0486370929df8fb1dd1a" category="inline-link">Azure 설명서: VNet 암호화 및 가속 네트워킹</block>
   <block id="9bdbdeebdd8331589ab921db85db9669" category="paragraph"><block ref="d39bae656ec8bf75660159dea5c8b6ec" category="inline-link-rx"></block>.</block>
-  <block id="8408e1736cfbdeef8576825010d4866f" category="paragraph">예기치 않은 장애 조치 시간을 줄이고 Cloud Volumes ONTAP에 대한 NFSv4 지원을 활성화하려면 Microsoft Azure의 고가용성(HA) 모드를 활성화해야 합니다. 이 모드를 활성화하면 Cloud Volumes ONTAP HA 노드는 CIFS 및 NFSv4 클라이언트에 대한 예기치 않은 장애 조치 시 낮은(60초) 복구 시간 목표(RTO)를 달성할 수 있습니다.</block>
-  <block id="c3d76ca45edb967ae8d1d50df0d945fb" category="paragraph">NetApp Console은 Azure 구독에서 해당 기능을 활성화해야 할 때 다음과 같은 세부 정보를 표시합니다. 다음 사항에 유의하십시오.</block>
-  <block id="81d14f46835576af9278d9a0c55be147" category="paragraph">_소유자_ 권한이 있는 Azure 사용자는 Azure CLI에서 해당 기능을 활성화할 수 있습니다.</block>
   <block id="b191fed57e777b1ef44aa24007d4733f" category="inline-link">Microsoft Azure 설명서: 고가용성 포트 개요</block>
   <block id="1a6a578d19caca99a2abe3dad51430c7" category="list-text"><block ref="1a6a578d19caca99a2abe3dad51430c7" category="inline-link-rx"></block></block>
   <block id="1dc3e27b9e18035ada1acc10400265ac" category="inline-link">Microsoft Azure 설명서: Azure CLI 시작하기</block>
@@ -7388,7 +7376,6 @@
   <block id="3be0ccabbc043586c0889f1f415a8b9f" category="paragraph">VPC 서비스 제어로 보호되는 프로젝트에 Cloud Volumes ONTAP을 배포하는 경우 콘솔 에이전트와 동일한 프로젝트에 프라이빗 워커 풀을 생성해야 합니다. 워커 풀은 실행 중 상태여야 합니다. Google Cloud의 기본 공용 Cloud Build 워커 풀은 서비스 경계 내에서 실행할 수 없습니다.</block>
   <block id="f4a4ada049ad3a9b0e3d9b625436e9a9" category="paragraph">VPC Service Controls로 보호되는 프로젝트에 Cloud Volumes ONTAP을 배포하는 경우 API를 사용하여 Cloud Volumes ONTAP 시스템을 생성하고 생성 요청 본문에 <block ref="127211a07a94fab89b03bd83ab2202c0" prefix=" " category="inline-code"></block> 매개변수를 포함해야 합니다.</block>
   <block id="115d3c8236e5dc5d086a75c0cf66c531" category="admonition">Cloud Volumes ONTAP 콘솔 UI를 사용하여 Cloud Volumes ONTAP을 배포할 때 워커 풀을 포함하는 것은 현재 지원되지 않습니다. VPC 서비스 제어로 보호되는 프로젝트의 경우 API가 Cloud Volumes ONTAP을 배포하는 유일한 지원 방법입니다.</block>
-  <block id="80eeb3d4d3560338374cd151f3c11997" category="paragraph">Cloud Volumes ONTAP에서 사용하려면 먼저 콘솔에서 라이센스를 사용할 수 있어야 합니다. 필요한 경우 <block ref="197414bd6021ce3306666e377bab3f64" category="inline-link-macro-rx"></block>할 수 있습니다.</block>
   <block id="c9c977fbc795b6bd0ed423510b01b8bc" category="paragraph">프라이빗 모드 배포 옵션을 사용하면 조직의 보안 및 규정 준수 요구 사항을 충족할 수 있습니다.  프라이빗 모드 배포는 표준 모드 배포와 동일한 절차를 따릅니다.  공용 인터넷 연결 없이 자체 가상 사설 클라우드(VPC) 또는 가상 네트워크(VNet)에서 작동합니다.</block>
   <block id="3840d205649c55018bcdee43450e7701" category="paragraph">프라이빗 모드에서는 용량 기반 BYOL(Bring-Your-Own License) 또는 <block ref="21c9e4fd721ccd216b91708a53687a36" category="inline-link-macro-rx"></block> _Essentials_ 패키지를 NetApp에서 구매하고 배포 중에 시스템에 할당해야 합니다. 사용한 용량 중 처음 500GiB는 라이선스 비용에 포함되지 않습니다. 워크로드 요구 사항이 증가함에 따라 Essentials 패키지를 추가로 구매하십시오. 배포 후 콘솔에서 라이선스 일련 번호를 확인할 수 있습니다.</block>
   <block id="0fe543eedb1c5378c457c99faaad8ecd" category="paragraph">프라이빗 클라우드 모드 배포에 라이선스 파일을 업로드하는 방법에 대한 자세한 내용은 <block ref="f888ea506435b2c889c60839b24fe06e" category="inline-link-rx"></block>을 참조하십시오.</block>
@@ -7406,8 +7393,6 @@
   <block id="f912f417c21da5aa69ae72c383dfeb4f" category="paragraph">2026년 2월 25일부터 Cloud Volumes ONTAP는 신규 및 기존 프라이빗 모드 배포에 Infrastructure Manager를 사용합니다. 다음 표는 기본 워크플로를 설명합니다.</block>
   <block id="e9cf22aacad315822851ad3463773911" category="inline-link">프라이빗 모드 배포를 위한 빠른 시작</block>
   <block id="682ccbd6c9c48bc1f3716474dc91d4cf" category="list-text"><block ref="682ccbd6c9c48bc1f3716474dc91d4cf" category="inline-link-rx"></block></block>
-  <block id="02b9d10b7bf1d22fd65f1d9f40a0513b" category="inline-link">프라이빗 모드 배포를 위한 Infrastructure Manager 구성</block>
-  <block id="85868adfff1f6df15bff85cb363fb20e" category="paragraph">프라이빗 클라우드 모드 배포에서 Cloud Volumes ONTAP이 Infrastructure Manager를 사용하기 시작하려면 몇 가지 구성 변경이 필요합니다. 을(를) 참조하십시오.<block ref="77f136a5b47f46056c2660c6b1277aeb" category="inline-link-rx"></block></block>
   <block id="5acd2c3a8de363e60768e2480ebee1c3" category="paragraph">NetApp은 프라이빗 모드 Cloud Volumes ONTAP 구축을 위한 용량 기반 라이선스 도입을 발표하게 되어 기쁩니다. 이제 노드 기반 라이선스를 용량 기반 라이선스로 전환하여 프라이빗 모드 Cloud Volumes ONTAP 구축 비용을 최적화할 수 있습니다. 프라이빗 모드 구축의 경우, 기존 노드 기반 라이선스와 유사한 용량의 Essentials(BYOL, Bring-Your-Own License) 패키지를 NetApp에서 직접 구매할 수 있습니다.</block>
   <block id="b97fde06b7b518f77d6af8b950fd42b8" category="doc">프라이빗 모드 배포에서 용량 기반 라이선스 지원</block>
   <block id="e7407e69cea5642ae9e0cd7198fe3213" category="paragraph">이제 AWS, Azure 및 Google Cloud에서 용량 기반 라이선스를 사용하여 프라이빗 모드로 Cloud Volumes ONTAP 시스템을 배포할 수 있습니다.</block>
@@ -7995,8 +7980,6 @@
   <block id="7f8dc6515dcacddbb5d244b704ed2660" category="sidebar">Azure의 Cloud Volumes ONTAP에 대한 구성 분석</block>
   <block id="a4103c06761e189279517f49433e8fdc" category="sidebar">Azure에서 Cloud Volumes ONTAP 구성을 개선하십시오</block>
   <block id="65f9ec8af69f87b7b7419485ecdc45e9" category="list-text"><block ref="65f9ec8af69f87b7b7419485ecdc45e9" category="inline-link-rx"></block></block>
-  <block id="3a7bbb1b9e5b37872fef8f715efc7171" category="list-text">개인 모드 배포를 위해 네트워크 구성을 완료하고 작업자 풀을 생성했는지 확인하십시오. <block ref="36efb7ae258f0de12028dabdb108a37a" category="inline-link-macro-rx"></block>을(를) 참조하십시오.</block>
-  <block id="6ed0cfe5d8872e13ec685679d0c5586b" category="paragraph"><block ref="8fc12ad6381abbb87712055c7f5e50f1" prefix=" " category="inline-code"></block> 매개변수를 지정하여 프라이빗 모드 배포에서 툴을 실행합니다. 작업자 풀 구성에 대해서는 <block ref="36efb7ae258f0de12028dabdb108a37a" category="inline-link-macro-rx"></block>을 참조하십시오.</block>
   <block id="2ebfd6a7d346b4f849cfb04c2d3a5434" category="paragraph">AWS Marketplace 또는 NetApp Console을 사용하여 AWS에 Cloud Volumes ONTAP을 온보딩할 수 있습니다. 다음 표는 AWS에 Cloud Volumes ONTAP을 배포하기 위해 완료해야 하는 작업에 대한 개략적인 개요를 제공합니다.</block>
   <block id="5e51aa22235e0104a5fffb9b0e0b97ac" category="inline-link-macro">AWS Marketplace에서 Cloud Volumes ONTAP 독립형 제품 온보딩</block>
   <block id="c15e37bc266e7b7e0212916e681f40ad" category="admonition">AWS Marketplace에서 Cloud Volumes ONTAP 독립 실행형 제품을 구독하는 경우 절차가 다릅니다. AWS Marketplace에서 온보딩하는 방법에 대한 자세한 내용은 <block ref="e7b82cae26dca0ede070f2a3673c283d" category="inline-link-macro-rx"></block>을(를) 참조하십시오.</block>
@@ -8073,4 +8056,91 @@
   <block id="9aca15ba5b18529516b4cd632ddf7639" category="paragraph">콘솔에서 에이전트를 배포할 수 없는 경우 다음 단계를 따라 다시 시도하십시오:</block>
   <block id="492b64735bc91205336e73d3b231f7ea" category="paragraph">에이전트 배포, AWS 구독 또는 Cloud Volumes ONTAP 작업에 대한 도움말은 다음을 참조하십시오:</block>
   <block id="76d37acbce48c445bc735fe56c61f7ac" category="sidebar">AWS Marketplace에서 독립형 Cloud Volumes ONTAP을 배포하십시오.</block>
+  <block id="765d68481de48282cae7e607bf9e96ff" category="paragraph">프라이빗 클라우드 모드 배포에서 Cloud Volumes ONTAP이 Infrastructure Manager를 사용하기 시작하려면 몇 가지 구성 변경이 필요합니다. 을(를) 참조하십시오.<block ref="f256b232dde545e233ffcb84a21d913a" category="inline-link-rx"></block></block>
+  <block id="1f4aec85e2be241e736a55d9da306e72" category="doc">Azure의 Cloud Volumes ONTAP 9.19.1</block>
+  <block id="38649e84871938dc48da678f8c0225b7" category="paragraph">이제 NetApp Console을 사용하여 Azure에서 Cloud Volumes ONTAP 9.19.1의 일반 출시(GA) 버전을 배포하고 관리할 수 있습니다.</block>
+  <block id="55827b1b260053ade23e437507e4d4d6" category="paragraph">콘솔은 2026년 8월부터 AWS 및 Google Cloud에서 Cloud Volumes ONTAP 9.19.1을 지원합니다.</block>
+  <block id="baa4551a28b9b9b693078dff3d23a9c8" category="inline-link">Cloud Volumes ONTAP 9.19.1 릴리스 노트</block>
+  <block id="cb7f1191bad9ffa813970eda72e677c3" category="paragraph"><block ref="cb7f1191bad9ffa813970eda72e677c3" category="inline-link-rx"></block></block>
+  <block id="b9a06ca155484f482929cec5f8dd93f2" category="section-title">Cloud Volumes ONTAP용 Azure 호스트 암호화</block>
+  <block id="65c800dc2b98e78e47a93565108209a8" category="paragraph">Cloud Volumes ONTAP 9.19.1 GA부터 필수 조건을 충족하는 새로운 Azure 단일 노드 및 고가용성(HA) 배포에 대해 Azure 호스트 암호화가 기본적으로 활성화됩니다. 이 기능은 데이터가 호스트에 기록되고 호스트에서 읽힐 때 임시 디스크 및 관련 호스트 수준 캐시 등 VM을 호스팅하는 물리적 서버의 데이터를 암호화합니다.</block>
+  <block id="e4d61d3550f13efd53aeff4a22e83ea8" category="paragraph">Azure에 Cloud Volumes ONTAP을 배포하기 전에 다음 필수 조건을 충족하는지 확인하십시오:</block>
+  <block id="66661aefda04e7e8fc3b285416a5747c" category="inline-link">Microsoft 설명서: 호스트에서 암호화 활성화</block>
+  <block id="ad0c10652c212a9436d51cb4a4ff84e1" category="list-text">해당 <block ref="9b5430cc1667a3828b4733b3fceebcc5" prefix=" " category="inline-code"></block> 기능이 Azure 구독에 등록되었습니다. <block ref="7a203e9800b2ad6ccab50741b723916c" category="inline-link-rx"></block>을(를) 참조하십시오.</block>
+  <block id="3ef3dd18f4a36e278227da4d639cfc32" category="inline-link">Microsoft 설명서: 지원되는 VM 크기 찾기</block>
+  <block id="5dd3216d5312f2f7fff26e6602bd3ef4" category="list-text">선택한 VM 인스턴스 유형은 Azure 지역의 호스트에서 암호화를 지원합니다. <block ref="b937f110917df6a4c55186c37d29a104" category="inline-link-rx"></block>을(를) 참조하십시오.</block>
+  <block id="17e143eab5799a1d059d05efff379a05" category="list-text">추가 구성이 필요하지 않습니다.</block>
+  <block id="c8e2d48b465aa8eefb29bd89f3fafcca" category="list-text">이러한 필수 조건을 충족하지 못하면 Cloud Volumes ONTAP 배포에 대해 호스트에서의 Azure 암호화가 활성화되지 않습니다.</block>
+  <block id="92e84bce8028abc60ccfdbbae1096f14" category="list-text">호스트 암호화는 Azure에만 적용되며 AWS 또는 Google Cloud에는 적용되지 않습니다.</block>
+  <block id="bfb1c810db245ddba60543c21a682b84" category="inline-link">Azure 포털을 사용하여 호스트 암호화를 통해 종단 간 암호화를 활성화하십시오.</block>
+  <block id="8161b03145de9190c8562fdf070323cd" category="paragraph">Microsoft 문서:<block ref="67a78f496718d7c7396fe4250a10dd9f" category="inline-link-rx"></block></block>
+  <block id="b1b31149ea36e9ee60b289e49fc26e40" category="section-title">Azure 및 Google Cloud의 Cloud Volumes ONTAP 클러스터에서 백엔드 네트워크 암호화</block>
+  <block id="78a1c3e822bde3124feccc9a318e3dba" category="paragraph">Cloud Volumes ONTAP 9.19.1 이상 버전은 Azure 및 Google Cloud의 고가용성(HA) 구성에 대한 백엔드 클러스터 네트워크 암호화를 지원합니다.</block>
+  <block id="6ed570b003232171d0ab8a2b1258fe42" category="paragraph">클러스터 네트워크 암호화를 활성화하면 클러스터 성능에 영향을 미칠 수 있습니다. 이 기능을 활성화하기 전에 주의를 기울이고 환경에서 추가 오버헤드를 수용할 수 있는지 확인하십시오.</block>
+  <block id="6122269aefde3f6051ca7b61f5bd424e" category="inline-link">Cloud Volumes ONTAP 클러스터에서 백엔드 네트워크 암호화를 활성화합니다.</block>
+  <block id="cf892fcd6fb8331bf43c890e1ee21ea2" category="paragraph"><block ref="cf892fcd6fb8331bf43c890e1ee21ea2" category="inline-link-rx"></block></block>
+  <block id="1437adf1c59f087364ad88b1856888f6" category="section-title">Azure 예약 유지 관리 중 중단을 줄일 수 있는 기능</block>
+  <block id="103f08fd4ffc655a151d17f40e8c4d04" category="paragraph">예정된 유지 관리 중에 Azure는 Cloud Volumes ONTAP HA 쌍의 VM을 잠시 일시 중지할 수 있습니다. ONTAP은 이 일시 중지를 노드 장애로 인식하고 스토리지 작업을 파트너 노드로 이동한 다음 VM이 다시 시작될 때 다시 이동시킬 수 있습니다(테이크오버 및 반환). 이 프로세스는 노드 장애가 없는 경우에도 활성 클라이언트 연결을 중단시킬 수 있습니다.</block>
+  <block id="7a14f4282238253accfa3c299f8906b1" category="paragraph">Cloud Volumes ONTAP 9.19.1 이상 버전에서는 Azure 예약 유지 관리로 인해 HA 쌍이 일시 중단되는 동안 자동으로 테이크오버 및 기브백을 시작하지 않고 계속 작동하도록 하는 선택적 설정을 활성화할 수 있습니다.</block>
+  <block id="a299e856c9d39c1b0322c36f2b4a7fb3" category="admonition">이 기능은 Cloud Volumes ONTAP 9.19.1 버전에서 공개 미리 보기로 제공됩니다.</block>
+  <block id="d76461728409bdd7d106249c2bbd279c" category="inline-link">Azure 유지 관리 중 Cloud Volumes ONTAP HA 쌍의 중단을 방지합니다.</block>
+  <block id="d95952cb789c981f49c06e8b4c6698fc" category="paragraph"><block ref="d95952cb789c981f49c06e8b4c6698fc" category="inline-link-rx"></block></block>
+  <block id="30951a68269f6d61f76d566e44074682" category="paragraph">Cloud Volumes ONTAP HA 쌍에 대해 Microsoft Azure의 고가용성(HA) 모드를 활성화하여 예기치 않은 장애 조치 시간을 줄이고 NFSv4를 지원하십시오. 이 모드는 예기치 않은 장애 조치 시 CIFS 및 NFSv4 클라이언트에 대해 60초의 복구 시간 목표(RTO)를 제공할 수 있습니다.</block>
+  <block id="d2682fb90e13aa59d0285f9d6178123f" category="paragraph">Cloud Volumes ONTAP 9.10.1부터 Microsoft Azure에서 실행되는 Cloud Volumes ONTAP HA 쌍의 예기치 않은 장애 조치 시간을 단축하고 NFSv4 지원을 추가했습니다. Cloud Volumes ONTAP에서 이러한 개선 사항을 사용할 수 있도록 하려면 Azure 구독에서 HA 기능을 활성화해야 합니다.</block>
+  <block id="a1e840dd5bdd579c1a58ad254da33516" category="paragraph">NetApp Console은 Azure 구독에서 이 기능을 활성화해야 할 때 프롬프트를 표시합니다. 다음 사항에 유의하십시오.</block>
+  <block id="742cd28bff88c9b4f639084a2dac14bf" category="list-text">이 기능은 ONTAP과 연동하여 예기치 않은 장애 조치 중에 NFS 클라이언트가 경험하는 애플리케이션 중단 시간을 줄여줍니다. 이 기능을 활성화한다고 해서 Cloud Volumes ONTAP HA 쌍의 가용성에 문제가 있는 것은 아닙니다.</block>
+  <block id="e56407b9817d7aaff9a28c24f250b798" category="list-text">이 Azure 기능을 활성화해도 Cloud Volumes ONTAP HA 쌍에는 영향을 미치지 않습니다.</block>
+  <block id="1d365989756632feb49292059b23d178" category="list-text">Azure 구독에서 이 기능을 활성화해도 환경의 다른 VM이나 동일 구독 내의 단일 노드 시스템에는 영향을 미치지 않습니다.</block>
+  <block id="2255f53e33e8ec152f0c543aca2de2ae" category="list-text">장애 조치 중에 Cloud Volumes ONTAP은 CIFS 및 NFS 클라이언트에 서비스를 제공하는 클러스터 및 SVM 관리 LIF를 위해 내부 Azure 로드 밸런서를 사용합니다.</block>
+  <block id="eb749eba7ab94bd7fb33b04b244566f2" category="list-text">HA 모드를 활성화하면 콘솔이 12시간마다 시스템을 스캔하여 내부 Azure 로드 밸런서 규칙을 업데이트합니다.</block>
+  <block id="dbb5241dd2423e3b988a08ec10780193" category="paragraph">_소유자_ 권한이 있는 Azure 사용자로 Azure CLI를 사용하여 해당 기능을 활성화하십시오.</block>
+  <block id="687cbeb1944eb3717022b0377c43a61a" category="summary">Cloud Volumes ONTAP HA 쌍에 대한 자동 테이크오버 및 반환을 억제하여 Azure 유지 관리 중 중단을 방지하십시오.</block>
+  <block id="a57ea55b43149e8f212dbfcaa5006e6f" category="paragraph">Azure 예약 유지 관리 중에 자동 테이크오버 및 기브백을 억제하도록 Cloud Volumes ONTAP HA 쌍을 구성할 수 있습니다. 이 선택적 기능은 Cloud Volumes ONTAP 9.19.1 이상 버전에서 사용할 수 있으며 기본적으로 비활성화되어 있습니다.</block>
+  <block id="3a7679f90a01a00ac9b3a16280dae53b" category="paragraph">Microsoft Azure는 예약된 유지 관리 중에 VM을 잠시 일시 중지할 수 있습니다. Cloud Volumes ONTAP HA 구성에서 ONTAP은 이러한 일시 중지를 노드 장애로 간주하고 스토리지 작업을 파트너 노드로 이동한 다음, 일시 중지된 VM이 다시 시작될 때 자동으로 작업을 반환할 수 있습니다(테이크오버 및 기브백). 이로 인해 활성 클라이언트 연결이 중단될 수 있습니다. 이 기능을 활성화하면 HA 쌍은 Azure 예약 유지 관리로 인한 일시 중지 시간 동안에도 테이크오버 및 기브백을 자동으로 시작하지 않고 계속 작동합니다.</block>
+  <block id="4271f4b9a37eb090d0a9083aa5602b73" category="list-text">Azure VM이 일시 중단되는 동안 클라이언트 I/O가 중단될 수 있습니다. ONTAP은 자동으로 테이크오버를 시작하지 않으므로 클라이언트 I/O는 HA 파트너로 이동하지 않고 영향을 받는 노드에 남아 있습니다. 노드가 다시 시작될 때까지 I/O가 중단될 수 있습니다.</block>
+  <block id="591bd482fde553d02bc32eb0c7ea55f0" category="list-text">중단 시간은 Azure VM 동결 시간에 따라 달라집니다. 동결 시간이 길어질수록 I/O 중단 시간도 길어질 수 있습니다.</block>
+  <block id="c9b5ba798c3741aacdacbd6123aa2b0e" category="list-text">일반적인 HA 보호 기능은 다른 장애 조건에 대해서는 계속 활성화됩니다. 이 기능은 Azure 예약 유지 관리 동결에 대해서만 테이크오버 및 기브백을 억제합니다. 노드 장애 또는 패닉 등 일반적으로 테이크오버를 트리거하는 다른 조건은 계속 작동합니다.</block>
+  <block id="3ffe1a431eb65296a1972ba07530f0a0" category="list-text">이 기능은 HA 쌍의 두 노드 모두에 적용됩니다. 유지 관리 이벤트 동작은 두 노드 모두에서 구성되며 한 노드에서만 활성화할 수는 없습니다.</block>
+  <block id="b4d3671bdb29f5d4aec771f6cbe86bb2" category="list-text">이 기능은 재부팅 후에도 유지되며 사용자가 직접 비활성화할 때까지 계속 적용됩니다. 이 기능을 비활성화하면 예약된 유지 보수 작업에 대한 기본 테이크오버 및 반환 동작이 복원됩니다.</block>
+  <block id="a89131c14477d499117e6a34dc57c2a5" category="list-text">Cloud Volumes ONTAP 시스템은 9.19.1 이상 버전으로 실행되어야 합니다.</block>
+  <block id="8da8e60d52401f09cdc9c2cfee508984" category="list-text">이 절차를 완료하려면 Cloud Volumes ONTAP 관리자 권한이 있어야 합니다.</block>
+  <block id="d05fd6c4ff344dc9fe5bfb843e81fe7d" category="list-text">Azure 예약 유지 관리 작업으로 인한 일시적인 I/O 중단을 워크로드가 감당할 수 있는지, 그리고 중단 시간 동안 작업을 계속하는 것이 기본 응답 방식인 테이크오버 및 반환 방식보다 더 나은지 확인하십시오.</block>
+  <block id="0ac4465b6348019ac75e06215ffb2f91" category="section-title">Azure 예약 유지 관리 중에 자동 테이크오버 및 반환을 방지합니다.</block>
+  <block id="e647d072341720c38d1f1cee658ff4e7" category="list-text">Azure HA 쌍의 시스템 ID를 확인합니다. 리소스 식별 및 API 호출에 대한 자세한 내용은 <block ref="2b5c9a64a0a28b95d7cfc5db1ff2c794" category="inline-link-rx"></block>을(를) 참조하십시오.</block>
+  <block id="78bc854d36de758797203ad7780d9b78" category="list-text">다음 엔드포인트에<block ref="3e75383a5992a6d15fb81e872e46e256" prefix=" " category="inline-code"></block> 요청을 전송하고<block ref="1f7f5b0a33cb78cd5f99f2d4a1cd6e29" prefix=" " category="inline-code"></block>를 시스템 ID로 교체합니다.</block>
+  <block id="6c6f17e6722d2eb336661f2d25056f88" category="paragraph"><block ref="d556da1c70d221ee2c087aad73b92f4d" prefix="" category="inline-code"></block></block>
+  <block id="45b55e4c2afa6172c51b9861010ec585" category="paragraph">요청 본문에서 <block ref="a10311459433adf322f2590a4987c423" prefix=" " category="inline-code"></block>을(를) <block ref="b326b5062b2f0e69046810717534cb09" prefix=" " category="inline-code"></block>(으)로 설정합니다:</block>
+  <block id="d9c094dac124f893323d0af825d9bf60" category="paragraph">요청이 성공하면 본문이 비어 있는 HTTP 202가 반환됩니다.</block>
+  <block id="03ce0c5802bd8821d5a8b490160338e4" category="admonition">API는 HA 쌍의 노드를 순차적으로 업데이트합니다. 작업이 완료되기 전에 요청이 실패하면 두 노드의 설정이 서로 다를 수 있으므로 요청을 다시 시도하기 전에 두 노드의 설정을 모두 확인하십시오.</block>
+  <block id="8d035b34d83a2fc0c79af15136b4eac9" category="section-title">기본 동작으로 복원하려면 해당 기능을 비활성화하십시오</block>
+  <block id="60242a67b792170d6374ef67e7e1875f" category="paragraph">Azure 예약 유지 관리 중에 기본 테이크오버 및 반환 동작을 복원하려면 해당 기능을 비활성화하십시오.</block>
+  <block id="b1c99bd089b17e20a9f2a2707a599854" category="list-text">동일한 엔드포인트에<block ref="3e75383a5992a6d15fb81e872e46e256" prefix=" " category="inline-code"></block> 요청을 전송하고,<block ref="1f7f5b0a33cb78cd5f99f2d4a1cd6e29" prefix=" " category="inline-code"></block>를 시스템 ID로 교체합니다.</block>
+  <block id="ed1f1798cf59d3b7e2dccb773f996a49" category="paragraph">요청 본문에서 <block ref="a10311459433adf322f2590a4987c423" prefix=" " category="inline-code"></block>을(를) <block ref="68934a3e9455fa72420237eb05902327" prefix=" " category="inline-code"></block>(으)로 설정하십시오:</block>
+  <block id="840e012212b7ce51ef9cd5802d3ffc25" category="summary">ONTAP IPsec으로 보호되지 않는 Cloud Volumes ONTAP 클러스터 트래픽을 보호하려면 백엔드 클러스터 네트워크 암호화를 활성화하십시오.</block>
+  <block id="7999d03bdd5aa474a03ebcf61a2de49d" category="doc">Azure 및 Google Cloud에서 Cloud Volumes ONTAP에 대한 백엔드 클러스터 네트워크 암호화를 활성화합니다.</block>
+  <block id="719b33ddd2a7d0686b19b3ae5af3ce4f" category="paragraph">Cloud Volumes ONTAP 9.19.1 이상 버전의 경우, Azure 및 Google Cloud의 고가용성(HA) 구성에서 내부 동서 트래픽을 보호하려면 백엔드 클러스터 네트워크 암호화를 활성화하십시오. 이 설정은 전송 중인 트래픽을 보호하며, 저장된 볼륨 데이터는 암호화하지 않습니다.</block>
+  <block id="d6a96ea38aea023cd1fea09197b94126" category="paragraph">ONTAP은 HA 구성을 위한 백엔드 네트워크의 트래픽을 보호하기 위해 커널 TLS(kTLS) 및 소프트웨어 IPsec을 통한 클러스터 세션 관리(CSM)를 사용합니다. Cloud Volumes ONTAP 9.19.1 이상 버전에서는 이러한 보호 기능을 백엔드 클러스터 트래픽으로 확장합니다.</block>
+  <block id="e0c9d8803c8bdc8ce51e91511d3f16e9" category="admonition">클러스터 네트워크 암호화를 활성화하면 클러스터 성능에 영향을 미칠 수 있습니다. 주의를 기울여 이 기능을 활성화하기 전에 환경이 추가 오버헤드를 수용할 수 있는지 확인하십시오.</block>
+  <block id="3a77fed898c3fa02fcbdf21c5d1176c1" category="list-text">Cloud Volumes ONTAP 9.19.1 이상 버전을 실행 중이어야 합니다.</block>
+  <block id="61d8f42966e800ec9cad1f122cfa27c0" category="list-text">클러스터 관리자 권한이 있어야 합니다.</block>
+  <block id="52e6f991d9aeb7b9af213e879a7fc0b0" category="list-text">Cloud Volumes ONTAP 배포가 지원되는 구성을 사용하는지 확인해야 합니다.</block>
+  <block id="e450f1fbdb963f94d869715d20ba535e" category="list-text">ONTAP CLI를 사용하여 Cloud Volumes ONTAP 클러스터에 연결합니다.</block>
+  <block id="ccc86c40291a6c6bbc152cf5d8647153" category="list-text">클러스터 네트워크 암호화 구성이 올바른지 확인하십시오:</block>
+  <block id="de5d22766835e9ea85b47ae15b2730eb" category="list-text">TLS 및 IPsec 모드에서 클러스터 네트워크 암호화를 활성화합니다:</block>
+  <block id="93942be1109fc857f17da6f831a2ffa5" category="list-text">클러스터 네트워크 암호화가 활성화되어 있는지 확인하십시오:</block>
+  <block id="a414bddd2cfbfb953336130d241a4954" category="admonition"><block ref="b25fc53f80956cccbc157fdd682e8db9" prefix=" " category="inline-code"></block> 모드를 활성화하면 CSM 트래픽은 TLS를 사용하고 다른 클러스터 네트워크 트래픽은 IPsec을 사용합니다. ONTAP은 필요한 인증서와 백엔드 IPsec 정책을 생성하고 관리합니다.</block>
+  <block id="cb8a57871001bf171ca55a9234d0333e" category="inline-link">ONTAP 백엔드 클러스터 네트워크 암호화 구성</block>
+  <block id="708f016cb76be1806b16fcc5233a47c3" category="list-text"><block ref="708f016cb76be1806b16fcc5233a47c3" category="inline-link-rx"></block></block>
+  <block id="81b5da25ab30e79821d5290cd59bd859" category="inline-link">security cluster-network show</block>
+  <block id="f3c67684218b3eff305ecd149891fb61" category="list-text"><block ref="f3c67684218b3eff305ecd149891fb61" category="inline-link-rx"></block></block>
+  <block id="54b3ffcd56ca9fcf7b510eacd6e2b2c2" category="inline-link">security cluster-network modify</block>
+  <block id="8de36505e6c08f8621e3a78ce3f914fb" category="list-text"><block ref="8de36505e6c08f8621e3a78ce3f914fb" category="inline-link-rx"></block></block>
+  <block id="15bcb4c6449d561405dcd3343b296f3f" category="list-text">개인 모드 배포를 위해 네트워크 구성을 완료하고 작업자 풀을 생성했는지 확인하십시오. <block ref="f6826eadb975b62aabcce78c0bcbe6da" category="inline-link-macro-rx"></block>을(를) 참조하십시오.</block>
+  <block id="22d13b1b320aa83b9fbd888d6b3349d9" category="paragraph"><block ref="8fc12ad6381abbb87712055c7f5e50f1" prefix=" " category="inline-code"></block> 매개변수를 지정하여 프라이빗 모드 배포에서 툴을 실행합니다. 작업자 풀 구성에 대해서는 <block ref="f6826eadb975b62aabcce78c0bcbe6da" category="inline-link-macro-rx"></block>을 참조하십시오.</block>
+  <block id="6f05250c0d8ee6e1e655dce3b4fafd31" category="list-text">NetApp이 귀하의 계정을 승인한 후, <block ref="0d5be306dbda0781dddbcc32145dcc04" category="inline-link-macro-rx"></block>.</block>
+  <block id="a5afab6e833a0c61f2c731eac753192e" category="paragraph">Cloud Volumes ONTAP에서 사용하려면 먼저 콘솔에서 라이센스를 사용할 수 있어야 합니다. 필요한 경우 <block ref="01d63d3ea6e2febdc331ccf6e8ab0d0f" category="inline-link-macro-rx"></block>할 수 있습니다.</block>
+  <block id="e4216eff9837bc291d5eabe5aed0dafd" category="paragraph">이 페이지에 설명된 개선 사항은 콘솔을 통해 Cloud Volumes ONTAP을 관리하는 데 특화되어 있습니다. 주요 릴리스 및 패치에 대해 알아보려면 <block ref="7a96f232274f5a7cebcb1f6a52cc095f" category="inline-link-rx"></block>을(를) 참조하십시오.</block>
+  <block id="f535eb1278ad100b4d323539a7942781" category="section-title">2026년 10월 14일</block>
+  <block id="5e97b5d6eddbf44365aa9f33e020e547" category="sidebar">백엔드 클러스터 네트워크 암호화 활성화</block>
+  <block id="1cab9fa2920a3e09427bd4bf2d92adf4" category="sidebar">Cloud Volumes ONTAP HA의 Azure 유지 관리 중 중단을 방지합니다.</block>
 </blocks>

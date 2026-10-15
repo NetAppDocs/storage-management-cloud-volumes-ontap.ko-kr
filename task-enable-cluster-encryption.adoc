@@ -1,0 +1,66 @@
+---
+sidebar: sidebar 
+permalink: task-enable-cluster-encryption.html 
+keywords: Backend cluster network encryption, encryption, security, TLS, IPsec, CSM, kTLS, backend encryption 
+summary: ONTAP IPsec으로 보호되지 않는 Cloud Volumes ONTAP 클러스터 트래픽을 보호하려면 백엔드 클러스터 네트워크 암호화를 활성화하십시오. 
+---
+= Azure 및 Google Cloud에서 Cloud Volumes ONTAP에 대한 백엔드 클러스터 네트워크 암호화를 활성화합니다.
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Cloud Volumes ONTAP 9.19.1 이상 버전의 경우, Azure 및 Google Cloud의 고가용성(HA) 구성에서 내부 동서 트래픽을 보호하려면 백엔드 클러스터 네트워크 암호화를 활성화하십시오. 이 설정은 전송 중인 트래픽을 보호하며, 저장된 볼륨 데이터는 암호화하지 않습니다.
+
+ONTAP은 HA 구성을 위한 백엔드 네트워크의 트래픽을 보호하기 위해 커널 TLS(kTLS) 및 소프트웨어 IPsec을 통한 클러스터 세션 관리(CSM)를 사용합니다. Cloud Volumes ONTAP 9.19.1 이상 버전에서는 이러한 보호 기능을 백엔드 클러스터 트래픽으로 확장합니다.
+
+
+NOTE: 클러스터 네트워크 암호화를 활성화하면 클러스터 성능에 영향을 미칠 수 있습니다. 주의를 기울여 이 기능을 활성화하기 전에 환경이 추가 오버헤드를 수용할 수 있는지 확인하십시오.
+
+.시작하기 전에
+* Cloud Volumes ONTAP 9.19.1 이상 버전을 실행 중이어야 합니다.
+* 클러스터 관리자 권한이 있어야 합니다.
+* Cloud Volumes ONTAP 배포가 지원되는 구성을 사용하는지 확인해야 합니다.
+
+
+.단계
+. ONTAP CLI를 사용하여 Cloud Volumes ONTAP 클러스터에 연결합니다.
+. 클러스터 네트워크 암호화 구성이 올바른지 확인하십시오:
++
+[source, cli]
+----
+security cluster-network show
+    Enabled: false
+    Mode: tls
+    Status: READY
+----
+. TLS 및 IPsec 모드에서 클러스터 네트워크 암호화를 활성화합니다:
++
+[source, cli]
+----
+security cluster-network modify -enabled true -mode tls_ipsec
+----
+. 클러스터 네트워크 암호화가 활성화되어 있는지 확인하십시오:
++
+[source, cli]
+----
+security cluster-network show
+    Enabled: true
+    Mode: tls_ipsec
+    Status: READY
+----
++
+
+NOTE:  `tls_ipsec` 모드를 활성화하면 CSM 트래픽은 TLS를 사용하고 다른 클러스터 네트워크 트래픽은 IPsec을 사용합니다. ONTAP은 필요한 인증서와 백엔드 IPsec 정책을 생성하고 관리합니다.
+
+
+
+.관련 정보
+* https://docs.netapp.com/us-en/ontap/networking/configure-backend-encryption.html["ONTAP 백엔드 클러스터 네트워크 암호화 구성"^]
+* https://docs.netapp.com/us-en/ontap-cli/security-cluster-network-show.html["security cluster-network show"^]
+* https://docs.netapp.com/us-en/ontap-cli/security-cluster-network-modify.html["security cluster-network modify"^]
+
