@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: task-azure-high-availability-mode.html 
 keywords: high availability mode, EnableHighAvailabilityMode, action required, nfsv4 
-summary: 계획되지 않은 장애 조치 시간을 줄이고 Cloud Volumes ONTAP 에 대한 NFSv4 지원을 활성화하려면 Microsoft Azure의 고가용성 모드를 활성화해야 합니다. 
+summary: 예기치 않은 장애 조치 시간을 줄이고 Cloud Volumes ONTAP HA 쌍에 대해 NFSv4를 지원하려면 Microsoft Azure 고가용성 모드를 활성화하십시오. 
 ---
 = Azure에서 Cloud Volumes ONTAP 에 대해 고가용성 모드 활성화
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: 계획되지 않은 장애 조치 시간을 줄이고 Cloud Volumes ONT
 
 
 [role="lead"]
-Cloud Volumes ONTAP HA 쌍에 대해 Microsoft Azure의 고가용성(HA) 모드를 활성화하여 예기치 않은 장애 조치 시간을 줄이고 NFSv4를 지원하십시오. 이 모드는 예기치 않은 장애 조치 시 CIFS 및 NFSv4 클라이언트에 대해 60초의 복구 시간 목표(RTO)를 제공할 수 있습니다.
+예기치 않은 장애 조치 시간을 줄이고 NFSv4를 지원하려면 Cloud Volumes ONTAP HA 쌍에 대해 Microsoft Azure 고가용성(HA) 모드를 활성화하십시오. 이 모드는 예기치 않은 장애 조치 시 CIFS 및 NFSv4 클라이언트에 대해 60초의 복구 시간 목표(RTO)를 제공할 수 있습니다.
 
 Cloud Volumes ONTAP 9.10.1부터 Microsoft Azure에서 실행되는 Cloud Volumes ONTAP HA 쌍의 예기치 않은 장애 조치 시간을 단축하고 NFSv4 지원을 추가했습니다. Cloud Volumes ONTAP에서 이러한 개선 사항을 사용할 수 있도록 하려면 Azure 구독에서 HA 기능을 활성화해야 합니다.
 

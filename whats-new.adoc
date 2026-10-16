@@ -41,7 +41,7 @@ https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-new.html["C
 
 Cloud Volumes ONTAP 9.19.1 GA부터 필수 조건을 충족하는 새로운 Azure 단일 노드 및 고가용성(HA) 배포에 대해 Azure 호스트 암호화가 기본적으로 활성화됩니다. 이 기능은 데이터가 호스트에 기록되고 호스트에서 읽힐 때 임시 디스크 및 관련 호스트 수준 캐시 등 VM을 호스팅하는 물리적 서버의 데이터를 암호화합니다.
 
-Azure에 Cloud Volumes ONTAP을 배포하기 전에 다음 필수 조건을 충족하는지 확인하십시오:
+Azure에 Cloud Volumes ONTAP을 배포하기 전에 환경이 다음 필수 조건을 충족하는지 확인하십시오.
 
 * 해당  `EncryptionAtHost` 기능이 Azure 구독에 등록되었습니다.  https://learn.microsoft.com/en-us/azure/virtual-machines/linux/disks-enable-host-based-encryption-cli["Microsoft 설명서: 호스트에서 암호화 활성화"^]을(를) 참조하십시오.
 * 선택한 VM 인스턴스 유형은 Azure 지역의 호스트에서 암호화를 지원합니다.  https://learn.microsoft.com/en-us/azure/virtual-machines/linux/disks-enable-host-based-encryption-cli#finding-supported-vm-sizes["Microsoft 설명서: 지원되는 VM 크기 찾기"^]을(를) 참조하십시오.
@@ -136,7 +136,7 @@ Cloud Volumes ONTAP는 이제 비공개 미리 보기로 Azure Government Secret
 이제 Azure의 오스트리아 동부(austriaeast) 및 벨기에 중부(belgiumcentral) 리전에 Cloud Volumes ONTAP 9.12.1 GA 이상 버전을 배포할 수 있습니다. 지원되는 배포 유형은 다음과 같습니다.
 
 * 단일 노드
-* 로컬 중복 스토리지(LRS)를 사용하여 단일 가용성 영역에서 고가용성(HA) 구현
+* 로컬 중복 스토리지(LRS)를 사용하는 단일 가용성 영역의 HA
 * 영역 중복 스토리지(ZRS)를 사용하여 여러 가용 영역에서 고가용성(HA) 구현
 
 
@@ -216,7 +216,7 @@ NetApp Console의 잘 설계된 대시보드를 통해 이제 Cloud Volumes ONTA
 이제 Azure의 칠레 중앙(chilecentral) 지역에 Cloud Volumes ONTAP 9.12.1 GA 이상 버전을 배포할 수 있습니다. 지원되는 배포 유형은 다음과 같습니다.
 
 * 단일 노드
-* 로컬 중복 스토리지(LRS)를 사용하여 단일 가용성 영역에서 고가용성(HA) 구현
+* 로컬 중복 스토리지(LRS)를 사용하는 단일 가용성 영역의 HA
 * 영역 중복 스토리지(ZRS)를 사용하여 여러 가용 영역에서 고가용성(HA) 구현
 
 
@@ -526,16 +526,16 @@ https://docs.netapp.com/us-en/console-automation/cvo/put-occm-config.html["수�
 [[support-for-google-infrastructure-manager-for-private-mode-deployments]]
 === 프라이빗 모드 배포를 위한 Google Infrastructure Manager 지원
 
-Cloud Volumes ONTAP 9.16.1 및 그 이후 버전은 이제 Google Cloud의 새로운 프라이빗 모드 배포에 대해  https://docs.cloud.google.com/deployment-manager/docs/deprecations["Cloud Deployment Manager"^] (DM) 대신  https://docs.cloud.google.com/infrastructure-manager/docs/overview["Google Cloud Infrastructure Manager"^] (IM)을 지원합니다. Google은 가까운 시일 내에 더 발전된 Infrastructure Manager를 위해 Deployment Manager를 인프라 서비스로 지원 중단할 예정입니다.
+Cloud Volumes ONTAP 9.16.1 이상은 이제 Google Cloud의 새로운 프라이빗 모드 배포에서 https://docs.cloud.google.com/deployment-manager/docs/deprecations["Cloud Deployment Manager"^] (DM) 대신 https://docs.cloud.google.com/infrastructure-manager/docs/overview["Google Cloud Infrastructure Manager"^] (IM)을 지원합니다. Google은 보다 고급 인프라 서비스인 Infrastructure Manager를 위해 Deployment Manager를 더 이상 사용하지 않을 예정입니다.
 
-2026년 2월 25일부터 Cloud Volumes ONTAP는 신규 및 기존 프라이빗 모드 배포에 Infrastructure Manager를 사용합니다. 다음 표는 기본 워크플로를 설명합니다.
+2026년 2월 25일부터 Cloud Volumes ONTAP은 신규 및 기존 프라이빗 모드 배포에 Infrastructure Manager를 사용합니다. 기본 워크플로는 시나리오에 따라 다릅니다:
 
 [cols="1,4,1,1,1,1"]
 |===
 | 시나리오 | 행동 | 에이전트용 새 API | 에이전트에 대한 새로운 권한 | Cloud Volumes ONTAP용 새로운 Google Cloud API | 문서 리소스 
 
 
-| 비공개 모드의 기존 에이전트 및 기존 배포 | NetApp Support Site에서 설치 프로그램을 다운로드하여 호스트에 수동으로 에이전트를 설치함으로써 NetApp Console 에이전트를 최신 버전으로 업그레이드하십시오. 이렇게 하면 Infrastructure Manager API를 사용할 수 있습니다. 그 후 기존 Cloud Volumes ONTAP 시스템을 Infrastructure Manager를 사용하도록 변환하십시오.  a| 
+| 비공개 모드의 기존 에이전트 및 기존 배포 | NetApp 지원 사이트에서 설치 프로그램을 다운로드하여 Console 에이전트를 최신 버전으로 업그레이드한 다음 호스트에 에이전트를 수동으로 설치하여 Infrastructure Manager API를 사용할 수 있도록 하십시오. 그런 다음 기존 Cloud Volumes ONTAP 시스템을 Infrastructure Manager를 사용하도록 변환하십시오.  a| 
 * Cloud Infrastructure Manager API
 * 클라우드 할당량 API
 * Cloud Build API
@@ -562,7 +562,7 @@ Cloud Volumes ONTAP 9.16.1 및 그 이후 버전은 이제 Google Cloud의 새�
 
 
 |===
-프라이빗 클라우드 모드 배포에서 Cloud Volumes ONTAP이 Infrastructure Manager를 사용하기 시작하려면 몇 가지 구성 변경이 필요합니다. 을(를) 참조하십시오. https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/reference-networking-gcp.html#infrastructure-manager-configuration-in-private-mode-or-protected-environments["프라이빗 모드 또는 보호 환경에서의 Infrastructure Manager 구성"^]
+프라이빗 모드 배포에서는 Cloud Volumes ONTAP이 Infrastructure Manager를 사용하기 시작하도록 몇 가지 구성을 변경해야 합니다.  https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/reference-networking-gcp.html#infrastructure-manager-configuration-in-private-mode-or-protected-environments["프라이빗 모드 또는 보호 환경에서의 Infrastructure Manager 구성"^]을(를) 참조하십시오.
 
 .관련 링크
 * https://docs.netapp.com/us-en/console-setup-admin/whats-new.html#console-agent-4-2-0["NetApp Console Agent 4.2.0 릴리스 노트"^]
@@ -1267,14 +1267,14 @@ WORM(Write Once Read Many) 및 ARP(Autonomous Ransomware Protection)의 내장�
 
 이제 BlueXP AWS, Azure 및 Google Cloud에서 Cloud Volumes ONTAP 9.15.1 일반 공급 릴리스를 배포하고 관리할 수 있습니다.
 
-이번 릴리스에는 Azure에 대한 다음과 같은 기능 및 개선 사항이 포함되어 있습니다. 아래 내용을 읽어보시면 이러한 새로운 기능을 지원하는 특정 구성에 대한 자세한 내용을 확인할 수 있습니다.
+이번 릴리스에는 Azure에 대한 다음과 같은 기능 및 개선 사항이 포함되어 있습니다.
 
 
 
 [[support-for-premium-ssd-v2-managed-disks-in-azure]]
 === Azure에서 Premium SSD v2 Managed Disks 지원
 
-이제 Azure의 Cloud Volumes ONTAP 시스템에서 Premium SSD v2 관리형 디스크가 지원됩니다. 이러한 프리미엄 디스크는 기존 Premium SSD 관리형 디스크에 비해 단일 노드 및 고가용성(HA) 구성 모두에서 더 낮은 비용으로 더 높은 성능과 낮은 지연 시간을 제공합니다. 다른 관리형 디스크와 마찬가지로 최대 디스크 크기는 32TiB입니다. Premium SSD v2 관리형 디스크의 성능(용량, 처리량 및 IOPS)은 구성 가능하므로 워크로드의 비용 효율성을 유지하면서 변화하는 성능 요구 사항을 충족할 수 있습니다.
+이제 Azure의 Cloud Volumes ONTAP 시스템에서 Premium SSD v2 관리형 디스크가 지원됩니다. 이러한 프리미엄 디스크는 Premium SSD 관리형 디스크에 비해 단일 노드 및 고가용성(HA) 쌍 모두에서 더 낮은 비용으로 더 높은 성능과 더 낮은 지연 시간을 제공합니다. 다른 관리형 디스크와 마찬가지로 최대 디스크 크기는 32TiB입니다. Premium SSD v2 관리형 디스크의 성능(용량, 처리량 및 IOPS)을 구성하여 워크로드의 비용 효율성을 유지하면서 변화하는 성능 요구 사항을 충족할 수 있습니다.
 
 
 
@@ -1284,7 +1284,7 @@ WORM(Write Once Read Many) 및 ARP(Autonomous Ransomware Protection)의 내장�
 Cloud Volumes ONTAP 9.15.1부터 Azure의 단일 가용성 영역(AZ)에 고가용성(HA) 모드로 가상 머신(VM) 인스턴스를 배포할 수 있습니다. 이전의 비영역 배포와 달리 Cloud Volumes ONTAP 9.15.1은 유연한 오케스트레이션 모드의 Microsoft Virtual Machines Scale Sets를 사용하여 동일한 AZ 내에 개별 장애 도메인을 포함한 모든 리소스를 배포함으로써 최적의 가용성을 보장합니다. 이 배포 모드는 기본적으로 다음 조건을 충족하는 경우 Premium SSD v2 관리형 디스크를 사용합니다.
 
 * Cloud Volumes ONTAP 버전은 9.15.1 이상입니다.
-* 선택한 지역 및 영역은 Premium SSD v2 관리형 디스크를 지원합니다. 지원되는 지역에 대한 자세한 내용은  https://azure.microsoft.com/en-us/explore/global-infrastructure/products-by-region/["Microsoft Azure 웹사이트: 지역별 사용 가능한 제품"^]을 참조하십시오. 추가하는 방법은  https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-deploying-otc-azure.html#launching-a-cloud-volumes-ontap-ha-pair-in-azure["Azure에서 Cloud Volumes ONTAP HA 쌍 시작하기"^]을 참조하십시오.
+* 선택한 지역 및 영역은 Premium SSD v2 Managed Disks를 지원합니다. 지원되는 지역에 대한 자세한 내용은  https://azure.microsoft.com/en-us/explore/global-infrastructure/products-by-region/["Microsoft Azure 웹사이트: 지역별 사용 가능한 제품"^]을(를) 참조하십시오. 추가하는 방법을 알아보려면  https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-deploying-otc-azure.html#launching-a-cloud-volumes-ontap-ha-pair-in-azure["Azure에서 Cloud Volumes ONTAP HA 쌍 시작하기"^]을(를) 참조하십시오.
 * 해당 구독은 Microsoft `Microsoft.Compute/VMOrchestratorZonalMultiFD` 기능에 등록되었습니다. https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-saz-feature.html["단일 가용성 영역에 대해 VMOrchestratorZonalMultiFD를 활성화하는 방법을 알아봅니다."^].
 
 
@@ -1295,7 +1295,7 @@ Cloud Volumes ONTAP 9.15.1부터 Azure의 단일 가용성 영역(AZ)에 고가�
 [[support-for-virtual-machines-scale-sets-to-unify-all-azure-ha-types]]
 === 모든 Azure HA 유형을 통합하기 위한 가상 머신 확장 집합 지원
 
-Cloud Volumes ONTAP 9.15.1은 Azure의 유연한 오케스트레이션 모드에서 Virtual Machines Scale Sets를 활용하여 고가용성(HA) 쌍을 위한 단일 가용 영역에 가상 머신(VM) 인스턴스를 배포합니다. 이 버전은 페이지 블롭, LRS, ZRS(zone-redundant storage) 또는 다중 영역, LRS 영역(단일 AZ) 등 모든 유형의 HA 모드를 지원합니다.
+Cloud Volumes ONTAP 9.15.1은 고가용성(HA) 쌍을 위해 단일 가용 영역에 가상 머신(VM) 인스턴스를 배포할 때 Azure의 유연한 오케스트레이션 모드에서 가상 머신 확장 집합을 사용합니다. 이러한 지원은 페이지 Blob, LRS, 영역 중복 스토리지(ZRS) 또는 다중 영역, LRS 영역(단일 AZ) 등 모든 HA 유형을 포함합니다.
 
 * https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/["Microsoft Azure 설명서: 가상 머신 확장 집합 설명서"^]
 * https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-ha-azure.html["Azure의 고가용성 쌍에 대해 알아보기"^].
@@ -1322,7 +1322,7 @@ BlueXP가 FlexCache 볼륨을 관리하는 방법에 대한 자세한 내용은 
 [[edge-cache-licensing-packages-deprecated]]
 === Edge Cache 라이선싱 패키지가 더 이상 사용되지 않습니다.
 
-Edge Cache 용량 기반 라이선싱 패키지는 향후 Cloud Volumes ONTAP 배포에 더 이상 제공되지 않습니다.  하지만 API를 사용하면 이 기능을 활용할 수 있습니다.
+향후 Cloud Volumes ONTAP 배포 시 Edge Cache 용량 기반 라이센스 패키지는 더 이상 제공되지 않습니다. 하지만 API를 통해 해당 기능을 이용할 수 있습니다.
 
 
 
@@ -1338,7 +1338,7 @@ Azure에서 Flash Cache를 구성하는 데 필요한 최소 Cloud Volumes ONTAP
 [[free-trials-for-marketplace-subscriptions-deprecated]]
 === 마켓플레이스 구독에 대한 무료 평가판이 더 이상 제공되지 않습니다.
 
-클라우드 공급업체 마켓플레이스의 사용량 기반 구독에 대한 30일 자동 무료 평가판 또는 평가 라이선스는 더 이상 Cloud Volumes ONTAP 에서 제공되지 않습니다.  모든 유형의 마켓플레이스 구독(PAYGO 또는 연간 계약)에 대한 요금은 무료 체험 기간 없이 처음 사용하는 순간부터 부과됩니다.
+클라우드 공급자의 마켓플레이스에서 종량제 구독을 위한 30일 자동 무료 평가판 또는 평가판 라이센스는 더 이상 Cloud Volumes ONTAP에서 사용할 수 없습니다. 모든 유형의 마켓플레이스 구독(PAYGO 또는 연간 계약)은 무료 평가 기간 없이 최초 사용일부터 요금이 부과됩니다.
 
 
 
@@ -1416,10 +1416,10 @@ HA 배포를 지원하는 AWS 로컬 영역에 대한 자세한 내용은  https
 
 
 
-[[amazon-instant-metadata-service-v2-support]]
-=== Amazon Instant Metadata Service v2 지원
+[[amazon-instance-metadata-service-v2-support]]
+=== Amazon Instance Metadata Service v2 지원
 
-AWS에서 Cloud Volumes ONTAP, Mediator 및 Connector는 이제 모든 기능에 대해 Amazon Instant Metadata Service v2(IMDSv2)를 지원합니다.  IMDSv2는 취약점에 대한 강화된 보호 기능을 제공합니다.  이전에는 IMDSv1만 지원되었습니다.
+AWS에서 Cloud Volumes ONTAP, Mediator 및 Connector는 이제 모든 기능에 대해 Amazon Instance Metadata Service v2(IMDSv2)를 지원합니다. IMDSv2는 취약점에 대한 향상된 보호 기능을 제공합니다. 이전에는 IMDSv1만 지원되었습니다.
 
 보안 정책에 따라 필요한 경우 EC2 인스턴스가 IMDSv2를 사용하도록 구성할 수 있습니다. 지침은  https://docs.netapp.com/us-en/console-setup-admin/task-require-imdsv2.html["기존 커넥터 관리를 위한 BlueXP 설정 및 관리 문서"^]을 참조하십시오.
 
@@ -1532,14 +1532,14 @@ https://docs.netapp.com/us-en/cloud-volumes-ontap-9141-relnotes/["이번 Cloud V
 === Azure의 새로운 지역 지원
 
 .단일 가용성 영역 지역 지원
-다음 지역은 이제 Azure에서 Cloud Volumes ONTAP 9.12.1 GA 이상에 대한 고가용성 단일 가용성 영역 배포를 지원합니다.
+다음 지역에서는 이제 Cloud Volumes ONTAP 9.12.1 GA 이상 버전에 대한 Azure에서의 고가용성 단일 가용성 영역 배포를 지원합니다:
 
 * 텔아비브
 * 밀라노
 
 
 .다중 가용성 영역 지역 지원
-다음 지역은 이제 Azure에서 Cloud Volumes ONTAP 9.12.1 GA 이상에 대해 고가용성 다중 가용성 영역 배포를 지원합니다.
+다음 지역에서는 이제 Cloud Volumes ONTAP 9.12.1 GA 이상 버전에 대해 Azure에서 고가용성 다중 가용 영역 배포를 지원합니다:
 
 * 중앙 인도
 * 노르웨이 동부
@@ -1610,7 +1610,7 @@ https://docs.netapp.com/us-en/cloud-volumes-ontap-9141-relnotes/["이번 Cloud V
 [[new-regions-supported-for-ha-multiple-availability-zone-deployments-in-azure]]
 === Azure에서 HA 다중 가용성 영역 배포를 지원하는 새로운 지역
 
-Azure의 다음 지역은 이제 Cloud Volumes ONTAP 9.12.1 GA 이상에 대해 고가용성 다중 가용성 영역 배포를 지원합니다.
+이제 Azure의 다음 지역에서 Cloud Volumes ONTAP 9.12.1 GA 이상 버전에 대한 고가용성 다중 가용 영역 배포를 지원합니다:
 
 * 호주 동부
 * 동아시아
@@ -1685,12 +1685,12 @@ https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-deploy
 [[usage-reports-enhancements]]
 === 사용 보고서 개선
 
-사용 보고서에 표시되는 정보에 다양한 개선 사항이 적용되었습니다.  사용 보고서의 개선 사항은 다음과 같습니다.
+사용량 보고서에 표시되는 정보가 여러 면에서 개선되었습니다. 사용량 보고서에는 다음과 같은 개선 사항이 포함됩니다:
 
 * 이제 TiB 단위가 열 이름에 포함됩니다.
 * 이제 일련 번호에 대한 새로운 "노드" 필드가 포함되었습니다.
 * 이제 스토리지 VM 사용 보고서에 새로운 "워크로드 유형" 열이 포함되었습니다.
-* 이제 작업 환경 이름이 스토리지 VM 및 볼륨 사용 보고서에 포함됩니다.
+* 이제 스토리지 VM 및 볼륨 사용량 보고서에 작업 환경 이름이 포함됩니다.
 * 볼륨 유형 "파일"이 이제 "기본(읽기/쓰기)"로 표시됩니다.
 * 볼륨 유형 "보조"는 이제 "보조(DP)"로 표시됩니다.
 
@@ -1725,7 +1725,7 @@ Connector 3.9.31 릴리스에는 다음과 같은 변경 사항이 도입되었�
 [[support-for-ha-multiple-availability-zone-deployments-in-azure]]
 === Azure에서 HA 다중 가용성 영역 배포 지원
 
-Azure의 일본 동부 및 한국 중부는 이제 Cloud Volumes ONTAP 9.12.1 GA 이상에 대해 HA 다중 가용성 영역 배포를 지원합니다.
+Azure의 일본 동부 및 한국 중부 리전에서 이제 Cloud Volumes ONTAP 9.12.1 GA 이상 버전에 대한 고가용성(HA) 다중 가용성 영역 배포를 지원합니다.
 
 여러 가용 영역을 지원하는 모든 지역 목록은  https://www.netapp.com/cloud-volumes-ontap/supported-regions/["Azure의 글로벌 지역 맵"^]을 참조하십시오.
 
@@ -1877,7 +1877,7 @@ https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-manage
 [[support-for-comments-during-volume-creation]]
 === 볼륨 생성 중 주석 지원
 
-이 릴리스에서는 API를 사용하여 Cloud Volumes ONTAP FlexGroup 볼륨이나 FlexVol volume 생성할 때 주석을 추가할 수 있습니다.
+이번 릴리스에서는 API를 사용하여 Cloud Volumes ONTAP FlexGroup 볼륨 또는 FlexVol 볼륨을 생성할 때 주석을 추가할 수 있습니다.
 
 
 
@@ -2202,7 +2202,7 @@ https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-encryp
 
 AutoSupport 시스템 상태를 사전에 모니터링하고 NetApp 기술 지원팀에 메시지를 전송합니다.
 
-유일한 요구 사항은 커넥터의 보안 그룹이 포트 3128을 통한 _인바운드_ 연결을 허용하는 것입니다.  커넥터를 배포한 후 이 포트를 열어야 합니다.
+유일한 요구 사항은 커넥터의 보안 그룹이 3128번 포트를 통한 _인바운드_ 연결을 허용하는지 확인하는 것입니다. 커넥터를 배포한 후 이 포트를 열어야 합니다.
 
 
 
@@ -2250,7 +2250,7 @@ Connector 3.9.20 릴리스에는 다음과 같은 변경 사항이 도입되었�
 [[digital-wallet]]
 === 디지털 지갑
 
-이제 디지털 지갑에서 계정의 총 소비 용량과 라이선스 패키지별 소비 용량을 확인할 수 있습니다.  이를 통해 요금이 어떻게 청구되는지, 추가 용량을 구매해야 하는지 파악하는 데 도움이 됩니다.
+이제 디지털 지갑에서 계정의 총 사용 용량과 라이선스 패키지별 사용 용량을 확인할 수 있습니다. 이 정보를 통해 요금 청구 방식을 이해하고 추가 용량 구매가 필요한지 판단할 수 있습니다.
 
 
 
@@ -2311,7 +2311,7 @@ https://docs.netapp.com/us-en/cloud-volumes-ontap-9111-relnotes["이번 Cloud Vo
 
 Cloud Volumes ONTAP 의 고급 관리를 수행해야 하는 경우 ONTAP 시스템과 함께 제공되는 관리 인터페이스인 ONTAP System Manager를 사용하여 해당 작업을 수행할 수 있습니다.  고급 관리를 위해 BlueXP 벗어날 필요가 없도록 BlueXP 내부에 시스템 관리자 인터페이스를 포함시켰습니다.
 
-이 고급 보기는 Cloud Volumes ONTAP 9.10.0 이상에서 미리 보기로 제공됩니다. 우리는 이 경험을 더욱 개선하고 향후 릴리스에서 향상된 기능을 추가할 계획입니다. 제품 내 채팅을 이용해 피드백을 보내주세요.
+이 고급 보기 기능은 Cloud Volumes ONTAP 9.10.0 이상 버전에서 미리 보기로 제공됩니다. 제품 내 채팅 기능을 사용하여 의견을 보내주십시오.
 
 https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-administer-advanced-view.html["고급 보기에 대해 자세히 알아보세요"].
 
@@ -2501,7 +2501,7 @@ Cloud Volumes ONTAP 시스템에 연결된 웹 브라우저에 클러스터 관�
 [[charging-for-worm-storage]]
 === WORM 저장에 대한 요금 청구
 
-이제 소개 특별 요금이 만료되었으므로 WORM 스토리지 사용에 대한 요금이 청구됩니다.  요금은 WORM 볼륨의 총 프로비저닝 용량에 따라 시간당으로 부과됩니다.  이는 새로운 Cloud Volumes ONTAP 시스템에 모두 적용됩니다.
+초기 특별 할인 요금이 종료됨에 따라 WORM 스토리지 사용에 대한 요금이 부과됩니다. 요금은 WORM 볼륨의 총 프로비저닝 용량을 기준으로 시간당으로 계산됩니다. 이는 신규 및 기존 Cloud Volumes ONTAP 시스템 모두에 적용됩니다.
 
 https://bluexp.netapp.com/pricing["WORM 스토리지 가격에 대해 알아보세요"^] .
 
@@ -2577,7 +2577,7 @@ Connector 3.9.15 릴리스에는 다음과 같은 변경 사항이 도입되었�
 [[redesigned-licensing-selection]]
 === 재설계된 라이센스 선택
 
-새로운 Cloud Volumes ONTAP 작업 환경을 만들 때 라이선스 선택 화면을 재설계했습니다.  이러한 변경 사항은 2021년 7월에 도입된 용량별 요금 청구 방식을 강조하고 클라우드 공급업체 마켓플레이스를 통해 향후 제공될 서비스를 지원합니다.
+새로운 Cloud Volumes ONTAP 작업 환경을 생성할 때 라이선스 선택 화면을 재설계했습니다. 이번 변경 사항은 2021년 7월에 도입된 용량 기반 요금제를 강조하고 클라우드 공급자 마켓플레이스를 통한 제품 제공을 지원합니다.
 
 
 
@@ -2669,7 +2669,7 @@ https://docs.netapp.com/us-en/cloud-volumes-ontap-9101-relnotes["이번 Cloud Vo
 
 이제 Keystone 구독을 사용하여 Cloud Volumes ONTAP HA 쌍에 대한 비용을 지불할 수 있습니다.
 
-Keystone 구독은 선불 CapEx나 리스보다 OpEx 소비 모델을 선호하는 사람들에게 원활한 하이브리드 클라우드 환경을 제공하는, 성장에 따라 비용을 지불하는 구독 기반 서비스입니다.
+Keystone Subscription은 선불 CapEx 또는 리스 방식보다 OpEx 소비 모델을 선호하는 고객에게 원활한 하이브리드 클라우드 경험을 제공하는 사용량 기반 구독 서비스입니다.
 
 Keystone 구독은 BlueXP 에서 배포할 수 있는 모든 새로운 버전의 Cloud Volumes ONTAP 에서 지원됩니다.
 
@@ -2750,7 +2750,7 @@ Connector 3.9.8 릴리스에는 다음과 같은 변경 사항이 도입되었�
 
 Cloud Volumes ONTAP 에 대한 새로운 요금 청구 방법을 사용할 수 있습니다.
 
-* *용량 기반 BYOL*: 용량 기반 라이선스를 사용하면 TiB 용량당 Cloud Volumes ONTAP 에 대한 비용을 지불할 수 있습니다.  라이선스는 NetApp 계정과 연결되며 라이선스를 통해 충분한 용량을 사용할 수 있는 한 여러 개의 Cloud Volumes ONTAP 시스템을 만들 수 있습니다.  용량 기반 라이선싱은 _Essentials_ 또는 _Professional_ 패키지 형태로 제공됩니다.
+* *용량 기반 BYOL*: 용량 기반 라이선스를 사용하면 Cloud Volumes ONTAP에 대해 TiB 용량 단위로 비용을 지불할 수 있습니다. 이 라이선스는 NetApp 계정과 연결되어 있으며, 라이선스를 통해 충분한 용량을 사용할 수 있는 한 여러 Cloud Volumes ONTAP 시스템을 생성할 수 있습니다. 용량 기반 라이선스는 _Essentials_ 또는 _Professional_ 패키지 형태로 제공됩니다.
 * *프리미엄 제공*: 프리미엄을 이용하면 NetApp 에서 모든 Cloud Volumes ONTAP 기능을 무료로 사용할 수 있습니다(클라우드 공급자 요금은 여전히 ​​적용됩니다).  시스템당 프로비저닝 용량은 500GiB로 제한되며 지원 계약은 없습니다.  최대 10개의 프리미엄 시스템을 가질 수 있습니다.
 +
 https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-licensing.html["이러한 라이선싱 옵션에 대해 자세히 알아보세요"].
@@ -2883,7 +2883,7 @@ https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-tierin
 [[deletion-of-old-cloud-snapshots]]
 === 이전 클라우드 스냅샷 삭제
 
-이제 BlueXP Cloud Volumes ONTAP 시스템이 배포될 때와 전원이 꺼질 때마다 생성되는 루트 및 부팅 디스크의 이전 클라우드 스냅샷을 삭제합니다.  루트 볼륨과 부트 볼륨 모두에 대해 가장 최근의 스냅샷 두 개만 보존됩니다.
+BlueXP는 이제 Cloud Volumes ONTAP 시스템이 구축될 때와 전원이 꺼질 때마다 생성되는 루트 및 부팅 디스크의 이전 클라우드 스냅샷을 삭제합니다. 루트 볼륨과 부팅 볼륨 모두에 대해 가장 최근 스냅샷 2개만 보존됩니다.
 
 이 향상된 기능은 더 이상 필요하지 않은 스냅샷을 제거하여 클라우드 공급자 비용을 줄이는 데 도움이 됩니다.
 
@@ -2921,7 +2921,7 @@ Connector 3.9.5 릴리스에는 다음과 같은 변경 사항이 도입되었�
 
 이제 BlueXP Cloud Volumes ONTAP 에 대해 생성하는 초기 스토리지 VM에 대한 논리적 공간 보고를 활성화합니다.
 
-공간이 논리적으로 보고되는 경우 ONTAP 저장 효율성 기능으로 절약된 모든 물리적 공간도 사용된 것으로 보고되도록 볼륨 공간을 보고합니다.
+공간이 논리적으로 보고되는 경우, ONTAP은 스토리지 효율성 기능으로 절약된 모든 물리적 공간도 사용된 것으로 나타나도록 볼륨 공간을 보고합니다.
 
 
 
@@ -3019,7 +3019,7 @@ Connector 3.9.2 릴리스에는 다음과 같은 변경 사항이 도입되었�
 [[aws-outposts]]
 === AWS 아웃포스트
 
-몇 달 전, 우리는 Cloud Volumes ONTAP 이 Amazon Web Services(AWS) Outposts Ready 지정을 달성했다고 발표했습니다.  오늘, AWS Outposts에서 BlueXP 와 Cloud Volumes ONTAP 유효성을 검증했다는 소식을 전해드리게 되어 기쁩니다.
+몇 달 전, Cloud Volumes ONTAP이 Amazon Web Services(AWS) Outposts Ready 인증을 획득했다고 발표했습니다. AWS Outposts에서 BlueXP 및 Cloud Volumes ONTAP을 검증했습니다.
 
 AWS Outpost가 있는 경우 작업 환경 마법사에서 Outpost VPC를 선택하여 해당 Outpost에 Cloud Volumes ONTAP 배포할 수 있습니다. 경험은 AWS에 있는 다른 VPC와 동일합니다. 먼저 AWS Outpost에 커넥터를 배포해야 합니다.
 

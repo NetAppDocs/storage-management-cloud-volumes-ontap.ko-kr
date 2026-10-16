@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: task-saz-feature.html 
 keywords: Microsoft Azure feature, HA in SAZ, single availability zone, Azure feature, Virtual Machine Scale Sets in Flexible mode, VMOrchestratorZonalMultiFD, VM Orchestrator, Zonal, MultiFD, VMOrchestratorZonalMultiFD feature 
-summary: SAZ에 HA를 배포하려면 이 Microsoft Azure 기능을 활성화하세요. 
+summary: Azure에서 VMOrchestratorZonalMultiFD 기능을 활성화하여 단일 가용성 영역의 서로 다른 장애 도메인에 Cloud Volumes ONTAP HA 노드를 배포하십시오. 
 ---
 = Azure에서 Cloud Volumes ONTAP 에 VMOrchestratorZonalMultiFD 사용
 :hardbreaks:
@@ -14,11 +14,11 @@ summary: SAZ에 HA를 배포하려면 이 Microsoft Azure 기능을 활성화하
 
 
 [role="lead"]
-로컬 중복 스토리지(LRS) 단일 가용성 영역(AZ)에 VM 인스턴스를 배포하려면 Microsoft를 활성화해야 합니다. `Microsoft.Compute/VMOrchestratorZonalMultiFD` 귀하의 구독에 대한 기능입니다.  고가용성(HA) 모드에서 이 기능은 동일한 가용성 영역 내의 별도의 장애 도메인에 노드를 배포하는 것을 용이하게 합니다.
+Azure에서 로컬 중복 스토리지(LRS) 단일 가용 영역(AZ)에 Cloud Volumes ONTAP VM 인스턴스를 배포하려면 구독에 대해 Microsoft `Microsoft.Compute/VMOrchestratorZonalMultiFD` 기능을 활성화해야 합니다. 고가용성(HA) 모드에서 이 기능을 사용하면 동일한 가용 영역 내의 서로 다른 장애 도메인에 노드를 배포할 수 있습니다.
 
 이 기능을 활성화하지 않으면 영역별 배포가 발생하지 않으며, 이전 LRS 비영역별 배포가 적용됩니다.
 
-단일 가용성 영역에 VM을 배포하는 방법에 대한 자세한 내용은 다음을 참조하세요.link:concept-ha-azure.html["Azure의 고가용성 쌍"] .
+단일 가용성 영역에 VM을 배포하는 방법에 대한 자세한 내용은 link:concept-ha-azure.html["Azure의 고가용성 쌍"]을(를) 참조하십시오.
 
 "소유자" 권한이 있는 사용자로 다음 단계를 수행하세요.
 
@@ -31,7 +31,7 @@ summary: SAZ에 HA를 배포하려면 이 Microsoft Azure 기능을 활성화하
 az 계정 설정 -s _<Azure_subscription_name_or_ID>_ az 기능 등록 --name VMOrchestratorZonalMultiFD --namespace Microsoft.Compute
 
 ====
-. 등록 상태와 출력 샘플을 확인하세요.
+. 다음 명령어를 실행하여 등록 상태를 확인하십시오. 이 명령어는 아래 예시와 유사한 출력을 반환합니다:
 +
 []
 ====

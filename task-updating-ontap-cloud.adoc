@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: task-updating-ontap-cloud.html 
 keywords: update, updating, upgrading, upgrade, software, downgrade, downgrading, FTP, HTTP, mediator, local image, revert, reverting, downgrading, cloud backup 
-summary: NetApp Console 에서 Cloud Volumes ONTAP 업그레이드하여 최신 새 기능과 향상된 기능을 활용하세요.  소프트웨어를 업그레이드하기 전에 Cloud Volumes ONTAP 시스템을 준비해야 합니다. 
+summary: 지원되는 업그레이드 경로를 검토하고 시스템을 준비한 다음, NetApp Console 알림 또는 URL의 이미지를 통해 Cloud Volumes ONTAP을 업그레이드하십시오. 
 ---
 = Cloud Volumes ONTAP 업그레이드
 :hardbreaks:
@@ -21,14 +21,14 @@ NetApp Console 에서 Cloud Volumes ONTAP 업그레이드하여 최신 새 기�
 [[upgrade-overview]]
 == 업그레이드 개요
 
-Cloud Volumes ONTAP 업그레이드 프로세스를 시작하기 전에 다음 사항을 알고 있어야 합니다.
+Cloud Volumes ONTAP 업그레이드 프로세스를 시작하기 전에 다음 사항을 고려하십시오.
 
 
 
 [[upgrade-from-console-only]]
 === 콘솔에서만 업그레이드
 
-ONTAP System Manager나 ONTAP CLI를 사용해서는 안 되며, 오직 콘솔을 사용해서만 Cloud Volumes ONTAP 업그레이드해야 합니다.  그렇지 않으면 시스템 안정성에 영향을 미칠 수 있습니다.
+Cloud Volumes ONTAP은 콘솔에서만 업그레이드하십시오. ONTAP System Manager 또는 ONTAP CLI를 사용하여 업그레이드하면 시스템 안정성에 영향을 미칠 수 있습니다.
 
 콘솔은 Cloud Volumes ONTAP 을 업그레이드하는 두 가지 방법을 제공합니다.
 
@@ -302,9 +302,9 @@ Azure에 이전 버전의 Cloud Volumes ONTAP 있는 경우 먼저 다음 버전
 |===
 다음 사항에 유의하세요.
 
-* Cloud Volumes ONTAP 에 지원되는 업그레이드 경로는 온프레미스 ONTAP 클러스터와 다릅니다.
+* Cloud Volumes ONTAP의 지원되는 업그레이드 경로는 온프레미스 ONTAP 클러스터의 업그레이드 경로와 다릅니다.
 * 시스템에 나타나는 알림에 따라 업그레이드하는 경우, 콘솔에서 지원되는 업그레이드 경로를 따르는 릴리스로 업그레이드하라는 메시지가 표시됩니다.
-* HTTPS 위치에 업그레이드 이미지를 배치하여 업그레이드하는 경우, 지원되는 다음 업그레이드 경로를 따라야 합니다.
+* HTTPS 위치에 업그레이드 이미지를 배치하여 업그레이드하는 경우, 다음 지원되는 업그레이드 경로를 따르십시오.
 * 어떤 경우에는 대상 릴리스에 도달하기 위해 여러 번 업그레이드해야 할 수도 있습니다.
 +
 예를 들어, 버전 9.8을 사용 중이고 9.10.1로 업그레이드하려는 경우 먼저 버전 9.9.1로 업그레이드한 다음 9.10.1로 업그레이드해야 합니다.
@@ -324,7 +324,7 @@ Azure에 이전 버전의 Cloud Volumes ONTAP 있는 경우 먼저 다음 버전
 
 패치 릴리스에 대한 일반적인 규칙에 따라 동일하거나 다음 Cloud Volumes ONTAP 릴리스에서 낮은 패치 버전에서 더 높은 패치 버전으로 업그레이드할 수 있습니다.
 
-다음은 몇 가지 예입니다.
+다음은 두 가지 예입니다:
 
 * 9.13.0 -> 9.13.1 P15
 * 9.12.1 -> 9.13.1 P2
@@ -342,7 +342,7 @@ Cloud Volumes ONTAP 이전 릴리스로 되돌리거나 다운그레이드하는
 [[support-registration]]
 === 지원 등록
 
-이 페이지에 설명된 방법 중 하나를 사용하여 소프트웨어를 업그레이드하려면 Cloud Volumes ONTAP를 NetApp 지원팀에 등록해야 합니다. 이는 종량제(PAYGO) 및 BYOL(Bring-Your-Own License) 모두에 적용됩니다. BYOL 시스템은 기본적으로 등록되어 있지만 link:task-registering.html["PAYGO 시스템 수동 등록"]해야 합니다.
+어떤 방법으로든 소프트웨어를 업그레이드하려면 NetApp 지원에 Cloud Volumes ONTAP을 등록해야 합니다. 이는 종량제(PAYGO) 및 BYOL(Bring-Your-Own License) 모두에 적용됩니다. BYOL 시스템은 기본적으로 등록되지만, link:task-registering.html["PAYGO 시스템 수동 등록"]해야 합니다.
 
 
 TIP: 지원에 등록되지 않은 시스템도 새 버전이 출시되면 콘솔에 표시되는 소프트웨어 업데이트 알림을 받게 됩니다.  하지만 소프트웨어를 업그레이드하려면 먼저 시스템을 등록해야 합니다.
@@ -359,15 +359,15 @@ TIP: 지원에 등록되지 않은 시스템도 새 버전이 출시되면 콘�
 [[upgrades-in-aws-with-c4-m4-and-r4-ec2-instance-types]]
 === c4, m4 및 r4 EC2 인스턴스 유형을 사용한 AWS 업그레이드
 
-Cloud Volumes ONTAP 더 이상 c4, m4, r4 EC2 인스턴스 유형을 지원하지 않습니다.  다음 인스턴스 유형을 사용하면 기존 배포를 Cloud Volumes ONTAP 버전 9.8-9.12.1로 업그레이드할 수 있습니다.  업그레이드하기 전에 다음을 권장합니다.<<인스턴스 유형 변경,인스턴스 유형을 변경합니다>> .  인스턴스 유형을 변경할 수 없는 경우 다음을 수행해야 합니다.<<향상된 네트워킹 활성화,향상된 네트워킹을 활성화하세요>> 업그레이드하기 전에.  인스턴스 유형을 변경하고 향상된 네트워킹을 활성화하는 방법에 대해 자세히 알아보려면 다음 섹션을 읽어보세요.
+Cloud Volumes ONTAP은 더 이상 c4, m4 및 r4 EC2 인스턴스 유형을 지원하지 않습니다. 이러한 인스턴스 유형을 사용하는 기존 배포를 Cloud Volumes ONTAP 버전 9.8-9.12.1로 업그레이드할 수 있습니다. 업그레이드하기 전에 <<인스턴스 유형 변경,인스턴스 유형을 변경합니다>> 것을 권장합니다. 인스턴스 유형을 변경할 수 없는 경우 업그레이드하기 전에 <<향상된 네트워킹 활성화,향상된 네트워킹을 활성화하세요>>해야 합니다.
 
-9.13.0 이상 버전을 실행하는 Cloud Volumes ONTAP 에서는 c4, m4, r4 EC2 인스턴스 유형으로 업그레이드할 수 없습니다.  이 경우에는 디스크 개수를 줄여야 합니다.<<인스턴스 유형 변경,인스턴스 유형을 변경합니다>> 또는 c5, m5, r5 EC2 인스턴스 유형을 사용하여 새로운 HA 쌍 구성을 배포하고 데이터를 마이그레이션합니다.
+Cloud Volumes ONTAP 버전 9.13.0 이상에서는 c4, m4, r4 EC2 인스턴스 유형으로 업그레이드할 수 없습니다. 이 경우 디스크 수를 줄인 다음 <<인스턴스 유형 변경,인스턴스 유형을 변경합니다>> 또는 c5, m5, r5 EC2 인스턴스 유형으로 새로운 HA 페어를 배포하고 데이터를 마이그레이션해야 합니다.
 
 
 
 ==== 인스턴스 유형 변경
 
-c4, m4 및 r4 EC2 인스턴스 유형은 c5, m5 및 r5 EC2 인스턴스 유형보다 노드당 더 많은 디스크를 허용합니다.  실행 중인 c4, m4 또는 r4 EC2 인스턴스의 노드당 디스크 수가 c5, m5 및 r5 인스턴스의 노드당 최대 디스크 허용량보다 낮은 경우 EC2 인스턴스 유형을 c5, m5 또는 r5로 변경할 수 있습니다.
+c4, m4 및 r4 EC2 인스턴스 유형은 c5, m5 및 r5 EC2 인스턴스 유형보다 노드당 더 많은 디스크를 지원합니다. c4, m4 또는 r4 EC2 인스턴스의 노드당 디스크 수가 c5, m5 및 r5 인스턴스의 노드당 최대 디스크 수보다 적은 경우, EC2 인스턴스 유형을 c5, m5 또는 r5로 변경할 수 있습니다.
 
 link:https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-limits-aws.html#disk-and-tiering-limits-by-ec2-instance["EC2 인스턴스별 디스크 및 계층화 제한 확인"^] link:https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-change-ec2-instance.html["Cloud Volumes ONTAP 의 EC2 인스턴스 유형 변경"^]
 
@@ -402,14 +402,14 @@ Cloud Volumes ONTAP 버전 9.8 이상으로 업그레이드하려면 c4, m4 또�
 
 많은 경우 HA 쌍을 업그레이드하는 작업은 중단 없이 진행되며 I/O도 중단되지 않습니다.  이러한 중단 없는 업그레이드 프로세스 동안 각 노드는 클라이언트에 I/O를 계속 제공하기 위해 동시에 업그레이드됩니다.
 
-세션 지향 프로토콜은 업그레이드 중 특정 영역의 클라이언트와 애플리케이션에 부정적인 영향을 미칠 수 있습니다. 자세한 내용은 다음을 참조하세요. https://docs.netapp.com/us-en/ontap/upgrade/concept_considerations_for_session_oriented_protocols.html["ONTAP 문서"^]
+세션 지향 프로토콜은 업그레이드 중에 특정 영역에서 클라이언트 및 애플리케이션에 부정적인 영향을 미칠 수 있습니다. 자세한 내용은  https://docs.netapp.com/us-en/ontap/upgrade/concept_considerations_for_session_oriented_protocols.html["ONTAP 문서"^]을(를) 참조하십시오.
 
 
 
 [[verify-that-automatic-giveback-is-still-enabled]]
 === 자동 환불이 여전히 활성화되어 있는지 확인하세요.
 
-Cloud Volumes ONTAP HA 쌍에서 자동 반환 기능을 활성화해야 합니다(이는 기본 설정입니다).  그렇지 않으면 작업이 실패합니다.
+Cloud Volumes ONTAP HA 페어에서는 자동 반환 기능이 활성화되어 있어야 합니다(기본 설정). 자동 반환 기능이 활성화되어 있지 않으면 작업이 실패합니다.
 
 http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-hacg/GUID-3F50DE15-0D01-49A5-BEFD-D529713EC1FA.html["ONTAP 설명서: 자동 반환 구성을 위한 명령"^]
 
@@ -418,7 +418,7 @@ http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-hacg/GUID-3F50DE15-0D
 [[suspend-snapmirror-transfers]]
 === SnapMirror 전송 일시 중단
 
-Cloud Volumes ONTAP 시스템에 활성 SnapMirror 관계가 있는 경우 Cloud Volumes ONTAP 소프트웨어를 업데이트하기 전에 전송을 일시 중단하는 것이 가장 좋습니다.  전송을 일시 중단하면 SnapMirror 오류가 방지됩니다.  대상 시스템에서 전송을 중단해야 합니다.
+Cloud Volumes ONTAP 시스템에 활성 SnapMirror 관계가 있는 경우, Cloud Volumes ONTAP 소프트웨어를 업그레이드하기 전에 전송을 일시 중지하는 것이 좋습니다. 전송을 일시 중지하면 SnapMirror 오류를 방지할 수 있습니다. 대상 시스템에서 전송을 일시 중지해야 합니다.
 
 
 NOTE: NetApp Backup and Recovery SnapMirror 구현( SnapMirror Cloud라고 함)을 사용하여 백업 파일을 생성하지만, 시스템을 업그레이드할 때 백업을 중단할 필요는 없습니다.
@@ -444,7 +444,7 @@ NOTE: 콘솔에 액세스하는 컴퓨터는 Cloud Volumes ONTAP 에 네트워�
 [[verify-that-aggregates-are-online]]
 === 집계가 온라인인지 확인하세요
 
-소프트웨어를 업데이트하기 전에 Cloud Volumes ONTAP 의 집계가 온라인 상태여야 합니다.  대부분의 구성에서 집계는 온라인 상태여야 하지만, 그렇지 않은 경우 온라인으로 전환해야 합니다.
+소프트웨어를 업그레이드하기 전에 Cloud Volumes ONTAP용 애그리게이트가 온라인 상태여야 합니다. 대부분의 구성에서 애그리게이트는 온라인 상태입니다. 온라인 상태가 아닌 경우 온라인 상태로 전환하십시오.
 
 .이 작업에 관하여
 이 단계에서는 ONTAP System Manager 9.3 이상을 사용하는 방법을 설명합니다.
@@ -470,7 +470,7 @@ image:screenshots_aggregate_details_state.png["스크린샷: 집계에 대한 �
 
 업그레이드하기 전에 모든 LIF가 홈 포트에 있어야 합니다.  ONTAP 설명서를 참조하세요.link:https://docs.netapp.com/us-en/ontap/upgrade/task_enabling_and_reverting_lifs_to_home_ports_preparing_the_ontap_software_for_the_update.html["모든 LIF가 홈 포트에 있는지 확인하세요"^] .
 
-업그레이드 실패 오류가 발생하면 기술 자료(KB) 문서를 참조하세요.link:https://kb.netapp.com/Cloud/Cloud_Volumes_ONTAP/CVO_upgrade_fails["Cloud Volumes ONTAP 업그레이드 실패"^] .
+업그레이드가 실패하면 기술 자료(KB) 문서 link:https://kb.netapp.com/Cloud/Cloud_Volumes_ONTAP/CVO_upgrade_fails["Cloud Volumes ONTAP 업그레이드 실패"^]를 참조하십시오.
 
 
 
@@ -479,19 +479,19 @@ image:screenshots_aggregate_details_state.png["스크린샷: 집계에 대한 �
 
 콘솔은 업그레이드할 수 있는 새로운 버전이 있을 때 알려줍니다.  이 알림에서 업그레이드 프로세스를 시작할 수 있습니다. 자세한 내용은 다음을 참조하세요. <<콘솔 알림에서 업그레이드>> .
 
-외부 URL의 이미지를 사용하여 소프트웨어 업그레이드를 수행하는 또 다른 방법입니다.  이 옵션은 콘솔이 S3 버킷에 액세스하여 소프트웨어를 업그레이드할 수 없거나 패치가 제공된 경우에 유용합니다. 자세한 내용은 다음을 참조하세요. <<URL에서 사용 가능한 이미지에서 업그레이드>> .
+외부 URL에 있는 이미지를 사용하여 소프트웨어를 업그레이드할 수도 있습니다. 이 옵션은 콘솔에서 소프트웨어 업그레이드를 위해 S3 버킷에 액세스할 수 없거나 패치를 제공받은 경우에 유용합니다. 자세한 내용은 <<URL에서 사용 가능한 이미지에서 업그레이드>> 참조하십시오.
 
 
 
 [[upgrade-from-console-notifications]]
 === 콘솔 알림에서 업그레이드
 
-Cloud Volumes ONTAP Cloud Volumes ONTAP ONTAP 작업 환경에 알림을 표시합니다.
+콘솔은 Cloud Volumes ONTAP의 새 버전이 출시되면 Cloud Volumes ONTAP 시스템에 알림을 표시합니다.
 
 
 NOTE: 알림을 통해 Cloud Volumes ONTAP 업그레이드하려면 NetApp 지원 사이트 계정이 있어야 합니다.
 
-이 알림을 통해 업그레이드 프로세스를 시작할 수 있습니다. 이 알림은 S3 버킷에서 소프트웨어 이미지를 얻고, 이미지를 설치한 다음 시스템을 다시 시작하여 프로세스를 자동화합니다.
+이 알림을 통해 업그레이드 프로세스를 시작할 수 있습니다. 콘솔은 S3 버킷에서 소프트웨어 이미지를 가져와 설치한 다음 시스템을 재시작합니다.
 
 .시작하기 전에
 볼륨이나 집계 생성과 같은 작업은 Cloud Volumes ONTAP 시스템에서 진행 중이어서는 안 됩니다.
@@ -517,7 +517,7 @@ image:screenshot_upgrade_select_versions.png["업그레이드 Cloud Volumes ONTA
 ** 9.13.1 및 9.13.1P1 업그레이드를 위한 기본 버전으로 9.13.1P1이 표시되고, 다른 사용 가능한 버전으로 9.12.1P13, 9.13.1P14, 9.13.1 및 9.13.1P1이 표시됩니다.
 
 
-. 선택적으로 *모든 버전*을 선택하여 업그레이드할 다른 버전(예: 설치된 버전의 다음 패치)을 입력할 수 있습니다. 현재 Cloud Volumes ONTAP 버전과 호환되는 업그레이드 경로는 link:task-updating-ontap-cloud.html#supported-upgrade-paths["지원되는 업그레이드 경로"]을 참조하십시오.
+. 선택 사항: 업그레이드할 다른 버전을 입력하려면 *모든 버전*을 선택하십시오(예: 설치된 버전의 다음 패치). 현재 Cloud Volumes ONTAP 버전의 호환되는 업그레이드 경로는 link:task-updating-ontap-cloud.html#supported-upgrade-paths["지원되는 업그레이드 경로"]을(를) 참조하십시오.
 . *저장*을 선택한 다음 *적용*을 선택하세요.image:screenshot_upgrade_other_versions.png["업그레이드 가능한 버전을 표시하는 스크린샷입니다."]
 . 업그레이드 Cloud Volumes ONTAP 페이지에서 EULA를 읽은 다음 *EULA를 읽고 승인합니다*를 선택합니다.
 . *업그레이드*를 선택하세요.
@@ -525,7 +525,7 @@ image:screenshot_upgrade_select_versions.png["업그레이드 Cloud Volumes ONTA
 
 
 .결과
-콘솔에서 소프트웨어 업그레이드가 시작됩니다.  소프트웨어 업데이트가 완료되면 시스템에서 작업을 수행할 수 있습니다.
+콘솔에서 소프트웨어 업그레이드가 시작됩니다. 소프트웨어 업그레이드가 완료되면 시스템에서 작업을 수행할 수 있습니다.
 
 .당신이 완료한 후
 SnapMirror 전송을 중단한 경우 시스템 관리자를 사용하여 전송을 재개하세요.
@@ -571,7 +571,7 @@ NOTE: 미리 정의된 Cloud Volumes ONTAP 보안 그룹은 기본적으로 아�
 . 시스템에서 image:icon-action.png["추가 작업을 위한 가로 점 세 개가 표시된 아이콘입니다."] 아이콘을 선택한 다음 *Cloud Volumes ONTAP 업데이트*를 선택합니다.
 . Cloud Volumes ONTAP 버전 업데이트 페이지에서 URL을 입력한 다음 *이미지 변경*을 선택합니다.
 +
-위에 표시된 경로의 콘솔 에이전트에 소프트웨어 이미지를 복사한 경우 다음 URL을 입력합니다.
+위에 표시된 경로의 콘솔 에이전트에 소프트웨어 이미지를 복사한 경우 다음 URL을 입력하십시오.
 
 +
 \http://<콘솔_에이전트_개인-IP-주소>/ontap/images/<이미지-파일-이름>
@@ -584,7 +584,7 @@ NOTE: URL에서 *이미지 파일 이름*은 "cot.image.9.13.1P2.tgz" 형식을 
 
 
 .결과
-콘솔에서 소프트웨어 업데이트가 시작됩니다.  소프트웨어 업데이트가 완료되면 시스템에서 작업을 수행할 수 있습니다.
+콘솔에서 소프트웨어 업그레이드가 시작됩니다. 소프트웨어 업그레이드가 완료되면 시스템에서 작업을 수행할 수 있습니다.
 
 .당신이 완료한 후
 SnapMirror 전송을 중단한 경우 시스템 관리자를 사용하여 전송을 재개하세요.

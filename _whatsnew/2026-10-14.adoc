@@ -20,7 +20,7 @@ https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-new.html["C
 
 Cloud Volumes ONTAP 9.19.1 GA부터 필수 조건을 충족하는 새로운 Azure 단일 노드 및 고가용성(HA) 배포에 대해 Azure 호스트 암호화가 기본적으로 활성화됩니다. 이 기능은 데이터가 호스트에 기록되고 호스트에서 읽힐 때 임시 디스크 및 관련 호스트 수준 캐시 등 VM을 호스팅하는 물리적 서버의 데이터를 암호화합니다.
 
-Azure에 Cloud Volumes ONTAP을 배포하기 전에 다음 필수 조건을 충족하는지 확인하십시오:
+Azure에 Cloud Volumes ONTAP을 배포하기 전에 환경이 다음 필수 조건을 충족하는지 확인하십시오.
 
 * 해당  `EncryptionAtHost` 기능이 Azure 구독에 등록되었습니다.  https://learn.microsoft.com/en-us/azure/virtual-machines/linux/disks-enable-host-based-encryption-cli["Microsoft 설명서: 호스트에서 암호화 활성화"^]을(를) 참조하십시오.
 * 선택한 VM 인스턴스 유형은 Azure 지역의 호스트에서 암호화를 지원합니다.  https://learn.microsoft.com/en-us/azure/virtual-machines/linux/disks-enable-host-based-encryption-cli#finding-supported-vm-sizes["Microsoft 설명서: 지원되는 VM 크기 찾기"^]을(를) 참조하십시오.
