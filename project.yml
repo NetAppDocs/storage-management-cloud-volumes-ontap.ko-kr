@@ -225,7 +225,7 @@ sidebar:
         url: "/reference-limits-azure.html"
       - title: Azure의 HA 쌍에 대해 알아보기
         url: "/concept-ha-azure.html"
-      - title: Cloud Volumes ONTAP HA의 Azure 유지 관리 중 중단을 방지합니다.
+      - title: Azure 유지 관리 중 Cloud Volumes ONTAP HA 쌍의 중단을 방지합니다.
         url: "/task-azure-prevent-freeze.html"
       - title: Azure Key Vault를 사용하여 키 관리
         url: "/task-azure-key-vault.html"

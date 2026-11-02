@@ -20,6 +20,30 @@ NetApp Console 에서 Cloud Volumes ONTAP 관리의 새로운 기능을 알아�
 
 
 
+[[02-november-2026]]
+== 2026년 11월 2일
+
+
+
+[[guidance-for-upgrading-ontap-hotfixes-for-specific-cloud-volumes-ontap-versions]]
+=== 특정 Cloud Volumes ONTAP 버전에 대한 ONTAP 핫픽스 업그레이드 지침
+
+ONTAP은 Cloud Volumes ONTAP 버전 9.14.1, 9.15.1, 9.16.1, 9.17.1, 9.18.1 및 9.19.1과 호환되는 다음과 같은 핫픽스를 출시했습니다:
+
+* 9.14.1P18HF1
+* 9.15.1P20HF1
+* 9.16.1P16HF1
+* 9.17.1P11HF1
+* 9.18.1P8HF1
+* 9.19.1P3HF1
+
+
+자세한 내용은 https://security.netapp.com/advisory/ntap-20261021-0021["NTAP 보안 권고 20261021-0021"^]을 참조하십시오.
+
+Cloud Volumes ONTAP 시스템의 경우 NetApp Console에서 이러한 핫픽스로 업그레이드하라는 메시지가 표시될 수 있습니다. 하지만 이러한 핫픽스는 콘솔 에이전트 버전이 4.12.0 이상인 경우에만 지원됩니다. 콘솔 에이전트 버전이 4.12.0 이전인 경우 해당 메시지를 무시하십시오.
+
+
+
 [[14-october-2026]]
 == 2026년 10월 14일
 
@@ -98,7 +122,7 @@ NetApp은 프라이빗 모드에서 용량 기반 라이센스 모델을 위해 
 NetApp은 모든 프라이빗 모드 Cloud Volumes ONTAP 구축에 용량 기반 라이선스를 권장합니다. 노드 기반 라이선스를 사용하는 기존 프라이빗 모드 구축 환경이 있는 경우, NetApp에서 Essentials 패키지를 구매하여 용량 기반 라이선스로 전환할 수 있습니다. 이러한 새로운 구축 기능과 전환 옵션을 통해 NetApp은 노드 기반 라이선스에서 용량 기반 라이선스로 점진적으로 전환하려는 계획을 추진하고 있습니다.
 
 .관련 링크
-* https://review.docs.netapp.com/us-en/storage-management-cloud-volumes-ontap_capacity-license-darkmode/concept-licensing.html["Cloud Volumes ONTAP 라이선싱"^]
+* https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-licensing.html["Cloud Volumes ONTAP 라이선싱"^]
 * https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-license-management.html["Cloud Volumes ONTAP BYOL에 대해 알아보기"^]
 * https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-licensing.html#end-of-availability-of-node-based-licenses["노드 기반 라이선스 제공 종료"^]
 * https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-manage-node-licenses.html["Cloud Volumes ONTAP의 노드 기반 라이센스 관리"^]
@@ -181,7 +205,7 @@ NetApp은 프라이빗 모드 Cloud Volumes ONTAP 구축을 위한 용량 기반
 [[cloud-volumes-ontap-integration-with-microsoft-onelake]]
 === Cloud Volumes ONTAP과 Microsoft OneLake 통합
 
-이제 Cloud Volumes ONTAP에서 공개 프리뷰로 link:https://learn.microsoft.com/en-us/fabric/onelake/onelake-overview["Microsoft OneLake"^]과의 통합을 지원합니다. Power BI, Azure AI Search, OpenAI, Microsoft Copilot 등의 Microsoft 분석 및 AI 서비스에서 기존 Cloud Volumes ONTAP NAS 데이터를 사용할 수 있도록 link:https://learn.microsoft.com/en-us/fabric/onelake/onelake-overview["Microsoft OneLake"^]을 사용하여 Cloud Volumes ONTAP를 link:https://community.fabric.microsoft.com/["Microsoft Fabric"^]과 통합할 수 있습니다. 이 통합에는 데이터 이동이나 복제가 필요하지 않습니다. 이 통합은 link:https://docs.netapp.com/us-en/ontap/s3-multiprotocol/index.html["ONTAP S3 멀티 프로토콜"^] 액세스를 사용하여 Cloud Volumes ONTAP를 기존 Microsoft Fabric 레이크하우스에 연결합니다.
+Cloud Volumes ONTAP은 이제 공개 미리 보기로 link:https://learn.microsoft.com/en-us/fabric/onelake/onelake-overview["Microsoft OneLake"^]와의 통합을 지원합니다. 이 통합을 통해 기존 Cloud Volumes ONTAP NAS 데이터를 Power BI, Azure AI Search, OpenAI, Microsoft Copilot 등 Microsoft 분석 및 AI 서비스에서 사용할 수 있습니다. 이 통합에는 데이터 이동이나 중복이 필요하지 않습니다. 이 통합은 link:https://docs.netapp.com/us-en/ontap/s3-multiprotocol/index.html["ONTAP S3 멀티 프로토콜"^] 액세스를 사용하여 Cloud Volumes ONTAP을 기존 Microsoft Fabric 레이크하우스에 연결합니다.
 
 .관련 기사 및 자료:
 * https://www.netapp.com/blog/optimize-ai-analytics-microsoft-onelake/?utm_content=nativelink&utm_medium=internal&utm_source=linkedin&utm_campaign=b2d-port-all-na-ww-digi-blog-1747859361262&es_id=956c739202["NetApp 블로그: Microsoft OneLake 및 NetApp Cloud Volumes ONTAP로 AI 및 분석 최적화"^]

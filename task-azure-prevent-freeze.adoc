@@ -41,7 +41,7 @@ Microsoft Azure는 예약된 유지 관리 중에 VM을 잠시 일시 중지할 
 == Azure 예약 유지 관리 중에 자동 테이크오버 및 반환을 방지합니다.
 
 .단계
-. Azure HA 쌍의 시스템 ID를 확인합니다. 리소스 식별 및 API 호출에 대한 자세한 내용은  https://docs.netapp.com/us-en/console-automation/cm/your_api_call.html#step-1-select-the-identifie["첫 번째 API 호출"^]을(를) 참조하십시오.
+. Azure HA 쌍의 시스템 ID를 확인합니다. 리소스 식별 및 API 호출에 대한 자세한 내용은  https://docs.netapp.com/us-en/console-automation/cm/your_api_call.html#step-1-select-the-identifier["ONTAP 관리 REST API 호출을 실행합니다."^]를 참조하십시오.
 . 다음 엔드포인트에 `PUT` 요청을 전송하고 `{id}`를 시스템 ID로 교체합니다.
 +
 `PUT /occm/api/azure/ha/working-environments/{id}/opt-off-maintenance-event`

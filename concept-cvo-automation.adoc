@@ -140,7 +140,7 @@ link:concept-worm.html["WORM 저장소 관리"] link:reference-worm-snaplock.htm
 Ansible은 절차적 구성 파일을 기반으로 하는 오픈 소스 구성 관리 툴입니다.
 
 * https://galaxy.ansible.com/ui/repo/published/netapp/ontap/["Ansible Galaxy"^]
-* https://docs.ansible.com/ansible/latest/user_guide/index.html["Ansible 문서"^]
+* https://docs.ansible.com/projects/ansible/latest/getting_started/index.html["Ansible 문서"^]
 
 
 

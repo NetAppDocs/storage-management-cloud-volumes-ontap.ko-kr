@@ -14,7 +14,7 @@ summary: '새 시스템을 배포하기 전에 Azure의 Cloud Volumes ONTAP에 �
 
 
 [role="lead"]
-Azure의 Cloud Volumes ONTAP에서 사용할 라이선스 옵션을 결정한 후에는 새 시스템을 생성할 때 해당 라이선스 옵션을 선택하기 전에 몇 가지 단계를 완료해야 합니다.
+Azure의 Cloud Volumes ONTAP에서 사용할 라이선스 옵션을 결정한 후에는 새 시스템을 생성할 때 해당 옵션을 선택할 수 있도록 몇 가지 설정 단계를 완료해야 합니다.
 
 
 
@@ -85,7 +85,7 @@ Cloud Volumes ONTAP에서 사용하려면 먼저 콘솔에서 라이센스를 �
 +
 .. *세부 정보 및 자격 증명* 페이지에서 *자격 증명 편집 > 구독 추가*를 선택한 다음 안내에 따라 Azure Marketplace에서 종량제 오퍼링을 구독합니다.
 +
-NetApp에서 구매한 라이선스가 항상 먼저 청구되지만, 라이선스 용량을 초과하거나 라이선스 기간이 만료되면 마켓플레이스에서 시간당 요금이 청구됩니다.
+NetApp에서 구매한 라이선스가 항상 먼저 청구되지만, 라이선스 용량을 초과하거나 라이선스 기간이 만료되면 시간당 마켓플레이스 요금으로 청구됩니다.
 
 +
 image:screenshot-azure-paygo-subscription.png["Cloud Volumes ONTAP 시스템을 생성할 때 PAYGO 구독 옵션의 스크린샷입니다."]
@@ -187,7 +187,7 @@ link:task-deploying-otc-azure.html["Azure에서 Cloud Volumes ONTAP 시작하기
 [[node-based-license]]
 == 노드 기반 라이센스
 
-노드 기반 라이선스는 Cloud Volumes ONTAP의 이전 세대 라이선스입니다. NetApp에서 노드 기반 라이선스를 구매할 수 있었습니다(BYOL). 노드 기반 라이선스는 특정 경우에만 갱신 가능합니다. 자세한 내용은 다음을 참조하십시오.
+노드 기반 라이선스는 Cloud Volumes ONTAP의 이전 세대 라이선스입니다. NetApp에서 노드 기반 라이선스를 구매할 수 있었습니다(BYOL). 노드 기반 라이선스는 특정 경우에만 갱신 가능합니다. 자세한 내용은 다음을 참조하십시오:
 
 * https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/whats-new.html#end-of-availability-for-node-based-licenses["노드 기반 라이선스의 가용성 종료"^]
 * https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-licensing.html#end-of-availability-of-node-based-licenses["노드 기반 라이선스 제공 종료"^]

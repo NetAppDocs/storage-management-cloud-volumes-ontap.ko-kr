@@ -1,0 +1,22 @@
+= 특정 Cloud Volumes ONTAP 버전에 대한 ONTAP 핫픽스 업그레이드 지침
+:allow-uri-read: 
+
+
+
+
+[[guidance-for-upgrading-ontap-hotfixes-for-specific-cloud-volumes-ontap-versions]]
+=== 특정 Cloud Volumes ONTAP 버전에 대한 ONTAP 핫픽스 업그레이드 지침
+
+ONTAP은 Cloud Volumes ONTAP 버전 9.14.1, 9.15.1, 9.16.1, 9.17.1, 9.18.1 및 9.19.1과 호환되는 다음과 같은 핫픽스를 출시했습니다:
+
+* 9.14.1P18HF1
+* 9.15.1P20HF1
+* 9.16.1P16HF1
+* 9.17.1P11HF1
+* 9.18.1P8HF1
+* 9.19.1P3HF1
+
+
+자세한 내용은 https://security.netapp.com/advisory/ntap-20261021-0021["NTAP 보안 권고 20261021-0021"^]을 참조하십시오.
+
+Cloud Volumes ONTAP 시스템의 경우 NetApp Console에서 이러한 핫픽스로 업그레이드하라는 메시지가 표시될 수 있습니다. 하지만 이러한 핫픽스는 콘솔 에이전트 버전이 4.12.0 이상인 경우에만 지원됩니다. 콘솔 에이전트 버전이 4.12.0 이전인 경우 해당 메시지를 무시하십시오.
