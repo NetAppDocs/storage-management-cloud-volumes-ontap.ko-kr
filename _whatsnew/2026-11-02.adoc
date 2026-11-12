@@ -7,8 +7,10 @@
 [[guidance-for-upgrading-ontap-hotfixes-for-specific-cloud-volumes-ontap-versions]]
 === 특정 Cloud Volumes ONTAP 버전에 대한 ONTAP 핫픽스 업그레이드 지침
 
-ONTAP은 Cloud Volumes ONTAP 버전 9.14.1, 9.15.1, 9.16.1, 9.17.1, 9.18.1 및 9.19.1과 호환되는 다음과 같은 핫픽스를 출시했습니다:
+ONTAP은 Cloud Volumes ONTAP 버전 9.12.1, 9.13.1, 9.14.1, 9.15.1, 9.16.1, 9.17.1, 9.18.1 및 9.19.1과 호환되는 다음과 같은 핫픽스를 출시했습니다:
 
+* 9.12.1P20HF1
+* 9.13.1P21HF1
 * 9.14.1P18HF1
 * 9.15.1P20HF1
 * 9.16.1P16HF1

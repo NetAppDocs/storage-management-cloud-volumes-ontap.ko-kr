@@ -17,18 +17,19 @@ summary: Google Cloud에 있는 기존 Cloud Volumes ONTAP 시스템을 9.16.1 �
 2026년 2월 9일부터 Google Cloud에서 새로 배포하는 Cloud Volumes ONTAP은 Google Cloud Infrastructure Manager를 사용할 수 있습니다. Google은 Infrastructure Manager를 권장하기 위해 Google Cloud Deployment Manager를 더 이상 지원하지 않습니다. 기존 Cloud Volumes ONTAP 배포를 Deployment Manager에서 Infrastructure Manager로 전환하려면 수동으로 변환 툴을 실행하십시오. 이 일회성 프로세스를 통해 시스템이 Infrastructure Manager로 자동 전환됩니다.
 
 .이 작업에 관하여
-변환 툴은 NetApp 지원 사이트에서 사용할 수 있으며 다음과 같은 산출물을 생성합니다.
+변환 툴은 NetApp 지원 사이트에서 사용할 수 있으며 다음과 같은 산출물을 생성합니다:
 
 *  `conversion_output/deployment_name`에 저장된 Terraform 아티팩트.
-* 변환 요약, 다음에 저장됨 `conversion_output/batch_summary_<deployment_name>_<timestamp>.json.`
+* 변환 요약이 `conversion_output/batch_summary_<deployment_name>_<timestamp>.json`에 저장되었습니다.
 * 디버그 로그는  `<gcp project number>-<region>-blueprint-config/<cvo name>` 디렉터리에 저장됩니다. 문제 해결을 위해 이 로그가 필요합니다.  `<gcp project number>-<region>-blueprint-config` 버킷에는 Terraform 로그가 저장됩니다.
+* Cloud Volumes ONTAP 프로젝트는 Cloud Volumes ONTAP 리소스를 생성하는 Google Cloud 프로젝트입니다. 콘솔 에이전트와 Cloud Volumes ONTAP 시스템은 동일하거나 다른 Google Cloud 프로젝트에 있을 수 있습니다(프로젝트 간 구성). 프로젝트 간 구성에서 콘솔 에이전트의 서비스 계정에 필요한 권한이 있는 경우, 프로젝트 A 등 한 프로젝트에 콘솔 에이전트를 배포하고 프로젝트 B 등 다른 프로젝트에 Cloud Volumes ONTAP 시스템을 배포할 수 있습니다.
 
 
 [CAUTION]
 ====
 Infrastructure Manager를 사용하는 Cloud Volumes ONTAP 시스템은 데이터와 레코드를 Google Cloud Storage 버킷에 저장합니다. 이러한 버킷에 대해 추가 비용이 발생할 수 있지만 버킷이나 해당 콘텐츠를 편집하거나 삭제하지 마십시오.
 
-* `gs://netapp-cvo-infrastructure-manager-<project id>`: 새로운 Cloud Volumes ONTAP 배포에 사용되는 ONTAP 버전 및 SVM Terraform 템플릿용입니다. 이 안에  `dm-to-im-convert` 버킷에는 Cloud Volumes ONTAP Terraform 파일이 들어 있습니다.
+* `gs://netapp-cvo-infrastructure-manager-<project id>`: 새로운 Cloud Volumes ONTAP 배포에 사용되는 ONTAP 버전 및 SVM Terraform 템플릿용입니다. 이 버킷 내의  `dm-to-im-convert` 버킷에는 Cloud Volumes ONTAP Terraform 파일이 포함되어 있습니다.
 * `<gcp project number>-<region>-blueprint-config`: Google Cloud Terraform 아티팩트를 저장하는 데 사용됩니다.
 
 
@@ -38,14 +39,15 @@ Infrastructure Manager를 사용하는 Cloud Volumes ONTAP 시스템은 데이�
 * Google Cloud 콘솔에서 Cloud Volumes ONTAP 리소스 또는 해당 속성이 수동으로 편집되지 않았는지 확인하십시오.
 * Google Cloud Quotas API를 포함하여 Google Cloud API가 사용 설정되어 있는지 확인하십시오.  https://docs.netapp.com/us-en/console-setup-admin/task-install-agent-google-gcloud.html#step-5-enable-google-cloud-apis["Google Cloud API 활성화"^]을 참조하십시오.
 * NetApp Console 에이전트의 서비스 계정에 필요한 모든 권한이 있는지 확인하십시오.  https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-gcp.html#service-account-permissions["콘솔 에이전트에 대한 Google Cloud 권한"^]을(를) 참조하십시오.
+* 콘솔 에이전트와 Cloud Volumes ONTAP이 서로 다른 프로젝트에 있는 경우, 콘솔 에이전트의 서비스 계정에 Cloud Volumes ONTAP 프로젝트에서 필요한 모든 권한이 있는지 확인하십시오. 콘솔 에이전트의 서비스 계정에 다른 프로젝트에 액세스할 수 있는 권한을 부여하는 방법에 대한 자세한 내용은  https://docs.netapp.com/us-en/console-setup-admin/task-install-agent-google-console-gcloud.html#console-permissions-google["에이전트와 함께 사용할 Google Cloud 서비스 계정을 생성하십시오"^]에서 확인하십시오.
 * 변환을 시작하기 전에 Cloud Volumes ONTAP 시스템의 루트 디스크와 부팅 디스크의 스냅샷을 생성하는 것이 좋습니다.
 +
-.프라이빗 모드 배포의 경우, 다음 추가 필수 조건을 충족해야 합니다.
+.프라이빗 모드 또는 보호 모드 배포의 경우 다음 추가 필수 조건을 확인하십시오:
 [%collapsible]
 ====
 ** 최신 Console 에이전트 버전을 사용하고 있는지 확인하십시오. NetApp Support Site에서 제품 설치 프로그램을 다운로드한 다음 호스트에 에이전트를 수동으로 설치하여 에이전트가 Infrastructure Manager API를 사용할 수 있도록 하십시오.
 ** 툴을 비공개 모드로 실행하는 경우 다른 API 외에도 Cloud Build API를 활성화했는지 확인하십시오.  https://docs.netapp.com/us-en/console-setup-admin/task-install-agent-google-gcloud.html#step-5-enable-google-cloud-apis["Google Cloud API 활성화"^]를 참조하십시오.
-** 개인 모드 배포를 위해 네트워크 구성을 완료하고 작업자 풀을 생성했는지 확인하십시오. link:reference-networking-gcp.html#infrastructure-manager-configuration-in-private-mode-or-protected-environments["프라이빗 모드 또는 보호 환경에서의 Infrastructure Manager 구성"]을(를) 참조하십시오.
+** 프라이빗 모드 또는 보호 환경 배포를 위한 네트워크 구성을 완료하고 작업자 풀을 생성했는지 확인하십시오. link:reference-networking-gcp.html#infrastructure-manager-configuration-in-private-mode-or-protected-environments["프라이빗 모드 또는 보호 환경에서의 Infrastructure Manager 구성"]을(를) 참조하십시오.
 
 
 ====
@@ -127,7 +129,7 @@ Infrastructure Manager를 사용하는 Cloud Volumes ONTAP 시스템은 데이�
 .단계
 . 역할을 생성하고 서비스 계정에 연결합니다.
 +
-.. 다음 권한을 가진 YAML 파일을 생성하십시오.
+.. 다음 권한을 가진 YAML 파일을 생성하세요.
 +
 [source, cli]
 ----
@@ -163,15 +165,40 @@ includedPermissions:
 - storage.objects.list
 ----
 +
-.비공개 모드 배포에 대한 추가 권한 포함
+.프라이빗 모드 또는 보호된 배포에 대한 추가 권한을 포함하십시오.
 [%collapsible]
 ====
-툴을 프라이빗 모드로 실행하는 경우 YAML 파일에도  `cloudbuild.workerpools.get` 권한을 추가하십시오.
+개인 모드 또는 보호된 환경에서 툴을 실행하는 경우 YAML 파일에  `cloudbuild.workerpools.get` 권한도 추가하십시오.
 
 ====
-.. YAML 파일에 정의된 권한으로 Google Cloud에서 사용자 지정 역할을 생성합니다.
++
+.프로젝트 간 배포를 위한 추가 권한을 포함하십시오(한 프로젝트에는 콘솔 에이전트, 다른 프로젝트에는 Cloud Volumes ONTAP).
+[%collapsible]
+====
+프로젝트 간 배포 시 Console 에이전트 프로젝트에 대한 이전 YAML 파일을 생성합니다. Cloud Volumes ONTAP 리소스가 있는 프로젝트에 대해 다음 권한이 포함된 두 번째 YAML 파일을 생성해야 합니다.
+
+[source, cli]
+----
+title: NetApp Dm TO IM Convert Solution for Cross Project
+description: Permissions for the service account associated with the VM where the tool will run for the project where CVO resources resides.
+stage: GA
+includedPermissions:
+- compute.addresses.get
+- compute.disks.get
+- compute.forwardingRules.get
+- compute.healthChecks.get
+- compute.instanceGroups.get
+- compute.instances.get
+- compute.regionBackendServices.get
+- deploymentmanager.deployments.get
+- deploymentmanager.deployments.list
+- deploymentmanager.manifests.get
+- resourcemanager.projects.get
+----
+====
+.. 콘솔 에이전트 프로젝트의 YAML 파일에 정의된 권한으로 Google Cloud에서 사용자 지정 역할을 생성합니다. 프로젝트 간 설정의 경우 Cloud Volumes ONTAP 리소스가 있는 프로젝트에도 이 역할을 생성합니다.
 `gcloud iam roles create dmtoim_convert_tool_role --project=PROJECT_ID \
-    --file=YAML_FILE_PATH` 자세한 내용은 https://cloud.google.com/iam/docs/creating-custom-roles["사용자 지정 역할 생성 및 관리"^]를 참조하십시오.
+    --file=YAML_FILE_PATH` 자세한 내용은  https://cloud.google.com/iam/docs/creating-custom-roles["사용자 지정 역할 생성 및 관리"^]을(를) 참조하십시오.
 .. VM을 생성하는 데 사용할 서비스 계정에 사용자 지정 역할을 연결합니다.
 .. 이 서비스 계정에 `roles/iam.serviceAccountUser` 역할을 추가하세요.  https://docs.cloud.google.com/iam/docs/service-account-overview["서비스 계정 개요"^]을(를) 참조하십시오.
 .. 프로젝트에서 IAM 서비스 계정 자격 증명 API를 활성화하십시오:
@@ -302,20 +329,35 @@ cd <folder where you extracted the tool>
 [source, cli]
 ----
 dmconvert \
---project-id=<the Google Cloud project ID for the Cloud Volumes ONTAP deployment> \
+--cvo-project-id=<the Google Cloud project ID for the Cloud Volumes ONTAP deployment> \
 --cvo-name=<Cloud Volumes ONTAP system name> \
 --service-account=<the service account attached to the Console agent>
 ----
 +
-.프라이빗 모드 배포에서 툴 실행
+.프로젝트 간 배포(한 프로젝트에는 콘솔 에이전트, 다른 프로젝트에는 Cloud Volumes ONTAP)에서 툴을 실행하십시오.
 [%collapsible]
 ====
- `--worker-pool` 매개변수를 지정하여 프라이빗 모드 배포에서 툴을 실행합니다. 작업자 풀 구성에 대해서는 link:reference-networking-gcp.html#infrastructure-manager-configuration-in-private-mode-or-protected-environments["프라이빗 모드 또는 보호 환경에서의 Infrastructure Manager 구성"]을 참조하십시오.
+Cloud Volumes ONTAP 시스템이 콘솔 에이전트가 있는 프로젝트와 다른 프로젝트에 있는 경우  `--console-agent-project-id` 매개변수를 지정하십시오.
 
 [source, cli]
 ----
 dmconvert \
---project-id=<the Google Cloud project ID for the Cloud Volumes ONTAP deployment> \
+--cvo-project-id=<the Google Cloud project ID for the Cloud Volumes ONTAP deployment> \
+--console-agent-project-id=<the Google Cloud project ID for the Console agent> \
+--cvo-name=<Cloud Volumes ONTAP system name> \
+--service-account=<the service account attached to the Console agent> \
+----
+====
++
+.프라이빗 모드 또는 보호 모드 배포 환경에서 툴을 실행하십시오
+[%collapsible]
+====
+프라이빗 모드 또는 보호 모드 배포에서 툴을 실행하려면  `--worker-pool` 매개변수를 지정하십시오. 작업자 풀 구성에 대해서는 link:reference-networking-gcp.html#infrastructure-manager-configuration-in-private-mode-or-protected-environments["프라이빗 모드 또는 보호 환경에서의 Infrastructure Manager 구성"]을(를) 참조하십시오.
+
+[source, cli]
+----
+dmconvert \
+--cvo-project-id=<the Google Cloud project ID for the Cloud Volumes ONTAP deployment> \
 --cvo-name=<Cloud Volumes ONTAP system name> \
 --service-account=<the service account attached to the Console agent> \
 --worker-pool=<worker pool name>
@@ -344,7 +386,20 @@ CAUTION: 변환 후 Google Cloud Console에서 Deployment Manager의 배포 오�
 [source, cli]
 ----
 dmconvert \
---project-id=<the Google Cloud project ID for the Cloud Volumes ONTAP deployment> \
+--cvo-project-id=<the Google Cloud project ID for the Cloud Volumes ONTAP deployment> \
+--cvo-name=<Cloud Volumes ONTAP system name> \
+--service-account=<the service account attached to the Console agent> \
+--rollback
+----
++
+프로젝트 간 배포인 경우  `--console-agent-project-id` 매개변수를 지정하십시오:
+
++
+[source, cli]
+----
+dmconvert \
+--cvo-project-id=<the Google Cloud project ID for the Cloud Volumes ONTAP deployment> \
+--console-agent-project-id=<the Google Cloud project ID for the Console agent> \
 --cvo-name=<Cloud Volumes ONTAP system name> \
 --service-account=<the service account attached to the Console agent> \
 --rollback
