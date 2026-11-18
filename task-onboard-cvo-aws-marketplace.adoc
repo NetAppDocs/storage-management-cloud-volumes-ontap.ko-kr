@@ -71,25 +71,25 @@ AWS Marketplace에서 독립형 Cloud Volumes ONTAP 제품을 찾으십시오.
 . 필요한 권한이 있는 AWS 계정을 사용하여 AWS Marketplace로 이동하십시오.
 . NetApp Cloud Volumes ONTAP 독립형 제품을 찾습니다. AWS Marketplace는 Cloud Volumes ONTAP을 위한 두 가지 제품을 제공합니다:
 +
-** Cloud Volumes ONTAP 연간 구독을 위한 단독 상품
-** NetApp 데이터 서비스와 Cloud Volumes ONTAP 구독을 위한 NetApp Intelligent Service 결합 오퍼링
+** Cloud Volumes ONTAP용 독립 실행형 오퍼링으로, 연간 구독 또는 사용량 기반 요금제(PAYGO)로 이용할 수 있습니다.
+** NetApp Intelligent Service(NIS) 오퍼링은 NetApp 데이터 서비스 및 Cloud Volumes ONTAP를 위한 것으로, 연간 구독 또는 종량제(PAYGO)로도 제공됩니다.
 
 
-. _단독형_ 상품을 선택하십시오. 상품 상세 정보와 가격 조건을 검토합니다.
+. _단독_ 상품의 경우 연간 구독 또는 PAYGO 옵션 중 하나를 선택하십시오. 상품 상세 정보 및 가격 조건을 검토하십시오.
 . 구독하고 결제를 완료하십시오.
 . 구독 후 *제품 설정*을 선택하면 NetApp Console로 이동하여 배포를 완료할 수 있습니다.
 
 
 
 
-[[subscribe-to-the-netapp-intelligent-service-offering-for-data-services]]
-== 데이터 서비스를 위한 NetApp 인텔리전트 서비스 오퍼링에 가입하십시오.
+[[subscribe-to-netapp-intelligent-service-for-data-services]]
+== 데이터 서비스를 위한 NetApp 인텔리전트 서비스 구독
 
-NetApp Backup and Recovery 등 다른 데이터 서비스를 사용하려면 독립형 제품 외에도 NetApp Intelligent Service 제품을 구독해야 합니다.
+NetApp Backup and Recovery 등 다른 데이터 서비스를 사용하려면 독립형 제품 외에 NIS 제품에도 가입해야 합니다.
 
 .단계
 . 필요한 권한이 있는 AWS 계정을 사용하여 AWS Marketplace로 이동하십시오.
-. NetApp 인텔리전트 서비스 제품을 찾아 선택하십시오.
+. NetApp Intelligent Service(NIS) 상품에 대한 연간 또는 PAYGO 옵션을 찾아 선택하십시오.
 . 상품 상세 정보와 가격 조건을 검토합니다.
 . 구독하고 결제를 완료하십시오.
 . 구독 후 *제품 설정*을 선택하면 NetApp Console로 이동하여 배포를 완료할 수 있습니다.

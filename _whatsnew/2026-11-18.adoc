@@ -11,4 +11,4 @@ NetApp은 이제 NetApp 독립형 상품 등록(NSL)을 통해 AWS Marketplace�
 
 Cloud Volumes ONTAP 연간 계약과 PAYGO 상품 등록은 모두 NetApp Intelligence Services(NIS) 연간 계약 및 PAYGO 상품 등록과 별도로 유지되므로 Cloud Volumes ONTAP 용량과 데이터 서비스에 대한 개별 청구가 가능합니다.
 
-https://docs.netapp.com/us-en/console-licenses-subscriptions/concept-billing-preferences.html["결제 설정에 대해 자세히 알아보세요"^]
+https://docs.netapp.com/us-en/console-licenses-subscriptions/concept-billing-preferences.html["결제 설정에 대해 자세히 알아보세요"^] https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-onboard-cvo-aws-marketplace.html["AWS Marketplace의 독립 실행형 제품 목록을 사용하여 Cloud Volumes ONTAP 배포"^]

@@ -6903,7 +6903,6 @@
   <block id="44e833213a99257d69192896111996f4" category="paragraph">이제 Azure의 오스트리아 동부(austriaeast) 및 벨기에 중부(belgiumcentral) 리전에 Cloud Volumes ONTAP 9.12.1 GA 이상 버전을 배포할 수 있습니다. 지원되는 배포 유형은 다음과 같습니다.</block>
   <block id="0eda8bbe61d2248f5418aba76b8dc5b1" category="list-text">\https://api.workloads.netapp.com</block>
   <block id="9f45fe3cd2af64a1afc3f4b7f81bdae6" category="list-text">\https://ws.workloads.bluexp.netapp.com</block>
-  <block id="dbf314f960a580dec77c3328f5a7dcfe" category="list-text">AWS 마켓플레이스의 독립형 Cloud Volumes ONTAP 구독을 통해 Cloud Volumes ONTAP 용량에 대한 요금을 청구하려면 Cloud Volumes ONTAP 시스템에서 지원되는 용량 기반 패키지(Essentials 또는 Freemium)를 사용해야 합니다. Professional 패키지는 독립형 목록에서 지원되지 않으며 NIS 구독을 통해 요금이 청구됩니다. 원하는 패키지를 선택한 후 NetApp Console의 *청구 기본 설정*에서 Cloud Volumes ONTAP 요금 청구에 사용할 마켓플레이스 구독을 선택하십시오.</block>
   <block id="a21deb009c8ff7309664108fdf426e10" category="summary">AWS Marketplace에서 Cloud Volumes ONTAP을 구독하고 조직 생성, 구독 연결, 에이전트 배포 및 최초 시스템 생성 등을 포함한 설정을 NetApp Console에서 완료합니다.</block>
   <block id="ce95e653013e10f07ac1b69529baf3bb" category="doc">AWS Marketplace에서 Cloud Volumes ONTAP 구독 및 배포</block>
   <block id="a4cede66de2477ac18bbdee0f03c3b4b" category="list-text">상품 상세 정보와 가격 조건을 검토합니다.</block>
@@ -7835,7 +7834,6 @@
   <block id="288d38f29d8eeeb99070bff4f65525c0" category="paragraph">AWS Marketplace에서 독립형 Cloud Volumes ONTAP 제품을 찾으십시오.</block>
   <block id="a11a0a42613839623b80519a128fe81d" category="list-text">필요한 권한이 있는 AWS 계정을 사용하여 AWS Marketplace로 이동하십시오.</block>
   <block id="ef6da38a0094b683cff50de6f2edfb73" category="list-text">NetApp Cloud Volumes ONTAP 독립형 제품을 찾습니다. AWS Marketplace는 Cloud Volumes ONTAP을 위한 두 가지 제품을 제공합니다:</block>
-  <block id="65e2afdf3ea7ead73c73f2ccc67a88bb" category="list-text">Cloud Volumes ONTAP 연간 구독을 위한 단독 상품</block>
   <block id="0bede5b2fb82cb93a6b7341f902bd965" category="list-text">구독 후 *제품 설정*을 선택하면 NetApp Console로 이동하여 배포를 완료할 수 있습니다.</block>
   <block id="8e54d24c608de9f6d76f0ddf776cd3cc" category="paragraph">마켓플레이스 구독을 완료한 후 NetApp Console에서 설정을 계속 진행하십시오.</block>
   <block id="e17e44482e762e707860b1c0d43859ab" category="list-text">*가입하기*를 선택한 경우 다음을 완료하십시오:</block>
@@ -8195,7 +8193,6 @@
   <block id="840c0d6ab3aac46cebc73c413bcb3de2" category="inline-link">SMB용 Microsoft Entra ID 인증 구성</block>
   <block id="4751d6cb0ce22c95620735a0f455e8e4" category="paragraph"><block ref="4751d6cb0ce22c95620735a0f455e8e4" category="inline-link-rx"></block></block>
   <block id="79ef9f61ccfcabc1d70e24a061eef1a5" category="inline-link">결제 설정에 대해 자세히 알아보세요</block>
-  <block id="70563190697b86d4b7fef9663334a2c7" category="paragraph"><block ref="70563190697b86d4b7fef9663334a2c7" category="inline-link-rx"></block></block>
   <block id="f0f0c1d3ad1556de34b949ba497629d8" category="summary">Cloud Volumes ONTAP에서 SMB에 대한 Microsoft Entra ID 인증을 구성하여 하이브리드 사용자 ID를 지원하고 온프레미스 Active Directory에 대한 의존성을 줄입니다.</block>
   <block id="576dddd89d6fcee802f4b33d25d7129c" category="doc">Cloud Volumes ONTAP에서 SMB용 Microsoft Entra ID 인증 구성</block>
   <block id="f0d496d92b622242ae63265df0a68c13" category="paragraph"><block ref="c92d60eae0a0d9ece702070bd9116954" category="inline-link-rx"></block>을(를) 통해 SMB 공유에 액세스하는 사용자를 인증하도록 Cloud Volumes ONTAP을 구성할 수 있으며, 이를 통해 하이브리드 클라우드의 Cloud Volumes ONTAP 사용자를 위한 ID 지원이 가능해집니다. 이전에는 도메인 사용자의 ID 관리를 위한 인증에 온프레미스 Active Directory(AD)가 필요했습니다. Microsoft Entra ID를 사용하면 하이브리드 사용자를 위한 원활한 액세스를 유지하면서 클라우드 기반 인증을 사용할 수 있습니다.</block>
@@ -8313,11 +8310,6 @@
   <block id="5798e009f5498705c64f92ce140cd070" category="paragraph">접근을 거부하려면:</block>
   <block id="90354e46cc101991e55370e682628f58" category="doc">AWS Marketplace의 독립 실행형 제품 목록을 사용하여 Cloud Volumes ONTAP 배포</block>
   <block id="12f4bfc0538b903177d595621c7ef42d" category="list-text">요구 사항을 충족하는 콘솔 에이전트 네트워크. <block ref="a3f5b6fd7f8b50cbffb3cbeb6fa40451" category="inline-link-macro-rx"></block></block>
-  <block id="b03eb9f92b70a1fafaeb31b1e5f8ccdc" category="list-text">NetApp 데이터 서비스와 Cloud Volumes ONTAP 구독을 위한 NetApp Intelligent Service 결합 오퍼링</block>
-  <block id="e3827b821f7d34121f8a07a802dad6dd" category="list-text">_단독형_ 상품을 선택하십시오. 상품 상세 정보와 가격 조건을 검토합니다.</block>
-  <block id="da387e40e73b9eeced07accc9de6e3e4" category="section-title">데이터 서비스를 위한 NetApp 인텔리전트 서비스 오퍼링에 가입하십시오.</block>
-  <block id="f0150d523b994c5ba03cc2d6e2bd875b" category="paragraph">NetApp Backup and Recovery 등 다른 데이터 서비스를 사용하려면 독립형 제품 외에도 NetApp Intelligent Service 제품을 구독해야 합니다.</block>
-  <block id="a7ad6897f7b9076545ea2b2470df2cfb" category="list-text">NetApp 인텔리전트 서비스 제품을 찾아 선택하십시오.</block>
   <block id="7db8d7489646d12d69a7696c02c128ef" category="list-text">선택 사항: NetApp 지원 사이트(NSS) 계정을 연결하십시오.</block>
   <block id="00042f51aa46d7bf5e0fd46db2c83ebd" category="paragraph">구독이 NetApp Console에 연결되면 Console 에이전트를 배포하여 AWS 리소스 및 Cloud Volumes ONTAP 시스템을 관리하십시오.</block>
   <block id="4176621cbdd2e1f6616332f1f3cae6d1" category="list-text">AWS 계정 ID와 (선택적으로) 외부 ID를 추가합니다. 콘솔에서 기본 역할 이름을 설정합니다.</block>
@@ -8329,4 +8321,13 @@
   <block id="f2a895f791fcea8f719f85e864d53ea6" category="paragraph">&lt;stdin&gt; - include::_whatsnew/2026-11-16.adoc[]에서 해결되지 않은 지시문</block>
   <block id="4e1d849ec7cd4b242a9a758a2e86fe1c" category="sidebar">AWS Marketplace의 독립형 제품 목록을 사용하여 Cloud Volumes ONTAP 배포</block>
   <block id="d2091e7366ce9b63a9a82bdd7bb6c641" category="sidebar">Azure 유지 관리 중 HA 쌍에 대한 중단 방지</block>
+  <block id="464804aa8527c7a5675dd4c8d2b5f2b5" category="paragraph"><block ref="70563190697b86d4b7fef9663334a2c7" category="inline-link-rx"></block> <block ref="2d3a44ea7e8ca99b971ec5f419723d79" category="inline-link-rx"></block></block>
+  <block id="f17334f879855cf7befcf9561bf97a15" category="list-text">AWS 마켓플레이스에서 Cloud Volumes ONTAP 전용 구독(연간 계약 또는 종량제)을 통해 Cloud Volumes ONTAP 용량에 대한 요금을 청구하려면 Cloud Volumes ONTAP 시스템에서 지원되는 용량 기반 패키지(Essentials 또는 Freemium)를 사용해야 합니다. Professional 패키지는 독립형 목록에 지원되지 않으며 계속해서 NetApp Intelligent Services(NIS) 구독을 통해 요금이 청구됩니다. 원하는 패키지를 선택한 후 NetApp Console의 *청구 기본 설정*에서 Cloud Volumes ONTAP 요금 청구에 사용할 마켓플레이스 구독을 선택하십시오.</block>
+  <block id="c57a3384803ce10606c2888bd8bebf10" category="list-text">Cloud Volumes ONTAP용 독립 실행형 오퍼링으로, 연간 구독 또는 사용량 기반 요금제(PAYGO)로 이용할 수 있습니다.</block>
+  <block id="0f84dfccc86093595e11d0f4f2979e06" category="list-text">NetApp Intelligent Service(NIS) 오퍼링은 NetApp 데이터 서비스 및 Cloud Volumes ONTAP를 위한 것으로, 연간 구독 또는 종량제(PAYGO)로도 제공됩니다.</block>
+  <block id="6b67e3947a2b280b3f1a844cf4397014" category="list-text">_단독_ 상품의 경우 연간 구독 또는 PAYGO 옵션 중 하나를 선택하십시오. 상품 상세 정보 및 가격 조건을 검토하십시오.</block>
+  <block id="efd4fa7529d7c8cd4bd411aad0166ed6" category="section-title">데이터 서비스를 위한 NetApp 인텔리전트 서비스 구독</block>
+  <block id="db78a7e96024e9eef010b9cf7fb53251" category="paragraph">NetApp Backup and Recovery 등 다른 데이터 서비스를 사용하려면 독립형 제품 외에 NIS 제품에도 가입해야 합니다.</block>
+  <block id="19345556c6e896fcd174b552b92e5c53" category="list-text">NetApp Intelligent Service(NIS) 상품에 대한 연간 또는 PAYGO 옵션을 찾아 선택하십시오.</block>
+  <block id="bc2dc85706f0ec1cefd21d3f849eb1e9" category="section-title">2026년 11월 18일</block>
 </blocks>
