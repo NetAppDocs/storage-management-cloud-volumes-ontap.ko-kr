@@ -4,7 +4,7 @@ permalink: task-onboard-cvo-aws-marketplace.html
 keywords: aws marketplace, cloud volumes ontap, onboarding, subscribe, deploy agent, setup guide, organization, subscription association 
 summary: AWS Marketplace에서 Cloud Volumes ONTAP을 구독하고 조직 생성, 구독 연결, 에이전트 배포 및 최초 시스템 생성 등을 포함한 설정을 NetApp Console에서 완료합니다. 
 ---
-= AWS Marketplace에서 Cloud Volumes ONTAP 독립형 제품을 구독하고 배포하십시오.
+= AWS Marketplace의 독립 실행형 제품 목록을 사용하여 Cloud Volumes ONTAP 배포
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -17,10 +17,10 @@ summary: AWS Marketplace에서 Cloud Volumes ONTAP을 구독하고 조직 생성
 AWS Marketplace에서 독립형 Cloud Volumes ONTAP 제품을 구독하고 Console 에이전트를 배포한 다음 첫 번째 시스템을 생성하십시오.
 
 .시작하기 전에
-시작하기 전에 다음 사항을 확인하십시오:
+다음 사항을 확인하세요:
 
 * NetApp Console 계정 또는 계정 생성에 필요한 정보.
-* 콘솔 에이전트 네트워크가 요구 사항을 충족하는지 확인했습니다. link:https://docs.netapp.com/us-en/console-setup-admin/task-install-agent-aws-marketplace.html#step-1-set-up-networking["콘솔 에이전트 네트워킹 요구 사항에 대해 알아보십시오"^]
+* 요구 사항을 충족하는 콘솔 에이전트 네트워크. link:https://docs.netapp.com/us-en/console-setup-admin/task-install-agent-aws-marketplace.html#step-1-set-up-networking["콘솔 에이전트 네트워킹 요구 사항에 대해 알아보십시오"^]
 * AWS Marketplace를 구독하고 제공 약관에 동의할 수 있는 권한이 있는 AWS 계정 및 ID입니다.
 +
 *Create role for me*를 선택하는 경우, CloudFormation Quick Create 스택을 제출하는 AWS ID에 아래 권한이 필요합니다. 스택 구독과 제출에 동일한 ID를 사용하려면 시작하기 전에 이러한 권한을 연결하십시오. 스택 제출에 다른 ID를 사용하는 경우 해당 ID에 권한을 연결하십시오. 이러한 권한은 CloudFormation이 배포 역할을 생성하도록 허용하며, 실행 중인 에이전트에서 사용하는 권한이 아닙니다.
@@ -72,10 +72,24 @@ AWS Marketplace에서 독립형 Cloud Volumes ONTAP 제품을 찾으십시오.
 . NetApp Cloud Volumes ONTAP 독립형 제품을 찾습니다. AWS Marketplace는 Cloud Volumes ONTAP을 위한 두 가지 제품을 제공합니다:
 +
 ** Cloud Volumes ONTAP 연간 구독을 위한 단독 상품
-** NetApp 인텔리전트 서비스는 NetApp 데이터 서비스와 Cloud Volumes ONTAP 구독을 결합한 제품입니다.
+** NetApp 데이터 서비스와 Cloud Volumes ONTAP 구독을 위한 NetApp Intelligent Service 결합 오퍼링
 
 
-. _단독형_ 상품을 선택하십시오. 다음 단계에 따라 단독형 상품에 가입할 수 있습니다.
+. _단독형_ 상품을 선택하십시오. 상품 상세 정보와 가격 조건을 검토합니다.
+. 구독하고 결제를 완료하십시오.
+. 구독 후 *제품 설정*을 선택하면 NetApp Console로 이동하여 배포를 완료할 수 있습니다.
+
+
+
+
+[[subscribe-to-the-netapp-intelligent-service-offering-for-data-services]]
+== 데이터 서비스를 위한 NetApp 인텔리전트 서비스 오퍼링에 가입하십시오.
+
+NetApp Backup and Recovery 등 다른 데이터 서비스를 사용하려면 독립형 제품 외에도 NetApp Intelligent Service 제품을 구독해야 합니다.
+
+.단계
+. 필요한 권한이 있는 AWS 계정을 사용하여 AWS Marketplace로 이동하십시오.
+. NetApp 인텔리전트 서비스 제품을 찾아 선택하십시오.
 . 상품 상세 정보와 가격 조건을 검토합니다.
 . 구독하고 결제를 완료하십시오.
 . 구독 후 *제품 설정*을 선택하면 NetApp Console로 이동하여 배포를 완료할 수 있습니다.
@@ -119,7 +133,7 @@ AWS Marketplace에서 독립형 Cloud Volumes ONTAP 제품을 찾으십시오.
 
 .단계
 . 조직 이름을 입력하십시오.
-. 선택 사항: NetApp 지원 사이트(NSS) 계정을 연결합니다.
+. 선택 사항: NetApp 지원 사이트(NSS) 계정을 연결하십시오.
 . *생성*을 선택합니다.
 
 
@@ -166,7 +180,7 @@ AWS Marketplace에서 독립형 Cloud Volumes ONTAP 제품을 찾으십시오.
 콘솔에서 CloudFormation Quick Create를 사용하여 역할을 생성하려면 스택을 제출하는 AWS ID에 관리자 권한 또는 <<aws-iam-role-permissions,위의 JSON 예시>>의 최소 권한이 필요합니다.
 
 ... *나를 위한 역할 생성*을 선택합니다.
-... AWS 계정 ID와 선택적으로 외부 ID를 추가합니다. 콘솔에서 기본 역할 이름을 설정합니다.
+... AWS 계정 ID와 (선택적으로) 외부 ID를 추가합니다. 콘솔에서 기본 역할 이름을 설정합니다.
 ... *CloudFormation 빠른 생성 열기*를 선택합니다.
 ... AWS CloudFormation 빠른 생성 페이지에서 약관에 동의하고 *스택 생성*을 선택합니다.
 +
@@ -204,7 +218,7 @@ image:screenshot-stack-creation.png["width=35% AWS 계정 ID와 선택적으로 
 
 . 에이전트 인스턴스 이름과 Console에서 실행 중인 에이전트에 대한 IAM 역할을 생성할지 또는 기존 역할을 사용할지 등 에이전트 배포 세부 정보를 구성합니다.
 +
-콘솔에서 콘솔 에이전트를 생성할 때, 에이전트용 IAM 역할과 프로필을 생성하거나 사용자가 제공하는 역할을 사용합니다. 이 역할에는 에이전트가 AWS 리소스를 관리할 수 있도록 하는 권한이 포함됩니다. 향후 릴리스에서 새로운 권한이 추가되면 역할이 업데이트되었는지 확인하십시오. link:https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-aws.html["Console 에이전트에 대한 IAM 정책에 대해 자세히 알아보세요"^].
+콘솔에서 콘솔 에이전트를 생성할 때, 에이전트용 IAM 역할과 프로필을 생성하거나 사용자가 제공하는 역할을 사용합니다. 이 역할에는 에이전트가 AWS 리소스를 관리할 수 있도록 하는 권한이 포함됩니다. 에이전트에 필요한 새로운 권한이 추가될 때마다 역할을 최신 상태로 유지하십시오. link:https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-aws.html["Console 에이전트에 대한 IAM 정책에 대해 자세히 알아보세요"^].
 
 . 필요한 경우 VPC, 서브넷, 키 페어, 퍼블릭 IP 동작 및 프록시 설정을 선택하여 네트워킹을 구성하십시오.
 . 에이전트 VM에 대한 문제 해결 액세스를 위해 인바운드 HTTP(80), HTTPS(443) 및 SSH(22)를 허용하도록 보안 그룹 규칙을 구성하십시오.
@@ -232,7 +246,7 @@ link:https://docs.netapp.com/us-en/console-setup-admin/reference-ports-aws.html[
 
 콘솔에서 에이전트를 배포한 후,  https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-quick-deploy-aws.html["AWS에서 빠른 생성 기능을 사용하여 Cloud Volumes ONTAP 배포"^]의 단계를 따라 첫 번째 시스템을 생성하십시오.
 
-Cloud Volumes ONTAP 시스템을 생성할 준비가 되지 않았다면 언제든지 시스템 페이지로 돌아가 나중에 시스템을 생성할 수 있습니다.
+Cloud Volumes ONTAP 시스템을 생성할 준비가 되지 않았다면 언제든지 시스템 페이지로 돌아가서 시스템을 생성할 수 있습니다.
 
 
 

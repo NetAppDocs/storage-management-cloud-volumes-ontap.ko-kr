@@ -1,0 +1,366 @@
+---
+sidebar: sidebar 
+permalink: task-azure-entra-id-smb-auth.html 
+keywords: azure, entra id, active directory, smb, cifs, hybrid identity, authentication, kerberos, tenant-id, client-id, client-certificate, hybrid user, cloud user 
+summary: Cloud Volumes ONTAP에서 SMB에 대한 Microsoft Entra ID 인증을 구성하여 하이브리드 사용자 ID를 지원하고 온프레미스 Active Directory에 대한 의존성을 줄입니다. 
+---
+= Cloud Volumes ONTAP에서 SMB용 Microsoft Entra ID 인증 구성
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+ https://www.microsoft.com/en-in/security/business/identity-access/microsoft-entra-id["Microsoft Entra ID"^]을(를) 통해 SMB 공유에 액세스하는 사용자를 인증하도록 Cloud Volumes ONTAP을 구성할 수 있으며, 이를 통해 하이브리드 클라우드의 Cloud Volumes ONTAP 사용자를 위한 ID 지원이 가능해집니다. 이전에는 도메인 사용자의 ID 관리를 위한 인증에 온프레미스 Active Directory(AD)가 필요했습니다. Microsoft Entra ID를 사용하면 하이브리드 사용자를 위한 원활한 액세스를 유지하면서 클라우드 기반 인증을 사용할 수 있습니다.
+
+
+NOTE: 이 기능은 공개 미리 보기로 제공되며 ONTAP CLI를 통해서만 구성할 수 있습니다. NetApp Console 통합은 아직 지원되지 않습니다. CLI에서 SMB 작업은 SMB(Server Message Block)가 Common Internet File System(CIFS) 프로토콜의 최신 명칭이기 때문에  `cifs` 명령 접두사를 사용합니다.
+
+.이 작업에 관하여
+Cloud Volumes ONTAP 9.19.1부터 Microsoft Entra ID를 사용하여 하이브리드 ID를 사용하는 SMB 사용자를 인증할 수 있습니다. 하이브리드 ID는  https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/whatis-azure-ad-connect["Microsoft Entra Connect"^]을(를) 통해 온프레미스 Active Directory(AD)에서 Microsoft Entra ID로 동기화된 사용자 계정입니다.
+
+Cloud Volumes ONTAP은 온프레미스 AD와 Microsoft Entra ID 모두에서 SMB 인증을 허용합니다. 이를 통해 기존 AD 인프라를 유지하면서 클라우드 ID 지원을 추가할 수 있습니다.
+
+Cloud Volumes ONTAP 9.19.1 이상 버전에서는 마운트된 공유에서 Entra ID ID에 대한 파일 및 폴더 권한을 관리하는  `icacls` 명령도 지원합니다.
+
+.시작하기 전에
+* Cloud Volumes ONTAP 9.19.1 이상 버전을 실행 중이어야 합니다.
+* 활성 Azure 구독이 있어야 합니다.
+* Microsoft Entra ID 테넌트에 https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference#global-administrator["글로벌 관리자"^] 권한이 있는 사용자 계정이 있어야 합니다.
+* SMB 공유에 액세스하는 클라이언트 컴퓨터는 Microsoft Entra 하이브리드 조인되어 있어야 합니다.
+* Microsoft Entra ID에 연결할 수 있는 온프레미스 AD 도메인 컨트롤러가 있어야 합니다.
+* SMB 서버 및 공유에 사용할 수 있는 데이터 LIF와 애그리게이트가 포함된 스토리지 VM이 있어야 합니다.
+* 스토리지 VM과 클라이언트 VM은 필요한 Microsoft Entra ID 엔드포인트를 확인하고 네트워크를 통해 해당 엔드포인트와 통신할 수 있어야 합니다.
+
+
+
+
+[[step-1-register-an-application-in-microsoft-entra-id]]
+[[azure-app]]
+== 1단계: Microsoft Entra ID에 애플리케이션을 등록합니다
+
+SMB 설정 중에 Cloud Volumes ONTAP이 테넌트에 인증할 수 있도록 Microsoft Entra ID에 애플리케이션을 등록해야 합니다. Cloud Volumes ONTAP은 이 등록의 자격 증명을 사용하여 사용자를 대신하여 애플리케이션 개체를 생성, 수정 및 삭제합니다. 이 단계를 완료하면 <<ontap-config,3단계>>에서 사용할 다음 자격 증명을 수집하게 됩니다:
+
+* *tenant-id*: 조직의 Microsoft Entra ID 인스턴스에 대한 고유 GUID입니다.
+* *client-id*: Entra ID 앱의 고유 식별자입니다.
+* *client-certificate*: 앱 인증에 사용되는 인증서입니다.
+
+
+.단계
+. https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-register-app["애플리케이션 등록"^] Azure 포털에서. 지원되는 계정 유형으로 *이 조직 디렉터리의 계정만(단일 테넌트)*을 선택합니다.
+. 등록된 앱의 *개요* 페이지에서 *애플리케이션(클라이언트) ID*와 *디렉토리(테넌트) ID*를 복사하여 저장하세요.
+. 앱 등록에 다음 Microsoft Graph API 권한을 할당하십시오:
++
+** *Application.ReadWrite.OwnedBy*
+** *User.Read*
+** *User.Read.All*
++
+권한을 할당하려면 *API 권한 > 권한 추가 > Microsoft Graph > 응용 프로그램 권한*으로 이동하여 각 권한을 선택한 다음 *<tenant-name>에 대한 관리자 동의 부여*를 선택하여 활성화하십시오.
+
++
+
+NOTE: Microsoft Azure 관리자와 협력하여 조직의 보안 정책에 필요한 최소 권한을 확인하십시오.
+
+
+
+. 앱 등록을 인증하기 위해 인증서를 업로드하십시오. *인증서 및 비밀 > 인증서 > 인증서 업로드*로 이동하여  `.cer`,  `.pem` 또는  `.crt` 형식의 파일을 업로드하십시오.
++
+
+NOTE: 인증 기관에서 서명한 인증서를 사용하십시오. 자체 서명 인증서도 지원되지만 운영 환경에서는 권장하지 않습니다.
+
+. 권한을 활성화하려면 *관리자 동의 부여*를 선택하십시오.
+
+
+
+
+[[step-2-set-up-on-premises-active-directory]]
+[[on-prem-ad]]
+== 2단계: 온프레미스 Active Directory 설정
+
+온프레미스 AD 도메인 컨트롤러를 설정하고, 사용자 및 그룹을 Microsoft Entra ID와 동기화하고, 하이브리드 ID를 SMB 인증에 사용할 수 있도록 디바이스 조인 설정을 구성하십시오.  https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/plan-connect-design-concepts["Entra Connect에 대한 Microsoft 설명서"^]을(를) 참조하십시오.
+
+.단계
+. 예를 들어, 온프레미스 AD 도메인의 도메인 컨트롤러로 Windows 서버를 설정합니다 `contoso.com`.
+. Microsoft Entra ID와 동기화될 AD 사용자 및 그룹을 생성합니다.
+. 도메인에 가입된 클라이언트가 Microsoft Entra ID 인증 서비스와 통신할 수 있도록 _사이트-영역 할당 목록_ 그룹 정책을 구성하십시오.
++
+다음 경로로 이동하세요: *gpedit.msc > 관리 템플릿 > Windows 구성 요소 > Internet Explorer > 인터넷 제어판 > 보안 페이지 > 사이트-영역 할당 목록*
+
+. 영역 값 *1*로 다음 각 URL을 추가합니다:
++
+[listing]
+----
+https://enterpriseregistration.windows.net
+https://login.microsoftonline.com
+https://device.login.microsoftonline.com
+https://autologon.microsoftazuread-sso.com
+https://login.microsoft.com
+----
+. 글로벌 관리자 계정을 사용하여 설치 https://entra.microsoft.com/#view/Microsoft_AAD_Connect_Provisioning/AADConnectMenuBlade/~/ConnectSync["Microsoft Entra Connect | Connect 동기화"^]하고 구성하십시오:
++
+.. https://learn.microsoft.com/en-us/entra/identity/devices/hybrid-join-plan["Microsoft Entra 하이브리드 조인 구현을 계획하십시오"^]. 다음을 참조하십시오 https://learn.microsoft.com/en-us/entra/identity/devices/hybrid-join-control["Microsoft Entra 하이브리드 조인 대상 배포"^].
+.. 각 https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/plan/understanding-the-active-directory-logical-model["Active Directory 논리 모델"^]에 대해 서비스 연결 지점(SCP)을 구성하고 AD 관리자 자격 증명을 제공하십시오.
++
+Azure Microsoft Entra Connect는 온프레미스 AD 사용자 및 그룹을 Microsoft Entra ID와 동기화하고 하이브리드 장치 연결을 지원합니다.
+
+
+
+. 사용자와 그룹이 Microsoft Entra ID와 동기화되었는지 확인하십시오. 동기화된 사용자는 테넌트 도메인과 일치하는 UPN 접미사로 표시됩니다(예:  `user@<tenant>.onmicrosoft.com`). 설정 후 수행할 수 있는 추가 작업에 대해서는  https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/how-to-connect-post-installation["Microsoft 설명서: 다음 단계 및 Microsoft Entra Connect 관리 방법"^]를 참조하십시오.
+
+
+
+
+[[step-3-configure-the-smb-server-on-cloud-volumes-ontap]]
+[[ontap-config]]
+== 3단계: Cloud Volumes ONTAP에서 SMB 서버 구성
+
+<<azure-app,1단계>>에서 생성한 앱 등록 자격 증명을 사용하여 Microsoft Entra ID를 통해 SMB 파일 액세스를 인증하도록 Cloud Volumes ONTAP 스토리지 VM의 SMB 서버를 구성합니다.
+
+
+NOTE: SMB 서버를 생성하기 전에 스토리지 VM에 데이터 LIF가 구성되어 있고 애그리게이트에 대한 액세스 권한이 있어야 합니다. 클라이언트는 데이터 LIF를 사용하여 SMB 공유에 액세스합니다.
+
+.단계
+. 스토리지 VM에서 Microsoft Entra ID 엔드포인트를 확인할 수 있도록 DNS를 구성합니다:
++
+[source, cli]
+----
+dns create -domains <on-premises-domain> -name-servers <dns-server-ip>
+----
+. SMB 서버를 생성하고 Microsoft Entra ID 매개변수를 제공하십시오:
++
+[source, cli]
+----
+cifs create -vserver <svm-name> -cifs-server <netbios-name> -domain <on-premises-domain-name> -auth-user-type hybrid-user -tenant-id <tenant-id> -client-id <client-id> -client-certificate <certificate>
+----
+. Entra ID 자격 증명을 사용하여 SMB Kerberos 암호를 재설정합니다:
++
+[source, cli]
+----
+cifs password reset -vserver <svm-name> -tenant-id <tenant-id> -client-id <client-id> -client-certificate <certificate>
+----
+. 선택적으로 SMB 서버를 제거할 수 있습니다:
++
+[source, cli]
+----
+cifs delete -vserver <svm-name> -tenant-id <tenant-id> -client-id <client-id> -client-certificate <certificate>
+----
+
+
+
+
+[[step-4-register-a-client-vm-with-microsoft-entra-id]]
+[[client-registered]]
+== 4단계: 클라이언트 VM을 Microsoft Entra ID에 등록합니다
+
+환경에서 직접적인 RDP(원격 데스크톱 프로토콜) 연결을 사용할 수 없는 경우, Entra ID에 등록된 VM을 설정하여 Entra ID에 가입된 클라이언트에 액세스할 수 있습니다. 이 VM은 하이브리드 사용자 자격 증명을 사용하여 Entra ID에 가입된 클라이언트에 원격으로 로그인할 수 있는 점프 박스 역할을 합니다.
+
+.시작하기 전에
+* Windows 10(21H2 이상) 또는 Windows 11이 설치된 컴퓨터가 있어야 합니다.
+
+
+.단계
+. 로컬 관리자 자격 증명을 사용하여 Windows 컴퓨터에 로그인하십시오.
+. *설정 > 계정 > 회사 또는 학교 액세스*로 이동하여 *연결*을 선택합니다.
+. 글로벌 관리자 계정 자격 증명을 입력하고 안내에 따라 진행하십시오.
++
+해당 장치는 Microsoft Entra ID에 등록되어 있습니다.
+
+. Azure 포털의 *Entra ID > 장치 > 모든 장치*에서 해당 장치가 *Entra ID 등록됨*으로 표시되는지 확인하십시오.
+
+
+
+
+[[step-5-join-a-client-vm-to-microsoft-entra-id]]
+[[client-joined]]
+== 5단계: 클라이언트 VM을 Microsoft Entra ID에 연결합니다
+
+Windows 클라이언트 VM을 Entra ID로 가입된 머신으로 구성하면 하이브리드 사용자가 클라우드에서 발급한 Kerberos 티켓을 획득하고 ONTAP SMB 공유를 마운트할 수 있습니다. 자세한 내용은  https://learn.microsoft.com/en-us/entra/identity/devices/how-to-hybrid-join["Microsoft Entra 하이브리드 조인 구성"^] 및  https://learn.microsoft.com/en-us/entra/identity/devices/troubleshoot-hybrid-join-windows-current["Microsoft Entra 하이브리드 조인 디바이스 문제 해결"^]을(를) 참조하십시오.
+
+
+NOTE: 가입 후에는 <<client-registered,4단계>>에 구성된 Entra ID 등록 컴퓨터의 하이브리드 사용자 자격 증명을 통해서만 이 컴퓨터에 액세스할 수 있습니다.
+
+.시작하기 전에
+* Windows 10(21H2 이상) 또는 Windows 11이 설치된 컴퓨터가 있어야 합니다.
+* 온프레미스 AD에서 동기화된 하이브리드 사용자 계정이 있어야 합니다. 이러한 계정은 <<on-prem-ad,2단계>>에서 생성됩니다.
+
+
+.단계
+. 로컬 관리자 자격 증명을 사용하여 Windows 컴퓨터에 로그인하십시오.
+. *설정 > 계정 > 회사 또는 학교 액세스*로 이동하여 *연결 > 이 장치를 Azure Active Directory에 연결*을 선택합니다.
++
+하이브리드 사용자 계정을 사용하여 가입을 완료하십시오. 가입이 성공적으로 완료되지 않으면  https://learn.microsoft.com/en-us/answers/questions/1179294/how-to-join-device-as-azure-ad-joined-if-its-added["Microsoft Entra 하이브리드 조인 디바이스 문제 해결"^]을(를) 참조하십시오.
+
+. 메시지가 표시되면 머신을 다시 시작한 다음 Azure 포털의 *Entra ID > 장치 > 모든 장치*에서 *Entra ID 가입됨*으로 표시되는지 확인하십시오.
+
+
+
+
+[[step-6-configure-the-joined-vm-for-smb-access]]
+[[client-config]]
+== 6단계: SMB 액세스를 위해 연결된 VM 구성
+
+VM을 Microsoft Entra ID에 연결한 후에는 클라우드에서 발급한 Kerberos 티켓을 획득하고, SMB 서버 호스트 이름을 확인하고, Entra ID에 등록된 머신에서 RDP 액세스를 허용하도록 구성해야 합니다.
+
+.단계
+. Entra ID에 조인된 VM의 hosts 파일에 DNS 항목을 추가하여 SMB 서버 호스트 이름을 확인할 수 있도록 하십시오:
++
+.. 텍스트 편집기에서  `C:\Windows\System32\drivers\etc\hosts`을(를) 엽니다.
+.. ONTAP 데이터 LIF IP 주소를 SMB 서버 FQDN에 매핑하는 다음 항목을 추가하십시오:
++
+[listing]
+----
+<lif-ip-address>  <netbios-name>.<on-premises-domain>
+----
+
+
+. PKU2U 인증 정책을 활성화하십시오:
++
+.. 다음으로 이동하세요:
++
+*gpedit.msc > 컴퓨터 구성 > Windows 설정 > 보안 설정 > 로컬 정책 > 보안 옵션*
+
+.. *네트워크 보안: 이 컴퓨터에서 PKU2U 인증 요청이 온라인 ID를 사용하도록 허용*을 활성화하십시오.
++
+자세한 내용은  https://learn.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/network-security-allow-pku2u-authentication-requests-to-this-computer-to-use-online-identities["PKU2U 인증 정책"^]을(를) 참조하십시오.
+
+
+
+. 클라우드 Kerberos 티켓 검색을 활성화합니다:
++
+.. 다음으로 이동하세요:
++
+*gpedit.msc > 컴퓨터 구성 > 관리 템플릿 > 시스템 > Kerberos*
+
+.. *로그온 중 클라우드 Kerberos 티켓 검색 허용*을 활성화합니다.
+
+
+. ONTAP SMB 서버에 대한 Kerberos 영역 매핑을 구성합니다:
++
+.. 동일한 Kerberos 정책 위치에서 *호스트 이름과 Kerberos 영역 매핑 정의*를 선택합니다.
+.. 다음 매핑을 추가하십시오:
++
+[listing]
+----
+Value name: KERBEROS.MICROSOFTONLINE.COM
+Value: <netbios-name>.<on-premises-domain>
+----
+
+
+. Entra ID로 등록된 VM에서 액세스할 수 있도록 하이브리드 사용자를 _원격 데스크톱 사용자_ 그룹에 추가하십시오:
++
+[source, cmd]
+----
+net localgroup "Remote Desktop Users" /add "AzureAD\<username>@<tenant>.onmicrosoft.com"
+----
+
+
+
+
+[[step-7-mount-the-smb-share-and-verify-access]]
+[[mount-share]]
+== 7단계: SMB 공유를 마운트하고 액세스를 확인합니다
+
+Entra ID에 조인된 클라이언트에서 SMB 공유를 마운트하고 Microsoft Entra ID를 사용한 Kerberos 기반 인증이 처음부터 끝까지 성공적으로 수행되는지 확인할 수 있습니다.
+
+.단계
+. Entra ID에 등록된 VM에서 원격 데스크톱 연결을 사용하여 다음 형식의 하이브리드 사용자 자격 증명으로 Entra ID에 가입된 VM에 로그인합니다:
++
+[listing]
+----
+AzureAD\<username>@<tenant>.onmicrosoft.com
+----
++
+로그인에 실패하면 *추가 옵션*을 선택하고 자격 증명을 수동으로 입력하십시오. 문제가 지속되면 원격 데스크톱 연결 클라이언트의 *고급* 탭에서 *웹 계정 사용*을 활성화하십시오. 자세한 내용은  https://learn.microsoft.com/en-us/entra/identity/devices/howto-vm-sign-in-azure-ad-windows["Microsoft Entra ID를 사용하여 Windows VM에 로그인합니다"^]을(를) 참조하십시오.
+
+.  `klist`을 실행하고  `krbtgt` 티켓이  `KERBEROS.MICROSOFTONLINE.COM`에 대해 존재하는지 확인하여 로그인 시 클라우드 Kerberos 티켓이 발급되었는지 확인합니다.
++
+[source, powershell]
+----
+klist
+----
++
+출력 예:
+
++
+[listing]
+----
+Cached Tickets: (1)
+#0>     Client: <username> @ <domain>
+        Server: krbtgt/KERBEROS.MICROSOFTONLINE.COM @ KERBEROS.MICROSOFTONLINE.COM
+        KerbTicket Encryption Type: Unknown (-1)
+        Ticket Flags 0x40810000 -> forwardable renewable name_canonicalize
+        Start Time: <date and time>
+        End Time:   <date and time>
+        Renew Time: <date and time>
+        Session Key Type: AES-256-CTS-HMAC-SHA1-96
+----
++
+이 티켓이 있다는 것은 해당 장치가 올바르게 연결되었으며 클라우드에서 발급한 Kerberos 티켓을 받을 수 있음을 확인시켜 줍니다.
+
+. Cloud Volumes ONTAP 시스템에 볼륨과 SMB 공유를 생성하거나 기존 볼륨과 공유를 사용하십시오:
+
+
+[source, cli]
+----
+volume create -vserver <svm-name> -volume <volume-name> -aggregate <aggregate-name> -size <size> -junction-path /<volume-name> -security-style ntfs
+cifs share create -vserver <svm-name> -share-name <share-name> -path /<volume-name>
+----
+
+NOTE:  `icacls`을(를) 사용하여 Microsoft Entra ID ID에 대한 파일 및 폴더 권한을 관리할 수 있도록 볼륨은 NTFS 보안 스타일을 사용해야 합니다.
+
+. 클라이언트가 SMB 서버에 대한 Kerberos 서비스 티켓을 발급받을 수 있는지 확인하십시오:
++
+[source, powershell]
+----
+klist get CIFS/<netbios-name>.<on-premises-domain>
+----
++
+서비스 티켓이 반환되고  `KdcCalled`에  `KdcProxy:login.microsoftonline.com`가 표시되는지 확인합니다. 이는 인증이 Microsoft Entra ID를 통해 라우팅됨을 확인합니다.
+
+. SMB 공유를 마운트합니다:
++
+[source, powershell]
+----
+net use * \\<netbios-name>.<on-premises-domain>\<share-name>
+----
+. Cloud Volumes ONTAP 시스템에서 SMB 세션이 설정되었는지 확인하십시오:
++
+[source, cli]
+----
+cifs session show -vserver <svm-name>
+----
++
+세션 출력에는 연결된 워크스테이션과 하이브리드 사용자가  `AZUREAD\<username>@<tenant>.onmicrosoft.com` 형식으로 표시됩니다.
+
+
+
+
+
+[[step-8-manage-file-permissions-with-icacls]]
+[[dacl]]
+== 8단계: icacls를 사용하여 파일 권한 관리
+
+Cloud Volumes ONTAP 9.19.1 이상 버전에서는 마운트된 SMB 공유에서 Microsoft Entra ID ID에 대한 파일 및 폴더 권한을 관리하는  `icacls` 명령을 지원합니다.
+
+.단계
+. 설정하려는 액세스에 따라 적절한 `icacls` 명령어를 실행하십시오:
++
+접근 권한을 부여하려면:
+
++
+[source, cmd]
+----
+icacls <drive>:\<path> /grant "AzureAD\<username>@<tenant>.onmicrosoft.com":(W)
+----
++
+접근을 거부하려면:
+
++
+[source, cmd]
+----
+icacls <drive>:\<path> /deny "AzureAD\<username>@<tenant>.onmicrosoft.com":(W)
+----
+

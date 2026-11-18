@@ -47,7 +47,7 @@ sidebar:
         url: "/concept-degraded-ha-pair.html"
     - title: Amazon Web Services에 배포
       entries:
-      - title: AWS Marketplace에서 독립형 Cloud Volumes ONTAP을 배포하십시오.
+      - title: AWS Marketplace의 독립형 제품 목록을 사용하여 Cloud Volumes ONTAP 배포
         url: "/task-onboard-cvo-aws-marketplace.html"
       - title: 배포 개요
         url: "/task-getting-started-aws.html"
@@ -225,7 +225,7 @@ sidebar:
         url: "/reference-limits-azure.html"
       - title: Azure의 HA 쌍에 대해 알아보기
         url: "/concept-ha-azure.html"
-      - title: Azure 유지 관리 중 Cloud Volumes ONTAP HA 쌍의 중단을 방지합니다.
+      - title: Azure 유지 관리 중 HA 쌍에 대한 중단 방지
         url: "/task-azure-prevent-freeze.html"
       - title: Azure Key Vault를 사용하여 키 관리
         url: "/task-azure-key-vault.html"
@@ -235,6 +235,8 @@ sidebar:
         url: "/task-overriding-cifs-locks.html"
       - title: Azure Private Link 또는 서비스 엔드포인트 사용
         url: "/task-enabling-private-link.html"
+      - title: SMB용 Microsoft Entra ID 인증 구성
+        url: "/task-azure-entra-id-smb-auth.html"
       - title: 리소스 그룹 이동
         url: "/task-moving-resource-groups-azure.html"
       - title: Azure에서 SnapMirror 트래픽 분리

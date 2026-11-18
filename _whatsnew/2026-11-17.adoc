@@ -1,0 +1,49 @@
+= 새로운 Cloud Volumes ONTAP 기여자 역할
+:allow-uri-read: 
+
+
+
+
+[[new-cloud-volumes-ontap-contributor-role]]
+=== 새로운 Cloud Volumes ONTAP 기여자 역할
+
+NetApp은 운영자 역할보다 권한이 많지만 관리자 역할보다는 적은 *Cloud Volumes ONTAP 기여자* 역할을 추가합니다. 운영자 역할을 가진 사용자는 SnapMirror 복제 작업을 포함한 여러 일상적인 워크플로를 수행할 수 있습니다. 관리자 역할은 이러한 워크플로를 포함할 뿐만 아니라 관리자 사용자가 Cloud Volumes ONTAP 시스템을 삭제할 수 있도록 허용하는데, 많은 조직에서는 운영 사용자에게 이러한 권한을 부여하고 싶어하지 않습니다. 현재 콘솔에서 다중 관리자 인증(MAV)을 지원하지 않기 때문에 이 역할이 중요합니다. MAV가 없으면 관리자 사용자가 두 번째 승인 없이 시스템 삭제 등 민감한 작업을 수행할 수 있기 때문입니다. 기여자 역할은 사용자가 시스템 생성, 복제 관리, 스토리지 관리 등 대부분의 중요한 작업을 수행할 수 있도록 허용하는 동시에 시스템 삭제는 방지합니다.
+
+기여자 역할에는 모든 운영자 권한과 더불어 다음과 같은 추가 기능이 포함됩니다.
+
+* Cloud Volumes ONTAP 시스템을 생성하십시오
+* 인스턴스 유형 변경 또는 ONTAP 버전 업그레이드 등 시스템 설정 업데이트
+* 복제 중단, 재동기화, 역방향 재동기화, 복제 일정 및 전송 속도 편집 등 복제를 관리합니다.
+* 애그리게이트 추가 및 용량 증대 등 스토리지 관리
+
+
+기여자 역할을 가진 사용자는 다음 작업을 수행할 수 없습니다:
+
+* 시스템, 볼륨, 애그리게이트 또는 복제 관계를 삭제합니다
+* 시스템을 켜거나 끄십시오
+* 암호 설정
+* ONTAP System Manager 액세스
+
+
+다른 Cloud Volumes ONTAP 역할을 사용자에게 할당하는 것과 동일한 방식으로 *관리 > ID*에서 기여자 역할을 할당합니다.
+
+.관련 링크
+* https://docs.netapp.com/us-en/console-setup-admin/reference-iam-cvo-roles.html["NetApp Console의 Cloud Volumes ONTAP 액세스 역할"^]
+* https://docs.netapp.com/us-en/console-setup-admin/task-cvo-rbac-setup.html["NetApp Console에서 Cloud Volumes ONTAP에 대한 역할 기반 액세스 설정"^]
+* https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html#data-service-roles["NetApp Console 액세스 역할"^]
+
+
+
+
+[[microsoft-entra-id-hybrid-user-authentication-for-smb-public-preview]]
+=== SMB용 Microsoft Entra ID 하이브리드 사용자 인증(공개 미리 보기)
+
+Cloud Volumes ONTAP 9.19.1 이상 버전은 SMB 공유에 액세스하기 위해  https://www.microsoft.com/en-in/security/business/identity-access/microsoft-entra-id["Microsoft Entra ID"^]을(를) 사용한 하이브리드 사용자 인증을 지원합니다.
+
+이전에는 Cloud Volumes ONTAP에서 도메인 사용자에 대해서만 SMB 인증을 지원했으며, 이를 위해서는 온프레미스 Active Directory(AD) 설정이 필요했습니다. 하이브리드 사용자 인증을 사용하면 기존 온프레미스 AD 인프라를 계속 사용하면서 Microsoft Entra ID를 통해 클라우드로 SMB 인증을 확장할 수 있습니다.
+
+하이브리드 사용자 인증을 사용하면 사용자는 온프레미스 AD에서 생성되고  https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/whatis-azure-ad-connect["Microsoft Entra Connect"^]을(를) 사용하여 Microsoft Entra ID와 동기화됩니다. ONTAP은 온프레미스 AD 및 Microsoft Entra ID 모두와 통신하여 SMB 공유에 액세스하는 사용자를 인증합니다.
+
+이 기능은 공개 미리 보기로 제공됩니다. 구성은 ONTAP CLI를 통해서만 지원됩니다. NetApp Console 통합은 아직 지원되지 않습니다.
+
+https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-azure-entra-id-smb-auth.html["SMB용 Microsoft Entra ID 인증 구성"^]
